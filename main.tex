@@ -1,4 +1,6 @@
-\documentclass[12pt,a4,]{article}
+% !TeX root = main.tex
+
+\documentclass[12pt]{scrbook}
 %\usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
@@ -11,20 +13,9 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-% use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \usepackage[utf8]{inputenc}
-\else % if luatex or xelatex
-  \ifxetex
-    \usepackage{mathspec}
-    \usepackage{xltxtra,xunicode}
-  \else
-    \usepackage{fontspec}
-  \fi
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-  \newcommand{\euro}{â‚¬}
-\fi
+
+\usepackage[utf8]{inputenc}
+
 % use microtype if available
 \IfFileExists{microtype.sty}{\usepackage{microtype}}{}
 \usepackage{longtable,booktabs}
@@ -46,7 +37,6 @@
 
 \usepackage{cleveref}
 \usepackage[english]{babel}
-
 
 
 % ===========================================================================
@@ -74,7 +64,6 @@
 \loadglsentries{glossary}
 
 % --
-
 % Wider bars than \bar but smaller than \overline
 \newcommand*\xbar[1]{%
    \hbox{%
@@ -120,8 +109,6 @@
 \usepackage{unicode-math}
 \usepackage{amsmath}
 
-\setmainfont{CMU Serif}
-%\setmathfont{TeX Gyre Termes Math}
 
 % Custom command to create highlights easily in colors
 \DeclareRobustCommand{\hlcyan}[1]{{\sethlcolor{cyan}\hl{#1}}}
@@ -131,6 +118,9 @@
 % ===========================================================================
 
 \begin{document}
+
+%\setmainfont{CMU Serif}
+%\setmathfont{TeX Gyre Termes Math}
 
 % Header size
 \setlength{\headheight}{15pt}
@@ -198,17 +188,31 @@
 \blurb{BE-ABP-LNO / OMC}
 
 \clearpage\maketitle
-\thispagestyle{empty}
 
-\newpage
-\null
-\thispagestyle{empty}%
-\newpage
 
+% ===========================================================================
+%                  Acknowledgements
+% ===========================================================================
+\include{./chapters/acknowledgements}
+
+
+
+
+
+% ===========================================================================
+%                  Table of Contents
+% ===========================================================================
 \setcounter{tocdepth}{3}
+\addcontentsline{toc}{chapter}{Contents}
 \tableofcontents
 
-\newpage
+
+
+
+% ===========================================================================
+%                  Theory
+% ===========================================================================
+\chapter[Theory]{Theory}
 
 \hypertarget{units}{%
 \section{Units}\label{units}}
@@ -232,7 +236,7 @@
       V: volt
     \end{itemize}
   \item
-    \(1 eV = 1.602176634 \cdot 10^{-19} J\)
+    \(1 eV = 1.602176634 \cdot 10^{-19} J\)
   \end{itemize}
 \item
   Momentum:
@@ -688,7 +692,7 @@ Thesis}:
 
 \[Q'_{x,y} = \frac{\partial Q_{x,y}}{\partial \delta} = \frac{1}{2\pi}\left< \frac{\partial² H}{\partial J_{x,y}\partial \delta}\right>\]
 
-For a single element, we can compute \(ΔQ'\):
+For a single element, we can compute $\Delta Q'$:
 \begin{equation}\Delta Q_{x,y}' = \frac{1}{2\pi} \int_L \frac{\partial^2 \left< H \right>}{\partial J_{x,y} \partial \delta} \diff s\label{eq:chroma}\end{equation}
 
 By doing a Taylor Expansion on \(Q(\delta)\), we get:
@@ -2125,6 +2129,18 @@ For the measurement with the corrections: \\
 \verb|/nfs/cs-ccr-nfs4/lhc_data/OP_DATA/Betabeat/2023-04-08/LHCB1/Results/OMC3_LHCB1_30cm_withMaelCorr|
 \normalsize
 
+
+% -----------------------
+%  Normal Decapole RDTs
+% -----------------------
+\subsection{Normal Decapole RDTs}
+
+blabla
+
+
+
+% =============================
+% =============================
 \label{End}
 
 \end{document}
