@@ -1,117 +1,16 @@
 % !TeX root = main.tex
 
-\documentclass[12pt]{scrbook}
-%\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
+\documentclass[openright,twoside,headsepline,bibliography=totoc]{scrbook}
 
-% math stuff
-\numberwithin{equation}{subsection}
-\newcommand*\diff{\mathop{}\!\mathrm{d}}
+% == Packages and some options
+\input{chapters/_latex/packages}
 
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-
-\usepackage[utf8]{inputenc}
-
-% use microtype if available
-\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
-\usepackage{longtable,booktabs}
-\usepackage[unicode=true,pdfa]{hyperref}
-\hypersetup{breaklinks=true,
-            bookmarks=true,
-            pdfauthor={Maël Le Garrec},
-            pdftitle={LHC Effective Model for Optics Corrections},
-            colorlinks=true,
-            citecolor=blue,
-            urlcolor=blue,
-            linkcolor=black,
-            pdfborder={0 0 0}}
-\urlstyle{same}  % don't use monospace font for urls
-\setlength{\parindent}{12pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\setcounter{secnumdepth}{5}
-
-\usepackage{cleveref}
-\usepackage[english]{babel}
-
-
-% ===========================================================================
-%                  SOME OPTIONS
-% ===========================================================================
-\usepackage{wasysym}
-\usepackage{graphicx}
-\usepackage{ragged2e}
-\usepackage{subfigure}
-\usepackage{xcolor,soul}
-\usepackage{changepage}
-\usepackage[nonumberlist]{glossaries}
-
-\usepackage[subfigure]{tocloft}
-\usepackage{setspace}
-\usepackage{pageslts}
-\usepackage[english]{babel}
-\usepackage{float}
-\usepackage{etoc}
-\usepackage{imakeidx}
-
+% Glossary stuff
 \newglossary*{equipment}{Equipment}
 \newglossary*{beam}{Beam}
-
 \loadglsentries{glossary}
-
-% --
-% Wider bars than \bar but smaller than \overline
-\newcommand*\xbar[1]{%
-   \hbox{%
-     \vbox{%
-       \hrule height 0.5pt % The actual bar
-       \kern0.5ex%         % Distance between bar and symbol
-       \hbox{%
-         \kern-0.1em%      % Shortening on the left side
-         \ensuremath{#1}%
-         \kern-0.1em%      % Shortening on the right side
-       }%
-     }%
-   }%
-}
-
-\pagenumbering{arabic}
-
-\linespread{1.1}
-
 \makeglossaries
 \makeindex
-
-\usepackage[a4paper]{geometry}
-\geometry{a4paper, top=2.5cm, left=2cm, right=2cm, bottom=2.5cm, includehead, includefoot}
-
-% For headers and footers
-\usepackage{fancyhdr}
-\lhead{\leftmark}
-\rhead{Page \thepage\ on \getpagerefnumber{End}}
-\lfoot{CERN}
-\rfoot{BE-ABP-LNO / OMC}
-
-
-\pagestyle{fancy}
-\fancypagestyle{plain}{}
-\renewcommand{\footrulewidth}{1pt}
-\usepackage{blindtext}
-
-\setlength{\belowcaptionskip}{-5pt}
-\setlength{\abovecaptionskip}{-5pt}
-
-% Setup an unicode font for regular typing and for maths
-\usepackage{unicode-math}
-\usepackage{amsmath}
-
-
-% Custom command to create highlights easily in colors
-\DeclareRobustCommand{\hlcyan}[1]{{\sethlcolor{cyan}\hl{#1}}}
 
 \date{}
 
@@ -122,78 +21,25 @@
 %\setmainfont{CMU Serif}
 %\setmathfont{TeX Gyre Termes Math}
 
-% Header size
-\setlength{\headheight}{15pt}
+\include{chapters/00_Preamble/00_title_page}
 
-\renewcommand{\contentsname}{Contents}
-\renewcommand{\listfigurename}{Illustrations}
-\renewcommand{\refname}{Bibliography}
-\renewcommand{\glossaryname}{Glossary}
 
-\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+% % % % % ====================== % % % % %
+%                 Plan 
+% % % % % ====================== % % % % %
+\include{chapters/00_Preamble/_plan}
 
-\makeatletter
-\def\clap#1{\hbox to 0pt{\hss #1\hss}}%
-\def\ligne#1{%
-\hbox to \hsize{%
-\vbox{\centering #1}}}%
-\def\haut#1#2#3{%
-\hbox to \hsize{%
-\rlap{\vtop{\raggedright #1}}%
-\hss
-\clap{\vtop{\centering #2}}%
-\hss
-\llap{\vtop{\raggedleft #3}}}}%
-\def\bas#1#2#3{%
-\hbox to \hsize{%
-\rlap{\vbox{\raggedright #1}}%
-\hss
-\clap{\vbox{\centering #2}}%
-\hss
-\llap{\vbox{\raggedleft #3}}}}%
-\def\maketitle{%
-\thispagestyle{empty}\vbox to \vsize{%
-\haut{}{\@blurb}{}
-\vfill
-\vspace{1cm}
-\begin{flushleft}
-\usefont{OT1}{ptm}{m}{n}
-\huge \@title
-\end{flushleft}
-\par
-\hrule height 4pt
-\par
-\begin{flushright}
-\normalsize \@author
-\par
-\end{flushright}
-\vspace{1cm}
-\vfill
-\vfill
-\bas{}{\@location, \@date}{}
-}%
-\cleardoublepage
-}
-\def\date#1{\def\@date{#1}}
-\def\author#1{\def\@author{#1}}
-\def\title#1{\def\@title{#1}}
-\def\location#1{\def\@location{#1}}
-\def\blurb#1{\def\@blurb{#1}}
-\date{\today}
-\location{}\blurb{}
-\makeatother
-\author{Maël Le Garrec}
-\title{LHC Effective Model for Optics Corrections}
-\location{CERN}
-\blurb{BE-ABP-LNO / OMC}
 
-\clearpage\maketitle
+% ===========================================================================
+%                  Quote
+% ===========================================================================
+\include{chapters/00_Preamble/01_quote}
 
 
 % ===========================================================================
 %                  Acknowledgements
 % ===========================================================================
-\include{./chapters/acknowledgements}
+\include{chapters/00_Preamble/01_acknowledgements}
 
 
 
@@ -207,6 +53,12 @@
 \tableofcontents
 
 
+
+% ==== Chapters
+\include{chapters/01_Introduction/00_introduction.tex}
+\include{chapters/02_Background/00_background}
+\include{chapters/03_Optics_Measurements_Corrections/00_optics}
+% ====
 
 
 % ===========================================================================

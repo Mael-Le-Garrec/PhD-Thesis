@@ -1,0 +1,119 @@
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fix-cm}
+\usepackage{microtype}  % better justifications, amongst others
+\usepackage{longtable,booktabs}
+\usepackage[unicode=true,pdfa]{hyperref}
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Maël Le Garrec},
+            pdftitle={LHC Effective Model for Optics Corrections},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=black,
+            pdfborder={0 0 0}}
+\usepackage{cleveref}
+\usepackage[english]{babel}
+\usepackage{calligra}
+\usepackage{lmodern}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{subfigure}
+\usepackage{xcolor,soul}
+\usepackage{changepage}
+\usepackage[nonumberlist]{glossaries}
+\usepackage[subfigure]{tocloft}
+\usepackage{setspace}
+\usepackage{pageslts}
+\usepackage[english]{babel}
+\usepackage{float}
+\usepackage{etoc}
+\usepackage{imakeidx}
+\usepackage{lipsum}
+\usepackage[a4paper]{geometry}
+\usepackage[automark]{scrlayer-scrpage} % for headers and footers
+\usepackage{blindtext}
+\usepackage{unicode-math} % Setup an unicode font for regular typing and for maths
+\usepackage{amsmath}
+
+
+% To have big numbers at the start of each chapter
+%\definecolor{gray75}{gray}{0.75}
+%\newcommand{\hsp}{\hspace{0pt}}
+%\titleformat{\chapter}[hang]
+%    {\flushright\fontseries{b}\fontsize{80}{100}\selectfont}
+%    {\fontseries{b}\fontsize{100}{130}\selectfont \textcolor{gray75}\thechapter\hsp}
+%    {0pt}
+%    {\\ \Huge\bfseries}[]
+%
+%% Same but un-numbered
+%\titleformat{name=\chapter, numberless}[hang]
+%    {\flushright\fontseries{b}\fontsize{80}{100}\selectfont}
+%    {\fontseries{b}\fontsize{100}{130}\selectfont \textcolor{gray75}\hsp}
+%    {0pt}
+%{\\ \Huge\bfseries}[]
+%
+%% And now the other titles
+%\titleformat{\section}
+%{\normalfont\Large\bfseries}{\thesection}{1em}{}
+%\titleformat{\subsection}
+%{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+%\titleformat{\subsubsection}
+%{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+%\titleformat{\paragraph}[runin]
+%{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+%\titleformat{\subparagraph}[runin]
+%{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+
+
+
+% ===========================================================================
+%                            SOME OPTIONS
+% ===========================================================================
+
+% Set the geometry of the pages
+% For a twosided book like this one, `left` and `right` mean respectively `inner` and `outer`
+% The numbers are based on the "Canon des Ateliers", https://etnadji.fr/rsc/canon/calcul.php
+\geometry{a4paper, top=2.625cm, left=2.1cm, right=3.15cm, bottom=3.675cm, includehead, includefoot}
+
+% Fancy chapter headings, needs to be loaded after geometry
+\usepackage[Bjornstrup]{fncychap}
+
+% Change the headers to display both the current chapter and section, from fancyhdr
+%\pagestyle{fancy} 
+
+% Factor spacing between lines
+\linespread{1.1}
+
+% Gives to the equation "number" the section number as well, makes it easier to find where it is in the book
+\numberwithin{equation}{subsection}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+% Set some lengths
+\setlength{\parindent}{12pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{2}  %  set up to which point a sub[..]subsection is numbered
+
+\urlstyle{same}  % don't use monospace font for urls
+
+\pagenumbering{arabic}
+
+% Make the captions closer to table, figures, etC.
+\setlength{\belowcaptionskip}{-5pt}
+\setlength{\abovecaptionskip}{-5pt}
+
+
+% ===========================================================================
+%                            SOME COMMANDS
+% ===========================================================================
+
+% Create a \tightlight command for itemize environments to have the bullet points closer together
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Command to create highlights easily in colors
+\DeclareRobustCommand{\hlcyan}[1]{{\sethlcolor{cyan}\hl{#1}}}
