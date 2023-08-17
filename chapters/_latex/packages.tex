@@ -19,25 +19,36 @@
 \usepackage{calligra}
 \usepackage{lmodern}
 \usepackage{wasysym}
+\usepackage{siunitx}
 \usepackage{graphicx}
 \usepackage{ragged2e}
+\usepackage{atveryend}
 \usepackage{subfigure}
 \usepackage{xcolor,soul}
 \usepackage{changepage}
-\usepackage[nonumberlist]{glossaries}
-\usepackage[subfigure]{tocloft}
+\usepackage[nonumberlist,acronyms,nogroupskip]{glossaries}
+\usepackage{glossary-longbooktabs}
 \usepackage{setspace}
-\usepackage{pageslts}
 \usepackage[english]{babel}
 \usepackage{float}
+\usepackage[subfigure]{tocloft}
+\usepackage{titletoc}
 \usepackage{etoc}
 \usepackage{imakeidx}
 \usepackage{lipsum}
 \usepackage[a4paper]{geometry}
 \usepackage[automark]{scrlayer-scrpage} % for headers and footers
+\usepackage{scrhack}  % to remove some warnings
 \usepackage{blindtext}
-\usepackage{unicode-math} % Setup an unicode font for regular typing and for maths
+%\usepackage{unicode-math} % Setup an unicode font for regular typing and for maths  // clashes with OverBrace from nicematrix
 \usepackage{amsmath}
+\usepackage{nicematrix}
+\usepackage[
+  height={2cm},
+  topthumbmargin={auto},
+  bottomthumbmargin={auto},
+  eventxtindent={4mm},
+  oddtxtexdent={2.5mm}]{thumbs}  % markers on the side to show the chapter
 
 
 % To have big numbers at the start of each chapter
@@ -89,7 +100,9 @@
 \linespread{1.1}
 
 % Gives to the equation "number" the section number as well, makes it easier to find where it is in the book
-\numberwithin{equation}{subsection}
+\numberwithin{equation}{chapter}
+\numberwithin{table}{chapter}
+\numberwithin{figure}{chapter}
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
 
 % Set some lengths
@@ -100,11 +113,13 @@
 
 \urlstyle{same}  % don't use monospace font for urls
 
-\pagenumbering{arabic}
-
 % Make the captions closer to table, figures, etC.
-\setlength{\belowcaptionskip}{-5pt}
-\setlength{\abovecaptionskip}{-5pt}
+%\setlength{\belowcaptionskip}{-5pt}
+%\setlength{\abovecaptionskip}{-5pt}
+
+% Define some colors
+\definecolor{thumb_color}{HTML}{D9D9D9}
+
 
 
 % ===========================================================================
@@ -117,3 +132,26 @@
 
 % Command to create highlights easily in colors
 \DeclareRobustCommand{\hlcyan}[1]{{\sethlcolor{cyan}\hl{#1}}}
+
+% Display a table of contents for the current chapter
+\newcommand{\chaptertoc}[1][Contents]{%
+  % Set the indent so it's a bit tighter and looks better
+  \setlength{\cftsecindent}{0.2cm}
+  \setlength{\cftsubsecindent}{0.8cm}
+  \setlength{\cftsubsubsecindent}{1.4cm}
+
+  \etocmulticolstyle{\addsec*{#1\\\rule{\textwidth}{0.4pt}}}%
+  \setcounter{tocdepth}{4}
+
+  % Reduce the spacing between the list items
+  \begin{spacing}{0.1}
+    \localtableofcontents%
+  \end{spacing}
+}
+
+% Define a wrapper for \addthumb, to add markers on the side
+\newcommand{\thumbforchapter}{\addthumb{Chapter \thechapter}{\Large{\thechapter}}{black}{thumb_color}}
+
+
+% Todo command to display red text
+\newcommand*{\todo}[1]{{\bfseries\color{red}#1}}

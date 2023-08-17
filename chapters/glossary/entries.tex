@@ -1,0 +1,39 @@
+% === Define the different glossaries
+\newglossary*{nomenclature}{Nomenclature}
+\newglossary*{symbols}{Symbols}
+
+\makeglossaries
+
+% === Add the different entries
+\newglossaryentry{Dipole}{type=nomenclature,name=Dipole, description={ Magnets with two poles, responsible for bending the particles in the accelerator. }}
+\newglossaryentry{LBDS}{type=nomenclature,name=LBDS, description={LHC Beam Dump System }}
+\newglossaryentry{Crosstalk}{type=nomenclature,name=Crosstalk, description={Interferences between two electronic circuits }}
+\newglossaryentry{Laundau Octupole}{type=nomenclature,name=Laundau Octupole, description={Octupoles that introduce a spread in the beam, making it more stable }}
+\newglossaryentry{BPM}{type=nomenclature,name=BPM, description={ Beam Position Monitor, gives the transverse position of the beam }}
+\newglossaryentry{DOROS}{type=nomenclature,name=DOROS, description={ Low noise BPM. Currently can't be used with other BPMs due to synchronization issues  }}
+\newglossaryentry{Dispersion}{type=nomenclature,name=Dispersion, description={ Change of orbit with momentum offset, mainly in the horizontal plane, created by the dipoles}}
+\newglossaryentry{Coupling}{type=nomenclature,name=Coupling, description={ Dependance of the transversal planes between each other }}
+\newglossaryentry{Emittance}{type=nomenclature,name=Emittance, description={ (\ensuremath{\epsilon}) Unit describing the beam in phase space. A low emittance indicates a beam with a small momentum offset and confined to a small distance }}
+\newglossaryentry{beta-function}{type=nomenclature,name=beta-function, description={ Function dependent on $s$, related to the beam transverse size: $$\sigma(s)= \sqrt{\epsilon \cdot \beta(s)}$$ }}
+\newglossaryentry{Chromaticity}{type=nomenclature,name=Chromaticity, description={ Tune change with momentum offset. Usually denoted as three orders: $Q'$, $Q''$ and $Q'''$ }}
+\newglossaryentry{Aperture}{type=nomenclature,name=Aperture, description={ Maximum physical transverse size the beam can take in the accelerator without suffering losses }}
+\newglossaryentry{Dynamic Aperture}{type=nomenclature,name=Dynamic Aperture, description={ Maximum stable aperture. Above that size, the particles become unstable and become lost }}
+\newglossaryentry{Waist}{type=nomenclature,name=Waist, description={ Location where the $\beta$-function is at is minimum in an IP. $\beta^*$ refers to $\beta_{waist}$ }}
+\newglossaryentry{Waist Shift}{type=nomenclature,name=Waist Shift, description={ Changing the waist to have $\beta^* = \beta_{IP}$ }}
+\newglossaryentry{Rigid Waist Shift}{type=nomenclature,name=Rigid Waist Shift, description={ Doing a waist shift by powering all the triplets at once. No individual trim }}
+\newglossaryentry{Orbit Feedback}{type=nomenclature,name=Orbit Feedback, description={ System responsible for acquisition and correction of the orbit }}
+\newglossaryentry{ATS Factor}{type=nomenclature,name=ATS Factor, description={ Equivalent to the ratio of the virgin $\beta$-function to the $\beta$-function used in the current ATS scheme, at the edge of the arc  }}
+
+
+% ==== Acronyms
+\newacronym{lhc}{LHC}{Large Hadron Collider}
+
+
+% ==== Symbols
+\newglossaryentry{action}
+{
+    type=symbols,
+    name=action,
+    symbol=$\mathcal{J}$,
+    description={Action used as coordinate blabla},
+}
