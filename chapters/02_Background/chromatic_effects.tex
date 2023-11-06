@@ -1,0 +1,91 @@
+% ============================================
+%                Dispersion
+% ============================================
+\subsection{Dispersion}
+
+
+
+% ============================================
+%                Chromaticity
+% ============================================
+\subsection{Chromaticity}
+
+Chromaticity is the tune change $\Delta Q$ relative to the momentum offset $\delta$. Chromaticity
+can be described by a Taylor expansion, given by
+
+\begin{equation} 
+    Q (\delta) = Q_0 + Q' \delta + \frac{1}{2!} Q'' \delta^2 + \frac{1}{3!} Q''' \delta^3 + \mathcal{O}(\delta^4).
+    \label{eq:background_chromaticity}
+\end{equation}
+
+Or, more generally, rewritten as a sum to include all orders up to $n$:
+
+\begin{equation}
+    Q (\delta) = Q_0 + \sum_{i=1}^n \frac{1}{i!} Q^{(i)} \delta^i.
+    \label{eq:background_chromaticity_sum}
+\end{equation}
+
+
+The first order of the chromaticity expansion, $Q'$, is generally simply refered to as 
+\textit{chromaticity}, sometimes as \textit{linear chromaticity}.
+The other terms are thus refered to as \textit{non-linear chromaticity}.
+
+The chromaticity change induced by a single element of order $n$ and length $L$ can be derived from
+the Hamiltonian of Eq.\todo{ref}, averaging over the phase variables and differentiating relative to
+the actions $J_{x,y}$ and the momentum offset $\delta$:
+
+\begin{equation}
+    \Delta Q^{(n)}_{x,y} = \frac{\partial^n Q_{x,y}}{\partial^n \delta} = 
+      \frac{1}{2\pi} \int_L \left< \frac{\partial^{(n+1)} H}{\partial J_{x,y}\partial^n \delta}\right> \diff s.
+    \label{eq:background_chroma_order_hamiltonian}
+\end{equation}
+
+
+% =========
+\subsubsection{Natural Chromaticity from Quadrupoles}
+
+In a purely linear lattice, the linear chromaticity, $Q'$, is a result of the momentum dependence 
+of the quadrupoles' focusing. It is in this case called the \textit{natural chromaticity} and can be
+derived from the normal hamiltonian \todo{equations hamiltonian and chromaticity} and expressing the
+normalized magnet strength $K$ with a dependence on $\delta$ via $P$ as $P_0(1+\delta)$:
+
+\begin{equation}
+    K_n = \frac{q}{P_0} \frac{1}{1 + \delta} (n - 1)! B_n
+    \label{eq:k_dpp}
+\end{equation}
+
+The normal field of a quadrupole is then given by
+
+\begin{equation}
+    \mathcal{N}_2(x,y) = \frac{1}{2} \frac{q}{P_0} \frac{1}{1+\delta} B_2 (x^2 - y^2)
+\end{equation}
+
+By operating a variable change to the angle coordinates 
+(\(x \rightarrow \sqrt{2 J_x \beta_x} \cos \phi_x\) and
+\(y \rightarrow \sqrt{2 J_y \beta_y} \cos \phi_y\)), the following equation linking the $\beta$-function
+and $\delta$ to the normal field is obtained:
+\begin{equation}\mathcal{N}_2 (x,y) = \frac{1}{2} \frac{q}{P_0} \frac{1}{1+\delta} B_2 
+        \left[
+            \left(\sqrt{2 J_x \beta_x} \cos \phi_x \right)^2 
+            - \left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^2
+        \right].
+    \label{eq:hamiltonian_quadrupole_angle}
+\end{equation}
+
+Following Eq.\ref{eq:background_chroma_order_hamiltonian}, the natural chromaticity $Q'$ induced by
+quadrupoles is given by:
+\begin{equation}
+    \begin{aligned}
+        \Delta Q'_x &= \frac{1}{2\pi} \int_L \frac{\partial^2 \left< \mathcal{N}_2 \right> }{\partial J_x \partial \delta} \diff s
+        \quad;\quad
+        \Delta Q'_y &= \frac{1}{2\pi} \int_L \frac{\partial^2 \left< \mathcal{N}_2 \right>}{\partial J_y \partial \delta} \diff s
+        \\
+        & = - \frac{1}{4 \pi} \frac{q}{P_0} B_2 L \beta_x
+        & = \frac{1}{4 \pi} \frac{q}{P_0} B_2 L \beta_y
+    \end{aligned}
+\end{equation}
+
+
+
+% =========
+\subsubsection{Linear Chromaticity from Sextupoles}

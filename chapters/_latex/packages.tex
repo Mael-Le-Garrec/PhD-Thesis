@@ -6,7 +6,6 @@
 \usepackage{longtable,booktabs}
 \usepackage[unicode=true,pdfa]{hyperref}
 \hypersetup{breaklinks=true,
-            bookmarks=true,
             pdfauthor={Maël Le Garrec},
             pdftitle={LHC Effective Model for Optics Corrections},
             colorlinks=true,
@@ -36,7 +35,7 @@
 \usepackage{etoc}
 \usepackage{imakeidx}
 \usepackage{lipsum}
-\usepackage[a4paper]{geometry}
+\usepackage{geometry}
 \usepackage[automark]{scrlayer-scrpage} % for headers and footers
 \usepackage{scrhack}  % to remove some warnings
 \usepackage{blindtext}
@@ -89,6 +88,7 @@
 % For a twosided book like this one, `left` and `right` mean respectively `inner` and `outer`
 % The numbers are based on the "Canon des Ateliers", https://etnadji.fr/rsc/canon/calcul.php
 \geometry{a4paper, top=2.625cm, left=2.1cm, right=3.15cm, bottom=3.675cm, includehead, includefoot}
+%\geometry{b5paper, top=2.2cm, left=1.76cm, right=2.64cm, bottom=3.08cm, includehead, includefoot}
 
 % Fancy chapter headings, needs to be loaded after geometry
 \usepackage[Bjornstrup]{fncychap}
@@ -151,6 +151,8 @@
 
 % Define a wrapper for \addthumb, to add markers on the side
 \newcommand{\thumbforchapter}{\addthumb{Chapter \thechapter}{\Large{\thechapter}}{black}{thumb_color}}
+% Same but with letters for the appendices
+\newcommand{\thumbforappendix}{\addthumb{Chapter \thechapter}{\Large{\thechapter}}{black}{thumb_color}}
 
 
 % Todo command to display red text
