@@ -1,0 +1,125 @@
+\section{Magnetic Fields}
+
+% ============================================
+%                Nomenclature
+% ============================================
+\subsection{Nomenclature}
+
+\todo{
+Indices for K and b.\\
+J for action and and skew field.\\
+Normal and skew field Hamiltonian.\\
+reference radius = 0.017m
+}
+
+
+% ============================================
+%              Multipole Expansion
+% ============================================
+\subsection{Multipole Expansion}
+
+A 2 dimension magnetic field in the planes \textit{x} and \textit{y} can be described as a sum of
+the normal and skew field gradients $\mathcal{B}$ and $\mathcal{A}$ with multipoles of order $n$,
+given by~\cite{wolf_engineering_2001}:
+\begin{equation}
+    B_y + iB_x = \sum_{n=1}^\infty \left(\mathcal{B}_n + i\mathcal{A}_n \right)  (x+iy)^{n-1}
+\end{equation}
+
+An ideal magnet would produce either a sole normal or skew field. However, this is not applicable 
+to real-life magnets that are imperfect, due to design and manufacturing constraints.
+Field errors are thus introduced, relative to the main field of the ideal 2N-pole magnet at a
+reference radius $r_{ref}$~\cite{dilly_corrections_2022}, as shown in 
+equation~\ref{eq:magnetic_field_relative_errors}. The coefficients of the normal and skew relative 
+field errors, referred to as $a_n$ and $b_n$, are dimensionless but often given in \textit{units}
+of $10^{-4}$.
+
+\begin{equation}
+    B_y + iB_x = 
+        \begin{cases}
+            \mathcal{B}_N \cdot \sum_{n+1}^\infty (b_n + ia_n) \left(\frac{x+iy}{r_{ref}}\right)^{n-1}\text{, for normal magnets}\\
+            \mathcal{A}_N \cdot \sum_{n+1}^\infty (b_n + ia_n) \left(\frac{x+iy}{r_{ref}}\right)^{n-1}\text{, for skew magnets}
+        \end{cases}
+    \label{eq:magnetic_field_relative_errors}
+\end{equation}
+
+
+The normal and skew field components of order $n$ for an imperfect 2N-pole magnet is thus given by
+the following equation:
+
+\begin{equation}
+    \begin{aligned}
+        \mathcal{B}_n &= \mathcal{B}_N \cdot \frac{b_n}{r_{ref}^{n-1}}, \\
+        \mathcal{A}_n &= \mathcal{A}_N \cdot \frac{a_n}{r_{ref}^{n-1}}.
+    \end{aligned}
+\end{equation}
+
+The unit of the field is relative to the multipole order $n$: $[\text{Tm}^{1-n}]$.
+
+
+% ============================================
+%              Normalization
+% ============================================
+\subsection{Beam Rigidity and Normalization}
+
+\subsubsection{Beam Rigidity}
+
+The beam rigidity refers to the resistance of a particle moving through the accelerator to the
+bending applied by the magnetic fields. It is derived from the Laurentz force~\cite{dilly_corrections_2022}
+and relates the magnetic field $B$, the radius of curvature $\rho$ to the momentum $p$ and charge $q$
+of the particle:
+
+\begin{equation}
+    B \rho = \frac{p}{q}
+    \label{eq:magnetic_fields_beam_rigidity}
+\end{equation}
+
+It is of interest when designing an accelerator to set the maximum field as well as the required
+radius of curvature for a specific momentum and particle.
+An interesting metric of an accelerator is also its \textit{filling factor}, or percentage of
+dipoles in the machine. It can be calculated via the radius of curvate: $f = \rho / r$. A low 
+filling factors means more space for other magnets, collimators, beam instrumentation, etc.
+
+\subsubsection{Field Normalization}
+
+The Beam Rigidity is also used as a way to normalize magnetic field strengths in particle
+accelerators where the momentum of the particle changes (i.e. acceleration).
+Normalized Normal and Skew components $K_n$ and $J_n$ are given by~\cite{wolf_engineering_2001}:
+
+\begin{equation}
+    \begin{aligned}
+        K_n =  \frac{q}{p} &(n-1)! \mathcal{B}_n, \\ 
+        J_n =  \frac{q}{p} &(n-1)! \mathcal{A}_n.
+    \end{aligned}
+    \label{eq:magnetic_fields_normalized}
+\end{equation}
+
+
+
+% ============================================
+%            Hamiltonian Dynamics
+% ============================================
+\subsection{Hamiltonian Dynamics}
+
+The Hamiltonian describing the motion for the transverse planes of a given multipole or order $n$ is
+given by~\cite{keintzel_jacqueline_beam_nodate,tomas_direct_2003,franchi_studies_2006}:
+
+\begin{equation}
+    \begin{aligned}
+        H &= \frac{q}{p} \Re \left[ \sum_{n>1} (\mathcal{B}_n + i\mathcal{A}_n) \frac{(x+iy)^n}{n} \right] \\
+          &= \Re \left[ \sum_{n>1} (K_n + iJ_n) \frac{(x+iy)^n}{n!} \right].
+    \end{aligned}
+\end{equation}
+
+Quite often, when studying the effect of a magnet on the beam, only one component is required, and
+the sum can thus be dropped.
+The normal and skew fields can also be isolated in order to consider their effect only:
+
+\begin{equation}
+    \begin{aligned}
+        N_n &= \frac{1}{n!} K_n \Re \left[ (x+iy)^n \right] \\
+        S_n &= -\frac{1}{n!} J_n \Im \left[ (x+iy)^n \right].
+    \end{aligned}
+\end{equation}
+
+
+

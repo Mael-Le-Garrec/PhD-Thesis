@@ -1,4 +1,10 @@
-\subsection{Response Matrix}
+\section{Correction Principles}
+
+
+% ===============================
+%        Response Matrix
+% ===============================
+\subsection{response matrix}
 
 A response matrix is a linear equation system that describes the change of an observable for a set of individual multipole strengths. By taking the pseudo-inverse of this matrix and multiplying it to the measured observables, a set of corrector strengths if obtained that can replicate the measured value. Taking the opposite sign then gives a correction.
 This technique is routinely used to correct, amongst others, \beta-beating as well as Resonance Driving Terms. In situations where measurements are taken at each BPM for a particular observable, the corresponding response matrix ends up containing over 500 values per corrector, for a single beam.
@@ -30,18 +36,19 @@ In this example, simulations are run with MAD-X PTC to correct the third chromat
 $Q'''$ is taken from \verb|ptc_normal| for each beam and axis, with \verb|MCDs|, decapole correctors, powered with a fixed strength one at a time. A scaling factor is applied to get the change of chromaticity for one unit of $K_5$.
 8 correctors are used, which strengths are denoted $k_1$ through $k_8$.
 Transposes are only used to make the equations easier to display.\\
-The values in Tab.\ref{table:resp_matrix_example} are corrected via Eq.\ref{eq:resp_matrix_inverse_example} after having built the response matrix in Eq.\ref{eq:resp_matrix_example}.
+The values in Tab.\ref{table:resp_matrix_example} are corrected via 
+Eq.~\eqref{eq:resp_matrix_inverse_example} after having built the response matrix in Eq.~\eqref{eq:resp_matrix_example}.
 
 \begin{table}[H]
   \center
   \begin{tabular}{c c c}
-    Observable & Value \\
-    \hline
-    $Q'''_x$ & -666111 \\
-    $Q'''_y$ &  121557 \\
+      Observable & Value \\
+      \hline
+      $Q'''_x$ & -666111 \\
+      $Q'''_y$ &  121557 \\
   \end{tabular}
-  \label{table:resp_matrix_example}
   \caption{Example chromaticity values to correct via a response matrix}
+  \label{table:resp_matrix_example}
 \end{table}
 
 % ====
@@ -52,7 +59,8 @@ The values in Tab.\ref{table:resp_matrix_example} are corrected via Eq.\ref{eq:r
   =
   %
   \left(
-    {\text{Individual} \atop \text{simulations}}
+    %{\text{Individual} \atop \text{simulations}}
+    {\genfrac{}{}{0pt}{0}{\text{Individual}}{\text{simulations}}}
     \left\{
       \begin{bNiceMatrix}
        -155899  &  122004 \\  
@@ -77,7 +85,7 @@ The values in Tab.\ref{table:resp_matrix_example} are corrected via Eq.\ref{eq:r
       \OverBrace{1-1}{1-1}{\scriptstyle \text{Reference}}[yshift=2mm]
     \end{bNiceMatrix}
     \right\}
-    {Q'''_x \atop Q'''_y}
+    {\genfrac{}{}{0pt}{0}{Q'''_x}{Q'''_y}}
   \right)
   %
   \cdot
@@ -125,7 +133,8 @@ The values in Tab.\ref{table:resp_matrix_example} are corrected via Eq.\ref{eq:r
       121557 \\
   \end{pNiceMatrix}
   \right\}
-  {\text{Measured} \atop \text{values}}
+  %{\text{Measured} \atop \text{values}}
+  {\genfrac{}{}{0pt}{0}{\text{Measured}}{\text{values}}}
   \label{eq:resp_matrix_inverse_example}
 \end{equation}
 
@@ -133,26 +142,36 @@ The values in Tab.\ref{table:resp_matrix_example} are corrected via Eq.\ref{eq:r
 
 
 
-% =======================
-%     Chromaticity
+% ===============================
+%    Chromaticity Global Trim
+% ===============================
 \subsection{Global Trims for Second and Third Order Chromaticity}
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 % The script for the linearity can be found in
 % /afs/cern.ch/work/m/mlegarr2/public/jupyter/chromaticity/simulations/linearity_dq3_mcd
 
-\todo{ref needed for layout}
+As per the placement of the MCO and MCD spool piece correctors in the LHC 
+layout~\cite{maclean_commissioning_2016-1}, $\beta$-functions at their location are slightly
+different from arc to arc. This slight imbalance leads theoritically to the possibility of
+correcting the horizontal and vertical axes of the second and third order chromaticity
+independently, via a response matrix approach. In practice, the required strength to do so would
+exceed those of the design of the correctors.
 
-As per the placement of the MCO and MCD spool piece correctors in the LHC layout, $\beta$-functions at their location are slightly different from arc to arc. This slight imbalance leads theoritically to the possibility of correcting the horizontal and vertical axes of the second and third order chromaticity independently, via a response matrix approach.
-In practice, the required strength to do so would exceed those of the design of the correctors.
-
-Another way to correct the chromaticity is via a global uniform trim, where every available corrector is powered to the same strength.
-  Simulations are run with \verb|ptc_normal| via MADX-PTC to obtain the response in chromaticity for a given strength. Chromaticity being linear with multipole strength, an affine function can be determined for each axis. Figure \ref{fig:corrections-dq3_versus_k5} shows a simulation with several MCD strengths, highlighting this linear relation between $Q'''$ and $K_5$, while eq.\ref{eq:corrections:chromaticity_affine_function_ptc} shows an example of such functions computed at injection energy for the 2022 optics.
+Another way to correct the chromaticity is via a global uniform trim, where every available
+corrector is powered to the same strength.  Simulations are run with \verb|ptc_normal| via MADX-PTC
+to obtain the response in chromaticity for a given strength. Chromaticity being linear with
+multipole strength, an affine function can be determined for each axis. Figure
+\ref{fig:corrections-dq3_versus_k5} shows a simulation with several MCD strengths, highlighting this
+linear relation between $Q'''$ and $K_5$, while
+Equation~\eqref{eq:corrections:chromaticity_affine_function_ptc} shows an example of such functions computed
+at injection energy for the 2022 optics.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.6\textwidth]{images/dq3_k5.pdf}
-  \caption{Linear relation between the third order chromaticity and decapole corrector strengths, simulated with MADX-PTC.}
+  \caption{Linear relation between the third order chromaticity and decapole corrector strengths,
+           simulated with MADX-PTC.}
   \label{fig:corrections-dq3_versus_k5}
 \end{figure}
 
@@ -164,7 +183,8 @@ Another way to correct the chromaticity is via a global uniform trim, where ever
   \label{eq:corrections:chromaticity_affine_function_ptc}
 \end{equation}
 
-Only the linear part is relevant, as the offset is generated by other multipoles and field errors. It is thus constant for a configuration where only the relevant spool pieces are used.
+Only the linear part is relevant, as the offset is generated by other multipoles and field errors.
+It is thus constant for a configuration where only the relevant spool pieces are used.
 
 Corrections involve minimizing both axes, typically where $Q'''_x$ meets $Q'''_y$:
 

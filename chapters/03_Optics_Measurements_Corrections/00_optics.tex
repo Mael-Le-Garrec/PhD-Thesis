@@ -2,44 +2,7 @@
 \thumbforchapter{}
 \chaptertoc{}
 
-% === Beam Instrumentation
-\section{Beam Instrumentation}
 
-\todo{take some info from The CERN LHC : Accelerator and Experiments Vol.1}
-
-\subsection{Beam Position Monitor}
-
-
-
-\subsection{AC-Dipole}
-
-The AC dipole of the LHC is a crucial component for optics studies. Its primary function is to excite the beam into large coherent oscillation, achieved by applying a sinusoidally oscillating dipole field~\cite{miyamoto_parametrization_2008}. By ramping up and down adiabatically the field, large coherent oscillations can be procuded without any decoherence or emittance growth. Figure \ref{fig:ac_dipole} shows an example 
-of a measurement made with an AC-Dipole.
-Exciting the beam to large amplitudes make the study of linear optics, such as beta-beating easier, and that of non linear optics such as resonances possible.
-
-\begin{figure}[H]
-    \center
-    \includegraphics[width=0.9\textwidth]{chapters/03_Optics_Measurements_Corrections/images/ac_dipole_tbt.pdf}
-    \caption{Simulated turn by turn data with an AC-Dipole first ramping up then down.} 
-    \label{fig:ac_dipole}
-\end{figure}
-
-The AC-Dipole is set to oscillate at a frequency $Q_d$, different from the natural tune of the machine $Q$ and thus introduces systematic effects that needs to be compensated during the optics analysis. The new orbit of a particle under the influence of the AC-Dipole, at turn number $n$ and observation point $s$, is given by~\cite{serrano_lhc_nodate}
-
-\begin{equation}
-z(s, n) = \frac{BL}{4\pi\rho\delta_z} \cdot \sqrt{\beta_z(s) \beta_{z,0}} \cdot \cos \left( 2 \pi Q_{d,z}n + \phi_z(s) + \phi_{z,0}\right),
-\label{eq:ac_dipole}
-\end{equation}
-
-where $B$ is the amplitude of the oscillating magnetic field, $L$ the length of the AC-Dipole, $B\rho$ the magnetic rigidity, $\delta$ the difference between $Q_d$ and $Q$, $\beta$ and $\beta_0$ the beta function at the observed point and the AC-Dipole, $\phi$ and $\phi_0$ the phase advance at the observed point and of the AC-Dipole.
-
-% === Measurements
-\section{Optics Measurements}
-
+\input{chapters/03_Optics_Measurements_Corrections/beam_instrumentation.tex}
 \input{chapters/03_Optics_Measurements_Corrections/01_measurements.tex}
-
-
-% === Corrections
-\section{Correction Principles}
-
 \input{chapters/03_Optics_Measurements_Corrections/03_corrections}

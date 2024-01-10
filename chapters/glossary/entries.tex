@@ -12,9 +12,23 @@
 \newglossaryentry{BPM}{type=nomenclature,name=BPM, description={ Beam Position Monitor, gives the transverse position of the beam }}
 \newglossaryentry{DOROS}{type=nomenclature,name=DOROS, description={ Low noise BPM. Currently can't be used with other BPMs due to synchronization issues  }}
 \newglossaryentry{Dispersion}{type=nomenclature,name=Dispersion, description={ Change of orbit with momentum offset, mainly in the horizontal plane, created by the dipoles}}
-\newglossaryentry{Coupling}{type=nomenclature,name=Coupling, description={ Dependance of the transversal planes between each other }}
+\newglossaryentry{Coupling}{
+    type=nomenclature,
+    name=Coupling,
+    description={ 
+        Correlation between the motion of particles in horizontal or vertical plane to the other.
+        Strong coupling negatively impacts the optics and is usually avoided. 
+    }
+}
 \newglossaryentry{Emittance}{type=nomenclature,name=Emittance, description={ (\ensuremath{\epsilon}) Unit describing the beam in phase space. A low emittance indicates a beam with a small momentum offset and confined to a small distance }}
-\newglossaryentry{beta-function}{type=nomenclature,name=beta-function, description={ Function dependent on $s$, related to the beam transverse size: $$\sigma(s)= \sqrt{\epsilon \cdot \beta(s)}$$ }}
+\newglossaryentry{beta-function}{
+    type=nomenclature,
+    name=Beta-function, 
+    description={
+        Variable of the twiss-parameters: $\beta$ as a function of the longitudinal position $s$.
+        Related to the transverse beam size: $\sigma(s)= \sqrt{\epsilon \cdot \beta(s)}$ 
+    }
+}
 \newglossaryentry{Chromaticity}{type=nomenclature,name=Chromaticity, description={ Tune change with momentum offset. Usually denoted as three orders: $Q'$, $Q''$ and $Q'''$ }}
 \newglossaryentry{Aperture}{type=nomenclature,name=Aperture, description={ Maximum physical transverse size the beam can take in the accelerator without suffering losses }}
 \newglossaryentry{Dynamic Aperture}{type=nomenclature,name=Dynamic Aperture, description={ Maximum stable aperture. Above that size, the particles become unstable and become lost }}
@@ -23,6 +37,14 @@
 \newglossaryentry{Rigid Waist Shift}{type=nomenclature,name=Rigid Waist Shift, description={ Doing a waist shift by powering all the triplets at once. No individual trim }}
 \newglossaryentry{Orbit Feedback}{type=nomenclature,name=Orbit Feedback, description={ System responsible for acquisition and correction of the orbit }}
 \newglossaryentry{ATS Factor}{type=nomenclature,name=ATS Factor, description={ Equivalent to the ratio of the virgin $\beta$-function to the $\beta$-function used in the current ATS scheme, at the edge of the arc  }}
+\newglossaryentry{AC-Dipole}{
+    type=nomenclature,
+    name=AC-Dipole,
+    description={
+        Dipole magnet generating a variable oscillating field. Used to force beam oscillations for
+        optics measurements.
+    }
+}
 
 
 % ==== Acronyms
