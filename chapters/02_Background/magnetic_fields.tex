@@ -5,10 +5,31 @@
 % ============================================
 \subsection{Nomenclature}
 
+Several notations coexist to denote magnetic fields. In this thesis, the
+\textit{European Convention}~\cite{dilly_corrections_2022} is used for field indices, as shows
+the summary in Tab.~\ref{tab:magnetic_fields:relation_indices}. MAD-X, and MAD-NG, however, use the
+\textit{American Convention}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l|c|c}
+        Multipole      &     Index     &      MAD-X Index    \\
+    \hline 
+        Dipole         &     1         &     0               \\       
+        Quadrupole     &     2         &     1               \\
+        Sextupole      &     3         &     2               \\
+        Octupole       &     4         &     3               \\
+        Decapole       &     5         &     4               \\
+        Dodecapole     &     6         &     5               \\
+        Decatetrapole  &     7         &     6               \\
+    \end{tabular}
+    \caption{Relation between field indices and multipoles.}
+    \label{tab:magnetic_fields:relation_indices}
+\end{table}
+
 \todo{
 Indices for K and b.\\
-J for action and and skew field.\\
-Normal and skew field Hamiltonian.\\
+J for action and skew field.\\
 reference radius = 0.017m
 }
 
@@ -16,7 +37,7 @@ reference radius = 0.017m
 % ============================================
 %              Multipole Expansion
 % ============================================
-\subsection{Multipole Expansion}
+\subsection{\review{Multipole Expansion}}
 
 A 2 dimension magnetic field in the planes \textit{x} and \textit{y} can be described as a sum of
 the normal and skew field gradients $\mathcal{B}$ and $\mathcal{A}$ with multipoles of order $n$,
@@ -29,7 +50,7 @@ An ideal magnet would produce either a sole normal or skew field. However, this 
 to real-life magnets that are imperfect, due to design and manufacturing constraints.
 Field errors are thus introduced, relative to the main field of the ideal 2N-pole magnet at a
 reference radius $r_{ref}$~\cite{dilly_corrections_2022}, as shown in 
-equation~\ref{eq:magnetic_field_relative_errors}. The coefficients of the normal and skew relative 
+Eq.~\eqref{eq:magnetic_field:relative_errors}. The coefficients of the normal and skew relative 
 field errors, referred to as $a_n$ and $b_n$, are dimensionless but often given in \textit{units}
 of $10^{-4}$.
 
@@ -39,7 +60,7 @@ of $10^{-4}$.
             \mathcal{B}_N \cdot \sum_{n+1}^\infty (b_n + ia_n) \left(\frac{x+iy}{r_{ref}}\right)^{n-1}\text{, for normal magnets}\\
             \mathcal{A}_N \cdot \sum_{n+1}^\infty (b_n + ia_n) \left(\frac{x+iy}{r_{ref}}\right)^{n-1}\text{, for skew magnets}
         \end{cases}
-    \label{eq:magnetic_field_relative_errors}
+    \label{eq:magnetic_field:relative_errors}
 \end{equation}
 
 
@@ -59,7 +80,7 @@ The unit of the field is relative to the multipole order $n$: $[\text{Tm}^{1-n}]
 % ============================================
 %              Normalization
 % ============================================
-\subsection{Beam Rigidity and Normalization}
+\subsection{\review{Beam Rigidity and Normalization}}
 
 \subsubsection{Beam Rigidity}
 
@@ -108,6 +129,7 @@ given by~\cite{keintzel_jacqueline_beam_nodate,tomas_direct_2003,franchi_studies
         H &= \frac{q}{p} \Re \left[ \sum_{n>1} (\mathcal{B}_n + i\mathcal{A}_n) \frac{(x+iy)^n}{n} \right] \\
           &= \Re \left[ \sum_{n>1} (K_n + iJ_n) \frac{(x+iy)^n}{n!} \right].
     \end{aligned}
+    \label{eq:hamiltonian_magnet}
 \end{equation}
 
 Quite often, when studying the effect of a magnet on the beam, only one component is required, and
@@ -119,6 +141,7 @@ The normal and skew fields can also be isolated in order to consider their effec
         N_n &= \frac{1}{n!} K_n \Re \left[ (x+iy)^n \right] \\
         S_n &= -\frac{1}{n!} J_n \Im \left[ (x+iy)^n \right].
     \end{aligned}
+    \label{eq:normal_skew_hamiltonian_magnet}
 \end{equation}
 
 

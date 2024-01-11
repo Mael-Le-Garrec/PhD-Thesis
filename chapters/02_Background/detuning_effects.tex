@@ -4,7 +4,7 @@
 % ============================================
 %                Chromaticity
 % ============================================
-\subsection{Chromaticity}
+\subsection{\review{Chromaticity}}
 
 Chromaticity is the tune change $\Delta Q$ relative to the momentum offset $\delta$. Chromaticity
 can be described by a Taylor expansion, given by
@@ -22,13 +22,13 @@ Or, more generally, rewritten as a sum to include all orders up to $n$:
 \end{equation}
 
 
-The first order of the chromaticity expansion, $Q'$, is generally simply refered to as 
+The first order of the chromaticity expansion, $Q'$, is generally simply referred to as 
 \textit{chromaticity}, sometimes as \textit{linear chromaticity}.
-The other terms are thus refered to as \textit{non-linear chromaticity}.
+The other terms are thus referred to as \textit{non-linear chromaticity}.
 
 The chromaticity change induced by a single element of order $n$ and length $L$ can be derived from
-the Hamiltonian of Eq.\todo{ref}, averaging over the phase variables and differentiating relative to
-the actions $J_{x,y}$ and the momentum offset $\delta$:
+the Hamiltonian of Eq.~\eqref{eq:hamiltonian_magnet}, averaging over the phase variables and
+differentiating relative to the actions $J_{x,y}$ and the momentum offset $\delta$:
 
 \begin{equation}
     \Delta Q^{(n)}_{x,y} = \frac{\partial^n Q_{x,y}}{\partial^n \delta} = 
@@ -42,8 +42,8 @@ the actions $J_{x,y}$ and the momentum offset $\delta$:
 
 In a purely linear lattice, the linear chromaticity, $Q'$, is a result of the momentum dependence 
 of the quadrupoles' focusing. It is in this case called the \textit{natural chromaticity} and can be
-derived from the normal hamiltonian \todo{equations hamiltonian and chromaticity} and expressing the
-normalized magnet strength $K$ with a dependence on $\delta$ via $P$ as $P_0(1+\delta)$:
+derived from the normal hamiltonian of Eq.\eqref{eq:normal_skew_hamiltonian_magnet} and expressing
+the normalized magnet strength $K$ with a dependence on $\delta$ via $P$ as $P_0(1+\delta)$:
 
 \begin{equation}
     K_n = \frac{q}{P_0} \frac{1}{1 + \delta} (n - 1)! B_n
@@ -68,7 +68,7 @@ and $\delta$ to the normal field is obtained:
     \label{eq:hamiltonian_quadrupole_angle}
 \end{equation}
 
-Following Eq.\ref{eq:background_chroma_order_hamiltonian}, the natural chromaticity $Q'$ induced by
+Following Eq.\eqref{eq:background_chroma_order_hamiltonian}, the natural chromaticity $Q'$ induced by
 quadrupoles is given by:
 \begin{equation}
     \begin{aligned}
@@ -84,6 +84,74 @@ quadrupoles is given by:
 
 % =========
 \subsubsection{Linear Chromaticity from Sextupoles}
+
+The first order chromaticity $Q'$ is contributed to by sextupoles in the presence of off-momentum
+particles. The normal field of a sextupole, following Eq.\eqref{eq:normal_skew_hamiltonian_magnet}
+is given by
+
+\begin{equation}
+    \mathcal{N}_3(x,y) = \frac{1}{3!} (x^3 - 3xy^2).
+    \label{eq:detuning:linear_chromaticity}
+\end{equation}
+
+As the momentum offset $\delta$ introduces a change in orbit via
+dispersion~\cite{keintzel_second-order_2019}, a variable change can be operated on both $x$ and $y$,
+as shown in Eq.\eqref{eq:detuning:offset}. In this thesis, vertical dispersion will be though
+neglected.
+
+\begin{equation}
+    \begin{aligned}
+        x &\rightarrow x + \Delta x = x + D_x\delta \\
+        y &\rightarrow y + \Delta y = y + D_y\delta
+    \end{aligned}
+    \label{eq:detuning:offset}
+\end{equation}
+
+The positions $x$ and $y$ can once be replaced, using the twiss parameters, giving the full
+expression:
+
+\begin{equation}\begin{aligned}
+  \mathcal{N}_3(x + \Delta x, y) = \frac{1}{6} K_3 \biggl[&
+       \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^3 \\
+  &    + 3 \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^2 D_x \delta \\
+  &    + 3 \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right) D_x^2 \delta^2 \\
+  &    + D_x^3 \delta^3 \\
+  &    - 3 \left(\sqrt{2 J_x \beta_x} \cos \phi_x \right) \left(\sqrt{2 J_y \beta_y} \cos \phi_y \right)^2 \\
+  &    - 3 D_x \delta (\sqrt{2 J_y \beta_y} \cos \phi_y)^2 \biggl]
+\end{aligned}\end{equation}
+
+Averaging over the phase variables removes any odd cosine:
+\begin{equation}\begin{aligned}
+  \left< \mathcal{N}_3(x + \Delta x, y) \right> = \frac{1}{6} K_3 &\biggl(
+       3 J_x \beta_x D_x \delta \\
+  &    + D_x^3 \delta^3 \\
+  &    - 3 D_x \delta J_y \beta_y \biggl)
+\end{aligned}\end{equation}
+
+
+
+The chromaticity can then obtained by differentiating relative to the action $J_{x,y}$ to obtain the
+tune, and then by the momentum offset $\delta$.
+\begin{equation}
+    \begin{aligned}
+        \Delta Q'_x &= \frac{1}{2\pi} \int_L \frac{\partial^2 \left< \mathcal{N}_3 \right>}{\partial J_x \partial \delta} \diff s \quad; \quad \Delta Q'_y &&= \frac{1}{2\pi} \int_L \frac{\partial^2 \left< \mathcal{N}_3 \right>}{\partial J_y \partial \delta} \diff s \\
+        &= \frac{1}{2 \pi} L \frac{1}{2} K_3 \beta_x D_x  &&= - \frac{1}{2 \pi} L \frac{1}{2} K_3 \beta_y D_x \\
+        &= \frac{1}{4 \pi}  K_3 L \beta_x D_x &&= - \frac{1}{4 \pi}  K_3 L \beta_y D_x
+    \end{aligned}
+\end{equation}
+
+From this last equation, it is apparent than sextupoles are not a source of chromaticity of higher
+orders in the presence of linear dispersion. In the presence of second order
+dispersion~\cite{keintzel_second-order_2019}, sextupoles can generate some amount of $Q''$, usually
+negligible.
+
+
+% =========
+\subsubsection{Non-Linear Chromaticity}
+
+Higher orders of the chromaticity function are described in~\cite{dilly_derivation_2023} and follow
+the same logic as for the linear chromaticity from sextupoles.
+
 
 
 
