@@ -1,9 +1,43 @@
 \section{Coordinate Systems}
 
+In circular accelerators, particle dynamics are represented using a traveling coordinate system.
+A reference orbit is determined by the lattice and its magnet strengths, forming the
+\textit{optics}. In the case of a synchrotron, like the LHC, where the particles return to their
+original location after some turns, the reference orbit is also called the closed orbit.  
+The Frenet-Serret coordinate system is used, moving along the ring on the reference orbit. The
+coordinates are then transverse: $x$ and $y$, and longitudinal in the direction of travel: $s$.
+Figure~\ref{fig:coordinate_systems:frenet_serret} shows those coordinates.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{example-image-a}
+    \caption{\todo{Frenet-Serret coordinates commonly used in accelerator physics.}}
+    \label{fig:coordinate_systems:frenet_serret}
+\end{figure}
+
+
+
 % ============================================
-%                
+%               Linear Lattice 
 % ============================================
-%\subsection{}
+\subsection{Linear Lattice}
+
+A circular accelerator is composed of many multipoles of different orders. A basic
+design only requires dipoles and quadrupoles in order to operate. Dipoles are used to bend the
+particles in order to form the ring, whereas quadrupoles are used to focus the beam to a focal
+point, similar to light optics.
+Those elements can be arranged in a particular order, to form a \text{FODO} cell. Such cells present
+an alternating placement of focusing an defocusing quadrupoles with dipoles in between, as shown in
+Fig.\ref{fig:coordinate_systems:fodo}, and are usually repeated many times along the ring.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{example-image-a}
+    \caption{\todo{FODO cell, a repeated basic block present in most circular accelerators.}}
+    \label{fig:coordinate_systems:fodo}
+\end{figure}
+
+A lattice composed on of only dipoles and quadrupoles, is referred to as a \textit{linear} lattice.
 
 \todo{
     Courant Snyder/Twiss
