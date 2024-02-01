@@ -6,12 +6,22 @@
 % ===============================
 \subsection{\review{Response Matrix}}
 
-A response matrix is a linear equation system that describes the change of an observable for a set of individual multipole strengths. By taking the pseudo-inverse of this matrix and multiplying it to the measured observables, a set of corrector strengths if obtained that can replicate the measured value. Taking the opposite sign then gives a correction.
-This technique is routinely used to correct, amongst others, \beta-beating as well as Resonance Driving Terms. In situations where measurements are taken at each BPM for a particular observable, the corresponding response matrix ends up containing over 500 values per corrector, for a single beam.
+A response matrix is a linear equation system that describes the change of an observable for a set
+of individual multipole strengths. By taking the pseudo-inverse of this matrix and multiplying it to
+the measured observables, a set of corrector strengths if obtained that can replicate the measured
+value. Taking the opposite sign then gives a correction.  This technique is routinely used to
+correct, amongst others, \beta-beating as well as Resonance Driving Terms. In situations where
+measurements are taken at each BPM for a particular observable, the corresponding response matrix
+ends up containing over 500 values per corrector, for a single beam.
 
-Individual MAD-X simulations are run with a single multipole powered at a time. The resulting parameter values (e.g. \beta-beating) are then compared to those obtained from a simulation without any powering, allowing to determine the specific impact of each multipole.
+Individual MAD-X simulations are run with a single multipole powered at a time. The resulting
+parameter values (e.g. \beta-beating) are then compared to those obtained from a simulation without
+any powering, allowing to determine the specific impact of each multipole.
 
-A response matrix is thus created following eq.\ref{eq:resp_matrix}, for a matrix of observables $O$, a reference matrix of observables without any corrector $O_R$ and a fixed multipole strength $k$. Given measured data $M$, the set of correctors needed to compensate the values can be obtained by taking the pseudo-inverse of the matrix in eq.\ref{eq:resp_matrix_inverted}.
+A response matrix is thus created following Eq.~\eqref{eq:resp_matrix}, for a matrix of observables
+$O$, a reference matrix of observables without any corrector $O_R$ and a fixed multipole strength
+$k$. Given measured data $M$, the set of correctors needed to compensate the values can be obtained
+by taking the pseudo-inverse of the matrix in Eq.~\eqref{eq:resp_matrix_inverted}.
 
 \begin{equation}
   R = \left(O - O_R \right) \cdot \frac{1}{k}
@@ -28,16 +38,20 @@ A response matrix is thus created following eq.\ref{eq:resp_matrix}, for a matri
   \label{eq:resp_matrix_inverted}
 \end{equation}
  
-Response matrices are very versatile and can combine several observables to be corrected by the same multipoles. One example, detailed later in this thesis, is the third order chromaticity and the resonance driving term $f_{1004}$, both contributed to by decapoles.
+Response matrices are very versatile and can combine several observables to be corrected by the same
+multipoles. One example, detailed later in this thesis, is the third order chromaticity and the
+resonance driving term $f_{1004}$, both contributed to by decapoles.
 
 \subsubsection{Example}
 
 In this example, simulations are run with MAD-X PTC to correct the third chromaticity in the LHC.
-$Q'''$ is taken from \verb|ptc_normal| for each beam and axis, with \verb|MCDs|, decapole correctors, powered with a fixed strength one at a time. A scaling factor is applied to get the change of chromaticity for one unit of $K_5$.
-8 correctors are used, which strengths are denoted $k_1$ through $k_8$.
-Transposes are only used to make the equations easier to display.\\
-The values in Tab.\ref{table:resp_matrix_example} are corrected via 
-Eq.~\eqref{eq:resp_matrix_inverse_example} after having built the response matrix in Eq.~\eqref{eq:resp_matrix_example}.
+$Q'''$ is taken from \verb|ptc_normal| for each beam and axis, with \verb|MCDs|, decapole
+correctors, powered with a fixed strength one at a time. A scaling factor is applied to get the
+change of chromaticity for one unit of $K_5$.  8 correctors are used, which strengths are denoted
+$k_1$ through $k_8$.  Transposes are only used to make the equations easier to display.\\
+The values in Tab.\ref{table:resp_matrix_example} are corrected via
+Eq.~\eqref{eq:resp_matrix_inverse_example} after having built the response matrix in
+Eq.~\eqref{eq:resp_matrix_example}.
 
 \begin{table}[H]
   \center

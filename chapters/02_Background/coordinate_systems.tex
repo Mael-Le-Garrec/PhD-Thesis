@@ -40,9 +40,157 @@ Fig.\ref{fig:coordinate_systems:fodo}, and are usually repeated many times along
 A lattice composed on of only dipoles and quadrupoles, is referred to as a \textit{linear} lattice.
 
 \todo{
-    Courant Snyder/Twiss
-    Tune, beta function
+    Courant Snyder/Twiss\\
+    Tune, beta function\\
+    Transfer Map\\
 % 
-    Lie, normal form
-    Resonance Driving Terms
+    Lie, normal form \\
+    Resonance Driving Terms \\
+    Symplecticity
 }
+
+\subsubsection{Transfer Maps}
+
+
+
+
+% ============================================
+%               Lie Algebra
+% ============================================
+\subsection{Lie Algebra}
+
+So far, Courant-Snyder parameters were a good way to describe the distribution of positions and
+velocities of particles in the transverse plane. One caveat of using this formalism is that it is 
+restrained to linear optics and does not describe non-linear beam dynamics such as resonances or 
+the effects arising from an arrangement of several multipoles together.
+
+One way to describe such effects is to introduce Lie Algebra~\cite{dragt_overview_2013}, a vector
+space $\mathfrak{g}$ equipped with a binary operation called the \textit{Lie bracket} and denoted
+$[x, y]$ for two vectors $x$ and $y$. Any vector space equipped with a Lie bracket (or
+multiplication rule) satisfying the following conditions is called a Lie algebra:
+
+\begin{itemize}
+    \item Bilinearity:
+    \begin{equation}
+        \begin{aligned}
+        \relax[ax+by, z] &= a[x,z] + b[y,z], \\
+        [z, ax+by] &= a[z,x] + b[z,y], \quad \forall x,y,z \in \mathfrak{g}~\text{and}~a,b~\text{scalars}
+        \label{eq:coordinates:bilinearity}
+        \end{aligned}
+    \end{equation}
+
+    \item Alternativity:
+    \begin{equation}
+        [x,x] = 0, \quad \forall x \in \mathfrak{g}
+    \end{equation}
+
+    \item Anticommutativity:
+    \begin{equation}
+        [x,y] = -[y,x], \quad \forall x,y \in \mathfrak{g}
+    \end{equation}
+
+    \item The Jacobi identity:
+    \begin{equation}
+        [x,[y,z]] + [y, [z,x]] + [z, [x,y]] = 0, \quad \forall x,y,z \in \mathfrak{g}
+        \label{eq:coordinates:jacobi_identity}
+    \end{equation}
+\end{itemize}
+
+
+
+
+% ========================
+% Poisson Brackets
+\subsubsection{Poisson Brackets}
+
+To create a Lie algebra, an operation satisfying those conditions needs to be found. In accelerator
+physics, \textit{Poisson brackets} are chosen~\cite{dragt_overview_2013,roy_analysis_1992}. Let's
+consider position and momentum coordinates $q_i \cdots q_n$ and $p_i \cdots p_n$  of a
+2n-dimensional phase space. Usually, those would be $x, y, p_x \text{ and } p_y$ for transverse
+coordinates. The Poisson brackets of two functions $f$ and $g$ if then defined by:
+
+\begin{equation}
+    [f,g] = \sum^n_{i=1} \frac{\partial f}{\partial q_i} \frac{\partial g}{\partial p_i}
+                       - \frac{\partial f}{\partial p_i} \frac{\partial g}{\partial q_i}.
+\end{equation}
+
+
+
+% ========================
+% Lie Operator
+\subsubsection{Lie Operator}
+
+Given a function $f$, a differential operator called \textit{Lie operator} is defined, and is closely
+related to the previously seen Poisson bracket:
+
+\begin{equation}
+    :f: = \sum^n_{i=1} \frac{\partial f}{\partial q_i} \frac{\partial}{\partial p_i}
+                     - \frac{\partial f}{\partial p_i} \frac{\partial}{\partial q_i}.
+\end{equation}
+
+The action of this operator on a function $g$ is equivalent to the Poisson brackets, as in:
+
+\begin{equation}
+    :f:g = [f,g].
+\end{equation}
+
+A particular power series of this Lie operator can now be defined, called \textit{Lie
+transformation}:
+
+\begin{equation}
+    \begin{aligned}
+        e^{:f:}g &= \sum_{l=0}^\infty \frac{1}{l!} :f:^l g \\
+                 &= g + [f,g] + \frac{1}{2!}[f, [f, g]] + \cdots .
+    \end{aligned}
+\end{equation}
+
+
+
+% ========================
+% Non-Linear Transfer Map
+\subsubsection{Non-Linear Transfer Maps}
+
+As introduced \todo{before}, the dynamics of a particle beam in a circular accelerator can be
+described by \textit{transfer maps}. A symplectic \textit{One Turn Map} $\mathcal{M}$ that also
+includes $N$ non-linear elements is defined~\cite{dragt_overview_2013} as:
+
+\begin{equation}
+    \mathcal{M} = e^{:h_N:} \cdot e^{:h_{N-1}:} \cdots e^{:h_1:} \cdot \mathcal{R}
+\end{equation}
+
+where $\mathcal{R}$ is a matrix describing the linear motion over one turn and the $h_i$ terms
+representing the Hamiltonian of each non-linear elements of the machine.
+Via the Baker-Campbell-Hausdorff (BCH)\todo{citation} theorem, previous Lie transformations can be combined and
+simplified:
+
+\begin{equation}
+    e^{:h_1:} \cdot e^{:h_2:} = e^{:h:}
+\end{equation}
+with 
+\begin{equation}
+    \begin{aligned}
+        h =& h_1 + h_2 \\
+           & + \frac{1}{2} [h_1, h_2] \\
+           & + \frac{1}{12} [h_1, [h_1, h_2]] - \frac{1}{12} [h_2, [h_1, h_2]] + \cdots.
+    \end{aligned}
+    \label{eq:coordinates:bch}
+\end{equation}
+
+The one turn map is thus expressed as a single Lie transformation:
+
+\begin{equation}
+    \mathcal{M} = e^{:h:} \cdot \mathcal{R}.
+\end{equation}
+
+In most cases, were the non-linear perturbations are small, the above series converges quickly
+and only the two first terms of Eq.~\eqref{eq:coordinates:bch} are
+used~\cite{carlier_nonlinear_2020-1}. The resulting expression is then more elegant, being a simple
+sum of the Hamiltonians of the $N$ non-linear elements:
+
+\begin{equation}
+   \mathcal{M} = e^{:h_1 + h_2 + \cdots + h_N:} \cdot \mathcal{R}.
+\end{equation}
+
+It is though to be noted that in this thesis experimental measurements show the evidence of higher
+order contributions. In order to fully understand the combined effect of multipoles, the BCH
+expansion needs to be expended further than the first two terms.
