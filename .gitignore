@@ -1,7 +1,6 @@
 *.aux
 *.gz
 *.toc
-*.pdf
 *.glg
 *.glo
 *.gls
