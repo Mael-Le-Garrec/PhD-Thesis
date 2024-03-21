@@ -41,9 +41,16 @@ and polynomials fitted to minimize this response error~\cite{a_nosych_geometrica
 % ============================================
 %             Beam Loss Monitors
 % ============================================
-\subsection{\todo{Beam Loss Monitors}}
+\subsection{\review{Beam Loss Monitors}}
 
+Beam Loss Monitors are detectors mounted on various elements of the accelerator, such as magnets or
+collimators, to detect abnormal losses of particles. They play a crucial role in the protection of
+the machine, triggering a dump when losses exceed the threshold set for their respective element. 
+BLMs use ionization chambers, working on the same principle as simple Geiger counters: a tube filled
+with gas, in presence of a high voltage.
 
+Dashboards in the control room are regularly used to monitor the losses along the ring when
+performing optics measurements, as those prove to often be destructive.
 
 % ============================================
 %                 AC-Dipole
@@ -53,12 +60,12 @@ and polynomials fitted to minimize this response error~\cite{a_nosych_geometrica
 The AC dipole of the LHC is a crucial component for optics studies. Its primary function is to
 excite the beam into large coherent oscillation, achieved by applying a sinusoidally oscillating
 dipole field~\cite{miyamoto_parametrization_2008}. By ramping up and down adiabatically the field,
-large coherent oscillations can be procuded without any decoherence or emittance growth. Figure
+large coherent oscillations can be produced without any decoherence or emittance growth. Figure
 \ref{fig:ac_dipole} shows an example of a measurement made with an AC-Dipole.  Exciting the beam to
 large amplitudes make the study of linear optics, such as beta-beating easier, and that of non
 linear optics such as resonances possible.
 
-\begin{figure}[H]
+\begin{figure}
     \center
     \includegraphics[width=0.9\textwidth]{chapters/03_Optics_Measurements_Corrections/images/ac_dipole_tbt.pdf}
     \caption{Simulated turn by turn data with an AC-Dipole first ramping up then down.} 

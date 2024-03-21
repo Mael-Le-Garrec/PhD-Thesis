@@ -12,18 +12,23 @@ original location after some turns, the reference orbit is also called the close
 % ============================================
 %               Frenet-Serret
 % ============================================
-\subsection{Frenet-Serret System}
+\subsection{\review{Frenet-Serret System}}
 
-The Frenet-Serret coordinate system is used, moving along the ring on the reference orbit. The
-coordinates are then transverse: $x$ and $y$, and longitudinal in the direction of travel: $s$.
+The Frenet-Serret coordinate system moves along the ring on the reference orbit. The coordinates are
+then transverse: $x$ and $y$, and longitudinal in the direction of travel: $s$.
 Figure~\ref{fig:coordinate_systems:frenet_serret} shows those coordinates.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{example-image-a}
-    \caption{\todo{Frenet-Serret coordinates commonly used in accelerator physics.}}
+    \includegraphics[width=0.5\textwidth]{images/frenet.pdf}
+    \caption{Frenet-Serret coordinate system, commonly used in accelerator physics. The system moves
+    along the reference orbit.}
     \label{fig:coordinate_systems:frenet_serret}
 \end{figure}
+
+This coordinate system is widely used to simply describe a either an element's or a particle's
+position in the accelerator. Without any explicit mention, those are coordinates used in this
+thesis. It is frequent to use the variable $z$ to refer to either $x$ or $y$ in equations.
 
 
 
@@ -31,6 +36,11 @@ Figure~\ref{fig:coordinate_systems:frenet_serret} shows those coordinates.
 %               Linear Lattice 
 % ============================================
 \subsection{Linear Lattice}
+
+
+% ========================
+% Courant-Snyder Parameters
+\subsubsection{\review{Courant-Snyder Parameters}}
 
 A circular accelerator is composed of many multipoles of different orders. A basic
 design only requires dipoles and quadrupoles in order to operate. Dipoles are used to bend the
@@ -47,27 +57,69 @@ Fig.\ref{fig:coordinate_systems:fodo}, and are usually repeated many times along
     \label{fig:coordinate_systems:fodo}
 \end{figure}
 
-A lattice composed on of only dipoles and quadrupoles, is referred to as a \textit{linear} lattice.
+A lattice composed of only dipoles and quadrupoles, is referred to as a \textit{linear} lattice.
+In a synchrotron, a circular particle accelerator, particles undergo transverse and longitudinal 
+oscillations. As such, particles do not go back to their initial position before a certain number
+of turns. Taking into account those oscillations, the phase-space ellipse of a particle at a 
+position $s$ in the ring can be described with a new system: the Courant-Snyder parameters, also
+know as Twiss parameters or the \textit{optics functions}~\cite{courant_theory_1958}, as shown in
+Fig.~\ref{fig:coordinate_systems:twiss}.\\
 
-\todo{
-    Courant Snyder/Twiss\\
-    Tune, beta function\\
-    Transfer Map\\
-% 
-    Lie, normal form \\
-    Resonance Driving Terms \\
-    Symplecticity
-}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/phase_space.png}
+    \caption{Phase-space ellipse of a linear machine, parametrized by the Courant-Snyder
+    parameters $\alpha$, $\beta$ and $\gamma$.}
+    \label{fig:coordinate_systems:twiss}
+\end{figure}
 
-\subsubsection{Transfer Maps}
+$J$, the action, an invariant of motion at a given energy, is related to the other quantities by:
+
+\begin{equation}
+    J_z = \frac{1}{2} (\gamma_z \cdot z^2 + 2 \alpha_z p_z \cdot z + \beta_z p_z^2).
+    \label{eq:coordinate_systems:action}
+\end{equation}
+
+The action can be related to the area in phase space, called the emittance: $\epsilon = 2J$.
+As the $\beta$ parameter varies along the ring, it is referred to as the $\beta$-function and is
+related to the amplitude of the oscillations. Thus, the smaller is the $\beta$-function, the
+smaller is also the envelope of the beam.
+The number of oscillations per turn is called the \textit{tune}, and is closely related to the
+$\beta$-function:
+
+\begin{equation}
+    Q_{x,y} = \frac{1}{2 \pi} \oint \frac{1}{\beta_{x,y}(s)} \diff s.
+    \label{eq:coordinate_systems:tune}
+\end{equation}
+
+
+It is common to express the position of a particle using \textit{action-angle} variables, allowing
+to switch between the Courant-Snyder parameters and the Frenet-Serret system:
+
+\begin{equation}
+    \begin{aligned}
+    z   &= \sqrt{2J_z \beta_z} \cos{\phi_z} \\
+    p_z &= - \sqrt{\frac{2J_z}{\beta_z}} \left( sin{\phi_z} + \alpha_z \cos{\phi_z}\right).
+    \end{aligned}
+    \label{eq:coordinate_systems:action_angle}
+\end{equation}
+
+
+% ========================
+% Linear Transfer Map
+\subsubsection{Linear Transfer Map}
 
 
 
 
 % ============================================
-%               Lie Algebra
+%             Non-Linear Lattice 
 % ============================================
-\subsection{Lie Algebra}
+\subsection{Non-Linear Lattice}
+
+% ========================
+% Lie Algebra
+\subsubsection{Lie Algenra}
 
 So far, Courant-Snyder parameters were a good way to describe the distribution of positions and
 velocities of particles in the transverse plane. One caveat of using this formalism is that it is 
@@ -76,7 +128,7 @@ the effects arising from an arrangement of several multipoles together.
 
 One way to describe such effects is to introduce Lie Algebra~\cite{dragt_overview_2013}, a vector
 space $\mathfrak{g}$ equipped with a binary operation called the \textit{Lie bracket} and denoted
-$[x, y]$ for two vectors $x$ and $y$. Any vector space equipped with a Lie bracket (or
+$[x, y]$ for two vectors $x$ and $y$. Any vector space ~equipped with a Lie bracket (or
 multiplication rule) satisfying the following conditions is called a Lie algebra:
 
 \begin{itemize}
@@ -204,3 +256,8 @@ sum of the Hamiltonians of the $N$ non-linear elements:
 It is though to be noted that in this thesis experimental measurements show the evidence of higher
 order contributions. In order to fully understand the combined effect of multipoles, the BCH
 expansion needs to be expended further than the first two terms.
+
+
+% ========================
+% Normal Form
+\subsubsection{Normal Form}

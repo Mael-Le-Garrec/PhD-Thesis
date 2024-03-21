@@ -3,35 +3,32 @@
 % ============================================
 %                Nomenclature
 % ============================================
-\subsection{Nomenclature}
+\subsection{\review{Nomenclature}}
 
 Several notations coexist to denote magnetic fields. In this thesis, the
-\textit{European Convention}~\cite{dilly_corrections_2022} is used for field indices, as shows
-the summary in Tab.~\ref{tab:magnetic_fields:relation_indices}. MAD-X, and MAD-NG, however, use the
+\textit{European Convention}~\cite{dilly_corrections_2022} is used for field indices, as shown
+in Tab.~\ref{tab:magnetic_fields:relation_indices}. MAD-X, and MAD-NG, however, use the
 \textit{American Convention}.
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{l|c|c}
-        Multipole      &     Index     &      MAD-X Index    \\
-    \hline 
-        Dipole         &     1         &     0               \\       
-        Quadrupole     &     2         &     1               \\
-        Sextupole      &     3         &     2               \\
-        Octupole       &     4         &     3               \\
-        Decapole       &     5         &     4               \\
-        Dodecapole     &     6         &     5               \\
-        Decatetrapole  &     7         &     6               \\
+    \begin{tabular}{l|c|c|c}
+        Multipole     &      MAD-X        &     Index        & Normalized Strength \\
+    \hline            
+        Dipole        &     0             &     1            & $K_1$   \\       
+        Quadrupole    &     1             &     2            & $K_2 $  \\
+        Sextupole     &     2             &     3            & $K_3 $  \\
+        Octupole      &     3             &     4            & $K_4 $  \\
+        Decapole      &     4             &     5            & $K_5 $  \\
+        Dodecapole    &     5             &     6            & $K_6 $  \\
+        Decatetrapole &     6             &     7            & $K_7 $  \\
     \end{tabular}
     \caption{Relation between field indices and multipoles.}
     \label{tab:magnetic_fields:relation_indices}
 \end{table}
 
-\todo{
-Indices for K and b.\\
-J for action and skew field.\\
-reference radius = 0.017m
-}
+As such, unless explicitly stated, quantities such as the magnetic strength $b$ and normalized
+strength $K$ will be expressed with this notation. 
 
 
 % ============================================
@@ -97,7 +94,7 @@ of the particle:
 It is of interest when designing an accelerator to set the maximum field as well as the required
 radius of curvature for a specific momentum and particle.
 An interesting metric of an accelerator is also its \textit{filling factor}, or percentage of
-dipoles in the machine. It can be calculated via the radius of curvate: $f = \rho / r$. A low 
+dipoles in the machine. It can be calculated via the radius of curvature: $f = \rho / r$. A low 
 filling factors means more space for other magnets, collimators, beam instrumentation, etc.
 
 \subsubsection{Field Normalization}
