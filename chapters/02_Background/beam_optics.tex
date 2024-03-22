@@ -1,11 +1,13 @@
-\section{Beam Optics}
+\section{Beam Observables}
 
-\todo{blabla}
+\todo{title?\\
+Linear observables\\
+Optics}
 
 % ============================================
 %               Dispersion
 % ============================================
-\subsection{Dispersion}
+\subsection{\review{Dispersion}}
 
 Treating a beam as a single particle having the design momentum $p_0$ leads to a machine with no
 apparent ill effect related to that momentum.
@@ -25,7 +27,7 @@ Figure~\ref{fig:coordinate_systems:dispersion} shows an example of deflection.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{images/dipole.png}
+    \includegraphics[width=0.6\textwidth]{images/dipole.pdf}
     \caption{Particles with a momentum offset will be deflected differently by dipoles. This offset
             in position can be described by the dispersion function.}
     \label{fig:coordinate_systems:dispersion}
@@ -45,9 +47,33 @@ described by Eq.~\eqref{fig:coordinate_systems:dispersion}.
 
 
 % ============================================
-%               Beta Beating
+%               Beta Function
 % ============================================
-\subsection{\todo{$\beta$-beating}}
+\subsection{\todo{$\beta$-function}}
+
+As seen previously in~\ref{section:courant_snyder}, the $\beta$-function is related to the amplitude
+of oscillations of the beam. Figure~\ref{fig:beam_optics:beta} shows how the $\beta$-function
+oscillates along the ring due to quadrupoles focusing and defocusing properties.
+The $\beta$-function is an important quantity found as a factor in several other observables that
+will be described later in this thesis.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/beta_function.pdf}
+    \caption{Evolution of the $\beta$-function along the lattice. Horizontal and vertical beatings
+    are usually opposite given the focusing and defocusing properties of quadrupoles in each plane.}
+    \label{fig:beam_optics:beta}
+\end{figure}
+
+A difference in $\beta$-function compared to the design leads to possible unstable and larger beams,
+degrading its properties and making it harder to control. The relative difference in
+$\beta$-function is called the beta-beating, expressed in percents: 
+
+\begin{equation}
+    \mathrm{beating \; [\%]}  = \frac{\beta_z(s) - \beta_z(s)_{model}}{\beta_z(s)_{model}}.
+    \label{eq:beam_optics:beating}
+\end{equation}
 
 
 % ============================================
