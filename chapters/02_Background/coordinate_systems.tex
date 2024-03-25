@@ -47,14 +47,16 @@ A circular accelerator is composed of many multipoles of different orders. A bas
 design only requires dipoles and quadrupoles in order to operate. Dipoles are used to bend the
 particles in order to form the ring, whereas quadrupoles are used to focus the beam to a focal
 point, similar to light optics.
-Those elements can be arranged in a particular order, to form a \text{FODO} cell. Such cells present
-an alternating placement of focusing an defocusing quadrupoles with dipoles in between, as shown in
+Those elements can be arranged in a particular order, to form a FoDo cell. Such cells present an
+alternating placement of focusing an defocusing quadrupoles with dipoles in between, as shown in
 Fig.\ref{fig:coordinate_systems:fodo}, and are usually repeated many times along the ring.
 
-\begin{figure}[H]
+\begin{figure}[htb]
     \centering
-    \includegraphics[width=0.6\textwidth]{example-image-a}
-    \caption{\todo{FODO cell, a repeated basic block present in most circular accelerators.}}
+    \includegraphics[width=0.8\textwidth]{images/fodo_drawing.pdf}
+    \caption{Line composed of FoDo cells, a basic cell present in most accelerators, composed of a
+    Focusing and a Defocusing quadrupole. The envelope is a factor of the $\beta$-function and the
+    action $J$.}
     \label{fig:coordinate_systems:fodo}
 \end{figure}
 
@@ -66,7 +68,7 @@ position $s$ in the ring can be described with a new system: the Courant-Snyder 
 know as Twiss parameters or the \textit{optics functions}~\cite{courant_theory_1958}, as shown in
 Fig.~\ref{fig:coordinate_systems:twiss}.\\
 
-\begin{figure}[H]
+\begin{figure}[htb]
     \centering
     \includegraphics[width=0.6\textwidth]{images/phase_space.pdf}
     \caption{Phase-space ellipse of a linear machine, parametrized by the Courant-Snyder

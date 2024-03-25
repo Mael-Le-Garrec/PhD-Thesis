@@ -18,6 +18,9 @@
 
 \begin{document}
 
+% stfu hyperref
+%\WarningsOff*{hyperref}
+\WarningFilter{hyperref}{Token not allowed in a PDF string}
 
 % =================================================
 %           Stuff at the very beginning
@@ -57,7 +60,7 @@
 % =================================================
 \mainmatter
 
-\include{chapters/04_to_delete/00_old_text}
+%\include{chapters/04_to_delete/00_old_text}
 \include{chapters/01_Introduction/00_introduction.tex}
 \include{chapters/02_Background/00_background}
 \include{chapters/03_Optics_Measurements_Corrections/00_optics}

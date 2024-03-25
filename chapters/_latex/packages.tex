@@ -4,6 +4,11 @@
 \usepackage{fix-cm}
 \usepackage{microtype}  % better justifications, amongst others
 \usepackage{longtable,booktabs}
+
+% Make hyperref silent, it's always complaining for tokens like \beta
+\usepackage{silence}
+%\WarningFilter*{hyperref}{Token not allowed in a PDF string (Unicode)}
+
 \usepackage[unicode=true,pdfa]{hyperref}
 \hypersetup{breaklinks=true,
             pdfauthor={Maël Le Garrec},
@@ -15,7 +20,7 @@
             pdfborder={0 0 0}}
 \usepackage{cleveref}
 \usepackage[english]{babel}
-\usepackage{calligra}
+\usepackage{calligra}  % font for quote page
 \usepackage{lmodern}
 \usepackage{wasysym}
 \usepackage{enumitem}  % to define new lists
@@ -35,7 +40,7 @@
 \usepackage{float}
 %\usepackage[subfigure]{tocloft}
 \usepackage{titletoc}
-\usepackage{etoc}
+\usepackage{etoc}  % local tables of content
 \usepackage{imakeidx}
 \usepackage{lipsum}
 \usepackage{geometry}
@@ -44,6 +49,7 @@
 \usepackage{blindtext}
 %\usepackage{unicode-math} % Setup an unicode font for regular typing and for maths  // clashes with OverBrace from nicematrix
 \usepackage{amsmath}
+\usepackage{mathtools}  % for some functions, like DeclarePairedDelimiter
 \usepackage{svg}
 \usepackage{nicematrix}
 \usepackage[
@@ -109,8 +115,12 @@
 %\geometry{a4paper, top=2.625cm, left=2.1cm, right=3.15cm, bottom=3.675cm, includehead, includefoot}
 \geometry{b5paper, top=2.2cm, left=1.76cm, right=2.64cm, bottom=3.08cm, includehead, includefoot}
 
+% Vertical space before chapters
+\RedeclareSectionCommand[beforeskip=5pt,
+afterskip=2cm]{chapter}
+
 % Fancy chapter headings, needs to be loaded after geometry
-\usepackage[Bjornstrup]{fncychap}
+%\usepackage[Bjornstrup]{fncychap}
 
 % Change the headers to display both the current chapter and section, from fancyhdr
 %\pagestyle{fancy} 
@@ -163,7 +173,7 @@
   \setcounter{tocdepth}{4}
 
   % Reduce the spacing between the list items
-  \addsec*{\rule{\textwidth}{0.4pt}}
+  %\addsec*{\rule{\textwidth}{0.4pt}}
   \begin{spacing}{0.1}
     \localtableofcontents%
   \end{spacing}
@@ -181,3 +191,48 @@
 \newcommand*{\review}[1]{{\bfseries\color{orange}#1}}
 % OK in green
 \newcommand*{\done}[1]{{\bfseries\color{green}#1}}
+
+
+% For commands floor and ceil to be easier to type
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+
+
+% Nice looking chapters
+\renewcommand*{\chapterformat}{\thechapter}
+\renewcommand*{\raggedchapter}{\raggedleft}
+\setkomafont{chapter}{\LARGE}
+\setkomafont{chapterprefix}{\Huge}
+\newcommand*{\ChapterCase}[1]{#1}
+%\newcommand*{\ChapterCase}[1]{\MakeUppercase{#1}}% grauenvoll / ugly
+%\newcommand*{\ChapterCase}[1]{\MakeUppercase{\textls[75]{#1}}}% besser / better
+\newsavebox\chapternumberbox
+\renewcommand*{\chapterlinesformat}[3]{% #1 = Ebenenname / chapter command name
+                                       % #2 = Nummer (oder leer) / number (or empty)
+                                       % #3 = Text / text
+  \rule[-\dp\strutbox]{\linewidth}{.4pt}%
+  \sbox\chapternumberbox
+  {%
+    \makebox[0pt][l]{%
+      \hspace{-\linewidth}\hspace{.5em}%
+      \colorbox{black}{%
+        \parbox[c][1.5em][c]{1.5em}{%
+          \centering
+          \textcolor{white}{%
+            \usekomafont{chapterprefix}{%
+              \strut #2%
+            }%
+          }%
+          \par
+        }%
+      }%
+    }%
+  }%
+  \IfArgIsEmpty{#2}{%
+    \vphantom{\usebox\chapternumberbox}%
+  }{\usebox\chapternumberbox}%
+  \par
+  \ChapterCase{\strut\ignorespaces #3}%
+  \rule[.5em]{\linewidth}{.4pt}\par
+}
