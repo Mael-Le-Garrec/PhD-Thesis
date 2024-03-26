@@ -110,9 +110,69 @@ to switch between the Courant-Snyder parameters and the Frenet-Serret system:
 
 % ========================
 % Linear Transfer Map
-\subsubsection{Linear Transfer Map}
+\subsubsection{\review{Linear Transfer Maps}}
 
+It is possible to describe the final position of a particle after going through an element via
+\textit{transfer maps}. In linear optics, such linear maps are matrices. For a matrix $\mathcal{M}$
+and positions $z$ at the initial location and $s$, the general formula
+reads~\cite{lee_accelerator_2004}:
 
+\begin{equation}
+    \begin{pmatrix}
+        z \\
+        z'
+    \end{pmatrix}_s
+    = M \cdot 
+    \begin{pmatrix}
+        z \\
+        z'
+    \end{pmatrix}_0
+\end{equation}
+
+This formalism assumes that the magnetic field is constant along the element in the longitudinal
+direction. Basic elements such as drifts, dipoles, quadrupoles can then be described be a simple
+$2 \ times 2$ matrix:
+
+\begin{equation}
+    M_{drift} = \begin{pmatrix}
+                    1 & L \\
+                    0 & 1 
+                \end{pmatrix},
+\end{equation}
+\begin{equation}
+    M_{dipole} = \begin{pmatrix}
+                    \cos\left(L/\rho\right) & \rho \sin\left(L/\rho\right) \\
+                    -1/\rho \sin\left(L/\rho\right) & \cos\left(L/\rho\right)
+                 \end{pmatrix}, \\
+\end{equation}
+\begin{equation}
+    M_{focusing\;quad.} = \begin{pmatrix}
+                             \cos\left(\sqrt{k_2}L\right) & 1/\sqrt{k_2} \sin\left(\sqrt{k_2}L\right) \\
+                             -\sqrt{k_2}\sin\left(\sqrt{k_2}L\right) & \cos\left(\sqrt{k_2}L\right)
+                          \end{pmatrix},\\
+\end{equation}
+\begin{equation}
+    M_{defocusing\;quad.} = \begin{pmatrix}
+                        cosh\left(\sqrt{|k_2|}L \right) & 1/\sqrt{|k_2|} sinh\left(\sqrt{|k_2|} L\right) \\
+                        \sqrt{|k_2|} sinh\left(\sqrt{|k_2|} L\right) & cosh\left(\sqrt{|k_2|} L \right)
+                            \end{pmatrix},\\
+\end{equation}
+
+where L is the length of the element, $\rho$ the radius of curvature of the orbit and $k_2$ the
+normalized strength of quadrupoles. In the case of quadrupoles, a focusing matrix should be used in
+the horizontal plane for focusing quadrupoles, where defocusing matrices should be used in the
+vertical plane. The opposite goes for defocusing quadrupoles.
+
+Transfer matrices can be multiplied together to form a larger group of elements, as the FoDo cell
+seen previously. Its transfer matrix can then be expressed as:
+
+\begin{equation}
+    M_{FoDo} = M_{focusing\;quad} \cdot M_{drift} \cdot M_{defocusing\;quad} \cdot M_{drift}.
+\end{equation}
+
+For a closed machine, a full revolution can be described by a so-called \textit{one-turn map}, being
+the transfer matrix of the whole machine, denoted $\mathcal{M}$. Such a map can potentially contain
+thousands of elements.
 
 
 % ============================================
@@ -122,7 +182,7 @@ to switch between the Courant-Snyder parameters and the Frenet-Serret system:
 
 % ========================
 % Lie Algebra
-\subsubsection{Lie Algenra}
+\subsubsection{Lie Algebra}
 
 So far, Courant-Snyder parameters were a good way to describe the distribution of positions and
 velocities of particles in the transverse plane. One caveat of using this formalism is that it is 

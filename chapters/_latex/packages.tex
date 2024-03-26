@@ -170,7 +170,7 @@ afterskip=2cm]{chapter}
   %\setlength{\cftsubsubsecindent}{1.4cm}
 
   %\etocmulticolstyle{\addsec*{#1\\\rule{\textwidth}{0.4pt}}}%
-  \setcounter{tocdepth}{4}
+  \setcounter{tocdepth}{3}
 
   % Reduce the spacing between the list items
   %\addsec*{\rule{\textwidth}{0.4pt}}
@@ -205,12 +205,12 @@ afterskip=2cm]{chapter}
 \setkomafont{chapter}{\LARGE}
 \setkomafont{chapterprefix}{\Huge}
 \newcommand*{\ChapterCase}[1]{#1}
-%\newcommand*{\ChapterCase}[1]{\MakeUppercase{#1}}% grauenvoll / ugly
-%\newcommand*{\ChapterCase}[1]{\MakeUppercase{\textls[75]{#1}}}% besser / better
+%\newcommand*{\ChapterCase}[1]{\MakeUppercase{#1}}%  ugly
+%\newcommand*{\ChapterCase}[1]{\MakeUppercase{\textls[75]{#1}}}% better
 \newsavebox\chapternumberbox
-\renewcommand*{\chapterlinesformat}[3]{% #1 = Ebenenname / chapter command name
-                                       % #2 = Nummer (oder leer) / number (or empty)
-                                       % #3 = Text / text
+\renewcommand*{\chapterlinesformat}[3]{% #1 = chapter command name
+                                       % #2 = number (or empty)
+                                       % #3 = text
   \rule[-\dp\strutbox]{\linewidth}{.4pt}%
   \sbox\chapternumberbox
   {%
