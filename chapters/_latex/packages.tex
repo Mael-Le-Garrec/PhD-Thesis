@@ -24,6 +24,7 @@
 \usepackage{lmodern}
 \usepackage{wasysym}
 \usepackage{enumitem}  % to define new lists
+\usepackage{tikz}  % for drawing figures by code
 \usepackage{siunitx}
 \usepackage{graphicx}
 \usepackage{caption}
@@ -120,7 +121,7 @@
 afterskip=2cm]{chapter}
 
 % Fancy chapter headings, needs to be loaded after geometry
-%\usepackage[Bjornstrup]{fncychap}
+%\usepackage[Bjornstrup]{fncychap}  % issues a lot of warnings with scrbook, replaced in commands below
 
 % Change the headers to display both the current chapter and section, from fancyhdr
 %\pagestyle{fancy} 
@@ -128,7 +129,6 @@ afterskip=2cm]{chapter}
 % Factor spacing between lines
 \linespread{1.1}
 
-% Gives to the equation "number" the section number as well, makes it easier to find where it is in the book
 \numberwithin{equation}{chapter}
 \numberwithin{table}{chapter}
 \numberwithin{figure}{chapter}
@@ -149,7 +149,9 @@ afterskip=2cm]{chapter}
 % Define some colors
 \definecolor{thumb_color}{HTML}{D9D9D9}
 
-
+% LaTeX will stretch the page to fit vertically on the whole page
+% This prevents it
+\raggedbottom
 
 % ===========================================================================
 %                            SOME COMMANDS

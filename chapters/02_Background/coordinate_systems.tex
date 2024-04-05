@@ -1,5 +1,7 @@
 \section{Coordinate Systems}
 
+\todo{something about simplecticity}
+
 In circular accelerators, particle dynamics are represented using a traveling coordinate system.
 A reference orbit is determined by the lattice and its magnet strengths, forming the
 \textit{optics}. In the case of a synchrotron, like the LHC, where the particles return to their
@@ -35,7 +37,7 @@ thesis. It is frequent to use the variable $z$ to refer to either $x$ or $y$ in 
 % ============================================
 %               Linear Lattice 
 % ============================================
-\subsection{Linear Lattice}
+\subsection{\review{Linear Lattice}}
 
 
 % ========================
@@ -108,14 +110,57 @@ to switch between the Courant-Snyder parameters and the Frenet-Serret system:
 \end{equation}
 
 
+\subsubsection{\todo{Normalized Coordinates}}
+
+In order to simplify the description of the linear motion in a ring, a transformation can be applied
+to the previously seen coordinates. Figure \cref{fig:coordinate_systems:normalized_coordinates}
+shows a phase-space described in both coordinates. The new coordinates, $\hat{z}$, and $\hat{p}_z$,
+are then expressed as factors of the $\alpha$ and $\beta$ functions:
+
+\begin{equation}
+    \begin{pmatrix}
+        \hat{z}    \\
+        \hat{p}_z 
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        \frac{1}{\sqrt{\beta_z}}         &   0 \\
+        \frac{\alpha_z}{\sqrt{\beta_z}}  &   \sqrt{\beta_z}
+    \end{pmatrix}
+    \begin{pmatrix}
+        z
+        p_z 
+    \end{pmatrix}.
+\end{equation}
+
+This allows to describe the motion as a simple rotation, the new coordinates being only dependent on
+the invariant $J_z$ and the phase $\phi_z$:
+
+\begin{equation}
+    \begin{aligned}
+        \hat{z}   &= \sqrt{2J_z} \cos \left(\phi_z \right), \\
+        \hat{p}_z &= \sqrt{2J_z} \cos \left(\phi_z \right).
+    \end{aligned}
+\end{equation}     
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{example-image-a}
+    \label{fig:coordinate_systems:normalized_coordinates}
+    \caption{Normalized coordinates}
+\end{figure}
+
+
 % ========================
 % Linear Transfer Map
 \subsubsection{\review{Linear Transfer Maps}}
+\label{section:coordinate_systems:linear_maps}
 
 It is possible to describe the final position of a particle after going through an element via
-\textit{transfer maps}. In linear optics, such linear maps are matrices. For a matrix $\mathcal{M}$
-and positions $z$ at the initial location and $s$, the general formula
-reads~\cite{lee_accelerator_2004}:
+\textit{transfer maps}. In linear optics, such linear maps are matrices. Those maps are symplectic,
+meaning they preserve the phase-space area. For a matrix $\mathcal{M}$ and positions $z$ at the
+initial location and $s$, the general formula reads~\cite{lee_accelerator_2004}:
 
 \begin{equation}
     \begin{pmatrix}
@@ -131,7 +176,7 @@ reads~\cite{lee_accelerator_2004}:
 
 This formalism assumes that the magnetic field is constant along the element in the longitudinal
 direction. Basic elements such as drifts, dipoles, quadrupoles can then be described be a simple
-$2 \ times 2$ matrix:
+$2 \times 2$ matrix:
 
 \begin{equation}
     M_{drift} = \begin{pmatrix}
@@ -163,7 +208,7 @@ normalized strength of quadrupoles. In the case of quadrupoles, a focusing matri
 the horizontal plane for focusing quadrupoles, where defocusing matrices should be used in the
 vertical plane. The opposite goes for defocusing quadrupoles.
 
-Transfer matrices can be multiplied together to form a larger group of elements, as the FoDo cell
+Transfer matrices can be combined together to describe a larger group of elements, as the FoDo cell
 seen previously. Its transfer matrix can then be expressed as:
 
 \begin{equation}
@@ -182,7 +227,7 @@ thousands of elements.
 
 % ========================
 % Lie Algebra
-\subsubsection{Lie Algebra}
+\subsubsection{\review{Lie Algebra}}
 
 So far, Courant-Snyder parameters were a good way to describe the distribution of positions and
 velocities of particles in the transverse plane. One caveat of using this formalism is that it is 
@@ -226,13 +271,13 @@ multiplication rule) satisfying the following conditions is called a Lie algebra
 
 % ========================
 % Poisson Brackets
-\subsubsection{Poisson Brackets}
+\subsubsection{\review{Poisson Brackets}}
 
 To create a Lie algebra, an operation satisfying those conditions needs to be found. In accelerator
 physics, \textit{Poisson brackets} are chosen~\cite{dragt_overview_2013,roy_analysis_1992}. Let's
 consider position and momentum coordinates $q_i \cdots q_n$ and $p_i \cdots p_n$  of a
 2n-dimensional phase space. Usually, those would be $x, y, p_x \text{ and } p_y$ for transverse
-coordinates. The Poisson brackets of two functions $f$ and $g$ if then defined by:
+coordinates. The Poisson brackets of two functions $f$ and $g$ is then defined by:
 
 \begin{equation}
     [f,g] = \sum^n_{i=1} \frac{\partial f}{\partial q_i} \frac{\partial g}{\partial p_i}
@@ -243,7 +288,7 @@ coordinates. The Poisson brackets of two functions $f$ and $g$ if then defined b
 
 % ========================
 % Lie Operator
-\subsubsection{Lie Operator}
+\subsubsection{\review{Lie Operator}}
 
 Given a function $f$, a differential operator called \textit{Lie operator} is defined, and is closely
 related to the previously seen Poisson bracket:
@@ -273,10 +318,10 @@ transformation}:
 
 % ========================
 % Non-Linear Transfer Map
-\subsubsection{Non-Linear Transfer Maps}
+\subsubsection{\review{Non-Linear Transfer Maps}}
 
-As introduced \todo{before}, the dynamics of a particle beam in a circular accelerator can be
-described by \textit{transfer maps}. A symplectic \textit{One Turn Map} $\mathcal{M}$ that also
+As introduced in~\ref{section:coordinate_systems:linear_maps}, the dynamics of a particle beam in a circular accelerator can be
+described by \textit{transfer maps}. A symplectic \textit{One Turn Map} $\mathcal{M}$ that
 includes $N$ non-linear elements is defined~\cite{dragt_overview_2013} as:
 
 \begin{equation}
@@ -285,8 +330,8 @@ includes $N$ non-linear elements is defined~\cite{dragt_overview_2013} as:
 
 where $\mathcal{R}$ is a matrix describing the linear motion over one turn and the $h_i$ terms
 representing the Hamiltonian of each non-linear elements of the machine.
-Via the Baker-Campbell-Hausdorff (BCH)\todo{citation} theorem, previous Lie transformations can be combined and
-simplified:
+Via the Baker-Campbell-Hausdorff (BCH) theorem~\cite{forest_beam_1998}, previous Lie transformations
+can be combined and simplified:
 
 \begin{equation}
     e^{:h_1:} \cdot e^{:h_2:} = e^{:h:}
@@ -305,6 +350,7 @@ The one turn map is thus expressed as a single Lie transformation:
 
 \begin{equation}
     \mathcal{M} = e^{:h:} \cdot \mathcal{R}.
+   \label{eq:coordinate_systems:non_linear_map}
 \end{equation}
 
 In most cases, were the non-linear perturbations are small, the above series converges quickly
@@ -323,5 +369,106 @@ expansion needs to be expended further than the first two terms.
 
 % ========================
 % Normal Form
-\subsubsection{Normal Form}
+\subsubsection{\todo{Normal Form}}
 
+As non-linearities are introduced in the machine, the phase-space becomes distorted, resulting in
+$J_z$ no longer being an invariant of motion. The previously seen normalization does not work
+anymore and the phase-space is no longer a simple circle. A new normalization is then introduced,
+called the \textit{normal form}, with complex coordinates $\zeta$, depending on new action and
+angle coordinates $I_z$ and $\psi_z$:
+
+\begin{equation}
+    \zeta_{z,\pm} = \sqrt{2I_z} e^{\mp i \psi_z}.
+\end{equation}
+
+An exaggerated vision of such a phase-space in Courant-Snyder, normalized, and normal form
+coordinates can be seen in \cref{fig:coordinate_systems:distorted_phase_space}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{example-image-a}
+    \caption{Distorted coordinates}
+    \label{fig:coordinate_systems:distorted_phase_space}
+\end{figure}
+
+The map defined previously in \cref{eq:coordinate_systems:non_linear_map} can be rewritten in order
+to retrieve an invariant of motion $I_z$ by introducing a generating function $F$:
+
+\begin{equation}
+    \tilde{\mathcal{M}} = e^{:-F:} \mathcal{M} e^{:F:}
+    \label{eq:coordinate_systems:non_linear_map_normal_form}
+\end{equation}
+
+
+
+Such a generating function includes all the non-linearities, simplifying the calculations.
+Going back and forth from normalized to normal forms coordinates is then straightforward, as
+depicted in \cref{fig:coordinate_systems:non_linear_map_normal_form}. The hamiltonian $H$ is now
+only dependent on the action $I_z$.
+
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[>=stealth]
+        % Defining the coordinates
+        \coordinate (A) at (0, 0);
+        \coordinate (B) at (0, 2);
+        \coordinate (C) at (3, 0);
+        \coordinate (D) at (3, 2);
+        
+        % Drawing lines with arrows
+        \draw[shorten <=0.2cm, shorten >=0.2cm, ->] (B) -- node[left, text centered] {$e^{:-F:}$} (A);
+        \draw[shorten <=0.2cm, shorten >=0.2cm, ->] (C) -- node[right, text centered] {$e^{:F:}$} (D);
+        \draw[shorten <=0.4cm, shorten >=0.5cm, ->] (A) -- node[below, text centered] {$e^{:H:} \cdot \mathcal{R}$} (C);
+        \draw[shorten <=0.8cm, shorten >=1cm, ->] (B) -- node[above, text centered] {$\hat{\mathcal{M}}$} (D);
+        
+        % Adding labels
+        \node at (B) []{$(\hat{z} \pm \hat{p}_z)_N$};
+        \node at (D) []{$(\hat{z} \pm \hat{p}_z)_{N+1}$};
+        \node at (C) [] {$\zeta_{N+1}$};
+        \node at (A) [] {$\zeta_{N}$};
+    \end{tikzpicture}
+    \caption{A one turn map from turn N to N+1 solved using a generating function $F$, 
+    transforming to normal form coordinates $\zeta$, applying the linear rotation $R$ and
+    transforming back to normalized cooridnates.}
+    \label{fig:coordinate_systems:non_linear_map_normal_form}
+\end{figure}
+
+The function $F$ is defined as
+
+\begin{equation}
+    F = \sum_{jklm} f_{jklm}\zeta_{x,+}^j \zeta_{x,-}^k \zeta_{y,+}^l \zeta_{y,-}^m,
+\end{equation}
+
+where $f_{jklm}$ are the so-called Resonance Driving Terms (RDTs).
+The summation $jklm$ is done over all the combinations of $j$, $k$, $l$ and $m$ with $j+k+l+m = n$
+for a multipole of order $n$. Its formula is given by the hamiltonian term $h_jklm$ by
+
+\begin{equation}
+    f_{jklm} = \frac{h_{jklm}}{1 - e^{i2\pi \left[ (j-k)Q_x + (l-m) Q_y \right]}}
+\end{equation}
+
+where this coefficient is a summation over the hamiltonians terms,
+
+\begin{equation}
+    h_{jklm} = \sum_w h_{w,jklm} e^{i [(j-k)\Delta \phi_x + (l-m) \Delta \phi_y]}.
+\end{equation}
+
+The expression of $h_{w,jklm}$ is derived from the hamiltonian of an element
+(\cref{eq:normal_skew_hamiltonian_magnet}) and by applying a binomial
+expansion~\cite{franchi_studies_2006}:
+
+\begin{equation}
+    h_{w,jklm} = -\Re \left[\frac{K_{w,n} + iJ_{w,n}}{j!k!l!m! 2^{j+k+l+m}}
+    i^{l+m} \beta_{w,x}^{\frac{j+k}{/2}} \beta_{w,y}^{\frac{l+m}{2}} \right]
+\end{equation}
+
+
+
+
+% ============================================
+%           Examples of Maps
+% ============================================
+\section{\todo{Examples of Maps}}
+
+\todo{Quadrupole in linear vs non linear formalism}
