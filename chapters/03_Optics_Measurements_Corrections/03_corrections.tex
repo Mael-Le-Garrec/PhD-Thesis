@@ -18,10 +18,10 @@ Individual MAD-X simulations are run with a single multipole powered at a time. 
 parameter values (e.g. $\beta$-beating) are then compared to those obtained from a simulation without
 any powering, allowing to determine the specific impact of each multipole.
 
-A response matrix is thus created following Eq.~\eqref{eq:resp_matrix}, for a matrix of observables
+A response matrix is thus created following \cref{eq:resp_matrix}, for a matrix of observables
 $O$, a reference matrix of observables without any corrector $O_R$ and a fixed multipole strength
 $k$. Given measured data $M$, the set of correctors needed to compensate the values can be obtained
-by taking the pseudo-inverse of the matrix in Eq.~\eqref{eq:resp_matrix_inverted}.
+by taking the pseudo-inverse of the matrix in \cref{eq:resp_matrix_inverted}.
 
 \begin{equation}
   R = \left(O - O_R \right) \cdot \frac{1}{k}
@@ -50,8 +50,8 @@ correctors, powered with a fixed strength one at a time. A scaling factor is app
 change of chromaticity for one unit of $K_5$.  8 correctors are used, which strengths are denoted
 $k_1$ through $k_8$.  Transposes are only used to make the equations easier to display.\\
 The values in Tab.\ref{table:resp_matrix_example} are corrected via
-Eq.~\eqref{eq:resp_matrix_inverse_example} after having built the response matrix in
-Eq.~\eqref{eq:resp_matrix_example}.
+\cref{eq:resp_matrix_inverse_example} after having built the response matrix in
+\cref{eq:resp_matrix_example}.
 
 \begin{table}[H]
   \center

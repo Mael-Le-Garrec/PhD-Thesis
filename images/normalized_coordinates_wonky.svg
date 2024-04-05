@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   sodipodi:docname="normalized_coordinates_wonky.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.114885"
+     inkscape:cx="386.07301"
+     inkscape:cy="190.79052"
+     inkscape:window-width="1276"
+     inkscape:window-height="1393"
+     inkscape:window-x="3200"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="marker3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ConcaveTriangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path7" />
+    </marker>
+    <path
+       id="MJX-4-TEX-I-1D467"
+       d="M347 338Q337 338 294 349T231 360Q211 360 197 356T174 346T162 335T155 324L153 320Q150 317 138 317Q117 317 117 325Q117 330 120 339Q133 378 163 406T229 440Q241 442 246 442Q271 442 291 425T329 392T367 375Q389 375 411 408T434 441Q435 442 449 442H462Q468 436 468 434Q468 430 463 420T449 399T432 377T418 358L411 349Q368 298 275 214T160 106L148 94L163 93Q185 93 227 82T290 71Q328 71 360 90T402 140Q406 149 409 151T424 153Q443 153 443 143Q443 138 442 134Q425 72 376 31T278 -11Q252 -11 232 6T193 40T155 57Q111 57 76 -3Q70 -11 59 -11H54H41Q35 -5 35 -2Q35 13 93 84Q132 129 225 214T340 322Q352 338 347 338Z" />
+    <path
+       id="MJX-5-TEX-I-1D45D"
+       d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z" />
+    <path
+       id="MJX-5-TEX-I-1D467"
+       d="M347 338Q337 338 294 349T231 360Q211 360 197 356T174 346T162 335T155 324L153 320Q150 317 138 317Q117 317 117 325Q117 330 120 339Q133 378 163 406T229 440Q241 442 246 442Q271 442 291 425T329 392T367 375Q389 375 411 408T434 441Q435 442 449 442H462Q468 436 468 434Q468 430 463 420T449 399T432 377T418 358L411 349Q368 298 275 214T160 106L148 94L163 93Q185 93 227 82T290 71Q328 71 360 90T402 140Q406 149 409 151T424 153Q443 153 443 143Q443 138 442 134Q425 72 376 31T278 -11Q252 -11 232 6T193 40T155 57Q111 57 76 -3Q70 -11 59 -11H54H41Q35 -5 35 -2Q35 13 93 84Q132 129 225 214T340 322Q352 338 347 338Z" />
+    <path
+       id="MJX-9-TEX-I-1D45D"
+       d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z" />
+    <path
+       id="MJX-9-TEX-I-1D467"
+       d="M347 338Q337 338 294 349T231 360Q211 360 197 356T174 346T162 335T155 324L153 320Q150 317 138 317Q117 317 117 325Q117 330 120 339Q133 378 163 406T229 440Q241 442 246 442Q271 442 291 425T329 392T367 375Q389 375 411 408T434 441Q435 442 449 442H462Q468 436 468 434Q468 430 463 420T449 399T432 377T418 358L411 349Q368 298 275 214T160 106L148 94L163 93Q185 93 227 82T290 71Q328 71 360 90T402 140Q406 149 409 151T424 153Q443 153 443 143Q443 138 442 134Q425 72 376 31T278 -11Q252 -11 232 6T193 40T155 57Q111 57 76 -3Q70 -11 59 -11H54H41Q35 -5 35 -2Q35 13 93 84Q132 129 225 214T340 322Q352 338 347 338Z" />
+    <path
+       id="MJX-9-TEX-N-5E"
+       d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z" />
+    <path
+       id="MJX-10-TEX-I-1D467"
+       d="M347 338Q337 338 294 349T231 360Q211 360 197 356T174 346T162 335T155 324L153 320Q150 317 138 317Q117 317 117 325Q117 330 120 339Q133 378 163 406T229 440Q241 442 246 442Q271 442 291 425T329 392T367 375Q389 375 411 408T434 441Q435 442 449 442H462Q468 436 468 434Q468 430 463 420T449 399T432 377T418 358L411 349Q368 298 275 214T160 106L148 94L163 93Q185 93 227 82T290 71Q328 71 360 90T402 140Q406 149 409 151T424 153Q443 153 443 143Q443 138 442 134Q425 72 376 31T278 -11Q252 -11 232 6T193 40T155 57Q111 57 76 -3Q70 -11 59 -11H54H41Q35 -5 35 -2Q35 13 93 84Q132 129 225 214T340 322Q352 338 347 338Z" />
+    <path
+       id="MJX-10-TEX-N-5E"
+       d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#ConcaveTriangle);stroke-dasharray:none"
+       d="M 96.902872,84.020063 V 11.602703"
+       id="path1"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker3);stroke-dasharray:none"
+       d="M 57.014845,46.972942 H 135.12215"
+       id="path2"
+       sodipodi:nodetypes="cc" />
+    <g
+       stroke="currentColor"
+       fill="currentColor"
+       stroke-width="0"
+       transform="matrix(0.00477893,0,0,-0.00477893,99.58483,15.794118)"
+       id="g8">
+      <g
+         data-mml-node="math"
+         id="g7">
+        <g
+           data-mml-node="TeXAtom"
+           data-mjx-texclass="ORD"
+           id="g6-2">
+          <g
+             data-mml-node="mover"
+             id="g5-9">
+            <g
+               data-mml-node="msub"
+               id="g3-1">
+              <g
+                 data-mml-node="mi"
+                 id="g1-2">
+                <use
+                   data-c="1D45D"
+                   xlink:href="#MJX-9-TEX-I-1D45D"
+                   id="use1-7" />
+              </g>
+              <g
+                 data-mml-node="mi"
+                 transform="matrix(0.707,0,0,0.707,536,-150)"
+                 id="g2-0">
+                <use
+                   data-c="1D467"
+                   xlink:href="#MJX-9-TEX-I-1D467"
+                   id="use2-9" />
+              </g>
+            </g>
+            <g
+               data-mml-node="mo"
+               transform="translate(207.4,16)"
+               id="g4">
+              <use
+                 data-c="5E"
+                 xlink:href="#MJX-9-TEX-N-5E"
+                 id="use3" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       stroke="currentColor"
+       fill="currentColor"
+       stroke-width="0"
+       transform="matrix(0.00520022,0,0,-0.00520022,130.55895,52.320734)"
+       id="g6">
+      <g
+         data-mml-node="math"
+         id="g5">
+        <g
+           data-mml-node="TeXAtom"
+           data-mjx-texclass="ORD"
+           id="g4-6">
+          <g
+             data-mml-node="mover"
+             id="g3-0">
+            <g
+               data-mml-node="mi"
+               id="g1-6">
+              <use
+                 data-c="1D467"
+                 xlink:href="#MJX-10-TEX-I-1D467"
+                 id="use1-2" />
+            </g>
+            <g
+               data-mml-node="mo"
+               transform="translate(38.1,16)"
+               id="g2-6">
+              <use
+                 data-c="5E"
+                 xlink:href="#MJX-10-TEX-N-5E"
+                 id="use2" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <path
+       id="path8"
+       style="fill:none;stroke:#43b36f;stroke-width:0.3"
+       d="m 123.14353,46.544866 c 0,9.597014 -7.10772,14.109909 -15.06933,18.255291 -3.43126,1.78656 -7.01668,7.071091 -11.15276,7.071091 -8.30729,-10e-7 -12.325196,-3.196915 -18.529284,-7.787386 -3.840836,-2.841876 -6.242615,-5.311618 -6.336688,-17.078586 -0.05624,-7.034091 3.085085,-10.95679 7.404665,-14.761628 4.113537,-3.623347 6.908755,-7.202214 15.994252,-7.297696 7.189925,-0.07556 12.424195,-4.329517 16.053375,-2.258057 7.50105,4.281445 11.63577,14.601757 11.63577,23.856971 z"
+       sodipodi:nodetypes="sssssssss"
+       inkscape:export-filename="phase_space_normalized_coordinates_wonky.pdf"
+       inkscape:export-xdpi="192.01863"
+       inkscape:export-ydpi="192.01863" />
+  </g>
+</svg>

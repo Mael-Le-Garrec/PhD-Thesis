@@ -143,12 +143,20 @@ the invariant $J_z$ and the phase $\phi_z$:
     \end{aligned}
 \end{equation}     
 
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{example-image-a}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\linewidth]{images/phase_space_regular_coordinates.pdf}
+        %\caption{Caption for Image 1}
+        %\label{fig:sub1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\linewidth]{images/phase_space_normalized_coordinates.pdf}
+        %\caption{Caption for Image 2}
+        %\label{fig:sub2}
+    \end{subfigure}
+    \caption{Phase space described in both regular and normalized coordinates}
     \label{fig:coordinate_systems:normalized_coordinates}
-    \caption{Normalized coordinates}
 \end{figure}
 
 
@@ -386,8 +394,18 @@ coordinates can be seen in \cref{fig:coordinate_systems:distorted_phase_space}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.4\textwidth]{example-image-a}
-    \caption{Distorted coordinates}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\linewidth]{images/phase_space_regular_coordinates_wonky.pdf}
+        %\caption{Caption for Image 1}
+        %\label{fig:sub1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\linewidth]{images/phase_space_normalized_coordinates_wonky.pdf}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\linewidth]{example-image-a}
+    \end{subfigure}
+    \caption{Exaggerated phase space distorted by non-linearities described in regular, normalized and normal form coordinates.}
     \label{fig:coordinate_systems:distorted_phase_space}
 \end{figure}
 
@@ -430,7 +448,7 @@ only dependent on the action $I_z$.
     \end{tikzpicture}
     \caption{A one turn map from turn N to N+1 solved using a generating function $F$, 
     transforming to normal form coordinates $\zeta$, applying the linear rotation $R$ and
-    transforming back to normalized cooridnates.}
+    transforming back to normalized coordinates.}
     \label{fig:coordinate_systems:non_linear_map_normal_form}
 \end{figure}
 
@@ -440,23 +458,29 @@ The function $F$ is defined as
     F = \sum_{jklm} f_{jklm}\zeta_{x,+}^j \zeta_{x,-}^k \zeta_{y,+}^l \zeta_{y,-}^m,
 \end{equation}
 
-where $f_{jklm}$ are the so-called Resonance Driving Terms (RDTs).
-The summation $jklm$ is done over all the combinations of $j$, $k$, $l$ and $m$ with $j+k+l+m = n$
-for a multipole of order $n$. Its formula is given by the hamiltonian term $h_jklm$ by
+where $f_{jklm}$ are the so-called Resonance Driving Terms (RDTs).  The summation $jklm$ is done
+over all the combinations of $j$, $k$, $l$ and $m$ with $j+k+l+m = n$ for a multipole of order $n$,
+as shown in \cref{eq:coordinates_systems:sum_jklm}:
 
 \begin{equation}
-    f_{jklm} = \frac{h_{jklm}}{1 - e^{i2\pi \left[ (j-k)Q_x + (l-m) Q_y \right]}}
+    \sum_{jklm} = \sum_{j=0}^n \sum_{k=0}^n \sum_{l=0}^n \sum_{m=0}^n \quad;\quad j+k+l+m=n.
+    \label{eq:coordinates_systems:sum_jklm}
 \end{equation}
 
-where this coefficient is a summation over the hamiltonians terms,
+The expression of the resonance driving terms is given by the global hamiltonian term $h_jklm$ by
+
+\begin{equation}
+    f_{jklm} = \frac{h_{jklm}}{1 - e^{i2\pi \left[ (j-k)Q_x + (l-m) Q_y \right]}},
+\end{equation}
+
+where this coefficient is a summation over the hamiltonian terms of elements $w$ in the lattice,
 
 \begin{equation}
     h_{jklm} = \sum_w h_{w,jklm} e^{i [(j-k)\Delta \phi_x + (l-m) \Delta \phi_y]}.
 \end{equation}
 
-The expression of $h_{w,jklm}$ is derived from the hamiltonian of an element
-(\cref{eq:normal_skew_hamiltonian_magnet}) and by applying a binomial
-expansion~\cite{franchi_studies_2006}:
+The expression of $h_{w,jklm}$ is itself derived from the general hamiltonian 
+of \cref{eq:hamiltonian_magnet} by applying a binomial expansion on the coordinates~\cite{franchi_studies_2006}:
 
 \begin{equation}
     h_{w,jklm} = -\Re \left[\frac{K_{w,n} + iJ_{w,n}}{j!k!l!m! 2^{j+k+l+m}}
