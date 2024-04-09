@@ -7,10 +7,6 @@ A reference orbit is determined by the lattice and its magnet strengths, forming
 \textit{optics}. In the case of a synchrotron, like the LHC, where the particles return to their
 original location after some turns, the reference orbit is also called the closed orbit.  
 
-
-
-
-
 % ============================================
 %               Frenet-Serret
 % ============================================
@@ -228,24 +224,34 @@ the transfer matrix of the whole machine, denoted $\mathcal{M}$. Such a map can 
 thousands of elements.
 
 
+\paragraph{Symplecticity}
+
+An important property of any transformation is that they need to be symplectic. A symplectic
+transformation preserves the volume in phase space.
+
+
 % ============================================
 %             Non-Linear Lattice 
 % ============================================
 \subsection{Non-Linear Lattice}
-
-% ========================
-% Lie Algebra
-\subsubsection{\review{Lie Algebra}}
 
 So far, Courant-Snyder parameters were a good way to describe the distribution of positions and
 velocities of particles in the transverse plane. One caveat of using this formalism is that it is 
 restrained to linear optics and does not describe non-linear beam dynamics such as resonances or 
 the effects arising from an arrangement of several multipoles together.
 
-One way to describe such effects is to introduce Lie Algebra~\cite{dragt_overview_2013}, a vector
-space $\mathfrak{g}$ equipped with a binary operation called the \textit{Lie bracket} and denoted
-$[x, y]$ for two vectors $x$ and $y$. Any vector space ~equipped with a Lie bracket (or
-multiplication rule) satisfying the following conditions is called a Lie algebra:
+% ========================
+% Lie Algebra
+\subsubsection{\review{Lie Algebra}}
+
+One way to describe non-linear effects is to introduce Lie Algebra~\cite{dragt_overview_2013}, a
+powerful algebra able to describe transformations, symmetries and their associated conserved
+quantities. 
+
+The Lie algebra is a vector space, denoted $\mathfrak{g}$, equipped with a binary operation called
+the \textit{Lie bracket} and denoted $[x, y]$ for two vectors $x$ and $y$. Any vector space equipped
+with a Lie bracket (or commutator) satisfying the following conditions is called a Lie
+algebra:
 
 \begin{itemize}
     \item Bilinearity:
@@ -274,15 +280,21 @@ multiplication rule) satisfying the following conditions is called a Lie algebra
     \end{equation}
 \end{itemize}
 
-
+The \textit{Lie bracket}, plays a central role in the Lie algebra. It describes how dynamical
+variables evolve under infinitesimal symplectic transformations.
 
 
 % ========================
 % Poisson Brackets
 \subsubsection{\review{Poisson Brackets}}
 
-To create a Lie algebra, an operation satisfying those conditions needs to be found. In accelerator
-physics, \textit{Poisson brackets} are chosen~\cite{dragt_overview_2013,roy_analysis_1992}. Let's
+To create a Lie algebra, an operation satisfying the previous conditions needs to be found. In
+accelerator physics, \textit{Poisson brackets} are
+chosen~\cite{dragt_overview_2013,roy_analysis_1992}. Poisson brackets are used to describe 
+continuous symmetries, conserved quantities, and the evolution of the dynamical variables in the
+system.
+
+Let's
 consider position and momentum coordinates $q_i \cdots q_n$ and $p_i \cdots p_n$  of a
 2n-dimensional phase space. Usually, those would be $x, y, p_x \text{ and } p_y$ for transverse
 coordinates. The Poisson brackets of two functions $f$ and $g$ is then defined by:
@@ -292,6 +304,16 @@ coordinates. The Poisson brackets of two functions $f$ and $g$ is then defined b
                        - \frac{\partial f}{\partial p_i} \frac{\partial g}{\partial q_i}.
 \end{equation}
 
+
+The evolution of coordinates and momenta in time is described by Hamilton's equations of motion, which can
+be naturally expressed with Poisson brackets:
+
+\begin{equation}
+    \begin{aligned}
+        \frac{\diff q_i}{\diff t} &= \frac{\partial H}{\partial p_i}  = [q_i, H] \\
+        \frac{\diff p_i}{\diff t} &= -\frac{\partial H}{\partial q_i}  = [p_i, H].
+    \end{aligned}
+\end{equation}
 
 
 % ========================
