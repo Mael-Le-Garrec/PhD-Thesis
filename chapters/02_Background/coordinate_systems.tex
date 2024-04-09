@@ -128,7 +128,7 @@ are then expressed as factors of the $\alpha$ and $\beta$ functions:
         \frac{\alpha_z}{\sqrt{\beta_z}}  &   \sqrt{\beta_z}
     \end{pmatrix}
     \begin{pmatrix}
-        z
+        z \\
         p_z 
     \end{pmatrix}.
 \end{equation}
@@ -387,6 +387,7 @@ angle coordinates $I_z$ and $\psi_z$:
 
 \begin{equation}
     \zeta_{z,\pm} = \sqrt{2I_z} e^{\mp i \psi_z}.
+    \label{eq:coordinate_systems:normal_form_coordinates}
 \end{equation}
 
 An exaggerated vision of such a phase-space in Courant-Snyder, normalized, and normal form
@@ -394,16 +395,16 @@ coordinates can be seen in \cref{fig:coordinate_systems:distorted_phase_space}.
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.292\textwidth}
         \includegraphics[width=\linewidth]{images/phase_space_regular_coordinates_wonky.pdf}
         %\caption{Caption for Image 1}
         %\label{fig:sub1}
     \end{subfigure}
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.292\textwidth}
         \includegraphics[width=\linewidth]{images/phase_space_normalized_coordinates_wonky.pdf}
     \end{subfigure}
-    \begin{subfigure}[b]{0.3\textwidth}
-        \includegraphics[width=\linewidth]{example-image-a}
+    \begin{subfigure}[b]{0.316\textwidth}
+        \includegraphics[width=\linewidth]{images/phase_space_normal_form_coordinates.pdf}
     \end{subfigure}
     \caption{Exaggerated phase space distorted by non-linearities described in regular, normalized and normal form coordinates.}
     \label{fig:coordinate_systems:distorted_phase_space}
@@ -438,11 +439,11 @@ only dependent on the action $I_z$.
         \draw[shorten <=0.2cm, shorten >=0.2cm, ->] (B) -- node[left, text centered] {$e^{:-F:}$} (A);
         \draw[shorten <=0.2cm, shorten >=0.2cm, ->] (C) -- node[right, text centered] {$e^{:F:}$} (D);
         \draw[shorten <=0.4cm, shorten >=0.5cm, ->] (A) -- node[below, text centered] {$e^{:H:} \cdot \mathcal{R}$} (C);
-        \draw[shorten <=0.8cm, shorten >=1cm, ->] (B) -- node[above, text centered] {$\hat{\mathcal{M}}$} (D);
+        \draw[shorten <=0.9cm, shorten >=1.1cm, ->] (B) -- node[above, text centered] {$\hat{\mathcal{M}}$} (D);
         
         % Adding labels
-        \node at (B) []{$(\hat{z} \pm \hat{p}_z)_N$};
-        \node at (D) []{$(\hat{z} \pm \hat{p}_z)_{N+1}$};
+        \node at (B) []{$(\hat{z} \pm i\hat{p}_z)_N$};
+        \node at (D) []{$(\hat{z} \pm i\hat{p}_z)_{N+1}$};
         \node at (C) [] {$\zeta_{N+1}$};
         \node at (A) [] {$\zeta_{N}$};
     \end{tikzpicture}
@@ -471,6 +472,7 @@ The expression of the resonance driving terms is given by the global hamiltonian
 
 \begin{equation}
     f_{jklm} = \frac{h_{jklm}}{1 - e^{i2\pi \left[ (j-k)Q_x + (l-m) Q_y \right]}},
+    \label{eq:coordinate_systems:fjklm}
 \end{equation}
 
 where this coefficient is a summation over the hamiltonian terms of elements $w$ in the lattice,
@@ -480,13 +482,46 @@ where this coefficient is a summation over the hamiltonian terms of elements $w$
 \end{equation}
 
 The expression of $h_{w,jklm}$ is itself derived from the general hamiltonian 
-of \cref{eq:hamiltonian_magnet} by applying a binomial expansion on the coordinates~\cite{franchi_studies_2006}:
+of \cref{eq:hamiltonian_magnet} by applying a binomial expansion on the
+coordinates~\cite{franchi_studies_2006} as shows \cref{eq:coordinate_systems:hwjklm}.
+Derivations and more information on resonance driving terms can be found in \cref{appendix:rdts}.
 
 \begin{equation}
     h_{w,jklm} = -\Re \left[\frac{K_{w,n} + iJ_{w,n}}{j!k!l!m! 2^{j+k+l+m}}
     i^{l+m} \beta_{w,x}^{\frac{j+k}{/2}} \beta_{w,y}^{\frac{l+m}{2}} \right]
+    \label{eq:coordinate_systems:hwjklm}
 \end{equation}
 
+Transforming from the normal form coordinates back to the original normalized coordinates can be
+done using the right side of \cref{fig:coordinate_systems:non_linear_map_normal_form}. Which is
+written, to second order, as:
+
+\begin{equation}
+    \begin{aligned}
+        h_z^{ \pm} &= e^{: F:} \cdot \zeta_z^{ \pm} \\
+                   &\simeq \zeta_z^{ \pm}+\left[F, \zeta_z^{ \pm}\right] 
+                        + \frac{1}{2!} \left[ F, \left[ F, \zeta_z^\pm \right]\right].
+    \end{aligned}
+\end{equation}
+
+Using this equation to the first order and \cref{eq:coordinate_systems:normal_form_coordinates}, the
+normalized coordinates can be expressed after $N$ turns in
+\cref{eq:coordinate_systems:linear_position_normal_form}.
+
+\small
+\begin{equation}
+    \begin{aligned}
+    (x-ip_x)&(N)= \sqrt{2 I_x} e^{i\left(2 \pi Q_x N+\psi_{x_0}\right)}- \\
+    & 2 i \sum_{j k l m} j f_{j k l m}\left(2 I_x\right)^{\frac{j+k-1}{2}}\left(2 I_y\right)^{\frac{l+m}{2}} e^{i\left[(1-j+k)\left(2 \pi Q_x N+\psi_{x_0}\right)+(m-l)\left(2 \pi Q_y N-\psi_{y_0}\right)\right]} \\
+    (y-ip_y)&(N)= \sqrt{2 I_y} e^{i\left(2 \pi Q_y N+\psi_{y_0}\right)}- \\
+    & 2 i \sum_{j k l m} l f_{j k l m}\left(2 I_x\right)^{\frac{j+k}{2}}\left(2 I_y\right)^{\frac{l+m-1}{2}} e^{i\left[(k-j)\left(2 \pi Q_x N+\psi_{x_0}\right)+(1-l+m)\left(2 \pi Q_y N-\psi_{y_0}\right)\right]} .
+    \end{aligned}
+    \label{eq:coordinate_systems:linear_position_normal_form}
+\end{equation}
+\normalsize
+
+It is to be observed that some $f_{jklm}$ terms will not contribute to the motion of the particle 
+in a given plane due to the dependence on $j$ or $l$.
 
 
 
