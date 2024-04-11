@@ -302,6 +302,7 @@ coordinates. The Poisson brackets of two functions $f$ and $g$ is then defined b
 \begin{equation}
     [f,g] = \sum^n_{i=1} \frac{\partial f}{\partial q_i} \frac{\partial g}{\partial p_i}
                        - \frac{\partial f}{\partial p_i} \frac{\partial g}{\partial q_i}.
+    \label{eq:coordinate_systems:poisson_bracket}
 \end{equation}
 
 
@@ -342,6 +343,7 @@ transformation}:
         e^{:f:}g &= \sum_{l=0}^\infty \frac{1}{l!} :f:^l g \\
                  &= g + [f,g] + \frac{1}{2!}[f, [f, g]] + \cdots .
     \end{aligned}
+    \label{eq:coordinate_systems:expansion_exponential}
 \end{equation}
 
 
@@ -556,11 +558,15 @@ in a given plane due to the dependence on $j$ or $l$.
 
 \todo{Quadrupole in linear vs non linear formalism}
 
-\subsection{Non-Linear Transfer of one Sextupole}
+\subsection{Non-Linear Transfer of a Single Sextupole}
 
-Here, we are interested on the effect of a single sextupole of the coordinates.
-Let's consider a sextupole with strength $K_3$ and a normal field
-$N_3 = \frac{1}{6} K_3 (x^3 - 3xy^2)$.
+Here, we are interested on the effect of a single sextupole on the coordinates.
+Let's consider a sextupole with strength $K_3$ and a normal field,
+
+\begin{equation}
+    H_3 = \frac{1}{6} K_3 (x^3 - 3xy^2).
+\end{equation}
+
 A transfer map, from longitudinal coordinate $s_0$ to $s_1$, consisting of only this element is the
 following:
 
@@ -572,78 +578,84 @@ following:
         p_y \\
     \end{pmatrix}_{s_1}
     =
-    e^{-L:N_3:}
+    e^{L:H_3:}
     \begin{pmatrix}
         x \\
         p_x \\
         y \\
         p_y \\
-    \end{pmatrix}_{s_0}
+    \end{pmatrix}_{s_0},
+    \label{eq:coordinate_systems:single_sextupole_lie_transfer}
 \end{equation}
 
+where L is the length of the multipole. 
+Using \cref{eq:coordinate_systems:expansion_exponential} to expand the lie transformation to the
+first order, it can be rewritten as
 
 \begin{equation}
-    z_{s_0}
-    =
-    e^{L:N_3:}
-    z_{s_1} \\
-\end{equation}
-\begin{equation}
-    p_{z,s_0}
-    =
-    e^{L:N_3:}
-    p_{z,s_1}
+    \begin{alignedat}{3}
+        &e^{L:H_3:} x   &&= x   &&+ [L \cdot H_3, x], \\
+        &e^{L:H_3:} p_x &&= p_x &&+ [L \cdot H_3, p_x], \\
+        &e^{L:H_3:} y   &&= y   &&+ [L \cdot H_3, y], \\
+        &e^{L:H_3:} p_y &&= p_y &&+ [L \cdot H_3, p_y].
+        %\numberthis
+        \label{eq:coordinate_systems:lie_exponential_first_order_sextupole}
+    \end{alignedat}
 \end{equation}
 
-\paragraph{$x$ via power series}
-
-\begin{equation}
-  e^{L:N_3:} x = x + [L \cdot N3, x]
-\end{equation}
-
-Poisson bracket:
+Applying the poisson bracket of \cref{eq:coordinate_systems:poisson_bracket} on $x$ or $y$ yields
+$0$, as neither the Hamiltonian nor $x, y$ are dependent on $p_x, p_y$ respectively,
 
 \begin{equation}
   \begin{aligned}
-    [L \cdot N_3, x] =& \overbrace{\frac{\partial (L \cdot N_3)}{\partial x} \frac{\partial x}{\partial p_x}}^{0} -
-                         \overbrace{\frac{\partial (L \cdot N_3)}{\partial p_x} \frac{\partial x}{\partial x}}^{0} \\
-                      & + \underbrace{\frac{\partial (L \cdot N_3)}{\partial y} \frac{\partial x}{\partial p_y}}_0 -
-                         \underbrace{\frac{\partial (L \cdot N_3)}{\partial p_y} \frac{\partial x}{\partial y}}_0 \\
-                      & = 0
-  \end{aligned}
-\end{equation}
-
-Final equation for $x$, similar for $y$
-\begin{equation}
-  \begin{aligned}
-    \Rightarrow e^{L:N_3:} x &= x \\
-                e^{L:N_3:} y &= y \\
+    [L \cdot N_3, x] &= 
+       \overbrace{\frac{\partial (L \cdot N_3)}{\partial x} \frac{\partial x}{\partial p_x}}^{0}
+       - \overbrace{\frac{\partial (L \cdot N_3)}{\partial p_x} \frac{\partial x}{\partial x}}^{0}
+       + \underbrace{\frac{\partial (L \cdot N_3)}{\partial y} \frac{\partial x}{\partial p_y}}_0
+       - \underbrace{\frac{\partial (L \cdot N_3)}{\partial p_y} \frac{\partial x}{\partial y}}_0 \\
+                    &= 0.
   \end{aligned}
 \end{equation}
 
 
-\paragraph{$p_x$ via power series}
-
-\begin{equation}
-  e^{L:N_3:} p_x = x + [L \cdot N3, p_x]
-\end{equation}
-
-Poisson bracket:
+The poisson bracket applied on $p_x$ or $p_y$ though yields a non-zero value, as the momentum is
+present in $p_{x, y}$ while $x, y$ are present in the Hamiltonian:
 
 \begin{equation}
   \begin{aligned}
-    [L \cdot N_3, p_x] =& \frac{\partial (L \cdot N_3)}{\partial x} \frac{\partial p_x}{\partial p_x} -
-                          \overbrace{\frac{\partial (L \cdot N_3)}{\partial p_x} \frac{\partial p_x}{\partial x}}^{0} \\
-                        & + \underbrace{\frac{\partial (L \cdot N_3)}{\partial y} \frac{\partial p_x}{\partial p_y}}_0 -
-                          \underbrace{\frac{\partial (L \cdot N_3)}{\partial p_y} \frac{\partial p_x}{\partial y}}_0 \\
+    [L \cdot N_3, p_x] &=
+       \frac{\partial (L \cdot N_3)}{\partial x} \frac{\partial p_x}{\partial p_x}
+     - \overbrace{\frac{\partial (L \cdot N_3)}{\partial p_x} \frac{\partial p_x}{\partial x}}^{0}
+     + \underbrace{\frac{\partial (L \cdot N_3)}{\partial y} \frac{\partial p_x}{\partial p_y}}_0
+     - \underbrace{\frac{\partial (L \cdot N_3)}{\partial p_y} \frac{\partial p_x}{\partial y}}_0 \\
                         & = \frac{1}{2} K_3 L (x^2 - y^2)
   \end{aligned}
 \end{equation}
 
-Final equation for $p_x$ and $p_y$
+The same method is used for $p_y$.
+The final form of the transfer map \cref{eq:coordinate_systems:single_sextupole_lie_transfer} is
+then the following:
+
 \begin{equation}
-  \begin{aligned}
-    \Rightarrow e^{L:N_3:} p_x &= p_x + \frac{1}{2} K_3 L (x^2 - y^2) \\
-                e^{L:N_3:} p_y &= p_y - K_3 L xy
-  \end{aligned}
+    \begin{pmatrix}
+        x \\
+        p_x \\
+        y \\
+        p_y \\
+    \end{pmatrix}_{s_1}
+    =
+    \begin{pmatrix}
+        1 &  &  &  \\
+         & \frac{1}{2}K_3L(x^2-y^2) &  & \\
+         & & 1 & \\
+         & &  & -K_3Lxy\\ 
+    \end{pmatrix}
+    \begin{pmatrix}
+        x \\
+        p_x \\
+        y \\
+        p_y \\
+    \end{pmatrix}_{s_0},
 \end{equation}
+
+\todo{second order}
