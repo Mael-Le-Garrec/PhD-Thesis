@@ -396,6 +396,8 @@ It is though to be noted that in this thesis experimental measurements show the 
 order contributions. In order to fully understand the combined effect of multipoles, the BCH
 expansion needs to be expended further than the first two terms.
 
+\todo{something about -L:H:}
+
 
 % ========================
 % Normal Form
@@ -553,3 +555,95 @@ in a given plane due to the dependence on $j$ or $l$.
 \section{\todo{Examples of Maps}}
 
 \todo{Quadrupole in linear vs non linear formalism}
+
+\subsection{Non-Linear Transfer of one Sextupole}
+
+Here, we are interested on the effect of a single sextupole of the coordinates.
+Let's consider a sextupole with strength $K_3$ and a normal field
+$N_3 = \frac{1}{6} K_3 (x^3 - 3xy^2)$.
+A transfer map, from longitudinal coordinate $s_0$ to $s_1$, consisting of only this element is the
+following:
+
+\begin{equation}
+    \begin{pmatrix}
+        x \\
+        p_x \\
+        y \\
+        p_y \\
+    \end{pmatrix}_{s_1}
+    =
+    e^{-L:N_3:}
+    \begin{pmatrix}
+        x \\
+        p_x \\
+        y \\
+        p_y \\
+    \end{pmatrix}_{s_0}
+\end{equation}
+
+
+\begin{equation}
+    z_{s_0}
+    =
+    e^{L:N_3:}
+    z_{s_1} \\
+\end{equation}
+\begin{equation}
+    p_{z,s_0}
+    =
+    e^{L:N_3:}
+    p_{z,s_1}
+\end{equation}
+
+\paragraph{$x$ via power series}
+
+\begin{equation}
+  e^{L:N_3:} x = x + [L \cdot N3, x]
+\end{equation}
+
+Poisson bracket:
+
+\begin{equation}
+  \begin{aligned}
+    [L \cdot N_3, x] =& \overbrace{\frac{\partial (L \cdot N_3)}{\partial x} \frac{\partial x}{\partial p_x}}^{0} -
+                         \overbrace{\frac{\partial (L \cdot N_3)}{\partial p_x} \frac{\partial x}{\partial x}}^{0} \\
+                      & + \underbrace{\frac{\partial (L \cdot N_3)}{\partial y} \frac{\partial x}{\partial p_y}}_0 -
+                         \underbrace{\frac{\partial (L \cdot N_3)}{\partial p_y} \frac{\partial x}{\partial y}}_0 \\
+                      & = 0
+  \end{aligned}
+\end{equation}
+
+Final equation for $x$, similar for $y$
+\begin{equation}
+  \begin{aligned}
+    \Rightarrow e^{L:N_3:} x &= x \\
+                e^{L:N_3:} y &= y \\
+  \end{aligned}
+\end{equation}
+
+
+\paragraph{$p_x$ via power series}
+
+\begin{equation}
+  e^{L:N_3:} p_x = x + [L \cdot N3, p_x]
+\end{equation}
+
+Poisson bracket:
+
+\begin{equation}
+  \begin{aligned}
+    [L \cdot N_3, p_x] =& \frac{\partial (L \cdot N_3)}{\partial x} \frac{\partial p_x}{\partial p_x} -
+                          \overbrace{\frac{\partial (L \cdot N_3)}{\partial p_x} \frac{\partial p_x}{\partial x}}^{0} \\
+                        & + \underbrace{\frac{\partial (L \cdot N_3)}{\partial y} \frac{\partial p_x}{\partial p_y}}_0 -
+                          \underbrace{\frac{\partial (L \cdot N_3)}{\partial p_y} \frac{\partial p_x}{\partial y}}_0 \\
+                        & = \frac{1}{2} K_3 L (x^2 - y^2)
+  \end{aligned}
+\end{equation}
+
+Final equation for $p_x$ and $p_y$
+\begin{equation}
+  \begin{aligned}
+    \Rightarrow e^{L:N_3:} p_x &= p_x + \frac{1}{2} K_3 L (x^2 - y^2) \\
+                e^{L:N_3:} p_y &= p_y - K_3 L xy
+  \end{aligned}
+\end{equation}
