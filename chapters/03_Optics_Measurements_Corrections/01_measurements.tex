@@ -18,6 +18,7 @@ optics reconstruction\\
 %         Chromaticity
 % ===============================
 \subsection{\review{Chromaticity}}
+\label{subsection:optics_corrections_chromaticity}
 
 % --- Procedure ---
 \subsubsection{\review{Procedure}}
@@ -27,7 +28,7 @@ momentum offset $\delta$, while measuring the tune.  The momentum offset $\delta
 the RF frequency and the momentum compaction factor $\alpha_c$:
 
 \begin{equation}
-    \delta = - \frac{1}{\alpha_c} \cdot \frac{\Delta f_{RF}}{f_{RF,nominal}}
+    \delta = - \frac{1}{\alpha_c} \cdot \frac{\Delta f_{\text{RF}}}{f_{\text{RF,nominal}}}
     \label{eq:dpp_rf}
 \end{equation}
 
@@ -66,6 +67,8 @@ GUI~\cite{m_le_garrec_non-linear_2022}, is composed of several parts:
     \item Chromaticity fit up to 7th order
     \item Corrections of chromaticity and resonance driving terms
 \end{itemize}
+
+\todo{if the screenshot actually useful?}
 
 Fits up to the third and fifth order using this tool can be seen in Fig.\ref{fig:chroma_gui}.
 

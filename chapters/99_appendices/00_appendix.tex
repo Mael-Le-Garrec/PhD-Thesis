@@ -1,9 +1,16 @@
 \appendix  % Declare we started the appendix, that switches the numbering to letters
+
+
+% ==============================================================
+%                      Units and Conversions
+% ==============================================================
 \chapter{Units and Conversions}
 \thumbforappendix
 
 
-% ==============================================================
+% ---------------------------------------
+%          Units and Conversions
+% ---------------------------------------
 \section{Physical Constants}
 
 \begin{table}[H]
@@ -19,16 +26,178 @@
 \end{table}
 
 
-% ==============================================================
 \section{Units}
 
 
-
-% ==============================================================
 \section{Conversions}
 
 
+% ==============================================================
+%                 Hamiltonians and Transfer Maps
+% ==============================================================
+\chapter{Hamiltonians and Transfer Maps}
+\label{appendix:transfer_maps}
+\thumbforappendix
 
+This appendix is intended to gather and explicit the Hamiltonians of the elements used in this 
+thesis. Non-linear transfer maps are also described for some of those elements from the first to
+the second order.
+
+% ---------------------------------------
+%              Hamiltonians
+% ---------------------------------------
+\section{Hamiltonians of Elements}
+
+The Hamiltonian of a \textit{multipole} is the
+following~\cite{keintzel_jacqueline_beam_nodate,tomas_direct_2003,franchi_studies_2006}:
+
+\begin{equation}
+    H = \Re \left[ \sum_{n>1} (K_n + iJ_n) \frac{(x+iy)^n}{n!} \right].
+\end{equation}
+
+From this, normal and skew fields can be separated:
+
+\begin{equation}
+    \begin{aligned}
+        N_n &= \frac{1}{n!} K_n \Re \left[ (x+iy)^n \right] \\
+        S_n &= -\frac{1}{n!} J_n \Im \left[ (x+iy)^n \right],
+    \end{aligned}
+\end{equation}
+
+where $K$ and $J$ are the normalized strength of the multipole and $x,y$ the transverse coordinates.
+
+\cref{table:appendix:hamiltonians} explicits the normal and skew Hamiltonians of multipoles up to
+order 8.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l  c  p{7.8cm}}
+      \hline
+       Name & Order & Normal and Skew Hamiltonians\\
+      \hline
+      \midrule
+        Drift          & - & $H = \frac{1}{2} (p_x^2 + p_y^2)$ \\
+      \midrule
+        Dipole         & 1 & $N_1 = K_{1} x$                                                                                            \newline $S_1 = - J_{1} y$ \\
+      \midrule
+        Quadrupole     & 2 & $N_2 = \frac{1}{2!} K_{2} \left(x^{2} - y^{2}\right)$                                                       \newline $S_2 = - J_{2} x y$ \\
+      \midrule
+        Sextupole      & 3 & $N_3 = \frac{1}{3!}K_{3} \left(x^{3} - 3 x y^{2}\right)$                                                    \newline $S_3 = - \frac{1}{3!}J_{3} \cdot \left(3 x^{2} y - y^{3}\right)$ \\
+      \midrule
+        Octupole       & 4 & $N_4 = \frac{1}{4!}K_{4} \left(x^{4} - 6 x^{2} y^{2} + y^{4}\right)$                                       \newline $S_4 = - \frac{1}{4!}J_{4} \cdot \left(4 x^{3} y - 4 x y^{3}\right)$ \\
+      \midrule
+        Decapole       & 5 & $N_5 = \frac{1}{5!}K_{5} \left(x^{5} - 10 x^{3} y^{2} + 5 x y^{4}\right)$                                 \newline $S_5 = - \frac{1}{5!}J_{5} \cdot \left(5 x^{4} y - 10 x^{2} y^{3} + y^{5}\right)$ \\
+      \midrule
+        Dodecapole     & 6 & $N_6 = \frac{1}{6!}K_{6} \left(x^{6} - 15 x^{4} y^{2} + 15 x^{2} y^{4} - y^{6}\right)$                    \newline $S_6 = - \frac{1}{6!}J_{6} \cdot \left(6 x^{5} y - 20 x^{3} y^{3} + 6 x y^{5}\right)$ \\
+      \midrule
+        Decatetrapole  & 7 & $N_7 = \frac{1}{7!}K_{7} \left(x^{7} - 21 x^{5} y^{2} + 35 x^{3} y^{4} - 7 x y^{6}\right)$               \newline $S_7 = - \frac{1}{7!}J_{7} \cdot \left(7 x^{6} y - 35 x^{4} y^{3} + 21 x^{2} y^{5} - y^{7}\right)$ \\
+      \midrule
+        Decahexapole   & 8 & $N_8 = \frac{1}{8!}K_{8} \left(x^{8} - 28 x^{6} y^{2} + 70 x^{4} y^{4} - 28 x^{2} y^{6} + y^{8}\right)$ \newline $S_8 = - \frac{1}{8!}J_{8} \cdot \left(8 x^{7} y - 56 x^{5} y^{3} + 56 x^{3} y^{5} - 8 x y^{7}\right)$ \\
+      \midrule
+      \end{tabular}
+  \caption{Normal and skew Hamiltonians of multipoles up to order 8.}
+  \label{table:appendix:hamiltonians}
+\end{table}
+
+
+
+% ---------------------------------------
+%             Transfer Maps
+% ---------------------------------------
+\section{Transfer Maps}
+
+Two sextupoles to the second order:
+\footnotesize
+\begin{equation}
+    \begin{aligned}
+      Z = &\left.
+      K_{3,h1} K_{3,h2} L_{1} L_{2} L_{D} \left(
+      %
+      \begin{aligned}
+        &\frac{L_{D}^{2} p_{x}^{2} x^{2}}{8} - \frac{L_{D}^{2} p_{x}^{2} y^{2}}{8} + \frac{L_{D}^{2} p_{x} p_{y} x y}{2} - \frac{L_{D}^{2} p_{y}^{2} x^{2}}{8} \\
+        &+ \frac{L_{D}^{2} p_{y}^{2} y^{2}}{8} + \frac{L_{D} p_{x} x^{3}}{4} + \frac{L_{D} p_{x} x y^{2}}{4} + \frac{L_{D} p_{y} x^{2} y}{4} \\
+        &+ \frac{L_{D} p_{y} y^{3}}{4} + \frac{x^{4}}{8} + \frac{x^{2} y^{2}}{4} + \frac{y^{4}}{8}
+      \end{aligned} \right) \;\,\right\} \; \text{octupolar-like terms}\\
+      %
+      & \left.
+      \begin{aligned}
+        &+ K_{3,h1} L_{1} L_{D} \left(
+        %
+        \begin{aligned}
+          &\frac{L_{D}^{2} p_{x}^{3}}{6} - \frac{L_{D}^{2} p_{x} p_{y}^{2}}{2} + \frac{L_{D} p_{x}^{2} x}{2} \\
+          &- L_{D} p_{x} p_{y} y - \frac{L_{D} p_{y}^{2} x}{2} + \frac{p_{x} x^{2}}{2} - \frac{p_{x} y^{2}}{2} - p_{y} x y
+        \end{aligned}\right)\\
+        %
+        &+ K_{3,h1} L_{1} \left(\frac{x^{3}}{6} - \frac{x y^{2}}{2}\right) + K_{3,H2} L_{2} \left(\frac{x^{3}}{6} - \frac{x y^{2}}{2}\right)
+      \end{aligned}
+      \qquad\quad\right\} \; \text{sextupolar terms}
+    \end{aligned}
+\end{equation}
+\normalsize
+
+
+
+Two sextupoles to the third order:
+\footnotesize
+\begin{equation}
+  \begin{aligned}
+    \\[7em]
+    Z =
+      %
+      %
+      % Decapole terms
+      \\[-9.7em]
+      &\left.
+      \begin{aligned}
+      &K_{3,h1}^{2} K_{3,h2} L_{1}^{2} L_{2} L_{D} \left(
+     \begin{aligned}
+       &\frac{L_{D}^{5} p_{x}^{4} x}{48} + \frac{L_{D}^{5} p_{x}^{3} p_{y} y}{12} - \frac{L_{D}^{5} p_{x}^{2} p_{y}^{2} x}{8} - \frac{L_{D}^{5} p_{x} p_{y}^{3} y}{12} \\
+       &+ \frac{L_{D}^{5} p_{y}^{4} x}{48} + \frac{L_{D}^{4} p_{x}^{3} x^{2}}{12} + \frac{L_{D}^{4} p_{x}^{3} y^{2}}{12}- \frac{L_{D}^{4} p_{x} p_{y}^{2} x^{2}}{4} \\
+       &- \frac{L_{D}^{4} p_{x} p_{y}^{2} y^{2}}{4} + \frac{L_{D}^{3} p_{x}^{2} x^{3}}{8} + \frac{L_{D}^{3} p_{x}^{2} x y^{2}}{8} - \frac{L_{D}^{3} p_{x} p_{y} x^{2} y}{4} \\
+       &- \frac{L_{D}^{3} p_{x} p_{y} y^{3}}{4} - \frac{L_{D}^{3} p_{y}^{2} x^{3}}{8} - \frac{L_{D}^{3} p_{y}^{2} x y^{2}}{8} + \frac{L_{D}^{2} p_{x} x^{4}}{12} \\
+       &- \frac{L_{D}^{2} p_{x} y^{4}}{12} - \frac{L_{D}^{2} p_{y} x^{3} y}{6} - \frac{L_{D}^{2} p_{y} x y^{3}}{6} + \frac{L_{D} x^{5}}{48} \\
+       &- \frac{L_{D} x^{3} y^{2}}{24} - \frac{L_{D} x y^{4}}{16}
+     \end{aligned} \right) \\
+       %
+       %
+       % Decapole again
+      &+ K_{3,h1} K_{3,h2}^{2} L_{1} L_{2}^{2} L_{D} \left(
+      \begin{aligned}
+        &\frac{L_{D}^{2} p_{x} x^{4}}{48} - \frac{L_{D}^{2} p_{x} x^{2} y^{2}}{8} + \frac{L_{D}^{2} p_{x} y^{4}}{48} + \frac{L_{D}^{2} p_{y} x^{3} y}{12} \\
+        &- \frac{L_{D}^{2} p_{y} x y^{3}}{12} + \frac{L_{D} x^{5}}{48} - \frac{L_{D} x^{3} y^{2}}{24} - \frac{L_{D} x y^{4}}{16}
+      \end{aligned}\right)
+      \end{aligned}
+      \; \right\} \; \text{decapolar-like} \\
+      %
+      %
+      % Octupole terms
+      \\[-1.5em]
+    &+ K_{3,h1} K_{3,h2} L_{1} L_{2} L_{D} \left. \left(
+    \begin{aligned}
+      &\frac{L_{D}^{2} p_{x}^{2} x^{2}}{8} - \frac{L_{D}^{2} p_{x}^{2} y^{2}}{8} + \frac{L_{D}^{2} p_{x} p_{y} x y}{2} - \frac{L_{D}^{2} p_{y}^{2} x^{2}}{8} \\
+      &+ \frac{L_{D}^{2} p_{y}^{2} y^{2}}{8} + \frac{L_{D} p_{x} x^{3}}{4} + \frac{L_{D} p_{x} x y^{2}}{4} + \frac{L_{D} p_{y} x^{2} y}{4}\\
+      &+ \frac{L_{D} p_{y} y^{3}}{4} + \frac{x^{4}}{8} + \frac{x^{2} y^{2}}{4} + \frac{y^{4}}{8}
+    \end{aligned} \right)
+    \;\; \right\} \; \text{octupolar-like} \\
+    %
+    %
+    % Sextupole
+    \\[-1.5em]
+    &\left.
+    \begin{aligned}
+      &+ K_{3,h1} L_{1} L_{D} \left(
+      \begin{aligned}
+        &\frac{L_{D}^{2} p_{x}^{3}}{6} - \frac{L_{D}^{2} p_{x} p_{y}^{2}}{2} + \frac{L_{D} p_{x}^{2} x}{2} - L_{D} p_{x} p_{y} y \\
+        &- \frac{L_{D} p_{y}^{2} x}{2} + \frac{p_{x} x^{2}}{2} - \frac{p_{x} y^{2}}{2} - p_{y} x y
+      \end{aligned}\right) \\
+      &+ K_{3,h1} L_{1} \left(\frac{x^{3}}{6} - \frac{x y^{2}}{2}\right)
+      + K_{3,h2} L_{2} \left(\frac{x^{3}}{6} - \frac{x y^{2}}{2}\right)
+  \end{aligned}
+  \;\; \right\} \; \text{sextupolar}
+  \end{aligned}
+  \\
+\end{equation}
+\normalsize
 
 % ==============================================================
 %                    Chromatic Amplitude Detuning

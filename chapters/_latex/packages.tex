@@ -1,4 +1,3 @@
-\usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fix-cm}
@@ -20,8 +19,16 @@
             pdfborder={0 0 0}}
 \usepackage[capitalise]{cleveref}
 \usepackage[english]{babel}
+
+% == FONTS
 \usepackage{calligra}  % font for quote page
-\usepackage{lmodern}
+%\usepackage{libertinust1math}
+\usepackage{libertine}  % font for the whole document
+\usepackage[libertine]{newtxmath}
+%\usepackage{lmodern}  % font based on Computer Modern for the whole doc
+% ==
+
+
 \usepackage{wasysym}
 \usepackage{enumitem}  % to define new lists
 \usepackage{tikz}  % for drawing figures by code
@@ -74,6 +81,7 @@
  ,natbib=true         % if you need natbib functions
 ]{biblatex}
 \addbibresource{library.bib}  % better than \bibliography
+\usepackage{csquotes}  % Changes the quotestyle depending on the language, useful for bibliography
 
 
 % To have big numbers at the start of each chapter
@@ -113,8 +121,10 @@
 % Set the geometry of the pages
 % For a twoside book like this one, `left` and `right` mean respectively `inner` and `outer`
 % The numbers are based on the "Canon des Ateliers", https://etnadji.fr/rsc/canon/calcul.php
+% tête = top, pied = bottom, petit fond = left, grand fond = right
 %\geometry{a4paper, top=2.625cm, left=2.1cm, right=3.15cm, bottom=3.675cm, includehead, includefoot}
-\geometry{b5paper, top=2.2cm, left=1.76cm, right=2.64cm, bottom=3.08cm, includehead, includefoot}
+\geometry{b5paper, top=2.2cm, left=1.76cm, right=2.64cm, bottom=3.08cm, includehead, includefoot} % courant
+%\geometry{b5paper, top=2.935cm, left=2.348cm, right=3.522cm, bottom=4.109cm, includehead, includefoot} % luxe
 
 % Vertical space before chapters
 \RedeclareSectionCommand[beforeskip=5pt,

@@ -1,4 +1,82 @@
+% ###################################
+%      NON LINEAR CHROMATICITY
 \section{Non-Linear Chromaticity}
+
+
+
+% ===============================
+%         Introduction
+% ===============================
+\subsection{Introduction}
+
+% Expression
+\paragraph{Expression}
+
+Chromaticity is the tune shift $\Delta Q_{x,y}$ dependent on the momentum offset $\delta$ of a
+particle. Its general expression is given by a Taylor expansion
+in~\cref{eq:background_chromaticity}. The full third term is highlighted in the following,
+
+\begin{equation} 
+    Q (\delta) = Q_0 + Q' \delta + \frac{1}{2!} Q'' \delta^2 
+                     + \colorbox{yellow!50}{$\displaystyle  \frac{1}{3!}  Q''' \delta^3$}
+                     + \mathcal{O}(\delta^4).
+\end{equation}
+
+It is to be noted when referring to a chromaticity order, that the preceding fraction and
+$\delta$ are usually \textit{not} included in the term. This third order is mainly contributed to by
+decapoles. It is related to the $\beta$-function, the dispersion and the strength of the multipole,
+also shown in~\cref{eq:detuning_effects:chromaticity_strength}:
+
+\begin{equation}
+    \begin{aligned}
+        \Delta Q_x''' &=  &\frac{1}{4\pi} K_{5} L \beta_x D_x^{3}\\
+        \Delta Q_y''' &= -&\frac{1}{4\pi} K_{5} L \beta_x D_x^{3}.
+    \end{aligned}
+\end{equation}
+
+
+% Correction
+\paragraph{Correction}
+
+$Q'''$ is linear with the decapole strength. As such, it can be easily corrected via global trims
+presented in~\cref{subsection:correction_chromaticity}.
+A change of decapole strength $K_5 = 1000$ would for example have the following impact with the
+injection optics used in 2022:
+
+\begin{equation}
+    \begin{aligned}
+        \Delta Q_x =  1.5 \times 10^6 \quad;\quad
+        \Delta Q_x = -0.9 \times 10^6.
+    \end{aligned}
+\end{equation}
+
+
+
+
+% ===============================
+%         Measurement
+% ===============================
+\subsection{Measurement}
+
+Chromaticity is measured by varying the frequency of the radio-frequency (RF) cavities, used to
+create buckets and to accelerate the beam. The change in $\delta$ related to this frequency is, as a
+reminder:
+
+\begin{equation}
+    \delta = - \frac{1}{\alpha_c} \cdot \frac{\Delta f_{RF}}{f_{RF,nominal}}.
+\end{equation}
+
+More details on the measurements and analysis can be found in
+earlier~\cref{subsection:optics_corrections_chromaticity}.
+
+\paragraph{Momentum Compaction Factor} Rather than a constant, the momentum compaction factor is an 
+expansion, as detailed in~\todo{ref to $\alpha_c$ in concepts of accelerators}. It is assumed here 
+though to be constant.
+
+
+
+
+\subsection{blabla}
 
 Measurements were taken during 2022 Commissioning for 
 \begin{itemize}

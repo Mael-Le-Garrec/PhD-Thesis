@@ -1,7 +1,5 @@
 \section{Coordinate Systems}
 
-\todo{something about simplecticity}
-
 In circular accelerators, particle dynamics are represented using a traveling coordinate system.
 A reference orbit is determined by the lattice and its magnet strengths, forming the
 \textit{optics}. In the case of a synchrotron, like the LHC, where the particles return to their
@@ -370,13 +368,16 @@ can be combined and simplified:
 \end{equation}
 with 
 \begin{equation}
-    \begin{aligned}
-        h =& h_1 + h_2 \\
-           & + \frac{1}{2} [h_1, h_2] \\
-           & + \frac{1}{12} [h_1, [h_1, h_2]] - \frac{1}{12} [h_2, [h_1, h_2]] + \cdots.
-    \end{aligned}
-    \label{eq:coordinates:bch}
-\end{equation}
+    \begin{alignedat}{3}
+      h =& h_1 + h_2  && \Rightarrow \text{1\textsuperscript{st} order}\\
+             & + \frac{1}{2} [h_1, h_2]  && \Rightarrow \text{2 \textsuperscript{nd} order}\\
+             & + \frac{1}{12} [h_1, [h_1, h_2]] - \frac{1}{12} [h_2, [h_1, h_2]] \quad && \Rightarrow \text{3\textsuperscript{rd} order}\\
+             & + \cdots.
+      \end{alignedat}
+      \label{eq:coordinates:bch}
+  \end{equation}
+
+
 
 The one turn map is thus expressed as a single Lie transformation:
 
@@ -514,7 +515,7 @@ Derivations and more information on resonance driving terms can be found in \cre
 
 \begin{equation}
     h_{w,jklm} = -\Re \left[\frac{K_{w,n} + iJ_{w,n}}{j!k!l!m! 2^{j+k+l+m}}
-    i^{l+m} \beta_{w,x}^{\frac{j+k}{/2}} \beta_{w,y}^{\frac{l+m}{2}} \right]
+    i^{l+m} \beta_{w,x}^{\frac{j+k}{2}} \beta_{w,y}^{\frac{l+m}{2}} \right]
     \label{eq:coordinate_systems:hwjklm}
 \end{equation}
 
@@ -556,8 +557,15 @@ in a given plane due to the dependence on $j$ or $l$.
 % ============================================
 \section{\todo{Examples of Maps}}
 
-\todo{Quadrupole in linear vs non linear formalism}
+It is important to remember that two expansions are used when creating non linear transfer maps.
+When referring to the order of a map, it is the order of the BCH formula, used to combine
+Hamiltonians, that is referred to.
+The Lie transformation to transport the coordinates themselves is usually only taken to the first
+order.
 
+%----------------------------------------
+%         Transfer of 1 Sextupole
+%----------------------------------------
 \subsection{Non-Linear Transfer of a Single Sextupole}
 
 Here, we are interested on the effect of a single sextupole on the regular frenet-serret coordinates
@@ -590,7 +598,7 @@ following:
 \end{equation}
 
 where L is the length of the multipole. 
-Using \cref{eq:coordinate_systems:expansion_exponential} to expand the lie transformation to the
+Using \cref{eq:coordinate_systems:expansion_exponential} to expand the Lie transformation to the
 first order, it can be rewritten as
 
 \begin{equation}
@@ -605,32 +613,34 @@ first order, it can be rewritten as
 \end{equation}
 
 Applying the poisson bracket of \cref{eq:coordinate_systems:poisson_bracket} on $x$ or $y$ yields
-$0$, as neither the Hamiltonian nor $x, y$ are dependent on $p_x, p_y$ respectively,
+$0$, as neither the Hamiltonian nor $x$ and $y$ are dependent on $p_x$ and $p_y$.
 
 \begin{equation}
   \begin{aligned}
-    [L \cdot N_3, x] &= 
+    [L \cdot H_3, x] &= 
        \overbrace{\frac{\partial (L \cdot N_3)}{\partial x} \frac{\partial x}{\partial p_x}}^{0}
        - \overbrace{\frac{\partial (L \cdot N_3)}{\partial p_x} \frac{\partial x}{\partial x}}^{0}
        + \underbrace{\frac{\partial (L \cdot N_3)}{\partial y} \frac{\partial x}{\partial p_y}}_0
        - \underbrace{\frac{\partial (L \cdot N_3)}{\partial p_y} \frac{\partial x}{\partial y}}_0 \\
                     &= 0.
   \end{aligned}
+  \label{eq:coordinate_systems:sextupole_transfer_x_poisson}
 \end{equation}
 
 
-The poisson bracket applied on $p_x$ or $p_y$ though yields a non-zero value, as the momentum is
-present in $p_{x, y}$ while $x, y$ are present in the Hamiltonian:
+The poisson bracket applied on $p_x$ or $p_y$ though evaluates to a non-zero value, as the momentum
+is present in $p_{x, y}$ while $x, y$ are present in the Hamiltonian:
 
 \begin{equation}
   \begin{aligned}
-    [L \cdot N_3, p_x] &=
+    [L \cdot H_3, p_x] &=
        \frac{\partial (L \cdot N_3)}{\partial x} \frac{\partial p_x}{\partial p_x}
      - \overbrace{\frac{\partial (L \cdot N_3)}{\partial p_x} \frac{\partial p_x}{\partial x}}^{0}
      + \underbrace{\frac{\partial (L \cdot N_3)}{\partial y} \frac{\partial p_x}{\partial p_y}}_0
      - \underbrace{\frac{\partial (L \cdot N_3)}{\partial p_y} \frac{\partial p_x}{\partial y}}_0 \\
                         & = \frac{1}{2} K_3 L (x^2 - y^2)
   \end{aligned}
+  \label{eq:coordinate_systems:sextupole_transfer_px_poisson}
 \end{equation}
 
 The same method is used for $p_y$.
@@ -659,4 +669,112 @@ then the following:
     \end{pmatrix}_{s_0}.
 \end{equation}
 
-\todo{second order}
+
+It is not necessary to go higher than the first order, as the second order of the expansion of the 
+Lie transformation is 0 ; $p_x$ is indeed not present in the result of the first poisson bracket:
+
+\begin{equation}
+    \begin{aligned}
+    \frac{1}{2!} [L \cdot H_3, [L \cdot H_3, p_x]]
+    &= \frac{1}{2!}\left[L \frac{1}{6} K_3 (x^3 - 3xy^2), \left[L \frac{1}{6} K_3 (x^3 - 3xy^2), p_x\right]\right] \\
+    &= \frac{1}{2!}\left[L \frac{1}{6} K_3 (x^3 - 3xy^2), \frac{1}{2} K_3 L (x^2 - y^2)\right] \\
+    &= \frac{1}{2!} \cdot 0 \\
+    &= 0
+    \end{aligned}
+\end{equation}
+
+
+
+%----------------------------------------
+%         Transfer of 2 Sextupoles
+%----------------------------------------
+\subsection{Non-Linear Transfer of Two Sextupoles}
+
+We saw previously that a single sextupole only acts as a sextupole when it is alone in the transfer
+map, which is expected. Let's now consider two sextupoles which hamiltonians are denoted $H_{1}$ and
+$H_{2}$.
+
+Creating a map consisting of only two sextupoles does not make much sense, as it finally results in
+one sextupole as their coordinates are the same. Instead, a drift is added between the two elements.
+The Hamiltonian of a drift of length $L_D$ is given by~\cite{herr_mathematical_2018},
+
+\begin{equation}
+    D = -\frac{L_D}{2} (p_x^2 + p_y^2).
+\end{equation}
+
+The application of the lie transformation on the canonical coordinates is then very simple, as no
+higher orders arise ($[D, [D, x]] = 0$):
+
+\begin{equation}
+    \begin{aligned}
+        e^{:D:} x   &= x + L_D p_x, \\
+        e^{:D:} p_x &= p_x.
+    \end{aligned}
+\end{equation}
+
+The transfer map of such a line is then the following,
+
+\begin{equation}
+    \mathcal{M} = e^{:Z:} = e^{:H_{2}:} \cdot e^{D:H_{1}:},
+\end{equation}
+
+describing the evolution of coordinates from a longitudinal position $s_0$ to $s_1$,
+
+\begin{equation}
+    \begin{aligned}
+        \begin{pmatrix}
+            x \\
+            p_x \\
+            y \\
+            p_y \\
+        \end{pmatrix}_{s_1}
+        =
+        \mathcal{M} \cdot
+        \begin{pmatrix}
+            x \\
+            p_x \\
+            y \\
+            p_y \\
+        \end{pmatrix}_{s_0}
+    \end{aligned}
+    \label{eq:coordinate_systems:transformation_coords_sextupole}
+\end{equation}
+
+In order to combine those elements, the BCH formula from \cref{eq:coordinates:bch} is used,
+presented here to the third order for two elements,
+
+\small
+\begin{equation}
+    \begin{aligned}
+      Z = \underbrace{H_{2} + H_{1}}_{\text{First order}}
+        + \underbrace{\frac{\left[H_{2},H_{1}\right]}{2}}_{\text{Second order}}
+        + \underbrace{\frac{\left[H_{2},\left[H_{2},H_{1}\right]\right]}{12} - \frac{\left[H_{1},\left[H_{2},H_{1}\right]\right]}{12}}_{\text{Third order}}
+    \end{aligned}
+    \label{eq:coordinate_systems:bch_third_order_two_vars}
+\end{equation}
+\normalsize
+
+
+\paragraph{First Order}
+
+To the first order, the resulting effective hamiltonian is only the summation of two sextupoles.
+
+\paragraph{Second Order}
+
+The drift added to change the coordinates of $H_1$ allows the poisson bracket to evaluate to a
+non-zero value. Octupolar-like terms indeed appear in the effective hamiltonian. From this, it can
+be inferred that two sextupoles will interact together and introduce effects like amplitude
+detuning, second order chromaticity and RDTs.
+Details of the derivation can be found in~\cref{appendix:transfer_maps}.
+
+
+\paragraph{Third Order}
+
+To the third order, even higher orders such as decapolar-like effects appear. Such effects
+include the third order chromaticity, chromatic amplitude detuning and RDTs.
+
+\paragraph{Remark}
+
+It is to be noted that while sextupoles do introduce higher-order terms, these are typically small
+in comparison to those brought by the actual higher-order multipoles, making them thus often
+negligible.
