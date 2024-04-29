@@ -65,7 +65,6 @@ From this, normal and skew fields can be separated:
 \end{equation}
 
 where $K$ and $J$ are the normalized strength of the multipole and $x,y$ the transverse coordinates.
-
 \cref{table:appendix:hamiltonians} explicits the normal and skew Hamiltonians of multipoles up to
 order 8.
 
@@ -77,8 +76,8 @@ order 8.
       \hline
       \midrule
         Drift          & - & $H = \frac{1}{2} (p_x^2 + p_y^2)$ \\
-      \midrule
-        Dipole         & 1 & $N_1 = K_{1} x$                                                                                            \newline $S_1 = - J_{1} y$ \\
+      %\midrule
+      %  Dipole         & 1 & $N_1 = K_{1} x$                                                                                            \newline $S_1 = - J_{1} y$ \\
       \midrule
         Quadrupole     & 2 & $N_2 = \frac{1}{2!} K_{2} \left(x^{2} - y^{2}\right)$                                                       \newline $S_2 = - J_{2} x y$ \\
       \midrule
@@ -106,50 +105,134 @@ order 8.
 % ---------------------------------------
 \section{Transfer Maps}
 
-Two sextupoles to the second order:
+This sections goes more in depth regarding the derivation of the examples of transfer maps 
+introduced in~\cref{subsection:coordinate_systems:example_of_maps}.
+
+As a reminder, the BCH of two elements up to order 3 is given below,
+\small
+\begin{equation}
+    \begin{aligned}
+      Z = \underbrace{H_{2} + H_{1}}_{\text{First order}}
+        + \underbrace{\frac{\left[H_{2},H_{1}\right]}{2}}_{\text{Second order}}
+        + \underbrace{\frac{\left[H_{2},\left[H_{2},H_{1}\right]\right]}{12} - \frac{\left[H_{1},\left[H_{2},H_{1}\right]\right]}{12}}_{\text{Third order}}
+    \end{aligned}.
+\end{equation}
+\normalsize
+
+
+% --------- Generic Expression
+\subsection{Generic Effective Hamiltonian of Two Elements}
+
+Two elements of orders $n$ and $m$ can be combined together via the BCH.
+Below are detailed the multipole-like orders that are generated depending on the BCH order.
+
+\paragraph{First Order}
+
+\begin{equation}
+  \text{multipolar-like orders} =
+  \begin{cases}
+    m\\
+    n
+  \end{cases}.
+\end{equation}
+
+
+\paragraph{Second Order}
+
+\begin{equation}
+  \text{multipolar-like orders} =
+  \begin{cases}
+    m + n - 2
+  \end{cases}.
+\end{equation}
+
+%The resulting effective Hamiltonian is of higher order for $n > 2$ and $m > 2$.
+
+
+\paragraph{Third Order}
+
+\begin{equation}
+  \text{multipolar-like orders} =
+  \begin{cases}
+    m+ 2n-4 \\
+    2m + n-4
+  \end{cases}.
+\end{equation}
+
+%The resulting effective Hamiltonian is again here of higher order for $m + n > 4$.
+
+
+
+
+% --------- Two sextupoles 
+\subsection{Transfer Map of Two Sextupoles}
+
+The transfer map of two sextupoles $H_1$ and $H_2$ of strength $K_1$ and $K_2$, separated by a drift
+to introduce a change of coordinates in $H_1$ is the following,
+
+\begin{equation}
+    \mathcal{M} = e^{:Z:} = e^{:H_{2}:} \cdot e^{D:H_{1}:},
+\end{equation}
+
+After such application of the drift on $H_1$, the two hamiltonians read,
+
+\begin{equation}
+  \begin{aligned}
+    H_1 &= \frac{1}{3!} K_{3,h1} L_{1} \left(\left(L_{D} p_{x} + x\right)^{3} - 3 \left(L_{D} p_{x} + x\right) \left(L_{D} p_{y} + y\right)^{2}\right) \\
+    H_2 &= \frac{1}{3!} K_{2} L_{2} \left(x^{3} - 3 x y^{2}\right).
+  \end{aligned}
+\end{equation}
+
+Below are detailed each term of the BCH. Each term should be added together in order to obtain the
+whole effective Hamiltonian $Z$.
+
+\paragraph{First Order}
+
 \footnotesize
 \begin{equation}
     \begin{aligned}
-      Z = &\left.
-      K_{3,h1} K_{3,h2} L_{1} L_{2} L_{D} \left(
+      & \left.
+      \begin{aligned}
+        &K_1 L_{1} L_{D} \left(
+        %
+        \begin{aligned}
+          &\frac{L_{D}^{2} p_{x}^{3}}{6} - \frac{L_{D}^{2} p_{x} p_{y}^{2}}{2} + \frac{L_{D} p_{x}^{2} x}{2} - L_{D} p_{x} p_{y} y \\
+          &- \frac{L_{D} p_{y}^{2} x}{2} + \frac{p_{x} x^{2}}{2} - \frac{p_{x} y^{2}}{2} - p_{y} x y
+        \end{aligned}\right)\\
+        %
+        &+ K_1 L_{1} \left(\frac{x^{3}}{6} - \frac{x y^{2}}{2}\right) + K_{2} L_{2} \left(\frac{x^{3}}{6} - \frac{x y^{2}}{2}\right)
+      \end{aligned}
+      \;\,\right\} \text{sextupolar}
+    \end{aligned}
+\end{equation}
+\normalsize
+
+\paragraph{Second Order}
+
+\footnotesize
+\begin{equation}
+    \begin{aligned}
+      &\left.
+      K_1 K_2 L_{1} L_{2} L_{D} \left(
       %
       \begin{aligned}
         &\frac{L_{D}^{2} p_{x}^{2} x^{2}}{8} - \frac{L_{D}^{2} p_{x}^{2} y^{2}}{8} + \frac{L_{D}^{2} p_{x} p_{y} x y}{2} - \frac{L_{D}^{2} p_{y}^{2} x^{2}}{8} \\
         &+ \frac{L_{D}^{2} p_{y}^{2} y^{2}}{8} + \frac{L_{D} p_{x} x^{3}}{4} + \frac{L_{D} p_{x} x y^{2}}{4} + \frac{L_{D} p_{y} x^{2} y}{4} \\
         &+ \frac{L_{D} p_{y} y^{3}}{4} + \frac{x^{4}}{8} + \frac{x^{2} y^{2}}{4} + \frac{y^{4}}{8}
-      \end{aligned} \right) \;\,\right\} \; \text{octupolar-like terms}\\
+      \end{aligned} \right) \;\,\right\} \; \text{octupolar-like}\\
       %
-      & \left.
-      \begin{aligned}
-        &+ K_{3,h1} L_{1} L_{D} \left(
-        %
-        \begin{aligned}
-          &\frac{L_{D}^{2} p_{x}^{3}}{6} - \frac{L_{D}^{2} p_{x} p_{y}^{2}}{2} + \frac{L_{D} p_{x}^{2} x}{2} \\
-          &- L_{D} p_{x} p_{y} y - \frac{L_{D} p_{y}^{2} x}{2} + \frac{p_{x} x^{2}}{2} - \frac{p_{x} y^{2}}{2} - p_{y} x y
-        \end{aligned}\right)\\
-        %
-        &+ K_{3,h1} L_{1} \left(\frac{x^{3}}{6} - \frac{x y^{2}}{2}\right) + K_{3,H2} L_{2} \left(\frac{x^{3}}{6} - \frac{x y^{2}}{2}\right)
-      \end{aligned}
-      \qquad\quad\right\} \; \text{sextupolar terms}
     \end{aligned}
 \end{equation}
 \normalsize
 
+\paragraph{Third Order}
 
-
-Two sextupoles to the third order:
 \footnotesize
 \begin{equation}
   \begin{aligned}
-    \\[7em]
-    Z =
-      %
-      %
-      % Decapole terms
-      \\[-9.7em]
       &\left.
       \begin{aligned}
-      &K_{3,h1}^{2} K_{3,h2} L_{1}^{2} L_{2} L_{D} \left(
+      &K_{1}^{2} K_{2} L_{1}^{2} L_{2} L_{D} \left(
      \begin{aligned}
        &\frac{L_{D}^{5} p_{x}^{4} x}{48} + \frac{L_{D}^{5} p_{x}^{3} p_{y} y}{12} - \frac{L_{D}^{5} p_{x}^{2} p_{y}^{2} x}{8} - \frac{L_{D}^{5} p_{x} p_{y}^{3} y}{12} \\
        &+ \frac{L_{D}^{5} p_{y}^{4} x}{48} + \frac{L_{D}^{4} p_{x}^{3} x^{2}}{12} + \frac{L_{D}^{4} p_{x}^{3} y^{2}}{12}- \frac{L_{D}^{4} p_{x} p_{y}^{2} x^{2}}{4} \\
@@ -161,43 +244,121 @@ Two sextupoles to the third order:
        %
        %
        % Decapole again
-      &+ K_{3,h1} K_{3,h2}^{2} L_{1} L_{2}^{2} L_{D} \left(
+      &+ K_{1} K_{2}^{2} L_{1} L_{2}^{2} L_{D} \left(
       \begin{aligned}
         &\frac{L_{D}^{2} p_{x} x^{4}}{48} - \frac{L_{D}^{2} p_{x} x^{2} y^{2}}{8} + \frac{L_{D}^{2} p_{x} y^{4}}{48} + \frac{L_{D}^{2} p_{y} x^{3} y}{12} \\
         &- \frac{L_{D}^{2} p_{y} x y^{3}}{12} + \frac{L_{D} x^{5}}{48} - \frac{L_{D} x^{3} y^{2}}{24} - \frac{L_{D} x y^{4}}{16}
       \end{aligned}\right)
       \end{aligned}
       \; \right\} \; \text{decapolar-like} \\
-      %
-      %
-      % Octupole terms
-      \\[-1.5em]
-    &+ K_{3,h1} K_{3,h2} L_{1} L_{2} L_{D} \left. \left(
-    \begin{aligned}
-      &\frac{L_{D}^{2} p_{x}^{2} x^{2}}{8} - \frac{L_{D}^{2} p_{x}^{2} y^{2}}{8} + \frac{L_{D}^{2} p_{x} p_{y} x y}{2} - \frac{L_{D}^{2} p_{y}^{2} x^{2}}{8} \\
-      &+ \frac{L_{D}^{2} p_{y}^{2} y^{2}}{8} + \frac{L_{D} p_{x} x^{3}}{4} + \frac{L_{D} p_{x} x y^{2}}{4} + \frac{L_{D} p_{y} x^{2} y}{4}\\
-      &+ \frac{L_{D} p_{y} y^{3}}{4} + \frac{x^{4}}{8} + \frac{x^{2} y^{2}}{4} + \frac{y^{4}}{8}
-    \end{aligned} \right)
-    \;\; \right\} \; \text{octupolar-like} \\
-    %
-    %
-    % Sextupole
-    \\[-1.5em]
-    &\left.
-    \begin{aligned}
-      &+ K_{3,h1} L_{1} L_{D} \left(
-      \begin{aligned}
-        &\frac{L_{D}^{2} p_{x}^{3}}{6} - \frac{L_{D}^{2} p_{x} p_{y}^{2}}{2} + \frac{L_{D} p_{x}^{2} x}{2} - L_{D} p_{x} p_{y} y \\
-        &- \frac{L_{D} p_{y}^{2} x}{2} + \frac{p_{x} x^{2}}{2} - \frac{p_{x} y^{2}}{2} - p_{y} x y
-      \end{aligned}\right) \\
-      &+ K_{3,h1} L_{1} \left(\frac{x^{3}}{6} - \frac{x y^{2}}{2}\right)
-      + K_{3,h2} L_{2} \left(\frac{x^{3}}{6} - \frac{x y^{2}}{2}\right)
   \end{aligned}
-  \;\; \right\} \; \text{sextupolar}
-  \end{aligned}
-  \\
 \end{equation}
 \normalsize
+
+
+% --------- Sextupole and Octupole
+\subsection{Transfer Map of a Sextupole and Octupole}
+
+The transfer map of a sextupole $H_1$ and octupole $H_2$ of strength $K_1$ and $K_2$, separated by
+a drift like in the previous example is given by
+
+\begin{equation}
+  \mathcal{M} = e^{:Z:} = e^{:H_2:} \cdot e^{D:H_1:}
+\end{equation}
+
+with $H_1$ and $H_2$ having as final expressions,
+
+\begin{equation}
+  \begin{aligned}
+    H_1 &= \frac{1}{3!} K_{3,h1} L_{1} \left(\left(L_{D} p_{x} + x\right)^{3} - 3 \left(L_{D} p_{x} + x\right) \left(L_{D} p_{y} + y\right)^{2}\right) \\
+    H_2 &= \frac{1}{4!} K_{2} L_{2} \left(x^{4} - 6 x^{2} y^{2} + y^{4}\right).
+  \end{aligned}
+\end{equation}
+
+The first two orders of the BCH of those two elements is given below.
+
+\paragraph{First Order}
+
+\footnotesize
+\begin{equation}
+  \begin{aligned}
+    &K_{3} \left. \left(
+    \begin{aligned}
+      &\frac{L_{D}^{3} p_{x}^{3}}{6} - \frac{L_{D}^{3} p_{x} p_{y}^{2}}{2} + \frac{L_{D}^{2} p_{x}^{2} x}{2} - L_{D}^{2} p_{x} p_{y} y - \frac{L_{D}^{2} p_{y}^{2} x}{2} \\
+      &+ \frac{L_{D} p_{x} x^{2}}{2} - \frac{L_{D} p_{x} y^{2}}{2} - L_{D} p_{y} x y + \frac{x^{3}}{6} - \frac{x y^{2}}{2}
+    \end{aligned}
+    \right) \;\right\} \; \text{sextupolar}\\
+    \\[-1.5em]
+    &+ K_{4} \left. \left(
+      \frac{x^{4}}{24} - \frac{x^{2} y^{2}}{4} + \frac{y^{4}}{24}
+    \right) \;\right\} \; \text{octupolar}
+  \end{aligned}
+\end{equation}
+\normalsize
+
+
+\paragraph{Second Order}
+
+\footnotesize
+\begin{equation}
+  \begin{aligned}
+    &K_{3} K_{4} L_{D} \left.\left(
+    \begin{aligned}
+      &\frac{L_{D}^{2} p_{x}^{2} x^{3}}{24} - \frac{L_{D}^{2} p_{x}^{2} x y^{2}}{8} + \frac{L_{D}^{2} p_{x} p_{y} x^{2} y}{4} - \frac{L_{D}^{2} p_{x} p_{y} y^{3}}{12} \\
+      &- \frac{L_{D}^{2} p_{y}^{2} x^{3}}{24} + \frac{L_{D}^{2} p_{y}^{2} x y^{2}}{8} + \frac{L_{D} p_{x} x^{4}}{12} - \frac{L_{D} p_{x} y^{4}}{12} \\
+      &+ \frac{L_{D} p_{y} x^{3} y}{6} + \frac{L_{D} p_{y} x y^{3}}{6} + \frac{x^{5}}{24} + \frac{x^{3} y^{2}}{12} + \frac{x y^{4}}{24}
+    \end{aligned} 
+    \right) \;\right\} \; \text{decapolar-like}\\
+  \end{aligned}
+\end{equation}
+\normalsize
+
+
+
+% --------- Skew Quad and Octupole
+\subsection{Transfer Map of a Skew Quadrupole and Octupole}
+
+The transfer map of a skew quadrupole $H_1$ and octupole $H_2$ of strength $K_1$ and $K_2$,
+separated by a drift like in the previous examples is given by
+
+\begin{equation}
+  \mathcal{M} = e^{:Z:} = e^{:H_2:} \cdot e^{D:H_1:}
+\end{equation}
+
+with $H_1$ and $H_2$ having as final expressions,
+
+\begin{equation}
+  \begin{aligned}
+    H_1 &= - J_{1} L_{1} \left(L_{D} p_{x} + x\right) \left(L_{D} p_{y} + y\right) \\
+    H_2 &= \frac{1}{4!} K_{2} L_{2} \left(x^{4} - 6 x^{2} y^{2} + y^{4}\right).
+  \end{aligned}
+\end{equation}
+
+The first two orders of the BCH of those two elements is given below.
+
+\paragraph{First Order}
+
+\begin{equation}
+  \begin{aligned}
+    &\left. J_{1} L_{1} \left(- L_{D}^{2} p_{x} p_{y} - L_{D} p_{x} y - L_{D} p_{y} x - x y\right) \; \right\} \; \text{skew quadrupolar}\\
+    &\left. + K_{2} L_{2} \left(\frac{x^{4}}{24} - \frac{x^{2} y^{2}}{4} + \frac{y^{4}}{24}\right) \; \right\} \; \text{octupolar}
+  \end{aligned}
+\end{equation}
+
+
+\paragraph{Second Order}
+
+\begin{equation}
+  \left. J_{1} K_{2} L_{1} L_{2} L_{D} \left(
+  \begin{aligned}
+      &\frac{L_{D} p_{x} x^{2} y}{4} - \frac{L_{D} p_{x} y^{3}}{12} - \frac{L_{D} p_{y} x^{3}}{12} \\
+      &+ \frac{L_{D} p_{y} x y^{2}}{4} + \frac{x^{3} y}{6} + \frac{x y^{3}}{6}
+  \end{aligned}
+  \right) \; \right\} \; \text{skew octupolar-like}
+\end{equation}
+
+
+
 
 % ==============================================================
 %                    Chromatic Amplitude Detuning
