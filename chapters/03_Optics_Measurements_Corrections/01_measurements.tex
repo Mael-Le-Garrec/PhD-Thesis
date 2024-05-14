@@ -25,12 +25,16 @@ optics reconstruction\\
 
 Chromaticity measurements are typically performed by varying the RF frequency to induce a change of
 momentum offset $\delta$, while measuring the tune.  The momentum offset $\delta$ being related to
-the RF frequency and the momentum compaction factor $\alpha_c$:
+the RF frequency, the Lorentz factor $\gamma$ and the momentum compaction factor
+$\alpha_c$~\cite{keintzel_jacqueline_beam_nodate}:
 
 \begin{equation}
-    \delta = - \frac{1}{\alpha_c} \cdot \frac{\Delta f_{\text{RF}}}{f_{\text{RF,nominal}}}
+    \delta = - \left(\frac{1}{\gamma^{-2} + \alpha_c}\right) \cdot \frac{\Delta f_{\text{RF}}}{f_{\text{RF,nominal}}}
     \label{eq:dpp_rf}
 \end{equation}
+
+In the LHC, the Lorentz factor $\gamma$ is here negligible, as the energy is large even at injection.
+At 450GeV, $\gamma^{-2} \approx 10^{-6}$, which is two orders of magnitude smaller than $\alpha_c$.
 
 Frequency steps of 20Hz every 30 secondes are usually taken to compromise between number of data
 points, precision of the tune estimate, and duration of the measurement. Once beam losses,
@@ -52,8 +56,8 @@ larger steps. The same procedure is then re-applied in the negative. Figure
 % --- Analysis and Fit ---
 \subsubsection{\review{Analysis}}
 
-Once the tunes have been acquired and the momentum offset computed via Eq.~\eqref{eq:dpp_rf}, the
-chromaticity function (see Eq.\eqref{eq:background_chromaticity}) can be used to fit the
+Once the tunes have been acquired and the momentum offset computed via \cref{eq:dpp_rf}, the
+chromaticity function (see \cref{eq:background_chromaticity}) can be used to fit the
 measured data and retrieve each order.
 
 As part of work for this thesis, a custom tool was developed, in order to ease such analysis of
@@ -68,13 +72,13 @@ GUI~\cite{m_le_garrec_non-linear_2022}, is composed of several parts:
     \item Corrections of chromaticity and resonance driving terms
 \end{itemize}
 
-\todo{if the screenshot actually useful?}
-
-Fits up to the third and fifth order using this tool can be seen in Fig.\ref{fig:chroma_gui}.
-
-\begin{figure}[H]
-    \includegraphics[width=\textwidth]{./images/chroma_gui.png}
-    \caption{\textit{Non-Linear Chromaticity GUI} program, used to automatize chromaticity 
-             analysis.}
-    \label{fig:chroma_gui}
-\end{figure}
+%\todo{if the screenshot actually useful?}
+%
+%Fits up to the third and fifth order using this tool can be seen in Fig.\ref{fig:chroma_gui}.
+%
+%\begin{figure}[H]
+%    \includegraphics[width=\textwidth]{./images/chroma_gui.png}
+%    \caption{\textit{Non-Linear Chromaticity GUI} program, used to automatize chromaticity 
+%             analysis.}
+%    \label{fig:chroma_gui}
+%\end{figure}

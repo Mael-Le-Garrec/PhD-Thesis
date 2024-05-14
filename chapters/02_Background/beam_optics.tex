@@ -104,3 +104,28 @@ with skew-octupolar RDTs contributed to by normal octupoles in the presence of c
 % ============================================
 \subsection{\todo{Momentum Compaction Factor}}
 \label{subsection:coordinates_systems:momentum_compaction_factor}
+
+In synchrotrons, particles with a deviation in momentum with respect to the reference particle will
+experience a different path length due to the bending of the dipoles. This effect is characterized
+by the \textit{momentum compaction factor}~\cite{keintzel_jacqueline_beam_nodate},
+
+\begin{equation}
+    \alpha_c = \frac{\Delta C / C}{\delta},
+\end{equation}
+
+relating the circumference of the ring $C$ to the momentum offset $\delta$.
+A positive momentum compaction factor indicates a longer path traveled by particles with a positive
+momentum offset, and vice versa.
+
+
+The momentum compaction factor can also be broken down into orders as an infinite sum, where the
+linear term is often referred to as the first order,
+
+\begin{equation}
+    \alpha_c = \underbrace{\alpha_{c,0}}_{\text{Linear term}}
+               + \underbrace{\sum_{i \geq 1} \alpha_{c, i} \delta^i}_\text{Non linear terms}.
+\end{equation}
+
+In the LHC, the contribution from the non linear terms is
+negligible~\cite{keintzel_jacqueline_beam_nodate}. Further details can be found
+in~\cref{subsection:decapoles:chromaticity:measurement}.

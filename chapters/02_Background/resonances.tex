@@ -55,14 +55,14 @@ Resonant conditions due to the tunes can thus be described by the following cond
 As seen in \cref{eq:coordinate_systems:linear_position_normal_form}, resonance driving terms have an
 impact on the transverse position of a particle. This means that performing a FFT on such a signal
 will reveal spectral lines in the frequency spectrum.
-Each RDT $f_{jklm}$ can thus be observed in either one or both frequency spectrums of transverse
-planes, at multiples of $Q_x \pm Q_y$. \cref{eq:resonances:rdt_spectrum} shows where those lines
-would appear:
+Each RDT $f_{jklm}$ can thus be observed in either one or both the frequency spectrums of the
+horizontal and vertical planes, at multiples of $Q_x \pm Q_y$. \cref{eq:resonances:rdt_spectrum}
+shows where those lines would appear:
 
 \begin{equation}
     \begin{aligned}
-    & H(1 - j + k, m - l) \quad\quad& \mbox{horizontal line, if } j \ne 0 \\
-    & V(k - j, 1 - l + m) \quad\quad& \mbox{vertical line, if } l \ne 0.
+    & H_{jklm} \;&&\text{at}\; (1 - j + k)Q_x + (m - l)Q_y \quad&&; \quad j \ne 0 \\
+    & V_{jklm}   &&\text{at}\; (k - j)Q_x + (1 - l + m)Q_y      &&; \quad l \ne 0.
     \end{aligned}
     \label{eq:resonances:rdt_spectrum}
 \end{equation}

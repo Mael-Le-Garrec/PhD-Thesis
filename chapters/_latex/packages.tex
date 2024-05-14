@@ -67,19 +67,42 @@
   eventxtindent={4mm},
   oddtxtexdent={2.5mm}]{thumbs}  % markers on the side to show the chapter
 \usepackage[%
-  backend=bibtex      % biber or bibtex
-%,style=authoryear    % Alphabeticalsch
- ,style=numeric-comp  % numerical-compressed
- ,sorting=none        % no sorting
- ,sortcites=true      % some other example options ...
+  backend=bibtex        % biber or bibtex
+%,style=authoryear      % Alphabeticalsch
+ ,style=numeric-comp    % numerical-compressed
+ ,sorting=none          % no sorting
+ ,sortcites=true        % some other example options ...
  ,block=none
  ,indexing=false
  ,citereset=none
  ,isbn=false
  ,url=true
- ,doi=true            % prints doi
- ,natbib=true         % if you need natbib functions
+ ,doi=true              % prints doi
+ ,natbib=true           % if you need natbib functions
 ]{biblatex}
+\AtEveryBibitem{%  % in the bibliography
+    \clearlist{language}%  % remove language from citations
+    \clearfield{urlyear}%  % to remove the "visited on"
+    \clearfield{urlmonth}%
+    \clearfield{urlday}%
+    \clearfield{day}%  % only print the year
+    \clearfield{month}%
+    \clearfield{endday}%
+    \clearfield{endmonth}%
+    \clearfield{note}%  % information about the PDF, like size and number of pages
+    \clearfield{pages}%  % which pages in the book
+}
+\AtEveryCitekey{%  % for \fullcite
+    \clearlist{language}%
+    \clearfield{urlyear}%
+    \clearfield{urlmonth}%
+    \clearfield{day}%
+    \clearfield{month}%
+    \clearfield{endday}%
+    \clearfield{endmonth}%
+    \clearfield{note}%
+    \clearfield{pages}%
+}
 \addbibresource{library.bib}  % better than \bibliography
 \usepackage{csquotes}  % Changes the quotestyle depending on the language, useful for bibliography
 
@@ -159,9 +182,9 @@ afterskip=2cm]{chapter}
 % Define some colors
 \definecolor{thumb_color}{HTML}{D9D9D9}
 
-% LaTeX will stretch the page to fit vertically on the whole page
+% LaTeX will stretch the page to fit vertically on the whole page as part of the "book" style
 % This prevents it
-\raggedbottom
+%\raggedbottom
 
 % ===========================================================================
 %                            SOME COMMANDS

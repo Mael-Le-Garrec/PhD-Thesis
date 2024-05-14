@@ -6,25 +6,48 @@
 % === Motivation
 \section{Motivation}
 
-The decapole fields in the LHC have been studied since Run 1 via chromaticity 
-measurements~\cite{maclean_non-linear_2011,maclean_commissioning_2016,maclean_measurement_2014}. 
-The third order of the non-linear chromaticity, $Q'''$, generated for the most part by decapoles,
-has shown a consistent discrepancy at injection energy between its expected value in simulation and
-that observed in beam-based measurements.
-Figure \ref{fig:decapoles:bare_chroma_vs_simulations} highlights this discrepancy.
+\subsection{Harmonics and Field Errors}
+
+Manufactured magnets never have a single field as one would like. Instead, so called 
+\textit{allowed harmonics} exist due to the geometry of the coil. As such, the allowed harmonics of
+dipoles are sextupolar, decapolar, decatetrapolar and so on~\cite{deniau_magnetic_2009}.
+
+During the design of the LHC, the main dipoles have been identified to generate a significant 
+decapolar field, aimed to be corrected by \textit{MCDs}, decapolar magnet correctors.
+Magnetic measurements of those various fields were taken and magnetic tables built.
 
 \begin{figure}[H]
     \centering
-    %\captionsetup{justification=centering,margin=2cm}
+    \includegraphics[width=0.5\textwidth]{./images/main_dipole_fields.png}
+    \caption{Magnetic field in a dipole magnet. Courtesy of Laurent
+    Deniau~\cite{deniau_magnetic_2009}.}
+    \label{fig:decapoles:magnetic_field_dipole}
+\end{figure}
+
+
+\subsection{Discrepancies at Injection}
+
+Beam-based measurements have been carried in the LHC since Run 1 to better understand the decapolar
+fields. Those have been carried out via chromaticity
+measurements~\cite{maclean_non-linear_2011,maclean_commissioning_2016,maclean_measurement_2014}. 
+The third order of the non-linear chromaticity, $Q'''$, generated for the most part by decapoles,
+has shown a consistent discrepancy at injection energy between its expected value from simulations
+and that observed. Figure \ref{fig:decapoles:bare_chroma_vs_simulations} highlights this
+discrepancy.
+
+\begin{figure}[H]
+    \centering
     \includegraphics[width=0.7\textwidth]{images/bare_chroma_simulated.png}
     \caption{Measured and simulated chromaticity at injection energy without octupolar and
              decapolar corrections. \todo{png really?}}
     \label{fig:decapoles:bare_chroma_vs_simulations}
 \end{figure}
 
-This discrepancy poses a significant problem, as the operational corrections are derived from
-simulations. It is thus observed that $Q'''$ is over-corrected by an almost factor 2, resulting in
-an effectively un-corrected third order chromaticity.
+The operational corrections being based on a magnetic model and simulations, this 
+discrepancy should not appear.
+It has though indeed been observed that $Q'''$ is over-corrected by an almost factor 2,
+resulting in an effectively un-corrected third order chromaticity. The magnetic model, FiDeL, is
+used during operation to correct various multipole errors, including octupolar and decapolar.
 Chromaticity measurements have thus been repeated during LHC's Run 3 and complemented by beam-based
 corrections.
 
@@ -48,26 +71,16 @@ never studied before:
 \input{chapters/05_Decapoles/01_chromaticity.tex}
 
 
-% === Chromatic Amplitude Det
-\section{Chromatic Amplitude Detuning}
+%==================================
+%   Chromatic Amplitude Detuning
+%==================================
+\input{chapters/05_Decapoles/02_chromatic_amplitude_detuning.tex}
 
-% === RDTs
-\section{Resonance Driving Terms}
 
-Measurements 
-
-\begin{itemize}
-    \item 2022 Q'' and Q''' corrections 2022-04-24
-    \item 2022-10-19 Virgin machine
-    \item 2023-easter (FiDeL)
-    \item 2023-06-14 MD9549 (FiDeL and Q'''/ RDT corr)
-\end{itemize}
-
-Bring up effect of KCO on RDT f1004
-
-\subsection{Decapolar Contribution}
-
-\subsection{Lower Order Contributions}
+%==================================
+%      Resonance Driving Terms
+%==================================
+\input{chapters/05_Decapoles/03_rdts.tex}
 
 \section{Impact of Decapolar Fields}
 
