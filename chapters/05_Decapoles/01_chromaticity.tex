@@ -165,6 +165,38 @@ chromaticity orders.
 \end{table}
 
 
+
+% ========== Noisy Tune
+\subsubsection{Noise and Spectral Lines}
+
+Noise lines, due to electronics, can be seen in the raw data obtained from the BBQ tune system.
+Occasionally, when those resonances are strong, their frequency peak can be mistaken as the tune and
+logged as such by the system. This yield large uncertainties in the measurement when data points 
+can't properly be classified as outliers. A tune measurement presenting this issue is showed in 
+\cref{fig:decapoles:chromaticity:noisy_tune}.
+
+\begin{figure}[tbh]
+    \includegraphics[width=\textwidth]{./images/noisy_tune.png}
+    \caption{}
+    \label{fig:decapoles:chromaticity:noisy_tune}
+\end{figure}
+
+A solution to this issue is to use the raw data extracted from the BBQ system. From there, a
+spectrogram clearly shows the noise lines, as seen in \cref{fig:decapoles:chromaticity:spectrogram}.
+Those lines have been repeatedly identified over several measurements and confirmed to be fixed.
+The highest peak of the spectrogram can thus be safely identified by removing those resonances,
+yielding a cleaner measurement. It is also to be added that the BBQ requires to set a tune window,
+which can be forgotten. By analyzing the raw data, it is ensured that the measurement has usable
+data and does not try to measure noise.
+
+\begin{figure}[tbh]
+    \includegraphics[width=\textwidth]{./images/spectrogram.png}
+    \caption{Tune spectrogram obtained via BBQ system. Strong resonance lines can be seen above and
+    below where the tune really is, causing the wrong frequency peak to be identified as the tune.}
+    \label{fig:decapoles:chromaticity:spectrogram}
+\end{figure}
+
+
 % ========== Other way of measuring delta
 \subsubsection{Other $\delta$ measurements}
 

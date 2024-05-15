@@ -360,11 +360,14 @@ includes $N$ non-linear elements is defined~\cite{dragt_overview_2013} as:
 
 where $\mathcal{R}$ is a matrix describing the linear motion over one turn and the $h_i$ terms
 representing the Hamiltonian of each non-linear elements of the machine.
-Via the Baker-Campbell-Hausdorff (BCH) theorem~\cite{forest_beam_1998}, previous Lie transformations
-can be combined and simplified:
+Via the Baker-Campbell-Hausdorff (BCH) theorem~\cite{forest_beam_1998,casas_efficient_2009},
+previous Lie transformations can be combined and simplified via
+\cref{eq:coordinates:basic_exponent_bch} and \cref{eq:coordinates:bch}. Further orders can be found
+and computed via~\cite{casas_efficient_2009}.
 
 \begin{equation}
     e^{:h_1:} \cdot e^{:h_2:} = e^{:h:}
+    \label{eq:coordinates:basic_exponent_bch}
 \end{equation}
 with 
 \begin{equation}
@@ -376,7 +379,6 @@ with
     \end{alignedat}
     \label{eq:coordinates:bch}
 \end{equation}
-
 
 
 The one turn map is thus expressed as a single Lie transformation:
