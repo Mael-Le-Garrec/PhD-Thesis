@@ -53,6 +53,7 @@ following~\cite{keintzel_jacqueline_beam_nodate,tomas_direct_2003,franchi_studie
 
 \begin{equation}
     H = \Re \left[ \sum_{n>1} (K_n + iJ_n) \frac{(x+iy)^n}{n!} \right].
+    \label{eq:appendix:transfer_maps:hamiltonian}
 \end{equation}
 
 From this, normal and skew fields can be separated:
@@ -123,47 +124,173 @@ As a reminder, the BCH of two elements up to order 3 is given below,
 % --------- Generic Expression
 \subsection{Generic Effective Hamiltonian of Two Elements}
 
-Two elements of orders $n$ and $m$ can be combined together via the BCH.
-Below are detailed the multipole-like orders that are generated depending on the BCH order.
-
-\paragraph{First Order}
-
-\begin{equation}
-  \text{multipolar-like orders} =
-  \begin{cases}
-    m\\
-    n
-  \end{cases}.
-\end{equation}
-
-
-\paragraph{Second Order}
+In order not to have to derive every combination of multipoles, a generic approach can be taken.
+Two elements of orders $n$ and $m$ can indeed be combined together via the BCH. Their hamiltonians
+is thus the one from \cref{eq:appendix:transfer_maps:hamiltonian} with orders $m$ and $n$.
+A drift is put in between the two multipoles to change the coordinates. This results in non-zero
+Poisson brackets as the momentum is propagated,
 
 \begin{equation}
-  \text{multipolar-like orders} =
-  \begin{cases}
-    m + n - 2
-  \end{cases}.
+  [H_2,H_1] \rightarrow [H_{2}, D \cdot H_{1}].
 \end{equation}
 
-%The resulting effective Hamiltonian is of higher order for $n > 2$ and $m > 2$.
-
-
-\paragraph{Third Order}
+Higher orders will arise with derivations when applying the Poisson brackets. Those orders can be 
+found by counting the number of Poisson brackets, and which operators are implicated.
+A Poisson bracket implicating $H_2$ will increase the resulting order by $m$, and likewise for $H_1$
+and $n$. The resulting order is then decreased by the number of poisson brackets times $2$.
+\cref{eq:appendix:bch_formula_resulting_order} gives how this can be calculated when considering
+the written form of the Poisson brackets (eg. $[H_2, [H_2, H_1]]$).
 
 \begin{equation}
-  \text{multipolar-like orders} =
-  \begin{cases}
-    m+ 2n-4 \\
-    2m + n-4
-  \end{cases}.
+  \text{resulting order} = \text{count}("H_2") \cdot m + \text{count}("H_1") \cdot{n} - 2 \cdot \text{count}("[")
+  \label{eq:appendix:bch_formula_resulting_order}
 \end{equation}
+
+Although this formula is quite helpful, it is not trivial to compute which orders will arise from
+each BCH order. Indeed, not all combinations of $H_1$ and $H_2$ appear, as explained in details 
+in~\cite{casas_efficient_2009}. \cref{table:appendix:transfer_maps:bch_resulting_orders} shows the
+Poisson brackets corresponding to each order of the BCH, up to order 6, along with the resulting
+multipole order. To keep the table readable, Poisson Brackets are not shown above that order, as
+duplicates of resulting orders become quite frequent.
+Similarly, \cref{table:appendix:transfer_maps:bch_resulting_orders_combination} shows how fields
+can be generated depending on the orders of multipoles and that of the BCH.
+
+\begin{table}[H]
+  \small
+  \centering
+  \begin{tabular}{ccc}
+    \toprule
+      BCH Order & Poisson Brackets & Resulting Order \\
+      \midrule
+      1 & $A$ & $m$ \\
+        & $B$ & $n$ \\
+      \midrule
+      2 & $\frac{\left[A,B\right]}{2}$ & $m + n - 2$ \\
+      \midrule
+      3 & $- \frac{\left[B,\left[A,B\right]\right]}{12}$ & $m + 2 n - 4$ \\
+        & $\frac{\left[A,\left[A,B\right]\right]}{12}$ & $2 m + n - 4$ \\
+      \midrule
+      4 & $- \frac{\left[B,\left[A,\left[A,B\right]\right]\right]}{24}$ & $2 m + 2 n - 6$ \\
+      \midrule
+      5 & $- \frac{\left[A,\left[B,\left[A,\left[A,B\right]\right]\right]\right]}{120}$ & $3 m + 2 n - 8$ \\
+        & $- \frac{\left[B,\left[A,\left[A,\left[A,B\right]\right]\right]\right]}{180}$ & $3 m + 2 n - 8$ \\
+        & $- \frac{\left[A,\left[B,\left[B,\left[A,B\right]\right]\right]\right]}{360}$ & $2 m + 3 n - 8$ \\
+        & $- \frac{\left[A,\left[A,\left[A,\left[A,B\right]\right]\right]\right]}{720}$ & $4 m + n - 8$ \\
+        & $\frac{\left[B,\left[B,\left[A,\left[A,B\right]\right]\right]\right]}{180}$ & $2 m + 3 n - 8$ \\
+        & $\frac{\left[B,\left[B,\left[B,\left[A,B\right]\right]\right]\right]}{720}$ & $m + 4 n - 8$ \\
+      \midrule
+      6 & $- \frac{\left[A,\left[A,\left[B,\left[B,\left[A,B\right]\right]\right]\right]\right]}{240}$ & $3 m + 3 n - 10$ \\
+        & $\frac{\left[A,\left[B,\left[B,\left[A,\left[A,B\right]\right]\right]\right]\right]}{240}$ & $3 m + 3 n - 10$ \\
+        & $\frac{\left[B,\left[B,\left[A,\left[A,\left[A,B\right]\right]\right]\right]\right]}{360}$ & $3 m + 3 n - 10$ \\
+        & $\frac{\left[A,\left[B,\left[B,\left[B,\left[A,B\right]\right]\right]\right]\right]}{720}$ & $2 m + 4 n - 10$ \\
+        & $\frac{\left[B,\left[A,\left[A,\left[A,\left[A,B\right]\right]\right]\right]\right]}{1440}$ & $4 m + 2 n - 10$ \\
+        & $\frac{\left[B,\left[B,\left[B,\left[A,\left[A,B\right]\right]\right]\right]\right]}{1440}$ & $2 m + 4 n - 10$ \\
+    %
+    %
+    %
+      \midrule
+      7 & $\cdots$ & $2m + 5n - 12$ \\
+        &  & $m + 6n - 12$ \\
+        &  & $3m + 4n - 12$ \\
+        &  & $5m + 2n - 12$ \\
+        &  & $6m + n - 12$ \\
+        &  & $4m + 3n - 12$ \\
+      \midrule
+      8 & $\cdots$ & $6m + 2n - 14$ \\
+        &  & $2m + 6n - 14$ \\
+        &  & $5m + 3n - 14$ \\
+        &  & $3m + 5n - 14$ \\
+        &  & $4m + 4n - 14$ \\
+      %\midrule
+      %9 & $\cdots$ & $7m + 2n - 16$ \\
+      %  &  & $8m + n - 16$ \\
+      %  &  & $6m + 3n - 16$ \\
+      %  &  & $5m + 4n - 16$ \\
+      %  &  & $2m + 7n - 16$ \\
+      %  &  & $m + 8n - 16$ \\
+      %  &  & $4m + 5n - 16$ \\
+      %  &  & $3m + 6n - 16$ \\
+      \bottomrule
+  \end{tabular}
+  \caption{Resulting multipole orders arising from the Poisson brackets of a given BCH order for two
+  multipoles $A$ and $B$ of order $m$ and $n$. Starting from order 7, the Poisson brackets are not
+  given as duplicates grow the list significantly.}
+  \label{table:appendix:transfer_maps:bch_resulting_orders}
+\end{table}
+
+
+\begin{table}[H]
+  \centering
+  \footnotesize
+  \def\arraystretch{1.7}
+  \begin{tabular}{ccccccc}
+  \multicolumn{1}{c}{} & \multicolumn{6}{c}{BCH Order} \\
+  Field & 1 & 2 & 3 & 4 & 5 & 6 \\
+  \midrule
+  3 & $\begin{aligned}&H_{3}\end{aligned}$ &  &  &  &  &  \\
+  \hline
+  4 & $\begin{aligned}&H_{4}\end{aligned}$ & $\begin{aligned}&(H_{3})^2\end{aligned}$ &  &  &  &  \\
+  \hline
+  5 & $\begin{aligned}&H_{5}\end{aligned}$ & $\begin{aligned}&H_{3}H_{4}\end{aligned}$ & $\begin{aligned}&(H_{3})^3\end{aligned}$ &  &  &  \\
+  \hline
+  6 & $\begin{aligned}&H_{6}\end{aligned}$ & $\begin{aligned}&H_{3}H_{5},\\&(H_{4})^2\end{aligned}$ & $\begin{aligned}&(H_{3})^2H_{4}\end{aligned}$ & $\begin{aligned}&(H_{3})^4\end{aligned}$ &  &  \\
+  \hline
+  7 & $\begin{aligned}&H_{7}\end{aligned}$ & $\begin{aligned}&H_{3}H_{6},\\&H_{4}H_{5}\end{aligned}$ & $\begin{aligned}&(H_{3})^2H_{5},\\&H_{3}(H_{4})^2\end{aligned}$ &  & $\begin{aligned}&(H_{3})^5\end{aligned}$ &  \\
+  \hline
+  8 & $\begin{aligned}&H_{8}\end{aligned}$ & $\begin{aligned}&(H_{5})^2,\\&H_{3}H_{7},\\&H_{4}H_{6}\end{aligned}$ & $\begin{aligned}&(H_{3})^2H_{6},\\&(H_{4})^3\end{aligned}$ & $\begin{aligned}&(H_{3})^2(H_{4})^2\end{aligned}$ & $\begin{aligned}&(H_{3})^4H_{4}\end{aligned}$ & $\begin{aligned}&(H_{3})^6\end{aligned}$ \\
+  \hline
+  9 & $\begin{aligned}&H_{9}\end{aligned}$ & $\begin{aligned}&H_{4}H_{7},\\&H_{3}H_{8},\\&H_{5}H_{6}\end{aligned}$ & $\begin{aligned}&(H_{3})^2H_{7},\\&(H_{4})^2H_{5},\\&H_{3}(H_{5})^2\end{aligned}$ &  & $\begin{aligned}&(H_{3})^3(H_{4})^2,\\&(H_{3})^4H_{5}\end{aligned}$ &  \\
+  \hline
+  10 & $\begin{aligned}&H_{10}\end{aligned}$ & $\begin{aligned}&H_{4}H_{8},\\&H_{5}H_{7},\\&H_{3}H_{9},\\&(H_{6})^2\end{aligned}$ & $\begin{aligned}&(H_{3})^2H_{8},\\&H_{4}(H_{5})^2,\\&(H_{4})^2H_{6}\end{aligned}$ & $\begin{aligned}&(H_{4})^4,\\&(H_{3})^2(H_{5})^2\end{aligned}$ & $\begin{aligned}&(H_{3})^2(H_{4})^3,\\&(H_{3})^4H_{6}\end{aligned}$ & $\begin{aligned}&(H_{3})^4(H_{4})^2\end{aligned}$ \\
+  \hline
+  11 & $\begin{aligned}&H_{11}\end{aligned}$ & $\begin{aligned}&H_{4}H_{9},\\&H_{3}H_{10},\\&H_{6}H_{7},\\&H_{5}H_{8}\end{aligned}$ & $\begin{aligned}&(H_{4})^2H_{7},\\&H_{3}(H_{6})^2,\\&(H_{5})^3,\\&(H_{3})^2H_{9}\end{aligned}$ &  & $\begin{aligned}&(H_{3})^4H_{7},\\&H_{3}(H_{4})^4,\\&(H_{3})^3(H_{5})^2\end{aligned}$ & $\begin{aligned}&(H_{3})^3(H_{4})^3\end{aligned}$ \\
+  \hline
+  12 & $\begin{aligned}&H_{12}\end{aligned}$ & $\begin{aligned}&H_{6}H_{8},\\&(H_{7})^2,\\&H_{5}H_{9},\\&H_{3}H_{11},\\&H_{4}H_{10}\end{aligned}$ & $\begin{aligned}&H_{4}(H_{6})^2,\\&(H_{4})^2H_{8},\\&(H_{5})^2H_{6},\\&(H_{3})^2H_{10}\end{aligned}$ & $\begin{aligned}&(H_{3})^2(H_{6})^2,\\&(H_{4})^2(H_{5})^2\end{aligned}$ & $\begin{aligned}&(H_{3})^4H_{8},\\&(H_{4})^5\end{aligned}$ & $\begin{aligned}&(H_{3})^4(H_{5})^2,\\&(H_{3})^2(H_{4})^4\end{aligned}$ \\
+  \bottomrule
+  \end{tabular}
+  %
+  \caption{Correspondence of a combination of multipoles from a BCH order to multipole-like fields.
+  The exponents indicate the order of the BCH for individual components.}
+  \label{table:appendix:transfer_maps:bch_resulting_orders_combination}
+\end{table}
+
+
+%Below are detailed the multipole-like orders that are generated depending on the BCH order.
+
+%\paragraph{First Order}
+%
+%\begin{equation}
+%  \text{multipolar-like orders} =
+%  \begin{cases}
+%    m\\
+%    n
+%  \end{cases}.
+%\end{equation}
+%
+%
+%\paragraph{Second Order}
+%
+%\begin{equation}
+%  \text{multipolar-like orders} =
+%  \begin{cases}
+%    m + n - 2
+%  \end{cases}.
+%\end{equation}
+%
+%%The resulting effective Hamiltonian is of higher order for $n > 2$ and $m > 2$.
+%
+%
+%\paragraph{Third Order}
+%
+%\begin{equation}
+%  \text{multipolar-like orders} =
+%  \begin{cases}
+%    m+ 2n-4 \\
+%    2m + n-4
+%  \end{cases}.
+%\end{equation}
 
 %The resulting effective Hamiltonian is again here of higher order for $m + n > 4$.
-
-\todo{add table}
-
-
 
 
 % --------- Two sextupoles 

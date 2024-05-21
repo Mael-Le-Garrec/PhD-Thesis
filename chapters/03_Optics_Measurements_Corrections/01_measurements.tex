@@ -3,14 +3,30 @@
 
 
 % ===============================
-%        Linear Optics
+%           TbT Data
 % ===============================
-\subsection{Linear Optics}
+\subsection{\review{Turn-by-Turn Data}}
 
-\todo{Excitation via ac dipole\\
-spectral analysis\\
-optics reconstruction\\
-}
+Data is typically acquired turn by turn while exciting the beam with an AC-Dipole. This is usually
+done with a \textit{pilot bunch}, with a reduced intensity of $10^{11}$ protons compared to
+an operation bunch of $10^{12}$. This allow for higher amplitude oscillations while remaining safe 
+for the machine. \todo{intensity?} 
+
+A spectral analysis is then performed via a \textit{FFT}, making apparent the driven tunes from the 
+AC-Dipole, the transverse tunes and the possible resonance lines, as shown in
+\cref{fig:optics_measurements:tbt_data:spectrum}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./images/basic_spectrum.pdf}
+    \caption{Horizontal frequency spectrum of a turn-by-turn measurement in the LHC. The 
+    \textit{driven} tunes of the AC-Dipoles have the highest amplitudes while the natural tune can
+    be seen close to it. Other lines are often created by resonances.}
+    \label{fig:optics_measurements:tbt_data:spectrum}
+\end{figure}
+
+From this, the \textit{optics} such as $\beta$-beating, dispersion, coupling and Resonance Driving
+Terms can be reconstructed~\cite{catalan-lasheras_linear_2004}.
 
 
 
