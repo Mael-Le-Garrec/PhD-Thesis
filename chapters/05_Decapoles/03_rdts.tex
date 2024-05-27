@@ -19,7 +19,7 @@ lost when their amplitude becomes too large.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{./images/tune_diagram_f1004.pdf}
+    \includegraphics[width=0.8\textwidth]{./images/tune_diagram_f1004.pdf}
     \caption{Frequency map at injection energy, with decapolar field errors and nominal settings for
     landau octupoles. The highlighted resonance (1,-4), excited by decapoles, shows a degradation
     over 20,000 turns. The tune shift between the start and the end of the simulation is indicated
@@ -73,6 +73,62 @@ of the RDT $f_{1004}$, as seen in \cref{fig:decapoles:rdts:f1004_dq3}.
     Response
 }
 
-\subsection{Decapolar Contribution}
+% ---------------------------------------
+%         Decapole Contribution
+% ---------------------------------------
+\subsection{\todo{Decapolar Contribution}}
 
-\subsection{Lower Order Contributions}
+
+% ---------------------------------------
+%        Higher Order Contribution
+% ---------------------------------------
+\subsection{\todo{Higher Order Contributions}}
+
+Feed-Down from dodecapoles in the IRs
+% Measurements in 
+% /afs/cern.ch/work/m/mlegarr2/public/beta_beat_output/2024-05-21
+
+
+% ---------------------------------------
+%        Lower Order Contribution
+% ---------------------------------------
+\subsection{\todo{Lower Order Contributions}}
+
+As described in \cref{appendix:transfer_maps}, multipoles can combine to create fields that are seen
+as higher orders when considering higher orders of the BCH expansion.
+For decapoles, combinations of several sextupoles and sextupoles with octupoles give rise to
+decapolar-like fields, as described in
+\cref{table:appendix:transfer_maps:bch_resulting_orders_combination}.
+
+This effect was observed in 2022 during Run 3's commissioning. Routine corrections of the non-linear
+chromaticity $Q''$ and $Q'''$ were performed, and RDT measurements taken before and after their
+correction. As $Q'''$ was corrected, the expectation was that the RDT $f_{1004}$ would also lower
+with the reduction of the decapolar strengths $K_5$. However, an increase of the RDT was observed,
+as shows \cref{fig:decapoles:f1004_dq2_dq3}.
+
+\begin{figure}[H]
+    \includegraphics[width=0.9\textwidth]{./images/f1004_dq2_dq3_2022.pdf}    
+    \caption{Non intuitive increase of the RDT $f_{1004}$ after application of the $Q''$ and $Q'''$
+    corrections.\todo{redo plot}}
+    \label{fig:decapoles:f1004_dq2_dq3}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=0.9\textwidth]{./images/f1004/f1004_dq.pdf}
+    \caption{}
+    \label{}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=0.9\textwidth]{./images/f1004/f1004_mo.pdf}
+    \caption{}
+    \label{}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=0.9\textwidth]{./images/f1004/f1004_no_ms.pdf}
+    \caption{}
+    \label{}
+\end{figure}
+
+
+This increase, unknown then, is attributed to octupoles, combining with sextupoles to create
+decapolar-like fields.

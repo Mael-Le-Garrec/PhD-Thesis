@@ -39,6 +39,7 @@
 \usepackage{atveryend}
 %\usepackage{subfigure} (???)
 \usepackage{subcaption}
+\usepackage{pgf}  % fileformat for the flipbook
 \usepackage{xcolor,soul}
 \usepackage{lscape}  % landscape
 \usepackage{changepage}
@@ -107,6 +108,15 @@
 \addbibresource{library.bib}  % better than \bibliography
 \usepackage{csquotes}  % Changes the quotestyle depending on the language, useful for bibliography
 
+% Flipbook
+\usepackage{flipbook}
+\cfoot*{
+  \flipbookframe[1][1]{../flipbook/frames/frame_}[pgf][0.2]
+  % start frame
+  % speed of the animation per page
+  % scale
+}
+
 
 % To have big numbers at the start of each chapter
 %\definecolor{gray75}{gray}{0.75}
@@ -156,9 +166,6 @@ afterskip=2cm]{chapter}
 
 % Fancy chapter headings, needs to be loaded after geometry
 %\usepackage[Bjornstrup]{fncychap}  % issues a lot of warnings with scrbook, replaced in commands below
-
-% Change the headers to display both the current chapter and section, from fancyhdr
-%\pagestyle{fancy} 
 
 % Factor spacing between lines
 \linespread{1.1}

@@ -1,16 +1,12 @@
 % ###################################
 %      Chromatic Amplitude Detuning
-\section{Chromatic Amplitude Detuning}
+\section{\review{Chromatic Amplitude Detuning}}
 
-
-
-% ===============================
-%         Introduction
-% ===============================
-\subsection{Introduction}
-
-The chromatic amplitude detuning is the tune shift dependant on both the action and the momentum
-offset, whose decapole contributed terms are described via a Taylor expansion: 
+The Chromatic Amplitude Detuning is the tune shift dependant on both the actions and the momentum
+offset, whose decapole contributed terms are described via a Taylor expansion in
+\cref{eq:decapoles:chromatic_ampdet:decapole_contribution}. More information and derivations can
+be found in \cref{subsection:detuning_effects:chromatic_amplitude_detuning} and
+\cref{appendix:chromatic_amplitude_detuning}.
 
 \begin{equation}
   \begin{aligned}
@@ -19,13 +15,13 @@ offset, whose decapole contributed terms are described via a Taylor expansion:
     + \frac{\partial^2 Q}{\partial J_y \partial \delta}   \cdot J_y\delta 
     + \frac{1}{3!} \frac{\partial^3 Q}{\partial \delta^3} \cdot \delta^3.
     \end{aligned}
-    \label{eq:cad}
+    \label{eq:decapoles:chromatic_ampdet:decapole_contribution}
 \end{equation}
 
 
 The last term is more commonly referred to as the third order chromaticity, $Q'''$.  Each of those
-terms depend on the $\beta$-functions, the horizontal dispersion $D$ and the normalized decapole field
-gradient $K_5$ for a single source of length $L$:
+terms depend on the $\beta$-functions, the horizontal dispersion $D$ and the normalized decapole
+field gradient $K_5$ for a single source of length $L$,
 
 \begin{equation}\begin{aligned}
   \frac{\partial^2 Q_x}{\partial J_x \partial \delta} =& \frac{1}{16 \pi} K_5L \beta_x^2 D,         &\quad
@@ -38,49 +34,50 @@ gradient $K_5$ for a single source of length $L$:
   \frac{\partial^3 Q_y}{\partial \delta^3}            =& -\frac{1}{4\pi} K_5L \beta_y D^3.
 \end{aligned}\end{equation}
 
-The action dependant terms can be measured by exciting the beam with an
-AC-dipole with increasing strengths at different momentum-offsets.
+The action dependant terms can be measured by exciting the beam with an AC-dipole with increasing
+strengths at different momentum-offsets.
+
 Such a measurement was taken with octupole and decapole correctors turned off to measure the bare
 machine. Some data could not be collected due to machine availability issues, restricting the
-measurement to low intensity kicks. Nevertheless, the terms $\frac{\partial^2 Q_x}{\partial J_y
-\partial \delta}$ and $\frac{\partial^2 Q_y}{\partial J_y \partial \delta}$ for beam 2 were measured
-for the first time in the LHC.
-The momentum-offsets measured at were $-0.001$ and $0.001$, respectively roughly equal to $+140$Hz
-and $-140$Hz.
+measurement to low intensity kicks. 
+Nevertheless, the terms $\frac{\partial^2 Q_x}{\partial J_y \partial \delta}$ and $\frac{\partial^2
+Q_y}{\partial J_y \partial \delta}$ for beam 2 were measured for the first time in the LHC. The
+momentum-offsets measured at were $-0.001$ and $0.001$, respectively roughly equal to a trim of 
+$+140$Hz and $-140$Hz of the RF.
 
 \cref{figure:decapoles:chromatic_amplitude_detuning:b2qxy}
 and~\cref{figure:decapoles:chromatic_amplitude_detuning:b2qyy} show a fit of those terms to measured
-$Q_{x,y}$ vs $J_{y}$ at two different momentum offsets.  Expected shifts from MADX-PTC simulation,
-including field errors ranging from $b_3$ to $b_8$ and $a_4$ to $a_8$ with unpowered correctors, are
-also shown. A consistent difference between simulation and measurement is observed, which values and
-ratios of measurement to model can be found in Tab.~\ref{table:chromatic_ampdet}.
+$Q_{x,y}$ vs $J_{y}$ at two different momentum offsets. Expected shifts from MADX-PTC simulations,
+that include field errors ranging from sextupoles to decahexapoles ($b_3$ to $b_8$ and $a_4$ to
+$a_8$) are shown as a comparison.
 
 \begin{figure}[H]
-    \begin{subfigure}{0.9\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/chromatic_amplitude_detuning/B2_Qxy.pdf}
-        \caption{Horizontal tune shift depending on the vertical action: 
-        $\frac{\partial^2 Q_x}{\partial J_y \partial \delta}$.}
-        \label{figure:decapoles:chromatic_amplitude_detuning:b2qxy}
-    \end{subfigure}
-    %
-    \\[2em]
-    %
-    \begin{subfigure}{0.9\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/chromatic_amplitude_detuning/B2_Qyy.pdf}
-        \caption{Vertical tune shift depending on the vertical action: 
-        $\frac{\partial^2 Q_y}{\partial J_y \partial \delta}$.}
-        \label{figure:decapoles:chromatic_amplitude_detuning:b2qyy}
-    \end{subfigure}
-    \caption{Measured and simulated tune shift due to a change of action at two different
-    momentum offsets. Each fit corresponds to a chromatic amplitude detuning term evaluated at a
-    certain $\delta$.}
-    \label{figure:decapoles:chromatic_amplitude_detuning:two_terms}
+  \centering
+  \begin{subfigure}{0.7\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{images/chromatic_amplitude_detuning/B2_Qxy.pdf}
+      \caption{Horizontal tune shift depending on the vertical action: 
+      $\frac{\partial^2 Q_x}{\partial J_y \partial \delta}$.}
+      \label{figure:decapoles:chromatic_amplitude_detuning:b2qxy}
+  \end{subfigure}
+  %
+  \\[1em]
+  %
+  \begin{subfigure}{0.7\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{images/chromatic_amplitude_detuning/B2_Qyy.pdf}
+      \caption{Vertical tune shift depending on the vertical action: 
+      $\frac{\partial^2 Q_y}{\partial J_y \partial \delta}$.}
+      \label{figure:decapoles:chromatic_amplitude_detuning:b2qyy}
+  \end{subfigure}
+  \caption{Measured and simulated tune shift due to a change of action via an AC-Dipole at two
+  different momentum offsets. Each fit corresponds to a chromatic amplitude detuning term evaluated
+  at a certain $\delta$.}
+  \label{figure:decapoles:chromatic_amplitude_detuning:two_terms}
 \end{figure}
 
 
-\begin{table}[tbh]
+\begin{table}[H]
     \centering
     \small
     \begin{tabular}{|l||c|c|}
@@ -98,12 +95,16 @@ ratios of measurement to model can be found in Tab.~\ref{table:chromatic_ampdet}
     Ratio  &  0.38 ± 0.03  &   0.49 ± 0.05 \\
     \hline
     \end{tabular}
-    \caption{Comparison of the measured and simulated terms $\frac{\partial^2 Q_x}{\partial J_y \partial \delta}$ and $\frac{\partial^2 Q_y}{\partial J_y \partial \delta}$. Simulations include errors from $b_3$ to $b_8$ an $a_4$ to $a_8$.}
-    \label{table:chromatic_ampdet}
+    \caption{Comparison of the measured and PTC simulated terms $\frac{\partial^2 Q_x}{\partial J_y
+    \partial \delta}$ and $\frac{\partial^2 Q_y}{\partial J_y \partial \delta}$ at two discrete
+    momentum offsets. Simulations include errors from $b_3$ to $b_8$ an $a_4$ to $a_8$.}
+    \label{table:decapoles:chromatic_ampdet}
 \end{table}
 
-The observed ratios of measurement to model, for the chromatic amplitude detuning, show small
-discrepancies to the bare chromaticity ones. Those could be attributed to the low intensity kicks,
-not allowing a better fit. Nevertheless, the similarity of the ratios points to an issue with the
-decapolar error model of the main dipoles with measurements showing values about half of the
-magnetic model.
+A consistent difference between simulation and measurement is observed, which values and
+ratios of measurement to model can be found in \cref{table:decapoles:chromatic_ampdet}.
+The observed ratios of measurement to model for the chromatic amplitude detuning show slight
+discrepancies compared to the bare chromaticity ones. These discrepancies could be due to the low
+intensity kicks, which don't allow for a better fit. However, the similarity of the ratios suggests
+an issue with the decapolar error model of the main dipoles, with measurements showing values about
+half of those predicted by the magnetic model.
