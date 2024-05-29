@@ -82,12 +82,33 @@ of the RDT $f_{1004}$, as seen in \cref{fig:decapoles:rdts:f1004_dq3}.
 % ---------------------------------------
 %        Higher Order Contribution
 % ---------------------------------------
-\subsection{\todo{Higher Order Contributions}}
+\subsection{\review{Higher Order Contributions}}
 
-Feed-Down from dodecapoles in the IRs
 % Measurements in 
 % /afs/cern.ch/work/m/mlegarr2/public/beta_beat_output/2024-05-21
 
+To produce collisions at top energy, \textit{crossing angles} are introduced via the orbit
+correctors located in the triplets, before the separation dipoles and the matching section of the
+interaction regions (\texttt{MCBX}, \texttt{MCBY} and \texttt{MCBC})~\cite{de_maria_lhc_2008}. Those
+collisions happen with a small $\beta*$, currently 30cm, requiring strong quadrupolar fields from
+the triplets.
+
+At such $\beta$, those triplets also generate strong dodecapolar field errors. Because of the
+crossing-angles, feed-down appears and lower-order fields can be observed.
+Such feed-down to decapolar fields was observed during the first commissioning of Run~3, in
+2022~\cite{maclean_prospects_2022}.
+\cref{fig:decapoles:f1004_from_feeddown} shows how the RDT $f_{1004}$, normally affected by
+decapoles, varies with the application of crossing angles.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{./images/f1004x_feed-down_b6_triplets.pdf}
+    \caption{}
+    \label{fig:decapoles:f1004_from_feeddown}
+\end{figure}
+
+Such a contribution is though not expected at injection energy, as the triplets aren't powered as
+much as at top energy, $\beta*$ being set at around $10$m. Moreover, not crossing angle
 
 % ---------------------------------------
 %        Lower Order Contribution
@@ -107,6 +128,7 @@ with the reduction of the decapolar strengths $K_5$. However, an increase of the
 as shows \cref{fig:decapoles:f1004_dq2_dq3}.
 
 \begin{figure}[H]
+    \centering
     \includegraphics[width=0.9\textwidth]{./images/f1004_dq2_dq3_2022.pdf}    
     \caption{Non intuitive increase of the RDT $f_{1004}$ after application of the $Q''$ and $Q'''$
     corrections.\todo{redo plot}}
