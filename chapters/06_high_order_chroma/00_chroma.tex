@@ -1,9 +1,9 @@
-\chapter{Very High Order Field Measurement in the LHC}
+\chapter{High Order Field Measurements in the LHC}
 \thumbforchapter{}
 \chaptertoc{}
 \newpage
 
-\section{First Measurement of Fourth and Fifth Order Chromaticity}
+\section{\todo{TODO}}
 
 \begin{enumerate}
 \color{red}
@@ -14,46 +14,135 @@
 \end{enumerate}
 
 
-\section{INTRODUCTION}
+%====================
+% 	Introduction
+%====================
+\section{\todo{Introduction}}
 
-Non-Linear chromaticity measurements at injection have been performed since Run~1~\cite{maclean:ipac11-wepc078,maclean:ipac16-thpmr039,maclean_commissioning_2016,maclean_measurement_2014-1}. Those measurements, made by varying the RF frequency while observing the resulting tune change, have been
-carried out with a momentum offset of up to $\delta = \pm 2.2 \times 10^{-3}$, which led to the
+Beam-based high order field measurements have been carried out in the LHC since its first
+Run\todo{cite}, via chromaticity studies.
+Those measurements, made by varying the RF frequency while observing the resulting tune change, have
+been performed with a momentum offset of up to $\delta = \pm 2.2 \times 10^{-3}$, which led to the
 observation of the third order term of the non-linear chromaticity.
 
-During the commissioning of Run~3, a new collimator sequence was introduced, allowing wider
-momentum offset measurements, within $\delta \in [-3.2\times 10^{-3},3.7 \times 10^{-3}]$.
-This improved setup led to the observation of the fourth and fifth order
-terms at injection energy, denoted $Q^{(4)}$ and $Q^{(5)}$ respectively, produced to first order by dodecapoles and decatetrapole (see section \nameref{sec:nl_chroma_model}):
+During the commissioning of Run~3, a new collimator sequence has been introduced, allowing wider
+momentum offset measurements, within $\delta \in [-3.2\times 10^{-3},3.7 \times 10^{-3}]$. This
+improved setup led to the observation of the fourth and fifth order terms at injection energy.
+Those terms, denoted $Q^{(4)}$ and $Q^{(5)}$ respectively in
+\cref{eq:very_high_orders:chromaticity_high_orders}, are produced to first order by dodecapoles and
+decatetrapoles. Dodecapoles being powered off at injection and decatetrapoles being absent from the
+lattice, those fields originate from the field errors of the various magnets installed.
+
 \begin{equation}
 \begin{aligned}
-Q(\delta) = Q_0 + Q'\delta &+ \frac{1}{2!}Q''\delta^2 + \frac{1}{3!}Q'''\delta^3 \\
-                           &+ \frac{1}{4!}Q^{(4)}\delta^4  + \frac{1}{5!}Q^{(5)}\delta^5 + \mathcal{O}(\delta^6).
+Q(\delta) = Q_0 + Q'\delta &+ \frac{1}{2!}Q''\delta^2 + \frac{1}{3!}Q'''\delta^3
+                            + \frac{1}{4!}Q^{(4)}\delta^4  + \frac{1}{5!}Q^{(5)}\delta^5
+                            + \mathcal{O}(\delta^6).
 \end{aligned}
+    \label{eq:very_high_orders:chromaticity_high_orders}
 \end{equation}
 
-The momentum offset $\delta$ is  related to the RF frequency and the momentum compaction factor:
-$$
-\delta = -\frac{1}{\alpha_c} \frac{\Delta f_{RF}}{f_{RF,nominal}}.
-$$
-The model $\alpha_c$ used is $3.48 \times 10^{-4}$ for beam 1 and $3.47 \times 10^{-4}$ for beam 2.
-Via this relation, a change of 140Hz of the RF frequency corresponds to a momentum offset of about $-0.001$.
 
-Results of $Q^{(4)}$ and $Q^{(5)}$ measurements are presented, along with a comparison to the model.
 
-%========================================================================================
-%	NON-LINEAR MEASUREMENTS
-%========================================================================================
 
-\section{NL-CHROMATICITY MEASUREMENTS}
+%=============================
+%        Chromaticity
+%=============================
+
+\section{Chromaticity}
+
+
+%----------------------------------------
+%        Measurement Procedure
+%----------------------------------------
+\subsection{\todo{Measurement Procedure}}
+
+The momentum offset $\delta$ is related to the RF frequency and the momentum compaction factor, as
+described in more details in \cref{subsubsection:momentum_compaction_factor_studies}. This relation
+is given in the simplified \cref{eq:very_high_orders:simplified_eq_momentum_compaction}.
+The model $\alpha_c$ for the LHC injection optics is $3.48 \times 10^{-4}$ for beam 1 and $3.47
+\times 10^{-4}$ for beam 2. Via this relation, a change of 140Hz of the RF frequency corresponds to
+a momentum offset of about $-0.001$.
+
+\begin{equation}
+    \delta = -\frac{1}{\alpha_c} \cdot \frac{\Delta f_{RF}}{f_{RF,nominal}}.
+    \label{eq:very_high_orders:simplified_eq_momentum_compaction}
+\end{equation}
+
+During machine operation, the momentum offset, derived from \todo{something}, used to be logged on
+the servers. It was then possible to directly compute the chromaticity that way without having to
+use the RF and the momentum compaction factor.
+In 2016, measurements of the non-linear chromaticity were performed using the former method.
+\cref{fig:very_high_orders:bare_chroma_2016} shows a comparison of the obtained non-linear 
+chromaticity from both methods, while \cref{table:very_high_orders:bare_chroma_2016} shows a
+numerical comparison. Results being similar, is it deemed that both methods are reliable to measure
+the non-linear chromaticity in the LHC.
+
+\begin{figure}[H]
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{./images/chromaticity_2016/B1_qx.pdf}
+        \caption{$Q_x$ Beam 1}
+        \label{}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{./images/chromaticity_2016/B1_qy.pdf}
+        \caption{$Q_y$ Beam 1}
+        \label{}
+    \end{subfigure}
+    %
+    \\
+    %
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{./images/chromaticity_2016/B1_qx.pdf}
+        \caption{$Q_x$ Beam 2}
+        \label{}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{./images/chromaticity_2016/B2_qy.pdf}
+        \caption{$Q_y$ Beam 2}
+        \label{}
+    \end{subfigure}
+    \caption{Comparison of the non-linear chromaticity fit obtained from the computed momentum
+    offset via the RF in 2022 and from the logged values in 2016.}
+    \label{fig:very_high_orders:bare_chroma_2016}
+\end{figure}
+
+\begin{table}[tbh]
+    \centering
+    \begin{tabular}{ll|rr|rr}
+        \multicolumn{2}{c}{} & \multicolumn{2}{c}{2022}       &  \multicolumn{2}{c}{2016} \\
+        BEAM & AXIS & $Q'' [x10^3]$ & $Q''' [x10^6]$ & $Q'' [x10^3]$ & $Q''' [x10^6]$\\
+        \midrule
+        B1 & X & -0.64 ± 0.01 &   3.0 ± 0.04   & -0.62 ± 0.01 &  2.91 ± 0.04 \\
+           & Y & -0.17 ± 0.01 & -2.12 ± 0.04   & -0.14 ± 0.01 & -2.09 ± 0.04 \\
+        \hline
+        B2 & X & -1.18 ± 0.02 &  2.89 ± 0.06   & -1.23 ± 0.03 &  3.13 ± 0.11 \\
+           & Y &  0.18 ± 0.02 & -1.95 ± 0.05   &  0.20 ± 0.02 & -2.02 ± 0.06 \\
+    \end{tabular}
+    \label{table:very_high_orders:bare_chroma_2016}
+\end{table}
+
+
+
+%----------------------------------------
+%        Performed Measurements
+%----------------------------------------
+\subsection{Performed Measurements}
+
 
 Two chromaticity measurements were performed with different settings. The first one used the 
 nominal correction strengths for octupole and decapole corrector magnets, derived from magnetic measurements, where the second one used beam-based corrections for the same elements, computed from measurements. 
 Those two measurements have a respective momentum-offset range of $[-3.1 \times 10^{-3}, 3.1 \times 10^{-3}]$ and $[-3.2 \times 10^{-3}, 3.7 \times 10^{-3}]$.
 
 %----------------------------------------
-%     Nominal Corrections
-%----------------------------------------
-\subsection{Nominal Corrections}
+%          Nominal Corrections
+\subsubsection{Nominal Corrections}
 
 A first chromaticity measurement was performed during the LHC beam commissioning in April 2022. The
 horizontal and vertical tunes were set to 0.28 and 0.31. $Q'$ was reduced to a value of $2$ to allow
