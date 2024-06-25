@@ -123,7 +123,7 @@ the non-linear chromaticity in the LHC.
     \centering
     \begin{tabular}{ll|rr|rr}
         \multicolumn{2}{c}{} & \multicolumn{2}{c}{2022}       &  \multicolumn{2}{c}{2016} \\
-        BEAM & AXIS & $Q'' [x10^3]$ & $Q''' [x10^6]$ & $Q'' [x10^3]$ & $Q''' [x10^6]$\\
+        Beam & Plane & $Q'' [x10^3]$ & $Q''' [x10^6]$ & $Q'' [x10^3]$ & $Q''' [x10^6]$\\
         \midrule
         B1 & X & -0.64 ± 0.01 &   3.0 ± 0.04   & -0.62 ± 0.01 &  2.91 ± 0.04 \\
            & Y & -0.17 ± 0.01 & -2.12 ± 0.04   & -0.14 ± 0.01 & -2.09 ± 0.04 \\
@@ -141,24 +141,32 @@ the non-linear chromaticity in the LHC.
 %----------------------------------------
 \subsection{Performed Measurements}
 
+In order to assess the correctness of the observation of higher chromaticity orders, measurement
+repeatability is needed. Two measurements were thus taken, with different configurations pertaining
+top the correction of the second and third order chromaticities $Q''$ and $Q'''$.
 
-Two chromaticity measurements were performed with different settings. The first one used the nominal
-correction strengths for octupole and decapole corrector magnets, derived from magnetic
-measurements, where the second one used beam-based corrections for the same elements, computed from
-measurements. 
+Those two chromaticity measurements were indeed performed with different settings. The first one
+used the nominal correction strengths for octupole and decapole corrector magnets, derived from
+magnetic measurements, where the second one used beam-based corrections for the same elements,
+computed from measurements. 
 Those two measurements have a respective momentum-offset range of $[-3.1 \times 10^{-3}, 3.1 \times
 10^{-3}]$ and $[-3.2 \times 10^{-3}, 3.7 \times 10^{-3}]$.
+
+In order to stay consistent, both measurements saw their horizontal and vertical tunes respectively
+set to $Q_x = 0.28$ and $Q_y = 0.31$. The linear chromaticity $Q'$ is set to a small value of $2$ to
+avoid large tune shifts.
 
 
 %----------------------------------------
 %          Nominal Corrections
 \subsubsection{Nominal Corrections}
 
-A first chromaticity measurement was performed during the LHC beam commissioning in April 2022. The
-horizontal and vertical tunes were set to 0.28 and 0.31. $Q'$ was reduced to a value of $2$ to allow
-for a better identification of the higher order terms. 
+This first chromaticity measurement was performed during the LHC beam commissioning in April 2022,
+as part of the routine measurements and corrections performed after every technical of long
+shutdown.
+The octupole and decapole correctors were set to their nominal settings, aimed at correcting $Q''$
+and $Q'''$, as previously described in \todo{ref decapole chapter}.
 
-The octupole and decapole correctors were set to their nominal settings.
 Results of this initial measurement are shown in Tab. \ref{chroma_fidel}. Lower order chromaticities such as
 $Q'$ and $Q''$ are consistent with previous measurements~\cite{maclean_commissioning_2016}.
 
