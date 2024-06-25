@@ -3,17 +3,6 @@
 \chaptertoc{}
 \newpage
 
-\section{\todo{TODO}}
-
-\begin{enumerate}
-\color{red}
-    \item comparison to Ewen's measurements done with dpp from timber
-    \item IPAC paper basically
-    \item b6 meas from 2024 commissioning
-    \item higher order momentum compaction factor => twiss at different dpp fit vs ptc
-\end{enumerate}
-
-
 %====================
 % 	Introduction
 %====================
@@ -42,6 +31,9 @@ Q(\delta) = Q_0 + Q'\delta &+ \frac{1}{2!}Q''\delta^2 + \frac{1}{3!}Q'''\delta^3
     \label{eq:very_high_orders:chromaticity_high_orders}
 \end{equation}
 
+Completing measurements of high orders fields taken via chromaticity scans, turn-by-turn
+measurements were also performed. High amplitude kicks indeed made the observation of dodecapolar
+RDTs visible for the first time in the LHC
 
 
 
@@ -58,7 +50,7 @@ Q(\delta) = Q_0 + Q'\delta &+ \frac{1}{2!}Q''\delta^2 + \frac{1}{3!}Q'''\delta^3
 \subsection{\todo{Measurement Procedure}}
 
 The momentum offset $\delta$ is related to the RF frequency and the momentum compaction factor, as
-described in more details in \cref{subsubsection:momentum_compaction_factor_studies}. This relation
+described in more details in \cref{subsection:decapoles:chromaticity:measurement}. This relation
 is given in the simplified \cref{eq:very_high_orders:simplified_eq_momentum_compaction}.
 The model $\alpha_c$ for the LHC injection optics is $3.48 \times 10^{-4}$ for beam 1 and $3.47
 \times 10^{-4}$ for beam 2. Via this relation, a change of 140Hz of the RF frequency corresponds to
@@ -68,6 +60,20 @@ a momentum offset of about $-0.001$.
     \delta = -\frac{1}{\alpha_c} \cdot \frac{\Delta f_{RF}}{f_{RF,nominal}}.
     \label{eq:very_high_orders:simplified_eq_momentum_compaction}
 \end{equation}
+
+The standard measurement procedure is to vary the RF frequency to induce a change in momentum
+offset. Frequency steps of 20Hz are taken roughly every 30 seconds, to allow for a precise tune
+measurement. Once beam losses, registered by the beam loss monitors (BLM), are deemed too high the
+frequency is reverted back to its nominal frequency in larger steps. \cref{rf_scan} shows a typical
+RF scan performed to measure chromaticity.
+
+\begin{figure}[tbh]
+    \centering
+    \includegraphics[width=\columnwidth]{images/MOPL027_f1-1.pdf}
+    \caption{Observation of the tune dependence on momentum offset, created by a shift of RF frequency.}
+    \label{rf_scan}
+\end{figure}
+
 
 During machine operation, the momentum offset, derived from \todo{something}, used to be logged on
 the servers. It was then possible to directly compute the chromaticity that way without having to
@@ -136,9 +142,13 @@ the non-linear chromaticity in the LHC.
 \subsection{Performed Measurements}
 
 
-Two chromaticity measurements were performed with different settings. The first one used the 
-nominal correction strengths for octupole and decapole corrector magnets, derived from magnetic measurements, where the second one used beam-based corrections for the same elements, computed from measurements. 
-Those two measurements have a respective momentum-offset range of $[-3.1 \times 10^{-3}, 3.1 \times 10^{-3}]$ and $[-3.2 \times 10^{-3}, 3.7 \times 10^{-3}]$.
+Two chromaticity measurements were performed with different settings. The first one used the nominal
+correction strengths for octupole and decapole corrector magnets, derived from magnetic
+measurements, where the second one used beam-based corrections for the same elements, computed from
+measurements. 
+Those two measurements have a respective momentum-offset range of $[-3.1 \times 10^{-3}, 3.1 \times
+10^{-3}]$ and $[-3.2 \times 10^{-3}, 3.7 \times 10^{-3}]$.
+
 
 %----------------------------------------
 %          Nominal Corrections
@@ -146,25 +156,7 @@ Those two measurements have a respective momentum-offset range of $[-3.1 \times 
 
 A first chromaticity measurement was performed during the LHC beam commissioning in April 2022. The
 horizontal and vertical tunes were set to 0.28 and 0.31. $Q'$ was reduced to a value of $2$ to allow
-for a better identification of the higher order terms. The standard measurement procedure was then applied,    
-by varying the RF frequency to induce a change in momentum offset. Frequency steps of 20Hz were taken roughly every
-30 seconds, to allow for a precise tune measurement. Once beam losses, registered by the beam
-loss monitors (BLM), are deemed too high the frequency is reverted back to its nominal frequency in
-larger steps.
-Figure \ref{rf_scan} shows a typical RF scan performed to measure chromaticity.
-
-\begin{figure}[tbh]
-    \centering
-    \includegraphics[width=\columnwidth]{images/MOPL027_f1-1.pdf}
-    \caption{Observation of the tune dependence on momentum offset, created by a shift of RF frequency.}
-    \label{rf_scan}
-\end{figure}
-
-At very high momentum-offsets, the Base-Band Tune system (BBQ)~\cite{gasior_principle_2005, boccardi_first_2009}
-was found not to give reliable tune measurements. A new approach using custom post-processing of the raw BBQ 
-turn-by-turn data was therefore developed, giving more precise tune measurements by performing
-spectral analysis with an increased number of turns to improve the signal to noise ratio. Further cleaning is
-then applied by removing outliers and identified noise lines.
+for a better identification of the higher order terms. 
 
 The octupole and decapole correctors were set to their nominal settings.
 Results of this initial measurement are shown in Tab. \ref{chroma_fidel}. Lower order chromaticities such as
@@ -204,9 +196,8 @@ It can be seen that a higher order polynomial is beneficial for the fit, as disc
 
 
 %----------------------------------------
-%     Beam-Based Corrections
-%----------------------------------------
-\subsection{Beam-Based Corrections}
+%       Beam-Based Corrections
+\subsubsection{Beam-Based Corrections}
 
 After correcting the second and third order chromaticities via the octupole and decapole correctors, a
 second measurement was performed.
@@ -263,7 +254,7 @@ Accurately measuring the third order chromaticity is essential in order to corre
 %----------------------------------------
 %     Q4 and Q5 confirmation
 %----------------------------------------
-\subsection{\texorpdfstring{$Q^{(4)}$ and $Q^{(5)}$}{Q4 and Q5} fit quality}
+\subsubsection{\texorpdfstring{$Q^{(4)}$ and $Q^{(5)}$}{Q4 and Q5} fit quality}
 \label{subsection:q4q5_quality}
 
 The values measured for $Q^{(4)}$ and $Q^{(5)}$ are similar across the two measurements, with nominal and beam-based corrections performed with very different lower order chromaticity and several hours apart.
@@ -309,7 +300,7 @@ The reduced chi-square for the last measurement for each fit order is detailed i
 %	    MODEL EXPECTATIONS
 %----------------------------------------------------------------------------------------
 
-\section{NL-CHROMATICITY MODEL}
+\subsection{NL-CHROMATICITY MODEL}
 \label{sec:nl_chroma_model}
 
 The model of the LHC is based on MADX and WISE field errors~\cite{p_hagen_wise_2006}. To compute the
@@ -388,10 +379,22 @@ Ongoing studies are assessing the contribution of $\beta$-beating, linear coupli
     \label{beam1_q5x_ptc}
 \end{figure}
 
-%----------------------------------------------------------------------------------------
-%	CONCLUSION
-%----------------------------------------------------------------------------------------
 
+
+
+%=============================
+%            RDTs
+%=============================
+\section{\todo{First Measurement of Dodecapole RDTs}}
+
+b6 meas from 2024 commissioning
+
+
+
+
+%=============================
+%        Conclusion
+%=============================
 \section{CONCLUSIONS AND OUTLOOK}
 
 A wider momentum offset range, combined with new analysis techniques permitted the observation of fourth and fifth order chromaticity for the first time in the LHC. Reproducible values were measured with different machine configurations.
@@ -405,6 +408,3 @@ Higher order terms have thus to be taken into account.
 The current range of momentum offset is deemed sufficient to measure higher order chromaticity. Attempts will, however,
 be taken to increase that range and assess if such a wider range can refine the estimate of $Q^{(4)}$ and
 $Q^{(5)}$.
-
-
-\section{First Measurement of Dodecapole RDTs}
