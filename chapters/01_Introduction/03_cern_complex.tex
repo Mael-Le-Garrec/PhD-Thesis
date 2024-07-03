@@ -64,21 +64,110 @@ scientific cooperation.
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                       LHC
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{The Large Hadron Collider}
+% ===============================
+%             LHC
+% ===============================
+\subsection{\todo{The Large Hadron Collider}}
+
+The Large Hadron Collider (LHC), is a circular particle accelerator primarily designed to collide
+protons for fundamental particle physics research. It can, occasionally over the year, also collide
+ions such as oxygen or lead for specifics studies. At the time of writing, in 2024, it holds several
+records, such as being the largest and most powerful accelerator in the world. The LHC is composed
+of two beams pipes, being able to accelerate two particle beams from an injection energy of $450$GeV
+to an energy of $6,800$GeV, before colliding them in four detectors: ATLAS, CMS, Alice and LCHb.
+
+Well publicized, the LHC is often depicted via its superconducting dipole magnets, housed in a blue
+cryostat, aimed at cooling the coils. \cref{fig:3d_cut_dipole} shows a 3D cut of such magnets. The
+LHC is in majority composed of those \textit{main} dipoles, as it holds $1,232$ of them, being each
+about 14 meters long. Superconducting materials like Niobium-Titanium (NbTi) are utilized, as
+conventional materials such as copper would melt under the current strain. There are indeed around
+$12,000$ amperes supplied to generate the magnetic fields necessary for bending the trajectory of
+the particles.
+Those particles travel at nearly the speed of light (more precisely, $99.99999905\%$ of it),
+effectively going around the tunnel about $11,200$ times per second.
 
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{chapters/01_Introduction/images/lhc_3D_cut.png}
-    \caption{3D cut of a main LHC dipole~\cite{noauthor_cern_nodate}.}
+    \caption{3D cut of a main LHC dipole~\cite{noauthor_cern_nodate}. Both beam pipes can be seen
+    surrounded by the coils, strongly clamped by the yokes.}
     \label{fig:3d_cut_dipole}
 \end{figure}
 
-speed of light, 11 000 turns per second, 12 000 amps in dipoles, number dipoles, price, parameters
-energy consumption, detectors and experiments, discoveries, collimators, optics, magnets, luminosity, arcs, IRs, schematics, cryostat, beta function FODO
 
-\begin{enumerate}
-    \color{red}
-    \item Cycles \& types of bunches: pilot for measurements
-\end{enumerate}
+\paragraph{Straight Sections and Arcs}
+The LHC is not a perfect circle. It is indeed composed of four \textit{straight} sections, called
+the \textit{Interaction Regions} (IPs) where detectors or instrumentation are placed. Connecting
+those sections, the \textit{arcs} are where the majority of the magnets are placed, housing dipoles,
+quadrupoles, sextupoles, octupoles and their respective correctors. \cref{fig:introduction:lhc_irs}
+shows how the instrumentation, detectors and arcs are distributed along the ring.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./images/irs.png}
+    \caption{Schematic of the LHC layout.}
+    \label{fig:introduction:lhc_irs}
+\end{figure}
+
+
+\paragraph{Arc Cells}
+
+Each arc is made up of 23 cells. Magnets are organized in a standard FoDo structure
+(see \ref{section:courant_snyder}), as shows \cref{fig:introduction:lhc_arc_cell}.
+\textit{Dipoles} are responsible for bending the trajectory of the particles. Their associated
+correctors, the orbit correctors, mitigate any possible drift in path.
+\textit{Quadrupoles} are used to control the beam size along the ring. Their effect is focusing in
+one plane and defocusing in the other. Their associated correctors control the oscillations of the
+beam (see tune, \ref{section:courant_snyder}) and possible field imperfections.
+\textit{Sextupoles} correct chromaticity, being a misfocus from quadrupoles due to particles having
+a different momentum than the reference particle.
+\textit{Octupoles} are used to stabilize the beam by introducing Landau
+Damping~\cite{gareyte_landau_1997}. The associated correctors correct higher order chromaticity
+effects as well as amplitude dependant tune shifts.
+\textit{Decapoles} correctors aim at correcting even a higher chromaticity order.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./images/lhc_cell.png}
+    \caption{Schematic of an LHC Arc cell~\cite{bruning_lhc_2004}.}
+    \label{fig:introduction:lhc_arc_cell}
+\end{figure}
+
+
+
+% ===============================
+%          Parameters
+\subsubsection{\todo{Parameters}}
+
+optics, pilot bunches
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./images/lhc_cycle.pdf}
+    \caption{Simplified illustration of a standard LHC cycle. Courtesy of Félix
+    Soubelet~\cite{felix_soubelet_local_2023}} \label{fig:cern_complex:cycle}
+\end{figure}
+
+
+% ===============================
+%   Harmonics and Field Errors
+\subsubsection{\todo{Harmonics and Field Errors}}
+
+Real-life magnets never have a single field as one would like. Instead, so called 
+\textit{allowed harmonics} exist due to the geometry of the coil. As such, the main dipoles of the
+LHC can exhibit fields similar to sextupoles, decapoles, decatetrapoles and so
+on~\cite{deniau_magnetic_2009}. Manufacturing imperfections also add fields errors outside of the
+scope of the allowed ones. Dipoles are indeed found to generate octupolar field errors.
+
+During the design of the LHC, the main dipoles have been identified to generate significant field
+errors. Magnetic measurements of those various fields were thus taken and magnetic tables built
+based on real-life magnets nowadays installed in the machine. Those magnetic tables, computed for
+each LHC configuration by \textit{WISE}~\todo{cite} are used by simulation softwares.
+Predictions of field errors and compensating strength for the correctors is computed by the Field
+Description for the LHC (\textit{FiDeL}, \cite{noauthor_fidel_2021}). FiDeL is used in the LHC
+control system in operation to steer the LHC.
+
+%\begin{figure}[H]
+    %\centering
+    %\includegraphics[width=0.5\textwidth]{./images/main_dipole_fields.png}
+    %\caption{Magnetic field in a dipole magnet~\cite{deniau_magnetic_2009}.}
+    %\label{fig:decapoles:magnetic_field_dipole}
+%\end{figure}

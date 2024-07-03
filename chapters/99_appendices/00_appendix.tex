@@ -195,12 +195,12 @@ can be generated depending on the orders of multipoles and that of the BCH.
         &  & $5m + 2n - 12$ \\
         &  & $6m + n - 12$ \\
         &  & $4m + 3n - 12$ \\
-      \midrule
-      8 & $\cdots$ & $6m + 2n - 14$ \\
-        &  & $2m + 6n - 14$ \\
-        &  & $5m + 3n - 14$ \\
-        &  & $3m + 5n - 14$ \\
-        &  & $4m + 4n - 14$ \\
+      %\midrule
+      %8 & $\cdots$ & $6m + 2n - 14$ \\
+      %  &  & $2m + 6n - 14$ \\
+      %  &  & $5m + 3n - 14$ \\
+      %  &  & $3m + 5n - 14$ \\
+      %  &  & $4m + 4n - 14$ \\
       %\midrule
       %9 & $\cdots$ & $7m + 2n - 16$ \\
       %  &  & $8m + n - 16$ \\
@@ -213,7 +213,7 @@ can be generated depending on the orders of multipoles and that of the BCH.
       \bottomrule
   \end{tabular}
   \caption{Resulting multipole orders arising from the Poisson brackets of a given BCH order for two
-  multipoles $A$ and $B$ of order $m$ and $n$. Starting from order 7, the Poisson brackets are not
+  multipoles $A$ and $B$ of order $m$ and $n$. At order 7, the Poisson brackets are not
   given as duplicates grow the list significantly.}
   \label{table:appendix:transfer_maps:bch_resulting_orders}
 \end{table}
@@ -502,7 +502,6 @@ This appendix details the derivations of chromatic amplitude detuning from sextu
 dodecapoles. As chromaticity and amplitude detuning are part of it, they will therefore be detailed
 here as well.
 
-\newpage
 Up to the third order, the expression of the Taylor expansion of the Chromatic Amplitude Detuning
 around $\epsilon_x$, $\epsilon_y$ and $\delta$, for a tune $Q_z$, $z \in \{x, y\}$ reads:
 
@@ -571,29 +570,71 @@ A momentum dependence can be introduced for a particle with a different orbit
     x + \Delta x \rightarrow \sqrt{2J_x \beta_x} \cos{\phi_x} + D_x \delta \\
     y + \Delta y \rightarrow \sqrt{2J_y \beta_y} \cos{\phi_y} + D_y \delta
   \end{aligned}
+  \label{eq:appendix:action_angle_orbit_offset}
 \end{equation}
 
 
 After averaging over the phase variable, all that is left is to compute the partial derivatives.
 
-\todo{The following derivations are just copy-paster from old text}
+\todo{The following derivations are just copy-pasted from notes}
+
+
 
 % ======================
-\section{Sextupole}
+%      Derivations
+% ======================
+\section{Derivations}
 
-The change of tune induced by a sextupole is:
+In this section, the terms of the chromatic amplitude detuning are given up to dodecapoles.
+Derivations are given only for sextupoles and octupoles, as the process remains fairly similar for
+higher orders.
 
-\begin{equation}Q_x = \frac{1}{4\pi} K_3 \beta_x \eta \delta L\end{equation}
-\begin{equation}Q_y = - \frac{1}{4\pi} K_3 \beta_y \eta \delta L\end{equation}
 
-We can now get the terms we're interested in:
+% ======================
+%      Sextupole
+\subsection{Sextupole}
+
+Taken from \cref{table:appendix:hamiltonians}, the normal field of a sextupole is
+$N_3 = \frac{1}{3!} K_3 (x^3 - 3xy^2)$.
+Introducing $\delta$ via an orbit offset and changing the variables to action-angle, as given in
+\cref{eq:appendix:action_angle_orbit_offset}, leads to the following expression:
+
+\begin{equation}
+  \begin{aligned}
+  N_3 = \; &J_{x} K_{3} \beta_{x} \delta \eta \cos^{2}{\left(\phi_{x} \right)} - J_{y} K_{3} \beta_{y} \delta \eta \cos^{2}{\left(\phi_{y} \right)} \\
+        &- \sqrt{2} J_{y} K_{3} \beta_{y} \sqrt{J_{x} \beta_{x}} \cos{\left(\phi_{x} \right)} \cos^{2}{\left(\phi_{y} \right)} + \frac{K_{3} \delta^{3} \eta^{3}}{6} \\
+        &+ \frac{\sqrt{2} K_{3} \delta^{2} \eta^{2} \sqrt{J_{x} \beta_{x}} \cos{\left(\phi_{x} \right)}}{2} + \frac{\sqrt{2} K_{3} \left(J_{x} \beta_{x}\right)^{\frac{3}{2}} \cos^{3}{\left(\phi_{x} \right)}}{3}
+  \end{aligned}
+\end{equation}
+
+Averaging over the cosines means integrating over $[0, \pi]$ and dividing by $\pi$:
+
+\begin{equation}
+  N_3 = \frac{1}{6\pi^2} K_{3} \cdot \left(3 \pi^{2} J_{x} \beta_{x} \delta \eta - 3 \pi^{2} J_{y} \beta_{y} \delta \eta + \pi^{2} \delta^{3} \eta^{3}\right)
+\end{equation}
+
+Differentiating by either $J_x$ or $J_y$ gives the tune shift induced by a single sextupole:
+
+\begin{equation}
+  \begin{aligned}
+    \Delta Q_x &=   \frac{1}{4\pi} K_3 \beta_x \eta \delta L     \\
+    \Delta Q_y &= - \frac{1}{4\pi} K_3 \beta_y \eta \delta L
+  \end{aligned}
+\end{equation}
+
+
+From now on, differentiating by the action would give amplitude detuning, and by $\delta$ the
+chromaticity. Cross-terms exist but evidently depend on the expression of the multipole.
+For a sextupole, differentiating by the action does not have an effect, as no action is present in
+the tune shift equation. Rather, sextupoles are known to contribute to the first order chromaticity
+$Q'$. The following gives a recap of those operations:
 
 \begin{equation}\begin{aligned}
 \frac{\partial Q_x}{\partial J_x} = 0 \quad;&& \frac{\partial Q_x}{\partial J_y} = 0 \quad;&& \frac{\partial Q_x}{\partial \delta} = \frac{1}{4\pi}K_3\beta_x\eta L = Q_x'\\
 \frac{\partial Q_y}{\partial J_x} = 0 \quad;&& \frac{\partial Q_y}{\partial J_y} = 0 \quad;&& \frac{\partial Q_y}{\partial \delta} = -\frac{1}{4\pi}K_3\beta_y\eta L = Q_y'\\
 \end{aligned}\end{equation}
 
-Contribution to the Chromatic Amplitude Detuning:
+The overall contribution of sextupoles to the Chromatic Amplitude Detuning is then the following:
 
 \begin{equation}
 \begin{aligned}
@@ -604,10 +645,11 @@ Q_z(\epsilon_x, \epsilon_y, \delta) = \color{gray}Q_{z0} &+ \color{gray}\left[\f
 \end{aligned}
 \end{equation}
 
-\newpage
 
-\hypertarget{octupole-2}{%
-\subsection{Octupole}\label{octupole-2}}
+
+% ======================
+%       Octupole
+\subsection{Octupole}\label{octupole-2}
 
 From the hamiltonian of a normal octupole, with a displacement in \(x\)
 (\cref{eq:hamiltonian_displacement_octupole}), we can change the
@@ -616,7 +658,7 @@ variable (\(x = \sqrt{2 J_x \beta_x} \cos \phi_x\) and
 
 \begin{equation}
 \begin{aligned}
-\mathcal{N}_4 = \frac{1}{24} K_4 \biggl[& \left(\sqrt{2J_x\beta_x} cos\phi_x\right)^4 \\
+N_4 = \frac{1}{24} K_4 \biggl[& \left(\sqrt{2J_x\beta_x} cos\phi_x\right)^4 \\
                                         & +4 \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^3 \eta \delta \\
                                         & +6 \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^2 \eta^2 \delta^2 \\
                                         & +4 \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right) \eta^2 \delta \\
@@ -631,7 +673,7 @@ variable (\(x = \sqrt{2 J_x \beta_x} \cos \phi_x\) and
 
 We can now average over the phase variables: \begin{equation}
 \begin{aligned}
-\left< \mathcal{N}_4 \right> = \frac{1}{24} K_4 \biggl[& \frac{3}{2} J_x^2\beta_x^2 \\
+\left< N_4 \right> = \frac{1}{24} K_4 \biggl[& \frac{3}{2} J_x^2\beta_x^2 \\
                                                        & +6 J_x \beta_x \eta^2 \delta^2 \\
                                                        & +\eta^4 \delta^4 \\
                                                        & -6 J_x \beta_x J_y \beta_y\\
@@ -644,11 +686,11 @@ We can now average over the phase variables: \begin{equation}
 The tunes then are:
 
 \begin{equation}\begin{aligned}
-Q_x = \frac{1}{2\pi} \frac{\partial \left< \mathcal{N_4} \right>}{\partial J_x} &= \frac{1}{48\pi} K_4 \biggl[3 J_x \beta_x^2
+Q_x = \frac{1}{2\pi} \frac{\partial \left< N_4 \right>}{\partial J_x} &= \frac{1}{48\pi} K_4 \biggl[3 J_x \beta_x^2
                                                                                                              +6 \beta_x \eta^2 \delta^2
                                                                                                              -6 \beta_x J_y  \beta_y 
                                                                                                       \biggr]\\
-Q_y = \frac{1}{2\pi} \frac{\partial \left< \mathcal{N_4} \right>}{\partial J_y} &= \frac{1}{48\pi} K_4 \biggl[-6 J_x \beta_x \beta_y
+Q_y = \frac{1}{2\pi} \frac{\partial \left< N_4 \right>}{\partial J_y} &= \frac{1}{48\pi} K_4 \biggl[-6 J_x \beta_x \beta_y
                                                                                                              -6 \beta_y \eta^2 \delta^2
                                                                                                              +3 J_y \beta_y^2
                                                                                                       \biggr]
@@ -687,85 +729,73 @@ Q_z(\epsilon_x, \epsilon_y, \delta) = \color{gray}Q_{z0} &\color{gray}+
                                                   + 2 \frac{\partial^2Q_z}{\partial \epsilon_x \partial \delta}\epsilon_x \delta
                                                   + 2 \frac{\partial^2Q_z}{\partial \delta \partial \epsilon_y} \delta \epsilon_y
                                              \textcolor{orange}{\biggr]} \\
-                                             \end{aligned} \\
-                                             &\color{gray}+ \frac{1}{3!}
-                                             \biggl[
-                                                  \frac{\partial^3 Q_z}{\partial \delta^3} \delta^{3}
-                                                  + \frac{\partial^{3} Q_z}{\partial \epsilon_{x}^{3}}  \epsilon_{x}^{3} 
-                                                  + \frac{\partial^{3} Q_z}{\partial \epsilon_{y}^{3}}  \epsilon_{y}^{3} \\
-                                             &\;\begin{aligned}
-                                             \phantom{+ \frac{1}{3!} \biggl[} 
-                                               &\color{gray}
-                                               + 3 \frac{\partial^{3} Q_z}{\partial \epsilon_{x}\partial \delta^{2}} \delta^{2} \epsilon_{x} 
-                                                + 3  \frac{\partial^{3} Q_z}{\partial \epsilon_{y}\partial \delta^{2}}  \delta^{2} \epsilon_{y}
-                                                + 3 \frac{\partial^{3} Q_z}{\partial \epsilon_{x}^{2}\partial \delta}  \delta \epsilon_{x}^{2} \\
-                                               &\color{gray}
-                                               + 3 \frac{\partial^{3} Q_z}{\partial \epsilon_{y}^{2}\partial \delta} \delta \epsilon_{y}^{2}  
-                                                + 3  \frac{\partial^{3} Q_z}{\partial \epsilon_{y}\partial \epsilon_{x}^{2}} \epsilon_{x}^{2} \epsilon_{y} 
-                                                + 3 \frac{\partial^{3} Q_z}{\partial \epsilon_{y}^{2}\partial \epsilon_{x}} \epsilon_{x} \epsilon_{y}^{2} \\
-                                               &\color{gray}
-                                               + 6 \frac{\partial^{3} Q_z}{\partial \epsilon_{y}\partial  \epsilon_{x}\partial \delta} \delta \epsilon_{x} \epsilon_{y} 
-                                             \biggr]\\
-                                             \end{aligned}
+                                             \end{aligned} 
 \end{aligned}
 \end{equation}
 
-\newpage
 
-\hypertarget{decapole-2}{%
-\subsection{Decapole}\label{decapole-2}}
+% ======================
+%       Decapole  
+\subsection{Decapole}\label{decapole-2}
 
-The normal field of a decapole has been calculated in
-\cref{eq:decapole_expanded}:
+%The normal field of a decapole has been calculated in
+%\cref{eq:decapole_expanded}:
+%
+%\[\begin{aligned}
+%\mathcal{N_5}(x, y) = \frac{1}{120} K_{5} \biggl[&
+%  \eta^5\delta^5 + 5\eta^4\delta^4x + 10\eta^3\delta^3x^2 + 10\eta^2\delta^2 x^3 + 5\eta\delta x^4 + x^5 \\
+%  & -10y^2 (\eta^3\delta^3 + 3\eta^2\delta^2x + 3\eta\delta x^2 + x^3)\\
+%  & +5y^4 (x + \eta\delta) \biggr]
+%\end{aligned}\]
+%
+%Changing variables (\(x \rightarrow \sqrt{2 J_x \beta_x} \cos\phi_x\);
+%\(y \rightarrow \sqrt{2 J_y \beta_y} \cos\phi_y\)):
+%
+%\begin{equation}\begin{aligned}
+%\mathcal{N_5}(x, y) = \frac{1}{120} K_{5} 
+%  \biggl[&
+%        \eta^5\delta^5 + 5\eta^4\delta^4\left(\sqrt{2 J_x \beta_x} \cos \phi_x\right) \\
+%        &+ 10\eta^3\delta^3\left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^2 + 10\eta^2\delta^2 \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^3 \\
+%        &+ 5\eta\delta \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^4 + \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^5 \\
+%        &- 10\left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^2 \biggl[(\eta^3\delta^3 + 3\eta^2\delta^2\left(\sqrt{2 J_x \beta_x} \cos \phi_x\right) \\
+%        &\phantom{- 10\left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^2 \biggl[}+ 3\eta\delta \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^2 + \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^3\biggr]\\
+%        & +5\left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^4 \left(\left(\sqrt{2 J_x \beta_x} \cos \phi_x\right) + \eta\delta\right) 
+%  \biggr]
+%\end{aligned}\end{equation}
+%
+%Averaging over the phase variables: \begin{equation}\begin{aligned}
+%\mathcal{N_5}(x, y) = \frac{1}{120} K_{5} 
+%  \biggl[
+%         & \eta^5\delta^5 
+%          + 10 \eta^3 \delta^3 J_x \beta_x \\
+%         & + \frac{15}{2} \eta \delta J_x^2 \beta_x^2
+%          - 10 J_y \beta_y \eta^3 \delta^3 \\
+%         & - 30 J_y \beta_y \eta \delta J_x \beta_x 
+%          + \frac{15}{2} J_y^2 \beta_y^2 \eta \delta
+%  \biggr]
+%\end{aligned}\end{equation}
+%
+%The tunes then are:
 
-\[\begin{aligned}
-\mathcal{N_5}(x, y) = \frac{1}{120} K_{5} \biggl[&
-  \eta^5\delta^5 + 5\eta^4\delta^4x + 10\eta^3\delta^3x^2 + 10\eta^2\delta^2 x^3 + 5\eta\delta x^4 + x^5 \\
-  & -10y^2 (\eta^3\delta^3 + 3\eta^2\delta^2x + 3\eta\delta x^2 + x^3)\\
-  & +5y^4 (x + \eta\delta) \biggr]
-\end{aligned}\]
+Skipping the first steps detailed previously, the tune shift induced by a decapole is given by the
+following:
 
-Changing variables (\(x \rightarrow \sqrt{2 J_x \beta_x} \cos\phi_x\);
-\(y \rightarrow \sqrt{2 J_y \beta_y} \cos\phi_y\)):
+\begin{equation}
+  \begin{aligned}
+    \Delta Q_x = \frac{1}{2\pi} \frac{\partial \left< N_5 \right>}{\partial J_x} &= \frac{1}{240\pi} K_5 \biggl[10 \eta^3 \delta^3 \beta_x
+                                                                                                                  + 15 \eta \delta J_x \beta_x^2
+                                                                                                                  - 30 J_y \beta_y \beta_x \eta \delta
+                                                                                                          \biggr]\\
+    \Delta Q_y = \frac{1}{2\pi} \frac{\partial \left< N_5 \right>}{\partial J_y} &= \frac{1}{240\pi} K_5 \biggl[-10 \eta^3 \delta^3 \beta_y
+                                                                                                                  + 15 \eta \delta J_y \beta_y^2
+                                                                                                                  -30 J_x \beta_y \beta_x \eta \delta
+                                                                                                          \biggr]
+  \end{aligned}
+\end{equation}
 
-\begin{equation}\begin{aligned}
-\mathcal{N_5}(x, y) = \frac{1}{120} K_{5} 
-  \biggl[&
-        \eta^5\delta^5 + 5\eta^4\delta^4\left(\sqrt{2 J_x \beta_x} \cos \phi_x\right) \\
-        &+ 10\eta^3\delta^3\left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^2 + 10\eta^2\delta^2 \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^3 \\
-        &+ 5\eta\delta \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^4 + \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^5 \\
-        &- 10\left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^2 \biggl[(\eta^3\delta^3 + 3\eta^2\delta^2\left(\sqrt{2 J_x \beta_x} \cos \phi_x\right) \\
-        &\phantom{- 10\left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^2 \biggl[}+ 3\eta\delta \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^2 + \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^3\biggr]\\
-        & +5\left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^4 \left(\left(\sqrt{2 J_x \beta_x} \cos \phi_x\right) + \eta\delta\right) 
-  \biggr]
-\end{aligned}\end{equation}
-
-Averaging over the phase variables: \begin{equation}\begin{aligned}
-\mathcal{N_5}(x, y) = \frac{1}{120} K_{5} 
-  \biggl[
-         & \eta^5\delta^5 
-          + 10 \eta^3 \delta^3 J_x \beta_x \\
-         & + \frac{15}{2} \eta \delta J_x^2 \beta_x^2
-          - 10 J_y \beta_y \eta^3 \delta^3 \\
-         & - 30 J_y \beta_y \eta \delta J_x \beta_x 
-          + \frac{15}{2} J_y^2 \beta_y^2 \eta \delta
-  \biggr]
-\end{aligned}\end{equation}
-
-The tunes then are:
-
-\begin{equation}\begin{aligned}
-Q_x = \frac{1}{2\pi} \frac{\partial \left< \mathcal{N_5} \right>}{\partial J_x} &= \frac{1}{240\pi} K_5 \biggl[10 \eta^3 \delta^3 \beta_x
-                                                                                                               + 15 \eta \delta J_x \beta_x^2
-                                                                                                               - 30 J_y \beta_y \beta_x \eta \delta
-                                                                                                      \biggr]\\
-Q_y = \frac{1}{2\pi} \frac{\partial \left< \mathcal{N_5} \right>}{\partial J_y} &= \frac{1}{240\pi} K_5 \biggl[-10 \eta^3 \delta^3 \beta_y
-                                                                                                               + 15 \eta \delta J_y \beta_y^2
-                                                                                                               -30 J_x \beta_y \beta_x \eta \delta
-                                                                                                      \biggr]
-\end{aligned}\end{equation}
-
-We can now calculate our chromatic amplitude detuning terms:
+The terms of the chromatic amplitude detuning can now be computed. Unlike sextupoles and octupoles,
+cross-terms between $\delta$ and the action now appear, giving rise to the "proper" chromatic
+amplitude detuning.
 
 \begin{equation}\begin{aligned}
   \frac{\partial^2 Q_x}{\partial J_x \partial \delta} =& \frac{1}{16 \pi} K_5 \beta_x^2 \eta &&;\quad 
@@ -778,7 +808,7 @@ We can now calculate our chromatic amplitude detuning terms:
 \\
 \end{aligned}\end{equation}
 
-Contribution to the Chromatic Amplitude Detuning:
+The contribution of decapoles to Chromatic Amplitude Detuning is then the following:
 
 \begin{equation}
 \begin{aligned}
@@ -823,71 +853,72 @@ Q_z(\epsilon_x, \epsilon_y, \delta) = \color{gray}Q_{z0} &\color{gray}+
 \end{aligned}
 \end{equation}
 
-\newpage
 
-\hypertarget{dodecapole-2}{%
-\subsection{Dodecapole}\label{dodecapole-2}}
 
-The main normal field of a dodecapole is:
+% ======================
+%       Dodecapole  
+\subsection{Dodecapole}\label{dodecapole-2}
 
-\begin{equation}\mathcal{N_6}(x,y) = \frac{1}{720} K_6 (x^6 - 15x^4y^2 + 15x^2y^4 -y^6)\end{equation}
-
-With a displacement in \(x \rightarrow x + \eta \delta\):
-\begin{equation}\mathcal{N_6}(x,y) = \frac{1}{720} K_6 \biggl[(x + \eta \delta)^6 - 15(x + \eta \delta)^4y^2 + 15(x + \eta \delta)^2y^4 -y^6\biggr]\end{equation}
-
-Expanded form, after having removed odd exponents. Those exponents
-would yield an average of \(0\) for the cosines:
-
-\begin{equation}\begin{aligned}
-  \mathcal{N_6}(x,y) = \frac{1}{720} K_6 
-                                \biggl[
-                                  &x^6 + 15x^2 \eta^4 \delta^4 + 15 x^4 \eta^2 \delta^2 + \eta^6 \delta^6 \\
-                                  &-15y^2 (\eta^4 \delta^4 + 4x \eta^3 \delta^3 + 6x^2 \eta^2 \delta^2 + 4x^3 \eta \delta+ x^4) \\
-                                  &+15y^4 (x^2 + \eta^2 \delta^2) \\
-                                  &-y^6
-                                \biggr]
-\end{aligned}\end{equation}
-
-Changing variables (\(x \rightarrow \sqrt{2 J_x \beta_x} \cos\phi_x\);
-\(y \rightarrow \sqrt{2 J_y \beta_y} \cos\phi_y\)):
-\begin{equation}\begin{aligned}
-  \mathcal{N_6}(x,y) = \frac{1}{720} K_6 
-                                \biggl[
-                                  &\left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^6 \\
-                                  &+ 15\left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^2 \eta^4 \delta^4 \\
-                                  &+ 15 \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^4 \eta^2 \delta^2 \\
-                                  &+ \eta^6 \delta^6 \\
-                                  &-15\left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^2 \bigg(\eta^4 \delta^4 \\
-                                      &\;\begin{aligned}
-                                      \phantom{-15\left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^2 \bigg(}
-                                        &+ 6\left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^2 \eta^2 \delta^2 \\
-                                        &+  \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^4
-                                      \biggr) \\
-                                      \end{aligned} \\
-                                  &+15\left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^4 \biggl(\left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^2 + \eta^2 \delta^2 \biggr) \\
-                                  &-  \left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^6
-                                \biggr]
-\end{aligned}\end{equation}
-
-Averaging over the phase variables: \begin{equation}\begin{aligned}
-\left< \mathcal{N_6}(x,y) \right> = \frac{1}{720} K_6 
-                                \biggl[
-                                  &\frac{5}{2} J_x^3 \beta_x^3 \\
-                                  &+ 15 \cdot J_x \beta_x \eta^4 \delta^4 \\
-                                  &+ 15 \cdot J_x^2 \beta_x^2 \frac{3}{2} \eta^2 \delta^2 \\
-                                  &+ \eta^6 \delta^6 \\
-                                  &-15\left(J_y \beta_y \right) \bigg(\eta^4 \delta^4 \\
-                                      &\;\begin{aligned}
-                                      \phantom{-15\left(J_y \beta_y \right) \bigg(}
-                                        &+ 6\left(J_x \beta_x \right) \eta^2 \delta^2 \\
-                                        &+  \left(J_x^2 \beta_x^2 \frac{3}{2}\right)
-                                      \biggr) \\
-                                      \end{aligned} \\
-                                  &+ 15\left(J_y^2 \beta_y^2 \frac{3}{2} \right) \biggl(J_x \beta_x + \eta^2 \delta^2 \biggr) \\
-                                  &- \frac{5}{2} J_y^3 \beta_y^3
-                                \biggr]
-\end{aligned}\end{equation}
-
+%The main normal field of a dodecapole is:
+%
+%\begin{equation}\mathcal{N_6}(x,y) = \frac{1}{720} K_6 (x^6 - 15x^4y^2 + 15x^2y^4 -y^6)\end{equation}
+%
+%With a displacement in \(x \rightarrow x + \eta \delta\):
+%\begin{equation}\mathcal{N_6}(x,y) = \frac{1}{720} K_6 \biggl[(x + \eta \delta)^6 - 15(x + \eta \delta)^4y^2 + 15(x + \eta \delta)^2y^4 -y^6\biggr]\end{equation}
+%
+%Expanded form, after having removed odd exponents. Those exponents
+%would yield an average of \(0\) for the cosines:
+%
+%\begin{equation}\begin{aligned}
+%  \mathcal{N_6}(x,y) = \frac{1}{720} K_6 
+%                                \biggl[
+%                                  &x^6 + 15x^2 \eta^4 \delta^4 + 15 x^4 \eta^2 \delta^2 + \eta^6 \delta^6 \\
+%                                  &-15y^2 (\eta^4 \delta^4 + 4x \eta^3 \delta^3 + 6x^2 \eta^2 \delta^2 + 4x^3 \eta \delta+ x^4) \\
+%                                  &+15y^4 (x^2 + \eta^2 \delta^2) \\
+%                                  &-y^6
+%                                \biggr]
+%\end{aligned}\end{equation}
+%
+%Changing variables (\(x \rightarrow \sqrt{2 J_x \beta_x} \cos\phi_x\);
+%\(y \rightarrow \sqrt{2 J_y \beta_y} \cos\phi_y\)):
+%\begin{equation}\begin{aligned}
+%  \mathcal{N_6}(x,y) = \frac{1}{720} K_6 
+%                                \biggl[
+%                                  &\left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^6 \\
+%                                  &+ 15\left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^2 \eta^4 \delta^4 \\
+%                                  &+ 15 \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^4 \eta^2 \delta^2 \\
+%                                  &+ \eta^6 \delta^6 \\
+%                                  &-15\left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^2 \bigg(\eta^4 \delta^4 \\
+%                                      &\;\begin{aligned}
+%                                      \phantom{-15\left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^2 \bigg(}
+%                                        &+ 6\left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^2 \eta^2 \delta^2 \\
+%                                        &+  \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^4
+%                                      \biggr) \\
+%                                      \end{aligned} \\
+%                                  &+15\left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^4 \biggl(\left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^2 + \eta^2 \delta^2 \biggr) \\
+%                                  &-  \left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^6
+%                                \biggr]
+%\end{aligned}\end{equation}
+%
+%Averaging over the phase variables: \begin{equation}\begin{aligned}
+%\left< \mathcal{N_6}(x,y) \right> = \frac{1}{720} K_6 
+%                                \biggl[
+%                                  &\frac{5}{2} J_x^3 \beta_x^3 \\
+%                                  &+ 15 \cdot J_x \beta_x \eta^4 \delta^4 \\
+%                                  &+ 15 \cdot J_x^2 \beta_x^2 \frac{3}{2} \eta^2 \delta^2 \\
+%                                  &+ \eta^6 \delta^6 \\
+%                                  &-15\left(J_y \beta_y \right) \bigg(\eta^4 \delta^4 \\
+%                                      &\;\begin{aligned}
+%                                      \phantom{-15\left(J_y \beta_y \right) \bigg(}
+%                                        &+ 6\left(J_x \beta_x \right) \eta^2 \delta^2 \\
+%                                        &+  \left(J_x^2 \beta_x^2 \frac{3}{2}\right)
+%                                      \biggr) \\
+%                                      \end{aligned} \\
+%                                  &+ 15\left(J_y^2 \beta_y^2 \frac{3}{2} \right) \biggl(J_x \beta_x + \eta^2 \delta^2 \biggr) \\
+%                                  &- \frac{5}{2} J_y^3 \beta_y^3
+%                                \biggr]
+%\end{aligned}\end{equation}
+%
 The tunes then are:
 
 \begin{equation}\begin{aligned}
@@ -986,10 +1017,12 @@ Q_z(\epsilon_x, \epsilon_y, \delta) = \color{gray}Q_{z0} &\color{gray}+
 \end{aligned}
 \end{equation}
 
-\newpage
 
-\hypertarget{ptc-check}{%
-\subsection{PTC check}\label{ptc-check}}
+
+% =======================
+%     PTC Validation
+% =======================
+\section{PTC Validation}\label{ptc-check}
 
 A simulation has been done with PTC to assess that those equations are
 correct. A dodecapole has been added to the lattice with a strength
@@ -1029,9 +1062,6 @@ The ANH numbers refer to the partial derivative relative to \(J_x\),
 \chapter{Resonance Driving Terms}
 \label{appendix:rdts}
 \thumbforappendix
-
-\todo{derivations\\
-plots of phase spaces}
 
 This appendix intends to clarify where Resonance Driving Terms can be seen in the frequency
 spectrum, what resonance they contribute to and what their action dependance is.  

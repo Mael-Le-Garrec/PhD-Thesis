@@ -1,31 +1,10 @@
-\chapter{The Art of Measuring and Correcting Decapole Effects in the Large Hadron Collider}
+\chapter{Measuring and Correcting Decapole Effects in the Large Hadron Collider}
 \thumbforchapter{}
 \chaptertoc{}
 \newpage
 
 % === Motivation
 \section{Motivation}
-
-\subsection{\review{Harmonics and Field Errors}}
-
-Manufactured magnets never have a single field as one would like. Instead, so called 
-\textit{allowed harmonics} exist due to the geometry of the coil. As such, the allowed harmonics of
-dipoles are sextupolar, decapolar, decatetrapolar and so on~\cite{deniau_magnetic_2009}.
-
-During the design of the LHC, the main dipoles have been identified to generate a significant 
-decapolar field, aimed to be corrected by \textit{MCDs}, decapolar magnet correctors.
-Magnetic measurements of those various fields were thus taken and magnetic tables built based on
-real-life magnets nowadays installed in the machine.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{./images/main_dipole_fields.png}
-    \caption{Magnetic field in a dipole magnet~\cite{deniau_magnetic_2009}.}
-    \label{fig:decapoles:magnetic_field_dipole}
-\end{figure}
-
-
-\subsection{\review{Discrepancies at Injection}}
 
 Beam-based measurements have been carried in the LHC since Run 1 to better understand the decapolar
 fields. Those have been carried out via chromaticity
@@ -37,29 +16,41 @@ discrepancy.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/bare_chroma_simulated.png}
-    \caption{Measured and simulated chromaticity at injection energy without octupolar and
-             decapolar corrections. \todo{png really?}}
+    \includegraphics[width=0.7\textwidth]{images/dq3_corrected_simulation_fidel.pdf}
+    \caption{Measured and simulated chromaticity with application of the nominal decapolar
+    corrections from FiDeL. It can be seen that although the corrections should diminish $Q'''$, it
+    is not well corrected in practice.}
     \label{fig:decapoles:bare_chroma_vs_simulations}
 \end{figure}
 
-The operational corrections being based on the magnetic model and simulations, this 
-discrepancy should not appear.
-It has indeed been observed that $Q'''$ is over-corrected by an almost factor 2, resulting in an
-effectively un-corrected third order chromaticity. The magnetic model, FiDeL, is used during
-operation to correct various multipole errors, including octupolar and decapolar.  Chromaticity
-measurements have thus been repeated during LHC's Run 3 and complemented by beam-based corrections.
+The FiDeL magnetic model is used during operation to correct various multipole errors, including
+octupolar and decapolar. The operational corrections being based on this magnetic model and
+simulations, the residual $Q'''$ value is expected to be small, which is however not the case.
+Chromaticity measurements have thus been repeated during LHC's Run 3 and corrections made routine,
+aimed at correcting the observed discrepancy.
 
-While non-linear chromaticity provides an easy way of measuring decapolar fields, it does not permit
-alone to understand where the discrepancy originates from. New measurements were therefore
-undertaken to better understand those fields via observables never studied before:
-\begin{itemize}
-    \tightlist
-    \item \textbf{Bare Chromaticity}: chromaticity with octupolar and decapolar correctors turned off.
-    \item \textbf{Chromatic Amplitude Detuning}: tune shift dependant on both the action and the momentum 
-    offset.
-    \item \textbf{Resonance Driving Term $f_{1004}$}: contributing to a resonance close the working point.
-\end{itemize}
+The study of non-linear chromaticity has proven valuable in quantifying decapolar fields, yet it
+does not permit alone to understand the exact origins of the observed discrepancy. In an effort to
+gain deeper insights, additional measurements were performed focusing on novel observables that had
+not been previously explored.
+\textit{Bare chromaticity} involves measuring chromaticity with
+the octupolar an decapolar correctors deactivated ; this approach aims to isolate the machine
+effects from those of the correctors.
+\textit{Chromatic amplitude detuning}, evaluates how the tune varies with both the beam's action and
+the momentum offset ; this methods has the benefit of having a different expression that of the
+chromaticity.
+
+
+Complementing those measurements, studies of decapolar Resonance Driving Terms have been undertaken
+for the first time in the LHC. Contributing to resonances close to the working, those RDTs also have
+benefited from corrections.
+
+
+% -----------------------
+%    Decapolar Fields
+\subsection{Decapolar Fields}
+
+
 
 
 
@@ -76,10 +67,18 @@ undertaken to better understand those fields via observables never studied befor
 
 
 %==================================
+%              Decay 
+%==================================
+\input{chapters/05_Decapoles/04_decay.tex}
+
+
+%==================================
 %      Resonance Driving Terms
 %==================================
 \input{chapters/05_Decapoles/03_rdts.tex}
 
-\section{Impact of Decapolar Fields}
 
-\section{Integrating Decay}
+%==================================
+%             Impact
+%==================================
+\section{Impact of Decapolar Fields}

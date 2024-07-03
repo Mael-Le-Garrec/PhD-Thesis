@@ -155,10 +155,16 @@
 % Set the geometry of the pages
 % For a twoside book like this one, `left` and `right` mean respectively `inner` and `outer`
 % The numbers are based on the "Canon des Ateliers", https://etnadji.fr/rsc/canon/calcul.php
+% https://www.alain.les-hurtig.org/varia/empagement.html
+%
 % tête = top, pied = bottom, petit fond = left, grand fond = right
+%
 %\geometry{a4paper, top=2.625cm, left=2.1cm, right=3.15cm, bottom=3.675cm, includehead, includefoot}
 \geometry{b5paper, top=2.2cm, left=1.76cm, right=2.64cm, bottom=3.08cm, includehead, includefoot} % courant
 %\geometry{b5paper, top=2.935cm, left=2.348cm, right=3.522cm, bottom=4.109cm, includehead, includefoot} % luxe
+\geometry{paperheight=235mm, paperwidth=165mm,   % printhub.eu "B5" paper
+          top=20.625mm, bottom=28.875mm, left=16.5mm, right=24.75mm,
+          includehead, includefoot} % courant
 
 % Vertical space before chapters
 \RedeclareSectionCommand[beforeskip=5pt,

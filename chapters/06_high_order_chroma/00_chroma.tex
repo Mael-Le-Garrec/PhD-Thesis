@@ -44,16 +44,17 @@ RDTs visible for the first time in the LHC
 \section{Chromaticity}
 
 
-%----------------------------------------
-%        Measurement Procedure
-%----------------------------------------
+% ===============================
+%         Measurement
+% ===============================
 \subsection{\todo{Measurement Procedure}}
+\label{subsection:decapoles:chromaticity:measurement}
 
-The momentum offset $\delta$ is related to the RF frequency and the momentum compaction factor, as
-described in more details in \cref{subsection:decapoles:chromaticity:measurement}. This relation
-is given in the simplified \cref{eq:very_high_orders:simplified_eq_momentum_compaction}.
+As described in \cref{subsection:optics_corrections_chromaticity}, the momentum offset $\delta$ is
+related to the RF frequency and the momentum compaction factor. This relation is given as a
+simplified form in \cref{eq:very_high_orders:simplified_eq_momentum_compaction}. 
 The model $\alpha_c$ for the LHC injection optics is $3.48 \times 10^{-4}$ for beam 1 and $3.47
-\times 10^{-4}$ for beam 2. Via this relation, a change of 140Hz of the RF frequency corresponds to
+\times 10^{-4}$ for beam 2.  Via this relation, a change of 140Hz of the RF frequency corresponds to
 a momentum offset of about $-0.001$.
 
 \begin{equation}
@@ -61,23 +62,168 @@ a momentum offset of about $-0.001$.
     \label{eq:very_high_orders:simplified_eq_momentum_compaction}
 \end{equation}
 
-The standard measurement procedure is to vary the RF frequency to induce a change in momentum
-offset. Frequency steps of 20Hz are taken roughly every 30 seconds, to allow for a precise tune
-measurement. Once beam losses, registered by the beam loss monitors (BLM), are deemed too high the
-frequency is reverted back to its nominal frequency in larger steps. \cref{rf_scan} shows a typical
-RF scan performed to measure chromaticity.
+%The standard measurement procedure is to vary the RF frequency to induce a change in momentum
+%offset. Frequency steps of 20Hz are taken roughly every 30 seconds, to allow for a precise tune
+%measurement. Once beam losses, registered by the beam loss monitors (BLM), are deemed too high the
+%frequency is reverted back to its nominal frequency in larger steps. \cref{rf_scan} shows a typical
+%RF scan performed to measure chromaticity.
+%
+%\begin{figure}[tbh]
+%    \centering
+%    \includegraphics[width=\columnwidth]{images/MOPL027_f1-1.pdf}
+%    \caption{Observation of the tune dependence on momentum offset, created by a shift of RF frequency.}
+%    \label{rf_scan}
+%\end{figure}
 
-\begin{figure}[tbh]
+To properly characterize higher orders and ensure quality measurements, several steps are necessary.
+The tune measured during chromaticity scans can exhibit jitter and resonance lines may appear,
+requiring thorough data cleaning to either reject problematic data points or reduce error bars. 
+The simplified \cref{eq:very_high_orders:simplified_eq_momentum_compaction}, describing $\delta$,
+has been sufficient for reliably measuring up to the third order chromaticity. However, this
+relation also needs verification.
+
+
+
+
+% ========== Noisy Tune
+\subsubsection{Noise and Spectral Lines}
+
+Noise lines, due to electronics, can be seen in the raw data obtained from the BBQ tune system.
+Occasionally, when those resonances are strong, their frequency peak can be mistaken as the tune and
+logged as such by the system. This yield large uncertainties in the measurement when data points 
+can't properly be classified as outliers. A tune measurement presenting this issue is showed in 
+\cref{fig:decapoles:chromaticity:noisy_tune}.
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=\columnwidth]{images/MOPL027_f1-1.pdf}
-    \caption{Observation of the tune dependence on momentum offset, created by a shift of RF frequency.}
-    \label{rf_scan}
+    \includegraphics[width=\textwidth]{./images/noisy_tune.png}
+    \caption{Shift of the tune by variation of the RF. Noise lines can appear in some cases,
+    making the tune error bar large or downright unusable.}
+    \label{fig:decapoles:chromaticity:noisy_tune}
+\end{figure}
+
+A solution to this issue is to use the raw data extracted from the BBQ system. From there, a
+spectrogram clearly shows the noise lines, as seen in \cref{fig:decapoles:chromaticity:spectrogram}.
+Those lines have been repeatedly identified over several measurements and confirmed to be fixed.
+The highest peak of the spectrogram can thus be safely identified by removing those resonances,
+yielding a cleaner measurement. It is also to be added that the BBQ requires to set a tune window,
+which can be forgotten. By analyzing the raw data, it is ensured that the measurement has usable
+data and does not try to measure noise.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{./images/spectrogram.png}
+    \caption{Tune spectrogram obtained via BBQ system. Strong resonance lines can be seen above and
+    below where the tune really is, causing the wrong frequency peak to be identified as the tune.}
+    \label{fig:decapoles:chromaticity:spectrogram}
 \end{figure}
 
 
-During machine operation, the momentum offset, derived from \todo{something}, used to be logged on
-the servers. It was then possible to directly compute the chromaticity that way without having to
-use the RF and the momentum compaction factor.
+
+% ========== Momentum Compaction Factor
+\subsubsection{\review{Momentum Compaction Factor}}
+\label{subsubsection:momentum_compaction_factor_studies}
+
+Rather than a constant, the momentum compaction factor can be expressed as an
+expansion, as detailed in~\cref{subsection:coordinates_systems:momentum_compaction_factor}.
+The first terms are given by the following,
+
+\begin{equation}
+    \alpha_c = 
+    \underbrace{\alpha_{c,0}}_{1^\text{st} \text{ order}}
+    + \underbrace{\alpha_{c,1} \delta}_{2^\text{nd} \text{ order}}
+    + \underbrace{\alpha_{c,2} \delta^2}_{3^\text{rd} \text{ order}}.
+\end{equation}
+
+The expression for $\delta$ at first and second order then reads,
+
+\begin{equation}
+    \begin{aligned}
+        \delta &= -\frac{\Delta f_{RF}}{\alpha_{0} f_{RF}} && \Rightarrow \text{Order 1} \\
+        \delta &= \frac{- \alpha_{0} f_{RF} + \sqrt{f_{RF} 
+            \left(- 4 \Delta f_{RF} \alpha_{1} + \alpha_{0}^{2} f_{RF}\right)}}{2 \alpha_{1} f_{RF}}
+            && \Rightarrow \text{Order 2} 
+    \end{aligned}
+\end{equation}
+
+It is assumed that only the first term is relevant as the induced difference in chromaticity is
+negligible as will be demonstrated later on.
+\cref{fig:decapoles:chromaticity:momentum_compaction_factor} shows the non linearity of the momentum
+compaction factor and its effect on the calculated $\delta$ via the previous formulas.
+
+\begin{figure}[tbh]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/higher_order_momentum_compaction_factor.pdf}
+        \caption{Non-linear fit of $\alpha_c$ obtained via an evaluation at discrete $\delta$ in
+        MAD-X. The green line represents a constant $\alpha_c = \alpha_{c,0}$.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/delta_vs_frf_alpha_c.pdf}
+        \caption{Divergence of the momentum offset when considering higher $\alpha_c$ orders with
+        large RF trims.}
+    \end{subfigure}
+    \caption{Non linearity of $\alpha_c$ and its effect on the computed $\delta$ via RF trims. The
+    simulations are done at injection energy of 450GeV.}
+    \label{fig:decapoles:chromaticity:momentum_compaction_factor}
+\end{figure}
+
+It is observed that while clearly depending on higher orders, the momentum compaction factor only
+has a small impact on the calculated $\delta$.
+\cref{fig:decapoles:chromaticity:momentum_compaction_factor_chroma_meas} shows a real-life 
+measurement, comparing the fit of the chromaticity function with various $\delta$, computed up to
+the third order of $\alpha_c$.
+
+\begin{figure}[tbh]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/chroma_function_alpha_c.pdf}
+        \caption{Fit of the chromaticity function at the $5^{\text{th}}$ order, considering the
+        $\alpha_c$ expansion up to the third order.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/chroma_function_alpha_c_zoom.pdf}
+        \caption{Zoom on one side of the fit. The difference between the second and third order
+        is barely noticeable.}
+    \end{subfigure}
+    \caption{Fit of the chromaticity function considering several $\alpha_c$ orders.}
+    \label{fig:decapoles:chromaticity:momentum_compaction_factor_chroma_meas}
+\end{figure}
+
+The fit of the chromaticity function is barely impacted when considering the higher orders of the 
+momentum compaction factor. The different orders of the chromaticity are collected
+in~\cref{table:decapoles:chromaticity:alpha_c_chroma}.
+The higher order terms of $\alpha_c$ can thus be neglected and are not a source of higher
+chromaticity orders.
+
+\begin{table}[tbh]
+    \begin{tabular}{c|ccccc}
+        $\alpha_c$ Order & $Q^{(1)}$ & $Q^{(2)}$ & $Q^{(3)}$ & $Q^{(4)}$ & $Q^{(5)}$\\
+        \hline
+        1 & 2.52 ± 0.03 & -3.04 ± 0.05 & -4.75 ± 0.03 & -0.33 ± 0.07 & 2.33 ± 0.06 \\
+        2 & 2.53 ± 0.03 & -3.05 ± 0.05 & -4.75 ± 0.03 & -0.32 ± 0.07 & 2.36 ± 0.06 \\
+        3 & 2.53 ± 0.03 & -3.05 ± 0.05 & -4.75 ± 0.03 & -0.32 ± 0.07 & 2.36 ± 0.06 \\
+        \end{tabular}
+    \caption{}
+    \label{table:decapoles:chromaticity:alpha_c_chroma}
+\end{table}
+
+
+
+%----------------------------------------
+%         Other dpp Measurements
+%----------------------------------------
+\subsubsection{Momentum Offset from Orbit}
+
+During machine operation, the momentum offset, derived from the orbit, used to be logged on the
+servers. It was then possible to directly compute the chromaticity that way without having to use
+the RF and the momentum compaction factor.
 In 2016, measurements of the non-linear chromaticity were performed using the former method.
 \cref{fig:very_high_orders:bare_chroma_2016} shows a comparison of the obtained non-linear 
 chromaticity from both methods, while \cref{table:very_high_orders:bare_chroma_2016} shows a
@@ -119,19 +265,24 @@ the non-linear chromaticity in the LHC.
     \label{fig:very_high_orders:bare_chroma_2016}
 \end{figure}
 
-\begin{table}[tbh]
+\begin{table}[H]
     \centering
-    \begin{tabular}{ll|rr|rr}
-        \multicolumn{2}{c}{} & \multicolumn{2}{c}{2022}       &  \multicolumn{2}{c}{2016} \\
-        Beam & Plane & $Q'' [x10^3]$ & $Q''' [x10^6]$ & $Q'' [x10^3]$ & $Q''' [x10^6]$\\
-        \midrule
-        B1 & X & -0.64 ± 0.01 &   3.0 ± 0.04   & -0.62 ± 0.01 &  2.91 ± 0.04 \\
-           & Y & -0.17 ± 0.01 & -2.12 ± 0.04   & -0.14 ± 0.01 & -2.09 ± 0.04 \\
+    \begin{tabular}{|l||rr|rr|}
         \hline
-        B2 & X & -1.18 ± 0.02 &  2.89 ± 0.06   & -1.23 ± 0.03 &  3.13 ± 0.11 \\
-           & Y &  0.18 ± 0.02 & -1.95 ± 0.05   &  0.20 ± 0.02 & -2.02 ± 0.06 \\
+        \multicolumn{1}{|c||}{} & \multicolumn{2}{c|}{2022}       &  \multicolumn{2}{c|}{2016} \\
+            & $Q'' [x10^3]$ & $Q''' [x10^6]$ & $Q'' [x10^3]$ & $Q''' [x10^6]$\\
+        \hline \hline
+        B1 &&&& \\
+        X & -0.64 ± 0.01 &   3.0 ± 0.04   & -0.62 ± 0.01 &  2.91 ± 0.04 \\
+        Y & -0.17 ± 0.01 & -2.12 ± 0.04   & -0.14 ± 0.01 & -2.09 ± 0.04 \\
+        \hline
+        B2 &&&& \\
+        X & -1.18 ± 0.02 &  2.89 ± 0.06   & -1.23 ± 0.03 &  3.13 ± 0.11 \\
+        Y &  0.18 ± 0.02 & -1.95 ± 0.05   &  0.20 ± 0.02 & -2.02 ± 0.06 \\
+        \hline
     \end{tabular}
     \label{table:very_high_orders:bare_chroma_2016}
+    \caption{\todo{blablabla!}}
 \end{table}
 
 
