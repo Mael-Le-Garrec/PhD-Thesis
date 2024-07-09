@@ -6,6 +6,7 @@
 % ==============================================================
 \chapter{Units and Conversions}
 \thumbforappendix
+\par
 
 
 % ---------------------------------------
@@ -38,6 +39,7 @@
 \chapter{Hamiltonians and Transfer Maps}
 \label{appendix:transfer_maps}
 \thumbforappendix
+\par
 
 This appendix is intended to gather and explicit the Hamiltonians of the elements used in this 
 thesis. Non-linear transfer maps are also described for some of those elements from the first to
@@ -222,7 +224,8 @@ can be generated depending on the orders of multipoles and that of the BCH.
 \begin{table}[H]
   \centering
   \footnotesize
-  \def\arraystretch{1.7}
+  \def\arraystretch{1.7}    % vertical padding
+  \setlength\tabcolsep{3pt} % horizontal padding
   \begin{tabular}{ccccccc}
   \multicolumn{1}{c}{} & \multicolumn{6}{c}{BCH Order} \\
   Field & 1 & 2 & 3 & 4 & 5 & 6 \\
@@ -499,8 +502,16 @@ The first two orders of the BCH of those two elements is given below.
 \label{appendix:chromatic_amplitude_detuning}
 
 This appendix details the derivations of chromatic amplitude detuning from sextupoles up to
-dodecapoles. As chromaticity and amplitude detuning are part of it, they will therefore be detailed
-here as well.
+dodecapoles. 
+\textit{Chromatic Amplitude Detuning}, being detuning coming from both the action and the momentum
+offset, only starts appearing with decapoles. Below that order, only amplitude detuning and
+chromaticity can be observed. As those are part of the derivations, they will also be detailed here.
+
+
+% ======================
+%      Expression
+% ======================
+\section{Expression}
 
 Up to the third order, the expression of the Taylor expansion of the Chromatic Amplitude Detuning
 around $\epsilon_x$, $\epsilon_y$ and $\delta$, for a tune $Q_z$, $z \in \{x, y\}$ reads:
@@ -541,7 +552,21 @@ Q_z(\epsilon_x, \epsilon_y, \delta) = Q_{z0} &+ \left[\frac{\partial Q_z}{\parti
 \end{equation}
 
 
-\section{Principle}
+% ======================
+%      Derivations
+% ======================
+\section{Derivations}
+
+In this section, the terms of the chromatic amplitude detuning are given up to dodecapoles.
+Derivations are given only for sextupoles and octupoles, as the process remains fairly similar for
+higher orders.
+Vertical offsets will be neglected, as horizontal dispersion is dominant. The reasoning remains the 
+same.
+
+
+% ======================
+%      Principle
+\subsection{Principle}
 
 From~\cite{dilly_derivation_2023}, the detuning caused by a magnet of length L can be described by
 its hamiltonian with 
@@ -576,18 +601,6 @@ A momentum dependence can be introduced for a particle with a different orbit
 
 After averaging over the phase variable, all that is left is to compute the partial derivatives.
 
-\todo{The following derivations are just copy-pasted from notes}
-
-
-
-% ======================
-%      Derivations
-% ======================
-\section{Derivations}
-
-In this section, the terms of the chromatic amplitude detuning are given up to dodecapoles.
-Derivations are given only for sextupoles and octupoles, as the process remains fairly similar for
-higher orders.
 
 
 % ======================
@@ -601,24 +614,28 @@ Introducing $\delta$ via an orbit offset and changing the variables to action-an
 
 \begin{equation}
   \begin{aligned}
-  N_3 = \; &J_{x} K_{3} \beta_{x} \delta \eta \cos^{2}{\left(\phi_{x} \right)} - J_{y} K_{3} \beta_{y} \delta \eta \cos^{2}{\left(\phi_{y} \right)} \\
-        &- \sqrt{2} J_{y} K_{3} \beta_{y} \sqrt{J_{x} \beta_{x}} \cos{\left(\phi_{x} \right)} \cos^{2}{\left(\phi_{y} \right)} + \frac{K_{3} \delta^{3} \eta^{3}}{6} \\
-        &+ \frac{\sqrt{2} K_{3} \delta^{2} \eta^{2} \sqrt{J_{x} \beta_{x}} \cos{\left(\phi_{x} \right)}}{2} + \frac{\sqrt{2} K_{3} \left(J_{x} \beta_{x}\right)^{\frac{3}{2}} \cos^{3}{\left(\phi_{x} \right)}}{3}
-  \end{aligned}
+    N_3 = \frac{1}{6} K_3 \biggl[
+        &- 3\left(\delta D_x + \sqrt{2J_{x} \beta_{x}} \cos{\phi_{x}}\right) \left(\sqrt{2 J_{y} \beta_{y}} \cos \phi_y \right)^2 \\
+        &+ \left(\delta D_x + \sqrt{2 J_{x} \beta_{x}} \cos{\phi_{x}}\right)^{3}
+    \biggr]
+    \end{aligned}
 \end{equation}
 
 Averaging over the cosines means integrating over $[0, \pi]$ and dividing by $\pi$:
 
 \begin{equation}
-  N_3 = \frac{1}{6\pi^2} K_{3} \cdot \left(3 \pi^{2} J_{x} \beta_{x} \delta \eta - 3 \pi^{2} J_{y} \beta_{y} \delta \eta + \pi^{2} \delta^{3} \eta^{3}\right)
+  \begin{aligned}
+  \left< N_3 \right> &= \frac{1}{\pi} \int_0^\pi N_3 \\
+                     &= \frac{1}{6\pi^2} K_{3} \cdot \left(3 \pi^{2} J_{x} \beta_{x} \delta D_x - 3 \pi^{2} J_{y} \beta_{y} \delta D_x + \pi^{2} \delta^{3} D_x^{3}\right)
+  \end{aligned}
 \end{equation}
 
 Differentiating by either $J_x$ or $J_y$ gives the tune shift induced by a single sextupole:
 
 \begin{equation}
   \begin{aligned}
-    \Delta Q_x &=   \frac{1}{4\pi} K_3 \beta_x \eta \delta L     \\
-    \Delta Q_y &= - \frac{1}{4\pi} K_3 \beta_y \eta \delta L
+    \Delta Q_x &=             &&\frac{1}{4\pi} K_3 \beta_x D_x \delta L     \\
+    \Delta Q_y &= -\mkern-9mu &&\frac{1}{4\pi} K_3 \beta_y D_x \delta L
   \end{aligned}
 \end{equation}
 
@@ -630,11 +647,17 @@ the tune shift equation. Rather, sextupoles are known to contribute to the first
 $Q'$. The following gives a recap of those operations:
 
 \begin{equation}\begin{aligned}
-\frac{\partial Q_x}{\partial J_x} = 0 \quad;&& \frac{\partial Q_x}{\partial J_y} = 0 \quad;&& \frac{\partial Q_x}{\partial \delta} = \frac{1}{4\pi}K_3\beta_x\eta L = Q_x'\\
-\frac{\partial Q_y}{\partial J_x} = 0 \quad;&& \frac{\partial Q_y}{\partial J_y} = 0 \quad;&& \frac{\partial Q_y}{\partial \delta} = -\frac{1}{4\pi}K_3\beta_y\eta L = Q_y'\\
+  \frac{\partial Q_x}{\partial J_x} = 0 
+      \quad&&;\quad&& \frac{\partial Q_x}{\partial J_y} = 0 
+      \quad&&;\quad&& \frac{\partial Q_x}{\partial \delta} &= &\frac{1}{4\pi}K_3\beta_xD_x L \\
+      %
+  \frac{\partial Q_y}{\partial J_x} = 0
+    \quad&&;\quad&& \frac{\partial Q_y}{\partial J_y} = 0
+    \quad&&;\quad&& \frac{\partial Q_y}{\partial \delta} &= -\mkern-9mu &\frac{1}{4\pi}K_3\beta_yD_x L \\
 \end{aligned}\end{equation}
 
-The overall contribution of sextupoles to the Chromatic Amplitude Detuning is then the following:
+The overall contribution of sextupoles to the Chromatic Amplitude Detuning is then highlighted in
+the following:
 
 \begin{equation}
 \begin{aligned}
@@ -651,64 +674,70 @@ Q_z(\epsilon_x, \epsilon_y, \delta) = \color{gray}Q_{z0} &+ \color{gray}\left[\f
 %       Octupole
 \subsection{Octupole}\label{octupole-2}
 
-From the hamiltonian of a normal octupole, with a displacement in \(x\)
-(\cref{eq:hamiltonian_displacement_octupole}), we can change the
-variable (\(x = \sqrt{2 J_x \beta_x} \cos \phi_x\) and
-\(y = \sqrt{2 J_y \beta_y} \cos \phi_y\)):
+With the normal hamiltonian of octupoles being
+$N_4 = \frac{1}{4!}K_{4} \left(x^{4} - 6 x^{2} y^{2} + y^{4}\right)$, applying an orbit offset and
+changing for action-angle variables gives the following:
 
 \begin{equation}
 \begin{aligned}
 N_4 = \frac{1}{24} K_4 \biggl[& \left(\sqrt{2J_x\beta_x} cos\phi_x\right)^4 \\
-                                        & +4 \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^3 \eta \delta \\
-                                        & +6 \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^2 \eta^2 \delta^2 \\
-                                        & +4 \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right) \eta^2 \delta \\
-                                        & +\eta^4 \delta^4 \\
+                                        & +4 \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^3 D_x \delta \\
+                                        & +6 \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^2 D_x^2 \delta^2 \\
+                                        & +4 \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right) D_x^2 \delta \\
+                                        & +D_x^4 \delta^4 \\
                                         & -6 \left(\sqrt{2 J_x \beta_x} \cos \phi_x\right)^2 \left(\sqrt{2 J_y \beta_y}\cos \phi_y\right)^2\\
-                                        & -6 \left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^2 \cdot 2 \left(\sqrt{2 J_x \beta_x}\cos \phi_x\right) \eta \delta \\
-                                        & -6 \left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^2 \eta^2 \delta^2 \\
+                                        & -6 \left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^2 \cdot 2 \left(\sqrt{2 J_x \beta_x}\cos \phi_x\right) D_x \delta \\
+                                        & -6 \left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^2 D_x^2 \delta^2 \\
                                         & + \left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^4
                                   \biggr]\\
 \end{aligned}
 \end{equation}
 
-We can now average over the phase variables: \begin{equation}
-\begin{aligned}
-\left< N_4 \right> = \frac{1}{24} K_4 \biggl[& \frac{3}{2} J_x^2\beta_x^2 \\
-                                                       & +6 J_x \beta_x \eta^2 \delta^2 \\
-                                                       & +\eta^4 \delta^4 \\
-                                                       & -6 J_x \beta_x J_y \beta_y\\
-                                                       & -6 J_y \beta_y \eta^2 \delta^2 \\
-                                                       & + \frac{3}{2} J_y^2 \beta_y^2
-                                                 \biggr]\\
-\end{aligned}
+Average over the phase variables gives the following:
+\begin{equation}
+  \begin{aligned}
+  \left< N_4 \right> &= \frac{1}{\pi} \int_0^\pi N_4 \\
+                     &= \frac{1}{48} K_4 \biggl[&& \mkern-30mu 3 J_x^2\beta_x^2 
+                                                 +12 J_x \beta_x D_x^2 \delta^2 
+                                                 +2D_x^4 \delta^4 \\
+                     &                          && \mkern-30mu -12 J_y \beta_y (J_x \beta_x + D^2_x\delta^2)
+                                                 + 3 J_y^2 \beta_y^2
+                                         \biggr]
+  \end{aligned}
 \end{equation}
 
-The tunes then are:
 
+Differentiating by either $J_x$ or $J_y$ gives the tune shift induced by a single octupole. Contrary
+to sextupoles, it can be noted that some action terms $J_{x,y}$ remain in the expression. 
 \begin{equation}\begin{aligned}
-Q_x = \frac{1}{2\pi} \frac{\partial \left< N_4 \right>}{\partial J_x} &= \frac{1}{48\pi} K_4 \biggl[3 J_x \beta_x^2
-                                                                                                             +6 \beta_x \eta^2 \delta^2
+\Delta Q_x &= \frac{1}{48\pi} K_4 L \biggl[3 J_x \beta_x^2
+                                                                                                             +6 \beta_x D_x^2 \delta^2
                                                                                                              -6 \beta_x J_y  \beta_y 
                                                                                                       \biggr]\\
-Q_y = \frac{1}{2\pi} \frac{\partial \left< N_4 \right>}{\partial J_y} &= \frac{1}{48\pi} K_4 \biggl[-6 J_x \beta_x \beta_y
-                                                                                                             -6 \beta_y \eta^2 \delta^2
+\Delta Q_y &= \frac{1}{48\pi} K_4 L \biggl[-6 J_x \beta_x \beta_y
+                                                                                                             -6 \beta_y D_x^2 \delta^2
                                                                                                              +3 J_y \beta_y^2
                                                                                                       \biggr]
 \end{aligned}\end{equation}
 
-\begin{equation}\begin{aligned}
-  \frac{\partial Q_x}{\partial J_x} =& \frac{1}{16\pi} K_4 \beta_x^2 &&;\quad 
-  \frac{\partial Q_x}{\partial J_y} =& -\frac{1}{8\pi} K_4 \beta_x\beta_y &&;\quad
-  \frac{\partial^2 Q_x}{\partial \delta^2} =& \frac{1}{4\pi} K_4 \beta_x \eta^2  = Q_x''
-\\
-  \frac{\partial Q_y}{\partial J_x} =& -\frac{1}{8\pi} K_4 \beta_x \beta_y &&;\quad
-  \frac{\partial Q_y}{\partial J_y} =& \frac{1}{16\pi} K_4 \beta_y^2 &&;\quad
-  \frac{\partial^2 Q_y}{\partial \delta^2} =& -\frac{1}{4\pi} K_4 \beta_y \eta^2  = Q_y''
-\\
-\end{aligned}\end{equation}
 
-Contribution to the Chromatic Amplitude Detuning:
+Differentiating by the action $J_{x,y}$ yields amplitude detuning, while differentiating by the 
+momentum offset yields the second order chromaticity $Q''$:
 
+\begin{equation}
+  \begin{aligned}
+  \frac{\partial Q_x}{\partial J_x} =& &&\frac{1}{16\pi} K_4 \beta_x^2L &&;\:
+  \frac{\partial Q_x}{\partial J_y} =& -\frac{1}{8\pi} K_4 \beta_x\beta_yL &&;\:
+  \frac{\partial^2 Q_x}{\partial \delta^2} =& &&\frac{1}{4\pi} K_4 \beta_x D_x^2L 
+  \\
+  \frac{\partial Q_y}{\partial J_x} =& -\mkern-18mu &&\frac{1}{8\pi} K_4 \beta_x \beta_yL &&;\:
+  \frac{\partial Q_y}{\partial J_y} =& \frac{1}{16\pi} K_4 \beta_y^2L &&;\:
+  \frac{\partial^2 Q_y}{\partial \delta^2} =& -\mkern-18mu &&\frac{1}{4\pi} K_4 \beta_y D_x^2L 
+  \end{aligned}
+\end{equation}
+
+The overall contribution of octupoles to the Chromatic Amplitude Detuning is then highlighted in
+the following:
 \begin{equation}
 \begin{aligned}
 Q_z(\epsilon_x, \epsilon_y, \delta) = \color{gray}Q_{z0} &\color{gray}+
@@ -777,80 +806,68 @@ Q_z(\epsilon_x, \epsilon_y, \delta) = \color{gray}Q_{z0} &\color{gray}+
 %
 %The tunes then are:
 
-Skipping the first steps detailed previously, the tune shift induced by a decapole is given by the
-following:
+Skipping the first steps detailed previously, the tune shift induced by a normal decapole is given
+by the following:
 
 \begin{equation}
   \begin{aligned}
-    \Delta Q_x = \frac{1}{2\pi} \frac{\partial \left< N_5 \right>}{\partial J_x} &= \frac{1}{240\pi} K_5 \biggl[10 \eta^3 \delta^3 \beta_x
-                                                                                                                  + 15 \eta \delta J_x \beta_x^2
-                                                                                                                  - 30 J_y \beta_y \beta_x \eta \delta
+    \Delta Q_x &= \frac{1}{240\pi} K_5 L \biggl[10 D_x^3 \delta^3 \beta_x
+                                                                                                                  + 15 D_x \delta J_x \beta_x^2
+                                                                                                                  - 30 J_y \beta_y \beta_x D_x \delta
                                                                                                           \biggr]\\
-    \Delta Q_y = \frac{1}{2\pi} \frac{\partial \left< N_5 \right>}{\partial J_y} &= \frac{1}{240\pi} K_5 \biggl[-10 \eta^3 \delta^3 \beta_y
-                                                                                                                  + 15 \eta \delta J_y \beta_y^2
-                                                                                                                  -30 J_x \beta_y \beta_x \eta \delta
+    \Delta Q_y &= \frac{1}{240\pi} K_5 L \biggl[-10 D_x^3 \delta^3 \beta_y
+                                                                                                                  + 15 D_x \delta J_y \beta_y^2
+                                                                                                                  -30 J_x \beta_y \beta_x D_x \delta
                                                                                                           \biggr]
   \end{aligned}
 \end{equation}
 
 The terms of the chromatic amplitude detuning can now be computed. Unlike sextupoles and octupoles,
-cross-terms between $\delta$ and the action now appear, giving rise to the "proper" chromatic
-amplitude detuning.
+cross-terms between $\delta$ and the action now appear, giving rise to \textit{chromatic
+amplitude detuning} and the third order chromaticity $Q'''$:
 
-\begin{equation}\begin{aligned}
-  \frac{\partial^2 Q_x}{\partial J_x \partial \delta} =& \frac{1}{16 \pi} K_5 \beta_x^2 \eta &&;\quad 
-  \frac{\partial^2 Q_x}{\partial J_y \partial \delta} =& -\frac{1}{8\pi} K_5 \beta_x \beta_y \eta&&;\quad
-  \frac{\partial^3 Q_x}{\partial \delta^3} =& \frac{1}{4\pi} K_5 \beta_x \eta^3 = Q_x''' 
-\\
-  \frac{\partial^2 Q_y}{\partial J_x \partial \delta} =& -\frac{1}{8\pi} K_5 \beta_x \beta_y \eta&&;\quad
-  \frac{\partial^2 Q_y}{\partial J_y \partial \delta} =& \frac{1}{16 \pi} K_5 \beta_y^2 \eta &&;\quad 
-  \frac{\partial^3 Q_y}{\partial \delta^3} =& -\frac{1}{4\pi} K_5 \beta_y \eta^3 = Q_y'''
-\\
-\end{aligned}\end{equation}
+\begin{equation}
+  \small
+  \begin{aligned}
+      \frac{\partial^2 Q_x}{\partial J_x \partial \delta} =& &&\frac{1}{16 \pi} K_5 \beta_x^2 D_x L&&;\; 
+      \frac{\partial^2 Q_x}{\partial J_y \partial \delta} =&& \frac{1}{8\pi} K_5 \beta_x \beta_y D_xL&&;\;
+      \frac{\partial^3 Q_x}{\partial \delta^3} =& \frac{1}{4\pi} K_5 \beta_x D_x^3L
+  \\
+      \frac{\partial^2 Q_y}{\partial J_x \partial \delta} =& -\mkern-18mu&&\frac{1}{8\pi} K_5 \beta_x \beta_y D_xL&&;\;
+      \frac{\partial^2 Q_y}{\partial J_y \partial \delta} =&& \frac{1}{16 \pi} K_5 \beta_y^2 D_xL &&;\; 
+      \frac{\partial^3 Q_y}{\partial \delta^3} =& -\frac{1}{4\pi} K_5 \beta_y D_x^3L 
+  \\
+  \end{aligned}
+\end{equation}
 
 The contribution of decapoles to Chromatic Amplitude Detuning is then the following:
 
 \begin{equation}
-\begin{aligned}
-Q_z(\epsilon_x, \epsilon_y, \delta) = \color{gray}Q_{z0} &\color{gray}+
-                                                \left[
-                                                   \frac{\partial Q_z}{\partial \epsilon_x} \epsilon_x
-                                                 + \frac{\partial Q_z}{\partial \epsilon_y} \epsilon_y
-                                                 + \frac{\partial Q_z}{\partial \delta} \delta
-                                                \right] \\
-                                             &\color{gray}
-                                             + \textcolor{orange}{\frac{1}{2!} \biggl[}
-                                                   \frac{\partial^2Q_z}{\partial \epsilon_x^2}\epsilon_x^2 
-                                                 + \frac{\partial^2Q_z}{\partial \epsilon_y^2}\epsilon_y^2
-                                                 + \frac{\partial^2 Q_z}{\partial \delta^2} \delta^2  \\
-                                             &\;\begin{aligned}
-                                             \phantom{+ \frac{1}{2!} \biggl[}
-                                               & \color{gray}
-                                               + 2 \frac{\partial^2Q_z}{\partial \epsilon_x \partial \epsilon_y}\epsilon_x \epsilon_y
-                                               + \textcolor{orange}{2 \frac{\partial^2Q_z}{\partial \epsilon_x \partial \delta}\epsilon_x \delta}
-                                               + \textcolor{orange}{2 \frac{\partial^2Q_z}{\partial \delta \partial \epsilon_y} \delta \epsilon_y}
-                                             \textcolor{orange}{\biggr]} \\
-                                             \end{aligned} \\
-                                             &\color{gray}+ \textcolor{orange}{\frac{1}{3!}
-                                             \biggl[}
-                                                  \textcolor{orange}{\frac{\partial^3 Q_z}{\partial \delta^3} \delta^{3}}
-                                                  + \frac{\partial^{3} Q_z}{\partial \epsilon_{x}^{3}}  \epsilon_{x}^{3} 
-                                                  + \frac{\partial^{3} Q_z}{\partial \epsilon_{y}^{3}}  \epsilon_{y}^{3} \\
-                                             &\;\begin{aligned}
-                                             \phantom{+ \frac{1}{3!} \biggl[} 
+  \begin{aligned}
+  Q_z(\epsilon_x, \epsilon_y, \delta) = \color{gray}Q_{z0} &\color{gray}+
+                                                  \left[
+                                                     \frac{\partial Q_z}{\partial \epsilon_x} \epsilon_x
+                                                   + \frac{\partial Q_z}{\partial \epsilon_y} \epsilon_y
+                                                   + \frac{\partial Q_z}{\partial \delta} \delta
+                                                  \right] \\
                                                &\color{gray}
-                                               + 3 \frac{\partial^{3} Q_z}{\partial \epsilon_{x}\partial \delta^{2}} \delta^{2} \epsilon_{x} 
-                                                + 3  \frac{\partial^{3} Q_z}{\partial \epsilon_{y}\partial \delta^{2}}  \delta^{2} \epsilon_{y}
-                                                + 3 \frac{\partial^{3} Q_z}{\partial \epsilon_{x}^{2}\partial \delta}  \delta \epsilon_{x}^{2} \\
-                                               &\color{gray}
-                                               + 3 \frac{\partial^{3} Q_z}{\partial \epsilon_{y}^{2}\partial \delta} \delta \epsilon_{y}^{2}  
-                                                + 3  \frac{\partial^{3} Q_z}{\partial \epsilon_{y}\partial \epsilon_{x}^{2}} \epsilon_{x}^{2} \epsilon_{y} 
-                                                + 3 \frac{\partial^{3} Q_z}{\partial \epsilon_{y}^{2}\partial \epsilon_{x}} \epsilon_{x} \epsilon_{y}^{2} \\
-                                               &\color{gray}
-                                               + 6 \frac{\partial^{3} Q_z}{\partial \epsilon_{y}\partial  \epsilon_{x}\partial \delta} \delta \epsilon_{x} \epsilon_{y} 
-                                             \textcolor{orange}{\biggr]}\\
-                                             \end{aligned}
-\end{aligned}
+                                               + \textcolor{orange}{\frac{1}{2!} \biggl[}
+                                                     \frac{\partial^2Q_z}{\partial \epsilon_x^2}\epsilon_x^2 
+                                                   + \frac{\partial^2Q_z}{\partial \epsilon_y^2}\epsilon_y^2
+                                                   + \frac{\partial^2 Q_z}{\partial \delta^2} \delta^2  \\
+                                               &\;\begin{aligned}
+                                               \phantom{+ \frac{1}{2!} \biggl[}
+                                                 & \color{gray}
+                                                 + 2 \frac{\partial^2Q_z}{\partial \epsilon_x \partial \epsilon_y}\epsilon_x \epsilon_y
+                                                 + \textcolor{orange}{2 \frac{\partial^2Q_z}{\partial \epsilon_x \partial \delta}\epsilon_x \delta}
+                                                 + \textcolor{orange}{2 \frac{\partial^2Q_z}{\partial \delta \partial \epsilon_y} \delta \epsilon_y}
+                                               \textcolor{orange}{\biggr]} \\
+                                               \end{aligned} \\
+                                               &\color{gray}+ \textcolor{orange}{\frac{1}{3!}
+                                               \biggl[}
+                                                    \textcolor{orange}{\frac{\partial^3 Q_z}{\partial \delta^3} \delta^{3}}
+                                                    + \cdots \textcolor{orange}{\biggr]}
+  \end{aligned}
 \end{equation}
 
 
@@ -919,103 +936,69 @@ Q_z(\epsilon_x, \epsilon_y, \delta) = \color{gray}Q_{z0} &\color{gray}+
 %                                \biggr]
 %\end{aligned}\end{equation}
 %
-The tunes then are:
-
-\begin{equation}\begin{aligned}
-Q_x = \frac{1}{2\pi} \frac{\partial \left< \mathcal{N_6} \right>}{\partial J_x} = \frac{1}{1440\pi} K_6 \biggl[
-                                 & \frac{15}{2} J_x^2 \beta_x^3\\
-                                 & +15 \beta_x \eta^4 \delta^4 \\
-                                 & +45 J_x \beta_x^2 \eta^2 \delta^2 \\
-                                 & -90 J_y \beta_y \beta_x \eta^2 \delta^2 \\
-                                 & -45 J_y \beta_y J_x \beta_x^2\\
-                                 & + 15 \cdot \frac{3}{2} J_y^2 \beta_y^2 \beta_x
-                                                                                                      \biggr]\\
-Q_y = \frac{1}{2\pi} \frac{\partial \left< \mathcal{N_6} \right>}{\partial J_y} = \frac{1}{1440\pi} K_6 \biggl[
-                                 & -15 \beta_y \eta^4 \delta^4 \\
-                                 & -90 \beta_y J_x \beta_x \eta^2 \delta^2 \\
-                                 & -15 \cdot \frac{3}{2}  \beta_y J_x^2 \beta_x^2 \\
-                                 & +45 J_y \beta_y^2 J_x \beta_x \\
-                                 & +45 J_y \beta_y^2 \eta^2 \delta^2 \\
-                                 & -\frac{15}{2} J_y^2 \beta_y ^3 
-                                                                                                      \biggr]
-\end{aligned}\end{equation}
-
-We can now calculate our chromatic amplitude detuning terms. Since there
-are many terms, I'm going to split them here. First, \(Q_x\):
-
-\begin{equation}\begin{aligned}
-  \frac{\partial^2 Q_x}{\partial J_x^2} =&\; \frac{1}{96\pi} K_6 \beta_x^3 \\
-  \frac{\partial^3 Q_x}{\partial J_x \partial \delta^2} =&\; \frac{1}{16\pi} K_6 \beta_x^2 \eta^2\\
-  \cline{1-2}\\[-5\jot]
-  \frac{\partial^2 Q_x}{\partial J_y^2} =&\; \frac{1}{32\pi} K_6 \beta_y^2\beta_x \\
-  \frac{\partial^3 Q_x}{\partial J_y \partial \delta^2} =&\; -\frac{1}{8\pi} K_6 \beta_y \beta_x \eta^2\\
-  \cline{1-2}\\[-5\jot]
-  \frac{\partial^2 Q_x}{\partial J_x \partial J_y} =&\; -\frac{1}{32\pi} K_6 \beta_y \beta_x^2\\[2\jot]
-\end{aligned}\end{equation}
-
-Then \(Q_y\): \begin{equation}\begin{aligned}
-  \frac{\partial^2 Q_y}{\partial J_y^2} =&\; -\frac{1}{96\pi} K_6 \beta_y^3 \\
-  \frac{\partial^3 Q_y}{\partial J_y \partial \delta^2} =&\; \frac{1}{16\pi} K_6 \beta_y^2 \eta^2\\
-  \cline{1-2}\\[-5\jot]
-  \frac{\partial^2 Q_y}{\partial J_x^2} =&\; -\frac{1}{32\pi} K_6 \beta_y\beta_x^2 \\
-  \frac{\partial^3 Q_y}{\partial J_x \partial \delta^2} =&\; -\frac{1}{8\pi} K_6 \beta_y \beta_x \eta^2\\
-  \cline{1-2}\\[-5\jot]
-  \frac{\partial^2 Q_y}{\partial J_y \partial J_x} =&\; \frac{1}{32\pi} K_6 \beta_y^2 \beta_x\\[2\jot]
-\end{aligned}\end{equation}
-
-Then the chromaticity: \begin{equation}\begin{aligned}
-  \frac{\partial^4 Q_x}{\partial \delta^4} =&\; \frac{1}{4\pi} K_6 \beta_x \eta^4 = Q_x''''\\
-  \frac{\partial^4 Q_y}{\partial \delta^4} =&\; -\frac{1}{4\pi} K_6 \beta_y \eta^4 = Q_y''''\\
-\end{aligned}\end{equation}
-
-\vspace{2cm}
-
-Contribution to the Chromatic Amplitude Detuning:
+The tune shift induced by a normal dodecapole is given by the following:
 
 \begin{equation}
-\begin{aligned}
-Q_z(\epsilon_x, \epsilon_y, \delta) = \color{gray}Q_{z0} &\color{gray}+
-                                                \left[
-                                                   \frac{\partial Q_z}{\partial \epsilon_x} \epsilon_x
-                                                 + \frac{\partial Q_z}{\partial \epsilon_y} \epsilon_y
-                                                 + \frac{\partial Q_z}{\partial \delta} \delta
-                                                \right] \\
-                                             &\color{gray}
-                                             + \textcolor{orange}{\frac{1}{2!} \biggl[}
+  \begin{aligned}
+  Q_x = \frac{1}{720\pi} K_6 L \biggl[
+                                   &  15 J_x^2 \beta_x^3
+                                     +30 \beta_x D_x^4 \delta^4 
+                                     +90 J_x \beta_x^2 D_x^2 \delta^2 \\
+                                   & -180 J_y \beta_y \beta_x D_x^2 \delta^2 
+                                     -90 J_y \beta_y J_x \beta_x^2
+                                     +90 J_y^2 \beta_y^2 \beta_x
+                                                                                                        \biggr]\\
+  Q_y = \frac{1}{720\pi} K_6 L \biggl[
+                                   & -30 \beta_y D_x^4 \delta^4 
+                                    -180 \beta_y J_x \beta_x D_x^2 \delta^2 
+                                    -90  \beta_y J_x^2 \beta_x^2 \\
+                                   & +90 J_y \beta_y^2 J_x \beta_x 
+                                    +45 J_y \beta_y^2 D_x^2 \delta^2 
+                                    -15 J_y^2 \beta_y ^3 
+                                                                                                        \biggr]
+  \end{aligned}
+\end{equation}
+
+
+The terms of the chromatic amplitude detuning can now be computed. Like for decapoles, chromatic
+amplitude detuning terms appear, as well as the third order chromaticity $Q^{(4)}$:
+\begin{equation}\begin{aligned}
+  \frac{\partial^2 Q_x}{\partial J_x^2} =&\;                              &&\frac{1}{96\pi} K_6 \beta_x^3L                 &&;\quad     &\frac{\partial^2 Q_y}{\partial J_y^2}                 &=\; -\mkern-15mu &&\frac{1}{96\pi} K_6 \beta_y^3L \\
+  \frac{\partial^3 Q_x}{\partial J_x \partial \delta^2} =&\;              &&\frac{1}{16\pi} K_6 \beta_x^2 D_x^2L           &&;\quad     &\frac{\partial^3 Q_y}{\partial J_y \partial \delta^2} &=\;              &&\frac{1}{16\pi} K_6 \beta_y^2 D_x^2L\\
+  \frac{\partial^2 Q_x}{\partial J_y^2} =&\;                              &&\frac{1}{32\pi} K_6 \beta_y^2\beta_xL          &&;\quad     &\frac{\partial^2 Q_y}{\partial J_x^2}                 &=\; -\mkern-15mu &&\frac{1}{32\pi} K_6 \beta_y\beta_x^2L \\
+  \frac{\partial^3 Q_x}{\partial J_y \partial \delta^2} =&\; -\mkern-15mu &&\frac{1}{8\pi} K_6 \beta_y \beta_x D_x^2L      &&;\quad     &\frac{\partial^3 Q_y}{\partial J_x \partial \delta^2} &=\; -\mkern-15mu &&\frac{1}{8\pi} K_6 \beta_y \beta_x D_x^2L\\
+  \frac{\partial^2 Q_x}{\partial J_x \partial J_y} =&\;      -\mkern-15mu &&\frac{1}{32\pi} K_6 \beta_y \beta_x^2L         &&;\quad     &\frac{\partial^2 Q_y}{\partial J_y \partial J_x}      &=\;              &&\frac{1}{32\pi} K_6 \beta_y^2 \beta_xL\\
+  \frac{\partial^4 Q_x}{\partial \delta^4} =&\;                           &&\frac{1}{4\pi} K_6 \beta_x D_x^4L              &&;\quad     &\frac{\partial^4 Q_y}{\partial \delta^4}              &=\; -\mkern-15mu &&\frac{1}{4\pi} K_6 \beta_y D_x^4 L\\
+\end{aligned}\end{equation}
+
+The contribution of dodecapoles to Chromatic Amplitude Detuning is then the following:
+\begin{equation}
+  \begin{aligned}
+  Q_z(\epsilon_x, \epsilon_y, \delta) = \color{gray}Q_{z0} &\color{gray}+
+                                                  \left[
+                                                     \frac{\partial Q_z}{\partial \epsilon_x} \epsilon_x
+                                                   + \frac{\partial Q_z}{\partial \epsilon_y} \epsilon_y
+                                                   + \frac{\partial Q_z}{\partial \delta} \delta
+                                                  \right] \\
+                                               &\color{gray}
+                                               + \textcolor{orange}{\frac{1}{2!} \biggl[}
                                                    \textcolor{orange}{\frac{\partial^2Q_z}{\partial \epsilon_x^2}\epsilon_x^2}
                                                  + \textcolor{orange}{\frac{\partial^2Q_z}{\partial \epsilon_y^2}\epsilon_y^2}
-                                                 + \frac{\partial^2 Q_z}{\partial \delta^2} \delta^2  \\
-                                             &\;\begin{aligned}
-                                             \phantom{+ \frac{1}{2!} \biggl[}
-                                               & \color{gray}
-                                               + \textcolor{orange}{2 \frac{\partial^2Q_z}{\partial \epsilon_x \partial \epsilon_y}\epsilon_x \epsilon_y}
-                                               + 2 \frac{\partial^2Q_z}{\partial \epsilon_x \partial \delta}\epsilon_x \delta
-                                               + 2 \frac{\partial^2Q_z}{\partial \delta \partial \epsilon_y} \delta \epsilon_y
-                                             \textcolor{orange}{\biggr]} \\
-                                             \end{aligned} \\
-                                             &\color{gray}+ \textcolor{orange}{\frac{1}{3!}
-                                             \biggl[}
-                                                  \frac{\partial^3 Q_z}{\partial \delta^3} \delta^{3}
-                                                  + \frac{\partial^{3} Q_z}{\partial \epsilon_{x}^{3}}  \epsilon_{x}^{3} 
-                                                  + \frac{\partial^{3} Q_z}{\partial \epsilon_{y}^{3}}  \epsilon_{y}^{3} \\
-                                             &\;\begin{aligned}
-                                             \phantom{+ \frac{1}{3!} \biggl[} 
-                                               &\color{gray}
-                                                + \textcolor{orange}{3 \frac{\partial^{3} Q_z}{\partial \epsilon_{x}\partial \delta^{2}} \delta^{2} \epsilon_{x}}
-                                                + \textcolor{orange}{3  \frac{\partial^{3} Q_z}{\partial \epsilon_{y}\partial \delta^{2}}  \delta^{2} \epsilon_{y}}
-                                                + 3 \frac{\partial^{3} Q_z}{\partial \epsilon_{x}^{2}\partial \delta}  \delta \epsilon_{x}^{2} \\
-                                               &\color{gray}
-                                               + 3 \frac{\partial^{3} Q_z}{\partial \epsilon_{y}^{2}\partial \delta} \delta \epsilon_{y}^{2}  
-                                                + 3  \frac{\partial^{3} Q_z}{\partial \epsilon_{y}\partial \epsilon_{x}^{2}} \epsilon_{x}^{2} \epsilon_{y} 
-                                                + 3 \frac{\partial^{3} Q_z}{\partial \epsilon_{y}^{2}\partial \epsilon_{x}} \epsilon_{x} \epsilon_{y}^{2} \\
-                                               &\color{gray}
-                                               + 6 \frac{\partial^{3} Q_z}{\partial \epsilon_{y}\partial  \epsilon_{x}\partial \delta} \delta \epsilon_{x} \epsilon_{y} 
-                                              \textcolor{orange}{\biggr]}\\
-                                             \end{aligned}\\
-                                         &\color{gray}
-                                         + \textcolor{orange}{\frac{1}{4!} \biggl[ \frac{\partial^4 Q_z}{\partial \delta^4} \delta^4 \biggr] }
-\end{aligned}
+                                                 + \textcolor{orange}{2 \frac{\partial^2Q_z}{\partial \epsilon_x \partial \epsilon_y}\epsilon_x \epsilon_y}
+                                                 + \cdots
+                                               \textcolor{orange}{\biggr]} \\
+                                               &\color{gray}+ \textcolor{orange}{\frac{1}{3!}
+                                               \biggl[}
+                                                 \color{gray}
+                                                  \textcolor{orange}{3 \frac{\partial^{3} Q_z}{\partial \epsilon_{x}\partial \delta^{2}} \delta^{2} \epsilon_{x}}
+                                                  + \textcolor{orange}{3  \frac{\partial^{3} Q_z}{\partial \epsilon_{y}\partial \delta^{2}}  \delta^{2} \epsilon_{y}}
+                                                  + \cdots
+                                                \textcolor{orange}{\biggr]}\\
+                                           &\color{gray}
+                                           + \textcolor{orange}{\frac{1}{4!} \biggl[ \frac{\partial^4 Q_z}{\partial \delta^4} \delta^4 \biggr] }
+  \end{aligned}
 \end{equation}
+
 
 
 
@@ -1062,9 +1045,16 @@ The ANH numbers refer to the partial derivative relative to \(J_x\),
 \chapter{Resonance Driving Terms}
 \label{appendix:rdts}
 \thumbforappendix
+\par
 
 This appendix intends to clarify where Resonance Driving Terms can be seen in the frequency
 spectrum, what resonance they contribute to and what their action dependance is.  
+
+
+% ==========================
+%        Expressions
+\section{Expressions}
+
 The number of valid RDTs indeed grows rapidly with the magnet order $n$, as shows
 \cref{table:appendix:number_rdts}, and is given by the following combinations:
 

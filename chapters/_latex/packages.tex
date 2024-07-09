@@ -253,22 +253,72 @@ afterskip=2cm]{chapter}
 
 
 % Nice looking chapters
+%\renewcommand*{\chapterformat}{\thechapter}
+%\renewcommand*{\raggedchapter}{\raggedleft}
+%\setkomafont{chapter}{\LARGE}
+%\setkomafont{chapterprefix}{\Huge}
+%\newcommand*{\ChapterCase}[1]{#1}
+%%\newcommand*{\ChapterCase}[1]{\MakeUppercase{#1}}%  ugly
+%%\newcommand*{\ChapterCase}[1]{\MakeUppercase{\textls[75]{#1}}}% better
+%\newsavebox\chapternumberbox
+%\renewcommand*{\chapterlinesformat}[3]{% #1 = chapter command name
+%                                       % #2 = number (or empty)
+%                                       % #3 = text
+%  \rule[-\dp\strutbox]{\linewidth}{.4pt}%
+%  \sbox\chapternumberbox
+%  {%
+%    \makebox[0pt][l]{%
+%      \hspace{-\linewidth}\hspace{.5em}%
+%      \colorbox{black}{%
+%        \parbox[c][1.5em][c]{1.5em}{%
+%          \centering
+%          \textcolor{white}{%
+%            \usekomafont{chapterprefix}{%
+%              \strut #2%
+%            }%
+%          }%
+%          \par
+%        }%
+%      }%
+%    }%
+%  }%
+%  \IfArgIsEmpty{#2}{%
+%    \vphantom{\usebox\chapternumberbox}%
+%  }{\usebox\chapternumberbox}%
+%  \par
+%  \ChapterCase{\strut\ignorespaces #3}%
+%  \rule[.5em]{\linewidth}{.4pt}\par
+%}
+
+% Nice looking chapters
 \renewcommand*{\chapterformat}{\thechapter}
 \renewcommand*{\raggedchapter}{\raggedleft}
+% == Fontsizes
+\newfontfamily{\chapterfont}{QTFrizQuad}% font for the chapter's title
+\newfontfamily{\chaptertextfont}{Cabin}% font for the text "CHAPTER"
+% fontsize for the overall chapter's definition, sets the line reference size, etc.
 \setkomafont{chapter}{\LARGE}
-\setkomafont{chapterprefix}{\Huge}
+% fontsize for the number in the box
+\setkomafont{chapterprefix}{\Huge} 
+% ==
+%
 \newcommand*{\ChapterCase}[1]{#1}
-%\newcommand*{\ChapterCase}[1]{\MakeUppercase{#1}}%  ugly
-%\newcommand*{\ChapterCase}[1]{\MakeUppercase{\textls[75]{#1}}}% better
 \newsavebox\chapternumberbox
 \renewcommand*{\chapterlinesformat}[3]{% #1 = chapter command name
                                        % #2 = number (or empty)
                                        % #3 = text
-  \rule[-\dp\strutbox]{\linewidth}{.4pt}%
+  % Line                                       
+  \vspace{1pt}\rule{\linewidth}{1pt}% First rule
+  \vspace{-18pt} % Small vertical space between the rules
+  \rule{\linewidth}{1pt}% Second rule
+  %\rule[-\dp\strutbox]{\linewidth}{.4pt}%
+  %
+  % Create the box
   \sbox\chapternumberbox
   {%
     \makebox[0pt][l]{%
-      \hspace{-\linewidth}\hspace{.5em}%
+      \hspace{-\linewidth}\hspace{2em}% spacing of the box from the left
+      %
       \colorbox{black}{%
         \parbox[c][1.5em][c]{1.5em}{%
           \centering
@@ -282,10 +332,24 @@ afterskip=2cm]{chapter}
       }%
     }%
   }%
+  % And now place it if the chapter is numbered
   \IfArgIsEmpty{#2}{%
     \vphantom{\usebox\chapternumberbox}%
-  }{\usebox\chapternumberbox}%
+  }{%
+    \usebox\chapternumberbox%
+  }%
   \par
-  \ChapterCase{\strut\ignorespaces #3}%
-  \rule[.5em]{\linewidth}{.4pt}\par
+  \vspace{1em}
+  % Display the chapter's title
+  %\hspace{2em}
+  \parbox{0.85\textwidth}{%
+    \raggedright% deactivate wrapping, align to the left
+    %\raggedleft% deactivate wrapping, align to the right
+    \ChapterCase{\strut\ignorespaces\chapterfont\fontsize{30pt}{30pt}\selectfont\bfseries #3}%
+  }
+  \par
+  % Line
+  \vspace{1em}
+  \rule[.5em]{\linewidth}{1.2pt}
+  \par
 }
