@@ -3,7 +3,11 @@
 \chaptertoc{}
 \newpage
 
-% === Motivation
+% === Introduction
+\section{Introduction}
+
+% -----------------------
+%       Motivation
 \section{Motivation}
 
 Beam-based measurements have been carried in the LHC since Run 1 to better understand the decapolar
@@ -40,18 +44,37 @@ effects from those of the correctors.
 the momentum offset ; this methods has the benefit of having a different expression that of the
 chromaticity.
 
-
 Complementing those measurements, studies of decapolar Resonance Driving Terms have been undertaken
 for the first time in the LHC. Contributing to resonances close to the working, those RDTs also have
 benefited from corrections.
 
 
-% -----------------------
-%    Decapolar Fields
-\subsection{Decapolar Fields}
+% --------------------------
+%    Decapolar Correctors
+\subsection{Decapolar Correctors}
 
+As seen in \cref{fig:introduction:lhc_arc_cell}, the LHC is equipped with decapoles. Those magnets
+are part of the design report, aiming at correcting the field errors of the main dipoles.
+Those correctors, denominated \textit{MCD}, are specific to each beam and are placed after every
+second dipole, totaling 2464 in number.
+MCDs are nested with octupolar correctors, \textit{MCO}. The pair of those correctors of often
+referred to as \textit{MCDO}. 
+\cref{fig:decapoles:decapole_picture} shows a picture taken of decapoles on a test bench.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\textwidth]{./images/decapoles_real_pic.jpg}
+    \caption{Decapoles on a test bench, being inspected after
+    manufacturing~\cite{noauthor_ten_2001}.}
+    \label{fig:decapoles:decapole_picture}
+\end{figure}
 
+The important characteristics of the magnetic fields of correctors are their main field transfer
+function (or \textit{response}), the field quality and possible crosstalk, as MCOs and MCDs are
+nested~\cite{venturini_delsolaro_magnetic_2005}.
+
+In order to better understand the decapolar fields, the decapole correctors themselves need to be
+studied.
 
 
 % ===================
