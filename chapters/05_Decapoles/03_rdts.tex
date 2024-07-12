@@ -157,6 +157,8 @@ refining the RDT value with more data points for the fit.
 Considering the contribution of lower order multipoles is a bit trickier, as the second order RDTs
 change the dependance of the frequency line~\cite{franchi_first_2014}. In order to be able to
 compare the RDT from several turn by turn measurements, the same kick amplitude must then be used.
+Failing to do so would lead to a poor fit of the line amplitude relative to the action, resulting in
+an RDT with incorrect amplitude and significant noise.
 
 %\todo{simulation plot of varying amplitudes for Q' = 2 and noise created from it}
 
@@ -236,7 +238,7 @@ investigate.
 
 
 % ------- Sextupole + Octupole ----------
-\subsubsection{\todo{Sextupoles and Octupoles}}
+\subsubsection{\review{Sextupoles and Octupoles}}
 
 
 At the second order of the BCH expansion, the combination of a sextupole and an octupole yields a
@@ -255,7 +257,7 @@ the terms of a decapole, dropping the $p_{x,y}$ terms for readability:
                    &\sim    x^5 - 10x^3y^2 + 5xy^4.
     \end{aligned}
     \label{eq:decapoles:sextupole_octupole_b5}
-\end{equation}é
+\end{equation}
 
 In order to assess the previous equation, simulations were run with several configurations.
 As seen previously, a combination of two sextupoles creates a decapolar-like field, varying their 
@@ -293,19 +295,54 @@ While decapoles are expected to be the main contributors to decapolar fields, ot
 can indeed be identified. \cref{fig:decapoles:rdts:contributions} shows the average amplitude of the
 RDT $f_{1004}$ depending on the error sources introduced in the simulations. A large contribution
 comes from the octupolar errors in the main dipoles, being actually larger than the decapolar errors
-in those dipoles.
+in those magnets.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=0.8\textwidth]{example-image-a}
-    \caption{}
+    \includegraphics[width=0.8\textwidth]{./images/f1004/f1004_several_factors.pdf}
+    \caption{Simulation of the amplitude of the decapolar RDT $f_{1004}$ depending on the field
+             errors applied on main dipoles as well as coupling ($C^-$). While it is apparent that
+             some multipolar errors drive the resonance higher, some combinations actually seem to
+             cancel each other.}
     \label{fig:decapoles:rdts:contributions}
 \end{figure}
 
 
+Measurements were performed to confirm and quantify the effect of octupoles coupled with sextupoles
+on the decapolar fields. Previous corrections, aimed at correcting the second order chromaticity
+$Q''$, via octupolar correctors \textit{MCO}, were applied with varying factors. Such corrections
+apply use a uniform trim on all correctors of $\approx +2.5K_4$.
+\cref{decapoles:rdts:measured_f1004_mco} shows a comparison of the resulting RDT with those
+corrections at factors $-10$, $-4$, $-1$ and $0$.
+
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.8\textwidth]{./images/f1004/f1004x_mco_corr.pdf}
-    \caption{Different MCO Corr.}
+    \caption{Shift of the decapolar RDT $f_{1004}$ depending on the factor applied on octupolar
+    corrections for $Q''$.}
     \label{decapoles:rdts:measured_f1004_mco}
 \end{figure}
+
+\begin{wraptable}{r}{0.4\textwidth}
+    \centering
+    \begin{tabular}{r|r}
+    Factor & RMS $|f_{1004}|$ \\ \hline
+       -10 & 37308159         \\ \hline
+        -4 & 6721270          \\ \hline
+         0 & 3533796          \\ \hline
+        -1 & 2333384          \\
+    \end{tabular}
+    \caption{RMS aplitude of $f_{1004}$ depending on the factor of the $Q''$ corrections.}
+    \label{table:decapoles:corrections_dq2_f1004_rms}
+\end{wraptable}
+  
+\cref{table:decapoles:corrections_dq2_f1004_rms} shows the RMS of the amplitude of this RDT for the 
+various configurations. Similar to the shift observed when powering the landau octupoles in
+simulations, the shift is of one order of magnitude between factors $-0$ and $-10$. Measurements
+with landau octupoles were also attempted but losses made it impossible to obtain high enough
+amplitudes to correctly measure the RDT.
+
+Simulated and observed large shifts due tu octupoles are relevant to the operation of the LHC, as
+resonances can be greatly deteriorated, especially when powering landau octupoles.
+A better understanding of the interaction between Landau octupoles and octupolar correctors could
+lead to improved corrections in not only octupolar but also decapolar fields in the future.

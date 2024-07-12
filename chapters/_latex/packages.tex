@@ -61,6 +61,7 @@
 \usepackage{amsmath}
 \usepackage{mathtools}  % for some functions, like DeclarePairedDelimiter
 \usepackage{svg}
+\usepackage{wrapfig}
 \usepackage{nicematrix}
 \usepackage[
   height={2cm},
@@ -245,11 +246,9 @@ afterskip=2cm]{chapter}
 % OK in green
 \newcommand*{\done}[1]{{\bfseries\color{green}#1}}
 
-
 % For commands floor and ceil to be easier to type
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
-
 
 
 % Nice looking chapters
@@ -290,18 +289,44 @@ afterskip=2cm]{chapter}
 %  \rule[.5em]{\linewidth}{.4pt}\par
 %}
 
-% Nice looking chapters
-\renewcommand*{\chapterformat}{\thechapter}
-\renewcommand*{\raggedchapter}{\raggedleft}
-% == Fontsizes
-\newfontfamily{\chapterfont}{QTFrizQuad}% font for the chapter's title
-\newfontfamily{\chaptertextfont}{Cabin}% font for the text "CHAPTER"
+% =====================
+%        Fonts
+% =====================
+% Font for the main title, chapter and sections titles
+\newfontfamily{\chapterfont}{Tex Gyre Adventor}
+\newfontfamily{\subtitlefont}{Tex Gyre Adventor}
 % fontsize for the overall chapter's definition, sets the line reference size, etc.
 \setkomafont{chapter}{\LARGE}
 % fontsize for the number in the box
-\setkomafont{chapterprefix}{\Huge} 
-% ==
-%
+\setkomafont{chapterprefix}{\Huge}
+% fonts for the sections, subsections etc
+\setkomafont{section}{\fontspec{Tex Gyre Adventor}\Large\bfseries}
+\setkomafont{subsection}{\fontspec{Tex Gyre Adventor}\large\bfseries}
+\setkomafont{subsubsection}{\fontspec{Tex Gyre Adventor}\normalsize\bfseries}
+\setkomafont{paragraph}{\fontspec{Tex Gyre Adventor}\small\bfseries}
+\setkomafont{pagenumber}{\normalfont\fontspec{Tex Gyre Adventor}\small}
+% fonts for the TOC
+\setkomafont{disposition}{\normalfont\chapterfont}
+\RedeclareSectionCommands[
+  tocentryformat=\usekomafont{disposition}\bfseries,
+  tocpagenumberformat=\usekomafont{disposition}\bfseries
+]{chapter,section,subsection,subsubsection}
+\RedeclareSectionCommands[
+  tocentryformat=\usekomafont{disposition},
+  tocpagenumberformat=\usekomafont{disposition}
+]{section,subsection,subsubsection,paragraph,subparagraph}
+\RedeclareSectionCommands[
+  tocentryformat=\usekomafont{disposition},
+  tocpagenumberformat=\usekomafont{disposition}
+]{paragraph,subparagraph}
+
+
+
+% ============================
+%    Nice looking chapters
+% ============================
+\renewcommand*{\chapterformat}{\thechapter}
+\renewcommand*{\raggedchapter}{\raggedleft}
 \newcommand*{\ChapterCase}[1]{#1}
 \newsavebox\chapternumberbox
 \renewcommand*{\chapterlinesformat}[3]{% #1 = chapter command name
