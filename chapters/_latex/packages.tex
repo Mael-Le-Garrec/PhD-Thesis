@@ -300,11 +300,11 @@ afterskip=2cm]{chapter}
 % fontsize for the number in the box
 \setkomafont{chapterprefix}{\Huge}
 % fonts for the sections, subsections etc
-\setkomafont{section}{\fontspec{Tex Gyre Adventor}\Large\bfseries}
-\setkomafont{subsection}{\fontspec{Tex Gyre Adventor}\large\bfseries}
-\setkomafont{subsubsection}{\fontspec{Tex Gyre Adventor}\normalsize\bfseries}
-\setkomafont{paragraph}{\fontspec{Tex Gyre Adventor}\small\bfseries}
-\setkomafont{pagenumber}{\normalfont\fontspec{Tex Gyre Adventor}\small}
+\setkomafont{section}{\chapterfont\Large\bfseries}
+\setkomafont{subsection}{\chapterfont\large\bfseries}
+\setkomafont{subsubsection}{\chapterfont\normalsize\bfseries}
+\setkomafont{paragraph}{\chapterfont\small\bfseries}
+\setkomafont{pagenumber}{\normalfont\chapterfont\small}
 % fonts for the TOC
 \setkomafont{disposition}{\normalfont\chapterfont}
 \RedeclareSectionCommands[
@@ -319,6 +319,11 @@ afterskip=2cm]{chapter}
   tocentryformat=\usekomafont{disposition},
   tocpagenumberformat=\usekomafont{disposition}
 ]{paragraph,subparagraph}
+% == TOC
+\DeclareTOCStyleEntry[
+  beforeskip=.5em plus 1pt,
+  pagenumberformat=\hfill
+]{tocline}{chapter}
 
 
 
@@ -349,6 +354,7 @@ afterskip=2cm]{chapter}
           \centering
           \textcolor{white}{%
             \usekomafont{chapterprefix}{%
+              \vspace{-0.2em}%
               \strut #2%
             }%
           }%
