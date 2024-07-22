@@ -4,33 +4,33 @@
 % ==============================================================
 %                      Units and Conversions
 % ==============================================================
-\chapter{Units and Conversions}
-\thumbforappendix
-\par
-
-
-% ---------------------------------------
-%          Units and Conversions
-% ---------------------------------------
-\section{Physical Constants}
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lcrl}
-    Name                        &    Symbol     &    Value                        &     Unit      \\
-    Speed of light in vacuum    &     $c$       &   $2.99792458 \times 10^8$      &      m/s      \\
-    Elementary charge           &     $e$       &   $1.60217663 \times 10^9$      &       C       \\
-        
-    \end{tabular}
-    \caption{Physical Constants}
-    \label{table:appendix:physical_constants}
-\end{table}
-
-
-\section{Units}
-
-
-\section{Conversions}
+%\chapter{Units and Conversions}
+%\thumbforappendix
+%\par
+%
+%
+%% ---------------------------------------
+%%          Units and Conversions
+%% ---------------------------------------
+%\section{Physical Constants}
+%
+%\begin{table}[H]
+%    \centering
+%    \begin{tabular}{lcrl}
+%    Name                        &    Symbol     &    Value                        &     Unit      \\
+%    Speed of light in vacuum    &     $c$       &   $2.99792458 \times 10^8$      &      m/s      \\
+%    Elementary charge           &     $e$       &   $1.60217663 \times 10^9$      &       C       \\
+%        
+%    \end{tabular}
+%    \caption{Physical Constants}
+%    \label{table:appendix:physical_constants}
+%\end{table}
+%
+%
+%\section{Units}
+%
+%
+%\section{Conversions}
 
 
 % ==============================================================
@@ -1110,154 +1110,93 @@ According to equations \ref{eq:reminder_rdt} and \ref{eq:amplitude_fjklm}, it ca
 
 \section{Frequency Spectrum Lines}
 
-\subsection{Horizontal Axis}
+The following \cref{tab:appendix:frequency_spectrum_rdt_lines} shows which RDTs can be seen at a 
+factor $Q_x \pm Q_y$ in the vertical or horizontal spectrums. This table is mostly useful when
+trying to identify which multipole or RDT contributes to a specific line that can appear during 
+measurements.
 
-\begin{longtable}[]{@{}ll@{}}
-\toprule()
-H-line & RDTs \\
-\midrule()
-\endhead
-(-5, 0) & f6000 \\
-(-4, -1) & f5010 \\
-(-4, 0) & f5000 \\
-(-4, 1) & f5001 \\
-(-3, -2) & f4020 \\
-(-3, -1) & f4010 \\
-(-3, 0) & f4000, f4011, f5100 \\
-(-3, 1) & f4001 \\
-(-3, 2) & f4002 \\
-(-2, -3) & f3030 \\
-(-2, -2) & f3020 \\
-(-2, -1) & f3010, f3021, f4110 \\
-(-2, 0) & f3000, f3011, f4100 \\
-(-2, 1) & f3001, f3012, f4101 \\
-(-2, 2) & f3002 \\
-(-2, 3) & f3003 \\
-(-1, -4) & f2040 \\
-(-1, -3) & f2030 \\
-(-1, -2) & f2020, f2031, f3120 \\
-(-1, -1) & f2010, f2021, f3110 \\
-(-1, 0) & f2000, f2011, f3100, f2022, f3111, f4200 \\
-(-1, 1) & f2001, f2012, f3101 \\
-(-1, 2) & f2002, f2013, f3102 \\
-(-1, 3) & f2003 \\
-(-1, 4) & f2004 \\
-(0, -5) & f1050 \\
-(0, -4) & f1040 \\
-(0, -3) & f1030, f1041, f2130 \\
-(0, -2) & f1020, f1031, f2120 \\
-(0, -1) & f1010, f1021, f2110, f1032, f2121, f3210 \\
-(0, 0) & f1011, f2100, f1022, f2111, f3200 \\
-(0, 1) & f1001, f1012, f2101, f1023, f2112, f3201 \\
-(0, 2) & f1002, f1013, f2102 \\
-(0, 3) & f1003, f1014, f2103 \\
-(0, 4) & f1004 \\
-(0, 5) & f1005 \\
-(1, -4) & f1140 \\
-(1, -3) & f1130 \\
-(1, -2) & f1120, f1131, f2220 \\
-(1, -1) & f1110, f1121, f2210 \\
-(1, 1) & f1101, f1112, f2201 \\
-(1, 2) & f1102, f1113, f2202 \\
-(1, 3) & f1103 \\
-(1, 4) & f1104 \\
-(2, -3) & f1230 \\
-(2, -2) & f1220 \\
-(2, -1) & f1210, f1221, f2310 \\
-(2, 0) & f1200, f1211, f2300 \\
-(2, 1) & f1201, f1212, f2301 \\
-(2, 2) & f1202 \\
-(2, 3) & f1203 \\
-(3, -2) & f1320 \\
-(3, -1) & f1310 \\
-(3, 0) & f1300, f1311, f2400 \\
-(3, 1) & f1301 \\
-(3, 2) & f1302 \\
-(4, -1) & f1410 \\
-(4, 0) & f1400 \\
-(4, 1) & f1401 \\
-(5, 0) & f1500 \\
-\bottomrule()
-\end{longtable}
+\begin{small}
+  \begin{longtable}[]{rrp{4.8cm}@{\hspace{0.5cm}}p{4.8cm}@{}}
+    \toprule
+    $Q_x$ & $Q_y$ & H-jklm  & V-jklm\\
+    \midrule
+    \endhead
+    $-5$&$ 0 $ & 6000                                               & 5010 \\
+    $-4$&$ -1$ & 5010                                               & 4020 \\
+    $-4$&$ 0 $ & 5000                                               & 4010 \\
+    $-4$&$ 1 $ & 5001                                               & 4011 \\
+    $-3$&$ -2$ & 4020                                               & 3030 \\
+    $-3$&$ -1$ & 4010                                               & 3020 \\
+    $-3$&$ 0 $ & 4000, 4011, 5100                                   & 3010, 3021, 4110 \\
+    $-3$&$ 1 $ & 4001                                               & 3011 \\
+    $-3$&$ 2 $ & 4002                                               & 3012 \\
+    $-2$&$ -3$ & 3030                                               & 2040 \\
+    $-2$&$ -2$ & 3020                                               & 2030 \\
+    $-2$&$ -1$ & 3010, 3021, 4110                                   & 2020, 2031, 3120 \\
+    $-2$&$ 0 $ & 3000, 3011, 4100                                   & 2010, 2021, 3110 \\
+    $-2$&$ 1 $ & 3001, 3012, 4101                                   & 2011, 2022, 3111 \\
+    $-2$&$ 2 $ & 3002                                               & 2012 \\
+    $-2$&$ 3 $ & 3003                                               & 2013 \\
+    $-1$&$ -4$ & 2040                                               & 1050 \\
+    $-1$&$ -3$ & 2030                                               & 1040 \\
+    $-1$&$ -2$ & 2020, 2031, 3120                                   & 1030, 1041, 2130 \\
+    $-1$&$ -1$ & 2010, 2021, 3110                                   & 1020, 1031, 2120 \\
+    $-1$&$ 0 $ & 2000, 2011, 3100, 2022, 3111, 4200                 & 1010, 1021, 2110, 1032, 2121, 3210 \\
+    $-1$&$ 1 $ & 2001, 2012, 3101                                   & 1011, 1022, 2111 \\
+    $-1$&$ 2 $ & 2002, 2013, 3102                                   & 1012, 1023, 2112 \\
+    $-1$&$ 3 $ & 2003                                               & 1013 \\
+    $-1$&$ 4 $ & 2004                                               & 1014 \\
+    $0$&$ -5 $ & 1050                                               & 0060 \\
+    $0$&$ -4 $ & 1040                                               & 0050 \\
+    $0$&$ -3 $ & 1030, 1041, 2130                                   & 0040, 0051, 1140 \\
+    $0$&$ -2 $ & 1020, 1031, 2120                                   & 0030, 0041, 1130 \\
+    $0$&$ -1 $ & 1010, 1021, 2110, 1032, 2121, 3210                 & 0020, 0031, 1120, 0042, 1131, 2220 \\
+    $0$&$ 0  $ & 1011, 2100, 1022, 2111, 3200                       &  0021, 1110, 0032, 1121, 2210 \\
+    $0$&$ 1  $ & 1001, 1012, 2101, 1023, 2112, 3201                 & \\
+    $0$&$ 2  $ & 1002, 1013, 2102                                   & 0012, 0023, 1112 \\
+    $0$&$ 3  $ & 1003, 1014, 2103                                   & 0013, 0024, 1113 \\
+    $0$&$ 4  $ & 1004                                               & 0014 \\
+    $0$&$ 5  $ & 1005                                               & 0015 \\
+    $1$&$ -4 $ & 1140                                               & 0150 \\
+    $1$&$ -3 $ & 1130                                               & 0140 \\
+    $1$&$ -2 $ & 1120, 1131, 2220                                   & 0130, 0141, 1230 \\
+    $1$&$ 0  $ &                                                    & 0110, 0121, 1210, 0132, 1221, 2310 \\
+    $1$&$ -1 $ & 1110, 1121, 2210                                   & 0120, 0131, 1220 \\
+    $1$&$ 1  $ & 1101, 1112, 2201                                   & 0111, 0122, 1211 \\
+    $1$&$ 2  $ & 1102, 1113, 2202                                   & 0112, 0123, 1212 \\
+    $1$&$ 3  $ & 1103                                               & 0113 \\
+    $1$&$ 4  $ & 1104                                               & 0114 \\
+    $2$&$ -3 $ & 1230                                               & 0240 \\
+    $2$&$ -2 $ & 1220                                               & 0230 \\
+    $2$&$ -1 $ & 1210, 1221, 2310                                   & 0220, 0231, 1320 \\
+    $2$&$ 0  $ & 1200, 1211, 2300                                   & 0210, 0221, 1310 \\
+    $2$&$ 1  $ & 1201, 1212, 2301                                   & 0211, 0222, 1311 \\
+    $2$&$ 2  $ & 1202                                               & 0212 \\
+    $2$&$ 3  $ & 1203                                               & 0213 \\
+    $3$&$ -2 $ & 1320                                               & 0330 \\
+    $3$&$ -1 $ & 1310                                               & 0320 \\
+    $3$&$ 0  $ & 1300, 1311, 2400                                   & 0310, 0321, 1410 \\
+    $3$&$ 1  $ & 1301                                               & 0311 \\
+    $3$&$ 2  $ & 1302                                               & 0312 \\
+    $4$&$ -1 $ & 1410                                               & 0420 \\
+    $4$&$ 0  $ & 1400                                               & 0410 \\
+    $4$&$ 1  $ & 1401                                               & 0411 \\
+    $5$&$ 0  $ & 1500                                               & 0510 \\
+    \bottomrule
+    \caption{Correspondence of Resonance Driving Terms to the lines seen in the horizontal or vertical 
+    frequency spectrum.}
+    \label{tab:appendix:frequency_spectrum_rdt_lines}
+  \end{longtable}
+\end{small}
 
-\subsection{Vertical Axis}
 
-\begin{longtable}[]{@{}ll@{}}
-\toprule()
-V-line & RDTs \\
-\midrule()
-\endhead
-(-5, 0) & f5010 \\
-(-4, -1) & f4020 \\
-(-4, 0) & f4010 \\
-(-4, 1) & f4011 \\
-(-3, -2) & f3030 \\
-(-3, -1) & f3020 \\
-(-3, 0) & f3010, f3021, f4110 \\
-(-3, 1) & f3011 \\
-(-3, 2) & f3012 \\
-(-2, -3) & f2040 \\
-(-2, -2) & f2030 \\
-(-2, -1) & f2020, f2031, f3120 \\
-(-2, 0) & f2010, f2021, f3110 \\
-(-2, 1) & f2011, f2022, f3111 \\
-(-2, 2) & f2012 \\
-(-2, 3) & f2013 \\
-(-1, -4) & f1050 \\
-(-1, -3) & f1040 \\
-(-1, -2) & f1030, f1041, f2130 \\
-(-1, -1) & f1020, f1031, f2120 \\
-(-1, 0) & f1010, f1021, f2110, f1032, f2121, f3210 \\
-(-1, 1) & f1011, f1022, f2111 \\
-(-1, 2) & f1012, f1023, f2112 \\
-(-1, 3) & f1013 \\
-(-1, 4) & f1014 \\
-(0, -5) & f0060 \\
-(0, -4) & f0050 \\
-(0, -3) & f0040, f0051, f1140 \\
-(0, -2) & f0030, f0041, f1130 \\
-(0, -1) & f0020, f0031, f1120, f0042, f1131, f2220 \\
-(0, 0) & f0021, f1110, f0032, f1121, f2210 \\
-(0, 2) & f0012, f0023, f1112 \\
-(0, 3) & f0013, f0024, f1113 \\
-(0, 4) & f0014 \\
-(0, 5) & f0015 \\
-(1, -4) & f0150 \\
-(1, -3) & f0140 \\
-(1, -2) & f0130, f0141, f1230 \\
-(1, -1) & f0120, f0131, f1220 \\
-(1, 0) & f0110, f0121, f1210, f0132, f1221, f2310 \\
-(1, 1) & f0111, f0122, f1211 \\
-(1, 2) & f0112, f0123, f1212 \\
-(1, 3) & f0113 \\
-(1, 4) & f0114 \\
-(2, -3) & f0240 \\
-(2, -2) & f0230 \\
-(2, -1) & f0220, f0231, f1320 \\
-(2, 0) & f0210, f0221, f1310 \\
-(2, 1) & f0211, f0222, f1311 \\
-(2, 2) & f0212 \\
-(2, 3) & f0213 \\
-(3, -2) & f0330 \\
-(3, -1) & f0320 \\
-(3, 0) & f0310, f0321, f1410 \\
-(3, 1) & f0311 \\
-(3, 2) & f0312 \\
-(4, -1) & f0420 \\
-(4, 0) & f0410 \\
-(4, 1) & f0411 \\
-(5, 0) & f0510 \\
-\bottomrule()
-\end{longtable}
-
-\newpage
-
+% ======================================
 \section{Amplitude, Resonances and Lines}
 
-This part focuses on individual Resonance Drivings Terms, expliciting what magnet they originate from, what resonance they excite, how they can be observed and what kicks are needed in order to measure them.
-The amplitude columns implicitly omits the term $|f_{jklm}|$, which depends on $K$ and $J$.
-
-Amplitude legend:
+This part focuses on individual Resonance Drivings Terms, expliciting what magnet they originate
+from, what resonance they excite, how they can be observed and what kicks are needed in order to
+measure them.  The amplitude columns implicitly omits the term $|f_{jklm}|$, which depends on $K$
+and $J$. The color coding helps quickly identifying dependences:
 
 \begin{itemize}
 \tightlist
@@ -1267,14 +1206,14 @@ Amplitude legend:
   \colorbox{red!20}{$I_y$}: depends only on vertical amplitude
 \item
   \colorbox{blue!20}{$I_x I_y$}: depends on both horizontal and vertical
-  amplitude
+  amplitudes
 \end{itemize}
 
 %\small
 {\scriptsize
 \begin{longtable}{llllllll}
 \toprule()
-n & jklm &   type & resonance &   H-line &   V-line &                                       Amplitude H &                                       Amplitude V \\
+n & jklm &   Type & Resonance &   H-line &   V-line &                                       Amplitude H &                                       Amplitude V \\
 \midrule()
 \endhead
 2 & 0020 & normal &    (0, 2) &          &  (0, -1) &                                                   &              \colorbox{red!10}{$4  (2I_y)^ {1/2}$} \\
@@ -1453,5 +1392,7 @@ n & jklm &   type & resonance &   H-line &   V-line &                           
 6 & 5001 &   skew &   (5, -1) &  (-4, 1) &          &  \colorbox{blue!10}{$10 (2I_x)^ {2} (2I_y)^ {1/2}$} &                                                   \\
 6 & 5010 &   skew &    (5, 1) & (-4, -1) &  (-5, 0) &  \colorbox{blue!10}{$10 (2I_x)^ {2} (2I_y)^ {1/2}$} &           \colorbox{orange!10}{$2 (2I_x)^ {5/2} $} \\
 \bottomrule
+\caption{Amplitude dependence, associated resonance and spectrum appearance of Resonance Driving
+Terms up to dodecapoles ($n=6$).}
 \end{longtable}
 }

@@ -1,14 +1,14 @@
 \chapter{Decapolar Fields}
 \thumbforchapter{}
-\chaptertoc{}
-\newpage
+%\chaptertoc{}
+%\newpage
 
 % === Introduction
 \section{Introduction}
 
 % -----------------------
 %       Motivation
-\section{Motivation}
+\subsection{\review{Motivation}}
 
 Beam-based measurements have been carried in the LHC since Run 1 to better understand the decapolar
 fields. Those have been carried out via chromaticity
@@ -51,7 +51,7 @@ benefited from corrections.
 
 % --------------------------
 %    Decapolar Correctors
-\subsection{Decapolar Correctors}
+\subsection{\review{Decapolar Correctors}}
 
 As seen in \cref{fig:introduction:lhc_arc_cell}, the LHC is equipped with decapoles. Those magnets
 are part of the design report, aiming at correcting the field errors of the main dipoles.
@@ -59,6 +59,8 @@ Those correctors, denominated \textit{MCD}, are specific to each beam and are pl
 second dipole, totaling 1232 in number~\cite{venturini_delsolaro_magnetic_2005}.
 MCDs are nested with octupolar correctors, \textit{MCO}. The pair of those correctors of often
 referred to as \textit{MCDO}. 
+It is not possible to individually power each corrector. Rather, a circuit consists of a whole arc.
+There are in total 16 circuits to control the correctors of both beams and 8 arcs.
 \cref{fig:decapoles:decapole_picture} shows a picture taken of decapoles on a test bench.
 
 \begin{figure}
@@ -69,12 +71,57 @@ referred to as \textit{MCDO}.
     \label{fig:decapoles:decapole_picture}
 \end{figure}
 
+
 The important characteristics of the magnetic fields of correctors are their main field transfer
 function (or \textit{response}), the field quality and possible crosstalk, as MCOs and MCDs are
 nested~\cite{venturini_delsolaro_magnetic_2005}.
-
 In order to better understand the decapolar fields, the decapole correctors themselves need to be
 studied.
+
+
+% -------- Strengths at Injection
+\paragraph{Strengths at Injection}
+
+%\begin{wraptable}{r}{0.4\textwidth}
+\begin{table}
+    \centering
+    \begin{tabular}{lr}
+        \toprule
+        Circuit   & $K_5 [\textrm{m}^{-5}]$ \\
+        \midrule
+        Beam 1    & \\
+        \hspace{2mm}RCD.A12B1 & $-4582$ \\
+        \hspace{2mm}RCD.A23B1 & $-5106$ \\
+        \hspace{2mm}RCD.A34B1 & $-4855$ \\
+        \hspace{2mm}RCD.A45B1 & $-4577$ \\
+        \hspace{2mm}RCD.A56B1 & $-4125$ \\
+        \hspace{2mm}RCD.A67B1 & $-5166$ \\
+        \hspace{2mm}RCD.A78B1 & $-6827$ \\
+        \hspace{2mm}RCD.A81B1 & $-5500$ \\
+        Beam 2    & \\
+        \hspace{2mm}RCD.A12B2 & $-4490$ \\
+        \hspace{2mm}RCD.A23B2 & $-5155$ \\
+        \hspace{2mm}RCD.A34B2 & $-4825$ \\
+        \hspace{2mm}RCD.A45B2 & $-4619$ \\
+        \hspace{2mm}RCD.A56B2 & $-4064$ \\
+        \hspace{2mm}RCD.A67B2 & $-5066$ \\
+        \hspace{2mm}RCD.A78B2 & $-6866$ \\
+        \hspace{2mm}RCD.A81B2 & $-5446$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Strength of decapolar correctors at injection energy for FiDeL corrections.}
+    \label{tab:decapoles:strength_rcd_fidel}
+%\end{wraptable}
+\end{table}
+
+At injection energy, the decapoles are powered to a static strength. New optics introduced
+throughout the years often have for effect to vary slightly the $\beta$-function along the ring,
+having thus an impact on the chromaticity, as seen in
+\cref{eq:detuning_effects:chromaticity_strength}. New corrections are then computed via FiDeL to
+account for it.
+Although those corrections vary throughout the years, the shift is in practice fairly negligible.
+\cref{tab:decapoles:rdts:correction_f1004_k5}, a bit further in this chapter, shows the strength of
+the correctors and the related circuits at injection energy for the optics deployed in 2024.
 
 
 % ===================

@@ -12,9 +12,10 @@ in Tab.~\ref{tab:magnetic_fields:relation_indices}. MAD-X, and MAD-NG, however, 
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{l|c|c|c}
+    \begin{tabular}{lccc}
+    \toprule
         Multipole     &      MAD-X        &     Index        & Normalized Strength \\
-    \hline            
+    \midrule
         Dipole        &     0             &     1            & $K_1$   \\       
         Quadrupole    &     1             &     2            & $K_2 $  \\
         Sextupole     &     2             &     3            & $K_3 $  \\
@@ -22,10 +23,11 @@ in Tab.~\ref{tab:magnetic_fields:relation_indices}. MAD-X, and MAD-NG, however, 
         Decapole      &     4             &     5            & $K_5 $  \\
         Dodecapole    &     5             &     6            & $K_6 $  \\
         Decatetrapole &     6             &     7            & $K_7 $  \\
+    \bottomrule
     \end{tabular}
     \caption{Relation between field indices and multipoles.}
     \label{tab:magnetic_fields:relation_indices}
-\end{table}
+  \end{table}
 
 As such, unless explicitly stated, quantities such as the magnetic strength $b$ and normalized
 strength $K$ will be expressed with this notation. 

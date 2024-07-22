@@ -90,29 +90,52 @@ computed analytically based on top of FiDeL.
 \end{figure}
 
 The nominal and corrected $Q'''$ values are shown in
-\cref{table:decapoles:chromaticity:dq3_before_after_beam_based}. The shift in $Q'''$ is shown for
-each beam and axis, showing a good agreement between the measurement and the simulation.
+\cref{table:decapoles:chromaticity:dq3_before_after_beam_based}. The shift in $Q'''$ is shown in 
+\cref{table:decapoles:chromaticity:dq3_before_after_beam_based_response} for
+each beam and axis, and is showing a good agreement between the measurements and simulations.
 The slight imbalance can be attributed to higher order effects of the octupole correctors, whose
 correction was implemented after that of $Q'''$.
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|l||r|r|r|c|}
-    \hline
-              &  \multicolumn{2}{c|}{$Q''' [10^6]$}  &  \multicolumn{2}{c|}{$\Delta Q''' [10^6]$}\\ \hline\hline
-        B1    &   \multicolumn{1}{c|}{Nominal}     &   \multicolumn{1}{c|}{Beam-based}   & Measured & Simulated \\
-        X     &  -3.36 ± 0.04 &  -1.02 ± 0.03  &  2.3 ± 0.1 &   2.5 \\
-        Y     &   1.62 ± 0.05 &   0.12 ± 0.02  & -1.5 ± 0.1 &  -1.4 \\ \hline
-        %B2    &   \multicolumn{1}{c|}{Nominal}     &   \multicolumn{1}{c|}{Beam-based}   &&\\
-        B2    &               &&& \\
-        X     &  -2.72 ± 0.08 &  -0.64 ± 0.03  &  2.1 ± 0.1 &  2.5\\
-        Y     &   1.54 ± 0.06 &   0.14 ± 0.03  & -1.4 ± 0.1 & -1.4\\ \hline
+    \begin{tabular}{lrr}
+      \toprule
+              &  \multicolumn{2}{c}{$Q''' [10^6]$}  \\
+        Plane & Nominal & Beam-Based \\
+      \midrule
+        Beam 1    &   & \\
+        \hspace{2mm}X     &  -3.36 ± 0.04 &  -1.02 ± 0.03 \\
+        \hspace{2mm}Y     &   1.62 ± 0.05 &   0.12 ± 0.02 \\
+        Beam 2    &           &               \\
+        \hspace{2mm}X     &  -2.72 ± 0.08 &  -0.64 ± 0.03 \\
+        \hspace{2mm}Y     &   1.54 ± 0.06 &   0.14 ± 0.03 \\
+        \bottomrule
     \end{tabular}
     \caption{Third order chromaticity obtained during Run~3 commissioning, with nominal and
-    beam-based corrections aimed at correcting $Q''$ and $Q'''$.
-    The change in $Q'''$, measured and expected via simulations, is also shown.} 
+    beam-based corrections aimed at correcting $Q''$ and $Q'''$.}
     \label{table:decapoles:chromaticity:dq3_before_after_beam_based}
-\end{table}
+  \end{table}
+  
+  
+  \begin{table}[H]
+    \centering
+    \begin{tabular}{lrr}
+      \toprule
+           & \multicolumn{2}{c}{$\Delta Q''' [10^6]$}\\
+       Plane         & Measurement   & Simulation \\
+      \midrule
+        Beam 1  &    & \\
+        \hspace{2mm}X       &  2.3 ± 0.1 &   2.5 \\
+        \hspace{2mm}Y       & -1.5 ± 0.1 &  -1.4 \\
+        Beam 2  &            &  \\
+        \hspace{2mm}X       & 2.1 ± 0.1  &  2.5\\
+        \hspace{2mm}Y       & -1.4 ± 0.1 & -1.4\\
+        \bottomrule
+    \end{tabular}
+    \caption{Response of the third order chromaticity upon application of corrections on top of the
+    nominal ones used in operation for both measurements and simulations.}
+    \label{table:decapoles:chromaticity:dq3_before_after_beam_based_response}
+  \end{table}
 
 
 This agreement between the simulations and the measurements indicates that our decapole correctors
@@ -174,15 +197,18 @@ compared to the measured ones along with the ratio between the two.
 
 \begin{table}[tbh]
     \centering
-    \begin{tabular}{|l||r|r|r|}
+    \begin{tabular}{rrrc}
     \hline
-        Plane     &  Meas. $Q''' [10^6]$        &  Sim. $Q''' [10^{6}]$          &   Ratio     \\\hline\hline
-        Beam 1    &                             &                                &             \\
-                X &            2.95 ± 0.04      &         6.94 ± 0.02            &  0.43 ± 0.01  \\
-                Y &           -1.82 ± 0.04      &        -4.29 ± 0.01            &  0.42 ± 0.01  \\ \hline
-        Beam 2    &                             &                                &             \\
-                X &            3.06 ± 0.07      &        7.03 ± 0.02             &  0.44 ± 0.01 \\
-                Y &           -1.72 ± 0.02      &       -4.27 ± 0.01             &  0.42 ± 0.01  \\ \hline
+        \toprule
+        Quantity  &  Measured $[10^6]$        &  Simulated $[10^{6}]$          &   Ratio       \\
+        \midrule
+        \multicolumn{1}{l}{Beam 1}    &                           &                                &               \\
+         $Q'''_x$ &     $ 2.95 \pm 0.04$      &       $ 6.94 \pm 0.02$         &  $0.43 \pm 0.01$\\
+         $Q'''_y$ &     $-1.82 \pm 0.04$      &       $-4.29 \pm 0.01$         &  $0.42 \pm 0.01$\\
+        \multicolumn{1}{l}{Beam 2}    &                           &                                &               \\
+         $Q'''_x$ &     $ 3.06 \pm 0.07$      &       $ 7.03 \pm 0.02$         &  $0.44 \pm 0.01$\\
+         $Q'''_y$ &     $-1.72 \pm 0.02$      &       $-4.27 \pm 0.01$         &  $0.42 \pm 0.01$\\
+         \bottomrule
     \end{tabular}
     \caption{Measured and simulated third order chromaticity with octupole and decapole correctors
     turned off. The simulations include field errors from sextupoles to decahexapole ($b_3$ to

@@ -1,7 +1,7 @@
 \chapter{Higher Order Fields}
 \thumbforchapter{}
-\chaptertoc{}
-\newpage
+%\chaptertoc{}
+%\newpage
 
 %====================
 % 	Introduction
@@ -47,7 +47,7 @@ RDTs visible for the first time in the LHC
 % ===============================
 %         Measurement
 % ===============================
-\subsection{\todo{Measurement Procedure}}
+\subsection{\review{Measurement Procedure}}
 \label{subsection:decapoles:chromaticity:measurement}
 
 As described in \cref{subsection:optics_corrections_chromaticity}, the momentum offset $\delta$ is
@@ -75,18 +75,19 @@ a momentum offset of about $-0.001$.
 %    \label{rf_scan}
 %\end{figure}
 
-To properly characterize higher orders and ensure quality measurements, several steps are necessary.
-The tune measured during chromaticity scans can exhibit jitter and resonance lines may appear,
-requiring thorough data cleaning to either reject problematic data points or reduce error bars. 
-The simplified \cref{eq:very_high_orders:simplified_eq_momentum_compaction}, describing $\delta$,
-has been sufficient for reliably measuring up to the third order chromaticity. However, this
-relation also needs verification.
+To properly characterize higher orders of the chromaticity function and ensure quality measurements,
+several steps are required. The tune measured during chromaticity scans can exhibit jitter and
+resonance lines may appear, requiring thorough data cleaning to either reject problematic data
+points or reduce error bars. The simplified
+\cref{eq:very_high_orders:simplified_eq_momentum_compaction}, describing $\delta$, has been
+sufficient for reliably measuring up to the third order chromaticity. However, this relation also
+needs verification.
 
 
 
 
 % ========== Noisy Tune
-\subsubsection{Noise and Spectral Lines}
+\subsubsection{\review{Noise and Spectral Lines}}
 
 Noise lines, due to electronics, can be seen in the raw data obtained from the BBQ tune system.
 Occasionally, when those resonances are strong, their frequency peak can be mistaken as the tune and
@@ -202,24 +203,30 @@ in~\cref{table:decapoles:chromaticity:alpha_c_chroma}.
 The higher order terms of $\alpha_c$ can thus be neglected and are not a source of higher
 chromaticity orders.
 
-\begin{table}[tbh]
-    \begin{tabular}{c|ccccc}
-        $\alpha_c$ Order & $Q^{(1)}$ & $Q^{(2)}$ & $Q^{(3)}$ & $Q^{(4)}$ & $Q^{(5)}$\\
-        \hline
-        1 & 2.52 ± 0.03 & -3.04 ± 0.05 & -4.75 ± 0.03 & -0.33 ± 0.07 & 2.33 ± 0.06 \\
-        2 & 2.53 ± 0.03 & -3.05 ± 0.05 & -4.75 ± 0.03 & -0.32 ± 0.07 & 2.36 ± 0.06 \\
-        3 & 2.53 ± 0.03 & -3.05 ± 0.05 & -4.75 ± 0.03 & -0.32 ± 0.07 & 2.36 ± 0.06 \\
-        \end{tabular}
-    \caption{}
+\begin{table}[!htb]
+    \centering
+    \begin{tabular}{lrrr}
+      \toprule
+                  & \multicolumn{3}{c}{$\alpha_c$ order} \\
+  %                \cmidrule{2-4}
+      Chromaticity &  \multicolumn{1}{c}{1}  &  \multicolumn{1}{c}{2} &  \multicolumn{1}{c}{3} \\
+      \midrule
+      $Q^{(1)}$ & $ 2.52 \pm 0.03$ & $ 2.53 \pm 0.03$ & $ 2.53 \pm 0.03$ \\
+      $Q^{(2)}$ & $-3.04 \pm 0.05$ & $-3.05 \pm 0.05$ & $-3.05 \pm 0.05$ \\
+      $Q^{(3)}$ & $-4.75 \pm 0.03$ & $-4.75 \pm 0.03$ & $-4.75 \pm 0.03$ \\
+      $Q^{(4)}$ & $-0.33 \pm 0.07$ & $-0.32 \pm 0.07$ & $-0.32 \pm 0.07$ \\
+      $Q^{(5)}$ & $ 2.33 \pm 0.06$ & $ 2.36 \pm 0.06$ & $ 2.36 \pm 0.06$ \\
+      \bottomrule
+    \end{tabular}
+    \caption{Chromaticity values obtained for the same measurement, depending on the order of the
+    momentum compaction factor taken into account.}
     \label{table:decapoles:chromaticity:alpha_c_chroma}
-\end{table}
-
-
+\end{table}     
 
 %----------------------------------------
 %         Other dpp Measurements
 %----------------------------------------
-\subsubsection{Momentum Offset from Orbit}
+\subsubsection{\review{Momentum Offset from Orbit}}
 
 During machine operation, the momentum offset, derived from the orbit, used to be logged on the
 servers. It was then possible to directly compute the chromaticity that way without having to use
@@ -230,7 +237,7 @@ chromaticity from both methods, while \cref{table:very_high_orders:bare_chroma_2
 numerical comparison. Results being similar, is it deemed that both methods are reliable to measure
 the non-linear chromaticity in the LHC.
 
-\begin{figure}[H]
+\begin{figure}[!htb]
     \begin{subfigure}{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{./images/chromaticity_2016/B1_qx.pdf}
@@ -265,32 +272,31 @@ the non-linear chromaticity in the LHC.
     \label{fig:very_high_orders:bare_chroma_2016}
 \end{figure}
 
-\begin{table}[H]
+\begin{table}[!htb]
     \centering
-    \begin{tabular}{|l||rr|rr|}
-        \hline
-        \multicolumn{1}{|c||}{} & \multicolumn{2}{c|}{2022}       &  \multicolumn{2}{c|}{2016} \\
-            & $Q'' [x10^3]$ & $Q''' [x10^6]$ & $Q'' [x10^3]$ & $Q''' [x10^6]$\\
-        \hline \hline
-        B1 &&&& \\
-        X & -0.64 ± 0.01 &   3.0 ± 0.04   & -0.62 ± 0.01 &  2.91 ± 0.04 \\
-        Y & -0.17 ± 0.01 & -2.12 ± 0.04   & -0.14 ± 0.01 & -2.09 ± 0.04 \\
-        \hline
-        B2 &&&& \\
-        X & -1.18 ± 0.02 &  2.89 ± 0.06   & -1.23 ± 0.03 &  3.13 ± 0.11 \\
-        Y &  0.18 ± 0.02 & -1.95 ± 0.05   &  0.20 ± 0.02 & -2.02 ± 0.06 \\
-        \hline
+    \begin{tabular}{lrrrr}
+        \toprule
+              & \multicolumn{2}{c}{$\delta$ via RF}  &  \multicolumn{2}{c}{$\delta$ via orbit} \\
+        Plane & \multicolumn{1}{c}{$Q'' [10^3]$}     & \multicolumn{1}{c}{$Q''' [10^6]$} & \multicolumn{1}{c}{$Q'' [10^3]$} & \multicolumn{1}{c}{$Q''' [10^6]$}\\
+        \midrule
+        Beam 1 &&&& \\
+        \hspace{2mm}X & $-0.64 \pm 0.01$ & $ 3.00 \pm 0.04$   & $-0.62 \pm 0.01$ & $ 2.91 \pm 0.04$ \\
+        \hspace{2mm}Y & $-0.17 \pm 0.01$ & $-2.12 \pm 0.04$   & $-0.14 \pm 0.01$ & $-2.09 \pm 0.04$ \\
+        Beam 2 &&&& \\
+        \hspace{2mm}X & $-1.18 \pm 0.02$ & $ 2.89 \pm 0.06$   & $-1.23 \pm 0.03$ & $ 3.13 \pm 0.11$ \\
+        \hspace{2mm}Y & $ 0.18 \pm 0.02$ & $-1.95 \pm 0.05$   & $ 0.20 \pm 0.02$ & $-2.02 \pm 0.06$ \\
+        \bottomrule
     \end{tabular}
+    \caption{Comparison of the chromaticity values obtained for the same measurement via two
+    different methods to acquire $\delta$.}
     \label{table:very_high_orders:bare_chroma_2016}
-    \caption{\todo{blablabla!}}
-\end{table}
-
+  \end{table}
 
 
 %----------------------------------------
 %        Performed Measurements
 %----------------------------------------
-\subsection{Performed Measurements}
+\subsection{\todo{Performed Measurements}}
 
 In order to assess the correctness of the observation of higher chromaticity orders, measurement
 repeatability is needed. Two measurements were thus taken, with different configurations pertaining
@@ -310,7 +316,7 @@ avoid large tune shifts.
 
 %----------------------------------------
 %          Nominal Corrections
-\subsubsection{Nominal Corrections}
+\subsubsection{\todo{Nominal Corrections}}
 
 This first chromaticity measurement was performed during the LHC beam commissioning in April 2022,
 as part of the routine measurements and corrections performed after every technical of long
@@ -321,23 +327,23 @@ and $Q'''$, as previously described in \todo{ref decapole chapter}.
 Results of this initial measurement are shown in Tab. \ref{chroma_fidel}. Lower order chromaticities such as
 $Q'$ and $Q''$ are consistent with previous measurements~\cite{maclean_commissioning_2016}.
 
-\begin{table}[tbh]
+\begin{table}[!htb]
     \centering
-    \small
-    \setlength{\tabcolsep}{4.2pt}
-    \begin{tabular}{|l||r|r|r|r|}
-    \hline
-                  & $Q^{(2)} [10^3]$ & $Q^{(3)} [10^6]$ & $Q^{(4)} [10^9]$ & $Q^{(5)} [10^{12}]$ \\ \hline\hline
-        B1        &              &               &              & \\
-        X         & -2.44 ± 0.02 & -3.36 ± 0.04 & -0.56 ± 0.02  &  1.20 ± 0.07 \\
-        Y         &  0.97 ± 0.02 &  1.62 ± 0.05  &  0.15 ± 0.03 & -0.88 ± 0.09 \\ \hline
-        B2        &              &               &              & \\
-        X         & -2.45 ± 0.03 & -2.72 ± 0.08 & -1.00 ± 0.05  &  0.15 ± 0.14 \\
-        Y         &  0.79 ± 0.03 & 1.54 ± 0.06  &  0.24 ± 0.04  & -0.74 ± 0.13 \\ \hline
+    \begin{tabular}{lrrrr}
+    \toprule
+         Plane & $Q^{(2)} [10^3]$ & $Q^{(3)} [10^6]$ & $Q^{(4)} [10^9]$ & $Q^{(5)} [10^{12}]$ \\
+    \midrule
+        Beam 1 &              &               &              & \\
+        \hspace{2mm}X         & $-2.44 \pm 0.02$ & $-3.36 \pm 0.04$ & $-0.56 \pm 0.02 $ & $ 1.20 \pm 0.07$ \\
+        \hspace{2mm}Y         & $ 0.97 \pm 0.02$ & $ 1.62 \pm 0.05$ &$  0.15 \pm 0.03$ & $-0.88 \pm 0.09$ \\
+        Beam 2 &              &                &                & \\
+        \hspace{2mm}X         & $-2.45 \pm 0.03$ & $-2.72 \pm 0.08$ & $-1.00 \pm 0.05 $ & $ 0.15 \pm 0.14$ \\
+        \hspace{2mm}Y         & $ 0.79 \pm 0.03$ & $1.54 \pm 0.06 $ & $ 0.24 \pm 0.04 $ & $-0.74 \pm 0.13$ \\
+    \bottomrule
     \end{tabular}
     \caption{Terms of the high order chromaticity obtained during Run~3 commissioning in April 2022, with nominal corrections.}
     \label{chroma_fidel}
-\end{table}
+  \end{table}
 
 Due to the momentum offset being zero several times during the measurement, it was possible to determine that
 the tune drift is negligible. The measurement was also performed after an extended period at injection
@@ -346,7 +352,7 @@ The fitted curve for the chromaticity function is shown in Fig. \ref{chroma_befo
 It can be seen that a higher order polynomial is beneficial for the fit, as discussed further in~"\nameref{subsection:q4q5_quality}".
 
 
-\begin{figure}[tbh]
+\begin{figure}[!htb]
     \centering
     \includegraphics[width=1\columnwidth]{images/MOPL027_f2-1.pdf}
     \caption{Beam 1 measurement of higher order chromaticity terms with nominal corrections used during operation. Fits are up to the third and fifth order.}
@@ -356,24 +362,26 @@ It can be seen that a higher order polynomial is beneficial for the fit, as disc
 
 %----------------------------------------
 %       Beam-Based Corrections
-\subsubsection{Beam-Based Corrections}
+\subsubsection{\todo{Beam-Based Corrections}}
 
 After correcting the second and third order chromaticities via the octupole and decapole correctors, a
 second measurement was performed.
 A uniform trim on all the correctors of each class was applied for each beam, resulting in a global correction. A total of four circuits were unavailable for the octupoles, three for beam 1 and one for beam 2, resulting in larger corrections for beam 1.
 Corrections applied on top of the nominal settings~\cite{maclean_commissioning_2016} for the octupoles and decapoles are shown in Tab. \ref{mcdo_values_corr}.
 
-\begin{table}[tbh]
+\begin{table}[!htb]
     \centering
-    \begin{tabular}{|l||r|r|}
-    \hline
-      Beam  &    $K_4 [\mathrm{m}^{-4}]$      &  $K_5 [\mathrm{m}^{-5}]$  \\ \hline\hline
-        1   &  +3.2973     &  +1610   \\ \hline
-        2   &   +2.1716    &  +1618   \\ \hline
+    \begin{tabular}{lll}
+    \toprule
+      Beam  &    $K_4 [\mathrm{m}^{-4}]$      &  $K_5 [\mathrm{m}^{-5}]$  \\
+    \midrule
+        1   &  +3.2973     &  +1610   \\
+        2   &   +2.1716    &  +1618   \\
+    \bottomrule
     \end{tabular}
     \caption{Corrections applied on top of the nominal octupole and decapole correctors strengths.}
     \label{mcdo_values_corr}
-\end{table}
+  \end{table}
 
 Figure \ref{chroma_after_correction} shows the chromaticity fit after the beam-based minimization of $Q''$ and $Q'''$,
 while \cref{chroma_table_after} shows the measured chromaticity.
@@ -391,29 +399,31 @@ Accurately measuring the third order chromaticity is essential in order to corre
     \label{chroma_after_correction}
 \end{figure}
 
-\begin{table}[tbh]
+
+\begin{table}[!htb]
     \centering
-    \small
-    \setlength{\tabcolsep}{4.2pt}
-    \begin{tabular}{|l||r|r|r|r|}
-    \hline
-                 & $Q^{(2)} [10^3]$ & $Q^{(3)} [10^6]$ & $Q^{(4)} [10^9]$ & $Q^{(5)} [10^{12}]$ \\ \hline\hline
-        B1    &           &          &              &              \\
-        X         & -0.62 ± 0.01     & -1.02 ± 0.03 & -0.63 ± 0.02 &  1.22 ± 0.05 \\
-        Y         & -0.24 ± 0.01     & 0.12 ± 0.02 &  0.04 ± 0.02 & -0.56 ± 0.04 \\ \hline
-        B2    &           &          &              &              \\
-        X         & -0.85 ± 0.01     & -0.64 ± 0.03 & -0.58 ± 0.02 &  1.07 ± 0.06 \\
-        Y         & -0.30 ± 0.02     & 0.14 ± 0.03 &  0.16 ± 0.02 & -0.66 ± 0.05 \\ \hline
+    \begin{tabular}{lrrrr}
+      \toprule
+       Plane          & $Q^{(2)} [10^3]$ & $Q^{(3)} [10^6]$ & $Q^{(4)} [10^9]$ & $Q^{(5)} [10^{12}]$ \\
+      \midrule
+        Beam 1    &           &          &              &              \\
+        \hspace{2mm}X         & $-0.62 \pm 0.01$     & $-1.02 \pm 0.03$ & $-0.63 \pm 0.02$ &$  1.22 \pm 0.05$ \\
+        \hspace{2mm}Y         & $-0.24 \pm 0.01$     & $0.12 \pm 0.02 $&  $0.04 \pm 0.02 $& $-0.56 \pm 0.04 $\\
+        Beam 2    &           &&&     \\
+        \hspace{2mm}X         & $-0.85 \pm 0.01$     & $-0.64 \pm 0.03$ & $-0.58 \pm 0.02$ &$  1.07 \pm 0.06$ \\
+        \hspace{2mm}Y         & $-0.30 \pm 0.02$     & $0.14 \pm 0.03 $&  $0.16 \pm 0.02 $& $-0.66 \pm 0.05 $\\
+      \bottomrule
     \end{tabular}
     \caption{Terms of higher order chromaticity obtained during Run~3 commissioning in April 2022, with beam-based corrections for $Q''$ and $Q'''$.}
     \label{chroma_table_after}
-\end{table}
+  \end{table}
+  
 
 
 %----------------------------------------
 %     Q4 and Q5 confirmation
 %----------------------------------------
-\subsubsection{\texorpdfstring{$Q^{(4)}$ and $Q^{(5)}$}{Q4 and Q5} fit quality}
+\subsubsection{\todo{\texorpdfstring{$Q^{(4)}$ and $Q^{(5)}$}{Q4 and Q5} fit quality}}
 \label{subsection:q4q5_quality}
 
 The values measured for $Q^{(4)}$ and $Q^{(5)}$ are similar across the two measurements, with nominal and beam-based corrections performed with very different lower order chromaticity and several hours apart.
@@ -424,27 +434,33 @@ The reduced chi-square for the last measurement for each fit order is detailed i
 %Figure \ref{chroma_comparison} shows a comparison of the measured chromaticity before and after
 %beam-based corrections for the horizontal axis of beam 1.
 
-\begin{table}[tbh]
+\begin{table}[!htb]
     \centering
-    \begin{tabular}{|l||c|c|c|c|}
-    \hline
-        Plane     &  $\chi^2_\nu$ $Q^{(3)}$ & $\chi^2_\nu$ $Q^{(4)}$ &  $\chi^2_\nu$ $Q^{(5)}$ &  $\chi^2_\nu$ $Q^{(6)}$  \\ \hline\hline
+    \begin{tabular}{lrrrr}
+     \toprule
+                  & \multicolumn{4}{c}{$\chi^2_\nu$} \\
+      %\cmidrule{2-5}
+        Plane     &   $Q^{(3)}$ &  $Q^{(4)}$ &   $Q^{(5)}$ &   $Q^{(6)}$  \\
+      \midrule
         Beam 1    &   &   &   & \\
         % The commented out lines are from measurement with the regular BBQ data
         % The un-commented lines are from using the raw BBQ data
         %X         & 7.62  & 4.07 & 0.62 &\\             % regular
-        %Y         & 0.72  & 0.57 & 0.15 &\\ \hline      % regular
-        X         & 17.9  & 12.1 & 1.8 & 1.47 \\               % raw bbq
-        Y         &  3.0  & 2.2  & 0.7 & 0.7 \\ \hline        % raw bbq
+        %Y         & 0.72  & 0.57 & 0.15 &\\             % regular
+        \hspace{2mm}X         & $17.9$  & $12.1$ & $1.8$ & $1.5$ \\         % raw bbq
+        \hspace{2mm}Y         & $ 3.0$  & $2.2 $ & $0.7$ & $0.7 $\\          % raw bbq
         Beam 2    &    &    &   &\\
         %X         & 7.60  & 3.10 & 0.73 &\\             % regular
         %Y         & 0.48  & 0.46 & 0.16 &\\ \hline      % regular
-        X         & 17.3 & 7.1 & 1.8 & 1.76 \\             % raw bbq
-        Y         & 2.9  & 2.8 & 1.0 & 1.0 \\ \hline      % raw bbq
+        \hspace{2mm}X         & $17.3$ & $7.1$ & $1.8$ & $1.8$ \\           % raw bbq
+        \hspace{2mm}Y         & $2.9 $ & $2.8$ & $1.0$ & $1.0$ \\            % raw bbq
+      \bottomrule
     \end{tabular}
-    \caption{Reduced $\chi^2_\nu$ values for each order of fit, taken from the last commissioning measurement.}
+    \caption{Reduced $\chi^2$ values for each order of fit, taken from the last commissioning measurement.}
     \label{table_chisquare}
-\end{table}
+  \end{table}
+  
+
 
 
 %\begin{figure}[!ht]
@@ -459,7 +475,7 @@ The reduced chi-square for the last measurement for each fit order is detailed i
 %	    MODEL EXPECTATIONS
 %----------------------------------------------------------------------------------------
 
-\subsection{NL-CHROMATICITY MODEL}
+\subsection{\todo{NL-CHROMATICITY MODEL}}
 \label{sec:nl_chroma_model}
 
 The model of the LHC is based on MADX and WISE field errors~\cite{p_hagen_wise_2006}. To compute the
@@ -468,24 +484,23 @@ sextupole to decahexapole loaded and applied on all magnets. Simulation results 
 
 Table \ref{ptc_values_ratios} shows the ratio between measured and simulated high-order chromaticity. The measured $Q^{(5)}$ shows a consistent discrepancy with the model, larger by about a factor 2.
 
-\begin{table}[tbh]
+\begin{table}[!htb]
     \centering
-    \small
-    \begin{tabular}{|l||r|r|}
-    \hline
-        Plane     &  $Q^{(4)} [10^9]$  &  $Q^{(5)} 
-        [10^{12}]$ \\\hline\hline
+    \begin{tabular}{lrr}
+    \toprule
+        Plane     &  $Q^{(4)} [10^9]$  &  $Q^{(5)} [10^{12}]$ \\
+    \midrule
         Beam 1    &              &               \\
-        X         & -0.2 ± 0.1 & 0.7 ± 0.1  \\
-        Y         &  0.1 ± 0.1 & -0.3 ± 0.1  \\ \hline
+        \hspace{2mm}X         & $-0.2 \pm 0.1$ & $ 0.7 \pm 0.1$ \\
+        \hspace{2mm}Y         & $ 0.1 \pm 0.1$ & $-0.3 \pm 0.1$  \\
         Beam 2    &  &   \\
-        X         & -0.2 ± 0.1 &  0.8 ± 0.1  \\
-        Y         &  0.1 ± 0.1 & -0.4 ± 0.1 \\ \hline
+        \hspace{2mm}X         & $-0.2 \pm 0.1$ & $ 0.8 \pm 0.1$  \\
+        \hspace{2mm}Y         & $ 0.1 \pm 0.1$ & $-0.4 \pm 0.1$ \\
+    \bottomrule
     \end{tabular}
     \caption{Simulated high order chromaticity terms via PTC, including field errors from $b_3$ to $b_8$ with the previous beam-based corrections.}
     \label{ptc_values}
-\end{table}
-
+  \end{table}
 %\begin{table}[tbh]
 %    \centering
 %    \footnotesize
@@ -504,23 +519,25 @@ Table \ref{ptc_values_ratios} shows the ratio between measured and simulated hig
 %    \caption{Ratios of the simulated and measured high order chromaticity terms for both first and second measurements.  The values are taken from tables \ref{chroma_fidel}, \ref{chroma_table_after} and \ref{ptc_values}. The fit with high correlation was not included.}
 %    \label{ptc_values_ratios}
 %\end{table}
-\begin{table}[tbh]
+
+\begin{table}[!htb]
     \centering
-    \begin{tabular}{|l||c|c|}
-    \hline
-        Plane     &  \multicolumn{2}{c|}{$Q^{(5)}$ ratio} \\
-        \cline{2-3}
-        Measurement &    first   &    second\\ \hline\hline
-        Beam 1    &            & \\
-        X         &1.8 ± 0.1  & 1.8 ± 0.1  \\
-        Y         & 2.7 ± 0.3  & 1.7 ± 0.1  \\ \hline
-        Beam 2    &            & \\ 
-        X         &            & 1.6 ± 0.1  \\
-        Y         & 2.2 ± 0.4  & 1.9 ± 0.2 \\ \hline
+    \begin{tabular}{lcc}
+      \toprule
+                  &  \multicolumn{2}{c}{$Q^{(5)}$ ratio} \\
+        Plane     &    First Meas.   &   Second Meas.\\
+      \midrule
+        Beam 1   &            & \\
+        \hspace{2mm}X   & $1.8 \pm 0.1$ & $1.8 \pm 0.1$  \\
+        \hspace{2mm}Y   & $2.7 \pm 0.3$ & $1.7 \pm 0.1$  \\
+        Beam 2    &     & \\ 
+        \hspace{2mm}X   &               & $1.6 \pm 0.1$  \\
+        \hspace{2mm}Y   & $2.2 \pm 0.4$ & $1.9 \pm 0.2$  \\
+      \bottomrule
     \end{tabular}
     \caption{Ratios of the measured to simulated fifth order chromaticity term for both first and second measurements.  The values are taken from tables~\ref{chroma_fidel}, \ref{chroma_table_after} and \ref{ptc_values}. The fit with high correlation was not included.}
     \label{ptc_values_ratios}
-\end{table}
+  \end{table}
 
 
 Simulations with only $b_6$ and $b_7$ field errors have been run to assess the contribution of lower order magnets to the fifth order chromaticities. The results strongly imply that the decatetrapole errors are the main contributors to $Q^{(5)}$, as can be seen in Fig.~\ref{beam1_q5x_ptc}.
@@ -554,7 +571,7 @@ b6 meas from 2024 commissioning
 %=============================
 %        Conclusion
 %=============================
-\section{CONCLUSIONS AND OUTLOOK}
+\section{\todo{CONCLUSIONS AND OUTLOOK}}
 
 A wider momentum offset range, combined with new analysis techniques permitted the observation of fourth and fifth order chromaticity for the first time in the LHC. Reproducible values were measured with different machine configurations.
 Preliminary simulations show that the observed values do not match well with the LHC non-linear model. A factor 2 is observed between beams and planes for $Q^{(5)}$, which may point to a systematic error in the b7 error model.
