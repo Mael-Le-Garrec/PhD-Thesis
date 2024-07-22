@@ -1,13 +1,16 @@
 % === Impact / Lifetime
 \section{\todo{Impact of Decapolar Fields}}
 
-\paragraph{\review{Large RDT}}
-
 Decapolar fields can influence the beam lifetime in several ways. Chromatic amplitude detuning and
 chromaticity will induce a tune shift, relative to either or both the action and the momentum
 offset. After such detuning, particles may move closer to certain resonances in tune space, causing
 their oscillations to grow, eventually leading to their loss.
 
+
+% ============================================
+%                 Large RDT
+% ============================================
+\subsection{\review{Large RDT}}
 
 \begin{wraptable}{r}{0.4\textwidth}
     \centering
@@ -27,8 +30,8 @@ their oscillations to grow, eventually leading to their loss.
 As seen previously in \cref{fig:decapoles:rdts:tune_diagram}, the resonance $1Q_x - 4Q_y$ passes
 through the beam in tune space, deteriorating the lifetime of the nearby particles.
 In order to measure the impact of this resonance on the beam, a knob was created, alternating the 
-current of all decapole correctors in the machine. Such a powering scheme has no impact on 
-chromaticity as the sum of the strengths $K_5$ is zero. Rather, the RDT $f_{1004}$ is impacted.
+current of all decapole correctors in the machine arc by arc. Such a powering scheme has no impact
+on chromaticity as the sum of the strengths $K_5$ is zero. Rather, the RDT $f_{1004}$ is impacted.
 Is it to be noted that this is not a correction, but purely a way to artificially increase the RDT
 in order to quantify the effect of the resonance.
 
@@ -68,9 +71,34 @@ second one sees a decrease of $0.36 \pm 0.03$ hours. This observed decrease of 2
 for $10\%$ of the beam lifetime at injection energy.
 
 
-\paragraph{Corrections}
 
-\todo{lifetime with f1004 and $Q'''$ corrections}
+% ============================================
+%                Corrections
+% ============================================
+\subsection{\todo{Corrections}}
+
+In order to understand what can be gained from correcting decapolar fields, a lifetime measurement
+was taken with the corrections described in 
+\cref{section:decapoles:decapolar_contribution_correction}. This scheme corrects the three decapolar 
+observables, being the RDT $f_{1004}$ linked to the resonance $1Q_x - 4Q_y$, the third order
+chromaticity $Q'''$ and the chromatic amplitude detuning terms.
+
+\cref{fig:decapoles:impact:b5_lifetime_rdt_corr} shows the evolution of the lifetime, starting with
+corrections applied, removed and then trimmed to their opposite. A net change in lifetime for Beam 1
+can be measured after each application. Acquired signal for Beam 2 has been deemed to noisy to be 
+relevant, due to the shortness of the measurement.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./images/b5_lifetime_rdt_corr.pdf}
+    \caption{Measured lifetime of Beam 1 with the nominal corrections for $Q'''$, combined
+    correction of $f_{1004}$ and $Q'''$, and its inverse.}
+    \label{fig:decapoles:impact:b5_lifetime_rdt_corr}
+\end{figure}
+
+It is apparent here that the corrections have a beneficial effect on the Beam. The lifetime
+improvement is of $\approx 3 \%$, while the degradation after applying the opposite is of $\approx
+5\%$.
 
 % 2023-06-14
 

@@ -78,6 +78,7 @@ horizontal spectrum, as shows \cref{fig:decapoles:rdts:spectrum_f1004}.
 %         Decapole Contribution
 % ---------------------------------------
 \subsection{\todo{Decapolar Contribution}}
+\label{section:decapoles:decapolar_contribution_correction}
 
 Decapolar fields are the main contributors to the RDT $f_{1004}$. As such, powering the decapolar
 correctors is a good way to correct the related resonances.
@@ -125,9 +126,10 @@ settings, the delta applied on top and the final correction values.
 \end{table}
 
 This RDT correction also serves as a partial $Q'''$ correction. To fully correct $Q'''$ indeed
-approximately requires a strength of $+13,000 K_5$ distributed amongst the correctors.  Therefore,
-this new approach reduces $Q'''$ by about $70\%$ compared to the previous method. Result of those
-measurements, as well as the inverse of the correction, are shown in 
+approximately requires a strength of $+13,000 K_5$ distributed amongst the correctors. Therefore,
+this new approach reduces $Q'''$ by about $70\%$ compared to the previous method. The chromatic
+amplitude detuning terms are also expected to be decreased.
+Result of those measurements, as well as the inverse of the correction, are shown in 
 \cref{fig:decapoles:rdts:f1004_correction_B2}
 
 \begin{figure}[!h]
@@ -155,8 +157,8 @@ opposite effect.
 
 Simulations were run with decapolar correctors turned of and with the absolute value of the RDT
 correction. The response of the RDT between those two schemes is shown in 
-\cref{fig:decapoles:rdt:b1_response_corr}. The ratio between their RMS value is $\approx 6\%$,
-indicating that simulations correctly model the decapolar correctors.
+\cref{fig:decapoles:rdt:b1_response_corr}. The difference between their RMS value ratio is $\approx
+6\%$, indicating that simulations correctly model the decapolar correctors.
 
 \begin{figure}[!htb]
     \centering
@@ -165,8 +167,6 @@ indicating that simulations correctly model the decapolar correctors.
     $f_{1004}$ upon application on unpowered correctors of the RDT corrections.}
     \label{fig:decapoles:rdt:b1_response_corr}
 \end{figure}
-
-\todo{Response of the model/measurement?}
 
 
 % ---------------------------------------
@@ -397,6 +397,21 @@ in those magnets.
     \label{fig:decapoles:rdts:contributions}
 \end{figure}
 
+\begin{wraptable}{r}{0.4\textwidth}
+    \centering
+    \begin{tabular}{rr}
+    \toprule
+    Factor & RMS $|f_{1004}|$ \\
+    \midrule
+       -10 & $37,308,159$         \\ 
+        -4 &  $6,721,270$          \\ 
+         0 &  $3,533,796$          \\ 
+        -1 &  $2,333,384$          \\
+    \bottomrule
+    \end{tabular}
+    \caption{RMS of $|f_{1004}|$ depending on the factor of the $Q''$ corrections.}
+    \label{table:decapoles:corrections_dq2_f1004_rms}
+\end{wraptable}
 
 Measurements were performed to confirm and quantify the effect of octupoles coupled with sextupoles
 on the decapolar fields. Previous corrections, aimed at correcting the second order chromaticity
@@ -413,21 +428,7 @@ corrections at factors $-10$, $-4$, $-1$ and $0$.
     \label{decapoles:rdts:measured_f1004_mco}
 \end{figure}
 
-\begin{wraptable}{r}{0.4\textwidth}
-    \centering
-    \begin{tabular}{rr}
-    \toprule
-    Factor & RMS $|f_{1004}|$ \\
-    \midrule
-       -10 & $37,308,159$         \\ 
-        -4 &  $6,721,270$          \\ 
-         0 &  $3,533,796$          \\ 
-        -1 &  $2,333,384$          \\
-    \bottomrule
-    \end{tabular}
-    \caption{RMS of $|f_{1004}|$ depending on the factor of the $Q''$ corrections.}
-    \label{table:decapoles:corrections_dq2_f1004_rms}
-  \end{wraptable}
+
   
 \cref{table:decapoles:corrections_dq2_f1004_rms} shows the RMS of the amplitude of this RDT for the 
 various configurations. Similar to the shift observed when powering the landau octupoles in

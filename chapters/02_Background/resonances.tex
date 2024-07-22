@@ -10,7 +10,7 @@ The resonances discussed in this thesis are related to the optics of the acceler
 Such resonances create unstable motion and can lead to loosing particles.
 Those perturbations arise from particles oscillating at frequencies excited by certain multipoles.
 
-\begin{figure}[H]
+\begin{figure}[!htb]
     \centering
     \includegraphics[width=0.82\textwidth]{images/resonance_diagram_n5.pdf}
     \caption{Tune diagram with resonances lines excited by multipoles up to decapole ($n \leq 5$).
@@ -20,20 +20,19 @@ Those perturbations arise from particles oscillating at frequencies excited by c
 
 \cref{fig:resonances:diagram_n5} shows a tune diagram where the fractional part of tunes $Q_x$ and
 $Q_y$ can be related to resonance lines excited by multipoles up to decapoles ($n=5$).
+It becomes apparent that the diagram fills quickly when considering further orders.
+%, as shows \cref{fig:resonances:diagram_n7}. 
+Thankfully, the higher the multipole order, the weaker the resonances are. This makes choosing a
+working point possible, even if some particles are hitting resonance lines.
 
-It becomes apparent that the diagram fills quickly when considering further orders, as shows
-\cref{fig:resonances:diagram_n7}. Thankfully, the higher the multipole order, the weaker the
-resonances are. This makes choosing a working point possible, even if some particles are hitting
-resonance lines.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.82\textwidth]{images/resonance_diagram_n7.pdf}
-    \caption{Tune diagram with resonances lines excited by multipoles up to decatetrapole 
-             ($n \leq 7$). When considering higher orders, it becomes apparent that the beam will
-             inevitably hit several resonances.}
-    \label{fig:resonances:diagram_n7}
-\end{figure}
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=0.82\textwidth]{images/resonance_diagram_n7.pdf}
+%    \caption{Tune diagram with resonances lines excited by multipoles up to decatetrapole 
+%             ($n \leq 7$). When considering higher orders, it becomes apparent that the beam will
+%             inevitably hit several resonances.}
+%    \label{fig:resonances:diagram_n7}
+%\end{figure}
 
 
 When considering the resonance driving terms $f_{jklm}$ from \cref{eq:coordinate_systems:fjklm}, it
@@ -50,7 +49,7 @@ Resonant conditions due to the tunes can thus be described by the following cond
 %----------------------------------------
 %          Frequency Spectrum
 %----------------------------------------
-\subsection{Frequency Spectrum}
+\subsection{\review{Frequency Spectrum}}
 
 As seen in \cref{eq:coordinate_systems:linear_position_normal_form}, resonance driving terms have an
 impact on the transverse position of a particle. This means that performing a FFT on such a signal
@@ -88,7 +87,7 @@ RDT~\cite{bartolini_normal_1997}:
 %----------------------------------------
 %           RDT Calculation
 %----------------------------------------
-\subsection{\todo{Resonance Driving Terms}}
+\subsection{\review{Resonance Driving Terms}}
 
 By reworking the previous \cref{eq:resonances:amplitude_line}, it can be seen that RDTs are factors
 of the line amplitude and the actions $I_x$ and $I_z$:
