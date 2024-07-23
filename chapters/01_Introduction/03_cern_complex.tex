@@ -9,65 +9,17 @@
 %machines, CRT monitors, microwaves or as part of an accelerator complex.  Those early technologies
 %were namely used to perform the first artificial nuclear disintegration.
 
-\todo{GPT}
-
-The history of particle accelerators is a captivating narrative that spans over a century of
-scientific innovation and discovery. It is a journey that has fundamentally transformed our
-understanding of the universe's fundamental particles and their interactions. The concept of
-accelerating particles to high speeds originated in the late 19th century, with early experiments
-conducted by pioneers such as J.J. Thomson and Ernest Rutherford, who utilized basic devices like
-cathode ray tubes to propel electrons.  One of the earliest breakthroughs in accelerator technology
-was the Cockcroft-Walton accelerator, introduced in 1932 by John Cockcroft and Ernest Walton. This
-pioneering device employed voltage multipliers to accelerate protons and ions, enabling the first
-artificial nuclear disintegration—a milestone that earned them the Nobel Prize in Physics in 1951.
-Building upon this achievement, the development of the synchrotron in the 1940s and 1950s by
-scientists like Edwin McMillan and Vladimir Veksler marked a significant stride. Synchrotrons
-harnessed magnetic fields to bend and accelerate charged particles in circular paths, advancing the
-study of particle properties.  A key turning point emerged with the establishment of CERN (the
-European Organization for Nuclear Research) in 1954, which culminated in the creation of the Proton
-Synchrotron (PS) in 1959. This marked the emergence of a powerful era in accelerator science,
-enabling the discovery of novel particles and laying the groundwork for the formulation of the
-Standard Model of particle physics. Throughout the 1960s and 1970s, the advent of bubble chambers
-and bubble chamber detectors provided researchers with the ability to trace the paths of charged
-particles, leading to the revelation of various particles and their intricate interactions.  Yet,
-the true marvel of accelerator technology came to the forefront with the construction of the Large
-Hadron Collider (LHC) at CERN, which commenced operation in 2008. The LHC, an awe-inspiring
-27-kilometer ring of superconducting magnets, propels protons and heavy ions to velocities nearing
-the speed of light. The LHC's monumental achievement—the discovery of the Higgs boson in 2012—marked
-a crowning moment in particle physics, solidifying the vital role of particle accelerators in
-unraveling the fabric of the cosmos.  As particle physicists peer into the future, the quest
-continues. Concepts such as linear colliders and advanced circular colliders are on the horizon,
-promising to delve even deeper into the enigmatic realm of fundamental particles and the forces that
-govern them. The history of particle accelerators underscores the profound human endeavor to explore
-the most intricate mysteries of the universe, revealing the intricate dance of particles that shape
-the cosmos and expanding the horizons of human knowledge.
-
-
+\lipsum[1]
 
 \subsection{\todo{The CERN Complex}}
 
-
-\todo{GPT}
-The CERN complex, located near Geneva, Switzerland, is a prominent center for particle physics
-research. Its centerpiece is the Large Hadron Collider (LHC), the world's largest particle
-accelerator with a 27-kilometer circumference. Here, protons and heavy ions are accelerated to near
-light speed and collide at various points for fundamental particle studies. Surrounding the LHC are
-significant particle detectors, including ATLAS, CMS, ALICE, and LHCb, designed to capture and
-analyze particles generated during these collisions.  CERN also includes linear accelerators, the
-Proton Synchrotron (PS), Super Proton Synchrotron (SPS), and Antiproton Decelerator (AD),
-contributing to particle acceleration and antimatter research. Alongside these facilities, CERN
-houses the Theoretical Physics Department, where theorists collaborate with experimentalists. With
-research, administrative buildings, laboratories, and workshops, CERN provides a comprehensive
-environment for scientific exploration. Its history, including the 2012 discovery of the Higgs
-boson, underscores its importance in advancing particle physics and highlighting international
-scientific cooperation.
-
+\lipsum[1]
 
 
 % ===============================
 %             LHC
 % ===============================
-\subsection{\todo{The Large Hadron Collider}}
+\subsection{\review{The Large Hadron Collider}}
 
 The Large Hadron Collider (LHC), is a circular particle accelerator primarily designed to collide
 protons for fundamental particle physics research. It can, occasionally over the year, also collide
@@ -136,11 +88,29 @@ effects as well as amplitude dependant tune shifts.
 
 % ===============================
 %          Parameters
-\subsubsection{\todo{Parameters}}
+\subsubsection{\review{Parameters}}
 
-optics, pilot bunches
+During the operation of the LHC, the machine goes through several states. Those states of the
+machine~\cite{wenniger_lhc_2019} have been defined for specific scenarios.
 
-\begin{figure}[H]
+A common example is the operational cycle of the LHC, shown in \cref{fig:cern_complex:cycle}.
+The magnets are first pre-cycled~\cite{bottura_pre-cycles_2010} without any beam circulating, to get
+them back to a reproducible state. Their current is then increased to accept particles at the 
+injection energy of 450GeV. In order to assess the good working condition of the machine, a probe
+bunch of reduced intensity is injected first. The number of bunches and their intensity is then
+ramped up to attain the desired scheme needed for collisions. This scheme varies throughout the year
+depending on the demands of the experiments. The number of bunches and intensity can also be lowered
+for to keep the machine safe. A common scheme in 2024 is to inject about 2350 bunches with around
+$10^{11}$ particles each for collisions.
+Optics measurements, due to their destructive nature, typically use between one and three
+\textit{pilot} bunches at a lower intensity of $10^{10}$.
+
+The magnets current is them ramped along with the voltage injected in the RF system, to 
+accelerate particles to an energy of 6.8TeV. While doing so so, the beam is squeezed in a first pass
+at the Interaction Points. A second pass is done after the ramp is over, to reach a $\beta* = 30cm$
+at the ATLAS and CMS experiments. Crossing-angles are then introduced to make the beams colliding.
+
+\begin{figure}[!htb]
     \includegraphics[width=\textwidth]{./images/lhc_cycle.pdf}
     \caption{Simplified illustration of a standard LHC cycle. Courtesy of Félix
     Soubelet~\cite{felix_soubelet_local_2023}} \label{fig:cern_complex:cycle}
@@ -149,7 +119,7 @@ optics, pilot bunches
 
 % ===============================
 %   Harmonics and Field Errors
-\subsubsection{\todo{Harmonics and Field Errors}}
+\subsubsection{\review{Harmonics and Field Errors}}
 
 Real-life magnets never have a single field as one would like. Instead, so called 
 \textit{allowed harmonics} exist due to the geometry of the coil. As such, the main dipoles of the
@@ -160,7 +130,7 @@ scope of the allowed ones. Dipoles are indeed found to generate octupolar field 
 During the design of the LHC, the main dipoles have been identified to generate significant field
 errors. Magnetic measurements of those various fields were thus taken and magnetic tables built
 based on real-life magnets nowadays installed in the machine. Those magnetic tables, computed for
-each LHC configuration by \textit{WISE}~\todo{cite} are used by simulation softwares.
+each LHC configuration by \textit{WISE}~\cite{p_hagen_wise_2006} are used by simulation softwares.
 Predictions of field errors and compensating strength for the correctors is computed by the Field
 Description for the LHC (\textit{FiDeL}, \cite{noauthor_fidel_2021}). FiDeL is used in the LHC
 control system in operation to steer the LHC.

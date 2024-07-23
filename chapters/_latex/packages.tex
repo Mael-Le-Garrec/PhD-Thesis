@@ -337,6 +337,7 @@ afterskip=2cm]{chapter}
 \renewcommand*{\chapterlinesformat}[3]{% #1 = chapter command name
                                        % #2 = number (or empty)
                                        % #3 = text
+  \begin{minipage}{\textwidth}
   % Line                                       
   \vspace{1pt}\rule{\linewidth}{1pt}% First rule
   \vspace{-18pt} % Small vertical space between the rules
@@ -363,24 +364,29 @@ afterskip=2cm]{chapter}
       }%
     }%
   }%
-  % And now place it if the chapter is numbered
+  % And now place it, if the chapter is numbered
   \IfArgIsEmpty{#2}{%
     \vphantom{\usebox\chapternumberbox}%
   }{%
     \usebox\chapternumberbox%
+    \par
   }%
-  \par
-  \vspace{1em}
+  \vspace{0.5em}
   % Display the chapter's title
   %\hspace{2em}
-  \parbox{0.85\textwidth}{%
-    \raggedright% deactivate wrapping, align to the left
-    %\raggedleft% deactivate wrapping, align to the right
-    \ChapterCase{\strut\ignorespaces\chapterfont\fontsize{30pt}{30pt}\selectfont\bfseries #3}%
-  }
+  \begin{flushright}%
+    \parbox{0.85\textwidth}{%
+      \raggedright% deactivate wrapping, align to the left
+      %\raggedleft% deactivate wrapping, align to the right
+      \ChapterCase{%
+          \strut\ignorespaces\chapterfont\fontsize{30pt}{30pt}\selectfont\bfseries #3%
+      }%
+    }%
+  \end{flushright}%
   \par
   % Line
-  \vspace{1em}
+  \vspace{.5em}
   \rule[.5em]{\linewidth}{1.2pt}
   \par
+  \end{minipage}
 }

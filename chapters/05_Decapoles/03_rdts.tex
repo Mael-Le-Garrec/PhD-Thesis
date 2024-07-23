@@ -169,42 +169,11 @@ correction. The response of the RDT between those two schemes is shown in
 \end{figure}
 
 
-% ---------------------------------------
-%        Higher Order Contribution
-% ---------------------------------------
-\subsection{\review{Higher Order Contributions}}
-
-% Measurements in 
-% /afs/cern.ch/work/m/mlegarr2/public/beta_beat_output/2024-05-21
-
-To produce collisions at top energy, \textit{crossing angles} are introduced via the orbit
-correctors located in the triplets, before the separation dipoles and the matching section of the
-interaction regions (\texttt{MCBX}, \texttt{MCBY} and \texttt{MCBC})~\cite{de_maria_lhc_2008}. Those
-collisions happen with a small $\beta*$, currently 30cm, requiring strong quadrupolar fields from
-the triplets.
-
-At such $\beta$, those triplets also generate strong dodecapolar field errors. Because of the
-crossing-angles, feed-down appears and lower-order fields can be observed.
-Such feed-down to decapolar fields was observed during the first commissioning of Run~3, in
-2022~\cite{maclean_prospects_2022}.
-\cref{fig:decapoles:f1004_from_feeddown} shows how the RDT $f_{1004}$, normally affected by
-decapoles, varies with the application of crossing angles.
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=0.9\textwidth]{./images/f1004x_feed-down_b6_triplets.pdf}
-    \caption{Varying amplitude of the decapolar RDT $f_{1004}$ depending on the activation or not of
-    the crossing angle at the IP. Offsets in orbit create feed-down from higher orders.}
-    \label{fig:decapoles:f1004_from_feeddown}
-\end{figure}
-
-Such a contribution is though not expected at injection energy, as the triplets aren't powered as
-much as at top energy, $\beta*$ being set at around $10$m.
 
 % ---------------------------------------
 %        Lower Order Contribution
 % ---------------------------------------
-\subsection{\review{Lower Order Contributions}}
+\subsection{\review{Feed-Up Contributions}}
 
 % http://localhost:8888/lab/workspaces/auto-d/tree/work_afs2/jupyter/resonance_driving_terms/measurements/2024-03-13_b3_b4_effect_on_b5/Sextupoles_and_Octupoles.ipynb
 
@@ -440,3 +409,41 @@ Simulated and observed large shifts due tu octupoles are relevant to the operati
 resonances can be greatly deteriorated, especially when powering landau octupoles.
 A better understanding of the interaction between Landau octupoles and octupolar correctors could
 lead to improved corrections in not only octupolar but also decapolar fields in the future.
+
+
+
+
+% ---------------------------------------
+%        Higher Order Contribution
+% ---------------------------------------
+\subsection{\review{Feed-Down Contributions}}
+
+\todo{Simulation at injection with/without crossing angles.}
+
+% Measurements in 
+% /afs/cern.ch/work/m/mlegarr2/public/beta_beat_output/2024-05-21
+
+To produce collisions at top energy, \textit{crossing angles} are introduced via the orbit
+correctors located in the triplets, before the separation dipoles and the matching section of the
+interaction regions (\texttt{MCBX}, \texttt{MCBY} and \texttt{MCBC})~\cite{de_maria_lhc_2008}. Those
+collisions happen with a small $\beta*$, currently 30cm, requiring strong quadrupolar fields from
+the triplets.
+
+At such $\beta$, those triplets also generate strong dodecapolar field errors. Because of the
+crossing-angles, feed-down appears and lower-order fields can be observed.
+Such feed-down to decapolar fields was observed during the first commissioning of Run~3, in
+2022~\cite{maclean_prospects_2022}.
+\cref{fig:decapoles:f1004_from_feeddown} shows how the RDT $f_{1004}$, normally affected by
+decapoles, varies with the application of crossing angles.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.9\textwidth]{./images/f1004x_feed-down_b6_triplets.pdf}
+    \caption{Varying amplitude of the decapolar RDT $f_{1004}$ at top energy depending on the
+    activation or not of the crossing angle at the IP. Offsets in orbit create feed-down from higher
+    orders.}
+    \label{fig:decapoles:f1004_from_feeddown}
+\end{figure}
+
+Such a contribution is though not expected at injection energy, as the triplets aren't powered as
+much as at top energy, $\beta*$ being set at around $10$m.

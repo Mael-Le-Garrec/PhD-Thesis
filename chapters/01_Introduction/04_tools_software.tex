@@ -1,2 +1,28 @@
-\section{\todo{Tools and Softwares}}
+\section{\review{Tools and Softwares}}
 
+In order to perform the measurements, analysis and simulations presented in this thesis, various
+tools and softwares have been developed, used and contributed to.
+
+Optics simulations have been done mainly in MAD-X~\cite{deniau_mad-x_nodate} and PTC.
+MAD-NG~\cite{deniau_mad-ng_2020} and
+Xsuite~\cite{g_iadarola_xsuite_nodate} have also been explored for specific tasks such as free RDT
+simulations and GPU tracking.
+
+Analysis of chromaticity measurements are done via a newly developed graphical
+interface~\cite{m_le_garrec_non-linear_2022} written in Python. This tool makes cleaning of the raw
+signal data, its analysis and results export more reliable and easier.
+
+Overall, analysis of turn-by-turn measurements is supported by a large panel of libraries written by
+the OMC team in Python and Java. Contributions have mainly been made to extended the following
+packages:
+
+
+\begin{itemize}
+    \item \textbf{Beta-Beat GUI}~\cite{omc-team_beta-beat_2008}, Graphical interface for turn-by-turn measurements visualization and
+    analysis.
+    \item \textbf{OMC3}~\cite{omc-team_omc3_2021}, Main optics analysis and corrections software.
+    \item \textbf{Beta-Beat.src}~\cite{omc-team_beta-beatsrc_2018}, Old analysis software, now
+    replaced by OMC3.
+    \item \textbf{pylhc.github.io}~\cite{omc-team_omc_2020}, Website of the OMC team with package
+    documentation, examples and useful resources.
+\end{itemize}
