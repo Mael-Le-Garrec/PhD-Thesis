@@ -319,6 +319,13 @@ afterskip=2cm]{chapter}
   tocentryformat=\usekomafont{disposition},
   tocpagenumberformat=\usekomafont{disposition}
 ]{paragraph,subparagraph}
+% Remove the dots and put the number right next to the text
+% Not for chapters
+\RedeclareSectionCommands[
+  toclinefill=\hspace{1em}/,  % set the distance between the text and page number
+  tocraggedpagenumber=true,  % unforce the pagenumber to be justified right
+]{section,subsection,subsubsection,paragraph,subparagraph}
+
 
 
 % ============================
