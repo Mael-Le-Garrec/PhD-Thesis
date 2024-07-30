@@ -1,4 +1,4 @@
-\section{\todo{Coordinate Systems}}
+\section{\review{Coordinate Systems}}
 
 In circular accelerators, particle dynamics are represented using a traveling coordinate system.
 A reference orbit is determined by the lattice and its magnet strengths, forming the
@@ -231,7 +231,7 @@ transformation preserves the volume in phase space.
 % ============================================
 %             Non-Linear Lattice 
 % ============================================
-\subsection{\todo{Non-Linear Lattice}}
+\subsection{\review{Non-Linear Lattice}}
 
 So far, Courant-Snyder parameters were a good way to describe the distribution of positions and
 velocities of particles in the transverse plane. One caveat of using this formalism is that it is 
@@ -348,7 +348,7 @@ transformation}:
 
 % ========================
 % Non-Linear Transfer Map
-\subsubsection{\todo{Non-Linear Transfer Maps}}
+\subsubsection{\review{Non-Linear Transfer Maps}}
 
 As introduced in~\ref{section:coordinate_systems:linear_maps}, the dynamics of a particle beam in a circular accelerator can be
 described by \textit{transfer maps}. A symplectic \textit{One Turn Map} $\mathcal{M}$ that
@@ -401,7 +401,14 @@ It is though to be noted that in this thesis experimental measurements show the 
 order contributions. In order to fully understand the combined effect of multipoles, the BCH
 expansion needs to be expended further than the first two terms.
 
-\todo{something about -L:H:}
+When transporting coordinates for a machine element, its length must be taken into account:
+
+\begin{equation}
+    \begin{aligned}
+        e^{:LH:} x_0 &= x_1,\\
+        e^{:LH:} p_0 &= p_1.
+    \end{aligned}
+\end{equation}
 
 
 % ========================
