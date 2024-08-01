@@ -633,72 +633,61 @@ chromaticity.
 % =================================
 \subsubsection{Ratios}
 
-Simulation results are shown in \cref{tab:high_orders:ptc_values}.
+Previous simulation results are shown in \cref{tab:high_orders:ptc_values}, taking the values from 
+the simulation including the most effects at the top of the plots.
 \cref{tab:high_orders:ptc_values_ratios} shows the ratio between the measured and simulated fifth
 order. The measured $Q^{(5)}$ shows a consistent discrepancy with the model, larger by about
 a factor 2.
 
+
 \begin{table}[!htb]
-    \centering
-    \begin{tabular}{lrr}
+  \centering
+  \begin{tabular}{lrr}
+  \toprule
+      Plane     &  $Q^{(4)} [10^9]$  &  $Q^{(5)} [10^{12}]$ \\
+  \midrule
+      Beam 1    &              &               \\
+      \hspace{2mm}X         & $-0.29 \pm 0.02$ & $ 0.90 \pm 0.05$  \\
+      \hspace{2mm}Y         & $ 0.04 \pm 0.01$ & $-0.46 \pm 0.03$  \\
+      Beam 2    &  &   \\
+      \hspace{2mm}X         & $-0.31 \pm 0.02$ & $ 0.92 \pm 0.03$ \\
+      \hspace{2mm}Y         & $ 0.05 \pm 0.00$ & $-0.45 \pm 0.01$ \\
+  \bottomrule
+  \end{tabular}
+  \caption{Simulated high order chromaticity terms via PTC at injection energy, including normal and
+  skew sextupolar to decahexapolar field errors. Are also included beta-beating, coupling and
+  decatetrapolar decay. For the fourth order, the values do not include beta-beating as the observed
+  spread is not yet fully understood.}
+  \label{tab:high_orders:ptc_values}
+\end{table}
+
+
+\begin{table}[!htb]
+  \centering
+  \footnotesize
+  \begin{tabular}{lcccc}
     \toprule
-        Plane     &  $Q^{(4)} [10^9]$  &  $Q^{(5)} [10^{12}]$ \\
+                    &  \multicolumn{2}{c}{$Q^{(4)}$ Ratio}   &  \multicolumn{2}{c}{$Q^{(5)}$ Ratio} \\
+    \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+      Plane         & First Meas.  & Second Meas.& First Meas.& Second Meas. \\ 
     \midrule
-        Beam 1    &              &               \\
-        \hspace{2mm}X         & $-0.2 \pm 0.1$ & $ 0.7 \pm 0.1$ \\
-        \hspace{2mm}Y         & $ 0.1 \pm 0.1$ & $-0.3 \pm 0.1$  \\
-        Beam 2    &  &   \\
-        \hspace{2mm}X         & $-0.2 \pm 0.1$ & $ 0.8 \pm 0.1$  \\
-        \hspace{2mm}Y         & $ 0.1 \pm 0.1$ & $-0.4 \pm 0.1$ \\
-    \bottomrule
-    \end{tabular}
-    \caption{Simulated high order chromaticity terms via PTC, including field errors from normal
-    sextupole to decahexapole with the previous beam-based corrections.}
-    \label{tab:high_orders:ptc_values}
-  \end{table}
-
-\begin{table}[!htb]
-    \centering
-    \footnotesize
-    \begin{tabular}{|l||c|c|c|c|}
-    \hline
-        Plane     &  \multicolumn{2}{c|}{$Q^{(4)}$ ratio}   &  \multicolumn{2}{c|}{$Q^{(5)}$ ratio} \\
-        \cline{2-5}
-        Measurement &   first    &    second   &    first   &    second\\ \hline\hline
-        Beam 1    &              &             &            & \\
-        X         &  3.2 ± 0.3   & 3.6 ± 0.3  & 1.8 ± 0.1  & 1.8 ± 0.1  \\
-        Y         &  7.9 ± 2.0   & 2.1 ± 1.1   & 2.7 ± 0.3  & 1.7 ± 0.1  \\ \hline
-        Beam 2    &              &             &            & \\ 
-        X         &              & 4.3 ± 0.4   &            & 1.6 ± 0.1  \\
-        Y         &  18 ± 5      & 12 ± 3      & 2.2 ± 0.4  & 1.9 ± 0.2 \\ \hline
-    \end{tabular}
-    \caption{Ratios of the simulated and measured high order chromaticity terms for both first and
-    second measurements.  The values are taken from tables \ref{chroma_fidel},
-    \ref{chroma_table_after} and \ref{ptc_values}. The fit with high correlation was not included.}
-    \label{ptc_values_ratios}
-\end{table}
-
-\begin{table}[!htb]
-    \centering
-    \begin{tabular}{lcc}
-      \toprule
-                  &  \multicolumn{2}{c}{$Q^{(5)}$ ratio} \\
-        Plane     &    First Meas.   &   Second Meas.\\
-      \midrule
-        Beam 1   &            & \\
-        \hspace{2mm}X   & $1.8 \pm 0.1$ & $1.8 \pm 0.1$  \\
-        \hspace{2mm}Y   & $2.7 \pm 0.3$ & $1.7 \pm 0.1$  \\
-        Beam 2    &     & \\ 
-        \hspace{2mm}X   &               & $1.6 \pm 0.1$  \\
-        \hspace{2mm}Y   & $2.2 \pm 0.4$ & $1.9 \pm 0.2$  \\
+      Beam 1        &           &             &            & \\
+      \hspace{2mm}X &  $1.91\pm0.15$ & $2.15\pm0.17$    & $1.33\pm0.10$  & $1.35\pm0.09$   \\
+      \hspace{2mm}Y &  $3.50\pm0.90$ & $0.90\pm0.50$    & $1.91\pm0.22$  & $1.21\pm0.11$   \\
+      Beam 2        &                   &               &     & \\
+      \hspace{2mm}X &                & $4.90\pm1.00$    &                & $1.17\pm0.08$   \\
+      \hspace{2mm}Y &  $1.90\pm0.12$ & $3.30\pm0.50$    & $1.65\pm0.29$  & $1.47\pm0.12$   \\
       \bottomrule
-    \end{tabular}
-    \caption{Ratios of the measured to simulated fifth order chromaticity term for both first and
-    second measurements.  The values are taken from tables~\cref{tab:high_orders:chroma_fidel},
-    \ref{tab:high_orders:chroma_table_after} and \cref{tab:high_orders:ptc_values}. The fit with
-    high correlation was not included.}
-    \label{tab:high_orders:ptc_values_ratios}
+  \end{tabular}
+  \caption{Ratios of the simulated and measured high order chromaticity terms for both the first and
+  second performed measurements. The values are taken from tables
+  \cref{tab:high_orders:chroma_fidel}, \cref{tab:high_orders:chroma_table_after} and
+  \cref{tab:high_orders:ptc_values}. The fit with high correlation between both terms is not
+  included.}
+  \label{tab:high_order:ptc_values_ratios}
 \end{table}
+
+
 
 \todo{say why Q4 weird?}
 
