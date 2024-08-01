@@ -107,6 +107,7 @@
     \clearfield{pages}%
 }
 \addbibresource{library.bib}  % better than \bibliography
+\addbibresource{manual-library.bib}  % manually added references
 \usepackage{csquotes}  % Changes the quotestyle depending on the language, useful for bibliography
 
 % Flipbook
@@ -322,9 +323,11 @@ afterskip=2cm]{chapter}
 % Remove the dots and put the number right next to the text
 % Not for chapters
 \RedeclareSectionCommands[
-  toclinefill=\hspace{1em}/,  % set the distance between the text and page number
+  toclinefill=\hspace{1em}/\hspace{1em},  % set the distance between the text and page number
+  tocpagenumberbox=\raggedleft,  % align the page number left, to have the same space before and after the /
   tocraggedpagenumber=true,  % unforce the pagenumber to be justified right
 ]{section,subsection,subsubsection,paragraph,subparagraph}
+
 
 
 
