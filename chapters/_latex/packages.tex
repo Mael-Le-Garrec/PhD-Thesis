@@ -111,13 +111,21 @@
 \usepackage{csquotes}  % Changes the quotestyle depending on the language, useful for bibliography
 
 % Flipbook
-\usepackage{flipbook}
-%\cfoot*{
-%  \flipbookframe[1][1]{../flipbook/frames/frame_}[pgf][0.2]
-%  % start frame
-%  % speed of the animation per page
-%  % scale
-%}
+\usepackage{chapters/_latex/flipbook}
+% Footer with the flipbook and pagemarks
+\rofoot*{% Odd pages footer aligned to right
+  \flipbookframe[1][1]{../flipbook/frames/frame_}[pgf][0.2]%
+    % start frame
+    % speed of the animation per page
+    % scale
+  \quad%
+  \pagemark
+  }
+\lefoot*{% Even pages footer aligned to left
+  \pagemark%
+  \quad%
+  \flipbookframe[1][1]{../flipbook/frames/frame_}[pgf][0.2]%
+} 
 
 
 % To have big numbers at the start of each chapter
@@ -171,9 +179,6 @@
 % Vertical space before chapters
 \RedeclareSectionCommand[beforeskip=5pt,
 afterskip=2cm]{chapter}
-
-% Fancy chapter headings, needs to be loaded after geometry
-%\usepackage[Bjornstrup]{fncychap}  % issues a lot of warnings with scrbook, replaced in commands below
 
 % Factor spacing between lines
 \linespread{1.1}

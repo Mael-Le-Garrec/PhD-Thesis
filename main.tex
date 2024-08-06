@@ -11,9 +11,6 @@
 % Glossary stuff
 \input{chapters/glossary/entries.tex}
 
-
-\date{}
-
 % ===========================================================================
 
 \begin{document}
@@ -25,57 +22,54 @@
 % =================================================
 %           Stuff at the very beginning
 % =================================================
-\frontmatter  % use roman numerals here
-
-%\include{chapters/00_Preamble/00_title_page}
+\frontmatter  % use roman numerals here for pages
+\include{chapters/00_Preamble/00_title_page}
 %\include{chapters/00_Preamble/_plan}  % That's just a todo list basically
-%\include{chapters/00_Preamble/01_quote}
-%\include{chapters/00_Preamble/02_abstract}
-%\include{chapters/00_Preamble/03_zusammenfassung}
+\include{chapters/00_Preamble/01_quote}
+\include{chapters/00_Preamble/02_abstract}
+\include{chapters/00_Preamble/03_zusammenfassung}
 
 
-% ===========================================================================
-%                  Acknowledgements
-% ===========================================================================
-%\include{chapters/00_Preamble/04_acknowledgements}
+% =================================================
+%               Acknowledgements
+% =================================================
+\include{chapters/00_Preamble/04_acknowledgements}
 
 
+% =================================================
+%               Table of Contents
+% =================================================
+\setcounter{tocdepth}{2}  set it back to 2 for the final version
+\setcounter{tocdepth}{5}
+\addcontentsline{toc}{chapter}{Contents}
+\tableofcontents
 
 
-
-% ===========================================================================
-%                  Table of Contents
-% ===========================================================================
-%\setcounter{tocdepth}{2}  set it back to 2 for the final version
-%\setcounter{tocdepth}{5}
-%\addcontentsline{toc}{chapter}{Contents}
-%\tableofcontents
-
+% =================================================
+%                    Glossary
+% =================================================
 % Glossary
-%\include{chapters/00_Preamble/05_glossary}
-
+\include{chapters/00_Preamble/05_glossary}
 
 
 % =================================================
 %                    Chapters
 % =================================================
-\mainmatter
-
+\mainmatter  % back to arabic numbers
 %\include{chapters/04_to_delete/00_old_text}
-%\include{chapters/01_Introduction/00_introduction.tex}
-%\include{chapters/02_Background/00_background}
-%\include{chapters/03_Optics_Measurements_Corrections/00_optics}
-%\include{chapters/05_Decapoles/00_decapoles}
+\include{chapters/01_Introduction/00_introduction.tex}
+\include{chapters/02_Background/00_background}
+\include{chapters/03_Optics_Measurements_Corrections/00_optics}
+\include{chapters/05_Decapoles/00_decapoles}
 \include{chapters/06_high_order_chroma/00_chroma}
-%\include{chapters/07_octupoles/00_octupoles}
+\include{chapters/07_octupoles/00_octupoles}
 
 
 % =================================================
 %                    Appendices
 % =================================================
-
-%\include{chapters/99_appendices/00_appendix}
-%\include{chapters/99_appendices/01_bibliography}
-%\include{chapters/99_appendices/02_list_publications}
+\include{chapters/99_appendices/00_appendix}
+\include{chapters/99_appendices/01_bibliography}
+\include{chapters/99_appendices/02_list_publications}
 
 \end{document}
