@@ -118,12 +118,16 @@
     % start frame
     % speed of the animation per page
     % scale
-  \quad%
-  \pagemark
-  }
+  \parbox{30pt}{%
+    \raggedleft%
+    \pagemark%
+  }%
+}
 \lefoot*{% Even pages footer aligned to left
-  \pagemark%
-  \quad%
+  \parbox{30pt}{%
+    \raggedright%
+    \pagemark%
+  }%
   \flipbookframe[1][1]{../flipbook/frames/frame_}[pgf][0.2]%
 } 
 
