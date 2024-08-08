@@ -27,7 +27,6 @@
 %\usepackage{lmodern}  % font based on Computer Modern for the whole doc
 % ==
 
-
 \usepackage{wasysym}
 \usepackage{enumitem}  % to define new lists
 \usepackage{tikz}  % for drawing figures by code
@@ -36,7 +35,6 @@
 \usepackage{caption}
 \usepackage{ragged2e}
 \usepackage{atveryend}
-%\usepackage{subfigure} (???)
 \usepackage{subcaption}
 \usepackage{pgf}  % fileformat for the flipbook
 \usepackage{xcolor,soul}
@@ -47,7 +45,6 @@
 \usepackage{setspace}
 \usepackage[english]{babel}
 \usepackage{float}
-%\usepackage[subfigure]{tocloft}
 \usepackage{titletoc}
 \usepackage{etoc}  % local tables of content
 \usepackage{imakeidx}
@@ -56,7 +53,6 @@
 \usepackage[automark]{scrlayer-scrpage} % for headers and footers
 \usepackage{scrhack}  % to remove some warnings
 \usepackage{blindtext}
-%\usepackage{unicode-math} % Setup an unicode font for regular typing and for maths  // clashes with OverBrace from nicematrix
 \usepackage{amsmath}
 \usepackage{mathtools}  % for some functions, like DeclarePairedDelimiter
 \usepackage{svg}
@@ -132,36 +128,6 @@
 %} 
 
 
-% To have big numbers at the start of each chapter
-%\definecolor{gray75}{gray}{0.75}
-%\newcommand{\hsp}{\hspace{0pt}}
-%\titleformat{\chapter}[hang]
-%    {\flushright\fontseries{b}\fontsize{80}{100}\selectfont}
-%    {\fontseries{b}\fontsize{100}{130}\selectfont \textcolor{gray75}\thechapter\hsp}
-%    {0pt}
-%    {\\ \Huge\bfseries}[]
-%
-%% Same but un-numbered
-%\titleformat{name=\chapter, numberless}[hang]
-%    {\flushright\fontseries{b}\fontsize{80}{100}\selectfont}
-%    {\fontseries{b}\fontsize{100}{130}\selectfont \textcolor{gray75}\hsp}
-%    {0pt}
-%{\\ \Huge\bfseries}[]
-%
-%% And now the other titles
-%\titleformat{\section}
-%{\normalfont\Large\bfseries}{\thesection}{1em}{}
-%\titleformat{\subsection}
-%{\normalfont\large\bfseries}{\thesubsection}{1em}{}
-%\titleformat{\subsubsection}
-%{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
-%\titleformat{\paragraph}[runin]
-%{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
-%\titleformat{\subparagraph}[runin]
-%{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
-
-
-
 % ===========================================================================
 %                            SOME OPTIONS
 % ===========================================================================
@@ -211,8 +177,9 @@ afterskip=2cm]{chapter}
 % This prevents it
 %\raggedbottom
 
+
 % ===========================================================================
-%                            SOME COMMANDS
+%                            Some commands
 % ===========================================================================
 
 % Create a \tightlight command for itemize environments to have the bullet points closer together
@@ -261,47 +228,10 @@ afterskip=2cm]{chapter}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 
-% Nice looking chapters
-%\renewcommand*{\chapterformat}{\thechapter}
-%\renewcommand*{\raggedchapter}{\raggedleft}
-%\setkomafont{chapter}{\LARGE}
-%\setkomafont{chapterprefix}{\Huge}
-%\newcommand*{\ChapterCase}[1]{#1}
-%%\newcommand*{\ChapterCase}[1]{\MakeUppercase{#1}}%  ugly
-%%\newcommand*{\ChapterCase}[1]{\MakeUppercase{\textls[75]{#1}}}% better
-%\newsavebox\chapternumberbox
-%\renewcommand*{\chapterlinesformat}[3]{% #1 = chapter command name
-%                                       % #2 = number (or empty)
-%                                       % #3 = text
-%  \rule[-\dp\strutbox]{\linewidth}{.4pt}%
-%  \sbox\chapternumberbox
-%  {%
-%    \makebox[0pt][l]{%
-%      \hspace{-\linewidth}\hspace{.5em}%
-%      \colorbox{black}{%
-%        \parbox[c][1.5em][c]{1.5em}{%
-%          \centering
-%          \textcolor{white}{%
-%            \usekomafont{chapterprefix}{%
-%              \strut #2%
-%            }%
-%          }%
-%          \par
-%        }%
-%      }%
-%    }%
-%  }%
-%  \IfArgIsEmpty{#2}{%
-%    \vphantom{\usebox\chapternumberbox}%
-%  }{\usebox\chapternumberbox}%
-%  \par
-%  \ChapterCase{\strut\ignorespaces #3}%
-%  \rule[.5em]{\linewidth}{.4pt}\par
-%}
 
-% =====================
-%        Fonts
-% =====================
+% ===========================================================================
+%                                Fonts
+% ===========================================================================
 % Font for the main title, chapter and sections titles
 \newfontfamily{\chapterfont}{Tex Gyre Adventor}
 \newfontfamily{\subtitlefont}{Tex Gyre Adventor}
@@ -339,10 +269,9 @@ afterskip=2cm]{chapter}
 
 
 
-
-% ============================
-%    Nice looking chapters
-% ============================
+% ===========================================================================
+%                      Nice looking chapters headings
+% ===========================================================================
 \renewcommand*{\chapterformat}{\thechapter}
 \renewcommand*{\raggedchapter}{\raggedleft}
 \newcommand*{\ChapterCase}[1]{#1}
