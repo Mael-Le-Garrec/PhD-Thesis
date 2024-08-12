@@ -4,16 +4,136 @@
 %\chaptertoc{}
 %\newpage
 
+
+%=============================
+%        Introduction
+%=============================
+\section{\todo{Introduction}}
+
+The skew octupolar fields in the LHC have previously been identified as significant contributors to 
+limits in forced dynamic aperture, being the dynamic aperture when kicking the beam with the
+AC-Dipole~\cite{carlier_nonlinear_2020}. The skew octupolar correctors are positioned around the
+ATLAS and CMS detectors, in Interaction Regions 1 and 5. Those correctors are \textit{common
+aperture} magnets ; both beams are affected by the created magnetic fields. Unfortunately, one of
+these four correctors, located to the left of ATLAS, is not functioning. As a result, although
+corrections can be calculated, they will not effectively minimize the skew octupolar RDTs of
+interest, $f_{1012,y}$ and $f_{1210,x}$. Their associated resonances are respectively $1Q_x - 1Q_y$
+and $-1Q_x - 1Q_y$, observable at $-1Q_x + 2Q_y$ in the vertical spectrum and $2Q_x -1Q_y$ in the
+horizontal spectrum. Both RDTs also contribute to the coupling lines $1Q_y$ or $1Q_x$.
+
+
+%=============================
+%         Top Energy
+%=============================
 \section{\todo{Corrections at Top Energy}}
+
+The very first skew octupolar RDT corrections in the LHC were made in 2018 during
+Run~2~\cite{carlier_nonlinear_2020}. Those corrections were computed by simulating the impact on
+each corrector on the measured values, thus scanning the strengths of the correctors. This is
+possible and remains viable as only three are used.
+In this section, a different approach is taken, based on response matrices. This type of correction
+is explained in details in \cref{correction_principle:response_matrix}. The real and imaginary 
+responses of the RDTs for each corrector at a given strength are simulated through tracking.  These
+responses are collected into a matrix, allowing the determination of the required strengths to match
+the RDT level observed in the measurements. Inverting these values result in a correction.
+
+
+
+%-----------------------------
+%     Correctors Response
+%-----------------------------
+\subsection{\todo{Correctors Response}}
+
+To create a response matrix, simulations were conducted with the tunes and AC-Dipole deltas set to
+those used for measurements. The natural tunes are $Q_x = 0.285$ and $Q_y = 0.292$ while the driven
+tunes are $\Delta Q_x = -0.008$ and $\Delta Q_y = 0.01$.  Each corrector is then powered
+individually for each tracking simulation. For this type of simulation, field errors are not
+necessary, as only the RDT shift caused by the corrector relative to the baseline is needed.
+\Cref{fig:skew_octupolar:response_correctors} shows the real part of the resulting RDTs from these
+simulations for Beam 1. Beam 2 shows a similar level of response for these correctors.
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}{0.8\textwidth}
+        \includegraphics[width=\textwidth]{./images/f1012_b1_correctors.pdf}
+        \caption{$f_{1012,y}$}
+    \end{subfigure}
+    \par\bigskip 
+    \begin{subfigure}{0.8\textwidth}
+        \includegraphics[width=\textwidth]{./images/f1210_b1_correctors.pdf}
+        \caption{$f_{1210,x}$}
+    \end{subfigure}
+    \caption{Simulation of the RDT response of the skew octupolar correctors at top energy for Beam
+    1. Each corrector is powered at $J_4 = 1 [\text{m}^{-4}]$.}
+    \label{fig:skew_octupolar:response_correctors}
+\end{figure}
+
+
+
+%-----------------------------
+%         Correction
+%-----------------------------
+\subsection{\todo{Measurements and Corrections}}
+
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]{./images/f1012_b1.pdf}
+        \caption{$f_{1012,y}$ Beam 1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]{./images/f1012_b2.pdf}
+        \caption{$f_{1012,y}$ Beam 2}
+    \end{subfigure}
+    %
+    \par\bigskip 
+    % 
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]{./images/f1210_b1.pdf}
+        \caption{$f_{1210,x}$ Beam 1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]{./images/f1210_b2.pdf}
+        \caption{$f_{1210,x}$ Beam 2}
+    \end{subfigure}
+    \caption{Measured skew octupolar RDTs at top energy and $\beta^*=30\text{cm}$ before and after
+    correction. A reduction if observed for all but one RDT in Beam 2.} 
+    \label{fig:skew_octupolar:corrections_vs_bare}
+\end{figure}
+
+
+\begin{table}[!htb]
+    \centering
+    \begin{tabular}{lr}
+      \toprule
+      Corrector    &    Strength $[\text{m}^{-4}]$ \\
+      \midrule
+      MCOSX3.L1    &                —  \\
+      MCOSX3.R1    &           $-0.50$ \\
+      MCOSX3.L5    &           $ 0.42$ \\
+      MCOSX3.R5    &           $-0.01$ \\
+      \bottomrule
+    \end{tabular}
+    \caption{Computed corrections for skew octupolar RDTs at top energy. The corrector L1 has been 
+    broken for several years and can not be used.}
+    \label{tab:skew_octupolar:correction_strengths}
+  \end{table}
+  
+
+
 
 \begin{enumerate}
     \color{red}
-    \item RDT Measurements
-    \item Orthogonality of correctors
-    \item Response Matrix
-    \item Correction
+    \item √ RDT Measurements
+    \item Orthogonality of correctors -> addition of L5 and R5
+    \item √ Response Matrix
+    \item √ Correction
     \item Comparison to 2018
 \end{enumerate}
+
 
 
 %\section{\todo{Correction of Skew Octupole Fields at Injection Energy}}
@@ -32,6 +152,11 @@
 
 
 
+\section{\todo{Landau Octupoles Contribution}}
 
 
-\section{\todo{Skew Octupolar Fields from Landau Octupoles}}
+
+%=============================
+%        Conclusion
+%=============================
+\section{Summary}
