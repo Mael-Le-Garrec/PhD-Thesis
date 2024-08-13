@@ -17,10 +17,25 @@ ATLAS and CMS detectors, in Interaction Regions 1 and 5. Those correctors are \t
 aperture} magnets ; both beams are affected by the created magnetic fields. Unfortunately, one of
 these four correctors, located to the left of ATLAS, is not functioning. As a result, although
 corrections can be calculated, they will not effectively minimize the skew octupolar RDTs of
-interest, $f_{1012,y}$ and $f_{1210,x}$. Their associated resonances are respectively $1Q_x - 1Q_y$
-and $-1Q_x - 1Q_y$, observable at $-1Q_x + 2Q_y$ in the vertical spectrum and $2Q_x -1Q_y$ in the
-horizontal spectrum. Both RDTs also contribute to the coupling lines $1Q_y$ or $1Q_x$.
+interest, $f_{1012,y}$ and $f_{1210,x}$. 
+Their associated resonances and frequency lines are shown in
+\cref{tab:skew_octupolar:resonances_rdts}.
 
+\begin{table}[!htb]
+    \centering
+    \begin{tabular}{lccc}
+      \toprule
+      RDT         & Resonance                &  H-line                    & V-line         \\
+      \midrule
+      $f_{1012}$  & $\phantom{-}1Q_x - 1Q_y$ &  $\phantom{2Q_x-\ \,}1Q_y$ & $-1Q_x + 2Q_y$ \\
+      $f_{1210}$  & $-1Q_x + 1Q_y$           &  $2Q_x - 1Q_y$             & $\phantom{-}1Q_x\phantom{+2Q_y\ \,}$    \\
+      \bottomrule
+    \end{tabular}
+    \caption{Skew octupolar RDTs of interest, their associated resonances and the frequency spectrum
+    lines they contribute to.}
+    \label{tab:skew_octupolar:resonances_rdts}
+\end{table}
+  
 
 %=============================
 %         Top Energy
@@ -68,7 +83,29 @@ simulations for Beam 1. Beam 2 shows a similar level of response for these corre
     \label{fig:skew_octupolar:response_correctors}
 \end{figure}
 
+It can already be seen that the L5 and R5 correctors show a similar trend along the ring, with L5
+showing a stronger response for the same strength, while the R1 corrector follows the opposite
+trend. A polar plot at a given BPM can illustrate that trend, and be used to create manual
+corrections. \Cref{fig:skew_octupolar:response_correctors_polar} shows the orthogonality of the
+correctors for both beams and RDTs. L5 being stronger than R5 while having the same angle indicates
+that only one of them is needed for corrections.
 
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}{0.8\textwidth}
+        \includegraphics[width=\textwidth]{./images/orthogonal_a4_inj_f1012_y.pdf}
+        \caption{$f_{1012,y}$}
+    \end{subfigure}
+    \par\bigskip 
+    \begin{subfigure}{0.8\textwidth}
+        \includegraphics[width=\textwidth]{./images/orthogonal_a4_inj_f1210_x.pdf}
+        \caption{$f_{1210,x}$}
+    \end{subfigure}
+    \caption{Simulated RDTs response of the available skew octupolar correctors at top energy.  Each
+    corrector is powered at $J_4 = 1 [\text{m}^{-4}]$. The orthogonality of R1 and L5/R5 allows to
+    independently control the real and imaginary parts.}
+    \label{fig:skew_octupolar:response_correctors_polar}
+  \end{figure}
 
 %-----------------------------
 %         Correction
