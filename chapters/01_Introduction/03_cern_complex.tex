@@ -97,12 +97,12 @@ $11,200$ times per second.
 
 % -------------------------------
 %   Straight Sections and Arcs
-\subsubsection{Straight Sections and Arcs}
+\subsubsection{\mread{Straight Sections and Arcs}}
 
 The LHC is not a perfect circle. It is indeed composed of four \textit{straight} sections, called
-the \textit{Interaction Regions} (IPs) where detectors or specific instrumentation are placed. Connecting
-those sections, the \textit{arcs} are where the majority of the magnets and their correctors are
-located along with some instrument like beam position monitors.
+the \textit{Interaction Regions} (IPs) where detectors or specific instrumentation are placed.
+Connecting those sections, the \textit{arcs} are where the majority of the magnets and their
+correctors are located, along with some instrumentation like beam position monitors.
 \cref{fig:introduction:lhc_irs} shows the arcs as well as the purpose of each straight section,
 housing either specific instrumentation or detectors.
 
@@ -116,21 +116,21 @@ housing either specific instrumentation or detectors.
 
 % -------------------------------
 %          Arc Cells
-\subsubsection{Arc Cells}
+\subsubsection{\mread{Arc Cells}}
 
-Each arc is made up of 23 cells. Magnets are organized in a standard FoDo structure
-(see \ref{section:courant_snyder}), as shows \cref{fig:introduction:lhc_arc_cell}.
+Each arc is made up of 23 cells. Magnets are organized in a standard FODO structure
+(see \ref{section:courant_snyder}), as shown in \cref{fig:introduction:lhc_arc_cell}.
 \textit{Dipoles} are responsible for bending the trajectory of the particles. Their associated
-correctors, the orbit correctors, mitigate any possible drift in path.
+correctors, the orbit correctors, mitigate any possible drift in the path.
 \textit{Quadrupoles} are used to control the beam size along the ring. Their effect is focusing in
 one plane and defocusing in the other. Their associated correctors control the oscillations of the
 beam (see tune, \ref{section:courant_snyder}) and possible field imperfections.
-\textit{Sextupoles} correct chromaticity, being a misfocus from quadrupoles due to particles having
+\textit{Sextupoles} correct chromaticity, a misfocus from quadrupoles due to particles having
 a different momentum than the reference particle.
 \textit{Octupoles} are used to stabilize the beam by introducing Landau
-Damping~\cite{gareyte_landau_1997}. The associated correctors correct higher order chromaticity
-effects as well as amplitude dependant tune shifts.
-\textit{Decapoles} correctors aim at correcting a even higher chromaticity order.
+Damping~\cite{gareyte_landau_1997}. The associated correctors correct higher-order chromaticity
+effects as well as amplitude-dependant tune shifts.
+\textit{Decapoles} correctors aim at correcting an even higher chromaticity order.
 
 \begin{figure}[H]
     \centering
@@ -143,28 +143,27 @@ effects as well as amplitude dependant tune shifts.
 
 % -------------------------------
 %            Cycles
-\subsubsection{\review{Cycles}}
+\subsubsection{\mread{Cycles}}
 
-During the operation of the LHC, the machine goes through several states. Those states of the
-machine~\cite{wenniger_lhc_2019} have been defined for specific scenarios.
+During the operation of the LHC, the machine goes through several states, each defined for specific 
+scenarios~\cite{wenniger_lhc_2019}.
 
-A common example is the operational cycle of the LHC, shown in \cref{fig:cern_complex:cycle}. The
-magnets are first pre-cycled~\cite{bottura_pre-cycles_2010} without any beam circulating, to get
-them back to a reproducible state. Their current is then increased to accept particles at the 
-injection energy of 450GeV. In order to assess the good working condition of the machine, a probe
-bunch of reduced intensity is first injected. The number of bunches and their intensity is then
-ramped up to attain the desired scheme needed for collisions. This scheme varies throughout the year
-depending on the demands of the experiments. The number of bunches and intensity can also be lowered
-to keep the machine safe. A common scheme in 2024 is to inject about 2350 bunches with around
-$10^{11}$ particles each for collisions.
-Optics measurements, due to their destructive nature, typically use between one and three
-\textit{pilot} bunches at a lower intensity of $10^{10}$.
+A common example is the operational cycle of the LHC, illustrated in \cref{fig:cern_complex:cycle}.
+Initially, the magnets are pre-cycled~\cite{bottura_pre-cycles_2010} without any beam circulating,
+to get them back to a reproducible state. Their current is then increased to accept particles at the
+injection energy of 450GeV.  To verify the machine's proper functioning, a probe bunch of reduced
+intensity is first injected The number of bunches and their intensity are then gradually increased
+to attain the desired scheme needed for collisions, which varies throughout the year based on
+experimental demands. The number of bunches and their intensity can be adjusted as needed to ensure
+the machine's safety. A common scheme in 2024 is to inject about 2350 bunches with around $10^{11}$
+particles each for collisions.  Optics measurements, due to their destructive nature, typically use
+between one and three \textit{pilot} bunches at a lower intensity of $10^{10}$ particles.
 
-The magnets current is them ramped along with the voltage injected in the RF system, to accelerate
-particles to an energy of 6.8TeV. While doing so, the beam is squeezed in a first pass at the
-Interaction Points. A second pass is done after the ramp is over, to reach a $\beta* = 30cm$ at the
-ATLAS and CMS experiments to achieve a small beam size. Crossing-angles are then introduced to make
-the beams colliding.
+The magnets' current is then ramped along with the voltage in the RF system, to accelerate particles
+to an energy of 6.8 TeV. During this process, the beam is first squeezed at the Interaction Points.
+After completing the ramp-up, a second pass is performed to achieve a $\beta* = 30$cm at the ATLAS
+and CMS experiments, resulting in a smaller beam size. Crossing-angles are then introduced to make
+the beams collide.
 
 \begin{figure}[!htb]
     \includegraphics[width=\textwidth]{./images/lhc_cycle.pdf}
