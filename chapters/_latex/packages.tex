@@ -56,8 +56,10 @@
 \usepackage{amsmath}
 \usepackage{mathtools}  % for some functions, like DeclarePairedDelimiter
 \usepackage{svg}
+\usepackage{multirow}
 \usepackage{wrapfig}
 \usepackage{nicematrix}
+\usepackage{placeins} % for the \FloatBarrier
 \usepackage{arydshln}  % dashed lines in tables
 \usepackage[
   height={2cm},
@@ -220,6 +222,8 @@ afterskip=2cm]{chapter}
 \newcommand*{\todo}[1]{{\bfseries\color{red}#1}}
 % To be reviewed in orange
 \newcommand*{\review}[1]{{\bfseries\color{orange}#1}}
+% Machine proofread
+\newcommand*{\mread}[1]{{\bfseries\color{olive}#1}}
 % OK in green
 \newcommand*{\done}[1]{{\bfseries\color{green}#1}}
 
