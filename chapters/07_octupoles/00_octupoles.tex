@@ -1,7 +1,7 @@
 \chapter{\todo{Skew Octupolar Fields}}
 \label{chapter:skew_octupole_fields}
 \thumbforchapter{}
-%\chaptertoc{}
+\chaptertoc{}
 %\newpage
 
 
@@ -36,6 +36,11 @@ Their associated resonances and frequency lines are shown in
     \label{tab:skew_octupolar:resonances_rdts}
 \end{table}
   
+Measurements were taken at top energy and corrections computed for both beams, while measurements at
+injection showed unexpected behavior coming from the Landau octupoles.
+
+
+
 
 %=============================
 %         Top Energy
@@ -53,11 +58,10 @@ responses are collected into a matrix, allowing the determination of the require
 the RDT level observed in the measurements. Inverting these values result in a correction.
 
 
-
 %-----------------------------
 %     Correctors Response
 %-----------------------------
-\subsection{\review{Correctors Response}}
+\subsection{\review{Correctors}}
 
 To create a response matrix, simulations were conducted with the tunes and AC-Dipole deltas set to
 those used for measurements. The natural tunes are $Q_x = 0.285$ and $Q_y = 0.292$ while the driven
@@ -105,7 +109,7 @@ that only one of them is needed for corrections.
     corrector is powered at $J_4 = 1 [\text{m}^{-4}]$. The orthogonality of R1 and L5/R5 allows to
     independently control the real and imaginary parts.}
     \label{fig:skew_octupolar:response_correctors_polar}
-  \end{figure}
+\end{figure}
 
 
 
@@ -114,7 +118,37 @@ that only one of them is needed for corrections.
 %-----------------------------
 \subsection{\todo{Measurements and Corrections}}
 
+Initial measurements of the machine at top energy ($\beta^*=30$cm) without any skew octupolar
+correctors were done during an MD slot in 2022 to determine the level of the RDTs before being able
+to correct them. Those measurements were made at natural tunes of $Q_x = 0.285$ and $Q_y = 0.292$.
+The driven tunes were set to $\Delta Q_x = -0.008$ and $\Delta Q_y = 0.01$. This selection of tunes
+has proven to be appropriate for measuring skew octupolar RDTs. The Landau octupoles were powered
+off during the measurements. 
 
+The corrections were computed via the previously detailed response matrix and are shown in
+\cref{tab:skew_octupolar:correction_strengths}. These have then been applied during 2023's
+commissioning. The base RDT and the associated corrections are shown in
+\cref{fig:skew_octupolar:corrections_vs_bare}. It can be observed that both RDTs are reduced, with
+the exception of $f_{1210,x}$ for Beam 2, which stays constant.
+
+
+\begin{table}[!htb]
+    \centering
+    \begin{tabular}{lr}
+      \toprule
+      Corrector    &    Strength $[\text{m}^{-4}]$ \\
+      \midrule
+      MCOSX3.L1    &                —  \\
+      MCOSX3.R1    &           $-0.50$ \\
+      MCOSX3.L5    &           $ 0.42$ \\
+      MCOSX3.R5    &           $-0.01$ \\
+      \bottomrule
+    \end{tabular}
+    \caption{Computed corrections for skew octupolar RDTs at top energy. The corrector L1 has been 
+    broken for several years and can not be used.}
+    \label{tab:skew_octupolar:correction_strengths}
+\end{table}
+ 
 \begin{figure}[!htb]
     \centering
     \begin{subfigure}{0.49\textwidth}
@@ -144,46 +178,137 @@ that only one of them is needed for corrections.
 \end{figure}
 
 
+%=============================
+%    Landau Contribution
+%=============================
+\FloatBarrier
+\section{\todo{Landau Octupoles}}
+
+\begin{enumerate}
+    \color{red}
+    \item √ Measurement with MO -> see a4
+    \item √ Simulation with misalignments
+    \item Simulation with varying coupling
+    \item Simulation with coupling -> responses
+    \item ???
+\end{enumerate}
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}{0.8\textwidth}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/f1012_all_measurements.pdf}
+    \end{subfigure}
+    \caption{Unexpected difference of skew octupolar RDT with varying Landau octupoles strengths.}
+    \label{fig:skew_octupolar:mo_different_levels_meas}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}{0.8\textwidth}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/f1012_meas_vs_sim_0shift.pdf}
+        %\caption{$f_{1012,y}$}
+    \end{subfigure}
+    \caption{Measured and simulated shift of skew octupolar RDT after increase of Landau octupoles
+    strength from zero. It is apparent that the shift in measurement is not replicated by the
+    simulation.}
+    \label{fig:skew_octupolar:mo_meas_vs_sim_+2}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}{0.8\textwidth}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/f1012_misalign_REAL.pdf}
+        %\caption{$f_{1012,y}$}
+    \end{subfigure}
+    \caption{Simulated skew octupolar RDT with normal and skew octupolar errors. One simulation
+    includes further alignment errors on the Landau octupoles, powered at their nominal setting. No 
+    significant difference is observed between the two.}
+    \label{fig:skew_octupolar:sim_misalign}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}{0.8\textwidth}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/f1012_coupling_sim_AMP.pdf}
+        %\caption{$f_{1012,y}$}
+    \end{subfigure}
+    \caption{Simulated skew octupolar RDT with fixed Landau octupole strength but varying coupling.
+    Selected coupling values are often seen in operation.}
+    \label{fig:skew_octupolar:sim_coupling}
+\end{figure}
+
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}{0.47\textwidth}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1012_response_meas_sim_+5_REAL.pdf}
+        \caption{$f_{1012,y}$ for $K_4 = +5$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.47\textwidth}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1210_response_meas_sim_+5_REAL.pdf}
+        \caption{$f_{1210,x}$ for $K_4 = +5$}
+    \end{subfigure}
+    %
+    \par\medskip 
+    %
+    \begin{subfigure}{0.47\textwidth}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1012_response_meas_sim_+2_REAL.pdf}
+        \caption{$f_{1012,y}$ for $K_4 = +2$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.47\textwidth}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1210_response_meas_sim_+2_REAL.pdf}
+        \caption{$f_{1210,x}$ for $K_4 = +2$}
+    \end{subfigure}
+    \par\medskip 
+    %
+    \begin{subfigure}{0.47\textwidth}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1012_response_meas_sim_-2_REAL.pdf}
+        \caption{$f_{1012,y}$ for $K_4 = -2$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.47\textwidth}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1210_response_meas_sim_-2_REAL.pdf}
+        \caption{$f_{1210,x}$ for $K_4 = -2$}
+    \end{subfigure}
+    \caption{Measured and simulated shift of skew octupolar RDTs induced by Landau octupoles in
+    presence of coupling.}
+    \label{fig:skew_octupolar:response_meas_sim_coupling}
+\end{figure}
+
+
 \begin{table}[!htb]
     \centering
-    \begin{tabular}{lr}
-      \toprule
-      Corrector    &    Strength $[\text{m}^{-4}]$ \\
-      \midrule
-      MCOSX3.L1    &                —  \\
-      MCOSX3.R1    &           $-0.50$ \\
-      MCOSX3.L5    &           $ 0.42$ \\
-      MCOSX3.R5    &           $-0.01$ \\
-      \bottomrule
+    \begin{tabular}{cccc}
+    \toprule
+    &&\multicolumn{2}{c}{Rel. Diff. [\%]} \\
+    \cmidrule{3-4}
+    $K_4$ $[\text{m}^{-4}]$ & RDT & Real & Imag. \\
+    \midrule
+    \multirow{2}{*}{+5}
+     & $f_{1210}$ & 12  & 10  \\
+     & $f_{1012}$ & 17  & 16  \\[0.5em]
+    \multirow{2}{*}{+2}
+     & $f_{1210}$ & 12  & 13  \\
+     & $f_{1012}$ & 15  & 16  \\[0.5em]
+    \multirow{2}{*}{-1}
+     & $f_{1210}$ & 117 & 119 \\
+     & $f_{1012}$ & 132 & 133 \\[0.5em]
+    \multirow{2}{*}{-2}
+     & $f_{1210}$ & 50  & 50  \\
+     & $f_{1012}$ & 123 & 120 \\
+    \bottomrule
     \end{tabular}
-    \caption{Computed corrections for skew octupolar RDTs at top energy. The corrector L1 has been 
-    broken for several years and can not be used.}
-    \label{tab:skew_octupolar:correction_strengths}
+    \caption{Relative difference between measured and simulated RDT shift induced by the
+    Landau octupoles in presence of coupling. Real parts are illustrated in
+    \cref{fig:skew_octupolar:response_meas_sim_coupling}.}
+    \label{tab:skew_octupolar:rms_ratios}
 \end{table}
-  
-
-
-%\section{\todo{Correction of Skew Octupole Fields at Injection Energy}}
-%
-%\begin{figure}[H]
-%    \includegraphics[width=\textwidth]{./chapters/07_octupoles/images/f1012_y_injection.pdf}
-%    \caption{}
-%    \label{fig:a4_injection_orthogonal_f1012}
-%\end{figure}
-%
-%\begin{figure}[H]
-%    \includegraphics[width=\textwidth]{chapters/07_octupoles/images/f1210_x_injection.pdf}
-%    \caption{}
-%    \label{fig:a4_injection_orthogonal_f1210}
-%\end{figure}
-
-
-
-\section{\todo{Landau Octupoles Contribution}}
 
 
 
 %=============================
 %        Conclusion
 %=============================
-\section{Summary}
+\section{\todo{Summary}}
