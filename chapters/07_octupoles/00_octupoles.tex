@@ -293,43 +293,71 @@ octupolar RDTs are expected to be significantly altered.
 \FloatBarrier
 \subsubsection{\todo{Responses with Coupling}}
 
+After recognizing that coupling could significantly contribute to the creation of skew
+octupolar fields with normal octupoles, additional simulations were performed matching the measured
+coupling for each set of measurements. The shift in real part of the RDTs $f_{1012}$ and $f_{1210}$
+is shown in \cref{fig:skew_octupolar:response_meas_sim_coupling}, with a similar pattern observed
+for the imaginary part. The relative RMS deviation between simulations and measurements is given
+for each set of strengths and RDTs in \cref{tab:skew_octupolar:rms_ratios}.
+
+It can be observed that simulations and measurements for positive strengths ($K_4=2$ and $K_4=5$) 
+are now in good agreement. This suggests that the primary contribution to the skew octupolar RDTs
+can be attributed to the Landau octupoles and coupling.
+It is important to note that measurements with \textit{negative} strength show a response opposite
+to what is predicted by simulations. This behaviour is not yet understood and requires further
+investigation.
 
 \begin{figure}[!htb]
     \centering
     \begin{subfigure}{0.47\textwidth}
-        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1012_response_meas_sim_+5_REAL.pdf}
-        \caption{$f_{1012,y}$ for $K_4 = +5$}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1012_response_meas_sim_+5_REAL_smoll.pdf}
+        %\caption{$f_{1012,y}$ for $K_4 = +5$}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.47\textwidth}
-        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1210_response_meas_sim_+5_REAL.pdf}
-        \caption{$f_{1210,x}$ for $K_4 = +5$}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1210_response_meas_sim_+5_REAL_smoll.pdf}
+        %\caption{$f_{1210,x}$ for $K_4 = +5$}
     \end{subfigure}
     %
     \par\medskip 
     %
     \begin{subfigure}{0.47\textwidth}
-        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1012_response_meas_sim_+2_REAL.pdf}
-        \caption{$f_{1012,y}$ for $K_4 = +2$}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1012_response_meas_sim_+2_REAL_smoll.pdf}
+        %\caption{$f_{1012,y}$ for $K_4 = +2$}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.47\textwidth}
-        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1210_response_meas_sim_+2_REAL.pdf}
-        \caption{$f_{1210,x}$ for $K_4 = +2$}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1210_response_meas_sim_+2_REAL_smoll.pdf}
+        %\caption{$f_{1210,x}$ for $K_4 = +2$}
     \end{subfigure}
+    %
     \par\medskip 
     %
     \begin{subfigure}{0.47\textwidth}
-        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1012_response_meas_sim_-2_REAL.pdf}
-        \caption{$f_{1012,y}$ for $K_4 = -2$}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1012_response_meas_sim_-2_REAL_smoll.pdf}
+        %\caption{$f_{1012,y}$ for $K_4 = -2$}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.47\textwidth}
-        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1210_response_meas_sim_-2_REAL.pdf}
-        \caption{$f_{1210,x}$ for $K_4 = -2$}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1210_response_meas_sim_-2_REAL_smoll.pdf}
+        %\caption{$f_{1210,x}$ for $K_4 = -2$}
     \end{subfigure}
-    \caption{Measured and simulated shift of skew octupolar RDTs induced by Landau octupoles in
-    presence of coupling.}
+    %
+    \par\medskip 
+    %
+    \begin{subfigure}{0.47\textwidth}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1012_response_meas_sim_-1_REAL_smoll.pdf}
+        %\caption{$f_{1012,y}$ for $K_4 = -1$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.47\textwidth}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/responses_coupling/f1210_response_meas_sim_-1_REAL_smoll.pdf}
+        %\caption{$f_{1210,x}$ for $K_4 = -1$}
+    \end{subfigure}
+    %
+    \caption{Measured and simulated real part shift of skew octupolar RDTs induced by Landau
+    octupoles in presence of coupling at injection energy. Left column shows $f_{1012}$ while right
+    shows $f_{1210}$.}
     \label{fig:skew_octupolar:response_meas_sim_coupling}
 \end{figure}
 
