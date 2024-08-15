@@ -118,6 +118,8 @@ that only one of them is needed for corrections.
 %-----------------------------
 \subsection{\todo{Measurements and Corrections}}
 
+\todo{impact?}
+
 Initial measurements of the machine at top energy ($\beta^*=30$cm) without any skew octupolar
 correctors were done during an MD slot in 2022 to determine the level of the RDTs before being able
 to correct them. Those measurements were made at natural tunes of $Q_x = 0.285$ and $Q_y = 0.292$.
@@ -178,25 +180,41 @@ the exception of $f_{1210,x}$ for Beam 2, which stays constant.
 \end{figure}
 
 
+
+
+
+
 %=============================
 %    Landau Contribution
 %=============================
+% https://indico.cern.ch/event/1351567/contributions/5708754/attachments/2773145/4832599/2023-12-15_MO_Roll_Coupling_complete.pdf
 \FloatBarrier
-\section{\todo{Landau Octupoles}}
+\section{\todo{Landau Octupoles Contribution}}
 
-\begin{enumerate}
-    \color{red}
-    \item √ Measurement with MO -> see a4
-    \item √ Simulation with misalignments
-    \item Simulation with varying coupling
-    \item Simulation with coupling -> responses
-    \item ???
-\end{enumerate}
+
+%-----------------------------
+%        Introduction
+%-----------------------------
+\subsection{\todo{Introduction}}
+
+During the 2023 commissioning, measurements were taken at injection energy with different strengths
+of Landau octupoles, where an unexpected shift in the skew octupolar RDTs was observed. Subsequent
+measurements were conducted to better understand and characterize this contribution of normal
+octupoles to skew octupolar fields. These new measurements were taken during an MD slot in September
+2023 and focused on varying the strengths of the Landau octupoles to $-1K_4$, $\pm2 K_4$, $5K_4$.
+All measurements were taken at injection energy at tunes of $Q_x = 0.275$, $Q_y = 0.293$ and
+AC-Dipole deltas of $\Delta Q_x = -0.01$ and $\Delta Q_y = -0.011$. Although both beams were
+measured, this section focuses on Beam 1 to preliminarily investigate the matter.  The following
+\cref{fig:skew_octupolar:mo_different_levels_meas} illustrates the difference in amplitude of the
+RDT $f_{1012}$ with these varying strengths.
+\Cref{fig:skew_octupolar:mo_meas_vs_sim_+2} on the other hand shows the measured and simulated shift
+of the same RDT from $0K_4$ to $+2K_4$. It is evident that simulations including normal and skew 
+octupolar field errors are not enough to explain the behaviour observed in the measurements.
 
 \begin{figure}[!htb]
     \centering
     \begin{subfigure}{0.8\textwidth}
-        \includegraphics[width=\textwidth]{./images/skew_octupoles/f1012_all_measurements.pdf}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/f1210_AMP_all_measurements.pdf}
     \end{subfigure}
     \caption{Unexpected difference of skew octupolar RDT with varying Landau octupoles strengths.}
     \label{fig:skew_octupolar:mo_different_levels_meas}
@@ -214,17 +232,48 @@ the exception of $f_{1210,x}$ for Beam 2, which stays constant.
     \label{fig:skew_octupolar:mo_meas_vs_sim_+2}
 \end{figure}
 
+
+
+%-----------------------------
+%        Misalignments
+%-----------------------------
+\subsection{\review{Misalignments}}
+
+Magnet misalignments, more specifically roll errors, can generate skew magnetic fields instead of
+the expected normal ones. To determine if this could explain the behaviour observed in measurements,
+a tracking simulation was conducted with and without roll errors applied to the Landau octupoles.
+The resulting RDTs reveal an imperceptible difference, unable to account for  the previously seen
+shifts. The real part of the RDT $f_{1012}$ is shown in \cref{fig:skew_octupolar:sim_misalign},
+with similar results seen in the other component and in $f_{1210}$.
+
 \begin{figure}[!htb]
     \centering
     \begin{subfigure}{0.8\textwidth}
         \includegraphics[width=\textwidth]{./images/skew_octupoles/f1012_misalign_REAL.pdf}
         %\caption{$f_{1012,y}$}
     \end{subfigure}
-    \caption{Simulated skew octupolar RDT with normal and skew octupolar errors. One simulation
-    includes further alignment errors on the Landau octupoles, powered at their nominal setting. No 
+    \caption{Simulated skew octupolar RDT with normal and skew octupolar errors and Landau octupoles
+    powered. One simulation includes further alignment errors on the Landau octupoles. No 
     significant difference is observed between the two.}
     \label{fig:skew_octupolar:sim_misalign}
 \end{figure}
+
+
+
+%-----------------------------
+%        Coupling
+%-----------------------------
+\subsection{\review{Coupling}}
+
+As misalignments could not explain the discrepancy, simulations were first run with varying values
+of coupling at a fixed octupolar strength, allowing to gage the impact of coupling only.
+\Cref{appendix:transfer_map:skew_quadrupole_and_octupole} details how coupling, in the form of a
+skew quadrupole, combined with a normal octupole can generate skew quadrupolar-like fields.
+The resulting RDT $f_{1012}$ is shown in \cref{fig:skew_octupolar:sim_coupling}, a similar trend is
+observed for $f_{1210}$.
+The presented $C^{-}$ values are commonly seen in operation and well below that of the
+tolerances of the design of the LHC~\cite{bruning_lhc_2004}. As coupling increases, the skew
+octupolar RDTs are expected to be significantly altered.
 
 \begin{figure}[!htb]
     \centering
@@ -236,6 +285,13 @@ the exception of $f_{1210,x}$ for Beam 2, which stays constant.
     Selected coupling values are often seen in operation.}
     \label{fig:skew_octupolar:sim_coupling}
 \end{figure}
+
+
+
+%-----------------------------
+%          Responses
+\FloatBarrier
+\subsubsection{\todo{Responses with Coupling}}
 
 
 \begin{figure}[!htb]
@@ -311,4 +367,5 @@ the exception of $f_{1210,x}$ for Beam 2, which stays constant.
 %=============================
 %        Conclusion
 %=============================
+\FloatBarrier
 \section{\todo{Summary}}
