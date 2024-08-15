@@ -189,13 +189,13 @@ the exception of $f_{1210,x}$ for Beam 2, which stays constant.
 %=============================
 % https://indico.cern.ch/event/1351567/contributions/5708754/attachments/2773145/4832599/2023-12-15_MO_Roll_Coupling_complete.pdf
 \FloatBarrier
-\section{\todo{Landau Octupoles Contribution}}
+\section{\review{Landau Octupoles Contribution}}
 
 
 %-----------------------------
 %        Introduction
 %-----------------------------
-\subsection{\todo{Introduction}}
+\subsection{\review{Introduction}}
 
 During the 2023 commissioning, measurements were taken at injection energy with different strengths
 of Landau octupoles, where an unexpected shift in the skew octupolar RDTs was observed. Subsequent
@@ -291,7 +291,35 @@ octupolar RDTs are expected to be significantly altered.
 %-----------------------------
 %          Responses
 \FloatBarrier
-\subsubsection{\todo{Responses with Coupling}}
+\subsubsection{\review{Responses with Coupling}}
+
+\begin{wraptable}{r}{0.4\textwidth}
+    \centering
+    \begin{tabular}{cccc}
+    \toprule
+    &&\multicolumn{2}{c}{Rel. Diff. [\%]} \\
+    \cmidrule{3-4}
+    $K_4$ $[\text{m}^{-4}]$ & RDT & Real & Imag. \\
+    \midrule
+    \multirow{2}{*}{+5}
+     & $f_{1210}$ & 12  & 10  \\
+     & $f_{1012}$ & 17  & 16  \\[0.5em]
+    \multirow{2}{*}{+2}
+     & $f_{1210}$ & 12  & 13  \\
+     & $f_{1012}$ & 15  & 16  \\[0.5em]
+    \multirow{2}{*}{-1}
+     & $f_{1210}$ & 117 & 119 \\
+     & $f_{1012}$ & 132 & 133 \\[0.5em]
+    \multirow{2}{*}{-2}
+     & $f_{1210}$ & 50  & 50  \\
+     & $f_{1012}$ & 123 & 120 \\
+    \bottomrule
+    \end{tabular}
+    \caption{Relative difference between measured and simulated RDT shift induced by the
+    Landau octupoles in presence of coupling. Real parts are illustrated in
+    \cref{fig:skew_octupolar:response_meas_sim_coupling}.}
+    \label{tab:skew_octupolar:rms_ratios}
+\end{wraptable}
 
 After recognizing that coupling could significantly contribute to the creation of skew
 octupolar fields with normal octupoles, additional simulations were performed matching the measured
@@ -362,33 +390,6 @@ investigation.
 \end{figure}
 
 
-\begin{table}[!htb]
-    \centering
-    \begin{tabular}{cccc}
-    \toprule
-    &&\multicolumn{2}{c}{Rel. Diff. [\%]} \\
-    \cmidrule{3-4}
-    $K_4$ $[\text{m}^{-4}]$ & RDT & Real & Imag. \\
-    \midrule
-    \multirow{2}{*}{+5}
-     & $f_{1210}$ & 12  & 10  \\
-     & $f_{1012}$ & 17  & 16  \\[0.5em]
-    \multirow{2}{*}{+2}
-     & $f_{1210}$ & 12  & 13  \\
-     & $f_{1012}$ & 15  & 16  \\[0.5em]
-    \multirow{2}{*}{-1}
-     & $f_{1210}$ & 117 & 119 \\
-     & $f_{1012}$ & 132 & 133 \\[0.5em]
-    \multirow{2}{*}{-2}
-     & $f_{1210}$ & 50  & 50  \\
-     & $f_{1012}$ & 123 & 120 \\
-    \bottomrule
-    \end{tabular}
-    \caption{Relative difference between measured and simulated RDT shift induced by the
-    Landau octupoles in presence of coupling. Real parts are illustrated in
-    \cref{fig:skew_octupolar:response_meas_sim_coupling}.}
-    \label{tab:skew_octupolar:rms_ratios}
-\end{table}
 
 
 
