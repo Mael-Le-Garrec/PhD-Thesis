@@ -12,13 +12,13 @@
 
 The skew octupolar fields in the LHC have previously been identified as significant contributors to 
 limits in forced dynamic aperture, being the dynamic aperture when kicking the beam with the
-AC-Dipole~\cite{carlier_nonlinear_2020}. The skew octupolar correctors are positioned around the
+AC-Dipole~\cite{carlier_nonlinear_2020}. Skew octupolar correctors are positioned around the
 ATLAS and CMS detectors, in Interaction Regions 1 and 5. Those correctors are \textit{common
 aperture} magnets ; both beams are affected by the created magnetic fields. Unfortunately, one of
 these four correctors, located to the left of ATLAS, is not functioning. As a result, although
 corrections can be calculated, they will not effectively minimize the skew octupolar RDTs of
 interest, $f_{1012,y}$ and $f_{1210,x}$. 
-Their associated resonances and frequency lines are shown in
+The associated resonances and frequency lines of these RDTs are shown in
 \cref{tab:skew_octupolar:resonances_rdts}.
 
 \begin{table}[!htb]
@@ -35,11 +35,12 @@ Their associated resonances and frequency lines are shown in
     lines they contribute to.}
     \label{tab:skew_octupolar:resonances_rdts}
 \end{table}
-  
-Measurements were taken at top energy and corrections computed for both beams, while measurements at
-injection showed unexpected behavior coming from the Landau octupoles.
 
-
+First corrections of skew octupolar RDTs were performed in 2018 at top
+energy~\cite{carlier_nonlinear_2020}. A different approach for the same corrections is presented in
+this chapter.
+Measurements were also performed at injection energy with the prospect of corrections. However, it
+was observed that Landau octupoles were strongly contributing to the RDTs of interest.
 
 
 %=============================
@@ -48,14 +49,14 @@ injection showed unexpected behavior coming from the Landau octupoles.
 \section{\todo{Corrections at Top Energy}}
 
 The very first skew octupolar RDT corrections in the LHC were made in 2018 during
-Run~2~\cite{carlier_nonlinear_2020}. Those corrections were computed by simulating the impact on
-each corrector on the measured values, thus scanning the strengths of the correctors. This is
-possible and remains viable as only three are used.
+Run~2~\cite{carlier_nonlinear_2020}. These corrections were computed by matching the RDT level of
+the measurements in simulation. This is possible and remains viable as only three correctors are
+used and values can be manually adjusted.
 In this section, a different approach is taken, based on response matrices. This type of correction
 is explained in details in \cref{correction_principle:response_matrix}. The real and imaginary 
-responses of the RDTs for each corrector at a given strength are simulated through tracking.  These
-responses are collected into a matrix, allowing the determination of the required strengths to match
-the RDT level observed in the measurements. Inverting these values result in a correction.
+responses of the RDTs for each corrector at an arbitrary strength are simulated through tracking.
+These responses are collected into a matrix, allowing the determination of the required strengths to
+match the RDT level observed in the measurements. Inverting these values result in a correction.
 
 
 %-----------------------------
@@ -65,7 +66,7 @@ the RDT level observed in the measurements. Inverting these values result in a c
 
 To create a response matrix, simulations were conducted with the tunes and AC-Dipole deltas set to
 those used for measurements. The natural tunes are $Q_x = 0.285$ and $Q_y = 0.292$ while the driven
-tunes are $\Delta Q_x = -0.008$ and $\Delta Q_y = 0.01$.  Each corrector is then powered
+tunes are $\Delta Q_x = -0.008$ and $\Delta Q_y = 0.01$. Each corrector is then powered
 individually for each tracking simulation. For this type of simulation, field errors are not
 necessary, as only the RDT shift caused by the corrector relative to the baseline is needed.
 \Cref{fig:skew_octupolar:response_correctors} shows the real part of the resulting RDTs from these
@@ -89,10 +90,11 @@ simulations for Beam 1. Beam 2 shows a similar level of response for these corre
 
 It can already be seen that the L5 and R5 correctors show a similar trend along the ring, with L5
 showing a stronger response for the same strength, while the R1 corrector follows the opposite
-trend. A polar plot at a given BPM can illustrate that trend, and be used to create manual
-corrections. \Cref{fig:skew_octupolar:response_correctors_polar} shows the orthogonality of the
-correctors for both beams and RDTs. L5 being stronger than R5 while having the same angle indicates
-that only one of them is needed for corrections.
+trend. A polar plot at a given BPM can illustrate that trend, and be used to get an intuition of the
+effect of the correctors to manually compute corrections.
+\Cref{fig:skew_octupolar:response_correctors_polar} shows the orthogonality of the correctors for
+both beams and RDTs. L5 being stronger than R5 while having the same angle indicates that only one
+of them is needed for corrections. 
 
 \begin{figure}[!htb]
     \centering
@@ -216,7 +218,8 @@ octupolar field errors are not enough to explain the behaviour observed in the m
     \begin{subfigure}{0.8\textwidth}
         \includegraphics[width=\textwidth]{./images/skew_octupoles/f1210_AMP_all_measurements.pdf}
     \end{subfigure}
-    \caption{Unexpected difference of skew octupolar RDT with varying Landau octupoles strengths.}
+    \caption{Unexpected difference of skew octupolar RDT amplitudes with varying Landau octupoles
+    strengths.}
     \label{fig:skew_octupolar:mo_different_levels_meas}
 \end{figure}
 
