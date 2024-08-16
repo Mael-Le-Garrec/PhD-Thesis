@@ -1,7 +1,7 @@
 \chapter{\todo{Skew Octupolar Fields}}
 \label{chapter:skew_octupole_fields}
 \thumbforchapter{}
-\chaptertoc{}
+%\chaptertoc{}
 %\newpage
 
 
@@ -50,8 +50,8 @@ was observed that Landau octupoles were strongly contributing to the RDTs of int
 
 The very first skew octupolar RDT corrections in the LHC were made in 2018 during
 Run~2~\cite{carlier_nonlinear_2020}. These corrections were computed by matching the RDT level of
-the measurements in simulation. This is possible and remains viable as only three correctors are
-used and values can be manually adjusted.
+the measurements in simulation and then inverting the strengths. This is possible and remains viable
+as only three correctors are used and values can be manually adjusted.
 In this section, a different approach is taken, based on response matrices. This type of correction
 is explained in details in \cref{correction_principle:response_matrix}. The real and imaginary 
 responses of the RDTs for each corrector at an arbitrary strength are simulated through tracking.
@@ -131,9 +131,11 @@ off during the measurements.
 
 The corrections were computed via the previously detailed response matrix and are shown in
 \cref{tab:skew_octupolar:correction_strengths}. These have then been applied during 2023's
-commissioning. The base RDT and the associated corrections are shown in
-\cref{fig:skew_octupolar:corrections_vs_bare}. It can be observed that both RDTs are reduced, with
-the exception of $f_{1210,x}$ for Beam 2, which stays constant.
+commissioning and later on kept for operation. The RDT levels of the bare machine and with these
+corrections are shown in \cref{fig:skew_octupolar:corrections_vs_bare}. It can be observed that both
+RDT amplitudes are reduced, with the exception of $f_{1210,x}$ for Beam 2, which stays constant.
+The reduction of RDT amplitude is comparable to those obtained in 2018, where the same RDT for Beam
+2 did neither improve or worsen.
 
 
 \begin{table}[!htb]
