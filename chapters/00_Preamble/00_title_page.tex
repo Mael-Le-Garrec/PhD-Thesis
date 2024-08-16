@@ -1,54 +1,15 @@
-%\makeatletter
-%    \def\clap#1{\hbox to 0pt{\hss #1\hss}}%
-%    \def\ligne#1{%
-%        \hbox to \hsize{%
-%            \vbox{\centering #1}}}%
-%    \def\haut#1#2#3{%
-%        \hbox to \hsize{%
-%            \rlap{\vtop{\raggedright #1}}%
-%            \hss
-%            \clap{\vtop{\centering #2}}%
-%            \hss
-%            \llap{\vtop{\raggedleft #3}}}}%
-%    \def\bas#1#2#3{%
-%        \hbox to \hsize{%
-%            \rlap{\vbox{\raggedright #1}}%
-%            \hss
-%            \clap{\vbox{\centering #2}}%
-%            \hss
-%            \llap{\vbox{\raggedleft #3}}}}%
-%    \def\maketitle{%
-%        \thispagestyle{empty}\vbox to \vsize{%
-%            \haut{}{\@blurb}{}
-%            \vfill
-%            \vspace{1cm}
-%            \begin{flushleft}
-%                \usefont{OT1}{ptm}{m}{n}
-%                \huge \@title
-%            \end{flushleft}
-%            \par
-%            \hrule height 4pt
-%            \par
-%            \begin{flushright}
-%                \normalsize \@author
-%                \par
-%            \end{flushright}
-%            \vspace{1cm}
-%            \vfill
-%            \vfill
-%            \bas{}{\@location, \@date}{}
-%        }%
-%        \cleardoublepage
-%    }
-%    \def\date#1{\def\@date{#1}}
-%    \def\author#1{\def\@author{#1}}
-%    \def\title#1{\def\@title{#1}}
-%    \def\location#1{\def\@location{#1}}
-%    \def\blurb#1{\def\@blurb{#1}}
-%    \date{\today}
-%    \location{}\blurb{}
-%\makeatother
+% ===============================================================
+%                         MAIN PAGES
+% ===============================================================
 
+% This file contains several pages
+% The first one is the very first page of the thesis, containing the name and author
+% The second page contains the information about the supervisors and the university
+
+
+% =================================
+%           Main Title
+% =================================
 \begin{titlepage}
     \makeatletter
     \def\subtitle#1{\def\@subtitle{#1}}
@@ -75,7 +36,7 @@
         \vspace{.1em}
         \subtitlefont\fontsize{11pt}{15pt}\selectfont%
         \begin{flushright}%
-            Measurements and corrections of high-order non-linear optics
+            \@subtitle
         \end{flushright}
         % Big vertical space
         \vfill
@@ -97,3 +58,107 @@
     \clearpage\maketitle
     \restoregeometry
 \end{titlepage}
+
+
+
+
+% =================================
+%         Secondary Page
+% =================================
+% With german specific terms etc.
+{
+    \makeatletter
+    \def\subtitle#1{\def\@subtitle{#1}}
+    \def\firstsupervisor#1{\def\@firstsupervisor{#1}}
+    \def\secondsupervisor#1{\def\@secondsupervisor{#1}}
+    \def\makesecondtitle{%
+        \thispagestyle{empty} % remove numbering
+        % 3 lines
+        \noindent\rule[0.5em]{\textwidth}{1.5pt}\vspace{-22pt}
+        \noindent\rule[0.5em]{\textwidth}{1.5pt}\vspace{-22pt}
+        \noindent\rule[0.5em]{\textwidth}{1.5pt}
+        % Title
+        \chapterfont\fontsize{27pt}{27pt}\selectfont%
+        \begin{center}%
+            \bfseries
+            \MakeUppercase{
+                \@title
+            }
+        \end{center}
+        \vspace{1.5cm}
+        % Back to normal font for the German specific text
+        \normalfont\subtitlefont\fontsize{11pt}{15pt}\selectfont%
+        \center{
+            Dissertation \\ 
+            zur Erlangung des Doktorgrades \\
+            der Naturwissenschaften
+        }
+        \vspace{1cm}
+        \center{
+            Vorgelegt beim Fachbereich Physik \\
+            der Johann Wolfgang Goethe-Universität \\
+            in Frankfurt am Main
+        }
+        \vspace{1cm}
+        \center{
+            Von \\
+            \scshape{Maël Le Garrec}\normalfont\subtitlefont\fontsize{11pt}{15pt}\selectfont\\
+            aus Oberhaslach, Elsàss, Frankreich.
+        }
+        %
+        % Supervisors
+        %\center{
+        %    \@firstsupervisor \\
+        %    \@secondsupervisor
+        %}
+        %
+        \vfill
+        \begin{center}
+            Frankfurt am Main 2024
+        \end{center}
+    }
+    \makeatother
+    
+    \title{LHC Effective Model for\\Optics Corrections}
+    \subtitle{Measurements and corrections of high-order non-linear optics}
+    \firstsupervisor{Dr. Ewen H. Maclean}
+    \secondsupervisor{Apl. Prof. Dr. Giuliano Franchetti}
+    \author{Maël Le Garrec}
+
+    % Force page to be odd
+    \cleardoublepage
+    % Display the second title page
+    \makesecondtitle
+}
+
+
+% =================================
+%            Third Page
+% =================================
+% With signatures
+{
+    \makeatletter
+    \def\makethirdtitle{%
+        \thispagestyle{empty} % remove numbering
+        \normalfont\subtitlefont\fontsize{11pt}{15pt}\selectfont%
+        
+        \begin{flushleft}
+            Vom Fachbereich Physik der Johann Wolfgang Goethe-Universität als Dissertation angenommen.
+        \end{flushleft}
+        \vspace{7cm}
+
+        \noindent Dekan:
+
+        \vspace{4cm}
+        \noindent Gutachter:
+
+        \vspace{4cm}
+        \noindent Datum der Disputation:
+    }
+    \makeatother
+    
+    % Force page to be even
+    \clearpage
+    % Display the second title page
+    \makethirdtitle
+}

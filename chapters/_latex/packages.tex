@@ -22,8 +22,8 @@
 % == FONTS
 \usepackage{calligra}  % font for quote page
 %\usepackage{libertinust1math}
-\usepackage{libertine}  % font for the whole document
-\usepackage[libertine]{newtxmath}
+\usepackage[libertine]{newtxmath}  % needs to be loaded before libertine
+\usepackage{libertine}             % font for the whole document
 %\usepackage{lmodern}  % font based on Computer Modern for the whole doc
 % ==
 
@@ -177,7 +177,7 @@ afterskip=2cm]{chapter}
 
 % LaTeX will stretch the page to fit vertically on the whole page as part of the "book" style
 % This prevents it
-%\raggedbottom
+\raggedbottom
 
 
 % ===========================================================================
