@@ -1,61 +1,258 @@
-% === Define the different glossaries
+    % === Define the different glossaries
 \newglossary*{nomenclature}{Nomenclature}
 \newglossary*{symbols}{Symbols}
 
 \makeglossaries
 
-% === Add the different entries
-\newglossaryentry{Dipole}{type=nomenclature,name=Dipole, description={ Magnets with two poles, responsible for bending the particles in the accelerator. }}
-\newglossaryentry{LBDS}{type=nomenclature,name=LBDS, description={LHC Beam Dump System }}
-\newglossaryentry{Crosstalk}{type=nomenclature,name=Crosstalk, description={Interferences between two electronic circuits }}
-\newglossaryentry{Laundau Octupole}{type=nomenclature,name=Laundau Octupole, description={Octupoles that introduce a spread in the beam, making it more stable }}
-\newglossaryentry{BPM}{type=nomenclature,name=BPM, description={ Beam Position Monitor, gives the transverse position of the beam }}
-\newglossaryentry{DOROS}{type=nomenclature,name=DOROS, description={ Low noise BPM. Currently can't be used with other BPMs due to synchronization issues  }}
-\newglossaryentry{Dispersion}{type=nomenclature,name=Dispersion, description={ Change of orbit with momentum offset, mainly in the horizontal plane, created by the dipoles}}
-\newglossaryentry{Coupling}{
-    type=nomenclature,
-    name=Coupling,
-    description={ 
-        Correlation between the motion of particles in horizontal or vertical plane to the other.
-        Strong coupling negatively impacts the optics and is usually avoided
-    }
-}
-\newglossaryentry{Emittance}{type=nomenclature,name=Emittance, description={ (\ensuremath{\epsilon}) Unit describing the beam in phase space. A low emittance indicates a beam with a small momentum offset and confined to a small distance }}
-\newglossaryentry{beta-function}{
-    type=nomenclature,
-    name=Beta-function, 
-    description={
-        Variable of the twiss-parameters: $\beta$ as a function of the longitudinal position $s$.
-        Related to the transverse beam size: $\sigma(s)= \sqrt{\epsilon \cdot \beta(s)}$
-    }
-}
-\newglossaryentry{Chromaticity}{type=nomenclature,name=Chromaticity, description={ Tune change with momentum offset. Usually denoted as three orders: $Q'$, $Q''$ and $Q'''$ }}
-\newglossaryentry{Aperture}{type=nomenclature,name=Aperture, description={ Maximum physical transverse size the beam can take in the accelerator without suffering losses }}
-\newglossaryentry{Dynamic Aperture}{type=nomenclature,name=Dynamic Aperture, description={ Maximum stable aperture. Above that size, the particles become unstable and become lost }}
-\newglossaryentry{Waist}{type=nomenclature,name=Waist, description={ Location where the $\beta$-function is at is minimum in an IP. $\beta^*$ refers to $\beta_{waist}$ }}
-\newglossaryentry{Waist Shift}{type=nomenclature,name=Waist Shift, description={ Changing the waist to have $\beta^* = \beta_{IP}$ }}
-\newglossaryentry{Rigid Waist Shift}{type=nomenclature,name=Rigid Waist Shift, description={ Doing a waist shift by powering all the triplets at once. No individual trim }}
-\newglossaryentry{Orbit Feedback}{type=nomenclature,name=Orbit Feedback, description={ System responsible for acquisition and correction of the orbit }}
-\newglossaryentry{ATS Factor}{type=nomenclature,name=ATS Factor, description={ Equivalent to the ratio of the virgin $\beta$-function to the $\beta$-function used in the current ATS scheme, at the edge of the arc  }}
+
+%==========================
+%       Nomenclature
+%==========================
 \newglossaryentry{AC-Dipole}{
     type=nomenclature,
     name=AC-Dipole,
     description={
-        Dipole magnet generating a variable oscillating field. Used to force beam oscillations for
-        optics measurements
+        Dipole magnet capable of generating variable oscillating fields. Used to increase the 
+        transverse amplitude via forced oscillations for optics measurements.
+    }
+}
+\newglossaryentry{Amplitude detuning}{
+    type=nomenclature,
+    name=Amplitude detuning,
+    description={
+        Tune shift dependent on the amplitude of transverse oscillations. Corrected via octupoles.
+    }
+}
+\newglossaryentry{Chromatic Amplitude Detuning}{
+    type=nomenclature,
+    name=Chromatic Amplitude Detuning,
+    description={
+        Tune shift dependent on both the amplitude of transverse oscillations and the momentum
+        offset. Corrected via decapoles.
+    }
+}
+\newglossaryentry{Beta-beating}{
+    type=nomenclature,
+    name=Beta-beating,
+    description={
+        Relative difference of the beta function between measurement and model. Often expressed in 
+        percents: $(\beta_{meas.} - \beta_{mdl})/\beta_{mdl.} \cdot 100$.
+    }
+}
+\newglossaryentry{Beta-function}{
+    type=nomenclature,
+    name=Beta-function,
+    description={
+        Twiss parameter $\beta$ as a function of $s$, the longitudinal position. Related to the
+        amplitude of transverse oscillations of the beam and its size.
+    }
+}
+\newglossaryentry{Beam}{
+    type=nomenclature,
+    name=Beam,
+    description={
+        Short for "Particle beam". Beam 1 and Beam 2 refer to either of the two beams travelling in
+        opposite directions in the LHC.
+    }
+}
+\newglossaryentry{Drift}{
+    type=nomenclature,
+    name=Drift,
+    description={
+        Drift space, a field-free region.
+    }
+}
+\newglossaryentry{Tune}{
+    type=nomenclature,
+    name=Tune,
+    description={
+        $Q$ -- Number of betatron oscillations per turn in a circular accelerator.
+    }
+}
+\newglossaryentry{FeedDown}{
+    type=nomenclature,
+    name=Feed-down,
+    description={
+        Lower-order-like effects induced by a particle passing off-center through a multipole.
+    }
+}
+\newglossaryentry{FeedUp}{
+    type=nomenclature,
+    name=Feed-up,
+    description={
+        Higher-order-like effects induced by a combination of multipoles.
+    }
+}
+\newglossaryentry{Orbit}{
+    type=nomenclature,
+    name=Closed orbit,
+    description={
+        Path of the reference particle through the accelerator.
+    }
+}
+\newglossaryentry{Laundau Octupole}{
+    type=nomenclature,
+    name=Laundau Octupole,
+    description={
+        Strong octupoles present in the LHC to introduce Landau Damping. The tune spread created via
+        amplitude detuning helps damping the particles oscillations.
+    }
+}
+\newglossaryentry{Crosstalk}{
+    type=nomenclature,
+    name=Crosstalk, 
+    description={
+        Unwanted magnetic interference between adjacent multipoles.
+    }
+}
+\newglossaryentry{Chromaticity}{
+    type=nomenclature,
+    name=Chromaticity,
+    description={
+        Tune shift dependent on the momentum offset. Corrected via sextupoles to the first order.
+    }
+}
+\newglossaryentry{Aperture}{
+    type=nomenclature,
+    name=Aperture,
+    description={
+        Physical aperture, i.e. are where the beam can pass, of an element in the accelerator.
+    }
+}
+\newglossaryentry{Dynamic Aperture}{
+    type=nomenclature,
+    name=Dynamic Aperture,
+    description={
+        Maximum region in phase space where particle motion remains stable over time, beyond which
+        particles may be lost.
+    }
+}
+\newglossaryentry{Betatron coupling}{
+    type=nomenclature,
+    name=Coupling,
+    description={
+        Coupling of a particle's motion in the transverse planes. Corrected via skew quadrupoles.
+    }
+}
+\newglossaryentry{MADX}{
+    type=nomenclature,
+    name=MAD-X,
+    description={
+        Current version of the Methodical Accelerator Design framework developed in BE-ABP. Used for
+        beam dynamics simulations.
     }
 }
 
 
-% ==== Acronyms
-\newacronym{lhc}{LHC}{Large Hadron Collider}
+
+%==========================
+%         Acronyms
+%==========================
+\newacronym{lhc}{LHC}{
+    Large Hadron Collider -- Largest and most powerful particle collider in the world.
+}
+\newacronym{bpm}{BPM}{
+    Beam Position Monitor -- Intrumentation used to retrieve both position and intensity of 
+    the beam via its induced electric field.
+}
+\newacronym{bbq}{BBQ}{
+    Base Band Tune -- Precise tune measurement system consisting of a pick-up and filters.
+}
+\newacronym{ip}{IP}{
+    Interaction Point -- Center of the straight arcs of the LHC. Beams collides in four of them
+    where they cross (IP1, 2, 5, 8).
+}
+\newacronym{ir}{IR}{
+    Interaction Region -- Vicinity of the interaction point. Often used interchangeably with "IP".
+}
+\newacronym{lsa}{LSA}{
+    LHC Software Architecture -- Software used to operate the particle accelerators at CERN. Based
+    on an online database to manage high and low level parameter settings.
+}
+\newacronym{md}{MD}{
+    Machine Development -- Dedicated studies aimed at improving the accelerator parameters or
+    testing new operational configurations.
+}
+\newacronym{omc}{OMC}{
+    Optics Measurements and Corrections -- Name of the team dedicated to optics studies on the
+    main CERN accelerators. Part of BE-ABP-LNO.
+}
+\newacronym{be}{BE}{
+    Beams department -- Responsible for all aspects related to the production and delivery of
+    particles, including beam physics, mechatronics, metrology, software development and operational
+    management.
+}
+\newacronym{abp}{ABP}{
+    Accelerators and Beam Physics group -- Responsible for studies and optimizations of beam
+    dynamics over the complete CERN accelerator complex. Part of BE.
+}
+\newacronym{lno}{LNO}{
+    Linear and Non-Linear Optics section -- In charge of optics studies for current and future
+    accelerators at CERN. Part of BE-ABP.
+}
+\newacronym{rdt}{RDT}{
+    Resonance Driving Term -- Coefficients related to the strength of a resonance.
+}
+\newacronym{RF}{RF}{
+    Radio Frequency -- Shorthand for the acceleration system of the accelerator.
+}
+\newacronym{bch}{BCH}{
+    Baker-Campbell-Hausdorff theorem -- Formula for the combination of exponentials in a Lie
+    algebra, $e^X \cdot e^Y = e^Z$.
+}
+\newacronym{madx}{MAD-X}{
+    Methodical Accelerator Design -- Current version of the framework developed in BE-ABP. Used for
+    beam dynamics simulations.
+}\newacronym{ptc}{PTC}{
+    Polymorphic Tracking Code -- Framework used by MAD-X to perform calculations in the non-linear
+    regime.
+}
 
 
-% ==== Symbols
-\newglossaryentry{action}
-{
+%==========================
+%         Symbols
+%==========================
+\newglossaryentry{action}{
     type=symbols,
-    name=action,
-    symbol=$\mathcal{J}$,
-    description={Action used as coordinate blabla},
+    name=$J_{x,y}$,
+    description={
+        Action - Phase space coordinate in the Courant-Snyder normalization $[\text{m}]$.
+    }
+}
+\newglossaryentry{beta-star}{
+    type=symbols,
+    name=$\beta^*$,
+    description={
+       $\beta$-function at a given IP $[\text{m}]$.
+    }
+}
+\newglossaryentry{brho}{
+    type=symbols,
+    name={$B \rho$},
+    description={
+        Magnetic rigidity. Quantifies a the ability of a field to deviate a particle $[\text{Tm}]$.
+    }
+}
+\newglossaryentry{cminus}{
+    type=symbols,
+    name=$|C^-|$,
+    description={
+        Minimum tune separation. Global quantification of the linear coupling.
+    }
+}
+\newglossaryentry{Jn}{
+    type=symbols,
+    name={$J_n$},
+    description={
+        Skew magnetic field strength. Skew field component of a multipole of order $n$, normalized
+        to the magnetic rigidity $[\text{m}^{\text{-n}}]$.
+    }
+}
+\newglossaryentry{Kn}{
+    type=symbols,
+    name=$K_n$,
+    description={
+        Normal magnetic field strength. Normal field component of a multipole of order $n$,
+        normalized to the magnetic rigidity $[\text{m}^{\text{-n}}]$.
+    }
 }

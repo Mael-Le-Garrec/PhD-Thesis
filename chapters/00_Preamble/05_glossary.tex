@@ -1,31 +1,33 @@
-\chapter{\todo{Glossary}}\label{glossary}
+\chapter{\review{Glossary}}
+\label{glossary}
 
 \renewcommand{\glossarysection}[2][]{}
 \renewcommand{\glsnamefont}[1]{\chapterfont\small\textbf{#1}}
-%\renewcommand*{\glspostdescription}{\vspace{-8pt}}
 %\setglossarystyle{tree}
 \glsnoexpandfields  % fixes any issues with commands inside definitions
 
 
 % === Definitions
 \section*{Nomenclature}\label{equipment}
-\vspace{-30pt}
+\vspace{-20pt}
 \glsaddall[types={nomenclature}]
-\printglossary[type=nomenclature]
+\printglossary[type=nomenclature, style=list]
 
 
 % === Acronyms
 \section*{Acronyms}\label{acronyms}
-\vspace{-30pt}
+\vspace{-20pt}
 \glsaddall
-\printglossary[type=\acronymtype]
+\glssetwidest{MAD-X\_}  % widest acronym (plus _) so everything is aligned
+\printglossary[type=\acronymtype,style=alttree]
 
 
 % === Symbols
 \section*{Symbols}\label{symbols}
-\vspace{-30pt}
+\vspace{-20pt}
 \glsaddall
-\printglossary[type=symbols]
+\glssetwidest{AAAA}
+\printglossary[type=symbols, style=alttree]
 
 
 \newpage
