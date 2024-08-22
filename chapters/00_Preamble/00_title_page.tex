@@ -150,6 +150,11 @@
 %            Third Page
 % =================================
 % With signatures
+\ifthenelse{\equal{\papersize}{A4}}{
+    \newcommand{\vspacesignatures}{4cm}
+}{
+    \newcommand{\vspacesignatures}{3cm}
+}
 {
     \makeatletter
     \def\makethirdtitle{%
@@ -159,14 +164,15 @@
         \begin{flushleft}
             Vom Fachbereich Physik der Johann Wolfgang Goethe-Universität als Dissertation angenommen.
         \end{flushleft}
-        \vspace{7cm}
+        \vspace{\vspacesignatures}
+        \vspace{\vspacesignatures}
 
         \noindent Dekan:
 
-        \vspace{4cm}
+        \vspace{\vspacesignatures}
         \noindent Gutachter:
 
-        \vspace{4cm}
+        \vspace{\vspacesignatures}
         \noindent Datum der Disputation:
     }
     \makeatother
