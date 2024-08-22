@@ -61,12 +61,6 @@
 \usepackage{nicematrix}
 \usepackage{placeins} % for the \FloatBarrier
 \usepackage{arydshln}  % dashed lines in tables
-\usepackage[
-  height={2cm},
-  topthumbmargin={auto},
-  bottomthumbmargin={auto},
-  eventxtindent={4mm},
-  oddtxtexdent={2.5mm}]{thumbs}  % markers on the side to show the chapter
 \usepackage[%
   backend=bibtex        % biber or bibtex
 %,style=authoryear      % Alphabeticalsch
@@ -108,7 +102,11 @@
 \addbibresource{manual-library.bib}  % manually added references
 \usepackage{csquotes}  % Changes the quotestyle depending on the language, useful for bibliography
 
-% Flipbook
+
+
+% ===========================================================================
+%                               Flip Book
+% ===========================================================================
 \usepackage{chapters/_latex/flipbook}
 % Footer with the flipbook and pagemarks
 %\rofoot*{% Odd pages footer aligned to right
@@ -131,7 +129,7 @@
 
 
 % ===========================================================================
-%                            SOME OPTIONS
+%                            General Options
 % ===========================================================================
 
 % Set the geometry of the pages
@@ -172,9 +170,6 @@ afterskip=2cm]{chapter}
 %\setlength{\belowcaptionskip}{-5pt}
 %\setlength{\abovecaptionskip}{-5pt}
 
-% Define some colors
-\definecolor{thumb_color}{HTML}{D9D9D9}
-
 % LaTeX will stretch the page to fit vertically on the whole page as part of the "book" style
 % This prevents it
 \raggedbottom
@@ -207,11 +202,6 @@ afterskip=2cm]{chapter}
     \localtableofcontents%
   \end{spacing}
 }
-
-% Define a wrapper for \addthumb, to add markers on the side
-\newcommand{\thumbforchapter}{\addthumb{Chapter \thechapter}{\Large{\thechapter}}{black}{thumb_color}}
-% Same but with letters for the appendices
-\newcommand{\thumbforappendix}{\addthumb{Chapter \thechapter}{\Large{\thechapter}}{black}{thumb_color}}
 
 % When using align from amsmath, each line is numbered
 % This allows to use align* and the manually number the last equation
@@ -336,3 +326,132 @@ afterskip=2cm]{chapter}
   \par
   \end{minipage}
 }
+
+
+% ===========================================================================
+%                            Chapter Thumbs
+% ===========================================================================
+% chapterthumbs.sty from KOMA script adapted by jdilly to use tikz according to 
+% https://tex.stackexchange.com/questions/526904/scrreprt-thumb-indices-with-scrlayer-scrpage-use-any-shape-as-chapterthumb
+% original example in https://komascript.de/komascriptbuch7examples 
+\usepackage{tikz}
+\newlength{\chapterthumbwidth}
+\newlength{\chapterthumbheight}
+\definecolor{thumb_color}{HTML}{999999}  % That's a kind of grey
+
+\newcommand*{\firstchapterthumbskip}{.1\paperheight}
+\newcommand*{\lastchapterthumbskip}{\firstchapterthumbskip}
+\setlength{\chapterthumbheight}{4.5em}
+\setlength{\chapterthumbwidth}{.06\paperwidth}
+\newcommand*{\chapterthumbskip}{.1\paperheight}
+\colorlet{chapterthumbboxcolor}{thumb_color}
+\newcommand*{\chapterthumbcolor}{white}
+\newcommand*{\chapterthumbformat}{\thechapter} % What's written in the box
+\newkomafont{chapterthumb}{\normalfont\Large\color{\chapterthumbcolor}}
+\usetikzlibrary{shapes.misc, positioning}
+
+\makeatletter
+% TIKZ Style
+\newcommand*\chapterthumb@box{%
+  \usekomafont{chapterthumb}%
+    \parbox[c][\chapterthumbheight][c]{\chapterthumbwidth}{%
+      \centering
+      \begin{tikzpicture} 
+        % second rectangle to hide rounded corner on page border
+        \ifodd\value{page}
+            \node[rectangle, 
+                fill=chapterthumbboxcolor,
+                minimum width=0.9\chapterthumbwidth, 
+                minimum height=\chapterthumbheight,
+                ] at (0.1,0){};
+        \else
+            \node[rectangle, 
+                fill=chapterthumbboxcolor,
+                minimum width=0.9\chapterthumbwidth, 
+                minimum height=\chapterthumbheight,
+                ] at (-0.1,0){};
+        \fi
+        % rectangle with content
+        \node[rectangle, 
+              fill=chapterthumbboxcolor,
+              minimum width=\chapterthumbwidth, 
+              minimum height=\chapterthumbheight,
+              rounded corners=2pt,
+              ] at (0,0){\chapterthumbformat};
+      \end{tikzpicture}%
+    }%
+}
+
+\newcommand*{\chapterthumbbox}{%
+    \if@mainmatter
+    \ifnum\value{chapter}>\z@
+    \ifnum \value{chapterthumb}<\z@
+    \else
+    \begingroup
+    \protected@edef\reserved@a{\chapterthumbformat}%
+    \ifx\reserved@a\lastchapterthumbformat\else
+    \stepcounter{chapterthumb}%
+    \global\let\lastchapterthumbformat\reserved@a
+    \fi
+    \@tempcnta=\numexpr
+    \dimexpr
+    \paperheight
+    -\firstchapterthumbskip
+    -\chapterthumbwidth
+    -\lastchapterthumbskip
+    \relax / \dimexpr
+    \chapterthumbskip
+    \relax
+    +1
+    \relax
+    \ifnum \value{chapterthumb}<\@tempcnta
+    \else
+    \setcounter{chapterthumb}{0}%
+    \fi
+    \vspace*{%
+        \dimexpr
+        \firstchapterthumbskip
+        + ( \chapterthumbskip )
+        * \value{chapterthumb}%
+        - \baselineskip
+        \relax
+    }\par
+    \setlength{\fboxsep}{0pt}%
+    \ifodd\value{page}
+    \hfill
+    \makebox[0pt][r]{\chapterthumb@box}%
+    \else
+    \makebox[0pt][l]{\chapterthumb@box}%
+    \fi
+    \endgroup
+    \fi
+    \fi
+    \fi
+}
+\makeatother
+
+\newcounter{chapterthumb}
+\setcounter{chapterthumb}{10000}
+\newcommand*{\lastchapterthumbformat}{\relax}
+
+\DeclareNewLayer[%
+background,%
+outermargin,%
+% oddpage,%
+% rightmargin,%
+contents=\chapterthumbbox
+]{chapterthumb}
+
+\newcommand*\EnableChapterthumb{%
+    \IfLayerAtPageStyle{scrheadings}{chapterthumb}{}
+    {\AddLayersToPageStyle{@everystyle@}{chapterthumb}}%
+}
+\newcommand*\DisableChapterthumb{%
+    \RemoveLayersFromPageStyle{@everystyle@}{chapterthumb}%
+}
+
+% Only add the thumb on some pages. Avoid for example the Part style for Appendices
+\newpairofpagestyles[scrheadings]{part}{}
+\renewcommand\partpagestyle{plain.part}
+\AddLayersToPageStyle{scrheadings}{chapterthumb}
+\AddLayersToPageStyle{plain.scrheadings}{chapterthumb}
