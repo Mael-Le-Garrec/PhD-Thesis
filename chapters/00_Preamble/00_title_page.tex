@@ -17,7 +17,7 @@
         % Redefine the geometry of the page
         % That's the same of the rest of the document, without the includehead and footer
         % Right and left are also the same
-        %\newgeometry{top=20.625mm, bottom=28.875mm, left=16.5mm, right=16.5mm}
+        \newgeometry{top=20.625mm, bottom=28.875mm, left=16.5mm, right=16.5mm}
         \thispagestyle{empty} % remove numbering
         % 3 lines
         \noindent\rule[0.5em]{\textwidth}{1.5pt}\vspace{-22pt}
@@ -66,8 +66,21 @@
 %         Secondary Page
 % =================================
 % With german specific terms etc.
-% Sizes for B5: 11pt/12pt
-% 0.9cm / 0.4cm * 3
+% fontskip      vspace1      vspace2
+% A4    B5      A4   B5      A4   B5
+% 15    11      1.3  0.9     0.8  0.4
+\ifthenelse{\equal{\papersize}{A4}}{
+    % A4    
+    \newcommand{\fontskipsecondtitle}{15pt}
+    \newcommand{\vspacesecondtitleone}{1.3cm}
+    \newcommand{\vspacesecondtitlesecond}{0.8cm}
+}{
+    % B5
+    \newcommand{\fontskipsecondtitle}{11pt}
+    \newcommand{\vspacesecondtitleone}{0.9cm}
+    \newcommand{\vspacesecondtitlesecond}{0.4cm}
+}
+
 {
     \makeatletter
     \def\subtitle#1{\def\@subtitle{#1}}
@@ -87,39 +100,32 @@
                 \@title
             }
         \end{center}
-        \vspace{1.3cm}
+        \vspace{\vspacesecondtitleone}
         % Back to normal font for the German specific text
-        \normalfont\subtitlefont\fontsize{11pt}{15pt}\selectfont%
+        \normalfont\subtitlefont\fontsize{11pt}{\fontskipsecondtitle}\selectfont%
         \center{
             Dissertation \\ 
             zur Erlangung des Doktorgrades \\
             der Naturwissenschaften
         }
-        \vspace{0.8cm}
+        \vspace{\vspacesecondtitlesecond}
         \center{
             Vorgelegt beim Fachbereich Physik \\
             der Johann Wolfgang Goethe-Universität \\
             in Frankfurt am Main
         }
-        \vspace{0.8cm}
+        \vspace{\vspacesecondtitlesecond}
         \center{
             von \\
-            \scshape{Maël Le Garrec}\normalfont\subtitlefont\fontsize{11pt}{15pt}\selectfont\\
+            \scshape{Maël Le Garrec}\normalfont\subtitlefont\fontsize{11pt}{\fontskipsecondtitle}\selectfont\\
             aus Oberhaslach, Elsàss, Frankreich.
         }
-        \vspace{0.8cm}
+        \vspace{\vspacesecondtitlesecond}
         \center{
             Unter der Betreuung von\\
             Dr. Ewen H. Maclean, CERN,\\
             Apl. Prof. Dr. Giuliano Franchetti, Goethe-Universität.
         }
-        %
-        % Supervisors
-        %\center{
-        %    \@firstsupervisor \\
-        %    \@secondsupervisor
-        %}
-        %
         \vfill
         \begin{center}
             Frankfurt am Main 2024
