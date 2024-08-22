@@ -30,6 +30,8 @@ main.mtc5
 main.mtc6
 main.mtc7
 main.tmb
+main.lot
+main.lof
 *.blg
 main-blx.bib
 main.run.xml
