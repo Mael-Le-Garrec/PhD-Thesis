@@ -343,7 +343,10 @@ afterskip=2cm]{chapter}
 \newcommand*{\lastchapterthumbskip}{\firstchapterthumbskip}
 \setlength{\chapterthumbheight}{4.5em}
 \setlength{\chapterthumbwidth}{.06\paperwidth}
-\newcommand*{\chapterthumbskip}{.1\paperheight}
+% This value below is the distance between thumbs. Originally hardcoded to 0.1.
+% Modified here fit to all the chapters on one pageheight, and then wrap around at the top for
+% appendices
+\newcommand*{\chapterthumbskip}{.12\paperheight} 
 \colorlet{chapterthumbboxcolor}{thumb_color}
 \newcommand*{\chapterthumbcolor}{white}
 \newcommand*{\chapterthumbformat}{\thechapter} % What's written in the box
@@ -410,7 +413,7 @@ afterskip=2cm]{chapter}
     \fi
     \vspace*{%
         \dimexpr
-        \firstchapterthumbskip
+      \firstchapterthumbskip
         + ( \chapterthumbskip )
         * \value{chapterthumb}%
         - \baselineskip
@@ -451,7 +454,7 @@ contents=\chapterthumbbox
 }
 
 % Only add the thumb on some pages. Avoid for example the Part style for Appendices
-\newpairofpagestyles[scrheadings]{part}{}
-\renewcommand\partpagestyle{plain.part}
-\AddLayersToPageStyle{scrheadings}{chapterthumb}
-\AddLayersToPageStyle{plain.scrheadings}{chapterthumb}
+%\newpairofpagestyles[scrheadings]{part}{}
+%\renewcommand\partpagestyle{plain.part}
+%\AddLayersToPageStyle{scrheadings}{chapterthumb}
+%\AddLayersToPageStyle{plain.scrheadings}{chapterthumb}
