@@ -1,3 +1,177 @@
+% =============================
+%       Extended Summary
+% =============================
 \chapter{\todo{Extended Summary}}
 
+{
+% 5 pages is reeaally long, let's just add some spacing
+\fontsize{12pt}{17pt}\selectfont
+
+% Introduction
+The Large Hadron Collider (LHC) at CERN, nestled in a 27-kilometer tunnel beneath the
+Swiss-French border, is the world's largest and most powerful particle accelerator. Its primary
+mission is to recreate the conditions of the universe just moments after the Big Bang, allowing
+scientists to delve into the fundamental forces and particles that shape the universe. This
+extraordinary facility accelerates protons and heavy ions to nearly the speed of light before
+colliding them with immense energy, providing insights into the building blocks of matter and the
+fundamental interactions that govern our universe. The LHC represents not only a monumental
+engineering feat but also a crucial instrument for advancing our understanding of high-energy
+physics.
+
+Operating such a complex and powerful machine involves overcoming numerous technical challenges,
+particularly in maintaining the precise control and stability of its particle beams. One significant
+challenge is managing the effects of higher-order magnetic fields, which are generated often by
+field errors present in the multipoles used to guide and focus the particle beams in the
+accelerator.  These multipole fields, including octupolar and decapolar, can profoundly impact beam
+dynamics and stability. Addressing these challenges is essential for ensuring that the LHC operates
+effectively and continues to deliver valuable scientific results. The following extended summary
+synthesizes findings from three detailed studies that investigate various aspects of higher-order
+multipole effects and their implications for the LHC's performance.
+
+
+% First Study
+The first study explores the origins and consequences of skew octupolar fields within the LHC. 
+These fields significantly influence the dynamic aperture of the accelerator, a critical parameter
+that defines the range within which the particle beam remains stable. 
+Skew octupolar correctors are installed around key detectors, such as ATLAS and CMS, to manage these
+fields and mitigate their effects on beam stability. 
+The study first focuses on the measurement of these fields with optics designed for \textit{top
+enrgy}, an energy of 7 TeV per particle. Corrections were performed, taking advantage of a different
+approach than that taken few years prior, based on a response matrix method. This was developped in
+order to address skew octupolar Resonance Driving Terms (RDTs) using the available corrector
+magnets.
+This method has proven effective, although its performance is limited by the absence of one
+corrector, which constrains the achievable correction strength. Consequently, certain RDTs, like
+$f_{1012}$ and $f_{1210}$ can either be effectively corrected or maintained at a constant level
+depending on the corrector configuration. 
+
+Additionally, the study investigates the unexpected influence of Landau octupoles on skew octupolar
+RDTs at \textit{injection energy}, an energy of 450 GeV per particle. During measurements, a large 
+shift in skew octupolar RDTs was observed with various powerings of the Landau octupoles. At first
+glance, these octupoles would generate skew fields only with misalignments, specifically roll 
+errors. However, simulations indicate that misalignments of octupoles have minimal impact on skew
+octupolar fields.  Instead, coupling has been identified as a crucial factor. It is expected for the
+combination of coupling and Landau octupoles to be major contributor to skew octupolar RDTs at
+injection energy, where octupoles are strongly powered.  Accurate modeling of coupling is thus
+essential for predicting the behavior of skew octupolar RDTs and managing their impact on beam
+stability.
+
+
+% Second Study
+The second study focuses on decapolar fields in the LHC, particularly at injection energy. This
+study addresses previously observed discrepancies between measurements and models related to
+third-order chromaticity, a critical parameter that describes how particles with a deviation in
+energy will experience a different oscillation frequency than the reference particle.
+Accurate control of chromaticity is vital for maintaining beam stability. 
+The introduction of never observed before quantities, \textit{observables}, has provided a
+clearer understanding of these discrepancies. Among these observables are the bare
+chromaticity, being the chromaticity of the machine without any corrector powered on to observe the
+bare influence of field errors. Then was measured the chromatic amplitude detuning, being a detuning
+function of not only momentum deviations but also amplitude. Several approachs to measure the same
+fields helps understanding the various contributions.
+The research reveals that the decay of decapolar components in the main dipoles is a significant
+factor contributing to these discrepancies. This decay, back when the LHC was designed, was deemed
+too small to be significant and thus not included in the magnetic error tables used for simulation.
+As parameters of the machine are pushed every year and the effect of higher-order fields better 
+understood it becomes clear that an accurate control and modelling of these fields is needed.
+
+For the first time, measurements and corrections of the decapolar Resonance Driving
+Term $f_{1004}$ were carried out at injection energy. 
+Implementing combined corrections for third-order chromaticity, chromatic amplitude detuning, and
+RDT $f_{1004}$ led to a 3\% improvement in beam lifetime. Conversely, deliberately degrading the RDT
+resulted in a 10\% decrease in beam lifetime, highlighting the importance of these
+corrections for stable beam operation. 
+The study also explored how sextupoles and octupoles interact to generate decapolar-like fields. It
+was found that sextupoles, both alone and in combination with Landau octupoles, produce a substantial
+$f_{1004}$ decapolar RDT when powered to small currents. It follows that in an operational
+context decapolar resonances, largely generated by the strong octupoles, would benefit from adapted
+corrections.
+These findings suggest that further advancements in correction methods could lead to even greater
+improvements in beam stability.
+
+
+% Third Study
+The third study investigates higher-order fields in the LHC, specifically dodecapolar and
+decatetrapolar fields. Using a newly implemented collimation setup and custom post-processing
+techniques, this study successfully observed these higher-order fields. Studies were 
+undertaken to estimate the effect of the non-linearity of the momentum compaction factor on the 
+chromaticity function during the computation of momentum offset. The 
+results indicate that while being non-linear, its effects on the end chromaticity is negligible even 
+at large momentum offsets.
+Several chromaticity measurements with varying configurations then revealed the presence of fourth
+and fifth-order terms ($Q^{(4)}$ and $Q^{(5)}$). These measurements consistently identified these
+higher-order terms with similar values, demonstrating their robustness. Additionally, it is 
+emphasized that accurately characterizing the lower order requires a good measurement of these 
+higher-order terms. The study identifies dodecapolar and decatetrapolar fields as primary
+contributors to these higher-order effects, originating from field errors in the main dipoles and
+quadrupoles. The field error model of the LHC seems to be in relative agreement with the
+measurements, once decay of decatetrapolar components is considered.
+% RDT
+For the first time, the dodecapolar Resonance Driving Term $f_{0060}$ was measured. This measurement,
+shows a clear repeatability, while having been performed with different configurations of octupolar
+and decapolar corrections. The measured values show a good agreement with the model. 
+The research concludes that further investigations are needed to address limitations in the
+measurement range of the chromaticity function and to refine estimates of higher-order chromaticity
+terms. Additionally, studying the impact of lower-order multipoles on the dodecapolar RDT and its
+impact on beam's lifetime would be valuable for optimizing the LHC's performance.
+
+
+% Conclusion
+In summary, the research detailed in these studies underscores the critical importance of
+understanding and managing higher-order multipole effects in the LHC. Skew octupolar fields,
+decapolar fields, and other higher-order terms have a significant impact on beam stability and
+performance. Developing and implementing advanced diagnostic techniques and correction methods are
+essential for enhancing simulation accuracy and operational strategies. The insights gained from
+these studies are not only crucial for optimizing the performance of the LHC but also for guiding
+the design and operation of future accelerator projects.
+
+As particle accelerators continue to evolve, the challenges associated with higher-order multipole
+components will persist. Ongoing research in this field is vital for addressing these challenges and
+ensuring that future accelerators achieve the precision required for groundbreaking scientific
+discoveries. The lessons learned from the LHC's experience with complex interactions of multipole
+fields will inform the design and operation of next-generation accelerators, ensuring they remain at
+the forefront of exploring fundamental questions about the universe.
+
+The work presented in these chapters represents a significant contribution to the field of
+accelerator physics by offering practical solutions for current operational challenges and laying
+the groundwork for future advancements. The findings highlight the need for continuous refinement in
+correction techniques and diagnostic tools to manage the effects of higher-order multipoles
+effectively. As the demand for high-performance accelerators grows, addressing these multipole
+effects will become increasingly crucial. This research not only enhances our understanding of beam
+dynamics but also provides a solid foundation for the continued success and innovation in particle
+accelerator technology.
+
+} % last empty line is emportant to get an implicit \par
+
+
+% =============================
+%       Zusammenfassung
+% =============================
 \chapter{\todo{Zusammenfassung}}
+
+{
+\fontsize{12pt}{17pt}\selectfont
+
+Der Large Hadron Collider (LHC) am CERN, eingebettet in einem 27 Kilometer langen Tunnel unter der Schweizerisch-Französischen Grenze, ist der weltweit größte und leistungsstärkste Teilchenbeschleuniger. Seine Hauptmission besteht darin, die Bedingungen des Universums kurz nach dem Urknall nachzubilden, um Wissenschaftlern zu ermöglichen, die fundamentalen Kräfte und Teilchen zu erforschen, die das Universum formen. Diese außergewöhnliche Anlage beschleunigt Protonen und schwere Ionen nahezu auf Lichtgeschwindigkeit, bevor sie mit enormer Energie kollidieren, was Einblicke in die Bausteine der Materie und die grundlegenden Wechselwirkungen liefert, die unser Universum regieren. Der LHC stellt nicht nur eine monumentale Ingenieursleistung dar, sondern ist auch ein entscheidendes Instrument für das Fortschreiten unseres Verständnisses der Hochenergiephysik.
+
+Der Betrieb einer derart komplexen und leistungsstarken Maschine erfordert die Überwindung zahlreicher technischer Herausforderungen, insbesondere bei der präzisen Kontrolle und Stabilität der Teilchenstrahlen. Eine bedeutende Herausforderung besteht darin, die Auswirkungen höherer magnetischer Felder zu steuern, die häufig durch Fehler in den Multipolen erzeugt werden, die verwendet werden, um die Teilchenstrahlen im Beschleuniger zu führen und zu fokussieren. Diese Multipolfelder, einschließlich oktupolarer und dekapolarer Felder, können die Strahldynamik und -stabilität erheblich beeinflussen. Die Bewältigung dieser Herausforderungen ist entscheidend dafür, dass der LHC effektiv arbeitet und weiterhin wertvolle wissenschaftliche Ergebnisse liefert. Die folgende erweiterte Zusammenfassung fasst die Ergebnisse dreier detaillierter Studien zusammen, die verschiedene Aspekte der höheren Multipoleffekte und deren Auswirkungen auf die Leistung des LHC untersuchen.
+
+% Erste Studie
+ Die erste Studie untersucht die Ursprünge und Konsequenzen von schiefen oktupolaren Feldern im LHC. Diese Felder beeinflussen das dynamische Apertur des Beschleunigers erheblich, ein kritischer Parameter, der den Bereich definiert, innerhalb dessen der Teilchenstrahl stabil bleibt. Schiefe oktupolare Korrektoren sind um wichtige Detektoren wie ATLAS und CMS herum installiert, um diese Felder zu steuern und ihre Auswirkungen auf die Strahlstabilität zu mildern. Die Studie konzentriert sich zunächst auf die Messung dieser Felder mit Optiken, die für eine Energie von 7 TeV pro Teilchen ausgelegt sind. Korrekturen wurden vorgenommen, wobei ein anderer Ansatz als vor einigen Jahren verfolgt wurde, basierend auf einer Antwortmatrix-Methode. Diese wurde entwickelt, um Resonanz treibende Terme (RDTs) mit den verfügbaren Korrektormagneten zu adressieren. Diese Methode hat sich als effektiv erwiesen, obwohl ihre Leistung durch das Fehlen eines Korrektors begrenzt ist, was die erreichbare Korrekturstärke einschränkt. Folglich können bestimmte RDTs, wie $f_{1012}$ und $f_{1210}$, je nach Korrektorkonfiguration entweder effektiv korrigiert oder auf einem konstanten Niveau gehalten werden.
+
+Darüber hinaus untersucht die Studie den unerwarteten Einfluss von Landau-Oktupolen auf schiefe oktupolare RDTs bei einer Injektionsenergie von 450 GeV pro Teilchen. Während der Messungen wurde eine große Verschiebung der schiefen oktupolaren RDTs bei verschiedenen Leistungsstärken der Landau-Oktupolen beobachtet. Auf den ersten Blick würden diese Oktupole nur bei Fehlausrichtungen, insbesondere Rollfehlern, schiefe Felder erzeugen. Simulationen zeigen jedoch, dass Fehlausrichtungen der Oktupole nur minimale Auswirkungen auf die schiefen oktupolaren Felder haben. Stattdessen wurde das Coupling als entscheidender Faktor identifiziert. Es wird erwartet, dass die Kombination von Coupling und Landau-Oktupolen ein wesentlicher Beitrag zu schiefen oktupolaren RDTs bei Injektionsenergie ist, wenn die Oktupole stark bestromt werden. Eine genaue Modellierung des Couplings ist daher unerlässlich, um das Verhalten der schiefen oktupolaren RDTs vorherzusagen und ihre Auswirkungen auf die Strahlstabilität zu steuern.
+
+% Zweite Studie
+ Die zweite Studie konzentriert sich auf dekapolare Felder im LHC, insbesondere bei Injektionsenergie. Diese Studie behandelt zuvor beobachtete Diskrepanzen zwischen Messungen und Modellen im Zusammenhang mit der chromatischen Aberration dritter Ordnung, einem kritischen Parameter, der beschreibt, wie Teilchen mit einer Energieabweichung eine andere Schwingungsfrequenz als das Referenzteilchen erfahren. Die genaue Kontrolle der Chromatizität ist entscheidend für die Aufrechterhaltung der Strahlstabilität. Die Einführung neuer Beobachtungsgrößen hat ein klareres Verständnis dieser Diskrepanzen ermöglicht. Zu diesen Beobachtungen gehören die „nackte“ Chromatizität, also die Chromatizität der Maschine ohne eingeschaltete Korrektoren, um den reinen Einfluss von Feldfehlern zu beobachten. Außerdem wurde das chromatische Amplituden-Detuning gemessen, das eine Funktion nicht nur von Momentumsabweichungen, sondern auch von Amplituden ist. Mehrere Ansätze zur Messung derselben Felder helfen, die verschiedenen Beiträge zu verstehen. Die Forschung zeigt, dass der Zerfall der dekapolaren Komponenten in den Hauptdipolen ein wesentlicher Faktor ist, der zu diesen Diskrepanzen beiträgt. Dieser Zerfall wurde bei der Auslegung des LHC als zu gering angesehen, um signifikant zu sein, und daher nicht in die Tabellen für magnetische Fehler einbezogen, die für die Simulation verwendet werden. Da die Parameter der Maschine jedes Jahr weiter optimiert werden und die Auswirkungen höherer Felder besser verstanden werden, wird klar, dass eine genaue Kontrolle und Modellierung dieser Felder erforderlich ist.
+
+Zum ersten Mal wurden Messungen und Korrekturen des dekapolaren Resonanz treibenden Terms $f_{1004}$ bei Injektionsenergie durchgeführt. Die Implementierung kombinierter Korrekturen für die chromatische Aberration dritter Ordnung, das chromatische Amplituden-Detuning und den RDT $f_{1004}$ führte zu einer Verbesserung der Strahllebensdauer um 3 %. Im Gegensatz dazu führte die absichtliche Verschlechterung des RDT zu einer Verringerung der Strahllebensdauer um 10 %, was die Bedeutung dieser Korrekturen für den stabilen Strahlbetrieb unterstreicht. Die Studie untersuchte auch, wie Sextupole und Oktupole interagieren, um dekapolar-ähnliche Felder zu erzeugen. Es wurde festgestellt, dass Sextupole, sowohl allein als auch in Kombination mit Landau-Oktupolen, bei kleinen Strömen einen erheblichen $f_{1004}$ dekapolaren RDT erzeugen. Es folgt, dass im Betriebskontext dekapolare Resonanzen, die größtenteils durch die starken Oktupole erzeugt werden, von angepassten Korrekturen profitieren würden. Diese Erkenntnisse legen nahe, dass weitere Fortschritte in den Korrekturmethoden zu noch größeren Verbesserungen der Strahlstabilität führen könnten.
+
+% Dritte Studie 
+Die dritte Studie untersucht höhere Felder im LHC, insbesondere dodekapolare und decatetrapolare Felder. Mit einem neu implementierten Kollimationsaufbau und speziellen Nachbearbeitungstechniken wurden diese höheren Felder erfolgreich beobachtet. Es wurden Studien durchgeführt, um die Wirkung der Nichtlinearität des Impulskompaktionsfaktors auf die Chromatizitätsfunktion während der Berechnung des Impulsversatzes abzuschätzen. Die Ergebnisse zeigen, dass die Auswirkungen auf die Chromatizität trotz ihrer Nichtlinearität auch bei großen Impulsversätzen vernachlässigbar sind. Mehrere Chromatizitätsmessungen mit unterschiedlichen Konfigurationen enthüllten dann das Vorhandensein von Terme vierter und fünfter Ordnung ($Q^{(4)}$ und $Q^{(5)}$). Diese Messungen identifizierten diese höheren Terme mit ähnlichen Werten durchgehend, was ihre Robustheit zeigt. Zusätzlich wird betont, dass eine genaue Charakterisierung der Terme niedriger Ordnung eine gute Messung dieser höheren Terme erfordert. Die Studie identifiziert dodekapolare und decatetrapolare Felder als Hauptursachen dieser höheren Effekte, die auf Feldfehler in den Hauptdipolen und Quadrupolen zurückzuführen sind. Das Feldfehlermodell des LHC scheint in relativer Übereinstimmung mit den Messungen zu stehen, wenn der Zerfall der decatetrapolaren Komponenten berücksichtigt wird.
+
+Zum ersten Mal wurde der dodekapolare Resonanz treibende Term $f_{0060}$ gemessen. Diese Messung zeigt eine klare Wiederholbarkeit, während sie mit unterschiedlichen Konfigurationen von oktupolaren und dekapolaren Korrekturen durchgeführt wurde. Die gemessenen Werte stimmen gut mit dem Modell überein. Die Forschung kommt zu dem Schluss, dass weitere Untersuchungen erforderlich sind, um die Einschränkungen im Messbereich der Chromatizitätsfunktion anzugehen und Schätzungen höherer chromatischer Terme zu verfeinern. Darüber hinaus wäre es wertvoll, die Auswirkungen niedrigerer Multipole auf den dodekapolaren RDT und seine Auswirkungen auf die Strahllebensdauer zu untersuchen, um die Leistung des LHC zu optimieren.
+
+% Fazit
+Zusammenfassend unterstreicht die in diesen Studien detailliert dargestellte Forschung die entscheidende Bedeutung des Verständ
+
+}
