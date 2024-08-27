@@ -22,11 +22,34 @@ Operating such a complex and powerful machine involves overcoming numerous techn
 particularly in maintaining the precise control and stability of its particle beams. One significant
 challenge is managing the effects of higher-order magnetic fields, which are generated often by
 field errors present in the multipoles used to guide and focus the particle beams in the
-accelerator.  These multipole fields, including octupolar and decapolar, can profoundly impact beam
+accelerator. These multipole fields, including octupolar and decapolar, can profoundly impact beam
 dynamics and stability. Addressing these challenges is essential for ensuring that the LHC operates
 effectively and continues to deliver valuable scientific results. The following extended summary
 synthesizes findings from three detailed studies that investigate various aspects of higher-order
 multipole effects and their implications for the LHC's performance.
+
+
+% Concepts 
+The thesis utilizes the Hamiltonian formalism to describe particle motion in the transverse planes
+under the influence of various multipole fields. In non-linear lattices, the complexity of beam
+dynamics significantly increases, necessitating the use of advanced mathematical tools such as Lie
+Algebra and Poisson Brackets to accurately characterize non-linear effects. The study derives
+explicit higher-order non-linear transfer maps and provides a comprehensive summary of multipole
+combinations. These non-linearities in the lattice lead to intricate phenomena like chromaticity,
+amplitude detuning, chromatic amplitude detuning, and resonances through Resonance Driving Terms
+(RDTs), all of which are thoroughly derived and accompanied by detailed measurement techniques.
+
+Optics measurements are conducted using a range of software tools and techniques. Turn-by-turn data
+acquisition is emphasized as a crucial method for evaluating beam optics, where an AC-dipole excites
+the beam, and the resulting oscillations are analyzed using Fourier transforms to extract tunes and
+identify resonances. This analysis extends to linear and non-linear observables such as the
+beta-function, dispersion, orbit, and RDTs. Chromaticity measurements involve inducing momentum
+offsets by varying the RF frequency and observing the corresponding tune shifts. The thesis also
+introduces a custom tool, the Non-Linear Chromaticity GUI, which streamlines the analysis and
+correction of chromaticity by fitting data to higher-order chromaticity functions and implementing
+necessary adjustments. A key correction strategy discussed is the response matrix, a linear equation
+system that describes how variations in multipole strengths impact observables, which has proven
+effective in correcting both linear and non-linear observables in the LHC.
 
 
 % First Study
@@ -36,8 +59,8 @@ that defines the range within which the particle beam remains stable.
 Skew octupolar correctors are installed around key detectors, such as ATLAS and CMS, to manage these
 fields and mitigate their effects on beam stability. 
 The study first focuses on the measurement of these fields with optics designed for \textit{top
-enrgy}, an energy of 7 TeV per particle. Corrections were performed, taking advantage of a different
-approach than that taken few years prior, based on a response matrix method. This was developped in
+energy}, an energy of 7 TeV per particle. Corrections were performed, taking advantage of a different
+approach than that taken few years prior, based on a response matrix method. This was developed in
 order to address skew octupolar Resonance Driving Terms (RDTs) using the available corrector
 magnets.
 This method has proven effective, although its performance is limited by the absence of one
@@ -67,7 +90,7 @@ The introduction of never observed before quantities, \textit{observables}, has 
 clearer understanding of these discrepancies. Among these observables are the bare
 chromaticity, being the chromaticity of the machine without any corrector powered on to observe the
 bare influence of field errors. Then was measured the chromatic amplitude detuning, being a detuning
-function of not only momentum deviations but also amplitude. Several approachs to measure the same
+function of not only momentum deviations but also amplitude. Several approaches to measure the same
 fields helps understanding the various contributions.
 The research reveals that the decay of decapolar components in the main dipoles is a significant
 factor contributing to these discrepancies. This decay, back when the LHC was designed, was deemed
@@ -141,7 +164,7 @@ effects will become increasingly crucial. This research not only enhances our un
 dynamics but also provides a solid foundation for the continued success and innovation in particle
 accelerator technology.
 
-} % last empty line is emportant to get an implicit \par
+} % last empty line is important to get an implicit \par
 
 
 % =============================
