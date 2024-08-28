@@ -1,32 +1,22 @@
-\clearpage
-
-% To have the quote on the right page
-% It doesn't inherit the style of chapters in books
-% Needs to be done manually
-\newpage
-\thispagestyle{empty}
-\mbox{}
-\newpage
-
+% ==================================
+%              Quote
+% ==================================
 
 \newcommand{\thesisquote}[2]{
+  % Start on a right page and clear any style
+  \cleardoublepage
   \thispagestyle{empty}
   \null\vfill
-  \newlength\longest
 
-  \settowidth\longest{\huge text text text text text text text text text;}
-  {
-    \centering
-    \parbox{\longest}{%
-      \raggedright{\huge%
-      \calligra #1.\par\bigskip
-      }   
-      \raggedleft\large\MakeUppercase{#2}\par%
-    }
+  % Align the text on the right
+  \makebox[0.9\textwidth][r]{%
+      \parbox[t]{0.9\textwidth}{%
+          \huge\calligra\raggedleft #1 \par\smallskip
+          \raggedleft\chapterfont\normalsize\scshape #2
+      }
   }
-
-  \vfill\vfill
 }
+
 
 \thesisquote{Check yourself before you Shrek yourself}{Ice Cube ft. Shrek}
 %\thesisquote{A Smart Quote}{Me}
