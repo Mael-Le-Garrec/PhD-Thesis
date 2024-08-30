@@ -14,24 +14,24 @@ in Tab.~\ref{tab:magnetic_fields:relation_indices}. MAD-X, and MAD-NG, however, 
     \centering
     \begin{tabular}{lccc}
     \toprule
-        Multipole     &     Index        & Normalized Strength  &      MAD-X      \\
-    \midrule                                                    
-        Dipole        &     1            & $K_1$                &     0           \\
-        Quadrupole    &     2            & $K_2 $               &     1           \\
-        Sextupole     &     3            & $K_3 $               &     2           \\
-        Octupole      &     4            & $K_4 $               &     3           \\
-        Decapole      &     5            & $K_5 $               &     4           \\
-        Dodecapole    &     6            & $K_6 $               &     5           \\
-        Decatetrapole &     7            & $K_7 $               &     6           \\
-        Decahexapole  &     8            & $K_8 $               &     7           \\
+        Multipole     &     Index         &      MAD-X      \\
+    \midrule                              
+        Dipole        &     1             &     0           \\
+        Quadrupole    &     2             &     1           \\
+        Sextupole     &     3             &     2           \\
+        Octupole      &     4             &     3           \\
+        Decapole      &     5             &     4           \\
+        Dodecapole    &     6             &     5           \\
+        Decatetrapole &     7             &     6           \\
+        Decahexapole  &     8             &     7           \\
     \bottomrule
     \end{tabular}
-    \caption{Relation between field indices and multipoles.}
+    \caption{Relation between the field indices used in this thesis and multipoles.}
     \label{tab:magnetic_fields:relation_indices}
   \end{table}
 
 As such, unless explicitly stated, quantities such as the magnetic strength $b$ and normalized
-strength $K$ will be expressed with this notation. 
+strength $K$ presented latter will be expressed with this notation. 
 
 
 % ============================================
@@ -84,10 +84,10 @@ The unit of the field is relative to the multipole order $n$: $[\text{Tm}^{1-n}]
 
 \subsubsection{\review{Beam Rigidity}}
 
-The beam rigidity refers to the resistance of a particle moving through the accelerator to the
-bending applied by the magnetic fields. It is derived from the Laurentz force~\cite{dilly_corrections_2022}
-and relates the magnetic field $B$, the radius of curvature $\rho$ to the momentum $p$ and charge $q$
-of the particle:
+The beam rigidity is a quantification of the ability of a magnetic field to bend the trajectory of a
+particle.  It is derived from the Laurentz force~\cite{dilly_corrections_2022} and relates the
+magnetic field $B$, the radius of curvature $\rho$ to the momentum $p$ and charge $q$ of the
+particle:
 
 \begin{equation}
     B \rho = \frac{p}{q}
