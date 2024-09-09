@@ -9,7 +9,7 @@
 Beam Position Monitors (BPMs) are one of the most utilized and essential elements of beam 
 diagnostics in particle accelerators. In the LHC, most of the BPMs are dual plane, and thus composed
 of four electrodes, distributed as two per plane. The BPM system consists of over than 550 BPMs pear
-beam, distributed along the ring, in the arcs and the IPs. The most common type, the
+beam, positioned along the ring, in the arcs and the IPs. The most common type, the
 \textit{curved-button}, shown in \cref{fig:beam_instrumentation_bpm_button}, is typically placed
 near quadrupoles~\cite{wendt_bpm_2020}.
 
@@ -33,9 +33,9 @@ Other pickups such as the \textit{stripline}, shown in
 signal to noise ratio and are capable of identifying the direction of the
 beam~\cite{wendt_bpm_2020}. Such features are essential for the LHC, were both beams travel through
 the same aperture at the IPs.\\ 
-The BPM response is not linear with the beam position, which requires a post-processing not
-systematically implemented in accelerators beam diagnostics systems. LHC's BPMs have been simulated
-and polynomials fitted to minimize this response error~\cite{a_nosych_geometrical_2014}.
+%The BPM response is not linear with the beam position, which requires a post-processing not
+%systematically implemented in accelerators beam diagnostics systems. LHC's BPMs have been simulated
+%and polynomials fitted to minimize this response error~\cite{a_nosych_geometrical_2014}.
 
 
  
@@ -63,10 +63,54 @@ Beam Loss Monitors are detectors mounted on various elements of the accelerator,
 collimators, to detect abnormal losses of particles. They play a crucial role in the protection of
 the machine, triggering a dump when losses exceed the threshold set for their respective element. 
 BLMs use ionization chambers, working on the same principle as simple Geiger counters: a tube filled
-with gas, in presence of a high voltage.
+with gas, in presence of a high voltage~\cite{schmidt_machine_2014}. A picture of BLMs mounted on
+the LHC is given in \cref{fig:beam_instrumentation:blm1}.
 
 Dashboards in the control room are regularly used to monitor the losses along the ring when
-performing optics measurements, as those prove to often be destructive.
+performing optics measurements, as those prove to often be destructive. An example of such a
+dashboard is given in \cref{fig:beam_instrumentation:blm2}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/blm.png}
+    \caption{Beam Loss Monitors (BLM), in yellow, on the LHC~\cite{schmidt_machine_2014}.}
+    \label{fig:beam_instrumentation:blm1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/blm2.png}
+    \caption{Graphical interface used in the CERN Control Cernter (CCC) for instantaneous losses in
+    the LHC~\cite{schmidt_machine_2014}. Different parts of the accelerator have varying dump
+    thresholds.}
+    \label{fig:beam_instrumentation:blm2}
+\end{figure}
+
+
+% ============================================
+%                   BCT
+% ============================================
+\subsection{\review{Beam Current Transformer}}
+
+The Beam Current Transformer (BCT) is a device used to measure the intensity of a particle beam.
+It operates by detecting the current induced by the moving charge of the beam as it passes through
+the tores of the BCT.
+The BCTs are designed to be able to measure intensities from pilots bunches of 8µA to total beams of
+more than 860mA~\cite{odier_dcct_2009}.
+
+
+% ============================================
+%                   BBQ
+% ============================================
+\subsection{\review{BBQ System}}
+
+The Base-Band Tune (BBQ) system in the LHC is designed to measure the beam's tune via its
+turn-by-turn signal. It operates by detecting and analyzing the signals of diode
+peak-detectors~\cite{boccardi_first_2009}. The system further implements processing hardware and
+software, transmitting the acquired data to the control and logging systems.
+The system can operate with no explicit excitation, relying on the residual beam
+oscillations, or by using tune kickers or frequency sweeps~\cite{boccardi_first_2009}.
+
 
 % ============================================
 %                 AC-Dipole
@@ -77,13 +121,13 @@ The AC dipole of the LHC is a crucial component for optics studies. Its primary 
 excite the beam into large coherent oscillation, achieved by applying a sinusoidally oscillating
 dipole field~\cite{miyamoto_parametrization_2008}. By ramping up and down adiabatically the field,
 large coherent oscillations can be produced without any decoherence or emittance growth.
-\Cref{fig:ac_dipole} shows an example of a measurement made with an AC-Dipole.  Exciting the beam to
+\Cref{fig:ac_dipole} shows an example of a simulation made with an AC-Dipole. Exciting the beam to
 large amplitudes make the study of linear optics, such as beta-beating easier, and that of non
 linear optics such as resonances possible.
 
 \begin{figure}
     \center
-    \includegraphics[width=0.9\textwidth]{./images/ac_dipole_tbt.pdf}
+    \includegraphics[width=0.85\textwidth]{./images/ac_dipole_tbt.pdf}
     \caption{Simulated turn by turn data with an AC-Dipole first ramping up then down.} 
     \label{fig:ac_dipole}
 \end{figure}

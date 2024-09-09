@@ -1,5 +1,7 @@
 \section{\review{Optics Measurements}}
 
+To perform optics measurements, several tools and techniques are used. This section details the
+various implemented methods to measure specific observables.
 
 % ===============================
 %            Software
@@ -34,7 +36,6 @@ packages:
 \end{itemize}
 
 
-
 % ===============================
 %           TbT Data
 % ===============================
@@ -49,7 +50,7 @@ A spectral analysis is then performed via a \textit{FFT}, making apparent the dr
 AC-Dipole, the transverse tunes and the possible resonance lines, as shown in
 \cref{fig:optics_measurements:tbt_data:spectrum}.
 
-\begin{figure}[H]
+\begin{figure}[!htb]
     \centering
     \includegraphics[width=0.8\textwidth]{./images/basic_spectrum.pdf}
     \caption{Horizontal frequency spectrum of a turn-by-turn measurement in the LHC. The 
@@ -59,21 +60,35 @@ AC-Dipole, the transverse tunes and the possible resonance lines, as shown in
 \end{figure}
 
 From this, the \textit{optics} such as $\beta$-beating, dispersion, coupling and Resonance Driving
-Terms can be reconstructed~\cite{catalan-lasheras_linear_2004}.
+Terms can be reconstructed~\cite{catalan-lasheras_linear_2004}, as will be detailed in the following
+sections.
+
+\FloatBarrier
+
+% ===============================
+%         Beta Beating
+% ===============================
+\subsection{\todo{$\beta$-Beating}}
+\subsection{\todo{Dispersion}}
+\subsection{\todo{Action}}
+\subsection{\todo{Coupling}}
+\subsection{\todo{Amplitude Detuning}}
+\subsection{\todo{Lifetime}}
+\subsection{\todo{Resonance Driving Terms}}
 
 
 
 % ===============================
-%         Chromaticity
+%          Chromaticity
 % ===============================
 \subsection{\review{Chromaticity}}
 \label{subsection:optics_corrections_chromaticity}
 
-% --- Procedure ---
-\subsubsection{\review{Procedure}}
+%% --- Procedure ---
+%\subsubsection{\review{Procedure}}
 
 Chromaticity measurements are typically performed by varying the RF frequency to induce a change of
-momentum offset $\delta$, while measuring the tune.  The momentum offset $\delta$ being related to
+momentum offset $\delta$, while measuring the tune. The momentum offset $\delta$ being related to
 the RF frequency, the Lorentz factor $\gamma$ and the momentum compaction factor
 $\alpha_c$~\cite{keintzel_jacqueline_beam_nodate}:
 
@@ -82,15 +97,20 @@ $\alpha_c$~\cite{keintzel_jacqueline_beam_nodate}:
     \label{eq:dpp_rf}
 \end{equation}
 
-In the LHC, the Lorentz factor $\gamma$ is here negligible, as the energy is large even at injection.
-At 450GeV, $\gamma^{-2} \approx 10^{-6}$, which is two orders of magnitude smaller than $\alpha_c$.
+In the LHC, the Lorentz factor $\gamma^{-2}$ is here negligible, as the energy is large even at
+injection.  At 450GeV, $\gamma^{-2} \approx 10^{-6}$, which is two orders of magnitude smaller than
+$\alpha_c$.
 
-Frequency steps of 20Hz every 30 secondes are usually taken to compromise between number of data
-points, precision of the tune estimate, and duration of the measurement. Once beam losses,
-registered by the BLMs are deemed too high, the frequency is reverted back to its nominal value in
-larger steps. The same procedure is then re-applied in the negative.
-\Cref{fig:measurements:rf_scan} shows a typical RF scan performed to measure chromaticity in the
-LHC.
+During operation, where the linear chromaticity often needs to be measured, a sinusoid function is
+applied on the RF frequency. This induces a short range of momentum offset, but enough to measure
+the first order of the chromaticity function.
+For non-linear measurements, a larger range is required. In order to do so, a new procedure has been
+developed. Dense frequency scans with steps of 20Hz every 30 seconds are usually taken to compromise
+between number of data points, precision of the tune estimate, and duration of the measurement. Once
+beam losses, registered by the BLMs are deemed too high, the frequency is reverted back to its
+nominal value in larger steps. Attaining the limits of the BLMs ensures a large momentum-offset
+range. The same procedure is then re-applied in the negative. \Cref{fig:measurements:rf_scan} shows
+a typical RF scan performed to measure chromaticity in the LHC.
 
 \begin{figure}[H]
     \centering
@@ -101,23 +121,18 @@ LHC.
 \end{figure}
 
 
-
-
-% --- Analysis and Fit ---
-\subsubsection{\review{Analysis}}
+%% --- Analysis and Fit ---
+%\subsubsection{\review{Analysis}}
 
 Once the tunes have been acquired and the momentum offset computed via \cref{eq:dpp_rf}, the
 chromaticity function (see \cref{eq:background_chromaticity}) can be used to fit the
 measured data and retrieve each order.
 
-As part of work for this thesis, a custom tool was developed, in order to ease such analysis of
-chromaticity measurements. This tool, the Non-Linear Chromaticity
-GUI~\cite{m_le_garrec_non-linear_2022}, is composed of several parts:
-
-\begin{itemize}
-    \tightlist
-    \item Data extraction from CERN data servers (Timber, NXCALS)
-    \item Tune cleaning and standard deviation calculation
-    \item Chromaticity fit up to 7th order
-    \item Corrections of chromaticity and resonance driving terms
-\end{itemize}
+As part of the work for this thesis, a new tool, was developed. in order to ease and improve the
+analysis of chromaticity measurements. 
+The Non-Linear Chromaticity GUI~\cite{m_le_garrec_non-linear_2022} showcases new analysis techniques
+using the raw signal from the BBQ system along with custom signal cleaning that are detailed later
+on in \cref{chapter:high_order_fields}. Fits to very high chromaticity orders are also now possible
+along with their computed corrections and that of resonance driving terms via a combined response
+matrix approach. Automatic data extraction from the CERN data servers (Timber, NXCALS) is also
+included.
