@@ -50,7 +50,7 @@ $Q'''$ is taken from \verb|ptc_normal| for each beam and axis, with \verb|MCDs|,
 correctors, powered with a fixed strength one at a time. A scaling factor is applied to get the
 change of chromaticity for one unit of $K_5$.  8 correctors are used, which strengths are denoted
 $k_1$ through $k_8$.  Transposes are only used to make the equations easier to display.\\
-The values in Tab.\ref{table:resp_matrix_example} are corrected via
+The values in \cref{table:resp_matrix_example} are corrected via
 \cref{eq:resp_matrix_inverse_example} after having built the response matrix in
 \cref{eq:resp_matrix_example}.
 
@@ -179,10 +179,10 @@ exceed those of the design of the correctors.
 Another way to correct the chromaticity is via a global uniform trim, where every available
 corrector is powered to the same strength.  Simulations are run with \verb|ptc_normal| via MADX-PTC
 to obtain the response in chromaticity for a given strength. Chromaticity being linear with
-multipole strength, an affine function can be determined for each axis. Figure
-\ref{fig:corrections-dq3_versus_k5} shows a simulation with several MCD strengths, highlighting this
+multipole strength, an affine function can be determined for each axis.
+\Cref{fig:corrections-dq3_versus_k5} shows a simulation with several MCD strengths, highlighting this
 linear relation between $Q'''$ and $K_5$, while
-Equation~\eqref{eq:corrections:chromaticity_affine_function_ptc} shows an example of such functions computed
+\Cref{eq:corrections:chromaticity_affine_function_ptc} shows an example of such functions computed
 at injection energy for the 2022 optics.
 
 \begin{figure}[H]

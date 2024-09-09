@@ -25,8 +25,6 @@ Or, more generally, rewritten as a sum to include all orders up to $n$:
 The first order of the chromaticity expansion, $Q'$, is generally simply referred to as 
 \textit{chromaticity}, sometimes as \textit{linear chromaticity}.
 The other terms are thus referred to as \textit{non-linear chromaticity}.
-It is to be noted when referring to a chromaticity order, that the preceding fraction and
-$\delta$ are usually \textit{not} included in the term.
 
 The chromaticity change induced by a single element of order $n$ and length $L$ can be derived from
 the Hamiltonian of \cref{eq:hamiltonian_magnet}, averaging over the phase variables and
@@ -38,51 +36,52 @@ differentiating relative to the actions $J_{x,y}$ and the momentum offset $\delt
     \label{eq:background_chroma_order_hamiltonian}
 \end{equation}
 
-Detailed derivations can be found in~\cite{dilly_derivation_2023}.
+Detailed derivations are provided in~\cite{dilly_derivation_2023}, and an example is presented in
+the following section.
 
-% =========
-\paragraph{\review{Natural Chromaticity from Quadrupoles}}
-
-In a purely linear lattice, the linear chromaticity, $Q'$, is a result of the momentum dependence 
-of the quadrupoles' focusing. It is in this case called the \textit{natural chromaticity} and can be
-derived from the normal hamiltonian of \cref{eq:normal_skew_hamiltonian_magnet} and expressing
-the normalized magnet strength $K$ with a dependence on $\delta$ via $P$ as $P_0(1+\delta)$:
-
-\begin{equation}
-    K_n = \frac{q}{P_0} \frac{1}{1 + \delta} (n - 1)! B_n
-    \label{eq:k_dpp}
-\end{equation}
-
-The normal field of a quadrupole is then given by
-
-\begin{equation}
-    \mathcal{N}_2(x,y) = \frac{1}{2} \frac{q}{P_0} \frac{1}{1+\delta} B_2 (x^2 - y^2)
-\end{equation}
-
-By operating a variable change to the angle coordinates 
-(\(x \rightarrow \sqrt{2 J_x \beta_x} \cos \phi_x\) and
-\(y \rightarrow \sqrt{2 J_y \beta_y} \cos \phi_y\)), the following equation linking the $\beta$-function
-and $\delta$ to the normal field is obtained:
-\begin{equation}\mathcal{N}_2 (x,y) = \frac{1}{2} \frac{q}{P_0} \frac{1}{1+\delta} B_2 
-        \left[
-            \left(\sqrt{2 J_x \beta_x} \cos \phi_x \right)^2 
-            - \left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^2
-        \right].
-    \label{eq:hamiltonian_quadrupole_angle}
-\end{equation}
-
-Following \cref{eq:background_chroma_order_hamiltonian}, the natural chromaticity $Q'$ induced by
-quadrupoles is given by:
-\begin{equation}
-    \begin{aligned}
-        \Delta Q'_x &= \frac{1}{2\pi} \int_L \frac{\partial^2 \left< \mathcal{N}_2 \right> }{\partial J_x \partial \delta} \diff s
-        \quad;\quad
-        \Delta Q'_y &= \frac{1}{2\pi} \int_L \frac{\partial^2 \left< \mathcal{N}_2 \right>}{\partial J_y \partial \delta} \diff s
-        \\
-        & = - \frac{1}{4 \pi} \frac{q}{P_0} B_2 L \beta_x
-        & = \frac{1}{4 \pi} \frac{q}{P_0} B_2 L \beta_y
-    \end{aligned}
-\end{equation}
+%% =========
+%\paragraph{\review{Natural Chromaticity from Quadrupoles}}
+%
+%In a purely linear lattice, the linear chromaticity, $Q'$, is a result of the momentum dependence 
+%of the quadrupoles' focusing. It is in this case called the \textit{natural chromaticity} and can be
+%derived from the normal hamiltonian of \cref{eq:normal_skew_hamiltonian_magnet} and expressing
+%the normalized magnet strength $K$ with a dependence on $\delta$ via $P$ as $P_0(1+\delta)$:
+%
+%\begin{equation}
+%    K_n = \frac{q}{P_0} \frac{1}{1 + \delta} (n - 1)! B_n
+%    \label{eq:k_dpp}
+%\end{equation}
+%
+%The normal field of a quadrupole is then given by
+%
+%\begin{equation}
+%    \mathcal{N}_2(x,y) = \frac{1}{2} \frac{q}{P_0} \frac{1}{1+\delta} B_2 (x^2 - y^2)
+%\end{equation}
+%
+%By operating a variable change to the angle coordinates 
+%(\(x \rightarrow \sqrt{2 J_x \beta_x} \cos \phi_x\) and
+%\(y \rightarrow \sqrt{2 J_y \beta_y} \cos \phi_y\)), the following equation linking the $\beta$-function
+%and $\delta$ to the normal field is obtained:
+%\begin{equation}\mathcal{N}_2 (x,y) = \frac{1}{2} \frac{q}{P_0} \frac{1}{1+\delta} B_2 
+%        \left[
+%            \left(\sqrt{2 J_x \beta_x} \cos \phi_x \right)^2 
+%            - \left(\sqrt{2 J_y \beta_y} \cos \phi_y\right)^2
+%        \right].
+%    \label{eq:hamiltonian_quadrupole_angle}
+%\end{equation}
+%
+%Following \cref{eq:background_chroma_order_hamiltonian}, the natural chromaticity $Q'$ induced by
+%quadrupoles is given by:
+%\begin{equation}
+%    \begin{aligned}
+%        \Delta Q'_x &= \frac{1}{2\pi} \int_L \frac{\partial^2 \left< \mathcal{N}_2 \right> }{\partial J_x \partial \delta} \diff s
+%        \quad;\quad
+%        \Delta Q'_y &= \frac{1}{2\pi} \int_L \frac{\partial^2 \left< \mathcal{N}_2 \right>}{\partial J_y \partial \delta} \diff s
+%        \\
+%        & = - \frac{1}{4 \pi} \frac{q}{P_0} B_2 L \beta_x
+%        & = \frac{1}{4 \pi} \frac{q}{P_0} B_2 L \beta_y
+%    \end{aligned}
+%\end{equation}
 
 
 % =========
@@ -134,19 +133,20 @@ Averaging over the phase variables removes any odd cosine:
 
 
 The chromaticity can then be obtained by differentiating relative to the action $J_{x,y}$ to
-retrieve the tune, and finally by the momentum offset $\delta$.
+retrieve the tune, and finally by the momentum offset $\delta$, as presented in
+\cref{eq:background:detuning:chroma_sextupole}. In the presence of second order
+dispersion~\cite{keintzel_second-order_2019}, sextupoles will generate some amount of $Q''$, usually
+negligible in the LHC.
+
 \begin{equation}
     \begin{aligned}
         \Delta Q'_x &= \frac{1}{2\pi} \int_L \frac{\partial^2 \left< \mathcal{N}_3 \right>}{\partial J_x \partial \delta} \diff s \quad; \quad \Delta Q'_y &&= \frac{1}{2\pi} \int_L \frac{\partial^2 \left< \mathcal{N}_3 \right>}{\partial J_y \partial \delta} \diff s \\
         &= \frac{1}{2 \pi} L \frac{1}{2} K_3 \beta_x D_x  &&= - \frac{1}{2 \pi} L \frac{1}{2} K_3 \beta_y D_x \\
         &= \frac{1}{4 \pi}  K_3 L \beta_x D_x &&= - \frac{1}{4 \pi}  K_3 L \beta_y D_x
     \end{aligned}
+    \label{eq:background:detuning:chroma_sextupole}
 \end{equation}
 
-From this last equation, it is apparent that sextupoles are not a source of chromaticity of higher
-orders in the presence of linear dispersion. In the presence of second order
-dispersion~\cite{keintzel_second-order_2019}, sextupoles can generate some amount of $Q''$, usually
-negligible.
 
 
 % =========
@@ -154,7 +154,8 @@ negligible.
 
 Higher orders of the chromaticity function are described in~\cite{dilly_derivation_2023} and follow
 the same logic as for the linear chromaticity from sextupoles.
-A general formula can be found for the chromaticity of order $n, n > 2$:
+A general formula can be found for the chromaticity of order $n, n > 2$, relating a chromaticity of
+order $n$ with a multipole of order $n+2$:
 
 \begin{equation}
     \begin{aligned}
@@ -173,10 +174,10 @@ A general formula can be found for the chromaticity of order $n, n > 2$:
 \subsection{\review{Amplitude Detuning}}
 
 Amplitude detuning is a tune shift induced by the amplitude of oscillations of a particle. This
-detuning is directly related to the emittance and can be described via a Taylor expansion around the
-emittance of both planes, $\epsilon_x$ and $\epsilon_y$.
-Equation~\eqref{eq:detuning_effects:ampdet} shows this expansion up to the second order. 
-Further expansions can be found in~\cite{dilly_derivation_2023}.
+detuning is directly related to the single particle emittance and can be described via a Taylor
+expansion around the emittance of both planes, $\epsilon_x$ and $\epsilon_y$.
+\Cref{eq:detuning_effects:ampdet} shows this expansion up to the second order.  Further expansions
+can be found in~\cite{dilly_derivation_2023}.
 
 \begin{equation}
 \begin{aligned}
@@ -198,10 +199,10 @@ Q_z(\epsilon_x, \epsilon_y) = Q_{z0} &+ \left(\frac{\partial Q_z}{\partial \epsi
 
 The first order terms of amplitude detuning are generated by octupoles, and to some extent by
 sextupoles when considering their higher order contributions. Those higher contributions are usually
-measurable but small compared to the ones of normal octupoles.  
-It is to be noted that each order does not correspond directly to a multipole order, like for
-chromaticity seen previously. While it is the case for the simple partial derivatives, the
-crossterms are instead generated by multipoles of higher orders.
+measurable but small compared to the ones of normal octupoles in the LHC.
+%It is to be noted that each order does not correspond directly to a multipole order, like for
+%chromaticity seen previously. While it is the case for the simple partial derivatives, the
+%crossterms are instead generated by multipoles of higher orders.
 Further derivations can be found in \cref{appendix:chromatic_amplitude_detuning}.
 
 
@@ -218,7 +219,9 @@ This effect can be described by a Taylor expansion around the emittance of both 
 $\epsilon_y$, and the momentum offset $\delta$.
 \Cref{eq:detuning_effects:chromatic_ampdet} shows this expansion up to the second order. 
 Both the emittance $\epsilon$ and the action $J$ can be seen to describe the chromatic amplitude
-detuning. Terms are interchangeable with $\epsilon_{x,y} = 2J_{x,y}$.
+detuning as terms are interchangeable with $\epsilon_{x,y} = 2J_{x,y}$.
+This expansion being more general than the ones of chromaticity or amplitude detuning, is it to be
+expected to retrieve those terms here as well.
 
 \begin{equation}
 \begin{aligned}
@@ -261,27 +264,25 @@ Q_z(\epsilon_x, \epsilon_y, \delta) = Q_{z0} &+ \left[\frac{\partial Q_z}{\parti
 % =========
 \paragraph{Sextupolar contributions}
 
-To the first order, the terms of the chromatic amplitude detuning are shared with the classic
-amplitude detuning, which are not contributed to by sextupoles. 
-The last term however is the linear chromaticity, seen previously in~\ref{subsubsection:linear_chroma}.
+To the first order of the expansion, the only term coming from sextupoles is the linear
+chromaticity, seen previously in \cref{subsubsection:linear_chroma}.
 
 
 % =========
 \paragraph{Octupolar contributions}
 
-Similar to the sextupolar contributions, to the first order, the terms are shared with amplitude
-detuning. The first terms $\frac{\partial Q_z}{\partial \epsilon_x}\epsilon_x$ and $\frac{\partial
-Q_z}{\partial \epsilon_y}\epsilon_y$ are then contributed to by octupoles.
-The second order chromaticity $Q''$ appears when expanding to the second order.
+To the first order, the amplitude detuning terms $\frac{\partial Q_z}{\partial
+\epsilon_x}\epsilon_x$ and $\frac{\partial Q_z}{\partial \epsilon_y}\epsilon_y$ are contributed to
+by octupoles. The second order chromaticity $Q''$ appears when expanding to the second order.
 
 
 % =========
 \paragraph{Decapolar contributions}
 
-So far, only terms with amplitude detuning and chromaticity have been seen.  
 The terms highlighted in orange, in \cref{eq:detuning_effects:decapole_chromatic_ampdet}, are
-the terms contributed to by decapoles. Terms depending on both the emittance and the momentum offset
-are present, as well as the third order chromaticity $Q'''$.
+the terms contributed to the first order by decapoles. Terms depending on both the emittance and the
+momentum offset are present, as well as the third order chromaticity $Q'''$.  Further derivations
+can be found in \cref{appendix:chromatic_amplitude_detuning}.
 
 \begin{equation}
 \begin{aligned}
@@ -314,7 +315,6 @@ Q_z(\epsilon_x, \epsilon_y, \delta) = \color{gray}Q_{z0} &\color{gray}+
 \label{eq:detuning_effects:decapole_chromatic_ampdet}
 \end{equation}
 
-Further derivations can be found in \cref{appendix:chromatic_amplitude_detuning}.
 
 
 % ============================================
@@ -324,9 +324,14 @@ Further derivations can be found in \cref{appendix:chromatic_amplitude_detuning}
 
 When a particle passes off-center through a magnet, an effect called \textit{feed-down} appears.
 Feed-down is a lower order contribution created by ether mis-aligned magnets or an off-center orbit
-of the beam.
-A particle with an orbit offset will then experience the main field of the magnet and effects
-similar to those of lower order multipoles.
+of the beam. A particle with an orbit offset will then experience the main field of the magnet and
+effects similar to those of lower order multipoles.
+The combined contributions of multipoles up to order $P$ on a field of order $n$ is given by the
+following and greatly detailed in~\cite{dilly_corrections_2022}:
+
+\begin{equation}
+    (K_n + iJ_n)^{w/ feed-down} = \sum^P_{p=0} (K_{n+p} + iJ_{n+p}) \frac{(\Delta x + i\Delta y)^p}{p!}
+\end{equation}
 
 Opposed to feed-down is feed-up, the higher order effects introduced by combinations of multipoles.
 This effect is though not a consequence of the beam position in a given field. This effect is

@@ -2,17 +2,12 @@
 
 In circular accelerators, particle dynamics are represented using a traveling coordinate system.
 A reference orbit is determined by the lattice and its magnet strengths, forming the
-\textit{optics}. In the case of a synchrotron, like the LHC, where the particles return to their
-original location after some turns, the reference orbit is also called the closed orbit.  
-
-% ============================================
-%               Frenet-Serret
-% ============================================
-\subsection{\review{Frenet-Serret System}}
+\textit{optics}. In the case of a synchrotron, like the LHC, the reference orbit is also called the
+closed orbit.
 
 The Frenet-Serret coordinate system moves along the ring on the reference orbit. The coordinates are
 then transverse: $x$ and $y$, and longitudinal in the direction of travel: $s$.
-Figure~\ref{fig:coordinate_systems:frenet_serret} shows those coordinates.
+\Cref{fig:coordinate_systems:frenet_serret} shows those coordinates.
 
 \begin{figure}[H]
     \centering
@@ -25,7 +20,18 @@ Figure~\ref{fig:coordinate_systems:frenet_serret} shows those coordinates.
 This coordinate system is widely used to simply describe a either an element's or a particle's
 position in the accelerator. Without any explicit mention, those are coordinates used in this
 thesis. It is frequent to use the variable $z$ to refer to either $x$ or $y$ in equations.
+In order to describe the motion of particles through a lattice, different coordinate systems can be
+used. To better describe the motion of particles through a lattice, various coordinate systems can
+be employed. First, the formalism for a linear lattice will be introduced, followed by an
+explanation of how motion in a machine with non-linear elements can be characterized.
 
+Linear optics refers to the regime where the forces acting on particles, such as those from dipoles
+and quadrupoles, are directly proportional to the particle's displacement from the reference
+trajectory, resulting in simple, predictable motion described by linear equations and transfer
+matrices. Non-linear optics, on the other hand, involves higher-order magnetic elements like
+sextupoles and octupoles, where the forces are non-linear with respect to displacement. This leads
+to more complex particle motion, which can result in phase-space distortions and chaotic
+trajectories.
 
 
 % ============================================
@@ -33,19 +39,18 @@ thesis. It is frequent to use the variable $z$ to refer to either $x$ or $y$ in 
 % ============================================
 \subsection{\review{Linear Lattice}}
 
-
 % ========================
 % Courant-Snyder Parameters
 \subsubsection{\review{Courant-Snyder Parameters}}
 \label{section:courant_snyder}
 
-A circular accelerator is composed of many multipoles of different orders. A basic
+A circular accelerator is composed of many multipoles of different orders. A very basic
 design only requires dipoles and quadrupoles in order to operate. Dipoles are used to bend the
 particles in order to form the ring, whereas quadrupoles are used to focus the beam to a focal
 point, similar to light optics.
 Those elements can be arranged in a particular order, to form a FoDo cell. Such cells present an
 alternating placement of focusing an defocusing quadrupoles with dipoles in between, as shown in
-Fig.\ref{fig:coordinate_systems:fodo}, and are usually repeated many times along the ring.
+\cref{fig:coordinate_systems:fodo}, and are usually repeated many times along the ring.
 
 \begin{figure}[htb]
     \centering
@@ -56,13 +61,12 @@ Fig.\ref{fig:coordinate_systems:fodo}, and are usually repeated many times along
     \label{fig:coordinate_systems:fodo}
 \end{figure}
 
-A lattice composed of only dipoles and quadrupoles, is referred to as a \textit{linear} lattice.
-In a synchrotron, a circular particle accelerator, particles undergo transverse and longitudinal 
-oscillations. As such, particles do not go back to their initial position before a certain number
-of turns. Taking into account those oscillations, the phase-space ellipse of a particle at a 
+A lattice composed of only dipoles and quadrupoles, is referred to as a \textit{linear} lattice.  In
+a synchrotron, a circular particle accelerator, particles undergo transverse and longitudinal 
+oscillations. Taking into account those oscillations, the phase-space ellipse of a particle at a 
 position $s$ in the ring can be described with a new system: the Courant-Snyder parameters, also
 know as Twiss parameters or the \textit{optics functions}~\cite{courant_theory_1958}, as shown in
-Fig.~\ref{fig:coordinate_systems:twiss}.\\
+\cref{fig:coordinate_systems:twiss}.
 
 \begin{figure}[htb]
     \centering
@@ -72,17 +76,18 @@ Fig.~\ref{fig:coordinate_systems:twiss}.\\
     \label{fig:coordinate_systems:twiss}
 \end{figure}
 
-$J$, the action, an invariant of motion at a given energy, is related to the other quantities by:
+$J$, the action, an invariant of linear motion at a given energy, is related to the other quantities
+by:
 
 \begin{equation}
     J_z = \frac{1}{2} (\gamma_z \cdot z^2 + 2 \alpha_z p_z \cdot z + \beta_z p_z^2).
     \label{eq:coordinate_systems:action}
 \end{equation}
 
-The action can be related to the area in phase space, called the emittance: $\epsilon = 2J$.
-As the $\beta$ parameter varies along the ring, it is referred to as the $\beta$-function and is
-related to the amplitude of the oscillations. Thus, the smaller is the $\beta$-function, the
-smaller is also the envelope of the beam.
+The action can be related to the area in phase space, called the single particle emittance:
+$\epsilon = 2J$.  As the $\beta$ parameter varies along the ring, it is referred to as the
+$\beta$-function and is related to the amplitude of the oscillations. Thus, the smaller is the
+$\beta$-function, the smaller is also the envelope of the beam.
 The number of oscillations per turn is called the \textit{tune}, and is closely related to the
 $\beta$-function:
 
@@ -159,10 +164,14 @@ the invariant $J_z$ and the phase $\phi_z$:
 \subsubsection{\review{Linear Transfer Maps}}
 \label{section:coordinate_systems:linear_maps}
 
-It is possible to describe the final position of a particle after going through an element via
-\textit{transfer maps}. In linear optics, such linear maps are matrices. Those maps are symplectic,
-meaning they preserve the phase-space area. For a matrix $\mathcal{M}$ and positions $z$ at the
-initial location and $s$, the general formula reads~\cite{lee_accelerator_2004}:
+The final position of a particle after passing through an accelerator element can be described using
+\textit{transfer maps}. In the case of linear optics, these maps take the form of matrices.
+Importantly, these maps are symplectic, meaning they preserve the area of phase space, ensuring that
+the particle's motion is accurately represented. Symplecticity guarantees that key properties of the
+beam, such as its emittance, remain consistent, which is crucial for maintaining the stability and
+integrity of particle trajectories in the accelerator.
+For a matrix $\mathcal{M}$ and positions $z$ at the initial location and $s$, the general formula
+reads~\cite{lee_accelerator_2004}:
 
 \begin{equation}
     \begin{pmatrix}
@@ -222,12 +231,6 @@ the transfer matrix of the whole machine, denoted $\mathcal{M}$. Such a map can 
 thousands of elements.
 
 
-\paragraph{Symplecticity}
-
-An important property of any transformation is that they need to be symplectic. A symplectic
-transformation preserves the volume in phase space.
-
-
 % ============================================
 %             Non-Linear Lattice 
 % ============================================
@@ -235,8 +238,12 @@ transformation preserves the volume in phase space.
 
 So far, Courant-Snyder parameters were a good way to describe the distribution of positions and
 velocities of particles in the transverse plane. One caveat of using this formalism is that it is 
-restrained to linear optics and does not describe non-linear beam dynamics such as resonances or 
-the effects arising from an arrangement of several multipoles together.
+restrained to linear optics and does not address non-linear elements, like octupoles. These elements
+generate forces that are not directly proportional to a particle's displacement from the reference
+trajectory.
+Effects such as resonances or those arising from an arrangement of several multipoles together can
+be described by the concepts introduced in this section.
+An overview of the needed mathematical tools is first given, before introducing maps.
 
 % ========================
 % Lie Algebra
@@ -245,7 +252,6 @@ the effects arising from an arrangement of several multipoles together.
 One way to describe non-linear effects is to introduce Lie Algebra~\cite{dragt_overview_2013}, a
 powerful algebra able to describe transformations, symmetries and their associated conserved
 quantities. 
-
 The Lie algebra is a vector space, denoted $\mathfrak{g}$, equipped with a binary operation called
 the \textit{Lie bracket} and denoted $[x, y]$ for two vectors $x$ and $y$. Any vector space equipped
 with a Lie bracket (or commutator) satisfying the following conditions is called a Lie
@@ -286,14 +292,13 @@ variables evolve under infinitesimal symplectic transformations.
 % Poisson Brackets
 \subsubsection{\review{Poisson Brackets}}
 
-To create a Lie algebra, an operation satisfying the previous conditions needs to be found. In
-accelerator physics, \textit{Poisson brackets} are
-chosen~\cite{dragt_overview_2013,roy_analysis_1992}. Poisson brackets are used to describe 
-continuous symmetries, conserved quantities, and the evolution of the dynamical variables in the
-system.
+In accelerator physics, following the Hamiltonian formalism and classical mechanics, the commutator
+is represented by the \textit{Poisson brackets}, which satisfy the necessary conditions for
+describing particle motion~\cite{dragt_overview_2013,roy_analysis_1992}. Poisson brackets are used
+to express continuous symmetries, conserved quantities, and the time evolution of dynamical
+variables within the system. 
 
-Let's
-consider position and momentum coordinates $q_i \cdots q_n$ and $p_i \cdots p_n$  of a
+Let's consider position and momentum coordinates $q_i \cdots q_n$ and $p_i \cdots p_n$  of a
 2n-dimensional phase space. Usually, those would be $x, y, p_x \text{ and } p_y$ for transverse
 coordinates. The Poisson brackets of two functions $f$ and $g$ is then defined by:
 
@@ -309,8 +314,8 @@ be naturally expressed with Poisson brackets:
 
 \begin{equation}
     \begin{aligned}
-        \frac{\diff q_i}{\diff t} &= \frac{\partial H}{\partial p_i}  = [q_i, H] \\
-        \frac{\diff p_i}{\diff t} &= -\frac{\partial H}{\partial q_i}  = [p_i, H].
+        \frac{\partial H}{\partial p_i}   &= \frac{\diff q_i}{\diff t}  &&= [q_i, H] \\
+       -\frac{\partial H}{\partial q_i}   &= \frac{\diff p_i}{\diff t}  &&= [p_i, H].
     \end{aligned}
 \end{equation}
 
@@ -350,9 +355,9 @@ transformation}:
 % Non-Linear Transfer Map
 \subsubsection{\review{Non-Linear Transfer Maps}}
 
-As introduced in~\ref{section:coordinate_systems:linear_maps}, the dynamics of a particle beam in a circular accelerator can be
-described by \textit{transfer maps}. A symplectic \textit{One Turn Map} $\mathcal{M}$ that
-includes $N$ non-linear elements is defined~\cite{dragt_overview_2013} as:
+As introduced in \cref{section:coordinate_systems:linear_maps}, the dynamics of a particle beam in a
+circular accelerator can be described by \textit{transfer maps}. A symplectic \textit{One Turn Map}
+$\mathcal{M}$ that includes $N$ non-linear elements is defined~\cite{dragt_overview_2013} as:
 
 \begin{equation}
     \mathcal{M} = e^{:h_N:} \cdot e^{:h_{N-1}:} \cdots e^{:h_1:} \cdot \mathcal{R}
@@ -388,8 +393,8 @@ The one turn map is thus expressed as a single Lie transformation:
    \label{eq:coordinate_systems:non_linear_map}
 \end{equation}
 
-In most cases, were the non-linear perturbations are small, the above series converges quickly
-and only the two first terms of Eq.~\eqref{eq:coordinates:bch} are
+In most cases, where the non-linear perturbations are small, the above series converges quickly
+and only the first order of \cref{eq:coordinates:bch} is
 used~\cite{carlier_nonlinear_2020-1}. The resulting expression is then more elegant, being a simple
 sum of the Hamiltonians of the $N$ non-linear elements:
 
@@ -442,7 +447,8 @@ coordinates can be seen in \cref{fig:coordinate_systems:distorted_phase_space}.
     \begin{subfigure}[b]{0.316\textwidth}
         \includegraphics[width=\linewidth]{images/phase_space_normal_form_coordinates.pdf}
     \end{subfigure}
-    \caption{Exaggerated phase space distorted by non-linearities described in regular, normalized and normal form coordinates.}
+    \caption{Exaggerated phase space distorted by non-linearities described in regular (left),
+    normalized (middle) and normal form (right) coordinates.}
     \label{fig:coordinate_systems:distorted_phase_space}
 \end{figure}
 
@@ -518,7 +524,7 @@ where this coefficient is a summation over the hamiltonian terms of elements $w$
 \end{equation}
 
 The expression of $h_{w,jklm}$ is itself derived from the general hamiltonian 
-of \cref{eq:hamiltonian_magnet} by applying a binomial expansion on the
+of \cref{eq:hamiltonian_magnet} by applying a multinomial expansion on the
 coordinates~\cite{franchi_studies_2006} as shows \cref{eq:coordinate_systems:hwjklm}.
 Derivations and more information on resonance driving terms can be found in \cref{appendix:rdts}.
 
@@ -556,8 +562,11 @@ normalized coordinates can be expressed after $N$ turns in
 \end{equation}
 \normalsize
 
-It is to be observed that some $f_{jklm}$ terms will not contribute to the motion of the particle 
-in a given plane due to the dependence on $j$ or $l$.
+This equation highlights the contribution of the non-linear elements to the motion of the particles.
+Spectral lines arising from these contributions are discussed in
+\cref{section:background:frequency_spectrum}.
+It is though to be observed that some $f_{jklm}$ terms will not contribute to the motion in a given
+plane due to the dependence on $j$ or $l$.
 
 
 
@@ -785,6 +794,6 @@ include the third order chromaticity, chromatic amplitude detuning and RDTs.
 
 \paragraph{Remark}
 
-It is to be noted that while sextupoles do introduce higher-order terms, these are typically small
-in comparison to those brought by the actual higher-order multipoles, making them thus often
-negligible.
+It is to be noted that while sextupoles do introduce higher-order terms, these are often designed to
+be small in comparison to those brought by the actual higher-order multipoles, making them thus
+often negligible. Such is the case in the LHC.

@@ -19,9 +19,11 @@ $\delta$. It is defined as a relative difference to the design momentum:
 Those effects are referred to as \textit{chromatic aberrations}. The first and most important to
 consider is the \textit{dispersion}. Dispersion results from a particle with a momentum offset
 being deflected differently by the dipoles compared to a particle at the design momentum.
-Figure~\ref{fig:coordinate_systems:dispersion} shows an example of deflection. 
+\Cref{fig:coordinate_systems:dispersion} shows an example of deflection. 
+The particle is still subject to the other properties of the lattice, but with a different orbit,
+described by the dispersion function in \cref{eq:coordinate_systems:dispersion}.
 
-\begin{figure}[H]
+\begin{figure}[!htb]
     \centering
     \includegraphics[width=0.6\textwidth]{images/dipole.pdf}
     \caption{Particles with a momentum offset will be deflected differently by dipoles. This offset
@@ -29,26 +31,56 @@ Figure~\ref{fig:coordinate_systems:dispersion} shows an example of deflection.
     \label{fig:coordinate_systems:dispersion}
 \end{figure}
 
-The particle is still subject to the other properties of the lattice, but with a different orbit,
-described by Eq.~\eqref{fig:coordinate_systems:dispersion}.
-
 \begin{equation}
     \begin{aligned}
     D_x(s) = \frac{\Delta x(s)}{\delta} \\
-    D_y(s) = \frac{\Delta y(s)}{\delta} \\
+    D_y(s) = \frac{\Delta y(s)}{\delta}.
     \end{aligned}
     \label{eq:coordinate_systems:dispersion}
 \end{equation}
 
+\FloatBarrier
 
+% --------------------------------------------
+%         Momentum Compaction Factor
+% --------------------------------------------
+\paragraph{\review{Momentum Compaction Factor}}
+\label{subsection:coordinates_systems:momentum_compaction_factor}
+
+In synchrotrons, particles with a deviation in momentum with respect to the reference particle will
+experience a different path length due to the bending of the dipoles. This effect is characterized
+by the \textit{momentum compaction factor}~\cite{wiedemann_particle_2015},
+
+\begin{equation}
+    \alpha_c = \frac{\Delta C / C}{\delta},
+\end{equation}
+
+relating the circumference of the ring $C$ to the momentum offset $\delta$.
+A positive momentum compaction factor indicates a longer path traveled by particles with a positive
+momentum offset, and vice versa.
+
+
+The momentum compaction factor can also be broken down into orders as an infinite sum, where the
+constant term is often referred to as the first order,
+
+\begin{equation}
+    \alpha_c = \underbrace{\alpha_{c,0}}_{\text{Constant term}}
+               + \underbrace{\sum_{i \geq 1} \alpha_{c, i} \delta^i}_\text{Linear and non linear terms}.
+\end{equation}
+
+In the LHC, the contribution from the non constant terms is
+negligible~\cite{keintzel_jacqueline_beam_nodate}. Further details can be found
+in~\cref{subsection:decapoles:chromaticity:measurement}.
+
+\FloatBarrier
 
 % ============================================
 %               Beta Function
 % ============================================
 \subsection{\review{$\beta$-function}}
 
-As seen previously in~\ref{section:courant_snyder}, the $\beta$-function is related to the amplitude
-of oscillations of the beam. Figure~\ref{fig:beam_optics:beta} shows how the $\beta$-function
+As seen previously in~\cref{section:courant_snyder}, the $\beta$-function is related to the amplitude
+of oscillations of the beam. \Cref{fig:beam_optics:beta} shows how the $\beta$-function
 oscillates along the ring due to quadrupoles focusing and defocusing properties.
 The $\beta$-function is an important quantity found as a factor in several other observables that
 will be described later in this thesis.
@@ -81,7 +113,7 @@ In a perfect scenario, the particle motion of each transverse plane is independe
 \textit{uncoupled}. In practice, this transverse motion can be altered by some magnetic elements,
 giving rise to \textit{betatron coupling} where the motion of each plane is not independent anymore.
 Such elements can be quadrupoles, mounted with a roll error introducing skew-quadrupolar fields,
-which are the main source of coupling in the LHC~\cite{felix_soubelet_local_2023}. Field
+which are the main source of linear coupling in the LHC~\cite{felix_soubelet_local_2023}. Field
 imperfections, solenoids and feed-down from higher orders can also contribute to coupling.
 
 The resonances $Q_x + Q_y$ and $Q_x - Q_y$, called the \textit{sum} and \textit{difference}
@@ -92,36 +124,5 @@ and $f_{1001}$.
 
 Effects of normal multipoles start showing their skew counterpart (and vice versa) as the motion
 of transverse planes become coupled. This is demonstrated in \cref{chapter:skew_octupole_fields}
-with skew-octupolar RDTs contributed to by normal octupoles in the presence of coupling.
+with octupoles.
 
-
-% ============================================
-%         Momentum Compaction Factor
-% ============================================
-\subsection{\review{Momentum Compaction Factor}}
-\label{subsection:coordinates_systems:momentum_compaction_factor}
-
-In synchrotrons, particles with a deviation in momentum with respect to the reference particle will
-experience a different path length due to the bending of the dipoles. This effect is characterized
-by the \textit{momentum compaction factor}~\cite{keintzel_jacqueline_beam_nodate},
-
-\begin{equation}
-    \alpha_c = \frac{\Delta C / C}{\delta},
-\end{equation}
-
-relating the circumference of the ring $C$ to the momentum offset $\delta$.
-A positive momentum compaction factor indicates a longer path traveled by particles with a positive
-momentum offset, and vice versa.
-
-
-The momentum compaction factor can also be broken down into orders as an infinite sum, where the
-constant term is often referred to as the first order,
-
-\begin{equation}
-    \alpha_c = \underbrace{\alpha_{c,0}}_{\text{Constant term}}
-               + \underbrace{\sum_{i \geq 1} \alpha_{c, i} \delta^i}_\text{Linear and non linear terms}.
-\end{equation}
-
-In the LHC, the contribution from the non constant terms is
-negligible~\cite{keintzel_jacqueline_beam_nodate}. Further details can be found
-in~\cref{subsection:decapoles:chromaticity:measurement}.

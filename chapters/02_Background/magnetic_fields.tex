@@ -7,8 +7,8 @@
 
 Several notations coexist to denote magnetic fields. In this thesis, the
 \textit{European Convention}~\cite{dilly_corrections_2022} is used for field indices, as shown
-in Tab.~\ref{tab:magnetic_fields:relation_indices}. MAD-X, and MAD-NG, however, use the
-\textit{American Convention}.
+in \cref{tab:magnetic_fields:relation_indices}. MAD-X, and MAD-NG, however, use the
+\textit{American Convention}. 
 
 \begin{table}[H]
     \centering
@@ -32,6 +32,109 @@ in Tab.~\ref{tab:magnetic_fields:relation_indices}. MAD-X, and MAD-NG, however, 
 
 As such, unless explicitly stated, quantities such as the magnetic strength $b$ and normalized
 strength $K$ presented latter will be expressed with this notation. 
+A schematic representation of magnets up to dodecapole, order 6, is given in
+\cref{fig:background:magnetic_fields:schematics}.
+
+\begin{figure}[!htb]
+    \newlength{\magnetheight}
+    \setlength{\magnetheight}{93px}
+    \centering
+    \begin{subfigure}{0.24\textwidth}
+        \includegraphics[height=\magnetheight]{images/magnets/dipole_normal.pdf}
+        \caption{
+           Normal Dipole 
+        }
+        \label{fig:MBNorm}
+    \end{subfigure}
+    %\begin{subfigure}{0.24\textwidth}
+    %    \includegraphics[height=\magnetheight]{images/magnets/dipole_skew.pdf}
+    %    \caption{
+    %       \Gls{skew} Dipole 
+    %    }
+    %    \label{fig:MBSkew}
+    %\end{subfigure}
+    \begin{subfigure}{0.243\textwidth}
+        \includegraphics[height=\magnetheight]{images/magnets/quadrupole_normal_f.pdf}
+        \caption{
+           Normal Quadrupole 
+        }
+        \label{fig:MQNorm}
+    \end{subfigure}
+    %\begin{subfigure}{0.243\textwidth}
+    %    \includegraphics[height=\magnetheight]{images/magnets/quadrupole_skew.pdf}
+    %    \caption{
+    %       \Gls{skew} Quadrupole 
+    %    }
+    %    \label{fig:MQSkew}
+    %\end{subfigure}
+    \begin{subfigure}{0.243\textwidth}
+        \includegraphics[height=\magnetheight]{images/magnets/sextupole_normal.pdf}
+        \caption{
+           Normal Sextupole 
+        }
+        \label{fig:MSNorm}
+    \end{subfigure}
+    \\
+    %\begin{subfigure}{0.243\textwidth}
+    %    \includegraphics[height=\magnetheight]{images/magnets/sextupole_skew.pdf}
+    %    \caption{
+    %       \Gls{skew} Sextupole 
+    %    }
+    %    \label{fig:MSSkew}
+    %\end{subfigure}
+    \begin{subfigure}{0.243\textwidth}
+        \includegraphics[height=\magnetheight]{images/magnets/octupole_normal.pdf}
+        \caption{
+           Normal Octupole 
+        }
+        \label{fig:MONorm}
+    \end{subfigure}
+    %\begin{subfigure}{0.243\textwidth}
+    %    \includegraphics[height=\magnetheight]{images/magnets/octupole_skew.pdf}
+    %    \caption{
+    %       \Gls{skew} Octupole 
+    %    }
+    %    \label{fig:MOSkew}
+    %\end{subfigure}
+    \begin{subfigure}{0.243\textwidth}
+        \includegraphics[height=\magnetheight]{images/magnets/decapole_normal.pdf}
+        \caption{
+           Normal Decapole 
+        }
+        \label{fig:MDNorm}
+    \end{subfigure}
+    %\begin{subfigure}{0.243\textwidth}
+    %    \includegraphics[height=\magnetheight]{images/magnets/decapole_skew.pdf}
+    %    \caption{
+    %       \Gls{skew} Decapole 
+    %    }
+    %    \label{fig:MDSkew}
+    %\end{subfigure}
+    \begin{subfigure}{0.243\textwidth}
+        \includegraphics[height=\magnetheight]{images/magnets/dodecapole_normal.pdf}
+        \caption{
+           Normal Dodecapole 
+        }
+        \label{fig:MTNorm}
+    \end{subfigure}
+    %\begin{subfigure}{0.243\textwidth}
+    %    \includegraphics[height=\magnetheight]{images/magnets/dodecapole_skew.pdf}
+    %    \caption{
+    %       \Gls{skew} Dodecapole 
+    %    }
+    %    \label{fig:MTSkew}
+    %\end{subfigure}
+    \caption{
+        Schematics of magnetic multipoles. In black the magnetic field lines,
+        which extend also to the inner part of the magnets, 
+        but drawing them there has been omitted for clarity of the figure.
+        Red arrows indicate the direction of force on a 
+        positive charge moving out of the page towards the reader.
+        Courtesy of Joschua Dilly~\cite{dilly_corrections_2022}.
+    }
+    \label{fig:background:magnetic_fields:schematics}
+\end{figure}
+
 
 
 % ============================================
@@ -46,13 +149,13 @@ given by~\cite{wolf_engineering_2001}:
     B_y + iB_x = \sum_{n=1}^\infty \left(\mathcal{B}_n + i\mathcal{A}_n \right)  (x+iy)^{n-1}
 \end{equation}
 
+
 An ideal magnet would produce either a sole normal or skew field. However, this is not applicable 
 to real-life magnets that are imperfect, due to design and manufacturing constraints.
 Field errors are thus introduced, relative to the main field of the ideal 2N-pole magnet at a
-reference radius $r_{ref}$~\cite{dilly_corrections_2022}, as shown in 
-Eq.~\eqref{eq:magnetic_field:relative_errors}. The coefficients of the normal and skew relative 
-field errors, referred to as $a_n$ and $b_n$, are dimensionless but often given in \textit{units}
-of $10^{-4}$.
+reference radius $r_{ref}$, as shown in \cref{eq:magnetic_field:relative_errors}. The
+coefficients of the normal and skew relative field errors, referred to as $a_n$ and $b_n$, are
+dimensionless but often given in \textit{units} of $10^{-4}$.
 
 \begin{equation}
     B_y + iB_x = 
@@ -78,19 +181,65 @@ The unit of the field is relative to the multipole order $n$: $[\text{Tm}^{1-n}]
 
 
 % ============================================
+%                 Harmonics
+% ============================================
+\subsection{\review{Harmonics}}
+The magnetic fields in the LHC are generated by the coils of its magnets. However, real-world
+magnets never produce a perfect, single field as desired. Instead, some field errors, known as
+\textit{allowed harmonics}, naturally arise due to the geometric symmetries of the coils. As a
+result, the main dipoles of the LHC can generate fields resembling those of sextupoles, decapoles,
+decatetrapoles, and so on~\cite{deniau_magnetic_2009}. Additionally, manufacturing imperfections
+contribute to field errors beyond the allowed ones, such as octupolar errors being observed in
+dipoles.
+
+During the design of the LHC, the main dipoles have been identified to generate significant field
+errors. Magnetic measurements of those various fields were thus taken and magnetic tables built
+based on real-life magnets nowadays installed in the machine. Those magnetic tables, computed for
+each LHC configuration by \textit{WISE}~\cite{p_hagen_wise_2006} are used by simulation softwares.
+Predictions of field errors and compensating strength for the correctors is computed by the Field
+Description for the LHC (\textit{FiDeL}, \cite{noauthor_fidel_2021}). FiDeL is used in the LHC
+control system in operation to compensate the field errors depending on the current configuration of
+the machine.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.4\textwidth]{./images/main_dipole_fields.png}
+    \caption{Magnetic field in a dipole magnet~\cite{deniau_magnetic_2009}.}
+    \label{fig:decapoles:magnetic_field_dipole}
+\end{figure}
+
+\FloatBarrier
+
+
+% ============================================
 %              Normalization
 % ============================================
 \subsection{\review{Beam Rigidity and Normalization}}
 
 \subsubsection{\review{Beam Rigidity}}
 
-The beam rigidity is a quantification of the ability of a magnetic field to bend the trajectory of a
-particle.  It is derived from the Laurentz force~\cite{dilly_corrections_2022} and relates the
-magnetic field $B$, the radius of curvature $\rho$ to the momentum $p$ and charge $q$ of the
-particle:
+In order to bend particles to form a ring, the force acting on the particles given by the Lorentz
+force must be equal to the centrifugal force~\cite{holzer_design_2020,wiedemann_particle_2015}:
 
 \begin{equation}
-    B \rho = \frac{p}{q}
+    q(E + v \times B) = \frac{mv^2}{\rho},
+\end{equation}
+
+with $q$ the charge of the particle, $E$ and $B$ respectively the electric and magnetic field
+strengths, $v$ the velocity of the particle, $m$ its mass and $\rho$ the radius of the circular
+path. With particles close to the speed of light, it becomes apparent that magnetic fields are
+dominant in the resulting force.
+The beam rigidity is a quantification of the ability of a magnetic field to bend the trajectory of a
+particle. It is derived from the previous equation and relates the
+magnetic field $B$, the radius of curvature $\rho$ to the momentum $p$ and charge $q$ of the
+particle. By neglecting the electrical force and using $p = mv$:
+
+\begin{equation}
+    \begin{aligned}
+                           & qvB &&= \frac{mv^2}{\rho}, \\
+        \rightarrow  \quad & qB &&= \frac{p}{\rho}, \\
+        \rightarrow  \quad & B\rho \quad [\textrm{T.m}] &&= \frac{p}{q}.
+    \end{aligned}
     \label{eq:magnetic_fields_beam_rigidity}
 \end{equation}
 
@@ -103,8 +252,9 @@ filling factors means more space for other magnets, collimators, beam instrument
 \subsubsection{\review{Field Normalization}}
 
 The Beam Rigidity is also used as a way to normalize magnetic field strengths in particle
-accelerators where the momentum of the particle changes (i.e. acceleration).
-Normalized Normal and Skew components $K_n$ and $J_n$ are given by~\cite{wolf_engineering_2001}:
+accelerators where the momentum of the particle changes (i.e. acceleration or deceleration).
+The normalized Normal and Skew magnetic strengths $K_n$ and $J_n$ are thus given
+by~\cite{wolf_engineering_2001}:
 
 \begin{equation}
     \begin{aligned}

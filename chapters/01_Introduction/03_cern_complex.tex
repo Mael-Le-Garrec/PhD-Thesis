@@ -119,12 +119,12 @@ housing either specific instrumentation or detectors.
 \subsubsection{\mread{Arc Cells}}
 
 Each arc is made up of 23 cells. Magnets are organized in a standard FODO structure
-(see \ref{section:courant_snyder}), as shown in \cref{fig:introduction:lhc_arc_cell}.
+(see \cref{section:courant_snyder}), as shown in \cref{fig:introduction:lhc_arc_cell}.
 \textit{Dipoles} are responsible for bending the trajectory of the particles. Their associated
 correctors, the orbit correctors, mitigate any possible drift in the path.
 \textit{Quadrupoles} are used to control the beam size along the ring. Their effect is focusing in
 one plane and defocusing in the other. Their associated correctors control the oscillations of the
-beam (see tune, \ref{section:courant_snyder}) and possible field imperfections.
+beam (see tune, \cref{section:courant_snyder}) and possible field imperfections.
 \textit{Sextupoles} correct chromaticity, a misfocus from quadrupoles due to particles having
 a different momentum than the reference particle.
 \textit{Octupoles} are used to stabilize the beam by introducing Landau
@@ -171,30 +171,3 @@ the beams collide.
     Soubelet~\cite{felix_soubelet_local_2023}.}
     \label{fig:cern_complex:cycle}
 \end{figure}
-
-
-% -------------------------------
-%   Harmonics and Field Errors
-\subsubsection{\review{Magnetic Fields}}
-
-The magnetic fields of the LHC are created via the coils of the magnets. Real-life magnets never
-have a single field as one would like. Instead, so called \textit{allowed harmonics} exist due to
-the geometry of the coil. As such, the main dipoles of the LHC can exhibit fields similar to
-sextupoles, decapoles, decatetrapoles and so on~\cite{deniau_magnetic_2009}. Manufacturing
-imperfections also add fields errors outside of the scope of the allowed ones. Dipoles are indeed
-found to generate octupolar field errors.
-
-During the design of the LHC, the main dipoles have been identified to generate significant field
-errors. Magnetic measurements of those various fields were thus taken and magnetic tables built
-based on real-life magnets nowadays installed in the machine. Those magnetic tables, computed for
-each LHC configuration by \textit{WISE}~\cite{p_hagen_wise_2006} are used by simulation softwares.
-Predictions of field errors and compensating strength for the correctors is computed by the Field
-Description for the LHC (\textit{FiDeL}, \cite{noauthor_fidel_2021}). FiDeL is used in the LHC
-control system in operation to steer the beams.
-
-%\begin{figure}[H]
-    %\centering
-    %\includegraphics[width=0.5\textwidth]{./images/main_dipole_fields.png}
-    %\caption{Magnetic field in a dipole magnet~\cite{deniau_magnetic_2009}.}
-    %\label{fig:decapoles:magnetic_field_dipole}
-%\end{figure}
