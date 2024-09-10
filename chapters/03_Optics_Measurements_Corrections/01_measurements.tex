@@ -128,41 +128,68 @@ the average over $n$ BPMs:
 
 
 % ------- Coupling
-\paragraph{\todo{Coupling}}
+\paragraph{\review{Coupling}}
 
 Coupling can be calculated by comparing the amplitude of the tune in the frequency spectrum of a
 plane to the same tune in the other plane. The coupling RDTs $f_{1001}$ and $f_{1010}$ can be
 reconstructed with these amplitudes~\cite{franchi_computation_2010,tomas_cern_2010},
 
 \begin{equation}
-   |f_{1001}|  = \frac{1}{2} \sqrt{\frac{H(0,1)V(1,0)}{V(0,1)H(1,0)}}, \\
-   |f_{1010}|  = \frac{1}{2} \sqrt{\frac{H(0,-1)V(0,-1)}{V(0,1)H(1,0)}},
+    \begin{aligned}
+        |f_{1001}| &= \frac{1}{2} \sqrt{\frac{H(0,1)V(1,0)}{V(0,1)H(1,0)}}, \\
+        |f_{1010}| &= \frac{1}{2} \sqrt{\frac{H(0,-1)V(0,-1)}{V(0,1)H(1,0)}},
+    \end{aligned}
 \end{equation}
 
 where H(1, 0) is the amplitude of $Q_x$ in the horizontal spectrum while H(0, 1) corresponds to
 $Q_y$ in the same spectrum. The phases of these RDTs is given by,
 
 \begin{equation}
-    q_{1001} = \phi_{V(1,0)}  - \phi_{H(1,0)} + \frac{\pi}{2}, \\
-    q_{1010} = \phi_{H(0,-1)} - \phi_{V(0,1)} + \frac{\pi}{2}.
+    \begin{aligned}
+        q_{1001} &= \phi_{V(1,0)}  - \phi_{H(1,0)} + \frac{\pi}{2}, \\
+        q_{1010} &= \phi_{H(0,-1)} - \phi_{V(0,1)} + \frac{\pi}{2}.
+    \end{aligned}
 \end{equation}
 
-The final expression of the coupling RDTs is thus,
+The final expression of the coupling RDTs is then,
 
 \begin{equation}
-    f_{1001} = |f_{1001}|e^{i\cdot q_{1001}},
-    f_{1010} = |f_{1010}|e^{i\cdot q_{1010}}.
+    \begin{aligned}
+        f_{1001} &= |f_{1001}|e^{i\cdot q_{1001}},\\
+        f_{1010} &= |f_{1010}|e^{i\cdot q_{1010}}.
+    \end{aligned}
 \end{equation}
 
 
 % ------- Amplitude Detuning
-\paragraph{\todo{Amplitude Detuning}}
-
-
+\paragraph{\review{Amplitude Detuning}}
+Amplitude detuning measurements in the LHC are usually taken with varying AC-Dipole kick amplitudes.
+A linear function is then fitted on the natural tunes $Q_x$ and $Q_y$ versus the action of either
+planes $2J_x$ or $2J_y$.
 
 
 % ------- Resonance Driving Terms
-\paragraph{\todo{Resonance Driving Terms}}
+\paragraph{\review{Resonance Driving Terms}}
+Resonance Driving Terms are measured in the LHC with varying AC-Dipole kick amplitudes. The
+amplitude of the resonance line of interest in the frequency spectrum can then be fitted to the
+corresponding action dependence of the RDT, as detailed in
+\cref{section:background:frequency_spectrum} and \ref{appendix:rdts}. As a reminder, the amplitude
+of the RDT will be given by,
+
+\begin{equation}
+    \begin{aligned}
+    |f_{jklm}| &= \frac{|H_{f_{jklm}}|}{2 j (2 I_x)^\frac{j+k-1}{2} (2 I_y)^\frac{l+m}{2}} \\
+    |f_{jklm}| &= \frac{|V_{f_{jklm}}|}{2 l (2 I_x)^\frac{j+k}{2} (2 I_y)^\frac{l+m-1}{2}} .
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+The phase of the RDT can then be reconstructed via the momentum and phase advances. In practice,
+\textit{forced resonance driving terms} are actually measured, as the oscillations are driven by
+the AC-Dipole. Simulations are thus always made via tracking with an AC-Dipole to match.
+Studies linking \textit{forced} RDTs to \textit{free} RDTs is though ongoing to better understand
+the machine without excitation~\cite{carlier_nonlinear_2020}.
+
 
 % ------- Lifetime
 \paragraph{\todo{Lifetime}}
