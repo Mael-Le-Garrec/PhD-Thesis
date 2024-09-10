@@ -39,15 +39,18 @@ packages:
 % ===============================
 %           TbT Data
 % ===============================
-\subsection{\review{Turn-by-Turn Data}}
+\subsection{\review{Turn-by-Turn Signal}}
 
-Data is typically acquired turn by turn while exciting the beam with an AC-Dipole. This is usually
-done with a \textit{pilot bunch}, with a reduced intensity of $10^{10}$ protons compared to
-an operation bunch of $10^{11}$. This allow for higher amplitude oscillations while remaining safe 
-for the machine.
+One of the key data acquisition methods for optics measurements in the LHC is turn-by-turn
+acquisition, where beam position is collected on a per-turn basis. This process involves exciting
+the beam using an AC-Dipole to induce forced oscillations. Typically, a pilot bunch is used for
+this purpose, containing a reduced intensity of $10^{10}$ protons, compared to the standard
+operational bunch intensity of $10^{11}$. The lower intensity allows for larger amplitude
+oscillations, enabling more precise measurements while ensuring the safety of the machine and
+minimizing the risk of damaging components.
 
-A spectral analysis is then performed via a \textit{FFT}, making apparent the driven tunes from the 
-AC-Dipole, the transverse tunes and the possible resonance lines, as shown in
+A spectral analysis is then performed via a \textit{FFT} on the signal, making apparent the driven
+tunes from the AC-Dipole, the transverse tunes and the possible resonance lines, as shown in
 \cref{fig:optics_measurements:tbt_data:spectrum}.
 
 \begin{figure}[!htb]
@@ -59,22 +62,110 @@ AC-Dipole, the transverse tunes and the possible resonance lines, as shown in
     \label{fig:optics_measurements:tbt_data:spectrum}
 \end{figure}
 
-From this, the \textit{optics} such as $\beta$-beating, dispersion, coupling and Resonance Driving
-Terms can be reconstructed~\cite{catalan-lasheras_linear_2004}, as will be detailed in the following
-sections.
+From these oscillations and  spectral lines, the optics observables, such as $\beta$-beating,
+dispersion, coupling, and resonance driving terms, can be
+reconstructed~\cite{catalan-lasheras_linear_2004}. These key quantities provide valuable insights
+into the beam's dynamics and will be detailed further in the following sections.
 
 \FloatBarrier
 
-% ===============================
-%         Beta Beating
-% ===============================
-\subsection{\todo{$\beta$-Beating}}
-\subsection{\todo{Dispersion}}
-\subsection{\todo{Action}}
-\subsection{\todo{Coupling}}
-\subsection{\todo{Amplitude Detuning}}
-\subsection{\todo{Lifetime}}
-\subsection{\todo{Resonance Driving Terms}}
+% ------- Betatron Phase
+\paragraph{\review{Betatron Phase}}
+The betatron phase can be determined at a given BPM by performing an FFT on the turn-by-turn
+data. The angle of the main peak, the tune, is then taken to obtain the phase. The phase advance
+between two BPMs is simply their phase difference.
+
+
+% ------- Beta Beating
+\paragraph{\review{$\beta$-Beating}} 
+The $\beta$-beating can be reconstructed via the phase advance between BPMs. The computation
+involves using a model created via a simulation software such as MAD-X. The $beta$-function at a
+given BPM can be calculated from the measured phases of 3 BPMs denoted $i, j,
+k$~\cite{minty_measurement_2003},
+
+\begin{equation}
+    \beta(s_i) = \beta^{model}(s_i) \cdot \frac{\cot(\Delta\phi_{i,j}) + \cot(\Delta\phi_{i,k})}{\cot\left(\Delta\phi_{i,j}^{model}\right) + \cot\left(\Delta\phi_{i, k}^{model}\right)}
+\end{equation}
+
+with $\Delta_{i,j}$ being the phase advance between BPMs $i$ and $j$. Using specific phase advances
+between BPMs enhances the precision of the $\beta$-function measurement. This approach can also be
+extended to use an arbitrary number $N$ of
+BPMs~\cite{langner_utilizing_2016,wegscheider_analytical_2017}. The measurement of the
+$\beta$-function via phase advance is independent from BPM calibration and relies solely on the
+accuracy of the phase measurement.
+
+
+% ------- Dispersion
+\paragraph{\review{Dispersion}} To retrieve the linear dispersion, turn-by-turn measurements are
+performed at certain momentum offsets. This allows the computation of the dispersion via the shift
+in mean orbit $\Delta z$ and the momentum offset $\delta$,
+
+\begin{equation}
+    D_z = \frac{\Delta z}{\delta}.
+\end{equation}
+
+In the LHC, measurements are typically taken at $\pm 100$Hz, corresponding to a momentum offset 
+$\delta \approx \mp0.7$.
+
+
+% ------- Action
+\paragraph{Action} 
+The action in a given plane and BPM, located at position $s$ is calculated from the amplitude
+$\mathcal{A}$ of the main peak in the frequency spectrum, which corresponds to the tune, along with
+the beta-function at that BPM derived from the model,
+
+\begin{equation}
+    2J_{BPM} = \frac{\mathcal{A}_{BPM}^2}{\beta_{model,BPM}}.
+\end{equation}
+
+This method of action computation is directly influenced by BPM calibration
+errors~\cite{garcia-tabares_valdivieso_optics-measurement-based_2020}. The overall action is then
+the average over $n$ BPMs:
+
+\begin{equation}
+    2J = \frac{1}{n} \sum_n \frac{\mathcal{A}_n^2}{\beta_{model,n}}.
+\end{equation}
+
+
+% ------- Coupling
+\paragraph{\todo{Coupling}}
+
+Coupling can be calculated by comparing the amplitude of the tune in the frequency spectrum of a
+plane to the same tune in the other plane. The coupling RDTs $f_{1001}$ and $f_{1010}$ can be
+reconstructed with these amplitudes~\cite{franchi_computation_2010,tomas_cern_2010},
+
+\begin{equation}
+   |f_{1001}|  = \frac{1}{2} \sqrt{\frac{H(0,1)V(1,0)}{V(0,1)H(1,0)}}, \\
+   |f_{1010}|  = \frac{1}{2} \sqrt{\frac{H(0,-1)V(0,-1)}{V(0,1)H(1,0)}},
+\end{equation}
+
+where H(1, 0) is the amplitude of $Q_x$ in the horizontal spectrum while H(0, 1) corresponds to
+$Q_y$ in the same spectrum. The phases of these RDTs is given by,
+
+\begin{equation}
+    q_{1001} = \phi_{V(1,0)}  - \phi_{H(1,0)} + \frac{\pi}{2}, \\
+    q_{1010} = \phi_{H(0,-1)} - \phi_{V(0,1)} + \frac{\pi}{2}.
+\end{equation}
+
+The final expression of the coupling RDTs is thus,
+
+\begin{equation}
+    f_{1001} = |f_{1001}|e^{i\cdot q_{1001}},
+    f_{1010} = |f_{1010}|e^{i\cdot q_{1010}}.
+\end{equation}
+
+
+% ------- Amplitude Detuning
+\paragraph{\todo{Amplitude Detuning}}
+
+
+
+
+% ------- Resonance Driving Terms
+\paragraph{\todo{Resonance Driving Terms}}
+
+% ------- Lifetime
+\paragraph{\todo{Lifetime}}
 
 
 
