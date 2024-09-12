@@ -1,4 +1,4 @@
-\usepackage[a-1b]{pdfx}  % to create a PDF/A
+%\usepackage[a-1b]{pdfx}  % to create a PDF/A
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fix-cm}
@@ -8,7 +8,7 @@
 % Make hyperref silent, it's always complaining for tokens like \beta
 \usepackage{silence}
 
-%\usepackage[unicode=true,pdfa]{hyperref}  %
+\usepackage[unicode=true,pdfa]{hyperref}  % already loaded by pdfx
 \hypersetup{breaklinks=true,  % not compatible with pdf/a
             pdfauthor={Maël Le Garrec},
             pdftitle={LHC Effective Model for Optics Corrections},
