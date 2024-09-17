@@ -135,19 +135,29 @@
 %                            General Options
 % ===========================================================================
 
-% Set the geometry of the pages
+% Set the geometry of the pages and the fontsize
 % For a twoside book like this one, `left` and `right` mean respectively `inner` and `outer`
 % The numbers are based on the "Canon des Ateliers", https://etnadji.fr/rsc/canon/calcul.php
 % https://www.alain.les-hurtig.org/varia/empagement.html
 %
 % tête = top, pied = bottom, petit fond = left, grand fond = right
 \newcommand{\papersize}{A4}  % Set the size of the page, also used later in the thesis
+%
 \ifthenelse{\equal{\papersize}{A4}}{ % A4
   \geometry{a4paper, top=2.625cm, left=2.1cm, right=3.15cm, bottom=3.675cm, includehead, includefoot}
+  \KOMAoptions{fontsize=11pt}  % that's the default anyways
 }{
-  \geometry{paperheight=235mm, paperwidth=165mm,   % printhub.eu "B5" paper
-            top=20.625mm, bottom=28.875mm, left=16.5mm, right=24.75mm,
-            includehead, includefoot} % courant
+  \ifthenelse{\equal{\papersize}{B5}}{
+    \geometry{paperheight=235mm, paperwidth=165mm,   % printhub.eu "B5" paper
+              top=20.625mm, bottom=28.875mm, left=16.5mm, right=24.75mm,
+              includehead, includefoot} % courant
+    \KOMAoptions{fontsize=10pt}
+  }{ % else, A5
+    \geometry{paperheight=210mm, paperwidth=148mm,
+              top=18.5mm, bottom=25.9mm, left=14.8mm, right=22.2mm,
+              includehead, includefoot} % courant
+    \KOMAoptions{fontsize=9pt}
+  }
 }
 
 % Vertical space before chapters
