@@ -3,8 +3,16 @@
 % =============================
 \chapter{\review{Extended Summary}}
 
-\newcommand{\fontsizesummary}{12pt}
-\newcommand{\fontskipsummary}{15pt}
+
+\ifthenelse{\equal{\papersize}{A4}}{ % A4
+    \newcommand{\fontsizesummary}{12pt}
+    \newcommand{\fontskipsummary}{15pt}
+}{  % else, B5
+    \newcommand{\fontsizesummary}{11pt}
+    \newcommand{\fontskipsummary}{11pt}
+}
+
+
 
 {
 % 5 pages is reeaally long, let's just add some spacing
