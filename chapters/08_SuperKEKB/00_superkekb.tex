@@ -1,7 +1,7 @@
 %=============================
 %        Introduction
 %=============================
-\section{\todo{Introduction}}
+\section{\review{Introduction}}
 
 KEK, or the High Energy Accelerator Research Organization (Kō Enerugī Kasokuki Kenkyū Kikō), is a
 Japanese institution operating the country's largest particle physics laboratory, located in
@@ -39,7 +39,7 @@ to~\cite{keintzel_jacqueline_beam_2022,keintzel_superkekb_2021,keintzel_impact_2
 %=============================
 %    Measurement Techniques
 %=============================
-\section{\todo{Measurement Techniques}}
+\section{\review{Measurement Techniques for Linear Optics}}
 
 In SuperKEKB, the beam optics are measured using either Closed Orbit
 Distortion~\cite{ohnishi_optics_1999} or turn-by-turn measurements. As fast optics measurements can
@@ -70,6 +70,7 @@ times more BPMs can be used compared to the TbT data.
 %------------------------------
 %        Turn-by-Turn
 %------------------------------
+\FloatBarrier
 \subsection{\review{Turn-by-Turn}}
 
 In SuperKEKB, 68 and 70 BPMs in the HER and LER rings are capable of recording turn-by-turn (TbT)
@@ -101,11 +102,30 @@ Once the TbT data is recorded, the standard analysis procedures outlined in
 \cref{section:opticcs_meas} are applied. Specifically, the frequency spectrum is calculated before
 reconstructing the optics. The model used for this analysis is generated with the SAD (Strategic
 Accelerator Design) software \cite{noauthor_sad_nodate}.
+A typical turn-by-turn signal is depicted in \cref{fig:kek:tbt_signal}.
+
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}[b]{0.47\textwidth}
+        \includegraphics[width=\linewidth]{images/kek/horizontal_tbt_ler.pdf}
+        \caption{Horizontal plane, oscillations are created by the Injection Kicker.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\linewidth]{images/kek/vertical_tbt_ler.pdf}
+        \caption{Vertical plane, oscillations are created via an injection offset.}
+    \end{subfigure}
+    \caption{Typical horizontal and vertical recorded turn-by-turn signal.}
+    \label{fig:kek:tbt_signal}
+\end{figure}
+
 
 
 %------------------------------
 %            GUI
 %------------------------------
+\FloatBarrier
 \subsection{\review{OMC3 Graphical User Interface}}
 
 The graphical user interface (GUI) used for optics analysis on the LHC, based on OMC3
@@ -128,6 +148,7 @@ be easily identified.
 %=============================
 %     Optics Observations
 %=============================
+\FloatBarrier
 \section{\todo{Optics Observations}}
 
 All the measurements presented in this section have been performed in February 2024, during the
@@ -145,7 +166,6 @@ configuration to increase measurement precision. Although additional measurement
 insufficient kick amplitude in some cases made it challenging to extract reliable linear optics
 data and are thus here not included. Specifically, vertical measurements are challenging to perform
 as oscillation amplitudes are often low due to the limited achievable offset.
-A typical turn-by-turn signal is depicted in \cref{fig:kek:tbt_signal}.
 Overall, both the \textit{detuned} and \text{8mm squeezed} optics have been reliably measured for
 both rings. However, vertical measurements for the squeezed optics are still challenging to measure 
 in LER.
@@ -173,23 +193,6 @@ in LER.
   acquisition.}
   \label{tab:superkekb:configurations}
 \end{table}
-
-
-\begin{figure}[!htb]
-    \centering
-    \begin{subfigure}[b]{0.47\textwidth}
-        \includegraphics[width=\linewidth]{images/kek/horizontal_tbt_ler.pdf}
-        \caption{Horizontal plane, oscillations are created by the Injection Kicker.}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\linewidth]{images/kek/vertical_tbt_ler.pdf}
-        \caption{Vertical plane, oscillations are created via an injection offset.}
-    \end{subfigure}
-    \caption{Typical horizontal and vertical recorded turn-by-turn signal.}
-    \label{fig:kek:tbt_signal}
-\end{figure}
-
 
 
 %-----------------------------
@@ -268,6 +271,7 @@ action 5 times lower than H
 \end{figure}
 
 
+
 %-----------------------------
 %            Summary
 \FloatBarrier
@@ -296,22 +300,30 @@ action 5 times lower than H
 %         LER Amp.Det.
 %-----------------------------
 \FloatBarrier
-\subsection{\todo{Amplitude Detuning}}
+\subsection{\review{Amplitude Detuning}}
 
 %-----------------------------
 %         Tune Stability
 \FloatBarrier
-\subsubsection{\todo{Tune Stability}}
+\subsubsection{\review{Tune Stability}}
 
+To accurately measure non-linear optics, reliable measurement of the tune is essential. Ensuring
+tune stability across consecutive kicks is needed to minimize measurement uncertainties and reflects
+the reproducibility of the machine. With an appropriate kicker in the horizontal plane, this plane
+is expected to be easier to measure, and is reflected by the tune stability accross kicks.
+\Cref{fig:kek:shots} illustrates the variation in tune from the first kick compared to subsequent
+kicks for both rings and planes.
+While reproducibility is challenging to achieve in the vertical plane of the LER, all other
+measurements agree well together, down to a few tune units of $10^{-3}$.
 
 \begin{figure}[!htb]
     \centering
-    \begin{subfigure}[b]{0.8\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\linewidth]{images/kek/SUPERKEKBLER_shots.pdf}
         \caption{Tune stability for the LER ring.}
     \end{subfigure}
-    \vspace{0.5cm} 
-    \begin{subfigure}[b]{0.8\textwidth}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\linewidth]{images/kek/SUPERKEKBHER_shots.pdf}
         \caption{Tune stability for the HER ring.}
     \end{subfigure}
@@ -323,21 +335,35 @@ action 5 times lower than H
 %-----------------------------
 %             LER
 \FloatBarrier
-\subsubsection{\todo{Amplitude Detuning in LER}}
+\subsubsection{\review{Amplitude Detuning in LER}}
+
+Particularly notable measurements have been conducted in the LER ring with \textit{detuned} optics.
+These measurements stand out due to their larger action range compared to others.
+\Cref{fig:kek:ler_full_tune_ampdet} illustrates the various kicks performed and their corresponding
+action.
+The tune is computed across each kick using a window of 200 turns, every 50 turns. A clear trend is
+emerges with the tune following the amplitude of the kicks. Over time, the oscillations gradually
+dampen, and the tune changes accordingly.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=\linewidth]{images/kek/LER_detuned_ampdet.pdf}
+    \includegraphics[width=0.8\linewidth]{images/kek/LER_detuned_ampdet.pdf}
     \caption{Correlation between the measured tune with the action of the kick. The tune is computed
     via a running window over 200 turns, every 50 turns.}
     \label{fig:kek:ler_full_tune_ampdet}
 \end{figure}
 
-
+The variation of the horizontal tune with the horizontal kick amplitude is related to by the
+amplitude detuning term $\frac{\partial Q_x}{\partial J_x}$. Its value can be retrieved by fitting
+the tune to the action. \Cref{fig:kek:ler_ampdet} shows the various kicks along with a fit and a
+comparison to the model. The measured value, $6500 \pm 500$ is one order of magnitude higher than
+that simulated, of $600$. This observed discrepancy indicates un-modeled octupolar-like sources.
+Such a discrepancy, although not as large, already has been observed with different
+optics~\cite{keintzel_jacqueline_beam_2022}.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=0.9\linewidth]{images/kek/amplitude_detuning.pdf}
+    \includegraphics[width=0.7\linewidth]{images/kek/amplitude_detuning.pdf}
     \caption{Amplitude dependence of the tune in the LER ring. The fitted line then corresponds to
     the amplitude detuning term $\partial Q_x/\partial 2J_x$. For comparison, the model computed 
     from the model is shown in green.}
@@ -484,17 +510,23 @@ discrepancy could arise from octupolar sources and higher-order contributions fr
 
 
 %=============================
-%        Conclusion
+ %        Conclusion
 %=============================
 \FloatBarrier
-\section{\todo{Summary}}
+\section{\review{Summary}}
 
-The measurements demonstrate excellent reproducibility of linear optics, with particularly improved
-results in the horizontal plane when using a kicker. This reproducibility has been observed
-consistently across several days and from shot to shot. Sextupolar Resonance Driving Term (RDT)
-measurements in both rings have been conducted, although clean measurements could not always be
-achieved, and some discrepancies remain to be clarified. Chromaticity measurements for both rings
-were generally good; however, discrepancies in \( Q'' \) have been attributed to octupolar-like
-sources, while LER's \( Q''_y \) discrepancies are linked to decapolar-like sources. Additionally,
-amplitude detuning for LER was measured with detuned optics, and a model comparison is expected to
-provide a more detailed understanding of \( Q'' \).
+The measurements reveal excellent reproducibility of linear optics, with notable improvements in the
+horizontal plane when a kicker is used. This consistency has been observed over multiple days and
+across different shots. Sextupolar Resonance Driving Term (RDT) measurements have been carried out
+in both rings for the first time, though some measurements were challenging to achieve, and certain
+discrepancies remain unresolved. Chromaticity measurements for both rings were generally
+satisfactory, but some inconsistencies in $Q''$ were observed in both the HER and LER.
+
+Amplitude detuning for the LER was measured with detuned optics, and the model comparison showed an
+order of magnitude difference. Combined with the chromaticity results, this suggests potential
+errors due to higher-order effects of sextupoles and octupoles. Further investigations are needed to
+clarify these discrepancies.
+
+Overall, the measurements are consistent with those obtained using different methods at KEK. This
+suggests that the techniques employed at CERN are effective and could enhance our understanding of
+the machine and its modeling.
