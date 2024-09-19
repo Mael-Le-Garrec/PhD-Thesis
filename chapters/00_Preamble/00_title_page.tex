@@ -87,6 +87,7 @@
     \def\firstsupervisor#1{\def\@firstsupervisor{#1}}
     \def\secondsupervisor#1{\def\@secondsupervisor{#1}}
     \def\makesecondtitle{%
+        \newgeometry{top=20.625mm, bottom=28.875mm, left=16.5mm, right=16.5mm}
         \thispagestyle{empty} % remove numbering
         % 3 lines
         \noindent\rule[0.5em]{\textwidth}{1.5pt}\vspace{-22pt}
@@ -152,6 +153,8 @@
     \cleardoublepage
     % Display the second title page
     \makesecondtitle
+    % Restore the geometry that was changed for the margins
+    \restoregeometry
 }
 
 
