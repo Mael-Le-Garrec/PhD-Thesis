@@ -29,9 +29,11 @@ facilitate research on various topics of interest. SuperKEKB is especially relev
 can act as a prototype for testing innovative manufacturing, measurement, and analysis techniques,
 whether in mechanical prototyping, elements alignment, or beam dynamics. During my secondment in
 Japan, the optics measurement techniques utilized at CERN for the LHC, specifically turn-by-turn
-acquisitions, were tested on the two rings of SuperKEKB. Previous studies have been performed and
-are here extended~\cite{keintzel_jacqueline_beam_2022,keintzel_superkekb_2021,keintzel_impact_2021}.
-
+acquisitions, were tested on the two rings of SuperKEKB. 
+Previous studies have been conducted and are extended in this chapter. Rather than providing an
+in-depth description, the focus here is on updating the previously employed techniques. For more
+detailed information, please refer
+to~\cite{keintzel_jacqueline_beam_2022,keintzel_superkekb_2021,keintzel_impact_2021}.
 
 
 %=============================
@@ -39,10 +41,10 @@ are here extended~\cite{keintzel_jacqueline_beam_2022,keintzel_superkekb_2021,ke
 %=============================
 \section{\todo{Measurement Techniques}}
 
-In SuperKEKB, the beam optics are measured using either LOCO (Linear Optics from Closed Orbit) or
-turn-by-turn measurements. As fast optics measurements can be achieved with the TbT method, a measurement
-campaign has being carried out to improve the measurement quality. This includes investigating
-various beam excitation techniques and settings.
+In SuperKEKB, the beam optics are measured using either Closed Orbit
+Distortion~\cite{ohnishi_optics_1999} or turn-by-turn measurements. As fast optics measurements can
+be achieved with the TbT method, a measurement campaign has being carried out to improve the
+measurement quality. This includes investigating various beam excitation techniques and settings.
 The necessary pre-processing steps for optics measurements have been detailed
 in~\cite{keintzel_jacqueline_beam_2022}, and are not covered here.
 
@@ -50,27 +52,25 @@ in~\cite{keintzel_jacqueline_beam_2022}, and are not covered here.
 %------------------------------
 %    Closed orbit distortion
 %------------------------------
-\subsection{\todo{Closed Orbit Distortion}}
+\subsection{\review{Closed Orbit Distortion}}
 
-Optics measurements using the COD method \cite{harrison_global_1987,chung_measurement_1993} are well
-established and routinely performed at SuperKEKB. In COD measurements, the beam is excited using six
-corrector magnets, and the centroid orbit is recorded by 466 BPMs for the HER and 444 BPMs for the
-LER, respectively. The measured orbits, averaged over several turns, are stored in a matrix that
-contains a large number of elements. The optics of both transverse planes are then reconstructed
-using analytical formulas. Since the correctors must be powered one at a time, the COD method is
+Optics measurements using the COD method
+\cite{harrison_global_1987,chung_measurement_1993,ohnishi_optics_1999} are well established and
+routinely performed at SuperKEKB. In COD measurements, the beam is excited using six corrector
+magnets, and the centroid orbit is recorded by 466 BPMs for the HER and 444 BPMs for the LER,
+respectively. The measured orbits, averaged over several turns, are stored in a matrix that contains
+a large number of elements. The optics of both transverse planes are then reconstructed using
+analytical formulas. Since the correctors must be powered one at a time, the COD method is
 relatively time-consuming. 
-
-Another limitation at SuperKEKB is that the feed-down from sextupoles on off-axis particles is 
-currently not taken into account, which introduces an error that limits the amplitude of orbit
-distortion.  Additionally, since the average particle orbit is observed, the BPM readings are highly
-dependent on precise calibration.  One significant advantage of COD measurements at SuperKEKB is
-that approximately 6.5 times more BPMs can be used compared to the TbT data.
+Since the average particle orbit is observed, the BPM readings are highly dependent on precise
+calibration. One significant advantage of COD measurements at SuperKEKB is that approximately 6.5
+times more BPMs can be used compared to the TbT data.
 
 
 %------------------------------
 %        Turn-by-Turn
 %------------------------------
-\subsection{\todo{Turn-by-Turn}}
+\subsection{\review{Turn-by-Turn}}
 
 In SuperKEKB, 68 and 70 BPMs in the HER and LER rings are capable of recording turn-by-turn (TbT)
 orbit data, typically capturing several thousand turns in both transverse planes. TbT measurements
@@ -106,7 +106,7 @@ Accelerator Design) software \cite{noauthor_sad_nodate}.
 %------------------------------
 %            GUI
 %------------------------------
-\subsection{\todo{OMC3 Graphical User Interface}}
+\subsection{\review{OMC3 Graphical User Interface}}
 
 The graphical user interface (GUI) used for optics analysis on the LHC, based on OMC3
 \cite{omc-team_omc3_2021}, has been updated to support the HER and LER rings of SuperKEKB. This tool
@@ -221,7 +221,7 @@ action 5 times lower than horizontal
     \includegraphics[width=0.7\linewidth]{images/kek/ler_20_22_bet_x.pdf}
     \caption{LER horizontal beta-beating for \textit{8mm squeezed} optics, reliably measured during
     two different days. The vertical plane is absent due to amplitudes being too low to reconstruct
-    linear optics. A comparison to the beating measured via LOCO is made.}
+    linear optics. A comparison to the beating measured via COD is made.}
     \label{fig:kek:beating_ler_squeezed}
 \end{figure}
 
@@ -263,7 +263,7 @@ action 5 times lower than H
     \end{subfigure}
     \caption{HER horizontal and vertical beta-beating for \textit{8mm squeezed} optics. The vertical
     plane is noticeably noisier as oscillation amplitudes are smaller. A comparison to the beating
-    measured via LOCO is made.}
+    measured via COD is made.}
     \label{fig:kek:beating_her_squeezed}
 \end{figure}
 
@@ -386,27 +386,41 @@ action 5 times lower than H
 %        Chromaticity
 %-----------------------------
 \FloatBarrier
-\subsection{\todo{Chromaticity}}
+\subsection{\review{Chromaticity}}
+
+Chromaticity measurements were performed using the method of varying the RF frequency, as described
+in \cref{subsection:optics_corrections_chromaticity}. While this method is standard at the LHC, it
+is not regularly used on the SuperKEKB rings. However, it provides the ability to measure the tune
+over a broader range of momentum offsets. Chromaticity can also be computed using the Injection
+Kicker~\cite{keintzel_jacqueline_beam_2022}. Similar to the LHC at injection energy, the Lorentz
+factor $\gamma^{-2}$ is small compared to the momentum compaction factor $\alpha_c$ and can
+therefore be neglected.
+\Cref{fig:kek:chroma_procedure} illustrates the RF frequency method.
 
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\linewidth]{images/kek/rf_qx.png}
-    \caption{}
+    \caption{Horizontal tune change relative to the change in RF Frequency at SuperKEKB.}
     \label{fig:kek:chroma_procedure}
 \end{figure}
 
+Two measurements were taken with \textit{detuned} optics for the HER and LER rings and are shown 
+in \cref{fig:kek:chroma_HER_detuned} and \cref{fig:kek:chroma_LER_detuned}. The values of the fitted
+chromaticity function are given in \cref{tab:kek:her_chroma_detuned} and
+\cref{tab:kek:ler_chroma_detuned} for HER and LER respectively. In order to allow for a better
+comparison the tune and the linear chromaticity taken from the the measurements.
 
 \begin{figure}[!htb]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\linewidth]{images/kek/chromaticity/HER_09/qx_modelq0q1.pdf}
-        \caption{}
+        \caption{Horizontal tune shift.}
     \end{subfigure}
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\linewidth]{images/kek/chromaticity/HER_09/qy_modelq0q1.pdf}
-        \caption{}
+        \caption{Vertical tune shift.}
     \end{subfigure}
-    \caption{}
+    \caption{HER chromaticity measurements with \textit{detuned} optics.}
     \label{fig:kek:chroma_HER_detuned}
 \end{figure}
 
@@ -414,78 +428,59 @@ action 5 times lower than H
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\linewidth]{images/kek/chromaticity/LER_09/qx_modelq0q1.pdf}
-        \caption{}
+        \caption{Horizontal tune shift.}
     \end{subfigure}
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\linewidth]{images/kek/chromaticity/LER_09/qy_modelq0q1.pdf}
-        \caption{}
+        \caption{Vertical tune shift.}
     \end{subfigure}
-    \caption{}
+    \caption{LER chromaticity measurements with \textit{detuned} optics.}
     \label{fig:kek:chroma_LER_detuned}
 \end{figure}
 
-
-% HER detuned
-\begin{figure}
+% HER Detuned
+\begin{table}[!htb]
     \centering
-    \begin{minipage}[b]{0.49\textwidth}
-        \centering
-        \begin{table}
-          \footnotesize
-          \begin{tabular}{lrr}
-            & $Q'' [\times 10^3]$ & $Q''' [\times 10^6]$ \\
-            \midrule
-            Meas.       &  -0.51 ± 0.01 & 0.11 ± 0.02\\
-            Model       &  -0.12 ± 0.00 & 0.09 ± 0.00\\
-            \bottomrule
-          \end{tabular}
-        \end{table}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.49\textwidth}
-        \centering
-        \begin{table}
-          \footnotesize
-          \begin{tabular}{lr}
-          & $Q'' [\times 10^3]$ \\
-          \midrule
-          Meas.       &  0.00 ± 0.0 \\
-          Model       & -0.04 ± 0.0 \\
-          \bottomrule
-          \end{tabular}
-        \end{table}
-    \end{minipage}
-\end{figure}
+    \begin{tabular}{cccc}
+        \toprule
+            & & \(Q'' \, [\times 10^3]\) & \(Q''' \, [\times 10^6]\) \\ 
+        \midrule
+        \multirow{2}{*}{X} & Meas. & $-0.51 \pm 0.01$ & $0.11 \pm 0.02$ \\
+                        & Model & $-0.12 \pm 0.00$ & $0.09 \pm 0.00$ \\
+        \midrule
+        \multirow{2}{*}{Y} & Meas. & $0.00 \pm 0.0$ & \\
+                        & Model & $-0.04 \pm 0.0$ & \\
+        \bottomrule
+    \end{tabular}
+    \caption{Measured and modeled chromaticity in the HER ring with \textit{detuned} optics in both
+    planes.}
+    \label{tab:kek:her_chroma_detuned}
+\end{table}
 
-% LER detuned
-\begin{figure}
+% LER Detuned
+\begin{table}[!htb]
     \centering
-    \begin{minipage}[b]{0.49\textwidth}
-        \centering
-        \begin{table}
-          \begin{tabular}{lrr}
-            & $Q'' [\times 10^3]$ & $Q''' [\times 10^6]$ \\
-            \midrule
-              Meas. & -0.01 ± 0.0 &  0.02 ± 0.0 \\
-              Model &  0.04 ± 0.0 & -0.01 ± 0.0 \\
-            \bottomrule
-            \end{tabular}
-        \end{table}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.49\textwidth}
-        \centering
-        \begin{table}
-          \begin{tabular}{rrr}
-            $Q'' [\times 10^3]$ & $Q''' [\times 10^6]$ & $Q^{(4)} [\times 10^9]$ \\
-            \midrule
-             0.35 ± 0.01 & 0.24 ± 0.01 & -0.09 ± 0.01 \\
-             0.10 ± 0.00 & 0.32 ± 0.00 & -0.09 ± 0.00 \\
-            \bottomrule
-            \end{tabular}
-        \end{table}
-    \end{minipage}
-\end{figure}
+    \begin{tabular}{ccrrr}
+        \toprule
+            & & \(Q'' \, [\times 10^3]\) & \(Q''' \, [\times 10^6]\) & $Q^{(4)} [\times 10^9]$\\ 
+        \midrule
+        \multirow{2}{*}{X} & Meas. & $-0.01 \pm 0.0$ & $ 0.02 \pm 0.0$ \\
+                        & Model & $ 0.04 \pm 0.0$ & $-0.01 \pm 0.0$ \\
+        \midrule
+        \multirow{2}{*}{Y} & Meas. & $0.35 \pm 0.01$ & $0.25 \pm 0.01$ & $-0.09 \pm 0.01$\\
+                        & Model & $0.10 \pm 0.00$ & $0.32 \pm 0.00$ & $-0.09 \pm 0.00$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Measured and modeled chromaticity in the LER ring with \textit{detuned} optics in both
+    planes.}
+    \label{tab:kek:ler_chroma_detuned}
+\end{table}
+
+It can be noted that most of the measured third and fourth-order chromaticities agree well with the
+model, whereas the second-order chromaticity appears to deviate. Discrepancies in $Q''$ were
+already observed in 2022 with different optics~\cite{keintzel_jacqueline_beam_2022}. This
+discrepancy could arise from octupolar sources and higher-order contributions from sextupoles.
+
 
 
 %=============================
@@ -500,6 +495,6 @@ consistently across several days and from shot to shot. Sextupolar Resonance Dri
 measurements in both rings have been conducted, although clean measurements could not always be
 achieved, and some discrepancies remain to be clarified. Chromaticity measurements for both rings
 were generally good; however, discrepancies in \( Q'' \) have been attributed to octupolar-like
-sources, while LER’s \( Q''_y \) discrepancies are linked to decapolar-like sources. Additionally,
+sources, while LER's \( Q''_y \) discrepancies are linked to decapolar-like sources. Additionally,
 amplitude detuning for LER was measured with detuned optics, and a model comparison is expected to
 provide a more detailed understanding of \( Q'' \).
