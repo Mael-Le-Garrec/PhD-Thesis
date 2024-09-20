@@ -199,25 +199,8 @@
 % Command to create highlights easily in colors
 \DeclareRobustCommand{\hlcyan}[1]{{\sethlcolor{cyan}\hl{#1}}}
 
-% Display a table of contents for the current chapter
-\newcommand{\chaptertoc}[1][Contents]{%
-  % Set the indent so it's a bit tighter and looks better
-  %\setlength{\cftsecindent}{0.2cm}
-  %\setlength{\cftsubsecindent}{0.8cm}
-  %\setlength{\cftsubsubsecindent}{1.4cm}
-
-  %\etocmulticolstyle{\addsec*{#1\\\rule{\textwidth}{0.4pt}}}%
-  \setcounter{tocdepth}{5}
-
-  % Reduce the spacing between the list items
-  %\addsec*{\rule{\textwidth}{0.4pt}}
-  \begin{spacing}{0.1}
-    \localtableofcontents%
-  \end{spacing}
-}
-
 % When using align from amsmath, each line is numbered
-% This allows to use align* and the manually number the last equation
+% This allows to use align* and then manually number the last equation
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
 % Some commands to display text in color
