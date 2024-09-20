@@ -164,10 +164,8 @@ $\beta_y^* = 81$ in HER are referred to as \textit{detuned}. Multiple kicks were
 configuration to increase measurement precision. Although additional measurements were taken,
 insufficient kick amplitude in some cases made it challenging to extract reliable linear optics
 data and are thus here not included. Specifically, vertical measurements are challenging to perform
-as oscillation amplitudes are often low due to the limited achievable offset.
-Overall, both the \textit{detuned} and \text{8mm squeezed} optics have been reliably measured for
-both rings. However, vertical measurements for the squeezed optics are still challenging to measure 
-in LER.
+as oscillation amplitudes are often low due to the limited achievable injection offset. The low 
+vertical action often makes measurements noisy.
 
 \begin{table}
     \centering
@@ -193,11 +191,19 @@ in LER.
   \label{tab:superkekb:configurations}
 \end{table}
 
+Both the \textit{detuned} and \text{8mm squeezed} optics are reliably measured for
+both rings. However, the vertical plane for the squeezed optics could not be measured
+in LER due to the absence of injection offset.
+\Cref{fig:kek:beating_ler_detuned} and \cref{fig:kek:beating_her_detuned} show the
+measurements taken with \textit{detuned} optics for LER and HER. For the squeezed optics, at 8mm, a
+comparison to the measurements performed via COD is done in \cref{fig:kek:beating_ler_squeezed} and
+\cref{fig:kek:beating_her_squeezed}, for LER and HER respectively.
+The agreement between the COD and the TbT techniques is a good indication of their robustness. The
+agreement found during these measurements is similar to that obtained few years
+prior~\cite{keintzel_jacqueline_beam_2022}.
 
-%-----------------------------
-%            LER 
-\FloatBarrier
-\subsubsection{\todo{LER $\beta-beating$}}
+
+% ==== LER
 
 \begin{figure}[!htb]
     \centering
@@ -208,7 +214,7 @@ in LER.
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\linewidth]{images/kek/ler_06_09_bet_y.pdf}
-        \caption{Vertical beta-beating, RMS is $\approx 4\%$.}
+        \caption{Vertical beta-beating, RMS is $\approx 5\%$.}
     \end{subfigure}
     \caption{LER horizontal and vertical beta-beating for \textit{detuned} optics, reliably measured
     during two different days.  The vertical plane is noticeably noisier as oscillation amplitudes
@@ -216,23 +222,17 @@ in LER.
     \label{fig:kek:beating_ler_detuned}
 \end{figure}
 
-action 5 times lower than horizontal
-
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.7\linewidth]{images/kek/ler_20_22_bet_x.pdf}
     \caption{LER horizontal beta-beating for \textit{8mm squeezed} optics, reliably measured during
     two different days. The vertical plane is absent due to amplitudes being too low to reconstruct
-    linear optics. A comparison to the beating measured via COD is made.}
+    linear optics. A comparison to the beating measured via COD is made. RMS is $\approx 6$}
     \label{fig:kek:beating_ler_squeezed}
 \end{figure}
 
 
-
-%-----------------------------
-%            HER
-\FloatBarrier
-\subsubsection{\todo{HER $\beta-beating$}}
+% ==== LER
 
 \begin{figure}[!htb]
     \centering
@@ -250,7 +250,6 @@ action 5 times lower than horizontal
     \label{fig:kek:beating_her_detuned}
 \end{figure}
 
-action 5 times lower than H
 
 \begin{figure}[!htb]
     \centering
@@ -269,12 +268,8 @@ action 5 times lower than H
     \label{fig:kek:beating_her_squeezed}
 \end{figure}
 
-
-
-%-----------------------------
-%            Summary
-\FloatBarrier
-\subsubsection{\todo{Summary}}
+A summary of the performed measurements and the RMS $\beta$-beating is given in
+\cref{tab:kek:summary_beating}.
 
 \begin{table}
     \centering
