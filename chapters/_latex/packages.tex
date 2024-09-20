@@ -275,7 +275,15 @@
   tocpagenumberbox=\raggedleft,  % align the page number left, to have the same space before and after the /
   tocraggedpagenumber=true,  % unforce the pagenumber to be justified right
 ]{section,subsection,subsubsection,paragraph,subparagraph}
-
+% Set the spacing between the TOC entries
+\BeforeTOCHead[toc]{%
+  \KOMAoptions{parskip=false}% no parskip in ToC
+  \RedeclareSectionCommand[afterskip=1sp minus 1sp]{chapter}% no skip after ToC title
+}
+\DeclareTOCStyleEntry[beforeskip=1em]{part}{part}
+\DeclareTOCStyleEntry[beforeskip=0.6em]{chapter}{chapter}
+\DeclareTOCStyleEntry[beforeskip=0.2em]{section}{section}
+%\DeclareTOCStyleEntry[beforeskip=0.5em]{default}{subsection}
 
 
 % ===========================================================================
