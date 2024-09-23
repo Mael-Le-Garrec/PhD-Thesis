@@ -46,12 +46,12 @@ the same aperture at the IPs.\\
 
 Collimators are a crucial part of the LHC. Their purpose is to protect the machine against beam
 losses and clean the outer parts of the beam~\cite{redaelli_lhc_2011}. The energy of the beams in
-the LHC is high enough to not only quench the magnets, but to also damage the elements.
+the LHC is high enough to not only quench the magnets, but to also damage the elements. At
+injection energy, with a low intensity pilot bunch, the consequences of a loss are less severe.
 
-At injection energy, with a low intensity pilot bunch, the consequences of a loss are though less
-severe. During Run 3, in 2022, a new collimator sequence was introduced, making a safe exploitation
-of the machine possible with more retracted collimators. This made measurements with higher kick
-amplitudes and larger orbit offsets, and thus momentum offsets, possible.
+%During Run 3, in 2022, a new collimator sequence was introduced, making a safe exploitation
+%of the machine possible with more retracted collimators. This made measurements with higher kick
+%amplitudes and larger orbit offsets, and thus momentum offsets, possible.
 
 
 % ============================================
@@ -120,8 +120,8 @@ using tune kickers or frequency sweeps~\cite{boccardi_first_2009}.
 
 The AC dipole of the LHC is a crucial component for optics studies. Its primary function is to
 excite the beam into large coherent oscillation, achieved by applying a sinusoidally oscillating
-dipole field~\cite{miyamoto_parametrization_2008}. By ramping up and down adiabatically the field,
-large coherent oscillations can be produced without any decoherence or emittance growth.
+dipole field~\cite{miyamoto_parametrization_2008}. By ramping up and down adiabatically the
+amplitude, large coherent oscillations can be produced without any decoherence or emittance growth.
 \Cref{fig:ac_dipole} shows an example of a simulation made with an AC-Dipole. Exciting the beam to
 large amplitudes make the study of linear optics, such as beta-beating easier, and that of non
 linear optics such as resonances possible.
@@ -135,8 +135,9 @@ linear optics such as resonances possible.
 
 The AC-Dipole is set to oscillate at a frequency $Q_d$, different from the natural tune of the
 machine $Q$ and thus introduces systematic effects that needs to be compensated during the optics
-analysis. The new orbit of a particle under the influence of the AC-Dipole, at turn number $n$ and
-observation point $s$, is given by~\cite{serrano_lhc_2010}:
+analysis. The transverse position of a particle under the influence of the AC-Dipole, at turn number
+$n$ and observation point $s$, is given
+by~\cite{serrano_lhc_2010,tomas_normal_2002,white_direct_2013}:
 
 \begin{equation}
 z(s, n) = \frac{BL}{4\pi\rho\delta_z} \cdot \sqrt{\beta_z(s) \beta_{z,0}} \cdot \cos \left( 2 \pi Q_{d,z}n + \phi_z(s) + \phi_{z,0}\right),

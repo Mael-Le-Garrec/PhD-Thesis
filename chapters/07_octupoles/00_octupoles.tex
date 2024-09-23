@@ -3,16 +3,28 @@
 %=============================
 \section{\review{Introduction}}
 
-The skew octupolar fields in the LHC have previously been identified as significant contributors to 
-limits in forced dynamic aperture, being the dynamic aperture when kicking the beam with the
-AC-Dipole~\cite{carlier_nonlinear_2020}. Skew octupolar correctors are positioned around the
-ATLAS and CMS detectors, in Interaction Regions 1 and 5. Those correctors are \textit{common
-aperture} magnets ; both beams are affected by the created magnetic fields. Unfortunately, one of
-these four correctors, located to the left of ATLAS, is not functioning. As a result, although
-corrections can be calculated, they will not effectively minimize the skew octupolar RDTs of
-interest, $f_{1012,y}$ and $f_{1210,x}$. 
-The associated resonances and frequency lines of these RDTs are shown in
-\cref{tab:skew_octupolar:resonances_rdts}.
+Skew-octupolar fields represent an important yet comparatively less-studied aspect of the LHC's
+non-linear optics. Their impact, although well-understood in simulations, presents unique challenges
+in real-world operation, especially as we approach closer to the High-Luminosity Large Hadron
+Collider (HL-LHC), where dynamic aperture is expected to be significantly affected. Unlike
+quadrupole and sextupole components, which have well-established methods for measurement and
+correction, skew-octupolar fields pose a significant challenge to measure and quantify.
+
+Historically, skew-octupolar fields have been measured indirectly via feed-down to coupling.
+However, the absence of simple observables, such as amplitude detuning, makes their identification
+less intuitive. Resonance Driving Terms (RDTs) have proven to be an effective means of measuring
+skew-octupolar fields~\cite{carlier_nonlinear_2020}, though obtaining accurate measurements remains
+challenging due to the high kick amplitudes required. 
+
+Previous attempts at correcting these resonances have largely relied on empirical methods, which,
+while functional, have been time consuming, labor intensive, and insufficient for the fast paced
+demands of LHC operations. As the machine's performance pushes new boundaries, efficient and
+realtime correction techniques are increasingly required. This need has driven the development of a
+response matrix based approach to skew-octupolar RDT corrections, offering a quicker and more
+reliable method for diagnosing and addressing these field errors. These advancements will be needed
+tp facilitate shorter commissioning times and optimize performance in future HL-LHC runs.
+The RDTs of interest in this chapter are $f_{1012,y}$ and $f_{1210,x}$, with their associated
+resonances and frequency lines presented in \cref{tab:skew_octupolar:resonances_rdts}.
 
 \begin{table}[!htb]
     \centering
@@ -29,39 +41,100 @@ The associated resonances and frequency lines of these RDTs are shown in
     \label{tab:skew_octupolar:resonances_rdts}
 \end{table}
 
-First corrections of skew octupolar RDTs were performed in 2018 at top
-energy~\cite{carlier_nonlinear_2020}. A different approach for the same corrections is presented in
-this chapter.
-Measurements were also performed at injection energy with the prospect of corrections. However, it
-was observed that Landau octupoles were strongly contributing to the RDTs of interest.
+The following sections present the measurements and corresponding corrections performed at top
+energy, establishing the methods for reliable measurements and corrections of skew-octupolar RDTs.
+Subsequently, the unaccounted for contributions of normal octupoles to skew-octupolar RDTs at
+injection energy are examined.
+
 
 
 %=============================
 %         Top Energy
 %=============================
-\section{\review{Corrections at Top Energy}}
+\section{\review{Response Matrix Based RDT Corrections at Top Energy}}
 
 The very first skew octupolar RDT corrections in the LHC were made in 2018 during
-Run~2~\cite{carlier_nonlinear_2020}. These corrections were computed by matching the RDT level of
-the measurements in simulation and then inverting the strengths. This is possible and remains viable
-as only three correctors are used and values can be manually adjusted.
+Run~2~\cite{carlier_nonlinear_2020}. These corrections were computed using all the possible
+combinations of correctors and finding one that corrects the best the measurements. Such an approach
+is extremely time consuming and can not be easily replicated for different optics. Manual tweaks
+were are also often required.
+
 In this section, a different approach is taken, based on response matrices. This type of correction
 is explained in details in \cref{correction_principle:response_matrix}. The real and imaginary 
 responses of the RDTs for each corrector at an arbitrary strength are simulated through tracking.
 These responses are collected into a matrix, allowing the determination of the required strengths to
 match the RDT level observed in the measurements. Inverting these values result in a correction.
+This approach has the benefit of being remarkably faster, as only a few simulations are needed.
+Online corrections in the control room are thus possible in the span of a few hours instead of a
+whole shift.
 
 
 %-----------------------------
-%     Correctors Response
+%         Measurement
 %-----------------------------
-\subsection{\review{Correctors}}
+\FloatBarrier
+\subsection{\review{Measurement}}
+
+Initial measurements of the machine at top energy ($\beta^*=30$ cm) were conducted without any
+skew octupolar correctors to establish a baseline for the RDTs. Measuring skew octupolar RDTs poses
+challenges due to the high amplitude kicks required to distinguish the RDT lines in the frequency
+spectrum. Accordingly, the LHC's working point had to be optimized specifically for these
+measurements to improve the forced dynamic aperture.
+
+Several measurements were taken at different working points to identify a configuration that allowed
+both RDTs to be observed with minimal losses. A summary of the tested working points and the
+resulting AC-Dipole kick percentages is presented in \cref{tab:skew_octupolar:working_points_acd}.
+
+\begin{table}[!htb]
+    \centering
+    \begin{tabular}{cccccc}
+      \hline
+      &&&&\multicolumn{2}{c}{Maximum Kick [\%]} \\
+      \cline{5-6}
+      $Q_x$ & $Q_y$ & $\Delta Q_{x,ac}$ & $\Delta Q_{y,ac}$ & Beam1 & Beam 2 \\
+      \hline
+      0.310 & 0.320 &-0.008 & +0.010 & 13 & 16 \\
+      0.295 & 0.305 &-0.008 & +0.010 & 30 & 45 \\
+      0.285 & 0.292 &-0.008 & +0.010 & 55 & 50 \\
+      \hline
+    \end{tabular}
+    \caption{Working points tested for skew-octupolar RDT measurements, together with the maximum
+    diagonal kick percentages reached.}
+    \label{tab:skew_octupolar:working_points_acd}
+\end{table}
+
+
+A suitable configuration was identified that enables high amplitude kicks. Consequently, the
+measurements were conducted at natural tunes of $Q_x = 0.285$ and $Q_y = 0.292$. The driven
+tunes were adjusted to $\Delta Q_x = -0.008$ and $\Delta Q_y = 0.01$. This selection of tunes
+has been shown to be the most effective for measuring skew octupolar RDTs while minimizing losses.
+During the measurements, the Landau octupoles were powered off.
+\Cref{fig:skew_octupolar:spectrum_a4_top_energy} shows the horizontal frequency spectrum taken
+with the skew octupolar correctors turned off. In this plane, the line of the RDT $f_{1210}$ is
+visible, while that of $f_{1012}$ is visible in the vertical one. The measured RDTs are shown later
+on, in blue, in \cref{fig:skew_octupolar:corrections_vs_bare}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./images/spectrum_a4_top_energy.pdf}
+    \caption{Horizontal spectrum of Beam 1 at top energy before and after application of
+    skew-octupolar RDT corrections. The RDT $f_{1210}$ is seen at $2Q_x - 1Q_y$.}
+    \label{fig:skew_octupolar:spectrum_a4_top_energy}
+\end{figure}
+
+
+
+
+%-----------------------------
+%      Response Matrix
+%-----------------------------
+\subsection{\review{Response Matrix Construction}}
 
 To create a response matrix, simulations were conducted with the tunes and AC-Dipole deltas set to
 those used for measurements. The natural tunes are $Q_x = 0.285$ and $Q_y = 0.292$ while the driven
 tunes are $\Delta Q_x = -0.008$ and $\Delta Q_y = 0.01$. Each corrector is then powered
-individually for each tracking simulation. For this type of simulation, field errors are not
-necessary, as only the RDT shift caused by the corrector relative to the baseline is needed.
+individually for each tracking simulation. As measurements near the IP can be quite noisy, those are
+cleaned out.
 \Cref{fig:skew_octupolar:response_correctors} shows the real part of the resulting RDTs from these
 simulations for Beam 1. Beam 2 shows a similar level of response for these correctors.
 
@@ -83,20 +156,20 @@ simulations for Beam 1. Beam 2 shows a similar level of response for these corre
 
 It can already be seen that the L5 and R5 correctors show a similar trend along the ring, with L5
 showing a stronger response for the same strength, while the R1 corrector follows the opposite
-trend. A polar plot at a given BPM can illustrate that trend, and be used to get an intuition of the
-effect of the correctors to manually compute corrections.
-\Cref{fig:skew_octupolar:response_correctors_polar} shows the orthogonality of the correctors for
-both beams and RDTs. L5 being stronger than R5 while having the same angle indicates that only one
-of them is needed for corrections. 
+trend. The polar plot of \Cref{fig:skew_octupolar:response_correctors_polar}
+illustrates the response of each corrector at a given BPM and can be used to get an intuition of the
+effect of the correctors. L5 being stronger than R5 while having the same angle indicates that
+either can be used for corrections. Effectively having only two correctors with different angles, it
+makes computing corrections for four RDTs (two per beam) very challenging.
 
 \begin{figure}[!htb]
     \centering
-    \begin{subfigure}{0.8\textwidth}
+    \begin{subfigure}{0.7\textwidth}
         \includegraphics[width=\textwidth]{./images/orthogonal_a4_inj_f1012_y.pdf}
         \caption{$f_{1012,y}$}
     \end{subfigure}
     \par\bigskip 
-    \begin{subfigure}{0.8\textwidth}
+    \begin{subfigure}{0.7\textwidth}
         \includegraphics[width=\textwidth]{./images/orthogonal_a4_inj_f1210_x.pdf}
         \caption{$f_{1210,x}$}
     \end{subfigure}
@@ -107,26 +180,19 @@ of them is needed for corrections.
 \end{figure}
 
 
-
 %-----------------------------
 %         Correction
 %-----------------------------
-\subsection{\review{Measurements and Corrections}}
+\FloatBarrier
+\subsection{\review{Correction}}
 
-Initial measurements of the machine at top energy ($\beta^*=30$cm) without any skew octupolar
-correctors were done during an MD slot in 2022 to determine the level of the RDTs before being able
-to correct them. Those measurements were made at natural tunes of $Q_x = 0.285$ and $Q_y = 0.292$.
-The driven tunes were set to $\Delta Q_x = -0.008$ and $\Delta Q_y = 0.01$. This selection of tunes
-has proven to be appropriate for measuring skew octupolar RDTs. The Landau octupoles were powered
-off during the measurements. 
-
-The corrections were computed via the previously detailed response matrix and are shown in
+The corrections were computed via the previously detailed response matrix approach and are shown in
 \cref{tab:skew_octupolar:correction_strengths}. These have then been applied during 2023's
-commissioning and later on kept for operation. The RDT levels of the bare machine and with these
-corrections are shown in \cref{fig:skew_octupolar:corrections_vs_bare}. It can be observed that both
-RDT amplitudes are reduced, with the exception of $f_{1210,x}$ for Beam 2, which stays constant.
-The reduction of RDT amplitude is comparable to those obtained in 2018, where the same RDT for Beam
-2 did neither improve or worsen.
+commissioning and later on kept for operation. The RDT levels of the bare machine measured
+previously and with these corrections are shown in \cref{fig:skew_octupolar:corrections_vs_bare}. It
+can be observed that both RDT amplitudes are reduced, with the exception of $f_{1210,x}$ for Beam 2,
+which stays constant. The reduction of RDT amplitude is comparable to those obtained in 2018, where
+the same RDT for Beam 2 did neither improve or worsen.
 
 
 \begin{table}[!htb]
@@ -148,24 +214,24 @@ The reduction of RDT amplitude is comparable to those obtained in 2018, where th
  
 \begin{figure}[!htb]
     \centering
-    \begin{subfigure}{0.49\textwidth}
+    \begin{subfigure}{0.47\textwidth}
         \includegraphics[width=\textwidth]{./images/f1012_b1.pdf}
         \caption{$f_{1012,y}$ Beam 1}
     \end{subfigure}
     \hfill
-    \begin{subfigure}{0.49\textwidth}
+    \begin{subfigure}{0.47\textwidth}
         \includegraphics[width=\textwidth]{./images/f1012_b2.pdf}
         \caption{$f_{1012,y}$ Beam 2}
     \end{subfigure}
     %
     \par\bigskip 
     % 
-    \begin{subfigure}{0.49\textwidth}
+    \begin{subfigure}{0.47\textwidth}
         \includegraphics[width=\textwidth]{./images/f1210_b1.pdf}
         \caption{$f_{1210,x}$ Beam 1}
     \end{subfigure}
     \hfill
-    \begin{subfigure}{0.49\textwidth}
+    \begin{subfigure}{0.47\textwidth}
         \includegraphics[width=\textwidth]{./images/f1210_b2.pdf}
         \caption{$f_{1210,x}$ Beam 2}
     \end{subfigure}
@@ -174,8 +240,44 @@ The reduction of RDT amplitude is comparable to those obtained in 2018, where th
     \label{fig:skew_octupolar:corrections_vs_bare}
 \end{figure}
 
+A improvement in the forced dynamic aperture during AC-Dipole excitation was observed with the
+earlier skew-octupolar RDTs corrections implemented. \Cref{fig:decapoles:losses_a4_corrs_timeline}
+shows the timeline of the various kicks amplitudes before and after corections.
+\Cref{fig:decapoles:losses_a4_corrs} illustrates the relative losses when kicking at different
+amplitudes with the AC-Dipole. Both plots clearly show that skew-octupolar corrections enhance the
+forced dynamic aperture.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=1\textwidth]{./images/timeline_losses_with_without_a4corr.pdf}
+    \caption{Intensity of Beam 1 related to the kick percentage of the AC-Dipole over time, before
+    and after having applied skew-octupolar RDT corrections.}
+    \label{fig:decapoles:losses_a4_corrs_timeline}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.7\textwidth]{./images/losses_with_without_a4corr.pdf}
+    \caption{Relative losses experienced with AC-Dipole kick amplitude with and without corrections
+    pertaining to skew-octupolar RDTs $f_{1012}$ and $f_{1210}$.}
+    \label{fig:decapoles:losses_a4_corrs}
+\end{figure}
 
 
+
+%-----------------------------
+%         Conclusion
+%-----------------------------
+\FloatBarrier
+\subsection{\review{Conclusion}}
+
+Skew-octupolar Resonance Driving Terms have, for the first time, been directly corrected using a
+response matrix-based approach at top energy. This new approach allows for a more efficient
+use of dedicated machine time compared to the previous empirical approach. Corrections have
+significantly improved the forced dynamic aperture, enabling the high amplitude kicks necessary for
+non-linear optics measurements.
+Furthermore, these corrections can be computed online in the control room, reducing commissioning
+time and thereby increasing the integrated luminosity of the LHC.
 
 
 
@@ -184,7 +286,7 @@ The reduction of RDT amplitude is comparable to those obtained in 2018, where th
 %=============================
 % https://indico.cern.ch/event/1351567/contributions/5708754/attachments/2773145/4832599/2023-12-15_MO_Roll_Coupling_complete.pdf
 \FloatBarrier
-\section{\review{Landau Octupoles Contribution}}
+\section{\review{Skew-Octupolar RDT driven by Landau Octupoles}}
 
 
 %-----------------------------
@@ -193,9 +295,9 @@ The reduction of RDT amplitude is comparable to those obtained in 2018, where th
 \subsection{\review{Introduction}}
 
 During the 2023 commissioning, measurements were taken at injection energy with different strengths
-of Landau octupoles, where an unexpected shift in the skew octupolar RDTs was observed. Subsequent
+of Landau octupoles, where an unexpected shift in the skew-octupolar RDTs was observed. Subsequent
 measurements were conducted to better understand and characterize this contribution of normal
-octupoles to skew octupolar fields. These new measurements were taken during an MD slot in September
+octupoles to skew-octupolar fields. These new measurements were taken during an MD slot in September
 2023 and focused on varying the strengths of the Landau octupoles to $-1K_4$, $\pm2 K_4$, $5K_4$.
 All measurements were taken at injection energy at tunes of $Q_x = 0.275$, $Q_y = 0.293$ and
 AC-Dipole deltas of $\Delta Q_x = -0.01$ and $\Delta Q_y = -0.011$. Although both beams were
@@ -203,15 +305,15 @@ measured, this section focuses on Beam 1 to preliminarily investigate the matter
 \cref{fig:skew_octupolar:mo_different_levels_meas} illustrates the difference in amplitude of the
 RDT $f_{1012}$ with these varying strengths.
 \Cref{fig:skew_octupolar:mo_meas_vs_sim_+2} on the other hand shows the measured and simulated shift
-of the same RDT from $0K_4$ to $+2K_4$. It is evident that simulations including normal and skew 
-octupolar field errors are not enough to explain the behaviour observed in the measurements.
+of the same RDT from $0K_4$ to $+2K_4$. It is evident that simulations including normal and
+skew-octupolar field errors are not enough to explain the behaviour observed in the measurements.
 
 \begin{figure}[!htb]
     \centering
     \begin{subfigure}{0.8\textwidth}
         \includegraphics[width=\textwidth]{./images/skew_octupoles/f1210_AMP_all_measurements.pdf}
     \end{subfigure}
-    \caption{Unexpected difference of skew octupolar RDT amplitudes with varying Landau octupoles
+    \caption{Unexpected difference of skew-octupolar RDT amplitudes with varying Landau octupoles
     strengths.}
     \label{fig:skew_octupolar:mo_different_levels_meas}
 \end{figure}
@@ -222,7 +324,7 @@ octupolar field errors are not enough to explain the behaviour observed in the m
         \includegraphics[width=\textwidth]{./images/skew_octupoles/f1012_meas_vs_sim_0shift.pdf}
         %\caption{$f_{1012,y}$}
     \end{subfigure}
-    \caption{Measured and simulated shift of skew octupolar RDT after increase of Landau octupoles
+    \caption{Measured and simulated shift of skew-octupolar RDT after increase of Landau octupoles
     strength from zero. It is apparent that the shift in measurement is not replicated by the
     simulation.}
     \label{fig:skew_octupolar:mo_meas_vs_sim_+2}
@@ -248,7 +350,7 @@ with similar results seen in the other component and in $f_{1210}$.
         \includegraphics[width=\textwidth]{./images/skew_octupoles/f1012_misalign_REAL.pdf}
         %\caption{$f_{1012,y}$}
     \end{subfigure}
-    \caption{Simulated skew octupolar RDT with normal and skew octupolar errors and Landau octupoles
+    \caption{Simulated skew octupolar RDT with normal and skew-octupolar errors and Landau octupoles
     powered. One simulation includes further alignment errors on the Landau octupoles. No 
     significant difference is observed between the two.}
     \label{fig:skew_octupolar:sim_misalign}
@@ -264,7 +366,7 @@ with similar results seen in the other component and in $f_{1210}$.
 As misalignments could not explain the discrepancy, simulations were first run with varying values
 of coupling at a fixed octupolar strength, allowing to gage the impact of coupling only.
 \Cref{appendix:transfer_map:skew_quadrupole_and_octupole} details how coupling, in the form of a
-skew quadrupole, combined with a normal octupole can generate skew quadrupolar-like fields.
+skew-quadrupole, combined with a normal octupole can generate skew quadrupolar-like fields.
 The resulting RDT $f_{1012}$ is shown in \cref{fig:skew_octupolar:sim_coupling}, a similar trend is
 observed for $f_{1210}$.
 The presented $C^{-}$ values are commonly seen in operation and well below that of the
@@ -276,7 +378,7 @@ octupolar RDTs are expected to be significantly altered.
     \begin{subfigure}{0.8\textwidth}
         \includegraphics[width=\textwidth]{./images/skew_octupoles/f1012_coupling_sim_AMP.pdf}
     \end{subfigure}
-    \caption{Simulated skew octupolar RDT with fixed Landau octupole strength but varying coupling.
+    \caption{Simulated skew-octupolar RDT with fixed Landau octupole strength but varying coupling.
     Selected coupling values are often seen in operation.}
     \label{fig:skew_octupolar:sim_coupling}
 \end{figure}

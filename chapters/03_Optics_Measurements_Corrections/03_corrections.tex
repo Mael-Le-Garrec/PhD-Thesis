@@ -47,11 +47,12 @@ resonance driving term $f_{1004}$, both contributed to by decapoles.
 
 \subsubsection{\review{Example}}
 
-In this example, simulations are run with MAD-X PTC to correct the third chromaticity in the LHC.
-$Q'''$ is taken from \verb|ptc_normal| for each beam and axis, with \verb|MCDs|, decapole
-correctors, powered with a fixed strength one at a time. A scaling factor is applied to get the
-change of chromaticity for one unit of $K_5$.  8 correctors are used, which strengths are denoted
-$k_1$ through $k_8$.  Transposes are only used to make the equations easier to display.\\
+In this example, developped for the decapolar corrections presented in \cref{chapter:decapoles},
+simulations are run with MAD-X PTC to correct the third chromaticity in the LHC.  $Q'''$ is taken
+from \verb|ptc_normal| for each beam and axis, with \verb|MCDs|, decapole correctors, powered with a
+fixed strength one at a time. A scaling factor is applied to get the change of chromaticity for one
+unit of $K_5$.  8 correctors are used, which strengths are denoted $k_1$ through $k_8$. Transposes
+are only used to make the equations easier to display.\\
 The values in \cref{table:resp_matrix_example} are corrected via
 \cref{eq:resp_matrix_inverse_example} after having built the response matrix in
 \cref{eq:resp_matrix_example}.
@@ -179,9 +180,9 @@ independently, via a response matrix approach. In practice, the required strengt
 exceed those of the design of the correctors.
 
 Another way to correct the chromaticity is via a global uniform trim, where every available
-corrector is powered to the same strength.  Simulations are run with \verb|ptc_normal| via MADX-PTC
-to obtain the response in chromaticity for a given strength. Chromaticity being linear with
-multipole strength, an affine function can be determined for each axis.
+corrector is powered to the same strength. Simulations are run with MADX-PTC to obtain the response
+in chromaticity for a given strength. Chromaticity being linear with multipole strength, an affine
+function can be determined for each axis.
 \Cref{fig:corrections-dq3_versus_k5} shows a simulation with several MCD strengths, highlighting this
 linear relation between $Q'''$ and $K_5$, while
 \Cref{eq:corrections:chromaticity_affine_function_ptc} shows an example of such functions computed

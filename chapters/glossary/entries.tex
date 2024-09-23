@@ -73,14 +73,14 @@
     type=nomenclature,
     name=Feed-up,
     description={
-        Higher-order-like effects induced by a combination of multipoles.
+        Higher-order-like effects induced by a combination of lower-order multipoles.
     }
 }
 \newglossaryentry{Orbit}{
     type=nomenclature,
     name=Closed orbit,
     description={
-        Path of the reference particle through the accelerator.
+        Path of the reference particle through the accelerator, closing back on itself.
     }
 }
 \newglossaryentry{Laundau Octupole}{
@@ -88,14 +88,14 @@
     name=Laundau Octupole,
     description={
         Strong octupoles present in the LHC to introduce Landau Damping. The tune spread created via
-        amplitude detuning helps damping the particles oscillations.
+        amplitude detuning helps suppress the coherent instabilities of many particles.
     }
 }
 \newglossaryentry{Crosstalk}{
     type=nomenclature,
     name=Crosstalk, 
     description={
-        Unwanted magnetic interference between adjacent multipoles.
+        Unwanted magnetic interference between adjacent magnetic circuits.
     }
 }
 \newglossaryentry{Chromaticity}{
@@ -124,7 +124,8 @@
     type=nomenclature,
     name=Coupling,
     description={
-        Coupling of a particle's motion in the transverse planes. Corrected via skew quadrupoles.
+        Coupling of a particle's motion in the transverse planes. Corrected via skew quadrupoles to
+        the firs, linear, order.
     }
 }
 \newglossaryentry{MADX}{
@@ -133,6 +134,14 @@
     description={
         Current version of the Methodical Accelerator Design framework developed in BE-ABP. Used for
         beam dynamics simulations.
+    }
+}
+\newglossaryentry{Online}{
+    type=nomenclature,
+    name=Online,
+    description={
+        Refers to actions, often corrections, performed in the control room during measurements,
+        where time is limited. Opposed to \textit{offline}.
     }
 }
 
@@ -152,11 +161,12 @@
     Base Band Tune -- Precise tune measurement system consisting of a pick-up and filters.
 }
 \newacronym{ip}{IP}{
-    Interaction Point -- Center of the straight arcs of the LHC. Beams collides in four of them
+    Interaction Point -- Center of the straight sections of the LHC. Beams collides in four of them
     where they cross (IP1, 2, 5, 8).
 }
 \newacronym{ir}{IR}{
-    Interaction Region -- Vicinity of the interaction point. Often used interchangeably with "IP".
+    Insertion Region -- Part of the straight sections, between the dispersion suppressors. The IP
+    is located at its center.
 }
 \newacronym{lsa}{LSA}{
     LHC Software Architecture -- Software used to operate the particle accelerators at CERN. Based
@@ -166,23 +176,23 @@
     Machine Development -- Dedicated studies aimed at improving the accelerator parameters or
     testing new operational configurations.
 }
-\newacronym{omc}{OMC}{
-    Optics Measurements and Corrections -- Name of the team dedicated to optics studies on the
-    main CERN accelerators. Part of BE-ABP-LNO.
-}
-\newacronym{be}{BE}{
-    Beams department -- Responsible for all aspects related to the production and delivery of
-    particles, including beam physics, mechatronics, metrology, software development and operational
-    management.
-}
-\newacronym{abp}{ABP}{
-    Accelerators and Beam Physics group -- Responsible for studies and optimizations of beam
-    dynamics over the complete CERN accelerator complex. Part of BE.
-}
-\newacronym{lno}{LNO}{
-    Linear and Non-Linear Optics section -- In charge of optics studies for current and future
-    accelerators at CERN. Part of BE-ABP.
-}
+%\newacronym{omc}{OMC}{
+%    Optics Measurements and Corrections -- Name of the team dedicated to optics studies on the
+%    main CERN accelerators. Part of BE-ABP-LNO.
+%}
+%\newacronym{be}{BE}{
+%    Beams department -- Responsible for all aspects related to the production and delivery of
+%    particles, including beam physics, mechatronics, metrology, software development and operational
+%    management.
+%}
+%\newacronym{abp}{ABP}{
+%    Accelerators and Beam Physics group -- Responsible for studies and optimizations of beam
+%    dynamics over the complete CERN accelerator complex. Part of BE.
+%}
+%\newacronym{lno}{LNO}{
+%    Linear and Non-Linear Optics section -- In charge of optics studies for current and future
+%    accelerators at CERN. Part of BE-ABP.
+%}
 \newacronym{rdt}{RDT}{
     Resonance Driving Term -- Coefficients related to the strength of a resonance.
 }
