@@ -257,7 +257,7 @@ forced dynamic aperture.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=0.7\textwidth]{./images/losses_with_without_a4corr.pdf}
+    \includegraphics[width=0.8\textwidth]{./images/losses_with_without_a4corr.pdf}
     \caption{Relative losses experienced with AC-Dipole kick amplitude with and without corrections
     pertaining to skew-octupolar RDTs $f_{1012}$ and $f_{1210}$.}
     \label{fig:decapoles:losses_a4_corrs}
@@ -281,6 +281,7 @@ time and thereby increasing the integrated luminosity of the LHC.
 
 
 
+
 %=============================
 %    Landau Contribution
 %=============================
@@ -292,31 +293,42 @@ time and thereby increasing the integrated luminosity of the LHC.
 %-----------------------------
 %        Introduction
 %-----------------------------
-\subsection{\review{Introduction}}
+%\subsection{\review{Introduction}}
 
-During the 2023 commissioning, measurements were taken at injection energy with different strengths
-of Landau octupoles, where an unexpected shift in the skew-octupolar RDTs was observed. Subsequent
-measurements were conducted to better understand and characterize this contribution of normal
-octupoles to skew-octupolar fields. These new measurements were taken during an MD slot in September
-2023 and focused on varying the strengths of the Landau octupoles to $-1K_4$, $\pm2 K_4$, $5K_4$.
-All measurements were taken at injection energy at tunes of $Q_x = 0.275$, $Q_y = 0.293$ and
-AC-Dipole deltas of $\Delta Q_x = -0.01$ and $\Delta Q_y = -0.011$. Although both beams were
-measured, this section focuses on Beam 1 to preliminarily investigate the matter.  The following
-\cref{fig:skew_octupolar:mo_different_levels_meas} illustrates the difference in amplitude of the
-RDT $f_{1012}$ with these varying strengths.
-\Cref{fig:skew_octupolar:mo_meas_vs_sim_+2} on the other hand shows the measured and simulated shift
-of the same RDT from $0K_4$ to $+2K_4$. It is evident that simulations including normal and
-skew-octupolar field errors are not enough to explain the behaviour observed in the measurements.
+The significant progress achieved in understanding skew-octupolar RDTs at top energy and their improvement of 
+forced dynamic aperture prompted their study at injection energy. During these studies,
+large skew-octupolar resonances lines were observed when Landau octupoles were powered. These 
+magnets, being normal octupoles, are not expected to contribute to skew-octupolar fields.
+To further understand and characterize the contribution of Landau octupoles to skew-octupolar
+fields, subsequent measurements were conducted. Measurements of the RDTs introduced in
+\cref{tab:skew_octupolar:resonances_rdts}, were performed with several strengths of Landau
+octupoles, ranging from $-2 K_4$ to $5 K_4$.
+
+The following \cref{fig:skew_octupolar:mo_different_levels_meas} illustrates the measured amplitude
+for Beam 1 of the RDT $f_{1012}$ with these varying strengths of Landau octupoles. It can be
+observed that normal octupoles have a large impact on this RDT at only $K_4 = 5$. This amplitude is
+expected to increase by an order of magnitude with the nominal powering of Landau octupoles at
+$K_4 = 18$ and significantly supports the need for their study.
+
+%All measurements were taken at injection energy at tunes of $Q_x = 0.275$, $Q_y = 0.293$ and
+%AC-Dipole deltas of $\Delta Q_x = -0.01$ and $\Delta Q_y = -0.011$. Although both beams were
+%measured, this section focuses on Beam 1 to preliminarily investigate the matter.
 
 \begin{figure}[!htb]
     \centering
     \begin{subfigure}{0.8\textwidth}
         \includegraphics[width=\textwidth]{./images/skew_octupoles/f1210_AMP_all_measurements.pdf}
     \end{subfigure}
-    \caption{Unexpected difference of skew-octupolar RDT amplitudes with varying Landau octupoles
-    strengths.}
+    \caption{Unexpected amplitude shift of skew-octupolar RDT $f_{1210}$ with varying Landau
+    octupoles strengths.}
     \label{fig:skew_octupolar:mo_different_levels_meas}
 \end{figure}
+
+Simulations conducted with Landau powering of $K_4 = 0$ and $K_4 = 2$, incorporating additional
+normal and skew field errors, do not replicate the measured shift. The comparison between
+measurements and simulations is presented in \cref{fig:skew_octupolar:mo_meas_vs_sim_+2}, where it
+is evident that some component is absent from the magnetic model. For conciseness, all figures are
+shown with respect to Beam 1, although similar results are observed for Beam 2.
 
 \begin{figure}[!htb]
     \centering
@@ -335,24 +347,32 @@ skew-octupolar field errors are not enough to explain the behaviour observed in 
 %-----------------------------
 %        Misalignments
 %-----------------------------
+\FloatBarrier
 \subsection{\review{Misalignments}}
 
-Magnet misalignments, more specifically roll errors, can generate skew magnetic fields instead of
-the expected normal ones. To determine if this could explain the behaviour observed in measurements,
-a tracking simulation was conducted with and without roll errors applied to the Landau octupoles.
-The resulting RDTs reveal an imperceptible difference, unable to account for  the previously seen
-shifts. The real part of the RDT $f_{1012}$ is shown in \cref{fig:skew_octupolar:sim_misalign},
-with similar results seen in the other component and in $f_{1210}$.
+Magnet misalignments in the LHC have been previously measured and corrected in several
+phases~\cite{missiaen_final_2008}. Nevertheless, residual misalignments persist and have been
+incorporated into the tables used for simulations. These misalignments include horizontal and
+vertical errors, as well as roll errors. While translation errors may induce feed-down effects,
+roll errors introduce the skew counterpart of normal magnetic fields, and vice versa.
+
+To assess whether roll errors could explain the behavior observed in measurements, a tracking
+simulation was conducted with and without roll errors applied to the Landau octupoles, powered at 
+$K_4 = 2$. The amplitude of the RDT $f_{1012}$ is presented in
+\cref{fig:skew_octupolar:sim_misalign}, with similar results observed for $f_{1210}$. These
+results reveal an imperceptible difference between the two simulations.
+Roll errors are unable to account for the previously observed shifts. The average roll error of
+the Landau octupoles is indeed small, approximately $0.08$ mrad.
 
 \begin{figure}[!htb]
     \centering
     \begin{subfigure}{0.8\textwidth}
-        \includegraphics[width=\textwidth]{./images/skew_octupoles/f1012_misalign_REAL.pdf}
+        \includegraphics[width=\textwidth]{./images/skew_octupoles/f1012_misalign_AMP.pdf}
         %\caption{$f_{1012,y}$}
     \end{subfigure}
-    \caption{Simulated skew octupolar RDT with normal and skew-octupolar errors and Landau octupoles
-    powered. One simulation includes further alignment errors on the Landau octupoles. No 
-    significant difference is observed between the two.}
+    \caption{Simulated skew-octupolar RDT with normal and skew-octupolar errors, and Landau
+    octupoles powered. One simulation includes further roll errors on the Landau octupoles. No 
+    significant difference is observed between the two.} 
     \label{fig:skew_octupolar:sim_misalign}
 \end{figure}
 
@@ -361,17 +381,23 @@ with similar results seen in the other component and in $f_{1210}$.
 %-----------------------------
 %        Coupling
 %-----------------------------
-\subsection{\review{Coupling}}
+\FloatBarrier
+\subsection{\review{Linear Coupling}}
 
-As misalignments could not explain the discrepancy, simulations were first run with varying values
-of coupling at a fixed octupolar strength, allowing to gage the impact of coupling only.
-\Cref{appendix:transfer_map:skew_quadrupole_and_octupole} details how coupling, in the form of a
-skew-quadrupole, combined with a normal octupole can generate skew quadrupolar-like fields.
-The resulting RDT $f_{1012}$ is shown in \cref{fig:skew_octupolar:sim_coupling}, a similar trend is
-observed for $f_{1210}$.
-The presented $C^{-}$ values are commonly seen in operation and well below that of the
-tolerances of the design of the LHC~\cite{bruning_lhc_2004}. As coupling increases, the skew
-octupolar RDTs are expected to be significantly altered.
+As misalignments could not explain the discrepancy, it is necessary to consider another source of
+errors. According to~\cite{bazzani_normal_1994}, the combination of a normal octupole and a skew
+quadrupole can yield skew-octupolar-like fields. Linear coupling can effectively be modeled as a
+skew quadrupole and may be a source of the observed discrepancy. The transfer map for an octupole
+and a skew quadrupole is detailed in \cref{appendix:transfer_map:skew_quadrupole_and_octupole}.
+
+To test this hypothesis, simulations were initially conducted with varying values of coupling while
+maintaining a fixed octupolar strength, allowing for an assessment of the impact of coupling alone.
+The resulting RDT $f_{1012}$ is shown in \cref{fig:skew_octupolar:sim_coupling}, with a similar
+trend observed for $f_{1210}$. The presented $C^{-}$ values are commonly encountered in
+operation and are well within the tolerances established in the LHC design~\cite{bruning_lhc_2004}.
+These results indicate that the skew octupolar RDTs are expected to be significantly altered as
+coupling increases.
+
 
 \begin{figure}[!htb]
     \centering
@@ -660,26 +686,28 @@ is not yet understood and requires further investigation.
 \FloatBarrier
 \section{\review{Summary}}
 
+This chapter investigates the origins of skew-octupolar fields in the LHC and explores methods for
+measuring and mitigating their effects. The studies demonstrate that these fields significantly
+contribute to limitations in dynamic aperture, particularly when the beam is kicked with the
+AC-Dipole. 
 
-This chapter investigates the origins of skew octupolar fields in the LHC and explores methods to
-mitigate their effects. Previous studies have shown that these fields significantly contribute to
-limitations in dynamic aperture, particularly when the beam is kicked with the AC-Dipole. The skew
-octupolar correctors, located around the ATLAS and CMS detectors, are crucial for managing these
-fields.
+For the first time, skew-octupolar Resonance Driving Terms have been directly corrected using
+a response matrix-based approach at top energy. This new method facilitates a more efficient use of
+dedicated machine time compared to previous empirical approaches. The corrections successfully
+correct or maintain at a constant level the RDTS $f_{1012}$ and $f_{1210}$
 
-A response matrix method was developed to correct skew octupolar RDTs at top energy using the
-available corrector magnets. While effective, the absence of one corrector limits the achievable
-correction strength. As a result, the RDTs $f_{1012}$ and $f_{1210}$ are either successfully
-corrected or maintained at a constant level.
-
-Additionally, this chapter addresses the unexpected influence of Landau octupoles on skew octupolar
+Furthermore, the chapter addresses the unexpected influence of Landau octupoles on skew-octupolar
 RDTs at injection energy. Simulations reveal that misalignments of the Landau octupoles,
-specifically roll errors, do not a have a significant impact. Instead, coupling was found to be a
-crucial factor.  While further investigation is required to fully understand the underlying
-mechanisms, initial findings suggest that accurate modeling of coupling is essential for predicting
-the behavior of skew octupolar RDTs in the presence of Landau octupoles. During regular operation,
-where the Landau octupoles are powered at $K_4=18$, very large skew octupolar RDTs are expected to
-be generated.
+particularly roll errors, do not have a significant impact. Instead, coupling emerges as a crucial
+factor.
+Initial findings indeed suggest that coupling is essential for predicting the behavior of
+skew-octupolar RDTs in the presence of Landau octupoles. During regular operation, where the Landau
+octupoles are powered at $K_4 = 18$, significant skew-octupolar RDTs are expected to be generated
+and degrade the forced dynamic aperture.
 
-The results presented provide valuable insights into the complex interplay of
-magnetic fields in the LHC and highlight the importance of accurate modeling for corrections.
+The results presented provide valuable insights into the complex interplay of magnetic fields in the
+LHC and underscore the importance of accurate modeling for effective corrections. Moreover, the
+implemented corrections have substantially improved the forced dynamic aperture, enabling the
+high-amplitude kicks necessary for non-linear optics measurements. These corrections can also be
+computed online in the control room, thereby reducing commissioning time and increasing the
+integrated luminosity of the LHC.
