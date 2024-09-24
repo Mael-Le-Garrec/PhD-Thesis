@@ -123,8 +123,8 @@ Each arc is made up of 23 cells. Magnets are organized in a standard FODO struct
 \textit{Dipoles} are responsible for bending the trajectory of the particles. Their associated
 correctors, the orbit correctors, mitigate any possible drift in the path.
 \textit{Quadrupoles} are used to control the beam size along the ring. Their effect is focusing in
-one plane and defocusing in the other. Their associated correctors control the oscillations of the
-beam (see tune, \cref{section:courant_snyder}) and possible field imperfections.
+one plane and defocusing in the other. Their associated correctors control the frequency of
+oscillations of the beam (see tune, \cref{section:courant_snyder}) and possible field imperfections.
 \textit{Sextupoles} correct chromaticity, a misfocus from quadrupoles due to particles having
 a different momentum than the reference particle.
 \textit{Octupoles} are used to stabilize the beam by introducing Landau
@@ -150,24 +150,26 @@ scenarios~\cite{wenniger_lhc_2019}.
 
 A common example is the operational cycle of the LHC, illustrated in \cref{fig:cern_complex:cycle}.
 Initially, the magnets are pre-cycled~\cite{bottura_pre-cycles_2010} without any beam circulating,
-to get them back to a reproducible state. Their current is then increased to accept particles at the
-injection energy of 450GeV.  To verify the machine's proper functioning, a probe bunch of reduced
-intensity is first injected The number of bunches and their intensity are then gradually increased
-to attain the desired scheme needed for collisions, which varies throughout the year based on
-experimental demands. The number of bunches and their intensity can be adjusted as needed to ensure
-the machine's safety. A common scheme in 2024 is to inject about 2350 bunches with around $10^{11}$
-particles each for collisions.  Optics measurements, due to their destructive nature, typically use
-between one and three \textit{pilot} bunches at a lower intensity of $10^{10}$ particles.
+to ensure a reproducible magnetic state. Their current is then increased to accept particles at the
+injection energy of 450GeV. To verify the machine's proper functioning, a probe bunch of reduced
+intensity is first injected, at around $10^{10}$ particles. The number of bunches and their
+intensity are then gradually increased to obtain the desired scheme needed for collisions, which
+varies throughout the year based on experimental demands. The number of bunches and their intensity
+can be adjusted as needed to ensure the machine's safety. A common scheme in 2024 is to inject about
+2350 bunches, with around $1.5 \cdot 10^{11}$ particles in each bunch, for collisions. Optics
+measurements, due to their destructive nature, typically use between one and three \textit{pilot}
+bunches at a lower intensity of $10^{10}$ particles.
 
-The magnets' current is then ramped along with the voltage in the RF system, to accelerate particles
-to an energy of 6.8 TeV. During this process, the beam is first squeezed at the Interaction Points.
-After completing the ramp-up, a second pass is performed to achieve a $\beta* = 30$cm at the ATLAS
-and CMS experiments, resulting in a smaller beam size. Crossing-angles are then introduced to make
-the beams collide.
+The current in the magnets is then increased along with adjustments in the phase and voltage of the
+RF system to accelerate the particles to an energy of 6.8 TeV. During this ramp, the beam is
+initially squeezed at the Interaction Points. However, further squeezing is limited by the
+detectors' resolution, which is insufficient to accurately reconstruct a large number of collision
+events simultaneously. Collisions then start, while levelling $\beta^*$ at the ATLAS and CMS
+experiments relative to the remaining beam intensity, ensuring optimal performance of the detectors.
 
 \begin{figure}[!htb]
     \includegraphics[width=\textwidth]{./images/lhc_cycle.pdf}
-    \caption{Simplified illustration of a standard LHC cycle. Courtesy of Félix
-    Soubelet~\cite{felix_soubelet_local_2023}.}
+    \caption{Simplified illustration of a standard LHC cycle. Adapted
+    from~\cite{felix_soubelet_local_2023}.}
     \label{fig:cern_complex:cycle}
 \end{figure}
