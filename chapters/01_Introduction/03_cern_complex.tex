@@ -3,39 +3,64 @@
 % =================================
 \section{\review{Particle Accelerators}}
 
-Particle accelerators are a relatively recent development, driven by the particle physics
-field~\cite{bryant_brief_1994}. The first accelerators, at the beginning of the 20th century, were
-able to accelerate particles up to energies of a few MeV using electric fields.
+% Too much history for Ewen :(
+%
+%Particle accelerators are a relatively recent development, driven by the particle physics
+%field~\cite{bryant_brief_1994}. The first accelerators, at the beginning of the 20th century, were
+%able to accelerate particles up to energies of a few MeV using electric fields.
+%
+%The Cockcroft Walton generator was powerful enough to split an atom for the first time in
+%1932~\cite{poole_cockcrofts_2007}, less than 100 years ago. Its design used capacitors and diodes
+%to double the voltage at each stage, with its main limitation being the breakdown voltage of the
+%capacitors. The Van de Graaff generator, created around the same time, was able to accelerate
+%particles up to tens of MeV. They are still in use today~\cite{lebois_rapport_2020} due to their
+%capability of producing a wide variety of ion beams with energies ranging from hundreds of KeV to
+%hundreds of MeV in the \textit{Tandem} form~\cite{hinterberger_electrostatic_2006}.
+%
+%Radiofrequency generators with alternating electric fields and drift tubes, first created by 
+%Rolf Wideröe in the late 1920s, mark the beginning of modern accelerator
+%technology~\cite{vretenar_radio_2011}. Rapidly evolving, particle accelerators progressed from
+%accelerating particles to a few keV in linear accelerators to now TeV in circular accelerators,
+%called synchrotrons.
+%
+%While single-beam synchrotrons can be used for fixed-target experiments, only a fraction of the
+%energy is available on impact. Dual-beam machines were more suitable for high energy physics
+%experiments. The first hadron collider, the ISR, was built at CERN in 1971 with an energy
+%of 62 GeV, taking its beam from the Proton Synchrotron (PS)~\cite{philip_cerns_2011}. 
+%
+%Particle accelerators are still rapidly evolving. Several have been built in the past, and several
+%are now either under construction or in the design study phase. New acceleration and focusing
+%techniques are being developed, making the machines smaller. It is an exciting time for all fields
+%that might benefit from energetic particles, whether in fundamental research, medical, industrial or
+%security applications.
 
-The Cockcroft Walton generator was powerful enough to split an atom for the first time in
-1932~\cite{poole_cockcrofts_2007}, less than 100 years ago. Its design used capacitors and diodes
-to double the voltage at each stage, with its main limitation being the breakdown voltage of the
-capacitors. The Van de Graaff generator, created around the same time, was able to accelerate
-particles up to tens of MeV. They are still in use today~\cite{lebois_rapport_2020} due to their
-capability of producing a wide variety of ion beams with energies ranging from hundreds of KeV to
-hundreds of MeV in the \textit{Tandem} form~\cite{hinterberger_electrostatic_2006}.
+% ================================
 
-Radiofrequency generators with alternating electric fields and drift tubes, first created by 
-Rolf Wideröe in the late 1920s, mark the beginning of modern accelerator
-technology~\cite{vretenar_radio_2011}. Rapidly evolving, particle accelerators progressed from
-accelerating particles to a few keV in linear accelerators to now TeV in circular accelerators,
-called synchrotrons.
+Particle accelerators have come a long way since their invention in the 20th century, when they
+could only reach a few MeV of energy using electric fields~\cite{bryant_brief_1994}. Today, they
+achieve much higher energies, up to the TeV range, allowing for more detailed investigations into
+particle physics.
 
-While single-beam synchrotrons can be used for fixed-target experiments, only a fraction of the
-energy is available on impact. Dual-beam machines were more suitable for high energy physics
-experiments. The first hadron collider, the ISR, was built at CERN in 1971 with an energy
-of 62 GeV, taking its beam from the Proton Synchrotron (PS)~\cite{philip_cerns_2011}. 
+One of the major milestones in accelerator development was the shift to circular accelerators, known
+as synchrotrons. By the 1970s, machines like the ISR at CERN could accelerate particles to 62 GeV
+using beams from the Proton Synchrotron (PS)~\cite{philip_cerns_2011}, enabling significant advances
+in particle physics experiments.
 
-Particle accelerators are still rapidly evolving. Several have been built in the past, and several
-are now either under construction or in the design study phase. New acceleration and focusing
-techniques are being developed, making the machines smaller. It is an exciting time for all fields
-that might benefit from energetic particles, whether in fundamental research, medical, industrial or
-security applications.
+As accelerators have evolved, so has the need for better control of particle beams. Managing beam
+stability and lifetime has become crucial, especially in modern machines like the LHC. 
 
+Considerable advancements have been made in both radiofrequency acceleration technologies,
+collimation, superconducting magnets and beam dynamics to keep beams stables and on track, even at
+hig henergies. These improvements are not only important for physics research but are also used in
+medical and industrial fields.
 
-% =================================
-%              CERN
-% =================================
+In modern accelerators, precise beam control is necessary to ensure efficient and accurate
+collisions. Correcting beam optics has moved from being just a theoretical exercise to an essential
+part of operations. This has led to a shift away from empirical methods, where trial and error were
+common, towards more direct, quantitative approaches that provide a detailed and accurate correction
+of beam dynamics. These advancements not only improve performance but also play a key role in
+designing future accelerators with better stability and efficiency.
+
 
 % --------------------------------
 %          CERN Complex
@@ -52,7 +77,7 @@ renewed~\footnote{Up to date information can be found on
 \href{https://home.cern/science/experiments}{https://home.cern/science/experiments}.}.
 
 The largest part of the CERN accelerator complex is the LHC. The LINAC4, PSB, PS and SPS
-accelerators serve as pre-injectors to the LHC, taking priority over their other experiments.
+accelerators serve as pre-injectors to the LHC.
 
 \begin{figure}[!htb]
     \centering
@@ -80,11 +105,13 @@ and LCHb.
 Well-publicized, the LHC is often depicted via its superconducting dipole magnets, housed in blue
 cryostats, aimed at cooling the coils. \Cref{fig:3d_cut_dipole} shows a 3D cut of such magnets. The
 LHC is mostly composed of these \textit{main} dipoles, holding $1,232$ of them, each about 14 meters
-long. Superconducting materials like niobium-titanium (NbTi) are utilized, as conventional materials
-such as copper would melt under the current strain. Around $12,000$ amperes are supplied to generate
-the magnetic fields necessary for bending the trajectory of the particles. These particles travel
-at nearly the speed of light ($99.99999905\%$ of it), effectively going around the tunnel about
-$11,200$ times per second.
+long. 
+Particles in the LHC travel at nearly the speed of light ($99.99999905\%$), completing roughly
+$11,200$ turns around the tunnel each second. To generate the intense magnetic fields needed to
+deflect such high-momentum particles, currents of approximately $12,000$ amperes are supplied to the
+magnets.  However, conventional materials like copper would overheat and melt under this current
+load, necessitating the use of superconducting materials such as niobium-titanium (NbTi).
+
 
 \begin{figure}[!htb]
     \centering
@@ -164,7 +191,7 @@ The current in the magnets is then increased along with adjustments in the phase
 RF system to accelerate the particles to an energy of 6.8 TeV. During this ramp, the beam is
 initially squeezed at the Interaction Points. However, further squeezing is limited by the
 detectors' resolution, which is insufficient to accurately reconstruct a large number of collision
-events simultaneously. Collisions then start, while levelling $\beta^*$ at the ATLAS and CMS
+events simultaneously. Collisions then start, while levelling the $\beta^*$ at the ATLAS and CMS
 experiments relative to the remaining beam intensity, ensuring optimal performance of the detectors.
 
 \begin{figure}[!htb]
