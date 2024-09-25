@@ -6,7 +6,7 @@
 
 \ifthenelse{\equal{\papersize}{A4}}{ % A4
     \newcommand{\fontsizesummary}{12pt}
-    \newcommand{\fontskipsummary}{15pt}
+    \newcommand{\fontskipsummary}{14pt}
 }{  % else, B5
     \newcommand{\fontsizesummary}{11pt}
     \newcommand{\fontskipsummary}{11pt}
@@ -26,17 +26,21 @@ explore the fundamental forces and particles that constitute the cosmos. This re
 accelerates protons and heavy ions to nearly the speed of light before colliding them with immense
 energy, providing profound insights into the building blocks of matter and the fundamental
 interactions that govern our universe. The LHC represents not only a monumental engineering
-achievement but also a crucial tool for advancing our understanding of high-energy physics. \\
+achievement but also a crucial tool for advancing our understanding of high-energy physics.
+\\
 \indent
 Operating such a complex and powerful machine requires overcoming numerous technical challenges,
 particularly in maintaining the precise control and stability of its particle beams. One significant
 challenge lies in managing the effects of higher-order magnetic fields, which often arise from field
-errors in the multipoles used to guide and focus the particle beams. These field errors,
-including from quadrupolar up to decahexapolar components, can profoundly impact beam dynamics and
-stability. Addressing these challenges is essential to ensuring that the LHC operates effectively
-and continues to produce valuable scientific results. The following extended summary synthesizes
-findings from three detailed studies investigating various aspects of higher-order multipole effects
-and their implications for the LHC's performance.
+errors in the magnets used to guide and focus the particle beams. These field errors can profoundly
+impact beam dynamics and its lifetime. Addressing these challenges is essential to ensuring that
+the LHC operates effectively and continues to produce valuable scientific results. Furthermore,
+non-linear optics control is crucial for the success of future accelerators like the HL-LHC and FCC,
+which will increasingly rely on high-order non-linear optics corrections to achieve their
+performance targets. The following extended summary synthesizes findings from three detailed studies
+investigating various aspects of higher-order multipole effects and their implications on the LHC's
+beam dynamics.
+
 
 % Concepts
 This thesis employs the Hamiltonian formalism to describe particle motion in the transverse planes
@@ -44,82 +48,101 @@ under the influence of various multipole fields. In non-linear lattices, the com
 dynamics increases significantly, necessitating the use of advanced mathematical tools such as Lie
 Algebra and Poisson Brackets to accurately characterize non-linear effects. The study derives
 explicit higher-order non-linear transfer maps and provides a comprehensive summary of multipole
-combinations. These non-linearities in the lattice lead to intricate phenomena such as chromaticity,
-amplitude detuning, chromatic amplitude detuning, and resonances driven by Resonance Driving Terms
-(RDTs), all of which are thoroughly derived and supported by detailed measurement techniques. \\
+combinations. These non-linearities in the lattice lead to complex phenomena such as high-oder 
+chromaticity, amplitude detuning, chromatic amplitude detuning, and resonances driven by Resonance
+Driving Terms (RDTs), all of which are thoroughly derived and supported by detailed measurement
+techniques.
+\\
 \indent
-Optics measurements are conducted using a range of software tools and techniques. Turn-by-turn data
-acquisition via Beam Position Monitors (BPMs) is emphasized as a crucial method for evaluating beam
-optics, where an AC-dipole excites the beam, and the resulting oscillations are analyzed using
-Fourier transforms to extract tunes and identify resonances.  Further treatment is done via the
+Optics measurements are conducted using a wide range of techniques and software tools. Turn-by-turn
+data acquisition via Beam Position Monitors (BPMs) is emphasized as a crucial method for evaluating
+beam optics, where an AC-dipole excites the beam, and the resulting oscillations are analyzed using
+Fourier transforms to extract tunes and identify resonances. Further treatment is done via the
 oscillation amplitudes and the magnitude of spectral lines to retrieve linear and non-linear
 observables such as the phase advance, beta function, dispersion, coupling, orbit, and RDTs.
 Chromaticity measurements involve inducing momentum offsets by varying the RF frequency and
-observing the corresponding tune shifts. The thesis also introduces a custom tool, the Non-Linear
-Chromaticity GUI, which streamlines the analysis and correction of chromaticity by fitting measured
-data to higher-order chromaticity functions and implementing necessary adjustments. A key correction
-strategy discussed is the response matrix, a linear equation system that describes how variations in
-multipole strengths impact observables, which has proven effective in correcting both linear and
-non-linear observables in the LHC.
+observing the corresponding tune shifts.
+\\
+\indent
+To advance the understanding of high-order non-linear fields, new measurement and analysis methods
+have been developed. One such tool, the Non-Linear Chromaticity GUI, simplifies the process of
+analyzing and correcting chromaticity during operation. Additionally, a novel response matrix
+approach has been introduced, enabling efficient direct corrections of Resonance Driving Terms
+(RDTs) in the LHC. This marks a shift from empirical correction adjustments to a more quantitative
+and systematic method. These techniques have proven effective in correcting several key observables,
+as discussed throughout this thesis. The development of these methods has been crucial in reducing
+commissioning time, enabling a greater focus on high-order multipoles, from octupoles to
+decatetrapoles, some of which have never been studied before. These investigations were further
+facilitated by improvements in the collimator sequence, allowing the exploration of a higher action
+and momentum offsets. Additionally, enhancements in dynamic aperture, as presented in this thesis,
+provided the required amplitudes to probe these higher-order effects more effectively.
+
 
 % First Study
-The first study explores the origins and consequences of skew octupolar fields within the LHC. These
-fields significantly influence the dynamic aperture of the accelerator, a critical parameter that
-defines the range within which the particle beam remains stable. Skew octupolar correctors are
-installed around key detectors, such as ATLAS and CMS, to manage these fields and mitigate their
+The first chapter explores the origins and consequences of skew octupolar fields within the LHC.
+These fields significantly influence the dynamic aperture of the accelerator, a parameter
+that defines the amplitudes within which the particle beam remains stable. Skew octupolar correctors
+are installed around key detectors, such as ATLAS and CMS, to manage these fields and mitigate their
 effects on beam stability. The study focuses on measuring these fields with optics designed for top
-energy, 6.8 TeV per particle. Corrections were performed using a response matrix method, a different
-approach than what was used a few years prior. This method effectively addresses skew octupolar RDTs
-using the available corrector magnets, although its performance is limited by the absence of one
-corrector, which constrains the achievable correction strength. Consequently, certain RDTs, like
-$f_{1012}$ and $f_{1210}$, can either be effectively corrected or maintained at a constant level
-depending on the corrector configuration. The level of correction achieved is comparable to that
-obtained using a different method in the last LHC Run.
-
+energy, at 6.8 TeV per particle. Corrections were performed using a response matrix based approach,
+a different method than what was used a few years prior, marking a shift from empirical corrections
+to a more quantitative and systematic approach for the first time in the LHC. 
+This method effectively addresses skew octupolar RDTs using the available corrector magnets,
+although its performance is limited by the absence of one corrector, which constrains the achievable
+correction strength. Consequently, the RDTs of interest, $f_{1012}$ and $f_{1210}$, can either be
+effectively corrected or maintained at a constant level depending on the corrector configuration.
+\\
 \indent
 Additionally, the study investigates the unexpected influence of Landau octupoles on skew octupolar
-RDTs at injection energy, 450 GeV per particle. Landau octupoles are powerful octupoles used at 
-injection energy to introduce damping through a tune spread.  During measurements, a significant
-shift in skew octupolar RDTs was observed with various powerings of the Landau octupoles. Initially,
-these octupoles were expected to generate skew fields only with misalignments, specifically roll
-errors.  However, simulations indicate that octupole misalignments have minimal impact on skew
-octupolar fields. Instead, coupling has been identified as a crucial factor. The combination of
-coupling and Landau octupoles is expected to be a major contributor to skew octupolar RDTs at
-injection energy, where octupoles are strongly powered. Accurate modeling of coupling is thus
-essential for predicting the behavior of skew octupolar RDTs and managing their impact on beam
-stability.
+RDTs at injection energy, at 450 GeV per particle. Landau octupoles, which are powerful magnets used
+at injection energy to introduce damping through a tune spread, generated a significant shift in
+skew octupolar RDTs during measurements under various powering configurations. Skew octupolar
+resonances have previously been identified as a source of emittance growth in the presence of
+electron clouds. The more intuitive explanation for the generation of skew fields by normal
+multipoles had been the misalignments of these octupoles, specifically roll errors. However,
+simulations indicate that octupole misalignments have minimal impact on skew octupolar fields.
+Instead, coupling has been identified as a crucial factor. The combination of coupling and the
+strong powering of Landau octupoles at injection energy is expected to be a major contributor to
+skew octupolar RDTs. Therefore, precise modeling of coupling is essential for predicting the
+behavior of skew octupolar RDTs. Accurate modeling and correction of skew octupolar fields in the
+LHC are essential to suppress resonances and improve both the beam's dynamic stability and lifetime.
+
 
 % Second Study
-The second study focuses on decapolar fields in the LHC, particularly at injection energy. This
-study addresses previously observed discrepancies between measurements and models related to
-third-order chromaticity, a critical parameter that describes how particles with an energy deviation
-experience different oscillation frequencies than the reference particle. Accurate control of
-chromaticity is vital for maintaining beam stability. The introduction of previously unobserved
-observables, has provided a clearer understanding of these discrepancies. Among these observables
-are the bare chromaticity, which represents the chromaticity of the machine without any correctors
-powered on to observe the bare influence of field errors, and chromatic amplitude detuning, a
-detuning function of both momentum deviations and amplitude. Several approaches to measuring the
-same fields help clarify the various contributions. The research reveals that the decay of the
-decapolar component in the main dipoles is a significant factor contributing to these discrepancies.
-When the LHC was designed, this decay was deemed too small to be significant and thus was not
-included in the magnetic error tables used for simulation. However, as the machine's parameters are
-pushed further each year and the effects of higher-order fields become better understood, it becomes
-clear that accurate control and modeling of these fields are necessary.\\
+The second chapter focuses on decapolar fields in the LHC, particularly at injection energy. As the
+FCC is expected to rely on precise control of decapolar fields, their accurate study in the LHC is
+essential to increase confidence in its design and operational strategies.  Consequently, this study
+addresses previously observed discrepancies between measurements and models related to third-order
+chromaticity, a critical parameter that describes how particles with an energy deviation experience
+different oscillation frequencies than the reference particle. Accurate control of chromaticity is
+vital for maintaining beam stability. The introduction of previously unobserved observables, has
+provided a clearer understanding of these discrepancies.  Among these observables are the bare
+chromaticity, which represents the chromaticity of the machine without any correctors powered on to
+observe the bare influence of field errors, and chromatic amplitude detuning, a detuning function of
+both momentum deviations and oscillation amplitudes. Several approaches to measuring the same fields
+help clarify the various contributions. The research reveals that the decay of the decapolar
+component in the main dipoles is a significant factor contributing to these discrepancies. When the
+LHC was designed, this decay was deemed too small to be significant and thus was not included in the
+magnetic error tables used for simulation. However, as the machine's parameters are pushed further
+each year and the effects of higher-order fields become better understood, it becomes clear that
+accurate control and modeling of these fields are necessary.
+\\
 \indent
-For the first time, measurements and corrections of the decapolar Resonance Driving Term $f_{1004}$
-were carried out at injection energy. Implementing combined corrections for third-order
-chromaticity, chromatic amplitude detuning, and RDT $f_{1004}$ led to a 3\% improvement in beam
-lifetime. Conversely, deliberately degrading the RDT alone resulted in a 10\% decrease in beam
-lifetime, underscoring the importance of this resonance corrections for stable beam operation. The
-study also explored how sextupoles and octupoles interact to generate decapolar-like fields. It was
-found that sextupoles, both alone and in combination with Landau octupoles, produce a substantial
-$f_{1004}$ decapolar RDT when powered to small currents. Therefore, in an operational context,
-decapolar resonances, largely generated by strong octupoles, would benefit from adapted corrections.
-These findings suggest that further advancements in correction methods could lead to even greater
-improvements in beam stability.
+For the first time in the LHC, measurements and corrections of the decapolar Resonance Driving Term
+$f_{1004}$ were carried out at injection energy. Corrections are based on a response matrix
+approach, effectively implementing combined corrections of third-order chromaticity, chromatic
+amplitude detuning, and RDT $f_{1004}$, leading to a 3\% improvement in beam lifetime.  Conversely,
+deliberately degrading the RDT alone resulted in a 10\% decrease in beam lifetime, underscoring the
+importance of this resonance corrections for stable beam operation. The study also explored how
+sextupoles and octupoles interact to generate decapolar-like fields. It was found that sextupoles,
+both alone and in combination with Landau octupoles, produce a substantial $f_{1004}$ decapolar RDT
+when powered to small currents. Therefore, in an operational context, decapolar resonances, largely
+generated by strong octupoles, would benefit from adapted corrections. These findings suggest that
+further advancements in correction methods could lead to even greater improvements in beam
+lifetime.
 
 % Third Study
-The third study investigates higher-order fields in the LHC, specifically dodecapolar and
+The third chapter investigates very-high-order fields in the LHC, specifically dodecapolar and
 decatetrapolar fields. Using a newly implemented collimation setup and custom post-processing
 techniques, this study successfully observed these higher-order fields. Studies were conducted to
 estimate the effect of the non-linearity of the momentum compaction factor on the chromaticity
@@ -133,7 +156,8 @@ emphasized that accurately characterizing the lower-order terms requires good me
 higher-order terms. The study identifies, through simulations, dodecapolar and decatetrapolar fields
 as primary contributors to these higher-order effects, originating from field errors in the main
 dipoles and quadrupoles. The LHC's field error model appears to be in relative agreement with the
-measurements once the decay of decatetrapolar components is considered. \\
+measurements once the decay of decatetrapolar components is considered.
+\\
 \indent
 For the first time at injection energy, the dodecapolar Resonance Driving Term $f_{0060}$ was
 measured. This measurement shows clear repeatability, even when performed with different
@@ -147,18 +171,20 @@ performance.
 % Summary
 In summary, the research detailed in these studies underscores the critical importance of
 understanding and managing higher-order multipole effects in the LHC. Skew octupolar fields,
-decapolar fields, and other higher-order terms have a significant impact on beam stability and
-performance. Developing and implementing advanced diagnostic techniques and correction methods are
-essential for enhancing simulation accuracy and operational strategies. The insights gained from
-these studies are not only crucial for optimizing the LHC's performance but also for guiding the
-design and operation of future accelerator projects.\\
+decapolar fields, and other higher-order fields have a significant impact on the beam's dynamic
+aperture and lifetime. Developing and implementing advanced measurement techniques and correction
+methods is essential for enhancing the understanding of non-linear optics. The insights gained from
+these studies are crucial for optimizing the LHC's performance.
+\\
 \indent
 As particle accelerators continue to evolve, the challenges associated with higher-order multipole
 components will persist. Ongoing research in this field is vital for addressing these challenges and
-ensuring that future accelerators achieve the precision required for groundbreaking scientific
-discoveries. The lessons learned from the LHC's experience with the complex interactions of
-multipole fields will inform the design and operation of next-generation accelerators, ensuring they
-remain at the forefront of exploring fundamental questions about the universe.\\
+ensuring that future accelerators achieve the precision required for new scientific discoveries. The
+lessons learned from the LHC's experience with the complex interactions of multipole fields will
+inform the design and operation of next-generation accelerators, such as the HL-LHC and FCC, which
+will increasingly rely on precise non-linear optics control. These advancements will ensure that
+these accelerators remain at the forefront of exploring fundamental questions about the universe.
+\\
 \indent
 The work presented in these chapters represents a significant contribution to the field of
 accelerator physics by offering practical solutions for current operational challenges and paving
