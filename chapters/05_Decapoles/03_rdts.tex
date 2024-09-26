@@ -27,15 +27,15 @@ lost when their amplitude becomes too large.
     \label{fig:decapoles:rdts:tune_diagram}
 \end{figure}
 
-Measuring turn-by-turn data without using any excitation is not a viable option as amplitudes are
-not large enough. Spectral lines are indeed usually impossible to discern from the noise floor, 
-making RDTs not measurable.
-Measurements are hence taken with an AC-Dipole, introducing quadrupolar-like field errors in the 
-linear regime~\cite{carlier_nonlinear_2020} and more complex effects in the non linear regime.
-In practice, those effects are neglected. \textit{Forced} RDTs are measured with an
-AC-Dipole and treated as \textit{free} as no compensation is applied.
+%Measuring turn-by-turn data without using any excitation is not a viable option as amplitudes are
+%not large enough. Spectral lines are indeed usually impossible to discern from the noise floor, 
+%making RDTs not measurable.
+%Measurements are hence taken with an AC-Dipole, introducing quadrupolar-like field errors in the 
+%linear regime~\cite{carlier_nonlinear_2020} and more complex effects in the non linear regime.
+%In practice, those effects are neglected. \textit{Forced} RDTs are measured with an
+%AC-Dipole and treated as \textit{free} as no compensation is applied.
 
-Such forced measurements were taken for the first time in the LHC to observe the $f_{1004}$ RDT
+Measurements were taken for the first time in the LHC to observe the $f_{1004}$ RDT
 at injection energy. The frequency line of the resonance $1Q_x - 4Q_y$ is seen at $4Q_y$ in the
 horizontal spectrum, as shows \cref{fig:decapoles:rdts:spectrum_f1004}.
 
@@ -64,18 +64,21 @@ horizontal spectrum, as shows \cref{fig:decapoles:rdts:spectrum_f1004}.
 % ---------------------------------------
 %         Decapole Contribution
 % ---------------------------------------
-\subsection{\review{Decapolar Contribution}}
+\subsection{\review{Measurement and correction}}
 \label{section:decapoles:decapolar_contribution_correction}
 
-Decapolar fields are the main contributors to the RDT $f_{1004}$. As such, powering the decapolar
-correctors is a good way to correct the related resonances.
-Being linear with the strength of the correctors, the RDT can be corrected via a response matrix.
+Decapolar fields are expected to be the main contributors to the RDT $f_{1004}$. As such, powering
+the decapolar correctors is a good way to correct the related resonances.
+Being linear with the strength of the correctors, the RDT can be corrected via a response matrix,
+as previously detailed in \cref{correction_principle:response_matrix}.
 
-Measurements were taken in order to attempt such a correction and get a baseline for the amplitude
-of the RDT without decapolar correctors and with the nominal FiDeL corrections applied.
-Corrections were made on the base of those nominal settings and applied on top. The strength of the
-decapolar correctors is shown in \cref{tab:decapoles:rdts:correction_f1004_k5} for the FiDeL
-settings, the delta applied on top and the final correction values.
+Measurements were conducted to establish a baseline for the amplitude of the RDT without decapolar
+correctors and with the nominal FiDeL corrections. Corrections were then attempted based on the
+measurements obtained with the nominal FiDeL settings and were subsequently applied on top of these
+measurements.
+%
+The strength of the decapolar correctors is shown in \cref{tab:decapoles:rdts:correction_f1004_k5}
+for the FiDeL settings, the delta applied on top, and the final correctors values.
 
 
 \begin{table}[!htb]
@@ -107,8 +110,8 @@ settings, the delta applied on top and the final correction values.
     \bottomrule
     \end{tabular}
     \caption{Strength of decapolar correctors with nominal FiDeL settings and after application of
-    corrections aiming at reducing both the RDT $f_{1004}$ and $Q'''$. The total value as a direct
-    incidence on the chromaticity}
+    corrections aiming at reducing both the RDT $f_{1004}$ and $Q'''$. The total value has a direct
+    incidence on the third order chromaticity $Q'''$.}
     \label{tab:decapoles:rdts:correction_f1004_k5}
 \end{table}
 
@@ -136,11 +139,11 @@ Result of those measurements, as well as the inverse of the correction, are show
 \end{figure}
 
 
-Although the FiDeL scheme was not intended to correct the RDT but rather only $Q'''$, it would be 
-expected for it to lower the amplitude of the RDT. It can though be seen that it degrades the
-resonance compared to the machine with no decapolar correctors. On the other hand, the newly
-computed RDT correction does lower the amplitude of $f_{1004}$ as expected.  Its inverse has the
-opposite effect.
+Although the FiDeL scheme was not intended to correct the RDT but rather only from $Q'$ to $Q'''$,
+it would be expected for it to lower the amplitude of the RDT. It can though be seen that it
+degrades the resonance compared to the machine with no decapolar correctors. On the other hand, the
+newly computed RDT correction does lower the amplitude of $f_{1004}$ as expected.  Its inverse has
+the opposite effect.
 
 Simulations were run with decapolar correctors turned of and with the absolute value of the RDT
 correction. The response of the RDT between those two schemes is shown in 
@@ -189,23 +192,22 @@ as shows \cref{fig:decapoles:f1004_dq2_dq3}.
     \label{fig:decapoles:f1004_dq2_dq3}
 \end{figure}
 
-
-% ------- Action dependance
-\subsubsection{\review{Action Dependance and Analysis}}
-
-Resonance lines in the frequency spectrum are often contributed to by several multipoles. Some lines
-start getting a contribution with rather high multipole orders, like the RDT $f_{1004}$ considered
-here. The line $4Q_y$ in the horizontal spectrum is indeed contributed to by decapoles and then only
-by decatetrapoles. When the main contributing field alone is varied, it is easy to reconstruct the
-RDT, as its fit is only dependant its action dependance ($\propto J_x^{*} J_y^{*}$). Several
-turn-by-turn measurements at the same configuration can be taken wit varying kick amplitudes,
-refining the RDT value with more data points for the fit.
-
-Considering the contribution of lower order multipoles is a bit trickier, as the second order RDTs
-change the dependance of the frequency line~\cite{franchi_first_2014}. In order to be able to
-compare the RDT from several turn by turn measurements, the same kick amplitude must then be used.
-Failing to do so would lead to a poor fit of the line amplitude relative to the action, resulting in
-an RDT with incorrect amplitude and significant noise.
+%% ------- Action dependance
+%\subsubsection{\review{Action Dependance and Analysis}}
+%
+%Resonance lines in the frequency spectrum are often contributed to by several multipoles. Some lines
+%start getting a contribution with rather high multipole orders, like the RDT $f_{1004}$ considered
+%here. The line $4Q_y$ in the horizontal spectrum is indeed contributed to by decapoles and then only
+%by decatetrapoles. When the main contributing field alone is varied, it is easy to reconstruct the
+%RDT, as its fit is only dependant its action dependance ($\propto J_x^{*} J_y^{*}$). Several
+%turn-by-turn measurements at the same configuration can be taken wit varying kick amplitudes,
+%refining the RDT value with more data points for the fit.
+%
+%Considering the contribution of lower order multipoles is a bit trickier, as the second order RDTs
+%change the dependance of the frequency line~\cite{franchi_first_2014}. In order to be able to
+%compare the RDT from several turn by turn measurements, the same kick amplitude must then be used.
+%Failing to do so would lead to a poor fit of the line amplitude relative to the action, resulting in
+%an RDT with incorrect amplitude and significant noise.
 
 
 % ------- Sextupoles ----------
