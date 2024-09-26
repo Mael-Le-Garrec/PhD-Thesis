@@ -24,26 +24,29 @@ terms depend on the $\beta$-functions, the horizontal dispersion $D$ and the nor
 field gradient $K_5$ for a single source of length $L$,
 
 \begin{equation}\begin{aligned}
-  \frac{\partial^2 Q_x}{\partial J_x \partial \delta} =& \frac{1}{16 \pi} K_5L \beta_x^2 D,         &\quad
-  \frac{\partial^2 Q_x}{\partial J_y \partial \delta} =& -\frac{1}{8\pi} K_5L \beta_x \beta_y D,
+  \frac{\partial^2 Q_x}{\partial J_x \partial \delta} =& \frac{1}{16 \pi} K_5L \beta_x^2 D_x,         &\quad
+  \frac{\partial^2 Q_x}{\partial J_y \partial \delta} =& -\frac{1}{8\pi} K_5L \beta_x \beta_y D_x,
 \\
-  \frac{\partial^3 Q_x}{\partial \delta^3}            =& \frac{1}{4\pi} K_5L \beta_x D^3,           &\quad
-  \frac{\partial^2 Q_y}{\partial J_x \partial \delta} =& -\frac{1}{8\pi} K_5L \beta_x \beta_y D,
+  \frac{\partial^3 Q_x}{\partial \delta^3}            =& \frac{1}{4\pi} K_5L \beta_x D_x^3,           &\quad
+  \frac{\partial^2 Q_y}{\partial J_x \partial \delta} =& -\frac{1}{8\pi} K_5L \beta_x \beta_y D_x,
 \\
-  \frac{\partial^2 Q_y}{\partial J_y \partial \delta} =& \frac{1}{16 \pi} K_5L \beta_y^2 D,        &\quad 
-  \frac{\partial^3 Q_y}{\partial \delta^3}            =& -\frac{1}{4\pi} K_5L \beta_y D^3.
+  \frac{\partial^2 Q_y}{\partial J_y \partial \delta} =& \frac{1}{16 \pi} K_5L \beta_y^2 D_x,        &\quad 
+  \frac{\partial^3 Q_y}{\partial \delta^3}            =& -\frac{1}{4\pi} K_5L \beta_y D_x^3.
 \end{aligned}\end{equation}
 
+Notably, while the $K_5$ dependence is identical to that of $Q'''$, the $\beta$ and $D_x$
+dependencies differ significantly. In the presence of a systematic error in the magnetic model, one
+would expect similar ratios for this observable as those observed for $Q'''$.
 The action dependant terms can be measured by exciting the beam with an AC-dipole with increasing
 strengths at different momentum-offsets.
 
 Such a measurement was taken with octupole and decapole correctors turned off to measure the bare
-machine. Some data could not be collected due to machine availability issues, restricting the
-measurement to low intensity kicks. 
+machine. The momentum-offsets measured at were $-0.001$ and $0.001$, respectively roughly equal to
+a trim of $+140$Hz and $-140$Hz of the RF. Some data could not be collected due to machine
+availability issues, restricting the measurement to low amplitude kicks.
 Nevertheless, the terms $\frac{\partial^2 Q_x}{\partial J_y \partial \delta}$ and $\frac{\partial^2
-Q_y}{\partial J_y \partial \delta}$ for beam 2 were measured for the first time in the LHC. The
-momentum-offsets measured at were $-0.001$ and $0.001$, respectively roughly equal to a trim of 
-$+140$Hz and $-140$Hz of the RF.
+Q_y}{\partial J_y \partial \delta}$ for beam 2 were successfully measured for the first time in the
+LHC. 
 
 \Cref{figure:decapoles:chromatic_amplitude_detuning:b2qxy}
 and~\cref{figure:decapoles:chromatic_amplitude_detuning:b2qyy} show a fit of those terms to measured
@@ -79,7 +82,6 @@ $a_8$) are shown as a comparison.
   \label{figure:decapoles:chromatic_amplitude_detuning:two_terms}
 \end{figure}
 
-
 \begin{table}[H]
   \centering
   \begin{tabular}{lrr}
@@ -104,11 +106,10 @@ $a_8$) are shown as a comparison.
 \end{table}
 
 
-
-A consistent difference between simulation and measurement is observed, which values and
+A consistent difference between simulation and measurement is observed. The values and
 ratios of measurement to model can be found in \cref{table:decapoles:chromatic_ampdet}.
-The observed ratios of measurement to model for the chromatic amplitude detuning show slight
-discrepancies compared to the bare chromaticity ones. These discrepancies could be due to the low
-intensity kicks, which don't allow for a better fit. However, the similarity of the ratios suggests
-an issue with the decapolar error model of the main dipoles, with measurements showing values about
-half of those predicted by the magnetic model.
+The observed ratios of measurements to model for the chromatic amplitude detuning show a good
+agreement, while not exact, with those of the bare chromaticity.
+This similarity of the ratios between the chromatic amplitude detuning and $Q'''$ discrepancies
+suggests an issue with the decapolar error model of the main dipoles, with measurements showing
+values about half of those predicted by the magnetic model.

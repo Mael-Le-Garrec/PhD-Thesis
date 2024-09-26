@@ -8,6 +8,37 @@ FiDeL, the field model used in operation, aims at correcting the field errors at
 Measured field errors but also decay estimates with respect to time are used when computing
 corrections.
 
+Magnetic decay in superconducting magnets stems from field changes in the strands caused by current
+redistribution in the superconducting cables. Decay has been shown to be strongly dependent on the
+magnet powering history~\cite{sammut_dependence_2006,haverkamp_studies_1999}.
+This happens for example when ramping down from an energy of 6.8TeV to 0 and then going back to
+injection energy at 450GeV. Some components of the magnetic field will persist and gradually change
+over time until they reach their final value.
+
+While the sextupolar $b_3$ decay is accounted for during operations, a review of the FiDeL model
+revealed that the decapolar component $b_5$ has not been similarly considered. To date, all beam
+dynamics studies in the LHC have made use of the same set of magnetic measurement error tables, thus
+neglecting any decapolar decay. It has though be found that during the LHC construction, magnetic
+measurements were taken for a representative set of main dipoles, and decay measured.
+%
+The average $b_5$ field in the main dipoles at $t=0$, upon reaching the 450 GeV energy, is
+approximately $1.145 \pm 0.5$, based on data from the magnetic reports utilized by FiDeL. For
+reference, decay measurements of a selection of main dipoles over time are illustrated in
+\cref{fig:decapoles:decay:decay_b5}.
+%
+\Cref{table:decapoles:decay:decay_b5} shows the decay expected at injection energy after a typical
+cycle of machine operation. From this table, it is clear that decay accounts for a large part of the
+$b_5$ at injection. $\approx 40\%$ of the compensated $b_5$ at injection in the main dipoles can
+indeed be attributed to the decay.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.7\textwidth]{./images/decay_b5_mb.pdf}
+    \caption{Measured decay of the integrated decapolar field in LHC's main dipoles at injection
+    energy. The fit is shown in black~\cite{deniau_magnetic_2009}.}
+    \label{fig:decapoles:decay:decay_b5}
+\end{figure}
+
 \begin{table}[!htb]
     \centering
     \begin{tabular}{cl}
@@ -27,35 +58,15 @@ corrections.
     \label{table:decapoles:decay:decay_b5}
 \end{table}
  
-Decay happens after cycles in the magnets powering. This happens for example when
-ramping down from an energy of 6.8TeV to 0 and then going back to injection energy at 450GeV. Some
-components of the magnetic field will persist and gradually change over time until they reach their
-final value.
-
-Such corrections thus vary with time as decay changes the field errors of the magnets.
-For the main dipoles, the sextupolar component $b_3$ increased relative to time while the $b_5$
-component decreases~\cite{deniau_magnetic_2009}.
-While sextupolar decay is used by FiDeL, it has been observed that this was not the case for the
-decapolar component $b_5$. The average $b_5$ field in the main dipoles, taken from the WISE tables
-and used by FiDeL, is about $1.145 \pm 0.5$. Decay measurements for various elements relative to
-time can be seen in \cref{fig:decapoles:decay:decay_b5}.
-\Cref{table:decapoles:decay:decay_b5} shows the decay expected at injection energy after a typical
-cycle of machine operation. From this table, it is clear that decay accounts for a large part of the
-$b_5$ at injection. $\approx 40\%$ of the compensated $b_5$ at injection in the main dipoles can
-indeed attributed to the decay.
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=0.7\textwidth]{./images/decay_b5_mb.pdf}
-    \caption{Measured decay of the integrated decapolar field in LHC's main dipoles at injection
-    energy. The fit is shown in black~\cite{deniau_magnetic_2009}.}
-    \label{fig:decapoles:decay:decay_b5}
-\end{figure}
-
+Unfortunately, individual magnet measurements conducted over 15 years ago could not be recovered. As
+a result, the $b_5$ decay in the simulations is implemented as the average decay across all the
+probed magnets. In the following simulations, each main dipole sees its $b_5$ component reduced by
+$0.47$ units.
 
 
 % ==== Chromaticity
 \paragraph{Chromaticity}
+
 It has been shown in the previous sections, and particularly in
 \cref{table:decapoles:bare_chromaticity:virgin_dq3} that measurements and simulations were off
 regarding the third order chromaticity $Q'''$.
@@ -80,11 +91,12 @@ calculate error bars.
     \label{table:decapoles:decay:simulation_chromaticity}
   \end{table}
 
-Integrating the decay of the $b_5$ component of the main dipoles in the simulations shows a large
-reduction of the third order chromaticity $Q'''$.
+Implementing the decay of the $b_5$ component of the main dipoles in the simulations have
+significantly reduced the discrepancy between beam-based measurement and the magnetic model.
+%
 Using the values from the bare chromaticity measurement and updating
 \cref{table:decapoles:bare_chromaticity:virgin_dq3} with the newly obtain data provides a more
-accurate comparison of the model to the measurement, as shown in
+accurate description of the magnetic model, as shown in
 \cref{table:decapoles:decay:virgin_dq3_recompare}.
 
 
@@ -119,7 +131,12 @@ Similar to chromaticity, new simulations have been conducted for chromatic ampli
 \Cref{table:decapoles:decay:chromatic_ampdet} gives an overview of the newly computed values and 
 the related ratios relative to the measurements, while \cref{figure:decapoles:decay:two_terms} gives
 a visual clue.
-Following the same trend as for chromaticity, the measured values are now closer to the model.
+A small difference in agreement can be observed between the direct term $\partial^2 Q_y / (\partial
+J_y \partial \delta)$ and the crossterm. This may arise from the implementation of decay, which only
+considers the average $b_5$ across all dipoles and may not fully capture the individual variations.
+Nevertheless, both terms now demonstrate good agreement with the model, similar to the trend seen
+with chromaticity.
+
 
 \begin{table}[H]
   \centering
