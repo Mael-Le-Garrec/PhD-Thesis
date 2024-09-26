@@ -7,15 +7,16 @@
 %----------------------------------
 %           Motivation
 %----------------------------------
-\subsection{\review{Motivation}}
+%\subsection{\review{Motivation}}
 
 Beam-based measurements have been carried in the LHC since Run 1 to better understand the decapolar
 fields. Those have been carried out via chromaticity
 measurements~\cite{maclean_non-linear_2011,maclean_commissioning_2016,maclean_measurement_2014}. 
-The third order of the non-linear chromaticity, $Q'''$, generated for the most part by decapoles,
-has shown a consistent discrepancy at injection energy between its expected value from simulations
-and that observed. \Cref{fig:decapoles:bare_chroma_vs_simulations} highlights this
-discrepancy.
+The third order of the non-linear chromaticity, $Q'''$, which is expected to be generated for the
+most part by decapolar errors in the main dipoles, has shown a consistent discrepancy at injection
+energy between its expected value from simulations and that observed.
+\Cref{fig:decapoles:bare_chroma_vs_simulations} illustrates this discrepancy, highlighting a factor
+$-2$ between the supposedly corrected machine and the corrected model.
 
 \begin{figure}[!htb]
     \centering
@@ -27,25 +28,40 @@ discrepancy.
 \end{figure}
 
 The FiDeL model, based on magnetic measurements, is used during operation to correct various
-multipole errors, including octupolar and decapolar. The operational corrections being based on this
-magnetic model and simulations, the residual $Q'''$ value is expected to be small, which is however
-not the case.  Chromaticity measurements have thus been repeated during LHC's Run 3 and corrections
-made routine, aimed at correcting the observed discrepancy.
+multipole errors in the LHC, including octupolar and decapolar. The operational corrections being
+based on this magnetic model and simulations, the residual $Q'''$ value is expected to be small,
+which is however not the case.  Chromaticity measurements have thus been repeated during LHC's Run 3
+and corrections made routine, aimed at correcting the observed discrepancy.
 
-The study of non-linear chromaticity has proven valuable in quantifying decapolar fields, yet it
-does not permit alone to understand the exact origins of the observed discrepancy. In an effort to
-gain deeper insights, additional measurements were performed focusing on novel observables that had
-not been previously explored.
+While the study of non-linear chromaticity has proven valuable in identifying the existence of this
+discrepancy, it does not yet permit alone to understand its exact origins. In an effort to gain
+deeper insights, additional measurements were performed focusing on novel observables that had not
+been previously explored.
 \textit{Bare chromaticity} involves measuring chromaticity with
 the octupolar an decapolar correctors deactivated ; this approach aims to isolate the machine
 effects from those of the correctors.
 \textit{Chromatic amplitude detuning}, evaluates how the tune varies with both the beam's action and
-the momentum offset ; this methods has the benefit of having a different expression that of the
-chromaticity.
+the momentum offset ; this methods has the benefit of having a different expression from that of the
+chromaticity, to rule out exclusively momentum dependent effects, such a higher-order dispersion.
 
-Complementing those measurements, studies of decapolar Resonance Driving Terms have been undertaken
-for the first time in the LHC. Contributing to resonances close to the working, those RDTs also have
-benefited from corrections.
+In addition to previous measurements, direct measurements of decapolar Resonance Driving Terms
+(RDTs) were conducted for the first time in the LHC, at injection energy. These high-order RDTs,
+which influence resonances near the working point, have also benefited from corrections, marking the
+first instance of directly correcting such high-order terms, using a response matrix-based approach.
+During the study of these resonances, lower-order multipoles, such as sextupoles and octupoles, were
+found to be significant contributors. Their effects are thoroughly derived and examined, as they are
+expected to strongly impact the dynamic aperture at injection energy.
+
+While lower-order field errors in the LHC are generally well understood and controlled, this is not
+the case for higher-order errors such as decapoles and beyond. Precise control of these higher-order
+non-linearities is expected to be crucial for future colliders like the FCC, where decapolar field
+corrections will play a large role in maintaining an optimal dynamic aperture. Extending advanced
+beam-based measurement and correction techniques to higher-order errors is therefore of significant
+interest.
+The observed discrepancy in the correction of third-order chromaticity ($Q'''$) points to an
+incomplete understanding of both the error sources and the magnetic model. Addressing this gap is
+essential for improving higher-order corrections in the LHC and preparing for the challenges of the
+next generation of accelerators.
 
 
 %----------------------------------
@@ -53,12 +69,12 @@ benefited from corrections.
 %----------------------------------
 \subsection{\review{Decapolar Correctors}}
 
-As seen in \cref{fig:introduction:lhc_arc_cell}, the LHC is equipped with decapoles. Those magnets
-are part of the LHC's design report, aiming at correcting the field errors of the main dipoles.
-Those correctors, denominated \textit{MCD}, are specific to each beam and are placed after every
-second dipole, totaling 1232 in number~\cite{venturini_delsolaro_magnetic_2005}.
-MCDs are nested with octupolar correctors, \textit{MCO}. The pair of those correctors of often
-referred to as \textit{MCDO}. 
+As seen in \cref{fig:introduction:lhc_arc_cell}, the LHC is equipped with decapole correctors. Those
+magnets are part of the LHC's design report, aiming at correcting the field errors of the main
+dipoles.  Those correctors, denominated \textit{MCD}, are specific to each beam and are placed after
+every second dipole, totaling 1232 in number~\cite{venturini_delsolaro_magnetic_2005}.  MCDs are
+nested with octupolar correctors, \textit{MCO}. The pair of those correctors of often referred to as
+\textit{MCDO}. 
 It is not possible to individually power each corrector. Rather, a circuit consists of a whole arc.
 There are in total 16 circuits to control the correctors of both beams and 8 arcs.
 \Cref{fig:decapoles:decapole_picture} shows a picture taken of decapoles on a test bench.
@@ -74,10 +90,9 @@ There are in total 16 circuits to control the correctors of both beams and 8 arc
 
 The important characteristics of the magnetic fields of correctors are their main field transfer
 function (or \textit{response}), the field quality and possible crosstalk, as MCOs and MCDs are
-nested~\cite{venturini_delsolaro_magnetic_2005}.
-In order to determine the aforementioned discrepancy, the decapole correctors themselves need to be
-studied, to rule any possible unwanted effects.
-
+nested~\cite{venturini_delsolaro_magnetic_2005}. To resolve the previously stated discrepancy, it is
+essential to investigate the decapole correctors themselves, to rule them out as the source of this
+difference.
 
 % -------- Strengths at Injection
 \paragraph{Strengths at Injection}
