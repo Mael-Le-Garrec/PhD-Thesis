@@ -199,15 +199,33 @@ this lifetime gain.
 % ------- Introduction
 \subsubsection{\review{First Observation}}
 
-As described in \cref{appendix:transfer_maps}, multipoles can combine to create fields that are seen
-as higher orders when considering higher orders of the BCH expansion.
-For decapoles, combinations of several sextupoles and sextupoles with octupoles give rise to
+As described in \cref{appendix:transfer_maps}, multipoles can combine to create perturbations that
+are seen as higher orders when considering higher orders of the BCH expansion.
+For decapolar RDTs, combinations of several sextupoles and sextupoles with octupoles give rise to
 decapolar-like fields, as described in
-\cref{table:appendix:transfer_maps:bch_resulting_orders_combination}. The following parts of this
-section will describe those combinations.
+\cref{table:appendix:transfer_maps:bch_resulting_orders_combination}. 
+Such contributions were already observed in the LHC with sextupoles contributing to amplitude
+detuning~\cite{soubelet_simulations_nodate}.
+
+The effective hamiltonian $h$ of the transfer map of two elements $h1$ and $h2$, $e^{:h1:} \cdot
+e^{:h2:} = e^{:h:}$, can be expanded to an arbitrary order, which will then create perturbations
+akin to certain multipoles, as reminded by the following,
+
+\begin{equation}
+    \begin{aligned}
+        h &= h_1 + h_2 \quad &\Rightarrow \text{1\textsuperscript{st} order} \\
+        &\quad + \frac{1}{2} [h_1, h_2] \quad &\Rightarrow \text{2\textsuperscript{nd} order} \\
+        &\quad + \frac{1}{12} [h_1, [h_1, h_2]] - \frac{1}{12} [h_2, [h_1, h_2]] \quad &\Rightarrow \text{3\textsuperscript{rd} order} \\
+        &\quad + \cdots,
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+where sextupoles would be expected to contribute to decapolar RDTs at the third order, and a
+combination of sextupoles and octupoles to the second.
 
 In previous section, it was observed that the RDT response of decapolar correctors was properly
-modelled.  However, RDT measurements taken before and after corrections of the non-linear
+modelled. However, RDT measurements taken before and after corrections of the non-linear
 chromaticity $Q''$ and $Q'''$ during the 2022's commissioning exhibited an unexpected RDT behaviour.
 As the non-linear chromaticity corrections were applied, it was expected that the RDT $f_{1004}$
 would also lower with the reduction of the decapolar strengths $K_5$. However, an increase of the
@@ -305,8 +323,8 @@ chromaticity knob being a factor applied on all sextupoles at the same time.
     \centering
     \includegraphics[width=0.9\textwidth]{./images/f1004/avg_f1004_k3.pdf}
     \caption{Average amplitude of the decapolar RDT $f_{1004}$ depending on the overall strength
-    of the sextupoles used to control the linear chromaticity $Q'$. The right plot can be used
-    to relate the RDT amplitude to a specific $Q'$ value.}
+    of the sextupoles used to control the linear chromaticity $Q'$. This two-plot combination is
+    only valid for a certain LHC configuration.}
     \label{fig:decapoles:sextupoles_k3_f1004}
 \end{figure}
 
@@ -393,6 +411,7 @@ lead to improved corrections in not only octupolar but also decapolar fields in 
 
 
 % ------- Measurement ----------
+\FloatBarrier
 \subsubsection{\review{Experimental Measurements}}
 
 To confirm what is observed in simulations, measurements were performed by varying $Q'$ and kicking
@@ -410,12 +429,12 @@ taken, as shows \cref{fig:decapoles:rdts:measured_f1004_from_sextupoles}.
 \end{figure}
 
 Like in simulations, it is observed that an increase in $Q'$ translates to an increase in 
-$|f_{1004}|$. The scale of the amplitude is though one order of magnitude higher than that of
-simulations. An offset for all measurements could be explained by non-included field-errors. The
-shift between them however should be similar between machine and simulations, this could be
-due by the interaction of the sextupolar fields with octupoles, as detailed in the following
-section. More data points with varying $Q'$ at similar kick amplitudes would be required to further
-investigate.
+$|f_{1004}|$. The observed scale of the amplitude is though one order of magnitude higher than that
+of simulations. An offset for all measurements could be explained by non-included field-errors. The
+shift between them however should be similar between machine and simulations, this could be due by
+the interaction of the sextupolar fields with octupoles, as detailed in the following section. 
+%More data points with varying $Q'$ at similar kick amplitudes would be required to further
+%investigate.
 
 % ====
 
