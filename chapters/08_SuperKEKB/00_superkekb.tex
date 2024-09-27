@@ -10,7 +10,7 @@ research fields, including high-energy physics, material science, structural bio
 science. One of its most notable facilities is SuperKEKB, the world's most advanced
 electron-positron collider. SuperKEKB is designed to reach an instantaneous luminosity of up to $80
 \times 10^{34} \, \text{cm}^{-2}\text{s}^{-1}$ and has recently completed its commissioning phase.
-It accelerates a 7 GeV electron beam in the High-Energy Ring (HER) and a 4 GeV positron beam in the
+It stores a 7 GeV electron beam in the High-Energy Ring (HER) and a 4 GeV positron beam in the
 Low-Energy Ring (LER), which collide at a single interaction point where the Belle II experiment is
 conducted. SuperKEKB currently holds the world record for instantaneous luminosity at $4.71 \times
 10^{34} \, \text{cm}^{-2}\text{s}^{-1}$~\cite{zhou_luminosity_2023}, surpassing the previous record
@@ -43,7 +43,7 @@ to~\cite{keintzel_jacqueline_beam_2022,keintzel_superkekb_2021,keintzel_impact_2
 
 In SuperKEKB, the beam optics are measured using either Closed Orbit
 Distortion~\cite{ohnishi_optics_1999} or turn-by-turn measurements. As fast optics measurements can
-be achieved with the TbT method, a measurement campaign has being carried out to improve the
+be achieved with the TbT method, a measurement campaign has been carried out to improve the
 measurement quality. This includes investigating various beam excitation techniques and settings.
 The necessary pre-processing steps for optics measurements have been detailed
 in~\cite{keintzel_jacqueline_beam_2022}, and are not covered here.
@@ -84,8 +84,7 @@ ms, corresponding to 4600 and 5300 turns, respectively~\cite{keintzel_jacqueline
 However, the IK only provides horizontal kicks, limiting the precision of vertical optics
 measurements.
 
-In contrast, the Phase-Locked Loop (PLL) method allows continuous excitation of the beam and can
-drive both horizontal and vertical planes. The PLL tracks the natural tune of the beam and drives it
+In contrast, the Phase-Locked Loop (PLL) method allows continuous excitation of the beam in both horizontal and vertical planes. The PLL tracks the natural tune of the beam and drives it
 at the corresponding frequency. A key advantage of the PLL system is that it can excite both planes
 simultaneously, enabling measurements of transverse coupling and other resonance-driving terms
 (RDTs). The PLL is currently the only method capable of performing vertical TbT measurements,
@@ -116,7 +115,7 @@ A typical turn-by-turn signal is depicted in \cref{fig:kek:tbt_signal}.
         \includegraphics[width=\linewidth]{images/kek/vertical_tbt_ler.pdf}
         \caption{Vertical plane, oscillations are created via an injection offset.}
     \end{subfigure}
-    \caption{Typical horizontal and vertical recorded turn-by-turn signal.}
+    \caption{Typical horizontal and vertical recorded turn-by-turn signals.}
     \label{fig:kek:tbt_signal}
 \end{figure}
 
@@ -159,8 +158,8 @@ commissioning phase of SuperKEKB.
 \subsection{\review{Beta-Beating}}
 
 Several configurations of the machine were measured using turn-by-turn acquisitions, as detailed in
-\cref{tab:superkekb:configurations}. The configurations with $\beta_y^* = 48.6$ in LER and
-$\beta_y^* = 81$ in HER are referred to as \textit{detuned}. Multiple kicks were performed for each
+\cref{tab:superkekb:configurations}. The configurations with $\beta_y^* = 48.6$~mm in LER and
+$\beta_y^* = 81$~mm in HER are referred to as \textit{detuned}. Multiple kicks were performed for each
 configuration to increase measurement precision. Although additional measurements were taken,
 insufficient kick amplitude in some cases made it challenging to extract reliable linear optics
 data and are thus here not included. Specifically, vertical measurements are challenging to perform
@@ -199,8 +198,7 @@ measurements taken with \textit{detuned} optics for LER and HER. For the squeeze
 comparison to the measurements performed via COD is done in \cref{fig:kek:beating_ler_squeezed} and
 \cref{fig:kek:beating_her_squeezed}, for LER and HER respectively.
 The agreement between the COD and the TbT techniques is a good indication of their robustness. The
-agreement found during these measurements is similar to that obtained few years
-prior~\cite{keintzel_jacqueline_beam_2022}.
+agreement found during these measurements is similar to that obtained in previous studies~\cite{keintzel_jacqueline_beam_2022}.
 
 
 % ==== LER
@@ -307,8 +305,8 @@ the reproducibility of the machine. With an appropriate kicker in the horizontal
 is expected to be easier to measure, and is reflected by the tune stability accross kicks.
 \Cref{fig:kek:shots} illustrates the variation in tune from the first kick compared to subsequent
 kicks for both rings and planes.
-While reproducibility is challenging to achieve in the vertical plane of the LER, all other
-measurements agree well together, down to a few tune units of $10^{-3}$.
+While reproducibility is poor in the vertical plane of the LER, all other
+measurements agree within few $10^{-3}$.
 
 \begin{figure}[!htb]
     \centering
@@ -335,9 +333,9 @@ Particularly notable measurements have been conducted in the LER ring with \text
 These measurements stand out due to their larger action range compared to others.
 \Cref{fig:kek:ler_full_tune_ampdet} illustrates the various kicks performed and their corresponding
 action.
-The tune is computed across each kick using a window of 200 turns, every 50 turns. A clear trend is
-emerges with the tune following the amplitude of the kicks. Over time, the oscillations gradually
-dampen, and the tune changes accordingly.
+The tune is computed across each kick using a window of 200 turns, every 50 turns. A clear trend 
+emerges with the tune increasing with the amplitude of the kicks. Over time, the oscillations gradually
+dampen due to synchrotron radiation, and the tune reduces accordingly.
 
 \begin{figure}[!htb]
     \centering
@@ -347,19 +345,19 @@ dampen, and the tune changes accordingly.
     \label{fig:kek:ler_full_tune_ampdet}
 \end{figure}
 
-The variation of the horizontal tune with the horizontal kick amplitude is related to by the
+The variation of the horizontal tune with the horizontal kick amplitude is related to  the
 amplitude detuning term $\frac{\partial Q_x}{\partial J_x}$. Its value can be retrieved by fitting
 the tune to the action. \Cref{fig:kek:ler_ampdet} shows the various kicks along with a fit and a
 comparison to the model. The measured value, $6500 \pm 500$ is one order of magnitude higher than
-that simulated, of $600$. This observed discrepancy indicates un-modeled octupolar-like sources.
+that simulated, of $600$. This observed discrepancy indicates possible un-modeled octupolar-like sources.
 Such a discrepancy, although not as large, already has been observed with different
 optics~\cite{keintzel_jacqueline_beam_2022}.
 
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.7\linewidth]{images/kek/amplitude_detuning.pdf}
-    \caption{Amplitude dependence of the tune in the LER ring. The fitted line then corresponds to
-    the amplitude detuning term $\partial Q_x/\partial 2J_x$. For comparison, the model computed 
+    \caption{Amplitude dependence of the tune in the LER ring. The slope of the fitted line corresponds to
+    the amplitude detuning term $\partial Q_x/\partial 2J_x$. For comparison, the tune computed 
     from the model is shown in green.}
     \label{fig:kek:ler_ampdet}
 \end{figure}
