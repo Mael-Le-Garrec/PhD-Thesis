@@ -1,14 +1,69 @@
+\FloatBarrier
 \section{\review{Model Estimates}}
 \label{sec:nl_chroma_model}
 
 
-The model of the LHC is based on MAD-X and WISE field errors~\cite{p_hagen_wise_2006}, containing
-a hundred seeds for the random errors. To compute the chromaticity, simulations are run via PTC,
-with various field errors.
+The model of the LHC is based on MADX and magnetic field error tables~\cite{p_hagen_wise_2006},
+containing a hundred seeds for the random errors. To compute the chromaticity, simulations are run
+via PTC, with selected field errors.
+Field errors are applied to all magnets, with $b_2$ errors in the main dipoles generating a
+$\beta$-beating of approximately $10\%$. Coupling is introduced using global knobs to create a $C^-$
+value of $0.001$, which is commonly observed during operation.
 
+% =================================
+%\subsection{\review{Major contributions}}
+
+Simulations with various field errors have been run to assess the contribution of individual magnet
+order and combinations for the fourth and firth order chromaticity. Normal and skew fields errors
+ranging from sextupolar ($b_3$) to decahexapolar ($b_8$) are added alone or in combination to
+observe which is the strongest. Quadrupolar field errors ($b_2$) introduce beta-beating. Coupling is
+introduced via skew quadrupolar correctors.
+
+
+% ----------------------------------
+\subsubsection{\review{Fourth Order Chromaticity}}
+
+The results from simulations strongly imply that the dodecapolar errors are the main contributors
+to $Q^{(4)}$, as can be seen in \cref{fig:high_orders:beam1_q4_ptc}.
+The most notable effect on this chromaticity order is the beta-beating, introducing a very large
+spread via the various error seeds.
+Comparing the simulation at the top with most errors added, the $b_6$ component alone accounts for
+$\approx 70\%$ of it for both axes on each beam.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{images/q4_ptc.pdf}
+    \caption{Measured and simulated fourth order chromaticity with different multipole errors. The
+    $b_2$ errors, applied on dipoles and quadrupoles, generate beta-beating. Coupling is set to a
+    value commonly seen in operation.}
+    \label{fig:high_orders:beam1_q4_ptc}
+\end{figure}
+
+
+
+% ----------------------------------
+\FloatBarrier
+\subsubsection{\review{Fifth Order Chromaticity}}
+
+It is seen that the the decatetrapolar errors are the main contributors to $Q^{(5)}$, as can be seen
+in \cref{fig:high_orders:beam1_q5_ptc}. Fringe fields and skew multipoles have been found to have a
+negligible impact. 
+Beta-beating and coupling are seen to increase by a small amount the chromaticity, while sextupolar
+errors induce a spread with the different seeds. 
+Comparing the simulation at the top with most errors added, the $b_7$ component alone accounts for
+$\approx 70\%$ of it for both axes on each beam of the fifth order chromaticity.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{images/q5_ptc.pdf}
+    \caption{Measured and simulated fifth order chromaticity with different multipole errors. The
+    $b_2$ errors, applied on dipoles and quadrupoles, generate beta-beating. Coupling is set to a
+    value commonly seen in operation.}
+    \label{fig:high_orders:beam1_q5_ptc}
+\end{figure}
 
 %====================
-\subsection{\review{Decatetrapolar Decay}}
+%\subsection{\review{Decatetrapolar Decay}}
 
 It has been noted in the previous chapter about decapoles (see \cref{section:decapoles:decay}) that
 the $b_5$ component in the main dipoles was large at injection energy, and could explain most of the
@@ -27,66 +82,13 @@ is shown in \cref{fig:high_orders:b7_decay}.
 
 Its value is though small and settles around $+0.0351 \pm 0.0007$. The average $b_7$ of the main
 dipoles is of $0.32 \pm 0.16$. The decay thus increase that value of only about $11\%$.
-Simulations done with that decay taken into account are detailed next.
+Simulations done with that decay taken into account are also present in the previous
+\cref{fig:high_orders:beam1_q5_ptc}.
 
 
 % =================================
-\subsection{\review{Major contributions}}
-
-Simulations with various field errors have been run to assess the contribution of individual magnet
-order and combinations for the fourth and firth order chromaticity. Normal and skew fields errors
-ranging from sextupolar ($b_3$) to decahexapolar ($b_8$) are added alone or in combination to
-observe which is the strongest. Quadrupolar field errors ($b_2$) introduce beta-beating. Coupling is
-introduced via skew quadrupolar correctors.
-
-
-% ----------------------------------
-\subsubsection{\review{Fourth Order Chromaticity}}
-
-The results from simulations strongly imply that the dodecapolar errors are the main contributors
-to $Q^{(4)}$, as can be seen in \cref{fig:high_orders:beam1_q4_ptc}.
-Fringe fields have a negligible impact, as do skew multipoles.
-The most notable effect on this chromaticity order is the beta-beating, introducing a very large
-spread via the various error seeds.
-Comparing the simulation at the top with most errors added, the $b_6$ component alone accounts for
-$\approx 70\%$ of it for both axes on each beam.
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=0.9\columnwidth]{images/q4_ptc.pdf}
-    \caption{Measured and simulated fourth order chromaticity with different multipole errors. The
-    $b_2$ errors, applied on dipoles and quadrupoles, generate beta-beating. Coupling is set to a
-    value commonly seen in operation.}
-    \label{fig:high_orders:beam1_q4_ptc}
-\end{figure}
-
-
-
-% ----------------------------------
-\subsubsection{\review{Fifth Order Chromaticity}}
-
-It is seen that the the decatetrapolar errors are the main contributors to $Q^{(5)}$, as can be seen
-in \cref{fig:high_orders:beam1_q5_ptc}. Fringe fields and skew multipoles have been found to have a
-negligible impact. 
-Beta-beating and coupling are seen to increase by a small amount the chromaticity, while sextupolar
-errors induce a spread with the different seeds. 
-As for the fourth order, comparing the simulation at the top with most errors added, the $b_7$
-component alone accounts for $\approx 70\%$ of it for both axes on each beam of the fifth order
-chromaticity.
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=0.9\columnwidth]{images/q5_ptc.pdf}
-    \caption{Measured and simulated fifth order chromaticity with different multipole errors. The
-    $b_2$ errors, applied on dipoles and quadrupoles, generate beta-beating. Coupling is set to a
-    value commonly seen in operation.}
-    \label{fig:high_orders:beam1_q5_ptc}
-\end{figure}
-
-
-
-% =================================
-\subsection{\review{Ratios}}
+\FloatBarrier
+\subsubsection{\review{Agreement with Measurements}}
 
 Previous simulation results are shown in \cref{tab:high_orders:ptc_values}, taking the values from 
 the simulation including the most effects at the top of the plots. For the fourth order, the beating

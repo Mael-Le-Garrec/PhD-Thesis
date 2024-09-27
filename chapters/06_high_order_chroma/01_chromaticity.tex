@@ -63,10 +63,11 @@ can't properly be classified as outliers. A tune measurement presenting this iss
 A solution to this issue is to use the raw data extracted from the BBQ system. From there, a
 spectrogram clearly shows the noise lines, as seen in \cref{fig:decapoles:chromaticity:spectrogram}.
 Those lines have been repeatedly identified over several measurements and confirmed to be fixed.
-The highest peak of the spectrogram can thus be safely identified by removing those resonances,
-yielding a cleaner measurement. It is also to be added that the BBQ requires to set a tune window,
-which can be forgotten. By analyzing the raw data, it is ensured that the measurement has usable
-data and does not try to measure noise.
+The highest peak in the spectrogram can be reliably identified by removing unwanted resonances,
+resulting in a cleaner measurement. It is also important to note that the BBQ system requires the
+tune window to be set, which, if overlooked, can lead to erroneous data. By analyzing the raw data,
+it is ensured that correct data is used, preventing the measurement from inadvertently capturing
+noise.
 
 \begin{figure}[H]
     \centering
@@ -104,10 +105,13 @@ The expression for $\delta$ at first and second order then reads,
     \end{aligned}
 \end{equation}
 
-It is assumed that only the first term is relevant as the induced difference in chromaticity is
-negligible as will be demonstrated later on.
-\Cref{fig:decapoles:chromaticity:momentum_compaction_factor} shows the non linearity of the momentum
-compaction factor and its effect on the calculated $\delta$ via the previous formulas.
+%It is assumed that only the first term is relevant as the induced difference in chromaticity is
+%negligible as will be demonstrated later on.
+The momentum compaction factor is computed using MADX at discrete $\delta$ values and then fitted,
+as shown in \cref{fig:decapoles:chromaticity:momentum_compaction_factor}. Its non-linearity is
+clearly evident. The effect of this non-linearity on the calculated $\delta$ via the RF frequency is
+also presented. Field errors have not been found to have any significant impact on the $\alpha_c$
+values.
 
 \begin{figure}[tbh]
     \centering
@@ -368,6 +372,63 @@ Accurately measuring the third order chromaticity is essential for its correctio
 important to consider the higher orders.
 
 
+%----------------------------------------
+%             Fit Quality
+%----------------------------------------
+%\subsubsection{\review{Fit Quality}}
+%\label{subsection:q4q5_quality}
+
+%The values measured for $Q^{(4)}$ and $Q^{(5)}$ are similar across the measurements, with
+%nominal and beam-based corrections performed with very different lower order chromaticity, and well 
+%separated in time.
+%This reproducibility with varying configurations gives confidence that the measured values are
+%robust. It is to be noted that one exception exists for the first measurement, the horizontal plane
+%of beam 2 showed a high correlation between the fourth and fifth order terms, making the fit less
+%reliable.
+
+The reduced chi-square for this measurement of 2022 for each fit order is detailed in
+\cref{tab:high_orders:chisquare_quality}. While adding terms to the chromaticity function is
+beneficial to the fit, it can be seen that the reduced chi-square does not substantially improve 
+above the fifth order, indicating that such further orders are not warranted.
+%\Cref{chroma_comparison} shows a comparison of the measured chromaticity before and after
+%beam-based corrections for the horizontal axis of beam 1.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lrrrr}
+     \toprule
+                  & \multicolumn{4}{c}{$\chi^2_\nu$} \\
+      %\cmidrule{2-5}
+        Plane     &   $Q^{(3)}$ &  $Q^{(4)}$ &   $Q^{(5)}$ &   $Q^{(6)}$  \\
+      \midrule
+        Beam 1    &   &   &   & \\
+        % The commented out lines are from measurement with the regular BBQ data
+        % The un-commented lines are from using the raw BBQ data
+        %X         & 7.62  & 4.07 & 0.62 &\\             % regular
+        %Y         & 0.72  & 0.57 & 0.15 &\\             % regular
+        \hspace{2mm}X         & $17.9$  & $12.1$ & $1.8$ & $1.5$ \\         % raw bbq
+        \hspace{2mm}Y         & $ 3.0$  & $2.2 $ & $0.7$ & $0.7 $\\          % raw bbq
+        Beam 2    &    &    &   &\\
+        %X         & 7.60  & 3.10 & 0.73 &\\             % regular
+        %Y         & 0.48  & 0.46 & 0.16 &\\ \hline      % regular
+        \hspace{2mm}X         & $17.3$ & $7.1$ & $1.8$ & $1.8$ \\           % raw bbq
+        \hspace{2mm}Y         & $2.9 $ & $2.8$ & $1.0$ & $1.0$ \\            % raw bbq
+      \bottomrule
+    \end{tabular}
+    \caption{Reduced $\chi^2$ values for each order of fit, taken from the second
+    measurement of 2022, with $Q''$ and $Q'''$ beam-based corrections.}
+    \label{tab:high_orders:chisquare_quality}
+  \end{table}
+
+%\begin{figure}[!ht]
+%    \centering
+%    \includegraphics[width=1\columnwidth]{images/comparison_b1x.png}
+%    \caption{Comparison of the chromaticity function with nominal and beam-based corrections.}
+%    \label[type]{chroma_comparison}
+%\end{figure}
+
+
+
 
 %----------------------------------------
 %       Varying Configurations
@@ -453,60 +514,3 @@ beams.
   \cref{table:high_orders:dpp_ranges}.}
   \label{fig:high_oders:all_values}
 \end{table}
-
-
-
-%----------------------------------------
-%             Fit Quality
-%----------------------------------------
-\subsubsection{\review{Fit Quality}}
-\label{subsection:q4q5_quality}
-
-The values measured for $Q^{(4)}$ and $Q^{(5)}$ are similar across the measurements, with
-nominal and beam-based corrections performed with very different lower order chromaticity, and well 
-separated in time.
-This reproducibility with varying configurations gives confidence that the measured values are
-robust. It is to be noted that one exception exists for the first measurement, the horizontal plane
-of beam 2 showed a high correlation between the fourth and fifth order terms, making the fit less
-reliable.
-
-The reduced chi-square for the last measurement of 2022 for each fit order is detailed in
-\cref{tab:high_orders:chisquare_quality}. While adding terms to the chromaticity function is
-beneficial to the fit, it can be seen that the reduced chi-square does not substantially improve 
-above the fifth order, indicating that such further orders are not warranted.
-%\Cref{chroma_comparison} shows a comparison of the measured chromaticity before and after
-%beam-based corrections for the horizontal axis of beam 1.
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lrrrr}
-     \toprule
-                  & \multicolumn{4}{c}{$\chi^2_\nu$} \\
-      %\cmidrule{2-5}
-        Plane     &   $Q^{(3)}$ &  $Q^{(4)}$ &   $Q^{(5)}$ &   $Q^{(6)}$  \\
-      \midrule
-        Beam 1    &   &   &   & \\
-        % The commented out lines are from measurement with the regular BBQ data
-        % The un-commented lines are from using the raw BBQ data
-        %X         & 7.62  & 4.07 & 0.62 &\\             % regular
-        %Y         & 0.72  & 0.57 & 0.15 &\\             % regular
-        \hspace{2mm}X         & $17.9$  & $12.1$ & $1.8$ & $1.5$ \\         % raw bbq
-        \hspace{2mm}Y         & $ 3.0$  & $2.2 $ & $0.7$ & $0.7 $\\          % raw bbq
-        Beam 2    &    &    &   &\\
-        %X         & 7.60  & 3.10 & 0.73 &\\             % regular
-        %Y         & 0.48  & 0.46 & 0.16 &\\ \hline      % regular
-        \hspace{2mm}X         & $17.3$ & $7.1$ & $1.8$ & $1.8$ \\           % raw bbq
-        \hspace{2mm}Y         & $2.9 $ & $2.8$ & $1.0$ & $1.0$ \\            % raw bbq
-      \bottomrule
-    \end{tabular}
-    \caption{Reduced $\chi^2$ values for each order of fit, taken from the second
-    measurement of 2022, with $Q''$ and $Q'''$ beam-based corrections.}
-    \label{tab:high_orders:chisquare_quality}
-  \end{table}
-
-%\begin{figure}[!ht]
-%    \centering
-%    \includegraphics[width=1\columnwidth]{images/comparison_b1x.png}
-%    \caption{Comparison of the chromaticity function with nominal and beam-based corrections.}
-%    \label[type]{chroma_comparison}
-%\end{figure}
