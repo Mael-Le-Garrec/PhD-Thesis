@@ -64,7 +64,7 @@ horizontal spectrum, as shows \cref{fig:decapoles:rdts:spectrum_f1004}.
 % ---------------------------------------
 %         Decapole Contribution
 % ---------------------------------------
-\subsection{\review{Measurement and correction}}
+\subsection{\review{Measurement and Correction}}
 \label{section:decapoles:decapolar_contribution_correction}
 
 Decapolar fields are expected to be the main contributors to the RDT $f_{1004}$. As such, powering
@@ -73,24 +73,13 @@ Being linear with the strength of the correctors, the RDT can be corrected via a
 as previously detailed in \cref{correction_principle:response_matrix}.
 
 Measurements were conducted to establish a baseline for the amplitude of the RDT without decapolar
-correctors and with the nominal FiDeL corrections.
-Although the FiDeL scheme was not intended to correct the RDT but rather only from $Q'$ to $Q'''$,
-it would be expected for it to lower the amplitude of the RDT. It can though be seen in 
-\cref{fig:decapoles:rdts:f1004_correction_B1_fidel_vs_bare} that it degrades the resonance compared
-to the machine with no decapolar correctors. Similar behaviour is seen for Beam 2. 
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=0.8\textwidth]{./images/f1004/f1004x_corrections_B1_fidel_vs_bare.pdf}
-    \caption{Measured $f_{1004}$ for Beam 1 with decapolar correctors powered off and with nominal
-    corrections for $Q'''$. Corrections clearly increase the RDT amplitude.}
-    \label{fig:decapoles:rdts:f1004_correction_B1_fidel_vs_bare}
-\end{figure}
-
-Further corrections were then attempted based on the measurements obtained with the nominal FiDeL
-settings and were subsequently applied on top of their strengths.
+correctors and with the nominal FiDeL corrections. Corrections were then attempted based on the
+measurements obtained with the nominal FiDeL settings and were subsequently applied on top of these
+measurements.
+%
 The strength of the decapolar correctors is shown in \cref{tab:decapoles:rdts:correction_f1004_k5}
 for the FiDeL settings, the delta applied on top, and the final correctors values.
+
 
 \begin{table}[!htb]
     \centering
@@ -128,10 +117,10 @@ for the FiDeL settings, the delta applied on top, and the final correctors value
 
 This RDT correction also serves as a partial $Q'''$ correction. To fully correct $Q'''$ indeed
 approximately requires a strength of $+13,000 K_5$ distributed amongst the correctors. Therefore,
-this new approach also succesfully reduces $Q'''$ by about $70\%$ compared to the previous method.
-The chromatic amplitude detuning terms are also expected to be decreased.
-The results of these successful corrections, compared to the nominal ones, as well as their inverse,
-are shown in \cref{fig:decapoles:rdts:f1004_correction_B1_B2}.
+this new approach reduces $Q'''$ by about $70\%$ compared to the previous method. The chromatic
+amplitude detuning terms are also expected to be decreased.
+Result of those measurements, as well as the inverse of the correction, are shown in 
+\cref{fig:decapoles:rdts:f1004_correction_B2}
 
 \begin{figure}[!htb]
     \centering
@@ -146,12 +135,18 @@ are shown in \cref{fig:decapoles:rdts:f1004_correction_B1_B2}.
     \end{subfigure}
     \caption{Measured $f_{1004}$ with decapolar correctors powered off, nominal settings, and
     combined RDT \& $Q'''$ correction with normal and opposite signs.}
-    \label{fig:decapoles:rdts:f1004_correction_B1_B2}
+    \label{fig:decapoles:rdts:f1004_correction_B2}
 \end{figure}
 
-To gauge the response of the RDT with the decapolar correctors strengths, simulations were run with
-decapolar correctors turned off and with the strengths of the RDT correction. The response of
-the RDT between those two schemes is shown in 
+
+Although the FiDeL scheme was not intended to correct the RDT but rather only from $Q'$ to $Q'''$,
+it would be expected for it to lower the amplitude of the RDT. It can though be seen that it
+degrades the resonance compared to the machine with no decapolar correctors. On the other hand, the
+newly computed RDT correction does lower the amplitude of $f_{1004}$ as expected.  Its inverse has
+the opposite effect.
+
+Simulations were run with decapolar correctors turned of and with the absolute value of the RDT
+correction. The response of the RDT between those two schemes is shown in 
 \cref{fig:decapoles:rdt:b1_response_corr}. The difference between their RMS value ratio is $\approx
 6\%$, indicating that simulations correctly model the decapolar correctors.
 
@@ -164,11 +159,38 @@ the RDT between those two schemes is shown in
 \end{figure}
 
 
+% ==== Correction
+In order to understand what can be gained from correcting decapolar fields, a lifetime measurement
+was taken with the corrections described in 
+\cref{section:decapoles:decapolar_contribution_correction}. This scheme corrects the three decapolar 
+observables, being the RDT $f_{1004}$ linked to the resonance $1Q_x - 4Q_y$, the third order
+chromaticity $Q'''$ and the chromatic amplitude detuning terms.
+\Cref{fig:decapoles:impact:b5_lifetime_rdt_corr} shows the evolution of the lifetime, starting with
+corrections applied, removed and then trimmed to their opposite. A net change in lifetime for Beam 1
+can be measured after each application. Acquired signal for Beam 2 has been deemed too noisy to be 
+relevant, due to the shortness of the measurement.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./images/b5_lifetime_rdt_corr.pdf}
+    \caption{Measured lifetime of Beam 1 with the nominal corrections for $Q'''$, combined
+    correction of $f_{1004}$ and $Q'''$, and its inverse.}
+    \label{fig:decapoles:impact:b5_lifetime_rdt_corr}
+\end{figure}
+
+It is apparent here that the corrections have a beneficial effect on the beam. The lifetime
+improvement is of $\approx 3 \%$, while the degradation after applying the opposite is of $\approx
+5\%$. Further developments in the correction scheme and lengthier measurements could easily improve
+this lifetime gain.
+
+
+
+
+
 
 % ---------------------------------------
 %        Lower Order Contribution
 % ---------------------------------------
-\FloatBarrier
 \subsection{\review{Feed-Up Contributions}}
 \label{section:decapoles:feed_up}
 
@@ -177,26 +199,65 @@ the RDT between those two schemes is shown in
 % ------- Introduction
 \subsubsection{\review{First Observation}}
 
-As described in \cref{appendix:transfer_maps}, multipoles can combine to create fields that are seen
-as higher orders when considering higher orders of the BCH expansion.
-For decapoles, combinations of several sextupoles and sextupoles with octupoles give rise to
+As described in \cref{appendix:transfer_maps}, multipoles can combine to create perturbations that
+are seen as higher orders when considering higher orders of the BCH expansion.
+For decapolar RDTs, combinations of several sextupoles and sextupoles with octupoles give rise to
 decapolar-like fields, as described in
-\cref{table:appendix:transfer_maps:bch_resulting_orders_combination}. The following parts of this
-section will describe those combinations.
+\cref{table:appendix:transfer_maps:bch_resulting_orders_combination}. 
+Such contributions were already observed in the LHC with sextupoles contributing to amplitude
+detuning~\cite{soubelet_simulations_nodate}.
 
-This effect was observed in 2022 during Run 3's commissioning. New corrections of the non-linear
-chromaticity $Q''$ and $Q'''$ were performed, and RDT measurements taken before and after their
-correction. As $Q'''$ was corrected, the expectation was that the RDT $f_{1004}$ would also lower
-with the reduction of the decapolar strengths $K_5$. However, an increase of the RDT was observed,
-as shows \cref{fig:decapoles:f1004_dq2_dq3}.
+The effective hamiltonian $h$ of the transfer map of two elements $h1$ and $h2$, $e^{:h1:} \cdot
+e^{:h2:} = e^{:h:}$, can be expanded to an arbitrary order, which will then create perturbations
+akin to certain multipoles, as reminded by the following,
 
-\begin{figure}[H]
+\begin{equation}
+    \begin{aligned}
+        h &= h_1 + h_2 \quad &\Rightarrow \text{1\textsuperscript{st} order} \\
+        &\quad + \frac{1}{2} [h_1, h_2] \quad &\Rightarrow \text{2\textsuperscript{nd} order} \\
+        &\quad + \frac{1}{12} [h_1, [h_1, h_2]] - \frac{1}{12} [h_2, [h_1, h_2]] \quad &\Rightarrow \text{3\textsuperscript{rd} order} \\
+        &\quad + \cdots,
+    \end{aligned}
+    \nonumber
+\end{equation}
+
+where sextupoles would be expected to contribute to decapolar RDTs at the third order, and a
+combination of sextupoles and octupoles to the second.
+
+In previous section, it was observed that the RDT response of decapolar correctors was properly
+modelled. However, RDT measurements taken before and after corrections of the non-linear
+chromaticity $Q''$ and $Q'''$ during the 2022's commissioning exhibited an unexpected RDT behaviour.
+As the non-linear chromaticity corrections were applied, it was expected that the RDT $f_{1004}$
+would also lower with the reduction of the decapolar strengths $K_5$. However, an increase of the
+RDT was observed, as shows \cref{fig:decapoles:f1004_dq2_dq3}.
+
+\begin{figure}[!htb]
     \centering
     \includegraphics[width=0.9\textwidth]{./images/f1004_dq2_dq3_2022.pdf}    
     \caption{Non intuitive increase of the RDT $f_{1004}$ after application of both the $Q''$ and
     $Q'''$ corrections.}
     \label{fig:decapoles:f1004_dq2_dq3}
 \end{figure}
+
+
+While decapolar errors are expected to be the main contributors to decapolar RDTs, other strong
+sources can indeed be identified. \Cref{fig:decapoles:rdts:contributions} shows the average
+amplitude of the RDT $f_{1004}$ depending on the error sources introduced in the simulations. 
+Significant contributions to the Resonance Driving Terms (RDTs) appear to come from the sextupolar
+and octupolar field errors present in the main dipoles. Interestingly, the octupolar errors induce
+an RDT that is even larger than that generated by the decapolar errors. 
+The following sections will provide a detailed analysis of the contributions from the sextupolar and
+octupolar field components to these RDTs, before presenting experimental measurements.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./images/f1004/f1004_several_factors.pdf}
+    \caption{Simulation of the amplitude of the decapolar RDT $f_{1004}$ depending on the field
+             errors applied on main dipoles as well as coupling ($C^-$). Sextupolar ($b_3$) and
+             octupolar ($b_4$) fields have a clear impact on this amplitude.}
+    \label{fig:decapoles:rdts:contributions}
+\end{figure}
+
 
 %% ------- Action dependance
 %\subsubsection{\review{Action Dependance and Analysis}}
@@ -217,7 +278,8 @@ as shows \cref{fig:decapoles:f1004_dq2_dq3}.
 
 
 % ------- Sextupoles ----------
-\subsubsection{\review{Sextupoles}}
+\FloatBarrier
+\subsubsection{\review{Combination of Sextupoles}}
 
 At the third order of the BCH expansion, the combination of two sextupoles yields a decapolar-like
 expression. This means that, during normal operation of the machine, decapolar observables will be
@@ -235,9 +297,10 @@ readability:
 \end{equation}
 
 To quantify the actual impact of such an equation on the LHC, a simulation was run with injection
-optics while varying this same linear chromaticity $Q'$. No higher fields than sextupoles are 
-have been included, including field errors. The resulting effect on the RDT $f_{1004}$
-can be seen in \cref{fig:decapoles:rdts:simulated_f1004_from_sextupoles}.
+optics while varying this same linear chromaticity $Q'$. No field components higher than
+sextupoles, nor any additional field errors, have been introduced. The resulting effect on the RDT
+$f_{1004}$ can be seen in \cref{fig:decapoles:rdts:simulated_f1004_from_sextupoles}.
+
 
 \begin{figure}[H]
     \centering
@@ -248,58 +311,37 @@ can be seen in \cref{fig:decapoles:rdts:simulated_f1004_from_sextupoles}.
     \label{fig:decapoles:rdts:simulated_f1004_from_sextupoles}
 \end{figure}
 
-As the linear chromaticity increases, the overall $K_3$ strength of sextupoles actually becomes 
-more negative. Considering the previous \cref{eq:decapoles:sextupoles_b5}, a higher chromaticity
-is expected to increase the amplitude of the RDT $f_{1004}$, related to the last term $xy^4$.
-\Cref{fig:decapoles:sextupoles_k3_f1004} shows how the RDT is expected to vary, depending on the
-overall sextupoles strength and the linear chromaticity. It can be noted that although the relation
-between $K_3$ and $Q'$ is linear, that of $K_3$ and the RDT varies with the cubed strength. Using 
-the sum of the cubed strength is possible due to the chromaticity knob being a factor applied on all
-sextupoles at the same time.
+As the overall $K_3$ strength of sextupoles changes, so does the linear chromaticity. 
+Considering the previous \cref{eq:decapoles:sextupoles_b5}, a higher chromaticity
+is expected to increase, in that configuration of the LHC, the amplitude of the RDT $f_{1004}$,
+related to the last term $xy^4$. \Cref{fig:decapoles:sextupoles_k3_f1004} shows how the RDT is
+expected to vary, depending on the overall sextupoles strength and the linear chromaticity. It can
+be noted that although the relation between $K_3$ and $Q'$ is linear, that of $K_3$ and the RDT
+varies with the cubed strength. Using the sum of the cubed strength is possible due to the
+chromaticity knob being a factor applied on all sextupoles at the same time.
 
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.9\textwidth]{./images/f1004/avg_f1004_k3.pdf}
     \caption{Average amplitude of the decapolar RDT $f_{1004}$ depending on the overall strength
-    of the sextupoles used to control the linear chromaticity $Q'$. The right plot can be used
-    to relate the RDT amplitude to a specific $Q'$ value.}
+    of the sextupoles used to control the linear chromaticity $Q'$. This two-plot combination is
+    only valid for a certain LHC configuration.}
     \label{fig:decapoles:sextupoles_k3_f1004}
 \end{figure}
 
 
-To confirm what is observed in simulations, measurements were performed by varying $Q'$ and kicking
-the beam with the AC-Dipole. Limited by losses, up to three measurements with distinct $Q'$ were
-taken, as shows \cref{fig:decapoles:rdts:measured_f1004_from_sextupoles}.
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=0.85\textwidth]{./images/f1004/f1004x_q2_q10_q15.pdf}
-    \caption{Measured change of the decapolar RDT $f_{1004}$ depending of the desired linear
-    chromaticity $Q'$ generated by sextupoles. It is to be noted that the vertical axis is one
-    order of magnitude higher than the previous simulations' plot.
-    }
-    \label{fig:decapoles:rdts:measured_f1004_from_sextupoles}
-\end{figure}
-
-Like in simulations, it is observed that an increase in $Q'$ translates to an increase in 
-$|f_{1004}|$. The scale of the amplitude is though one order of magnitude higher than that of
-simulations. An offset for all measurements could be explained by non-included field-errors. The
-shift between them however should be similar between machine and simulations, this could be
-due by the interaction of the sextupolar fields with octupoles, as detailed in the following
-section. More data points with varying $Q'$ at similar kick amplitudes would be required to further
-investigate.
 
 
 % ------- Sextupole + Octupole ----------
-\subsubsection{\review{Sextupoles and Octupoles}}
+\subsubsection{\review{Combination Sextupoles and Octupoles}}
 
 
 At the second order of the BCH expansion, the combination of a sextupole and an octupole yields a
 decapolar-like expression.
-Like sextupoles, octupoles are used in operation, thus contributing to decapolar fields. This
+Like sextupoles, octupoles are used in operation, thus contributing to decapolar RDTs. This
 happens amongst other when correcting the second order chromaticity $Q''$ and most importantly with
-the Landau Octupoles, which are powered to high strengths at injection energy to introduce Landau
-damping~\cite{gareyte_landau_1997}.
+the Landau Octupoles, which are powered to high strengths at high strengths through the whole LHC
+cycle to introduce Landau damping~\cite{gareyte_landau_1997}.
 Derivation of such a combination can be found in
 \cref{appendix:transfer_map:sextupole_and_octupole}. The resulting Hamiltonian indeed is similar to
 the terms of a decapole, dropping the $p_{x,y}$ terms for readability:
@@ -344,23 +386,9 @@ making octupoles a large contributor to the decapolar fields.
     \label{fig:decapoles:rdts:simulation_mo_powered}
 \end{figure}
 
-While decapoles are expected to be the main contributors to decapolar fields, other strong sources
-can indeed be identified. \Cref{fig:decapoles:rdts:contributions} shows the average amplitude of the
-RDT $f_{1004}$ depending on the error sources introduced in the simulations. A large contribution
-comes from the octupolar errors in the main dipoles, being actually larger than the decapolar errors
-in those magnets.
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[width=0.8\textwidth]{./images/f1004/f1004_several_factors.pdf}
-    \caption{Simulation of the amplitude of the decapolar RDT $f_{1004}$ depending on the field
-             errors applied on main dipoles as well as coupling ($C^-$). While it is apparent that
-             some multipolar errors drive the resonance higher, some combinations actually seem to
-             cancel each other.}
-    \label{fig:decapoles:rdts:contributions}
-\end{figure}
-
-\begin{wraptable}{r}{0.4\textwidth}
+%\begin{wraptable}{r}{0.4\textwidth}
+\begin{table}[!htb]
     \centering
     \begin{tabular}{rr}
     \toprule
@@ -374,7 +402,42 @@ in those magnets.
     \end{tabular}
     \caption{RMS of $|f_{1004}|$ depending on the factor of the $Q''$ corrections.}
     \label{table:decapoles:corrections_dq2_f1004_rms}
-\end{wraptable}
+\end{table}
+
+The large RDT shifts due tu octupoles are relevant to the operation of the LHC, as
+resonances can be greatly deteriorated, especially when powering landau octupoles.
+A better understanding of the interaction between Landau octupoles and octupolar correctors could
+lead to improved corrections in not only octupolar but also decapolar fields in the future.
+
+
+
+% ------- Measurement ----------
+\FloatBarrier
+\subsubsection{\review{Experimental Measurements}}
+
+To confirm what is observed in simulations, measurements were performed by varying $Q'$ and kicking
+the beam with the AC-Dipole. Limited by losses, up to three measurements with distinct $Q'$ were
+taken, as shows \cref{fig:decapoles:rdts:measured_f1004_from_sextupoles}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.85\textwidth]{./images/f1004/f1004x_q2_q10_q15.pdf}
+    \caption{Measured change of the decapolar RDT $f_{1004}$ depending of the desired linear
+    chromaticity $Q'$ generated by sextupoles. It is to be noted that the vertical axis is one
+    order of magnitude higher than the previous simulations' plot.
+    }
+    \label{fig:decapoles:rdts:measured_f1004_from_sextupoles}
+\end{figure}
+
+Like in simulations, it is observed that an increase in $Q'$ translates to an increase in 
+$|f_{1004}|$. The observed scale of the amplitude is though one order of magnitude higher than that
+of simulations. An offset for all measurements could be explained by non-included field-errors. The
+shift between them however should be similar between machine and simulations, this could be due by
+the interaction of the sextupolar fields with octupoles, as detailed in the following section. 
+%More data points with varying $Q'$ at similar kick amplitudes would be required to further
+%investigate.
+
+% ====
 
 Measurements were performed to confirm and quantify the effect of octupoles coupled with sextupoles
 on the decapolar fields. Previous corrections, aimed at correcting the second order chromaticity
@@ -391,7 +454,6 @@ corrections at factors $-10$, $-4$, $-1$ and $0$.
     \label{decapoles:rdts:measured_f1004_mco}
 \end{figure}
 
-
   
 \cref{table:decapoles:corrections_dq2_f1004_rms} shows the RMS of the amplitude of this RDT for the 
 various configurations. Similar to the shift observed when powering the landau octupoles in
@@ -399,43 +461,103 @@ simulations, the shift is of one order of magnitude between factors $-0$ and $-1
 with landau octupoles were also attempted but losses made it impossible to obtain high enough
 amplitudes to correctly measure the RDT.
 
-Simulated and observed large shifts due tu octupoles are relevant to the operation of the LHC, as
-resonances can be greatly deteriorated, especially when powering landau octupoles.
-A better understanding of the interaction between Landau octupoles and octupolar correctors could
-lead to improved corrections in not only octupolar but also decapolar fields in the future.
+
+
+
+%% ---------------------------------------
+%%        Higher Order Contribution
+%% ---------------------------------------
+%\subsection{\review{Feed-Down Contributions}}
+%
+%% Measurements in 
+%% /afs/cern.ch/work/m/mlegarr2/public/beta_beat_output/2024-05-21
+%
+%To produce collisions at top energy, \textit{crossing angles} are introduced via the orbit
+%correctors located in the triplets, before the separation dipoles and the matching section of the
+%interaction regions (\texttt{MCBX}, \texttt{MCBY} and \texttt{MCBC})~\cite{de_maria_lhc_2008}. Those
+%collisions happen with a small $\beta*$, currently 30cm, requiring strong quadrupolar fields from
+%the triplets.
+%
+%At such $\beta$, those triplets also generate strong dodecapolar field errors. Because of the
+%crossing-angles, feed-down appears and lower-order fields can be observed.
+%Such feed-down to decapolar fields was observed during the first commissioning of Run~3, in
+%2022~\cite{maclean_prospects_2022}.
+%\Cref{fig:decapoles:f1004_from_feeddown} shows how the RDT $f_{1004}$, normally affected by
+%decapoles, varies with the application of crossing angles.
+%
+%\begin{figure}[!htb]
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{./images/f1004x_feed-down_b6_triplets.pdf}
+%    \caption{Varying amplitude of the decapolar RDT $f_{1004}$ at top energy depending on the
+%    activation or not of the crossing angle at the IP. Offsets in orbit create feed-down from higher
+%    orders.}
+%    \label{fig:decapoles:f1004_from_feeddown}
+%\end{figure}
+%
+%Such a contribution is though not expected at injection energy, as the triplets aren't powered a
+%much as at top energy, $\beta*$ being set at around $10$m
 
 
 
 
-% ---------------------------------------
-%        Higher Order Contribution
-% ---------------------------------------
-\subsection{\review{Feed-Down Contributions}}
+% ===== Replicating Contribution
+\subsection{\review{Replicating the Landau Octupoles Contribution}}
 
-% Measurements in 
-% /afs/cern.ch/work/m/mlegarr2/public/beta_beat_output/2024-05-21
+\begin{table}[!htb]
+    \centering
+    \begin{tabular}{rr}
+        \toprule
+        $\Delta K_5$         & RMS $|f_{1004}|$ \\
+        \midrule
+        $0$                  &            $618,947$ \\
+        $\pm10500$             &         $17,566,377$ \\
+        $\mp10500$             &         $17,623,867$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{RMS of $|f_{1004}|$ relative to the powering scheme of decapolar correctors.}
+    \label{table:decapoles:impact:rdt_amplitude}
+\end{table}
 
-To produce collisions at top energy, \textit{crossing angles} are introduced via the orbit
-correctors located in the triplets, before the separation dipoles and the matching section of the
-interaction regions (\texttt{MCBX}, \texttt{MCBY} and \texttt{MCBC})~\cite{de_maria_lhc_2008}. Those
-collisions happen with a small $\beta*$, currently 30cm, requiring strong quadrupolar fields from
-the triplets.
+As seen previously in \cref{fig:decapoles:rdts:tune_diagram}, the resonance $1Q_x - 4Q_y$ passes
+through the beam in tune space, deteriorating the lifetime of the nearby particles.
+In order to measure the impact of this resonance on the beam, a knob was created, alternating the 
+current of all decapole correctors in the machine arc by arc. Such a powering scheme has no impact
+on chromaticity as the sum of the strengths $K_5$ is zero. Rather, the RDT $f_{1004}$ is impacted.
+Is it to be noted that this is not a correction, but purely a way to artificially increase the RDT
+in order to quantify the effect of the resonance.
 
-At such $\beta$, those triplets also generate strong dodecapolar field errors. Because of the
-crossing-angles, feed-down appears and lower-order fields can be observed.
-Such feed-down to decapolar fields was observed during the first commissioning of Run~3, in
-2022~\cite{maclean_prospects_2022}.
-\Cref{fig:decapoles:f1004_from_feeddown} shows how the RDT $f_{1004}$, normally affected by
-decapoles, varies with the application of crossing angles.
+Starting with nominals corrections for $Q'''$ corrections, a delta of $\pm 10500 K_5$ is applied on
+each decapolar correctors. \Cref{fig:decapoles:impact:alternating_knob} shows the response of the
+real part of the RDT for this scheme and its inverse. The amplitude of the RDT is on a similar level
+as the shift is significantly larger than the original level of the RDT.
+\Cref{table:decapoles:impact:rdt_amplitude} indicates the amplitude of the RDT created with each
+knob value.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=0.9\textwidth]{./images/f1004x_feed-down_b6_triplets.pdf}
-    \caption{Varying amplitude of the decapolar RDT $f_{1004}$ at top energy depending on the
-    activation or not of the crossing angle at the IP. Offsets in orbit create feed-down from higher
-    orders.}
-    \label{fig:decapoles:f1004_from_feeddown}
+    \includegraphics[width=0.8\textwidth]{./images/f1004/f1004x_knob_alt_lifetime_real.pdf}
+    \caption{Measured real part of the RDT $f_{1004}$ depending on the powering scheme of the decapolar
+    correctors.}
+    \label{fig:decapoles:impact:alternating_knob}
 \end{figure}
 
-Such a contribution is though not expected at injection energy, as the triplets aren't powered a
-much as at top energy, $\beta*$ being set at around $10$m.
+In order to measure the lifetime, a long period must be allocated as the signal returned from
+monitors can be jittery. \Cref{fig:decapoles:impact:b5_lifetime} shows this lifetime depending on
+the decapolar strength scheme applied. The current of only one circuit is shown for readability.
+A current of $\approx 230$ corresponds to a knob value of $+10500$ while a current of $-45$
+corresponds to $0$.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./images/b5_lifetime.pdf}
+    \caption{Measured lifetime of Beam 2 upon application of two different powering schemes for
+    decapolar correctors. One trim keeps the RDT at a low amplitude while the other greatly
+    amplifies it.}
+    \label{fig:decapoles:impact:b5_lifetime}
+\end{figure}
+
+It is clear from this measurement that a large RDT decreases the lifetime of the beam.
+The first pair of trim sees the average lifetime decreasing of $0.31 \pm 0.03$ hours, while the
+second one sees a decrease of $0.36 \pm 0.03$ hours. This observed decrease of 20 minutes accounts
+for $10\%$ of the beam lifetime at injection energy.
+
