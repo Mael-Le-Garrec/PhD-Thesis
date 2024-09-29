@@ -72,11 +72,22 @@ the decapolar correctors is a good way to correct the related resonances.
 Being linear with the strength of the correctors, the RDT can be corrected via a response matrix,
 as previously detailed in \cref{correction_principle:response_matrix}.
 
-Measurements were conducted to establish a baseline for the amplitude of the RDT without decapolar
-correctors and with the nominal FiDeL corrections. Corrections were then attempted based on the
-measurements obtained with the nominal FiDeL settings and were subsequently applied on top of these
-measurements.
-%
+Measurements were conducted to establish a baseline for the amplitude of the RDT without octupolar
+or decapolar correctors and with the nominal FiDeL corrections. Such measurement is shown in
+\cref{fig:decapoles:rdt:b1_fidel_vs_bare} for Beam 1, similar results are observed for Beam 2. It
+can be there observed that the FiDeL corrections degrade the RDT.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.9\textwidth]{./images/f1004/f1004x_corrections_B1_fidel_vs_bare.pdf}
+    \caption{Amplitude of the decapolar RDT $f_{1004}$ measured with nominal FiDeL corrections for 
+    $Q'''$ and without.}
+    \label{fig:decapoles:rdt:b1_fidel_vs_bare}
+\end{figure}
+
+
+Corrections were then attempted based on the measurements obtained with the nominal FiDeL settings
+and were subsequently applied on top of these measurements.
 The strength of the decapolar correctors is shown in \cref{tab:decapoles:rdts:correction_f1004_k5}
 for the FiDeL settings, the delta applied on top, and the final correctors values.
 
@@ -116,21 +127,21 @@ for the FiDeL settings, the delta applied on top, and the final correctors value
 \end{table}
 
 This RDT correction also serves as a partial $Q'''$ correction. To fully correct $Q'''$ indeed
-approximately requires a strength of $+13,000 K_5$ distributed amongst the correctors. Therefore,
+approximately requires a strength of $+13,000 \;K_5$ distributed amongst the correctors. Therefore,
 this new approach reduces $Q'''$ by about $70\%$ compared to the previous method. The chromatic
 amplitude detuning terms are also expected to be decreased.
 Result of those measurements, as well as the inverse of the correction, are shown in 
-\cref{fig:decapoles:rdts:f1004_correction_B2}
+\cref{fig:decapoles:rdts:f1004_correction_B2}.
 
 \begin{figure}[!htb]
     \centering
-    \begin{subfigure}{1\textwidth}
-        \includegraphics[width=0.9\textwidth]{./images/f1004/f1004x_corrections_B1.pdf}
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=1\textwidth]{./images/f1004/f1004x_corrections_B1.pdf}
         \caption{$|f_{1004}|$ for Beam 1}
-        \vspace{0.5cm}
     \end{subfigure}
-    \begin{subfigure}{1\textwidth}
-        \includegraphics[width=0.9\textwidth]{./images/f1004/f1004x_corrections_B2.pdf}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=1\textwidth]{./images/f1004/f1004x_corrections_B2.pdf}
         \caption{$|f_{1004}|$ for Beam 2}
     \end{subfigure}
     \caption{Measured $f_{1004}$ with decapolar correctors powered off, nominal settings, and
