@@ -14,8 +14,8 @@ It stores a 7 GeV electron beam in the High-Energy Ring (HER) and a 4 GeV positr
 Low-Energy Ring (LER), which collide at a single interaction point where the Belle II experiment is
 conducted. SuperKEKB currently holds the world record for instantaneous luminosity at $4.71 \times
 10^{34} \, \text{cm}^{-2}\text{s}^{-1}$~\cite{zhou_luminosity_2023}, surpassing the previous record
-set by the LHC.  With a circumference of approximately 3 km, it is the largest lepton collider in
-operation.  Similar to CERN, KEK is a large complex housing multiple accelerators and facilities,
+set by the LHC. With a circumference of approximately 3 km, it is the largest lepton collider in
+operation. Similar to CERN, KEK is a large complex housing multiple accelerators and facilities,
 the injector chain for SuperKEKB being shown in \cref{fig:kek:layout_superkekb}.
 
 \begin{figure}[!htb]
@@ -74,30 +74,30 @@ calibration.
 \FloatBarrier
 \subsection{\review{Turn-by-Turn}}
 
-In SuperKEKB, 68 and 70 BPMs in the HER and LER rings are capable of recording turn-by-turn
-orbit data, typically capturing several thousand turns in both transverse planes. Turn-by-turn measurements
-are usually performed with a single bunch, with currents ranging from 0.2 mA to 1.5 mA. The beam can
-be excited using three different methods.
+In SuperKEKB, 68 and 70 BPMs in the HER and LER rings are capable of recording turn-by-turn orbit
+data, typically capturing several thousand turns in both transverse planes. Turn-by-turn
+measurements are usually performed with a single bunch, with currents ranging from 0.2 mA to 1.5 mA.
+The beam can be excited using three different methods.
 
-First, an Injection Kicker (IK) delivers a single horizontal kick, causing the beam to oscillate to large 
-amplitudes. This amplitude then damps
-due to synchrotron radiation. The damping times for the positron and electron rings are 46 ms and 53
-ms, corresponding to 4600 and 5300 turns, respectively~\cite{keintzel_jacqueline_beam_2022}.
-However, the IK only provides horizontal kicks, limiting the precision of vertical optics
-measurements.
+First, an Injection Kicker (IK) delivers a single horizontal kick, causing the beam to oscillate to
+large amplitudes. This amplitude then damps due to synchrotron radiation. The damping times for the
+positron and electron rings are 46 ms and 53 ms, corresponding to 4600 and 5300 turns,
+respectively~\cite{keintzel_jacqueline_beam_2022}. However, the IK only provides horizontal kicks,
+limiting the precision of vertical optics measurements.
 
-In contrast, the Phase-Locked Loop (PLL) method allows continuous excitation of the beam in both horizontal and vertical planes. The PLL tracks the natural tune of the beam and drives it
-at the corresponding frequency. A key advantage of the PLL system is that it can excite both planes
+In contrast, the Phase-Locked Loop (PLL) method allows continuous excitation of the beam in both
+horizontal and vertical planes. The PLL tracks the natural tune of the beam and drives it at the
+corresponding frequency. A key advantage of the PLL system is that it can excite both planes
 simultaneously, enabling measurements of transverse coupling and other resonance-driving terms
-(RDTs). The PLL is has so far been the only method used to perform vertical turn-by-turn measurements, and has 
-not been utilized in this thesis.
+(RDTs). The PLL is has so far been the only method used to perform vertical turn-by-turn
+measurements, and has not been utilized in this thesis.
 %although data acquisition must be started manually, and a minimum bunch current of 0.5 mA is
 %required. This method was not used for the data discussed in this thesis.
-To induce oscillations in the vertical plane, the 
-beam can be injected with an orbit offset. This vertical offset causes the beam to oscillate as if 
-it had received a single kick. The oscillations then damp, and a new beam must be injected to repeat 
-the measurement. This method has been successfully used for the first time at SuperKEKB to measure vertical
-optics using turn-by-turn data.
+To induce oscillations in the vertical plane, the beam can be injected with an orbit offset. This
+vertical offset causes the beam to oscillate as if it had received a single kick. The oscillations
+then damp, and a new beam must be injected to repeat the measurement. This method has been
+successfully used for the first time at SuperKEKB to measure vertical optics using turn-by-turn
+data.
 
 Once the turn-by-turn data is recorded, the standard analysis procedures outlined in
 \cref{section:opticcs_meas} are applied. Specifically, the frequency spectrum is calculated before
@@ -130,9 +130,9 @@ A typical turn-by-turn signal is depicted in \cref{fig:kek:tbt_signal}.
 
 The graphical user interface (GUI) used for optics analysis on the LHC, based on OMC3
 \cite{omc-team_omc3_2021}, has been updated to support the HER and LER rings of SuperKEKB. This tool
-is essential for the rapid and efficient cleaning of outliers, noisy BPMs, and for detecting spectral
-lines. Utilizing the latest version of the GUI provides access to recent bug fixes and improvements,
-enhancing usability and functionality. A typical use case is illustrated in
+is essential for the rapid and efficient cleaning of outliers, noisy BPMs, and for detecting
+spectral lines. Utilizing the latest version of the GUI provides access to recent bug fixes and
+improvements, enhancing usability and functionality. A typical use case is illustrated in
 \cref{fig:kek:gui_bad_bpms}, where BPMs that provide erroneous data across multiple measurements can
 be easily identified.
 
@@ -161,11 +161,11 @@ commissioning phase of SuperKEKB and are presented in \cref{tab:superkekb:config
 
 Several configurations of the machine were measured using turn-by-turn acquisitions, as detailed in
 \cref{tab:superkekb:configurations}. The configurations with $\beta_y^* = 48.6$~mm in LER and
-$\beta_y^* = 81$~mm in HER are referred to as \textit{detuned}. Multiple kicks were performed for each
-configuration to increase measurement precision. Although additional measurements were taken,
-insufficient kick amplitude in some cases made it challenging to extract reliable linear optics
-data and are thus here not included. Specifically, vertical measurements are challenging to perform
-as oscillation amplitudes are often low due to the limited achievable injection offset. The low 
+$\beta_y^* = 81$~mm in HER are referred to as \textit{detuned}. Multiple kicks were performed for
+each configuration to increase measurement precision. Although additional measurements were taken,
+insufficient kick amplitude in some cases made it challenging to extract reliable linear optics data
+and are thus here not included. Specifically, vertical measurements are challenging to perform as
+oscillation amplitudes are often low due to the limited achievable injection offset. The low 
 vertical action often makes measurements noisy.
 
 \begin{table}
@@ -192,16 +192,16 @@ vertical action often makes measurements noisy.
   \label{tab:superkekb:configurations}
 \end{table}
 
-Both the \textit{detuned} and \text{8mm squeezed} optics are reliably measured for
-both rings. However, the vertical plane for the squeezed optics could not be measured
-in LER due to the absence of injection offset.
-\Cref{fig:kek:beating_ler_detuned} and \cref{fig:kek:beating_her_detuned} show the
-measurements taken with \textit{detuned} optics for LER and HER. For the squeezed optics, at 8mm, a
-comparison to the measurements performed via COD is done in \cref{fig:kek:beating_ler_squeezed} and
-\cref{fig:kek:beating_her_squeezed}, for LER and HER respectively.
-The agreement between the COD and the turn-by-turn techniques is a good indication of their robustness,
-the difference between the RMS difference of two methods being below 4\% for all measurements. The
-agreement found during these measurements is similar to that obtained in previous studies~\cite{keintzel_jacqueline_beam_2022}.
+Both the \textit{detuned} and \text{8mm squeezed} optics are reliably measured for both rings.
+However, the vertical plane for the squeezed optics could not be measured in LER due to the absence
+of injection offset.
+\Cref{fig:kek:beating_ler_detuned} and \cref{fig:kek:beating_her_detuned} show the measurements
+taken with \textit{detuned} optics for LER and HER. For the squeezed optics, at 8mm, a comparison to
+the measurements performed via COD is done in \cref{fig:kek:beating_ler_squeezed} and
+\cref{fig:kek:beating_her_squeezed}, for LER and HER respectively. The agreement between the COD
+and the turn-by-turn techniques is a good indication of their robustness, the difference between the
+RMS difference of two methods being below 4\% for all measurements. The agreement found during these
+measurements is similar to that obtained in previous studies~\cite{keintzel_jacqueline_beam_2022}.
 
 
 % ==== LER
@@ -302,15 +302,14 @@ A summary of the performed measurements and the RMS $\beta$-beating is given in
 \FloatBarrier
 \subsubsection{\review{Tune Stability}}
 
-To accurately measure linear and non-linear optics, reliable measurement of the tune is essential~\cite{thrane_measuring_2020}. Ensuring
-tune stability across consecutive kicks is needed to minimize measurement uncertainties and reflects
-the reproducibility of the machine. 
-Using a suitable kicker in the horizontal plane simplifies measurements, as indicated by the tune's 
-stability across varying kick strengths.
-\Cref{fig:kek:shots} illustrates the variation in tune from the first kick compared to subsequent
-kicks for both rings and planes.
-While reproducibility is poor in the vertical plane of the LER, all other
-measurements agree within few $10^{-3}$.
+To accurately measure linear and non-linear optics, reliable measurement of the tune is
+essential~\cite{thrane_measuring_2020}. Ensuring tune stability across consecutive kicks is needed
+to minimize measurement uncertainties and reflects the reproducibility of the machine. Using a
+suitable kicker in the horizontal plane simplifies measurements, as indicated by the tune's 
+stability across varying kick strengths. \Cref{fig:kek:shots} illustrates the variation in tune
+from the first kick compared to subsequent kicks for both rings and planes.
+While reproducibility is poor in the vertical plane of the LER, all other measurements agree within
+few $10^{-3}$.
 
 \begin{figure}[!htb]
     \centering
@@ -333,13 +332,13 @@ measurements agree within few $10^{-3}$.
 \FloatBarrier
 \subsubsection{\review{Amplitude Detuning in LER}}
 
-Measurement with higher kick amplitudes have been performed in the LER ring with \textit{detuned} optics.
-These measurements stand out compared to previous ones due to their larger action range.
-\Cref{fig:kek:ler_full_tune_ampdet} illustrates the various performed turn-by-turn measurements and their corresponding
-action.
-The tune is computed across each turn-by-turn measurement using a window of 200 turns, every 50 turns. A clear trend 
-emerges with the tune increasing with the amplitude of the kicks. Over time, the oscillations gradually
-dampen due to synchrotron radiation, and the tune reduces accordingly.
+Measurement with higher kick amplitudes have been performed in the LER ring with \textit{detuned}
+optics. These measurements stand out compared to previous ones due to their larger action range.
+\Cref{fig:kek:ler_full_tune_ampdet} illustrates the various performed turn-by-turn measurements and
+their corresponding action.
+The tune is computed across each turn-by-turn measurement using a window of 200 turns, every 50
+turns. A clear trend emerges with the tune increasing with the amplitude of the kicks. Over time,
+the oscillations gradually dampen due to synchrotron radiation, and the tune reduces accordingly.
 
 \begin{figure}[!htb]
     \centering
@@ -350,13 +349,13 @@ dampen due to synchrotron radiation, and the tune reduces accordingly.
     \label{fig:kek:ler_full_tune_ampdet}
 \end{figure}
 
-The variation of the horizontal tune with the horizontal kick amplitude is related to the
-amplitude detuning term $\frac{\partial Q_x}{\partial J_x}$. Its value can be retrieved by fitting
-the tune to the action. \Cref{fig:kek:ler_ampdet} shows the various kicks along with a fit and a
-comparison to the model. The measured value, $6500 \pm 500\;\text{m}^{-1}$ is one order of magnitude higher than
-that simulated, of $600\;\text{m}^{-1}$. This observed discrepancy indicates possible un-modeled octupolar-like sources.
-Such a discrepancy, although not as large, already has been observed with different
-optics~\cite{keintzel_jacqueline_beam_2022}.
+The variation of the horizontal tune with the horizontal kick amplitude is related to the amplitude
+detuning term $\frac{\partial Q_x}{\partial J_x}$. Its value can be retrieved by fitting the tune to
+the action. \Cref{fig:kek:ler_ampdet} shows the various kicks along with a fit and a comparison to
+the model. The measured value, $6500 \pm 500\;\text{m}^{-1}$ is one order of magnitude higher than
+that simulated, of $600\;\text{m}^{-1}$. This observed discrepancy indicates possible un-modeled
+octupolar-like sources. Such a discrepancy, although not as large, already has been observed with
+different optics~\cite{keintzel_jacqueline_beam_2022}.
 
 \begin{figure}[!htb]
     \centering
@@ -380,8 +379,8 @@ their associated line amplitude in the frequency spectrum. To reliably measure R
 line amplitudes must be clearly distinguishable and above the noise level for every BPM. This can be
 challenging to achieve and often requires high amplitude kicks.
 For example, lines in the vertical spectrum, attributed to octupoles, were previously
-observed~\cite{keintzel_jacqueline_beam_2022} at SuperKEK but could not lead to a successful RDT measurement due
-to kick amplitudes.
+observed~\cite{keintzel_jacqueline_beam_2022} at SuperKEK but could not lead to a successful RDT
+measurement due to kick amplitudes.
 
 However, new measurements were taken with a different working point in order to be closer to the 
 resonances with the hope of increasing their impact on particle motion. A resonance diagram,
@@ -408,20 +407,19 @@ each BPM. Additionaly, lines near the vertical tune are attributed to the synchr
     \label{fig:kek:rdt_spectrum_HER}
 \end{figure}
 
-Successful measurements of sextupolar RDTs were indeed obtained. Specifically,
-the RDTs $f_{3000,x}$ in LER and $f_{1020,y}$ in HER were measured using the
-\textit{detuned} optics configuration. While additional sextupolar lines were clearly visible in
-both the horizontal and vertical spectra, no clear RDT measurements could be extracted as they were not seen
-for each BPM. The measured
+Successful measurements of sextupolar RDTs were indeed obtained. Specifically, the RDTs $f_{3000,x}$
+in LER and $f_{1020,y}$ in HER were measured using the \textit{detuned} optics configuration. While
+additional sextupolar lines were clearly visible in both the horizontal and vertical spectra, no
+clear RDT measurements could be extracted as they were not seen for each BPM. The measured
 amplitudes, along with comparisons to the model, are presented in \cref{fig:kek:rdt_f3000x_LER} and
-\cref{fig:kek:rdt_f1020y_HER}. Notably, both measurements exhibit discrepancies with the model. 
-The average amplitude of $f_{1020}$ in the vertical plane for HER is measured at $21\;\text{m}^{-1/2}$, 
-compared to a modeled amplitude of $7\;\text{m}^{-1/2}$. Similarly, for $f_{3000}$, the average values 
-measured in the horizontal plane for LER are $2\;\text{m}^{-1/2}$ and $1.3\;\text{m}^{-1/2}$. These
-discrepancies remain largely unexplored and may arise from
-decoherence effects~\cite{tomas_direct_2003} that were not accounted for in the analysis software. 
+\cref{fig:kek:rdt_f1020y_HER}. Notably, both measurements exhibit discrepancies with the model.  The
+average amplitude of $f_{1020}$ in the vertical plane for HER is measured at $21\;\text{m}^{-1/2}$, 
+compared to a modeled amplitude of $7\;\text{m}^{-1/2}$. Similarly, for $f_{3000}$, the average
+values measured in the horizontal plane for LER are $2\;\text{m}^{-1/2}$ and $1.3\;\text{m}^{-1/2}$.
+These discrepancies remain largely unexplored and may arise from decoherence
+effects~\cite{tomas_direct_2003} that were not accounted for in the analysis software. 
 Additionally, these could also arise from contributions from other multipoles through feed-down, as
-observed in the LHC, or  unknown sextupolar sources. The measured spikes in the LER RDT are not yet 
+observed in the LHC, or unknown sextupolar sources. The measured spikes in the LER RDT are not yet 
 explained, but could come from a badly reconstructed phase space due to non-optimal phase advances 
 between BPMs in that region or inverted BPM plane signal~\cite{frank2024private}.
 
@@ -449,14 +447,15 @@ between BPMs in that region or inverted BPM plane signal~\cite{frank2024private}
 \FloatBarrier
 \subsection{\review{Chromaticity}}
 
-Chromaticity measurements were performed using the method of varying the RF frequency over large ranges while
-recording the tune via pickups, as described in \cref{subsection:optics_corrections_chromaticity}. While this method has now been made standard at the LHC, it
-is not used on the SuperKEKB rings, where only a few data points are collected over a small momentum offset range.
+Chromaticity measurements were performed using the method of varying the RF frequency over large
+ranges while recording the tune via pickups, as described in
+\cref{subsection:optics_corrections_chromaticity}. While this method has now been made standard at
+the LHC, it is not used on the SuperKEKB rings, where only a few data points are collected over a
+small momentum offset range.
 %However, it provides the ability to measure the tune over a broader range of momentum offsets. 
 %The tune was previously measured with turn-by-turn data, using the Injection %Kicker~\cite{keintzel_jacqueline_beam_2022} to produce fast kicks~\cite{keintzel_jacqueline_beam_2022} that limit losses. 
-Similar to the LHC at injection energy, the Lorentz
-factor $\gamma^{-2}$ is small compared to the momentum compaction factor $\alpha_c$ and can
-therefore be neglected.
+Similar to the LHC at injection energy, the Lorentz factor $\gamma^{-2}$ is small compared to the
+momentum compaction factor $\alpha_c$ and can therefore be neglected.
 \Cref{fig:kek:chroma_procedure} illustrates the RF frequency method.
 
 \begin{figure}[!htb]
@@ -466,8 +465,8 @@ therefore be neglected.
     \label{fig:kek:chroma_procedure}
 \end{figure}
 
-Two measurements were taken with \textit{detuned} optics for the HER and LER rings and are shown 
-in \cref{fig:kek:chroma_HER_detuned} and \cref{fig:kek:chroma_LER_detuned}. The values of the fitted
+Two measurements were taken with \textit{detuned} optics for the HER and LER rings and are shown in
+\cref{fig:kek:chroma_HER_detuned} and \cref{fig:kek:chroma_LER_detuned}. The values of the fitted
 chromaticity function are given in \cref{tab:kek:her_chroma_detuned} and
 \cref{tab:kek:ler_chroma_detuned} for HER and LER respectively. In order to allow for a better
 comparison the tune and the linear chromaticity are taken from the the measurements.
@@ -539,10 +538,10 @@ comparison the tune and the linear chromaticity are taken from the the measureme
 \end{table}
 
 It can be noted that most of the measured third and fourth-order chromaticities agree well with the
-model, whereas the second-order chromaticity appears to deviate. Discrepancies in $Q''$ were
-already observed in 2022 with different optics~\cite{keintzel_jacqueline_beam_2022}. This
-discrepancy could arise from octupolar sources, higher-order contributions from sextupoles or quadrupoles
-and feed-down.
+model, whereas the second-order chromaticity appears to deviate. Discrepancies in $Q''$ were already
+observed in 2022 with different optics~\cite{keintzel_jacqueline_beam_2022}. This discrepancy could
+arise from octupolar sources, higher-order contributions from sextupoles or quadrupoles and
+feed-down.
 
 
 
