@@ -19,6 +19,7 @@ operation. Similar to CERN, KEK is a large complex housing multiple accelerators
 the injector chain for SuperKEKB being shown in \cref{fig:kek:layout_superkekb}.
 
 \begin{figure}[!htb]
+    \centering
     \includegraphics[width=0.8\textwidth]{./images/kek/layout_kekb.jpg}
     \caption{Schematic drawing of the accelerator complex at KEK~\cite{noauthor_operation_2024}.}
     \label{fig:kek:layout_superkekb}
@@ -128,13 +129,15 @@ A typical turn-by-turn signal is depicted in \cref{fig:kek:tbt_signal}.
 %------------------------------
 \subsection{\review{OMC3 Graphical User Interface}}
 
-The graphical user interface (GUI) used for optics analysis on the LHC, based on OMC3
-\cite{omc-team_omc3_2021}, has been updated to support the HER and LER rings of SuperKEKB. This tool
-is essential for the rapid and efficient cleaning of outliers, noisy BPMs, and for detecting
-spectral lines. Utilizing the latest version of the GUI provides access to recent bug fixes and
-improvements, enhancing usability and functionality. A typical use case is illustrated in
-\cref{fig:kek:gui_bad_bpms}, where BPMs that provide erroneous data across multiple measurements can
-be easily identified.
+A crucial step in the analysis process is identifying faulty or noisy BPMs from the turn-by-turn
+data. This task is often time consuming and susceptible to human error. In the LHC, a Graphical User
+Interface (GUI) is employed to inspect the turn-by-turn signals before applying an FFT, which
+reveals the spectral lines associated with the tunes. This tool plays a key role in the efficient
+cleaning of outliers and noisy BPMs. As part of this thesis, the GUI has been updated to support
+both the HER and LER rings. Using the latest version of the GUI provides access to recent bug fixes
+and improvements, enhancing both usability and functionality. An example use case is shown in
+\cref{fig:kek:gui_bad_bpms}, where BPMs delivering incorrect data across multiple measurements can
+be easily detected.
 
 \begin{figure}[!htb]
     \centering
@@ -192,9 +195,9 @@ vertical action often makes measurements noisy.
   \label{tab:superkekb:configurations}
 \end{table}
 
-Both the \textit{detuned} and \text{8mm squeezed} optics are reliably measured for both rings.
-However, the vertical plane for the squeezed optics could not be measured in LER due to the absence
-of injection offset.
+Both the \textit{detuned} and \text{8mm squeezed} optics are reliably measured for both rings, with
+the exception of the vertical plane for the squeezed optics in LER due to the absence of injection
+offset.
 \Cref{fig:kek:beating_ler_detuned} and \cref{fig:kek:beating_her_detuned} show the measurements
 taken with \textit{detuned} optics for LER and HER. For the squeezed optics, at 8mm, a comparison to
 the measurements performed via COD is done in \cref{fig:kek:beating_ler_squeezed} and
