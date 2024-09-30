@@ -8,15 +8,6 @@ certain terms. Some resonances, described in~\cref{appendix:rdts}, are unique to
 when considering no too high orders. Those resonances, provided that they are sufficiently strong
 and the beam close to them, can be measured via their RDTs.
 
-Of interest to the LHC Operation, is the RDT $f_{1004}$, driving the resonance $1Q_x - 4Q_y$.
-It can be seen in the horizontal frequency spectrum at $-4Q_y$ with an amplitude dependence on
-$J_y^2$. 
-Figure~\cref{fig:decapoles:rdts:tune_diagram} shows a frequency
-map~\cite{yannis_papaphilippou_detecting_2014} of a simulation including decapolar field errors,
-where their impact on the beam is easily noticeable. The red particles evolving close to the
-resonance are affected by it and are subject to large tune shifts. Eventually, those particles are 
-lost when their amplitude becomes too large.
-
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.8\textwidth]{./images/tune_diagram_f1004.pdf}
@@ -27,13 +18,16 @@ lost when their amplitude becomes too large.
     \label{fig:decapoles:rdts:tune_diagram}
 \end{figure}
 
-%Measuring turn-by-turn data without using any excitation is not a viable option as amplitudes are
-%not large enough. Spectral lines are indeed usually impossible to discern from the noise floor, 
-%making RDTs not measurable.
-%Measurements are hence taken with an AC-Dipole, introducing quadrupolar-like field errors in the 
-%linear regime~\cite{carlier_nonlinear_2020} and more complex effects in the non linear regime.
-%In practice, those effects are neglected. \textit{Forced} RDTs are measured with an
-%AC-Dipole and treated as \textit{free} as no compensation is applied.
+Of particular interest to LHC operation is the resonance driving term (RDT) $f_{1004}$, which drives
+the resonance $1Q_x - 4Q_y$. This RDT appears in the horizontal frequency spectrum at $-4Q_y$ with
+an amplitude dependence on $J_y^2$. 
+Figure~\cref{fig:decapoles:rdts:tune_diagram} shows a frequency
+map~\cite{yannis_papaphilippou_detecting_2014} from a simulation that includes decapolar field
+errors, where their impact on the beam dynamics is clearly visible. Multiple particles were tracked
+under varying conditions within the bunch distribution. The color map represents tune diffusion over
+the course of the simulation, with blue indicating small diffusion and stable particle trajectories,
+while red represents large diffusion, suggesting unstable or chaotic trajectories that are unlikely
+to survive in a real machine.
 
 Measurements were taken for the first time in the LHC to observe the $f_{1004}$ RDT
 at injection energy. The frequency line of the resonance $1Q_x - 4Q_y$ is seen at $4Q_y$ in the
@@ -365,14 +359,12 @@ the terms of a decapole, dropping the $p_{x,y}$ terms for readability:
     \label{eq:decapoles:sextupole_octupole_b5}
 \end{equation}
 
-In order to assess the previous equation, simulations were run with several configurations.
-As seen previously, a combination of two sextupoles creates a decapolar-like field, varying their 
-field is thus not needed. Rather, a set of two configurations was run to check the impact of 
-octupoles alone. The first configuration is ran with all sextupoles of the machine
-turned off, while octupoles are powered. The second configuration turns off all sextupoles and
-octupoles. \Cref{fig:decapoles:rdts:sectupole_octupole_no_diff} shows the resulting RDT $f_{1004}$
-from these simulations. It is there apparent that varying octupoles without sextupoles does not have 
-any effect on this RDT.
+In order to assess the previous equation, simulations were run with several configurations.  A set
+of two configurations was run to check the impact of octupoles alone. The first configuration is ran
+with all sextupoles of the machine turned off, while octupoles are powered. The second configuration
+turns off all sextupoles and octupoles. \Cref{fig:decapoles:rdts:sectupole_octupole_no_diff} shows
+the resulting RDT $f_{1004}$ from these simulations. It is there apparent that varying octupoles
+without sextupoles does not have any effect on this RDT.
 
 \begin{figure}[!htb]
     \centering
