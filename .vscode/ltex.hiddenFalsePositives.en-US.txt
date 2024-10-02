@@ -1,0 +1,6 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QKEK, or the High Energy Accelerator Research Organization (Kō Enerugī Kasokuki Kenkyū Kikō), is a Japanese institution operating the country's largest particle physics laboratory, located in Tsukuba.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[1][1]./flipbook/frames/frame_[pgf][0.2] [1][1]./flipbook/frames/frame_[pgf][0.2]\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QTex Gyre Adventor  Tex Gyre Adventor [toc]\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qchapterthumb\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[background,outermargin,contents= ]chapterthumb\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qscrheadings chapterthumb @everystyle@ chapterthumb @everystyle@ chapterthumb\\E$"}

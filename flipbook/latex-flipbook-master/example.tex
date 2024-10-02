@@ -1,0 +1,29 @@
+\documentclass{scrbook}
+
+% Include the package
+\usepackage{flipbook}
+\usepackage[automark]{scrlayer-scrpage} % for headers and footers
+\usepackage{pgf}
+\usepackage{lipsum} % to generate sample text
+
+\cfoot{
+  %\labeledflipbookframe{../frames/frame_}[pgf][0.2]{c}{}{2em}%
+  \flipbookframe[1][0.5]{../frames/frame_}[pgf][0.2]
+  % start frame
+  % speed of the animation per page
+  % scale
+}
+\makeatother
+
+
+% ---
+
+\begin{document}
+
+\pagenumbering{arabic} % Make sure a page numbering scheme is explicitly set at the beginning.
+
+\chapter{Lorem Ipsum}
+
+\lipsum[1-150]
+
+\end{document}
