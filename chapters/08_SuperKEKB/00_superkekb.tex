@@ -95,7 +95,7 @@ In contrast, the Phase-Locked Loop (PLL) method allows continuous excitation of 
 horizontal and vertical planes. The PLL tracks the natural tune of the beam and drives it at the
 corresponding frequency. A key advantage of the PLL system is that it can excite both planes
 simultaneously, enabling measurements of transverse coupling and other resonance-driving terms
-(RDTs). The PLL is has so far been the only method used to perform vertical turn-by-turn
+(RDTs). The PLL has so far been the only method used to perform vertical turn-by-turn
 measurements, and has not been utilized in this thesis.
 %although data acquisition must be started manually, and a minimum bunch current of 0.5 mA is
 %required. This method was not used for the data discussed in this thesis.
@@ -135,7 +135,7 @@ A typical turn-by-turn signal is depicted in \cref{fig:kek:tbt_signal}.
 \subsection{\review{OMC3 Graphical User Interface}}
 
 A crucial step in the analysis process is identifying faulty or noisy BPMs from the turn-by-turn
-data. This task is often time consuming and susceptible to human error. In the LHC, a Graphical User
+data. This task is often time-consuming and susceptible to human error. In the LHC, a Graphical User
 Interface (GUI) is employed to inspect the turn-by-turn signals before applying an FFT, which
 reveals the spectral lines associated with the tunes. This tool plays a key role in the efficient
 cleaning of outliers and noisy BPMs. As part of this thesis, the GUI has been updated to support
@@ -200,12 +200,12 @@ vertical action often makes measurements noisy.
   \label{tab:superkekb:configurations}
 \end{table}
 
-Both the \textit{detuned} and \text{8mm squeezed} optics are reliably measured for both rings, with
+Both the \textit{detuned} and \text{8~mm squeezed} optics are reliably measured for both rings, with
 the exception of the vertical plane for the squeezed optics in LER due to the absence of injection
 offset.
 \Cref{fig:kek:beating_ler_detuned} and \cref{fig:kek:beating_her_detuned} show the measurements
-taken with \textit{detuned} optics for LER and HER. For the squeezed optics, at 8mm, a comparison to
-the measurements performed via COD is done in \cref{fig:kek:beating_ler_squeezed} and
+taken with \textit{detuned} optics for LER and HER. For the squeezed optics, at 8~mm, a comparison
+to the measurements performed via COD is done in \cref{fig:kek:beating_ler_squeezed} and
 \cref{fig:kek:beating_her_squeezed}, for LER and HER respectively. The agreement between the COD
 and the turn-by-turn techniques is a good indication of their robustness, the difference between the
 RMS difference of two methods being below 4\% for all measurements. The agreement found during these
@@ -226,7 +226,7 @@ measurements is similar to that obtained in previous studies~\cite{keintzel_jacq
         \caption{Vertical beta-beating, RMS is $\approx 5\%$.}
     \end{subfigure}
     \caption{LER horizontal and vertical beta-beating for \textit{detuned} optics, reliably measured
-    during two different days. The vertical plane is noticeably noisier as oscillation amplitudes
+    during two different days. The vertical plane is noticeably noisier, as oscillation amplitudes
     are smaller.}
     \label{fig:kek:beating_ler_detuned}
 \end{figure}
@@ -234,7 +234,7 @@ measurements is similar to that obtained in previous studies~\cite{keintzel_jacq
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.7\linewidth]{images/kek/ler_20_22_bet_x.pdf}
-    \caption{LER horizontal beta-beating for \textit{8mm squeezed} optics, reliably measured during
+    \caption{LER horizontal beta-beating for \textit{8~mm squeezed} optics, reliably measured during
     two different days. The vertical plane is absent due to amplitudes being too low to reconstruct
     linear optics. A comparison to the beating measured via COD is made. RMS is $\approx 6\%$.}
     \label{fig:kek:beating_ler_squeezed}
@@ -255,7 +255,7 @@ measurements is similar to that obtained in previous studies~\cite{keintzel_jacq
         \caption{Vertical beta-beating, RMS is $\approx 8\%$.}
     \end{subfigure}
     \caption{HER horizontal and vertical beta-beating for \textit{detuned} optics. The vertical
-    plane is noticeably noisier as oscillation amplitudes are smaller.}
+    plane is noticeably noisier, as oscillation amplitudes are smaller.}
     \label{fig:kek:beating_her_detuned}
 \end{figure}
 
@@ -271,8 +271,8 @@ measurements is similar to that obtained in previous studies~\cite{keintzel_jacq
         \includegraphics[width=\linewidth]{images/kek/her_22_26_bet_y_unzoomed.pdf}
         \caption{Vertical beta-beating, RMS is $\approx 5\%$.}
     \end{subfigure}
-    \caption{HER horizontal and vertical beta-beating for \textit{8mm squeezed} optics. The vertical
-    plane is noticeably noisier as oscillation amplitudes are smaller. A comparison to the beating
+    \caption{HER horizontal and vertical beta-beating for \textit{8~mm squeezed} optics. The vertical
+    plane is noticeably noisier, as oscillation amplitudes are smaller. A comparison to the beating
     measured via COD is made.}
     \label{fig:kek:beating_her_squeezed}
 \end{figure}
@@ -287,9 +287,9 @@ $\beta$-beating.
         Ring & Configuration & $\beta$-b. rms H & $\beta$-b. rms V \\
         \midrule
         LER  &  Detuned      & 4\%              & 5\%   \\
-            &  Squeezed 8mm & 6\%              &       \\
+            &  Squeezed 8~mm & 6\%              &       \\
         HER  &  Detuned      & 6\%              & 8\%  \\
-            &  Squeezed 8mm & 7\%              & 5\%  \\
+            &  Squeezed 8~mm & 7\%              & 5\%  \\
         \bottomrule
     \end{tabular}
     \caption{Summary of the measured $\beta$-beating with squeezed and detuned optics in the HER
@@ -477,7 +477,7 @@ Two measurements were taken with \textit{detuned} optics for the HER and LER rin
 \cref{fig:kek:chroma_HER_detuned} and \cref{fig:kek:chroma_LER_detuned}. The values of the fitted
 chromaticity function are given in \cref{tab:kek:her_chroma_detuned} and
 \cref{tab:kek:ler_chroma_detuned} for HER and LER respectively. In order to allow for a better
-comparison the tune and the linear chromaticity are taken from the the measurements.
+comparison the tune and the linear chromaticity are taken from the measurements.
 
 \begin{figure}[!htb]
     \centering

@@ -4,3 +4,21 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qchapterthumb\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[background,outermargin,contents= ]chapterthumb\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qscrheadings chapterthumb @everystyle@ chapterthumb @everystyle@ chapterthumb\\E$"}
+{"rule":"WITH_THE_EXCEPTION_OF","sentence":"^\\QBoth the detuned and 8 mm squeezed optics are reliably measured for both rings, with the exception of the vertical plane for the squeezed optics in LER due to the absence of injection offset.\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QA81B2 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q Total \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q Strength of decapolar correctors with nominal FiDeL settings and after application of corrections aiming at reducing both the RDT \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QA12B2 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q RCD.\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QA12B1 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q RCD.\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QA23B1 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q RCD.\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QA45B1 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q RCD.\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QA34B1 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q RCD.\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QA67B1 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q RCD.\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QA81B1 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q Total \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q Beam 2 RCD.\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QA56B1 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q RCD.\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QA34B2 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q RCD.\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QA23B2 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q RCD.\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QA78B1 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q RCD.\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QA56B2 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q RCD.\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QA45B2 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q RCD.\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QA78B2 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q RCD.\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QA67B2 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q RCD.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qwhere sextupoles would be expected to contribute to decapolar RDTs at the third order, and a combination of sextupoles and octupoles to the second.\\E$"}

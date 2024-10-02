@@ -44,3 +44,5 @@ GeV
 Dodecapolar
 dodecapolar
 decaoctupoles
+icosapole
+crossterm
