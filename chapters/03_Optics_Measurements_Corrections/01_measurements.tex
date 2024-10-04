@@ -77,7 +77,7 @@ between two BPMs is simply their phase difference.
 % ------- Beta Beating
 \paragraph{\review{$\beta$-Beating}} 
 The $\beta$-beating can be reconstructed via the phase advance between BPMs. The computation
-involves using a model created via a simulation software such as MAD-X. The $beta$-function at a
+involves using a model created via a simulation software such as MAD-X. The $\beta$-function at a
 given BPM can be calculated from the measured phases of 3 BPMs denoted $i, j,
 k$~\cite{minty_measurement_2003},
 
@@ -171,7 +171,7 @@ planes $2J_x$ or $2J_y$.
 Resonance Driving Terms are measured in the LHC with varying AC-Dipole kick amplitudes. The
 amplitude of the resonance line of interest in the frequency spectrum can then be fitted to the
 corresponding action dependence of the RDT, as detailed in
-\cref{section:background:frequency_spectrum} and \ref{appendix:rdts}. As a reminder, the amplitude
+\cref{section:background:frequency_spectrum} and \cref{appendix:rdts}. As a reminder, the amplitude
 of the RDT will be given by,
 
 \begin{equation}
@@ -219,7 +219,7 @@ reliable data.
 %% --- Procedure ---
 %\subsubsection{\review{Procedure}}
 
-Contrary to the previously seen observables, chromaticity measurements are performed by varying
+Chromaticity measurements are performed by varying
 the RF frequency to induce a change of momentum offset $\delta$, while measuring the tune. The
 momentum offset $\delta$ being related to the RF frequency, the Lorentz factor $\gamma$ and the
 momentum compaction factor $\alpha_c$~\cite{keintzel_jacqueline_beam_2022}:
@@ -230,10 +230,10 @@ momentum compaction factor $\alpha_c$~\cite{keintzel_jacqueline_beam_2022}:
 \end{equation}
 
 In the LHC, the Lorentz factor $\gamma^{-2}$ is here negligible, as the energy is large even at
-injection.  At 450GeV, $\gamma^{-2} \approx 10^{-6}$, which is two orders of magnitude smaller than
+injection.  At 450 GeV, $\gamma^{-2} \approx 10^{-6}$, which is two orders of magnitude smaller than
 $\alpha_c$.
 
-During operation, where the linear chromaticity often needs to be measured, a sinusoid function is
+During operation, where the linear chromaticity often needs to be measured, a sinusoidal function is
 applied on the RF frequency. This induces a short range of momentum offset, but enough to measure
 the first order of the chromaticity function.
 For non-linear measurements, a larger range is required. In order to do so, a new procedure has been
@@ -242,7 +242,7 @@ between number of data points, precision of the tune estimate, and duration of t
 beam losses, registered by the BLMs are deemed too high, the frequency is reverted back to its
 nominal value in larger steps. Attaining the limits of the BLMs ensures a large momentum-offset
 range. The same procedure is then re-applied in the negative. \Cref{fig:measurements:rf_scan} shows
-a typical RF scan performed to measure chromaticity in the LHC.
+a typical RF scan performed to measure non-linear chromaticity in the LHC.
 
 \begin{figure}[H]
     \centering
@@ -265,6 +265,6 @@ analysis of chromaticity measurements.
 The Non-Linear Chromaticity GUI~\cite{m_le_garrec_non-linear_2022} showcases new analysis techniques
 using the raw signal from the BBQ system along with custom signal cleaning that are detailed later
 on in \cref{chapter:high_order_fields}. Fits to very high chromaticity orders are also now possible
-along with their computed corrections and that of resonance driving terms via a combined response
+along with their computed corrections and that of Resonance Driving Terms via a combined response
 matrix approach. Automatic data extraction from the CERN data servers (Timber, NXCALS) is also
 included.

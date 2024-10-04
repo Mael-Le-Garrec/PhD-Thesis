@@ -7,7 +7,7 @@
 
 Several notations coexist to denote magnetic fields. In this thesis, the
 \textit{European Convention}~\cite{dilly_corrections_2022} is used for field indices, as shown
-in \cref{tab:magnetic_fields:relation_indices}. MAD-X, and MAD-NG, however, use the
+in \cref{tab:magnetic_fields:relation_indices}. MAD-X and MAD-NG, simulation softwares, however, use the
 \textit{American Convention}. 
 
 \begin{table}[H]
@@ -171,7 +171,7 @@ then be calculated from this complex field,
     \mathcal{B}_n + i\mathcal{A}_n = \left.\frac{1}{(n-1)!} \cdot \frac{\partial^{n-1}\left(B_y + iB_x\right)}{\partial(x+iy)^{n-1}}\right|_{x=0,y=0}.
 \end{equation}
 
-For instance, expanded up to octupoles, the magnetic field acting on the horizontal plane reads,
+Expanded up to octupoles, the magnetic field acting on the horizontal plane reads,
 
 \begin{equation}
     B_y = \underbrace{B_{y0}}_{\textrm{dipole}}
@@ -249,7 +249,7 @@ given by,
     B \rho \approx 3.33 \cdot pc.
 \end{equation}
 
-It is of interest when designing an accelerator to set the maximum field as well as the required
+This quantity is of interest when designing an accelerator to set the maximum field as well as the required
 radius of curvature for a specific momentum and particle.
 An interesting metric of an accelerator is also its \textit{filling factor}, or percentage of
 dipoles in the machine. It can be calculated via the radius of curvature: $f = \rho / r$. A low 
@@ -270,7 +270,7 @@ given by~\cite{wolf_engineering_2001} the following,
     \label{eq:magnetic_fields_normalized}
 \end{equation}
 
-with $p$ the momentum of the particle, $q$ its charge and $\mathcal{B}$ and $mathcal{A}$ the field
+with $p$ the momentum of the particle, $q$ its charge and $\mathcal{B}$ and $\mathcal{A}$ the field
 gradients.
 
 
@@ -302,7 +302,7 @@ can be described by the following~\cite{wolski_beam_2014},
 
 Quite often, when studying the effect of a magnet on the beam, only one component is required, and
 the sum can thus be dropped.
-The normal and skew fields can also be isolated in order to consider their the sole effect as shown
+The normal and skew fields can also be isolated in order to consider their sole effect as shown
 in the following,
 
 \begin{equation}

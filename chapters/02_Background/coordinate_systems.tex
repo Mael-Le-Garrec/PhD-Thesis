@@ -7,7 +7,7 @@ closed orbit.
 
 The Frenet-Serret coordinate system moves along the ring on the reference orbit. The coordinates are
 then transverse: $x$ and $y$, and longitudinal in the direction of travel: $s$.
-\Cref{fig:coordinate_systems:frenet_serret} shows those coordinates.
+\Cref{fig:coordinate_systems:frenet_serret} shows these coordinates.
 
 \begin{figure}[H]
     \centering
@@ -17,15 +17,15 @@ then transverse: $x$ and $y$, and longitudinal in the direction of travel: $s$.
     \label{fig:coordinate_systems:frenet_serret}
 \end{figure}
 
-This coordinate system is widely used to simply describe a either an element's or a particle's
-position in the accelerator. Without any explicit mention, those are coordinates used in this
+This coordinate system is widely used to simply describe either an element's or a particle's
+position in the accelerator. Without any explicit mention, these are the coordinates used in this
 thesis. It is frequent to use the variable $z$ to refer to either $x$ or $y$ in equations.
 In order to describe the motion of particles through a lattice, different coordinate systems can be
 used. To better describe the motion of particles through a lattice, various coordinate systems can
 be employed. First, the formalism for a linear lattice will be introduced, followed by an
 explanation of how motion in a machine with non-linear elements can be characterized.
 
-Linear optics refers to the regime where the forces acting on particles, such as those from dipoles
+Linear optics refer to the regime where the forces acting on particles, such as those from dipoles
 and quadrupoles, are directly proportional to the particle's displacement from the reference
 trajectory, resulting in simple, predictable motion described by linear equations and transfer
 matrices. Non-linear optics, on the other hand, involves higher-order magnetic elements like
@@ -46,7 +46,7 @@ trajectories.
 
 A circular accelerator is composed of many multipoles of different orders. A very basic
 design only requires dipoles and quadrupoles in order to operate. Dipoles are used to bend the
-particles in order to form the ring, whereas quadrupoles are used to focus the beam to a focal
+particles to form the ring, whereas quadrupoles are used to focus the beam to a focal
 point, similar to light optics.
 Those elements can be arranged in a particular order, to form a FoDo cell. Such cells present an
 alternating placement of focusing an defocusing quadrupoles with dipoles in between, as shown in
@@ -76,7 +76,7 @@ know as Twiss parameters or the \textit{optics functions}~\cite{courant_theory_1
     \label{fig:coordinate_systems:twiss}
 \end{figure}
 
-$J$, the action, is invariant of linear motion at a given energy and describes the amplitude of 
+$J$, the action, is the invariant of linear motion at a given energy and describes the amplitude of
 oscillations. It is related to the other quantities by:
 
 \begin{equation}
@@ -112,7 +112,7 @@ to switch between the Courant-Snyder parameters and the Frenet-Serret system:
 \subsubsection{\review{Normalized Coordinates}}
 
 In order to simplify the description of the linear motion in a ring, a transformation can be applied
-to the previously seen coordinates. Figure \cref{fig:coordinate_systems:normalized_coordinates}
+to the previously seen coordinates. \Cref{fig:coordinate_systems:normalized_coordinates}
 shows a phase-space described in both coordinates. The new coordinates, $\hat{z}$, and $\hat{p}_z$,
 are then expressed as factors of the $\alpha$ and $\beta$ functions:
 
@@ -154,7 +154,7 @@ the invariant $J_z$ and the phase $\phi_z$:
         %\caption{Caption for Image 2}
         %\label{fig:sub2}
     \end{subfigure}
-    \caption{Phase space described in both regular and normalized coordinates}
+    \caption{Phase space described in both regular and normalized coordinates.}
     \label{fig:coordinate_systems:normalized_coordinates}
 \end{figure}
 
@@ -170,7 +170,7 @@ Importantly, these maps should be symplectic, meaning they preserve the area of 
 ensuring that the particle's motion is accurately represented. Symplecticity guarantees that key
 properties of the beam, such as its emittance, remain consistent, which is crucial for maintaining
 the stability and integrity of particle trajectories in the accelerator.
-For a matrix $\mathcal{M}$ and positions $z$ at the initial location and $s$, the general formula
+For a matrix $M$ and positions $z$ at the initial location and $s$, the general formula
 reads~\cite{lee_accelerator_2004}:
 
 \begin{equation}
@@ -220,7 +220,7 @@ the horizontal plane for focusing quadrupoles, where defocusing matrices should 
 vertical plane. The opposite goes for defocusing quadrupoles.
 
 Transfer matrices can be combined together to describe a larger group of elements, as the FoDo cell
-seen previously. Its transfer matrix can then be expressed as:
+seen previously. Its transfer matrix can then be expressed as,
 
 \begin{equation}
     M_{FoDo} = M_{focusing\;quad} \cdot M_{drift} \cdot M_{defocusing\;quad} \cdot M_{drift}.
@@ -357,7 +357,7 @@ transformation}:
 
 As introduced in \cref{section:coordinate_systems:linear_maps}, the dynamics of a particle beam in a
 circular accelerator can be described by \textit{transfer maps}. A symplectic \textit{One Turn Map}
-$\mathcal{M}$ that includes $N$ non-linear elements is defined~\cite{dragt_overview_2013} as:
+$\mathcal{M}$ that includes $N$ non-linear elements is defined~\cite{dragt_overview_2013} as,
 
 \begin{equation}
     \mathcal{M} = e^{:h_N:} \cdot e^{:h_{N-1}:} \cdots e^{:h_1:} \cdot \mathcal{R}
@@ -402,9 +402,9 @@ sum of the Hamiltonians of the $N$ non-linear elements:
    \mathcal{M} = e^{:h_1 + h_2 + \cdots + h_N:} \cdot \mathcal{R}.
 \end{equation}
 
-It is though to be noted that in this thesis experimental measurements show the evidence of higher
+It is to be noted that, in this thesis, experimental measurements show the evidence of higher
 order contributions. In order to fully understand the combined effect of multipoles, the BCH
-expansion needs to be expended further than the first two terms.
+expansion needs to be expended further than the first order.
 
 When transporting coordinates from one point to another, the length of the elements must be taken
 into account:
@@ -504,14 +504,14 @@ The function $F$ is defined as
 
 where $f_{jklm}$ are the so-called Resonance Driving Terms (RDTs).  The summation $jklm$ is done
 over all the combinations of $j$, $k$, $l$ and $m$ with $j+k+l+m = n$ for a multipole of order $n$,
-as shown in \cref{eq:coordinates_systems:sum_jklm}:
+as shown in \cref{eq:coordinates_systems:sum_jklm},
 
 \begin{equation}
     \sum_{jklm} = \sum_{j=0}^n \sum_{k=0}^n \sum_{l=0}^n \sum_{m=0}^n \quad;\quad j+k+l+m=n.
     \label{eq:coordinates_systems:sum_jklm}
 \end{equation}
 
-The expression of the resonance driving terms is given by the global hamiltonian term $h_jklm$ by
+The expression of the Resonance Driving Terms is given by the global hamiltonian term $h_{jklm}$ by
 
 \begin{equation}
     f_{jklm} = \frac{h_{jklm}}{1 - e^{i2\pi \left[ (j-k)Q_x + (l-m) Q_y \right]}},
@@ -527,7 +527,7 @@ where this coefficient is a summation over the hamiltonian terms of elements $w$
 The expression of $h_{w,jklm}$ is itself derived from the general hamiltonian 
 of \cref{eq:hamiltonian_magnet} by applying a multinomial expansion on the
 coordinates~\cite{franchi_studies_2006} as shows \cref{eq:coordinate_systems:hwjklm}.
-Derivations and more information on resonance driving terms can be found in \cref{appendix:rdts}.
+Derivations and more information on Resonance Driving Terms can be found in \cref{appendix:rdts}.
 
 \begin{equation}
     h_{w,jklm} = -\Re \left[\frac{K_{w,n} + iJ_{w,n}}{j!k!l!m! 2^{j+k+l+m}}
@@ -541,7 +541,8 @@ written, to second order, as:
 
 \begin{equation}
     \begin{aligned}
-        h_z^{ \pm} &= e^{: F:} \cdot \zeta_z^{ \pm} \\
+        %h_z^{ \pm}
+        (\hat{z} \pm i\hat{p}_z) &= e^{: F:} \cdot \zeta_z^{ \pm} \\
                    &\simeq \zeta_z^{ \pm}+\left[F, \zeta_z^{ \pm}\right] 
                         + \frac{1}{2!} \left[ F, \left[ F, \zeta_z^\pm \right]\right].
     \end{aligned}
@@ -579,7 +580,7 @@ plane due to the dependence on $j$ or $l$.
 
 It is important to remember that two expansions are used when creating non linear transfer maps.
 When referring to the order of a map, it is the order of the BCH formula, used to combine
-Hamiltonians, that is referred to.
+hamiltonians, that is referred to.
 The Lie transformation to transport the coordinates themselves is usually only taken to the first
 order.
 
@@ -588,7 +589,7 @@ order.
 %----------------------------------------
 \subsection{\review{Non-Linear Transfer of a Single Sextupole}}
 
-Here, we are interested on the effect of a single sextupole on the regular frenet-serret coordinates
+Here, we are interested on the effect of a single sextupole on the regular Frenet-Serret coordinates
 $x$, $y$, $p_x$ and $p_y$.
 Let's consider a sextupole with strength $K_3$ and a normal field,
 
@@ -632,8 +633,8 @@ first order, it can be rewritten as
     \end{alignedat}
 \end{equation}
 
-Applying the poisson bracket of \cref{eq:coordinate_systems:poisson_bracket} on $x$ or $y$ yields
-$0$, as neither the Hamiltonian nor $x$ and $y$ are dependent on $p_x$ and $p_y$.
+Applying the Poisson bracket of \cref{eq:coordinate_systems:poisson_bracket} on $x$ or $y$ yields
+$0$, as neither the hamiltonian nor $x$ and $y$ are dependent on $p_x$ and $p_y$,
 
 \begin{equation}
   \begin{aligned}
@@ -648,8 +649,8 @@ $0$, as neither the Hamiltonian nor $x$ and $y$ are dependent on $p_x$ and $p_y$
 \end{equation}
 
 
-The poisson bracket applied on $p_x$ or $p_y$ though evaluates to a non-zero value, as the momentum
-is present in $p_{x, y}$ while $x, y$ are present in the Hamiltonian:
+The Poisson bracket applied on $p_x$ or $p_y$ though evaluates to a non-zero value, as the momentum
+is present in $p_{x, y}$ while $x, y$ are present in the hamiltonian:
 
 \begin{equation}
   \begin{aligned}
@@ -664,8 +665,8 @@ is present in $p_{x, y}$ while $x, y$ are present in the Hamiltonian:
 \end{equation}
 
 The same method is used for $p_y$.
-The final form of the transfer map \cref{eq:coordinate_systems:single_sextupole_lie_transfer} is
-then the following:
+The final form of the transfer map from \cref{eq:coordinate_systems:single_sextupole_lie_transfer} is
+then the following,
 
 \begin{equation}
     \begin{pmatrix}
@@ -691,7 +692,7 @@ then the following:
 
 
 It is not necessary to go higher than the first order, as the second order of the expansion of the 
-Lie transformation is 0 ; $p_x$ is indeed not present in the result of the first poisson bracket:
+Lie transformation is 0 ; $p_x$ is indeed not present in the result of the first Poisson bracket,
 
 \begin{equation}
     \begin{aligned}
@@ -710,13 +711,13 @@ Lie transformation is 0 ; $p_x$ is indeed not present in the result of the first
 %----------------------------------------
 \subsection{\review{Non-Linear Transfer of Two Sextupoles}}
 
-We saw previously that a single sextupole only acts as a sextupole when it is alone in the transfer
+It has been seen previously that a single sextupole simply acts as a sextupole when it is alone in the transfer
 map, which is expected. Let's now consider two sextupoles which hamiltonians are denoted $H_{1}$ and
 $H_{2}$.
 
 Creating a map consisting of only two sextupoles does not make much sense, as it finally results in
-one sextupole as their coordinates are the same. Instead, a drift is added between the two elements.
-The Hamiltonian of a drift of length $L_D$ is given by~\cite{herr_mathematical_2018},
+one sextupole as their position is the same. Instead, a drift is added between the two elements.
+The hamiltonian of a drift of length $L_D$ is given by~\cite{herr_mathematical_2018},
 
 \begin{equation}
     D = -\frac{L_D}{2} (p_x^2 + p_y^2).
@@ -781,7 +782,7 @@ To the first order, the resulting effective hamiltonian is only the summation of
 
 \paragraph{Second Order}
 
-The drift added to change the coordinates of $H_1$ allows the poisson bracket to evaluate to a
+The drift added to change the coordinates of $H_1$ allows the Poisson bracket to evaluate to a
 non-zero value. Octupolar-like terms indeed appear in the effective hamiltonian. From this, it can
 be inferred that two sextupoles will interact together and introduce effects like amplitude
 detuning, second order chromaticity and RDTs.

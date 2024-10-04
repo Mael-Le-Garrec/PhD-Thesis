@@ -13,7 +13,7 @@ a momentum offset of about $-0.001$.
     \label{eq:very_high_orders:simplified_eq_momentum_compaction}
 \end{equation}
 
-The RF frequency is thus changed to induce a change in momentum-offset. The tune will then vary with
+The RF frequency is thus varied to induce a change in momentum-offset. The tune will then vary with
 this momentum-offset, as shows the chromaticity function expanded up to the fifth order,
 
 \begin{equation}
@@ -101,7 +101,7 @@ dipoles, respectively, as given by the following expressions:
   \end{table}
 
 Due to the RF-scan method, the momentum offset crosses zero multiple times during the measurement.
-The absence of tune change at these points allows us to conclude that the tune drift throughout
+The absence of tune change at these points allows to conclude that the tune drift throughout
 the measurement is negligible. This measurement was conducted after an extended period at
 injection energy, where the decay of the sextupolar fields is minimal, causing no significant change
 in first-order chromaticity. The fitted curve for the chromaticity function is shown in
@@ -186,8 +186,7 @@ above the fifth order, indicating that such further orders are not warranted.
         \hspace{2mm}Y         & $2.9 $ & $2.8$ & $1.0$ & $1.0$ \\            % raw bbq
       \bottomrule
     \end{tabular}
-    \caption{Reduced $\chi^2$ values for each order of fit, taken from the second
-    measurement of 2022, with $Q''$ and $Q'''$ beam-based corrections.}
+    \caption{Reduced $\chi^2$ values for each order of fit of the measured non-linear chromaticity, with $Q''$ and $Q'''$ beam-based corrections.}
     \label{tab:high_orders:chisquare_quality}
   \end{table}
 
@@ -200,12 +199,13 @@ above the fifth order, indicating that such further orders are not warranted.
 
 
 Given the novelty of measuring such high-order chromaticities, additional configurations were tested
-to ensure the consistency of the results. By comparing the fitted chromaticity across different LHC
-configurations, potential issues stemming from the machine's specific state on the day of
-measurement could be ruled out. Further potential sources contributing to high-order chromaticity,
+to ensure the consistency of the results.
+Potential sources contributing to high-order chromaticity,
 such as the non-linearities of the momentum compaction factor, dispersion, coupling, or noise, are
 discussed in the following sections.
-
+Comparing the fitted chromaticity across different LHC
+configurations allows to rule out potential issues stemming from the machine's specific state on the day of
+measurement.
 
 
 
@@ -262,7 +262,7 @@ the machine~\cite{keintzel_momentum_2021}.
         large RF trims.}
     \end{subfigure}
     \caption{Non linearity of $\alpha_c$ and its effect on the computed $\delta$ via RF trims. The
-    simulations are done at injection energy of 450GeV.}
+    simulations are done at injection energy of 450 GeV.}
     \label{fig:decapoles:chromaticity:momentum_compaction_factor}
 \end{figure}
 
@@ -337,13 +337,13 @@ smaller and therefore the tune less likely to overlap with strong noise lines.
     \centering
     \includegraphics[width=\textwidth]{./images/noisy_tune.png}
     \caption{Shift of the tune by variation of the RF. Noise lines can appear in some cases,
-    making the tune error bar large or downright unusable.}
+    making the tune error-bar large or downright unusable.}
     \label{fig:decapoles:chromaticity:noisy_tune}
 \end{figure}
 
 A solution to this issue is to use the raw data extracted from the BBQ system. From there, a
 spectrogram clearly shows the noise lines, as seen in \cref{fig:decapoles:chromaticity:spectrogram}.
-Those lines have been repeatedly identified over several measurements and confirmed to be fixed.
+Those lines have been repeatedly identified over several measurements and confirmed to be static.
 The highest peak in the spectrogram can be reliably identified by removing unwanted resonances,
 resulting in a cleaner measurement. It is also important to note that the BBQ system requires the
 tune window to be set, which, if overlooked, can lead to erroneous data. By analyzing the raw data,
@@ -353,7 +353,7 @@ noise.
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=.8\textwidth]{./images/spectrogram.png}
-    \caption{Tune spectrogram obtained via BBQ system. Strong resonance lines can be seen above and
+    \caption{Tune spectrogram obtained via the BBQ system. Strong resonance lines can be seen above and
     below where the tune really is, causing the wrong frequency peak to be identified as the tune.}
     \label{fig:decapoles:chromaticity:spectrogram}
 \end{figure}
@@ -367,7 +367,7 @@ noise.
 \subsubsection{\review{Momentum Offset from Orbit}}
 
 The momentum offset $\delta$ can be reconstructed through several methods. One such method,
-based on beams's orbit, was previously stored by the LHC's logging services but is not the case
+based on beams's orbit, was previously stored by the LHC's logging services but is not
 anymore. Reconstructing the momentum offset can introduce uncertainties due to the
 non-linearities of both the momentum compaction factor, as discussed earlier, and the dispersion.
 
@@ -442,7 +442,7 @@ were present that could have been misinterpreted as a higher-order chromaticity.
 \subsection{\review{Further Measurements}}
 
 In order to assess the correctness of the observation of higher chromaticity orders, measurement
-repeatability is needed. Two measurements were thus take in 2022, with different configurations
+repeatability is needed. Two measurements were thus taken in 2022, with different configurations
 pertaining to the correction of the second and third order chromaticities $Q''$ and $Q'''$. 
 The first one used the nominal correction strengths for octupole and decapole corrector magnets,
 derived from magnetic measurements, where the second one used beam-based corrections for the same
@@ -475,7 +475,7 @@ previous ones, those were restricted during analysis to allow suitable compariso
 \end{table}
 
 In order to stay consistent, the horizontal and vertical tunes were respectively set to $Q_x = 0.28$
-and $Q_y = 0.31$ for both measurements. The linear chromaticity $Q'$ is set to a small value, around
+and $Q_y = 0.31$ for all measurements. The linear chromaticity $Q'$ is set to a small value, around
 $2$, to avoid large tune shifts throughout the scan.
 All measurements were performed during LHC's beam commissioning.
 %, as part of the measurements and corrections performed after technical or long shutdowns.
@@ -519,7 +519,7 @@ measurements, to highlight their differences.
 
 A summary of the measured chromaticity orders is given in \cref{fig:high_oders:all_values}.  
 The first measurement in the horizontal plane of Beam 2 suffered from low beam intensity and worse
-noise, resulting a high correlation between $Q^{(4)}$ and $Q^{(5)}$, is therefore not included. The
+noise, resulting in a high correlation between $Q^{(4)}$ and $Q^{(5)}$, and is therefore not included. The
 last measurement for the vertical plane experienced some tune drift, making the fit impossible and
 is therefore not included for both beams.
 
@@ -583,13 +583,13 @@ correction, underscoring the importance of considering higher order terms.
 \label{sec:nl_chroma_model}
 
 Benchmarking the magnetic model of the LHC is important, in order to gauge its correctness and that
-of the error tables in use and address any potential discrepancies. The model of the LHC is based on
-MADX and magnetic field error tables~\cite{p_hagen_wise_2006}, containing a seeds for the random
+of the error tables in use, and address any potential discrepancies. The model of the LHC is based on
+MADX and magnetic field error tables~\cite{p_hagen_wise_2006}, containing seeds for the random
 errors. To compute the chromaticity, simulations are run via PTC, with a selection of these field 
 errors.
 
 Simulations incorporating various field errors have been conducted to evaluate the contributions of
-individual magnet orders and their combinations to fourth and fifth order chromaticity. Field errors
+individual magnet orders to fourth and fifth order chromaticity. Field errors
 are applied to all magnets, with $b_2$ errors in the main dipoles resulting in a $\beta$-beating of
 approximately $10\%$. Coupling is introduced using global knobs to create a $C^-$ value of $0.001$,
 which is commonly observed during operation. Normal and skew field errors, ranging from sextupolar
@@ -628,7 +628,7 @@ negligible impact.
 Beta-beating and coupling are seen to increase by a small amount the chromaticity, while sextupolar
 errors induce a spread with the different seeds. 
 Comparing the simulation at the top with most errors added, the $b_7$ component alone accounts for
-$\approx 70\%$ of it for both axes on each beam of the fifth order chromaticity.
+$\approx 70\%$ of it for both axes on each beam.
 
 \begin{figure}[!htb]
     \centering
@@ -669,7 +669,7 @@ Simulations done with that decay taken into account are also present in the prev
 
 Previous simulation results are shown in \cref{tab:high_orders:ptc_values}, taking the values from 
 the simulation including the most effects at the top of the plots. For the fourth order, the beating
-is not included as the large beating is not yet explained.
+is not included as the large induced $Q^{(4)}$ is not yet explained.
 \Cref{tab:high_orders:ptc_values_ratios} shows the ratio between the measured average and simulated
 chromaticities.
 

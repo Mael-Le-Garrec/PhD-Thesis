@@ -141,7 +141,7 @@
 % https://www.alain.les-hurtig.org/varia/empagement.html
 %
 % tête = top, pied = bottom, petit fond = left, grand fond = right
-\newcommand{\papersize}{B5}  % Set the size of the page, also used later in the thesis
+\newcommand{\papersize}{A4}  % Set the size of the page, also used later in the thesis
 %
 \ifthenelse{\equal{\papersize}{A4}}{ % A4
   \geometry{a4paper, top=2.625cm, left=2.1cm, right=3.15cm, bottom=3.675cm, includehead, includefoot}
@@ -352,7 +352,7 @@
 % This value below is the distance between thumbs. Originally hardcoded to 0.1.
 % Modified here fit to all the chapters on one pageheight, and then wrap around at the top for
 % appendices
-\newcommand*{\chapterthumbskip}{.105\paperheight} % (1 - (0.1) * 2 ) / nchapters
+\newcommand*{\chapterthumbskip}{.120\paperheight} % (1 - (0.1) * 2 ) / nchapters
 \colorlet{chapterthumbboxcolor}{thumb_color}
 \newcommand*{\chapterthumbcolor}{white}
 \newcommand*{\chapterthumbformat}{\thechapter} % What's written in the box
