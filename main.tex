@@ -128,6 +128,9 @@
 % =================================================
 %                   Conclusions
 % =================================================
+\cleardoublepage  % Needed for the TOC to register we're 2 pages further
+\phantomsection  % Ensure that hyperref links to the correct page
+\DisableChapterthumb  % No thumbs for those
 \input{chapters/00_Preamble/06_conclusions}
 
 
@@ -135,7 +138,6 @@
 %            Lists of Figures / Tables
 % =================================================
 \cleardoublepage  % Needed for the TOC to register we're 2 pages further
-\DisableChapterthumb  % No thumbs for those
 \phantomsection  % Ensure that hyperref links to the correct page
 \addcontentsline{toc}{chapter}{List of Figures}
 \listoffigures
