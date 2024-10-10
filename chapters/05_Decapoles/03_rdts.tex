@@ -13,8 +13,8 @@ and the beam close to them, can be measured via their RDTs.
     \includegraphics[width=0.8\textwidth]{./images/tune_diagram_f1004.pdf}
     \caption{Frequency map at injection energy, with decapolar field errors and nominal settings for
     landau octupoles. The highlighted resonance (1,-4), excited by decapoles, shows a degradation
-    over 20,000 turns. The tune shift between the start and the end of the simulation is indicated
-    in color.}
+    over 20,000 turns. The tune shift $\Delta Q$ between the start and the end of the simulation is
+    indicated in color.}
     \label{fig:decapoles:rdts:tune_diagram}
 \end{figure}
 
@@ -544,11 +544,12 @@ knob value.
     \label{fig:decapoles:impact:alternating_knob}
 \end{figure}
 
-In order to measure the lifetime, a long period must be allocated as the signal returned from
-monitors can be jittery. \Cref{fig:decapoles:impact:b5_lifetime} shows this lifetime depending on
-the decapolar strength scheme applied. The current of only one circuit is shown for readability.
-A current of $\approx 230$ A corresponds to a knob value of $+10500\;K_5$ while a current of $-45$ A
-corresponds to $0$.
+In order to measure the lifetime, a long time window is allocated to capture a clean signal, as that
+returned from monitors can be jittery. The beam lifetime is expressed in hours and decreases over
+time due to particles being lost. It is adjusted in real-time by the beam loss monitors.
+\Cref{fig:decapoles:impact:b5_lifetime} shows this lifetime depending on the decapolar strength
+scheme applied. The current of only one circuit is shown for readability. A current of $\approx 230$
+A corresponds to a knob value of $+10500\;K_5$ while a current of $-45$ A corresponds to $0$.
 
 \begin{figure}[!htb]
     \centering
@@ -559,7 +560,8 @@ corresponds to $0$.
     \label{fig:decapoles:impact:b5_lifetime}
 \end{figure}
 
-It is clear from this measurement that a large RDT decreases the lifetime of the beam.
+It is clear from this measurement that a large RDT decreases the lifetime of the beam, more
+particles being lost.
 The first pair of trim sees the average lifetime decreasing of $0.31 \pm 0.03$ hours, while the
 second one sees a decrease of $0.36 \pm 0.03$ hours. This observed decrease of 20 minutes accounts
 for $10\%$ of the beam lifetime at injection energy.

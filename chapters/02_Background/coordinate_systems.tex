@@ -1,9 +1,9 @@
 \section{\review{Coordinate Systems}}
 
-In circular accelerators, particle dynamics are represented using a traveling coordinate system.
-A reference orbit is determined by the lattice and its magnet strengths, forming the
-\textit{optics}. In the case of a synchrotron, like the LHC, the reference orbit is also called the
-closed orbit.
+In circular accelerators, particle dynamics are represented using a comoving coordinate system.
+A reference orbit is determined by the lattice and its magnet strengths. A set of given strengths 
+for a lattice is called \textit{optics}. In the case of a synchrotron, like the LHC, the reference
+orbit is also called the closed orbit.
 
 The Frenet-Serret coordinate system moves along the ring on the reference orbit. The coordinates are
 then transverse: $x$ and $y$, and longitudinal in the direction of travel: $s$.
@@ -47,7 +47,7 @@ trajectories.
 A circular accelerator is composed of many multipoles of different orders. A very basic
 design only requires dipoles and quadrupoles in order to operate. Dipoles are used to bend the
 particles to form the ring, whereas quadrupoles are used to focus the beam to a focal
-point, similar to light optics.
+point, similar to photons with lenses.
 Those elements can be arranged in a particular order, to form a FoDo cell. Such cells present an
 alternating placement of focusing an defocusing quadrupoles with dipoles in between, as shown in
 \cref{fig:coordinate_systems:fodo}, and are usually repeated many times along the ring.
@@ -56,16 +56,19 @@ alternating placement of focusing an defocusing quadrupoles with dipoles in betw
     \centering
     \includegraphics[width=0.8\textwidth]{images/fodo_drawing.pdf}
     \caption{Line composed of FoDo cells, a basic cell present in most accelerators, composed of a
-    Focusing and a Defocusing quadrupole. The envelope is a factor of the $\beta$-function and the
-    action $J$.}
+    Focusing and a Defocusing quadrupole. The envelope of the beam is influenced by the
+    $\beta$-function and the action $J$.}
     \label{fig:coordinate_systems:fodo}
 \end{figure}
 
-A lattice composed of only dipoles and quadrupoles, is referred to as a \textit{linear} lattice.  In
+A lattice composed of only dipoles and quadrupoles, is referred to as a \textit{linear} lattice. In
 a synchrotron, a circular particle accelerator, particles undergo transverse and longitudinal 
-oscillations. Taking into account those oscillations, the phase-space ellipse of a particle at a 
-position $s$ in the ring can be described with a new system: the Courant-Snyder parameters, also
-know as Twiss parameters or the \textit{optics functions}~\cite{courant_theory_1958}, as shown in
+oscillations. 
+These oscillations usually describe an ellipse in phase-space, a system with position $z$ and
+momentum $p_z$ as coordinates.
+Taking into account those oscillations, the phase-space ellipse of a particle at a position $s$ in
+the ring can be described with a new system: the Courant-Snyder parameters, also know as Twiss
+parameters or the \textit{optics functions}~\cite{courant_theory_1958}, as shown in
 \cref{fig:coordinate_systems:twiss}.
 
 \begin{figure}[htb]
@@ -84,7 +87,8 @@ oscillations. It is related to the other quantities by:
     \label{eq:coordinate_systems:action}
 \end{equation}
 
-The action can be related to the area in phase space, called the single particle emittance:
+The area of the phase-space ellipse is also called the single particle emittance, and is described
+by the action: 
 $\epsilon = 2J$.  As the $\beta$ parameter varies along the ring, it is referred to as the
 $\beta$-function and is related to the amplitude of the oscillations. Thus, the smaller is the
 $\beta$-function, the smaller is also the envelope of the beam.
@@ -97,8 +101,8 @@ $\beta$-function:
 \end{equation}
 
 
-It is common to express the position of a particle using \textit{action-angle} variables, allowing
-to switch between the Courant-Snyder parameters and the Frenet-Serret system:
+It is common to express the position of a particle using \textit{action-angle} variables:
+% allowing to switch between the Courant-Snyder parameters and the Frenet-Serret system:
 
 \begin{equation}
     \begin{aligned}
@@ -138,7 +142,7 @@ the invariant $J_z$ and the phase $\phi_z$:
 \begin{equation}
     \begin{aligned}
         \hat{z}   &= \sqrt{2J_z} \cos \left(\phi_z \right), \\
-        \hat{p}_z &= \sqrt{2J_z} \cos \left(\phi_z \right).
+        \hat{p}_z &= \sqrt{2J_z} \sin \left(\phi_z \right).
     \end{aligned}
 \end{equation}     
 
@@ -166,10 +170,10 @@ the invariant $J_z$ and the phase $\phi_z$:
 
 The final position of a particle after passing through an accelerator element can be described using
 \textit{transfer maps}. In the case of linear optics, these maps take the form of matrices.
-Importantly, these maps should be symplectic, meaning they preserve the area of phase space,
+Importantly, these maps should be symplectic, meaning the area of phase space is preserved,
 ensuring that the particle's motion is accurately represented. Symplecticity guarantees that key
-properties of the beam, such as its emittance, remain consistent, which is crucial for maintaining
-the stability and integrity of particle trajectories in the accelerator.
+properties of the beam, such as its emittance, remain constant, which is crucial for maintaining
+the stability and integrity of particle trajectories in tracking simulations.
 For a matrix $M$ and positions $z$ at the initial location and $s$, the general formula
 reads~\cite{lee_accelerator_2004}:
 
@@ -185,9 +189,9 @@ reads~\cite{lee_accelerator_2004}:
     \end{pmatrix}_0
 \end{equation}
 
-This formalism assumes that the magnetic field is constant along the element in the longitudinal
-direction. Basic elements such as drifts, dipoles, quadrupoles can then be described be a simple
-$2 \times 2$ matrix:
+This formalism assumes that the magnetic field is linear or constant along the element in the
+longitudinal direction. Basic elements such as drifts, dipoles, quadrupoles can then be described be
+a simple $2 \times 2$ matrix:
 
 \begin{equation}
     M_{drift} = \begin{pmatrix}
@@ -423,9 +427,9 @@ into account:
 
 As non-linearities are introduced in the machine, the phase-space becomes distorted, resulting in
 $J_z$ no longer being an invariant of motion. The previously seen normalization does not work
-anymore and the phase-space is no longer a simple circle. A new normalization is then introduced,
-called the \textit{normal form}, with complex coordinates $\zeta$, depending on new action and
-angle coordinates $I_z$ and $\psi_z$:
+anymore and the phase-space ellipse is no longer a simple circle. A new normalization is then
+introduced, called the \textit{normal form}, with complex coordinates $\zeta$, depending on new
+action and angle coordinates $I_z$ and $\psi_z$:
 
 \begin{equation}
     \zeta_{z,\pm} = \sqrt{2I_z} e^{\mp i \psi_z}.

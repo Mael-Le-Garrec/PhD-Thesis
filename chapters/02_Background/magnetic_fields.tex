@@ -222,20 +222,20 @@ In order to bend particles to form a ring, the force acting on the particles giv
 force must be equal to the centrifugal force~\cite{holzer_design_2020,wiedemann_particle_2015}:
 
 \begin{equation}
-    q(\vec{E} + \vec{v} \times \vec{B}) = \frac{mv^2}{\rho},
+    q(\vec{E} + \vec{v} \times \vec{B}) = \frac{\gamma mv^2}{\rho},
 \end{equation}
 
 with $q$ the charge of the particle, $\vec{E}$ and $\vec{B}$ respectively the electric and magnetic
-field strengths, $\vec{v}$ the velocity of the particle, $m$ its mass and $\rho$ the radius of the
-circular path. 
+field strengths, $\gamma$ the Lorentz factor, $\vec{v}$ the velocity of the particle, $m$ its mass
+and $\rho$ the radius of the circular path. 
 The beam rigidity is a quantification of the ability of a magnetic field to bend the trajectory of a
 particle. It is derived from the previous equation and relates the
-magnetic field $B$, the radius of curvature $\rho$ to the momentum $p$ and charge $q$ of the
-particle. By neglecting the electrical force and using $p = mv$,
+magnetic field $B$, the radius of curvature $\rho$ to the relativistic momentum $p$ and charge $q$
+of the particle. By neglecting the electrical force and using $p = \gamma mv$,
 
 \begin{equation}
     \begin{aligned}
-                           & qvB &&= \frac{mv^2}{\rho}, \\
+                           & qvB &&= \frac{\gamma mv^2}{\rho}, \\
         \rightarrow  \quad & qB &&= \frac{p}{\rho}, \\
         \rightarrow  \quad & B\rho \quad [\textrm{T.m}] &&= \frac{p}{q}.
     \end{aligned}
@@ -252,7 +252,7 @@ given by,
 This quantity is of interest when designing an accelerator to set the maximum field as well as the required
 radius of curvature for a specific momentum and particle.
 An interesting metric of an accelerator is also its \textit{filling factor}, or percentage of
-dipoles in the machine. It can be calculated via the radius of curvature: $f = \rho / r$. A low 
+dipoles in the machine. It can be calculated via the radius of curvature $r$: $f = \rho / r$. A low 
 filling factors means more space for other magnets, collimators, beam instrumentation, etc.
 
 \subsubsection{\review{Field Normalization}}

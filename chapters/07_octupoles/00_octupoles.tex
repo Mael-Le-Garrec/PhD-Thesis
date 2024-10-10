@@ -122,9 +122,9 @@ A summary of the tested working points and the resulting AC-Dipole kick percenta
 
 A suitable configuration was identified that enables high amplitude kicks. Consequently, the
 measurements were conducted at natural tunes of $Q_x = 0.285$ and $Q_y = 0.292$. The driven
-tunes were adjusted to $\Delta Q_x = -0.008$ and $\Delta Q_y = 0.01$. This selection of tunes has
-proven to be the most effective for measuring skew octupolar RDTs while keeping losses under control
-and is now established as the standard for commissioning activities.
+tunes were adjusted to $Q_{x,ac} = Q_x -0.008$ and $Q_{y,ac} = Q_y + 0.01$. This selection of tunes
+has proven to be the most effective for measuring skew octupolar RDTs while keeping losses under
+control and is now established as the standard for commissioning activities.
 \Cref{fig:skew_octupolar:spectrum_a4_top_energy} shows the horizontal frequency spectrum taken
 with the skew octupolar correctors turned off. In this plane, the line of the RDT $f_{1210}$ is
 visible at $2Q_x - 1Q_y$, while that of $f_{1012}$ is visible in the vertical one at $-1Q_x + 2Q_y$.
@@ -148,9 +148,9 @@ The measured RDTs are shown later on, in blue, in \cref{fig:skew_octupolar:corre
 
 To create a response matrix, simulations were conducted with the tunes and AC-Dipole deltas set to
 those used for measurements. The natural tunes are $Q_x = 0.285$ and $Q_y = 0.292$ while the driven
-tunes are $\Delta Q_x = -0.008$ and $\Delta Q_y = 0.01$. Each corrector is then powered individually
-for each tracking simulation. As measurements near the IP can be quite noisy, those are not utilized
-in the calculation of the correction. The polar plot of
+tunes are $Q_{x,ac} = Q_x -0.008$ and $Q_{y,ac} = Q_y + 0.01$. Each corrector is then powered
+individually for each tracking simulation. As measurements near the IP can be quite noisy, those are
+not utilized in the calculation of the correction. The polar plot of
 \Cref{fig:skew_octupolar:response_correctors_polar} illustrates the response of each corrector at a
 given BPM and can be used to get an intuition of the effect of the correctors.
 
@@ -625,8 +625,8 @@ correct the RDTS $f_{1012}$ and $f_{1210}$
 
 Furthermore, the chapter addresses the unexpected influence of Landau octupoles on skew-octupolar
 RDTs at injection energy. Simulations reveal that misalignments of the Landau octupoles,
-particularly roll errors, do not have a significant impact. Instead, coupling emerges as a crucial
-factor.
+particularly roll errors, do not have a significant impact. Instead, transverse linear coupling
+emerges as a crucial factor.
 Initial findings indeed suggest that coupling is essential for predicting the behavior of
 skew-octupolar RDTs in the presence of Landau octupoles. During regular operation, where the Landau
 octupoles are powered at $K_4 = 18$, significant skew-octupolar RDTs are expected to be generated

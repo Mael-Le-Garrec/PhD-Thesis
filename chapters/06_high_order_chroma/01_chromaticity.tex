@@ -158,9 +158,11 @@ provides a better fit.
 %reliable.
 
 The reduced chi-square for this measurement of 2022 for each fit order is detailed in
-\cref{tab:high_orders:chisquare_quality}. While adding terms to the chromaticity function is
-beneficial to the fit, it can be seen that the reduced chi-square does not substantially improve 
-above the fifth order, indicating that such further orders are not warranted.
+\cref{tab:high_orders:chisquare_quality}. A value of $1$ indicates a good fit. Values above indicate
+a poor fit while values below show an over-fit of the data.
+While adding terms to the chromaticity function is beneficial to the fit, it can be seen that the
+reduced chi-square does not substantially improve above the fifth order, indicating that such
+further orders are not warranted.
 %\Cref{chroma_comparison} shows a comparison of the measured chromaticity before and after
 %beam-based corrections for the horizontal axis of beam 1.
 
@@ -226,14 +228,15 @@ The first terms are given by the following,
     + \underbrace{\alpha_{c,2} \delta^2}_{3^\text{rd} \text{ order}}.
 \end{equation}
 
-The expression for $\delta$ at first and second order then reads,
+The expression for $\delta$, with $\alpha_c$ at the first and second order in the RF formula then
+reads,
 
 \begin{equation}
     \begin{aligned}
-        \delta &= -\frac{\Delta f_{RF}}{\alpha_{0} f_{RF}} && \Rightarrow \text{Order 1} \\
+        \delta &= -\frac{\Delta f_{RF}}{\alpha_{0} f_{RF}} && \Rightarrow \alpha_c \text{ at order 1} \\
         \delta &= \frac{- \alpha_{0} f_{RF} + \sqrt{f_{RF} 
             \left(- 4 \Delta f_{RF} \alpha_{1} + \alpha_{0}^{2} f_{RF}\right)}}{2 \alpha_{1} f_{RF}}
-            && \Rightarrow \text{Order 2} 
+            && \Rightarrow \alpha_c \text{ at order 2} 
     \end{aligned}
 \end{equation}
 
@@ -325,7 +328,7 @@ chromaticity orders.
 \subsubsection{\review{Noise and Spectral Lines}}
 
 Noise lines from the electronics can be observed in the raw data obtained from the BBQ tune system.
-Occasionally, when these resonances are strong, their frequency peaks can be mistaken for the actual
+Occasionally, when these are strong, their frequency peaks can be mistaken for the actual
 tune and subsequently logged by the system. This leads to significant uncertainties in the
 measurement, especially when these data points cannot be reliably classified as outliers. An example
 of a tune measurement affected by this issue is shown in
@@ -344,7 +347,7 @@ smaller and therefore the tune less likely to overlap with strong noise lines.
 A solution to this issue is to use the raw data extracted from the BBQ system. From there, a
 spectrogram clearly shows the noise lines, as seen in \cref{fig:decapoles:chromaticity:spectrogram}.
 Those lines have been repeatedly identified over several measurements and confirmed to be static.
-The highest peak in the spectrogram can be reliably identified by removing unwanted resonances,
+The highest peak in the spectrogram can be reliably identified by removing unwanted lines,
 resulting in a cleaner measurement. It is also important to note that the BBQ system requires the
 tune window to be set, which, if overlooked, can lead to erroneous data. By analyzing the raw data,
 it is ensured that correct data is used, preventing the measurement from inadvertently capturing
@@ -353,8 +356,9 @@ noise.
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=.8\textwidth]{./images/spectrogram.png}
-    \caption{Tune spectrogram obtained via the BBQ system. Strong resonance lines can be seen above and
-    below where the tune really is, causing the wrong frequency peak to be identified as the tune.}
+    \caption{Tune spectrogram obtained via the BBQ system. Strong noise lines can be seen above and
+    below where the tune really is, causing the wrong frequency peak to be identified as the tune.
+    These lines are always observed around $Q = 0.266$ and $Q = 0.284$}
     \label{fig:decapoles:chromaticity:spectrogram}
 \end{figure}
 

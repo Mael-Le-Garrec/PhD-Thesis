@@ -69,17 +69,17 @@ into the beam's dynamics and will be detailed further in the following sections.
 
 % ------- Betatron Phase
 \paragraph{\review{Betatron Phase}}
-The betatron phase can be determined at a given BPM by performing an FFT on the turn-by-turn
-data. The angle of the main peak, the tune, is then taken to obtain the phase. The phase advance
-between two BPMs is simply their phase difference.
+The betatron phase can be determined at a given BPM by performing a FFT on the turn-by-turn
+data. The argument of the retrieved complex number with the largest magnitude, the tune, is then
+taken as the phase. The phase advance between two BPMs is simply their phase difference.
 
 
 % ------- Beta Beating
 \paragraph{\review{$\beta$-Beating}} 
 The $\beta$-beating can be reconstructed via the phase advance between BPMs. The computation
-involves using a model created via a simulation software such as MAD-X. The $\beta$-function at a
-given BPM can be calculated from the measured phases of 3 BPMs denoted $i, j,
-k$~\cite{minty_measurement_2003},
+involves using a model created via a simulation software such as MAD-X and makes use of transfer
+matrices between elements. The $\beta$-function at a given BPM can be calculated from the
+measured phases of 3 BPMs denoted $i, j, k$~\cite{minty_measurement_2003},
 
 \begin{equation}
     \beta(s_i) = \beta^{model}(s_i) \cdot \frac{\cot(\Delta\phi_{i,j}) + \cot(\Delta\phi_{i,k})}{\cot\left(\Delta\phi_{i,j}^{model}\right) + \cot\left(\Delta\phi_{i, k}^{model}\right)}
@@ -102,8 +102,8 @@ in mean orbit $\Delta z$ and the momentum offset $\delta$,
     D_z = \frac{\Delta z}{\delta}.
 \end{equation}
 
-In the LHC, measurements are typically taken at $\pm 100$Hz, corresponding to a momentum offset 
-$\delta \approx \mp0.7$.
+%In the LHC, measurements are typically taken at $\pm 100$Hz, corresponding to a momentum offset 
+%$\delta \approx \mp0.7$.
 
 
 % ------- Action
@@ -118,15 +118,15 @@ the beta-function at that BPM derived from the model,
 
 This method of action computation is directly influenced by BPM calibration
 errors~\cite{garcia-tabares_valdivieso_optics-measurement-based_2020}. The overall action is then
-the average over $n$ BPMs:
+the average over $N$ BPMs:
 
 \begin{equation}
-    2J = \frac{1}{n} \sum_n \frac{\mathcal{A}_n^2}{\beta_{model,n}}.
+    2J = \frac{1}{N} \sum_n^N \frac{\mathcal{A}_n^2}{\beta_{model,n}}.
 \end{equation}
 
 
 % ------- Coupling
-\paragraph{\review{Coupling}}
+\paragraph{\review{Transverse Coupling}}
 
 Coupling can be calculated by comparing the amplitude of the tune in the frequency spectrum of a
 plane to the same tune in the other plane. The coupling RDTs $f_{1001}$ and $f_{1010}$ can be
@@ -139,8 +139,10 @@ reconstructed with these amplitudes~\cite{franchi_computation_2010,tomas_cern_20
     \end{aligned}
 \end{equation}
 
-where H(1, 0) is the amplitude of $Q_x$ in the horizontal spectrum while H(0, 1) corresponds to
-$Q_y$ in the same spectrum. The phases of these RDTs is given by,
+where H and V refer respectively to the amplitude of a $Q_x, Q_y$ line in the horizontal and
+vertical frequency spectrum. For instance, H(1, 0) is the amplitude of $Q_x$ in the horizontal
+spectrum while H(0, 1) corresponds to $Q_y$ in the same spectrum. The phases of these RDTs is given
+by,
 
 \begin{equation}
     \begin{aligned}
@@ -194,8 +196,9 @@ the machine without excitation~\cite{carlier_nonlinear_2020}.
 
 The beam lifetime is a measure of how long the beam can remain circulating without significant
 losses of particles. It is typically expressed in hours and is related to the rate
-at which particles are lost from the beam. The beam intensity is measured via the BCTs. The lifetime
-$\tau$ relates then the number $N$ of particles at a time $t$ to its rate of change,
+at which particles are lost from the beam. Particles might be lost due to resonant conditions,
+instabilities or vacuum quality. The beam intensity is measured via the BCTs. The lifetime $\tau$
+relates then the number $N$ of particles at a time $t$ to its rate of change,
 
 \begin{equation}
     \tau = N(t) \cdot \frac{\diff N}{\diff t}^{-1}.
@@ -233,16 +236,18 @@ In the LHC, the Lorentz factor $\gamma^{-2}$ is here negligible, as the energy i
 injection.  At 450 GeV, $\gamma^{-2} \approx 10^{-6}$, which is two orders of magnitude smaller than
 $\alpha_c$.
 
-During operation, where the linear chromaticity often needs to be measured, a sinusoidal function is
-applied on the RF frequency. This induces a short range of momentum offset, but enough to measure
-the first order of the chromaticity function.
-For non-linear measurements, a larger range is required. In order to do so, a new procedure has been
-developed. Dense frequency scans with steps of 20Hz every 30 seconds are usually taken to compromise
-between number of data points, precision of the tune estimate, and duration of the measurement. Once
-beam losses, registered by the BLMs are deemed too high, the frequency is reverted back to its
-nominal value in larger steps. Attaining the limits of the BLMs ensures a large momentum-offset
-range. The same procedure is then re-applied in the negative. \Cref{fig:measurements:rf_scan} shows
-a typical RF scan performed to measure non-linear chromaticity in the LHC.
+During operation, where the linear chromaticity often needs to be measured, a sinusoidal function
+with a period of $\approx 20$ seconds is applied on the RF frequency. This induces a change of
+momentum offset to measure the first order of the chromaticity function, via a harmonic
+fit~\cite{fuchsberger_ibic_2016}. For non-linear measurements, a large range of momentum offset is
+required. In order to do so, a new procedure has been developed. Dense frequency scans with steps of
+20Hz every 30 seconds are usually taken to compromise between number of data points, precision of
+the tune estimate, and duration of the measurement. Once beam losses, registered by the BLMs are
+deemed too high, the frequency is reverted back to its nominal value in larger steps. Attaining the
+limits of the BLMs ensures a large momentum-offset range. The same procedure is then re-applied in
+the negative.
+\Cref{fig:measurements:rf_scan} shows a typical RF scan performed to measure non-linear chromaticity
+in the LHC.
 
 \begin{figure}[H]
     \centering
