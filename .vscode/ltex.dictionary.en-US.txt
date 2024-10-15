@@ -46,3 +46,4 @@ dodecapolar
 decaoctupoles
 icosapole
 crossterm
+collimation
