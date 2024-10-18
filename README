@@ -1,0 +1,19 @@
+Maël's PhD Thesis
+=================
+
+This is my PhD Thesis! Made at CERN between 2021 and 2024, with the Goethe
+Universität in Frankfurt.
+
+The document is quite long (200+) pages and a bit convoluted given the level
+of control I wanted to have on the document. I didn't use a template, I made
+everything myself, and well, with the help of stackoverflow and some
+colleagues.
+
+The main .tex document is going to be at the root (here): main.tex.
+The next most important .tex file is in chapters/_latex/packages.tex, that's
+where all the packages and commands are defined.
+A command can be edited to set the output of the document to A4 or B5. The
+fonts and spacings are automatically set by macros afterwards.
+
+This was just the "interior" of the document. The cover is made via the files
+in cover/
