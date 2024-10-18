@@ -22,3 +22,8 @@
 {"rule":"SENTENCE_WHITESPACE","sentence":"^\\QA78B2 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q RCD.\\E$"}
 {"rule":"SENTENCE_WHITESPACE","sentence":"^\\QA67B2 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q RCD.\\E$"}
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qwhere sextupoles would be expected to contribute to decapolar RDTs at the third order, and a combination of sextupoles and octupoles to the second.\\E$"}
+{"rule":"WHITESPACE_RULE","sentence":"^\\QA4   B5\\E$"}
+{"rule":"WHITESPACE_RULE","sentence":"^\\Q#1#1 #1#1 #1#1    Dissertation zur Erlangung des Doktorgrades der Naturwissenschaften Vorgelegt beim Fachbereich Physik der Johann Wolfgang Goethe-Universität in Frankfurt am Main von Maël Le Garrec aus Obernai, Elsàss, Frankreich.\\E$"}
+{"rule":"WHITESPACE_RULE","sentence":"^\\QB5\\E$"}
+{"rule":"WHITESPACE_RULE","sentence":"^\\QA4\\E$"}
+{"rule":"WHITESPACE_RULE","sentence":"^\\QTex Gyre Adventor  Tex Gyre Adventor [toc]  B5\\E$"}

@@ -141,17 +141,33 @@
 % https://www.alain.les-hurtig.org/varia/empagement.html
 %
 % tête = top, pied = bottom, petit fond = left, grand fond = right
-\newcommand{\papersize}{A4}  % Set the size of the page, also used later in the thesis
+\newcommand{\papersize}{B5}  % Set the size of the page, also used later in the thesis
 %
 \ifthenelse{\equal{\papersize}{A4}}{ % A4
   \geometry{a4paper, top=2.625cm, left=2.1cm, right=3.15cm, bottom=3.675cm, includehead, includefoot}
   \KOMAoptions{fontsize=11pt}  % that's the default anyways
 }{
   \ifthenelse{\equal{\papersize}{B5}}{
-    \geometry{paperheight=235mm, paperwidth=165mm,   % printhub.eu "B5" paper
-              top=20.625mm, bottom=28.875mm, left=16.5mm, right=24.75mm,
+    % The idea is to get a book that is roughly 250x176mm, B5 format
+    \geometry{paperheight=240mm, paperwidth=175mm,
+              %top=20.625mm, bottom=28.875mm, left=16.5mm, right=24.75mm,
+              top=21mm, bottom=29mm, left=26.50mm, right=24.75mm,  % for printing, interior is bit larger
               includehead, includefoot} % courant
     \KOMAoptions{fontsize=10pt}
+  
+    % Add bleed for cutting
+    %\usepackage[
+    %  % set width and height for the B5 + 5mm on each side (=10mm)
+    %  height=245truemm, width=175truemm,
+    %  % use any combination of these options to add different cut markings
+    %  %cam, axes, frame, cross,
+    %  %frame,
+    %  % set the type of TeX renderer you use
+    %  lualatex,
+    %  % center the contents
+    %  center
+    %]{crop}
+
   }{ % else, A5
     \geometry{paperheight=210mm, paperwidth=148mm,
               top=18.5mm, bottom=25.9mm, left=14.8mm, right=22.2mm,
@@ -267,6 +283,13 @@
 \DeclareTOCStyleEntry[beforeskip=0.6em]{chapter}{chapter}
 \DeclareTOCStyleEntry[beforeskip=0.2em]{section}{section}
 %\DeclareTOCStyleEntry[beforeskip=0.5em]{default}{subsection}
+% The spacing is too big when using B5 format, 5 pages of TOC is not that nice…
+\ifthenelse{\equal{\papersize}{B5}}{
+  \DeclareTOCStyleEntry[beforeskip=0.7em]{part}{part}
+  \DeclareTOCStyleEntry[beforeskip=0.25em]{chapter}{chapter}
+  \DeclareTOCStyleEntry[beforeskip=0.02em]{section}{section}
+  \DeclareTOCStyleEntry[beforeskip=0.02em]{default}{subsection}
+}{}
 
 
 % ===========================================================================

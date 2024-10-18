@@ -47,3 +47,4 @@ decaoctupoles
 icosapole
 crossterm
 collimation
+decatetrapolar

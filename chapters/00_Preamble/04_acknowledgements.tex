@@ -3,6 +3,14 @@
 % ===========================================================================
 \chapter{\review{Acknowledgements}}
 
+\ifthenelse{\equal{\papersize}{A4}}{ % A4
+}{  % else, B5
+    \vspace{-0.4cm}
+}
+
+{
+\fontsize{\fontsizeabstract}{\fontskipabstract}\selectfont
+
 Ok, so this is the place where I get to talk about my life and where you'll be looking for you name
 to see what I've got to say about you. This would need to be a blog post given how many things I
 want to say, so it will be \textit{relatively} brief.
@@ -46,7 +54,7 @@ during barely-legal night and week-end shifts in the control room. Specifically,
 thank Wietse Van Goethem, Leon Van Riesen-Haupt, Elena Fol, Andreas Wegscheider, Vittorio Ferrentino
 and Tobias Persson. Talking about the control room, I want to thank the LHC operation team and
 specifically Michi Hostettler for our conversations and his deep knowledge of CERN and the LHC.
-
+\noindent
 CERN being a vast laboratory, I had the pleasure to meet remarkable people who I enjoyed to be
 around. I cannot detail how much you all mean to me as this is already quite long, but you get the 
 idea. For this, thanks a lot to Sofia, Christophe, David, Jean-Baptiste, Lisa, Joanna, Roxana, Dora,
@@ -61,4 +69,6 @@ Thanks a ton as well to Clotilde, Matthias, Alpha, Paul, Antoine, Nicolas, Youne
 Baptiste, Félix, Benjamin, Fabian and Tsu for everything that happened during those years,
 making them memorable.
 I would like to thank a lot my parents and family who have always been there to support me in every
-possible way, no matter my decisions. Thanks Antje, Michel, and Yoann.
+possible way. Thanks Antje, Michel, and Yoann.
+
+}
