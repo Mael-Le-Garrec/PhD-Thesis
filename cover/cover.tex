@@ -4,12 +4,11 @@
                markcolor=black,
                bleedwidth=0mm,
                marklength=0mm]{bookcover}
-\usepackage{lipsum,microtype}
 % Font
+\usepackage{fontspec}
 \usepackage{tgadventor}
-\renewcommand*\familydefault{\sfdefault}
-\usepackage[T1]{fontenc}
 
+\usepackage{lipsum,microtype}
 \usepackage{xcolor}
 \usepackage{fontawesome}
 \usepackage{qrcode}
@@ -20,6 +19,9 @@
 %              COVER
 % =================================
 \begin{bookcover}
+
+% Font for the whole doc
+\setmainfont{TeX Gyre Adventor}
 
 % Color of the book, a kind of mustard
 \definecolor{bookcolor}{HTML}{E1AD30}
@@ -33,11 +35,12 @@
 % -----------------------
 %         SPINE
 % -----------------------
-\bookcovercomponent{center}{spine}[2mm, 0mm, 2mm, 0mm]{
+\bookcovercomponent{center}{spine}[2mm, 3mm, 2mm, 3mm]{
     \noindent\rule[0.5em]{\partwidth}{1.5pt}
     \vfill
-    \rotatebox[origin=c]{-90}{
-        \large\bfseries\scshape{PhD Thesis -- LHC Effective Model For Optics Corrections -- Maël Le Garrec}
+    \rotatebox[origin=c]{-90}{%
+        \large\bfseries\scshape{%
+        PhD Thesis \;\;--\;\;  LHC Effective Model For Optics Corrections \;\;--\;\; Maël Le Garrec}%
     }
     \vfill
     \noindent\rule[0.5em]{\partwidth}{1.5pt}
@@ -55,13 +58,13 @@
     % That's the same of the rest of the document, without the includehead and footer
     % Right and left are also the same
     % 3 lines
-    \noindent\rule[0.5em]{\partwidth}{1.5pt}\vspace{-22pt}
-    \noindent\rule[0.5em]{\partwidth}{1.5pt}\vspace{-22pt}
+    \noindent\rule[0.5em]{\partwidth}{1.5pt}\vspace{-4pt}
+    \noindent\rule[0.5em]{\partwidth}{1.5pt}\vspace{-4pt}
     \noindent\rule[0.5em]{\partwidth}{1.5pt}
-    \vspace{0.5cm}
+    \vspace{1.5cm}
     % Title
-    \fontsize{31pt}{30pt}\selectfont%
     \begin{flushright}%
+        \fontsize{35pt}{36pt}\selectfont%
         \bfseries
         \MakeUppercase{
             LHC Effective Model for Optics Corrections
@@ -69,7 +72,7 @@
     \end{flushright}
     % Small text
     \vspace{.1em}
-    \fontsize{12pt}{15pt}\selectfont%
+    \fontsize{11pt}{15pt}\selectfont%
     \begin{flushright}%
         Measurements and corrections of high-order non-linear optics
     \end{flushright}
@@ -91,56 +94,54 @@
 % -----------------------
 % Text on the back cover
 \bookcovercomponent{normal}{back}[17mm, 20mm, 17mm, 20mm]{
+    % Lines
+    \noindent\rule[0.5em]{\partwidth}{1.5pt}\vspace{-4pt}
+    \noindent\rule[0.5em]{\partwidth}{1.5pt}
+    \vspace{1cm}
 
-% Lines
-\noindent\rule[0.5em]{\partwidth}{1.5pt}\vspace{-4pt}
-\noindent\rule[0.5em]{\partwidth}{1.5pt}\vspace{-4pt}
-%\noindent\rule[0.5em]{\partwidth}{1.5pt}
-\vspace{1cm}
+    {\centering\bfseries\Large ABSTRACT\\[10mm]}%
 
-{\centering\bfseries\Large ABSTRACT\\[10mm]}%
+    {
+    \fontsize{11pt}{11pt}\selectfont
+    This thesis investigates the crucial role of higher-order magnetic fields and non-linear optics in
+    the stability and performance of particle accelerators, focusing on the Large Hadron Collider (LHC)
+    at CERN. The control of non-linear optics, which deals with the interaction of charged particle 
+    beams with complex magnetic fields such as sextupolar, octupolar, decapolar, and so on, is essential
+    for managing beam dynamics. The LHC, as the world's most powerful accelerator, provides a unique
+    opportunity to study these high-order effects, serving as a testbed for future accelerator designs.
+    \\
 
-{
-\fontsize{11pt}{11pt}\selectfont
-This thesis investigates the crucial role of higher-order magnetic fields and non-linear optics in
-the stability and performance of particle accelerators, focusing on the Large Hadron Collider (LHC)
-at CERN. The control of non-linear optics, which deals with the interaction of charged particle 
-beams with complex magnetic fields such as sextupolar, octupolar, decapolar, and so on, is essential
-for managing beam dynamics. The LHC, as the world's most powerful accelerator, provides a unique
-opportunity to study these high-order effects, serving as a testbed for future accelerator designs.
-\\
+    These higher-order fields significantly affect the beam's dynamic aperture and lifetime, especially
+    at injection energy, where precise correction of magnetic field errors is required. Managing these
+    challenges is not only vital for optimizing LHC performance but also for guiding the design and
+    operation of next-generation machines.
+    \\
 
-These higher-order fields significantly affect the beam's dynamic aperture and lifetime, especially
-at injection energy, where precise correction of magnetic field errors is required. Managing these
-challenges is not only vital for optimizing LHC performance but also for guiding the design and
-operation of next-generation machines.
-\\
+    A key contribution of this work is the development of correction methods, based on a response matrix
+    approach, for Resonance Driving Terms (RDTs), a critical factor in beam lifetime and dynamic
+    aperture limitations. New corrective strategies for RDTs have led to notable improvements in beam
+    lifetime and dynamic aperture at both injection and top energy operation. This thesis also addresses
+    the discrepancies observed between experimental measurements and models of beam observables.
+    \\
 
-A key contribution of this work is the development of correction methods, based on a response matrix
-approach, for Resonance Driving Terms (RDTs), a critical factor in beam lifetime and dynamic
-aperture limitations. New corrective strategies for RDTs have led to notable improvements in beam
-lifetime and dynamic aperture at both injection and top energy operation. This thesis also addresses
-the discrepancies observed between experimental measurements and models of beam observables.
-\\
+    These findings highlight the importance of precise modeling and correction of non-linear magnetic
+    fields, offering insights that will benefit both the LHC and future high-energy particle
+    accelerators.
 
-These findings highlight the importance of precise modeling and correction of non-linear magnetic
-fields, offering insights that will benefit both the LHC and future high-energy particle
-accelerators.
+    }
 
+    \vfill
+
+    \centering
+    \qrcode{https://github.com/Mael-Le-Garrec/PhD-Thesis/}
+    \\[3mm]
+    \faicon{github} Mael-Le-Garrec
+
+    \vspace{1cm}
+
+    \noindent\rule[0.5em]{\partwidth}{1.5pt}%\vspace{-4pt}
+    %\noindent\rule[0.5em]{\partwidth}{1.5pt}
 }
 
-\vfill
-
-\centering
-\qrcode{https://github.com/Mael-Le-Garrec/PhD-Thesis/}
-\\[2mm]
-\faicon{github} Mael-Le-Garrec
-
-\vspace{1cm}
-
-\noindent\rule[0.5em]{\partwidth}{1.5pt}%\vspace{-4pt}
-%\noindent\rule[0.5em]{\partwidth}{1.5pt}
-
-}
 \end{bookcover}
 \end{document}
