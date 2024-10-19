@@ -31,6 +31,13 @@ clean:
 	rm -f main.acn
 	rm -f main.blg
 	rm -f main.glo
+	rm -f main.acr
+	rm -f main.alg
+	rm -f main.glg
+	rm -f main.gls
+	rm -f main.lof
+	rm -f main.lot
+	rm -f main.toc
 	rm -f main.ist
 	rm -f main.out
 	rm -f main.run.xml
