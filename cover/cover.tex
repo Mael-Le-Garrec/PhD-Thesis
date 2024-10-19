@@ -25,6 +25,7 @@
 
 % Color of the book, a kind of mustard
 \definecolor{bookcolor}{HTML}{E1AD30}
+%\definecolor{bookcolor}{HTML}{92000A}
 \bookcovercomponent{color}{bg whole}{bookcolor!70}
 
 % Color of the text
@@ -101,41 +102,42 @@
 
     {\centering\bfseries\Large ABSTRACT\\[10mm]}%
 
-    {
-    \fontsize{11pt}{11pt}\selectfont
-    This thesis investigates the crucial role of higher-order magnetic fields and non-linear optics in
-    the stability and performance of particle accelerators, focusing on the Large Hadron Collider (LHC)
-    at CERN. The control of non-linear optics, which deals with the interaction of charged particle 
-    beams with complex magnetic fields such as sextupolar, octupolar, decapolar, and so on, is essential
-    for managing beam dynamics. The LHC, as the world's most powerful accelerator, provides a unique
-    opportunity to study these high-order effects, serving as a testbed for future accelerator designs.
-    \\
+    % Make a box slightly smaller than the width of the document
+    \makebox[\partwidth][c]{\parbox{\partwidth-1cm}{
+        \fontsize{10pt}{10pt}\selectfont
+        This thesis investigates the crucial role of higher-order magnetic fields and non-linear optics in
+        the stability and performance of particle accelerators, focusing on the Large Hadron Collider (LHC)
+        at CERN. The control of non-linear optics, which deals with the interaction of charged particle 
+        beams with complex magnetic fields such as sextupolar, octupolar, decapolar, and so on, is essential
+        for managing beam dynamics. The LHC, as the world's most powerful accelerator, provides a unique
+        opportunity to study these high-order effects, serving as a testbed for future accelerator designs.
+        \\
 
-    These higher-order fields significantly affect the beam's dynamic aperture and lifetime, especially
-    at injection energy, where precise correction of magnetic field errors is required. Managing these
-    challenges is not only vital for optimizing LHC performance but also for guiding the design and
-    operation of next-generation machines.
-    \\
+        These higher-order fields significantly affect the beam's dynamic aperture and lifetime, especially
+        at injection energy, where precise correction of magnetic field errors is required. Managing these
+        challenges is not only vital for optimizing LHC performance but also for guiding the design and
+        operation of next-generation machines.
+        \\
 
-    A key contribution of this work is the development of correction methods, based on a response matrix
-    approach, for Resonance Driving Terms (RDTs), a critical factor in beam lifetime and dynamic
-    aperture limitations. New corrective strategies for RDTs have led to notable improvements in beam
-    lifetime and dynamic aperture at both injection and top energy operation. This thesis also addresses
-    the discrepancies observed between experimental measurements and models of beam observables.
-    \\
+        A key contribution of this work is the development of correction methods, based on a response matrix
+        approach, for Resonance Driving Terms (RDTs), a critical factor in beam lifetime and dynamic
+        aperture limitations. New corrective strategies for RDTs have led to notable improvements in beam
+        lifetime and dynamic aperture at both injection and top energy operation. This thesis also addresses
+        the discrepancies observed between experimental measurements and models of beam observables.
+        \\
 
-    These findings highlight the importance of precise modeling and correction of non-linear magnetic
-    fields, offering insights that will benefit both the LHC and future high-energy particle
-    accelerators.
-
-    }
+        These findings highlight the importance of precise modeling and correction of non-linear magnetic
+        fields, offering insights that will benefit both the LHC and future high-energy particle
+        accelerators.
+    }}
 
     \vfill
 
     \centering
     \qrcode{https://github.com/Mael-Le-Garrec/PhD-Thesis/}
     \\[3mm]
-    \faicon{github} Mael-Le-Garrec
+    \faicon{github} Mael-Le-Garrec\\
+    \faicon{envelope} mael@legarrec.org
 
     \vspace{1cm}
 
