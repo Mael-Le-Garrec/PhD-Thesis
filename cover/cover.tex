@@ -5,43 +5,42 @@
                bleedwidth=0mm,
                marklength=0mm]{bookcover}
 \usepackage{lipsum,microtype}
+% Font
 \usepackage{tgadventor}
-\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\renewcommand*\familydefault{\sfdefault}
 \usepackage[T1]{fontenc}
+
 \usepackage{xcolor}
+\usepackage{fontawesome}
+\usepackage{qrcode}
 
 \begin{document}
     
-% ========================
-%          COVER
-% ========================
+% =================================
+%              COVER
+% =================================
 \begin{bookcover}
 
-% Remark (outside print area)
-%\bookcovercomponent{center}{above front}{
-%\textcolor{red}{\textsc{Annales Mathematicae} book cover (outside)}}
-
-% Blue area on the back cover
-%\bookcovercomponent{tikz}{bg back}{
-%\fill[blue!50](7/48,0)--(17.5,24.5)--(17.5,0)--cycle;}
-
-% Blue area on the front cover
-%\bookcovercomponent{tikz}{bg front}{
-%\fill[blue!50](0,0)--(0,24.5)--(833/48,0)--cycle;}
-
-% Color of the book
+% Color of the book, a kind of mustard
 \definecolor{bookcolor}{HTML}{E1AD30}
 \bookcovercomponent{color}{bg whole}{bookcolor!70}
+
+% Color of the text
+\definecolor{textcolor}{HTML}{000000}
+\color{textcolor}
 
 
 % -----------------------
 %         SPINE
 % -----------------------
-% Background color on the spine
-%\bookcovercomponent{color}{bg spine}{blue!50}
-\bookcovercomponent{center}{spine}{
-\rotatebox[origin=c]{-90}{
-    \large\bfseries\scshape{PhD Thesis (2024) -- LHC Effective Model For Optics Corrections -- Maël Le Garrec)}}
+\bookcovercomponent{center}{spine}[2mm, 0mm, 2mm, 0mm]{
+    \noindent\rule[0.5em]{\partwidth}{1.5pt}
+    \vfill
+    \rotatebox[origin=c]{-90}{
+        \large\bfseries\scshape{PhD Thesis -- LHC Effective Model For Optics Corrections -- Maël Le Garrec}
+    }
+    \vfill
+    \noindent\rule[0.5em]{\partwidth}{1.5pt}
 }
 
 
@@ -51,13 +50,6 @@
 % Text and picture on the front cover
 % Minimum of 7mm margins with no text on it
 \bookcovercomponent{normal}{front}[17mm, 20mm, 17mm, 20mm] % left, bottom, right, top
-%{\centering
-%{\huge\bfseries ANNALES\\ MATHEMATICAE\\[13mm]}
-%{\large\bfseries TOMUS 43.~(2024)}
-%\vfill
-%\vfill
-%{\large COMMISSIO REDACTORIUM}\\[3mm]
-%\lipsum[2]}
 {
     % Redefine the geometry of the page
     % That's the same of the rest of the document, without the includehead and footer
@@ -68,7 +60,7 @@
     \noindent\rule[0.5em]{\partwidth}{1.5pt}
     \vspace{0.5cm}
     % Title
-    \fontsize{33pt}{30pt}\selectfont%
+    \fontsize{31pt}{30pt}\selectfont%
     \begin{flushright}%
         \bfseries
         \MakeUppercase{
@@ -77,7 +69,7 @@
     \end{flushright}
     % Small text
     \vspace{.1em}
-    \fontsize{11pt}{15pt}\selectfont%
+    \fontsize{12pt}{15pt}\selectfont%
     \begin{flushright}%
         Measurements and corrections of high-order non-linear optics
     \end{flushright}
@@ -98,8 +90,57 @@
 %         BACK
 % -----------------------
 % Text on the back cover
-\bookcovercomponent{normal}{back}[22mm, 20mm, 22mm, 20mm]{
-{\centering\large ABSTRACTUM\\[5mm]}
-\lipsum[1-4]}
+\bookcovercomponent{normal}{back}[17mm, 20mm, 17mm, 20mm]{
+
+% Lines
+\noindent\rule[0.5em]{\partwidth}{1.5pt}\vspace{-4pt}
+\noindent\rule[0.5em]{\partwidth}{1.5pt}\vspace{-4pt}
+%\noindent\rule[0.5em]{\partwidth}{1.5pt}
+\vspace{1cm}
+
+{\centering\bfseries\Large ABSTRACT\\[10mm]}%
+
+{
+\fontsize{11pt}{11pt}\selectfont
+This thesis investigates the crucial role of higher-order magnetic fields and non-linear optics in
+the stability and performance of particle accelerators, focusing on the Large Hadron Collider (LHC)
+at CERN. The control of non-linear optics, which deals with the interaction of charged particle 
+beams with complex magnetic fields such as sextupolar, octupolar, decapolar, and so on, is essential
+for managing beam dynamics. The LHC, as the world's most powerful accelerator, provides a unique
+opportunity to study these high-order effects, serving as a testbed for future accelerator designs.
+\\
+
+These higher-order fields significantly affect the beam's dynamic aperture and lifetime, especially
+at injection energy, where precise correction of magnetic field errors is required. Managing these
+challenges is not only vital for optimizing LHC performance but also for guiding the design and
+operation of next-generation machines.
+\\
+
+A key contribution of this work is the development of correction methods, based on a response matrix
+approach, for Resonance Driving Terms (RDTs), a critical factor in beam lifetime and dynamic
+aperture limitations. New corrective strategies for RDTs have led to notable improvements in beam
+lifetime and dynamic aperture at both injection and top energy operation. This thesis also addresses
+the discrepancies observed between experimental measurements and models of beam observables.
+\\
+
+These findings highlight the importance of precise modeling and correction of non-linear magnetic
+fields, offering insights that will benefit both the LHC and future high-energy particle
+accelerators.
+
+}
+
+\vfill
+
+\centering
+\qrcode{https://github.com/Mael-Le-Garrec/PhD-Thesis/}
+\\[2mm]
+\faicon{github} Mael-Le-Garrec
+
+\vspace{1cm}
+
+\noindent\rule[0.5em]{\partwidth}{1.5pt}%\vspace{-4pt}
+%\noindent\rule[0.5em]{\partwidth}{1.5pt}
+
+}
 \end{bookcover}
 \end{document}
