@@ -76,21 +76,24 @@ taken as the phase. The phase advance between two BPMs is simply their phase dif
 
 % ------- Beta Beating
 \paragraph{\review{$\beta$-Beating}} 
-The $\beta$-beating can be reconstructed via the phase advance between BPMs. The computation
-involves using a model created via a simulation software such as MAD-X and makes use of transfer
-matrices between elements. The $\beta$-function at a given BPM can be calculated from the
-measured phases of 3 BPMs denoted $i, j, k$~\cite{minty_measurement_2003},
+The $\beta$-function can be reconstructed via the phase advance between BPMs. The computation
+involves using a reference $\beta$ from a model created via a simulation software such as MAD-X.
+Propagating the $\beta$-function along the ring via transfer matrices give rise of $\sin$, $\cos$
+and $\cot$ functions.
+The $\beta$-function at a given BPM can be calculated from the measured phases of 3 BPMs denoted
+$i, j, k$~\cite{minty_measurement_2003},
 
 \begin{equation}
     \beta(s_i) = \beta^{model}(s_i) \cdot \frac{\cot(\Delta\phi_{i,j}) + \cot(\Delta\phi_{i,k})}{\cot\left(\Delta\phi_{i,j}^{model}\right) + \cot\left(\Delta\phi_{i, k}^{model}\right)}
 \end{equation}
 
-with $\Delta_{i,j}$ being the phase advance between BPMs $i$ and $j$. Using specific phase advances
-between BPMs enhances the precision of the $\beta$-function measurement. This approach can also be
-extended to use an arbitrary number $N$ of
+with $\Delta \phi_{i,j}$ being the phase advance between BPMs $i$ and $j$. Using specific phase
+advances between BPMs enhances the precision of the $\beta$-function measurement. This approach can
+also be extended to use an arbitrary number $N$ of
 BPMs~\cite{langner_utilizing_2016,wegscheider_analytical_2017}. The measurement of the
-$\beta$-function via phase advance is independent from BPM calibration and relies solely on the
+$\beta$-function via phase advance is independent of BPM calibration and relies solely on the
 accuracy of the phase measurement.
+The $\beta$-beating is then given as $(\beta(s) - \beta(s)^{model})/(\beta^{model})$.
 
 
 % ------- Dispersion
@@ -196,9 +199,11 @@ the machine without excitation~\cite{carlier_nonlinear_2020}.
 
 The beam lifetime is a measure of how long the beam can remain circulating without significant
 losses of particles. It is typically expressed in hours and is related to the rate
-at which particles are lost from the beam. Particles might be lost due to resonant conditions,
-instabilities or vacuum quality. The beam intensity is measured via the BCTs. The lifetime $\tau$
-relates then the number $N$ of particles at a time $t$ to its rate of change,
+at which particles are lost from the beam. The lifetime $\tau$ is inversely proportional to the
+vacuum pressure.
+Particles might be lost due to resonant conditions, instabilities or vacuum quality. The beam
+intensity is measured via the BCTs. The lifetime $\tau$ relates then the number $N$ of particles at
+a time $t$ to its rate of change,
 
 \begin{equation}
     \tau = N(t) \cdot \frac{\diff N}{\diff t}^{-1}.
@@ -225,10 +230,10 @@ reliable data.
 Chromaticity measurements are performed by varying
 the RF frequency to induce a change of momentum offset $\delta$, while measuring the tune. The
 momentum offset $\delta$ being related to the RF frequency, the Lorentz factor $\gamma$ and the
-momentum compaction factor $\alpha_c$~\cite{keintzel_jacqueline_beam_2022}:
+momentum compaction factor $\alpha_c$~\cite{wiedemann_particle_1999,carmignani_ipac_2019}:
 
 \begin{equation}
-    \delta = - \left(\frac{1}{\gamma^{-2} + \alpha_c}\right) \cdot \frac{\Delta f_{\text{RF}}}{f_{\text{RF,nominal}}}
+    \delta = \left(\frac{1}{\gamma^{-2} - \alpha_c}\right) \cdot \frac{\Delta f_{\text{RF}}}{f_{\text{RF,nominal}}}
     \label{eq:dpp_rf}
 \end{equation}
 

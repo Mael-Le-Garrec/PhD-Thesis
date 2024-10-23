@@ -112,23 +112,23 @@
 % ===========================================================================
 \usepackage{chapters/_latex/flipbook}
 % Footer with the flipbook and pagemarks
-%\rofoot*{% Odd pages footer aligned to right
-%  \flipbookframe[1][1]{./flipbook/frames/frame_}[pgf][0.2]%
-%    % start frame
-%    % speed of the animation per page
-%    % scale
-%  \parbox{30pt}{%
-%    \raggedleft%
-%    \pagemark%
-%  }%
-%}
-%\lefoot*{% Even pages footer aligned to left
-%  \parbox{30pt}{%
-%    \raggedright%
-%    \pagemark%
-%  }%
-%  \flipbookframe[1][1]{./flipbook/frames/frame_}[pgf][0.2]%
-%}
+\rofoot*{% Odd pages footer aligned to right
+  \flipbookframe[1][1]{./flipbook/frames/frame_}[pgf][0.2]%
+    % start frame
+    % speed of the animation per page
+    % scale
+  \parbox{30pt}{%
+    \raggedleft%
+    \pagemark%
+  }%
+}
+\lefoot*{% Even pages footer aligned to left
+  \parbox{30pt}{%
+    \raggedright%
+    \pagemark%
+  }%
+  \flipbookframe[1][1]{./flipbook/frames/frame_}[pgf][0.2]%
+}
 
 
 % ===========================================================================
