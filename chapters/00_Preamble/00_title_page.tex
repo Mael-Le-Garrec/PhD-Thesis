@@ -4,71 +4,12 @@
 
 % This file contains several pages
 % The first one is the very first page of the thesis, containing the name and author
-% The second page contains the information about the supervisors and the university
-
-
-% =================================
-%           Main Title
-% =================================
-%\begin{titlepage}
-%    \makeatletter
-%    \def\subtitle#1{\def\@subtitle{#1}}
-%    \def\maketitle{%
-%        % Redefine the geometry of the page
-%        % That's the same of the rest of the document, without the includehead and footer
-%        % Right and left are also the same
-%        \newgeometry{top=20.625mm, bottom=28.875mm, left=16.5mm, right=16.5mm}
-%        \thispagestyle{empty} % remove numbering
-%        % 3 lines
-%        \noindent\rule[0.5em]{\textwidth}{1.5pt}\vspace{-22pt}
-%        \noindent\rule[0.5em]{\textwidth}{1.5pt}\vspace{-22pt}
-%        \noindent\rule[0.5em]{\textwidth}{1.5pt}
-%        \vspace{0.5cm}
-%        % Title
-%        \chapterfont\fontsize{33pt}{30pt}\selectfont%
-%        \begin{flushright}%
-%            \bfseries
-%            \MakeUppercase{
-%                \@title
-%            }%
-%        \end{flushright}
-%        % Small text
-%        \vspace{.1em}
-%        \subtitlefont\fontsize{11pt}{15pt}\selectfont%
-%        \begin{flushright}%
-%            \@subtitle
-%        \end{flushright}
-%        % Big vertical space
-%        \vfill
-%        % Author
-%        \chapterfont\fontsize{15pt}{0pt}\selectfont%
-%        \bfseries\noindent\scshape\@author
-%        % 2 rules
-%        \par
-%        \vspace{0.7em}
-%        \noindent\rule[0.5em]{\textwidth}{1.5pt}\vspace{-20pt}
-%        \noindent\rule[0.5em]{\textwidth}{1.5pt}
-%    }
-%    \makeatother
-%    
-%    \title{LHC Effective Model for Optics Corrections}
-%    \subtitle{Measurements and corrections of high-order non-linear optics}
-%    \author{Maël Le Garrec}
-%    
-%    \clearpage\maketitle
-%    \restoregeometry
-%\end{titlepage}
-
-
-
+% The second and third contain the information about the supervisors and the university
 
 % =================================
-%         Secondary Page
+%           First Page
 % =================================
-% With german specific terms etc.
-% fontskip      vspace1      vspace2
-% A4    B5      A4   B5      A4   B5
-% 15    11      1.3  0.9     0.8  0.4
+% Contains just the title/name
 \ifthenelse{\equal{\papersize}{A4}}{
     % A4    
     \newcommand{\fontskipsecondtitle}{15pt}
@@ -84,10 +25,115 @@
 {
     \makeatletter
     \def\subtitle#1{\def\@subtitle{#1}}
+    \def\makefirsttitle{%
+        \newgeometry{top=20mm, bottom=20mm, left=26.50mm, right=24.75mm}
+        \thispagestyle{empty} % remove numbering
+        % 3 lines
+        \noindent\rule[0.5em]{\textwidth}{1.5pt}\vspace{-22pt}
+        \noindent\rule[0.5em]{\textwidth}{1.5pt}\vspace{-22pt}
+        \noindent\rule[0.5em]{\textwidth}{1.5pt}
+        % Title
+        \vspace{0.5cm}
+        \chapterfont\fontsize{27pt}{27pt}\selectfont%
+        \begin{center}%
+            \bfseries
+            \MakeUppercase{
+                \@title
+            }%
+        \end{center}
+        % Small text
+        %\vspace{.05em}
+        \subtitlefont\fontsize{11pt}{15pt}\selectfont%
+        \begin{center}%
+            \@subtitle
+        \end{center}
+        %
+        \vspace{\vspacesecondtitleone}
+        % Back to normal font for the German specific text
+        \normalfont\subtitlefont\fontsize{11pt}{\fontskipsecondtitle}\selectfont%
+        \vfill
+        \center{
+            \scshape{Maël Le Garrec}
+        }
+        \vspace{0.5cm}
+        \noindent\rule[0.5em]{\textwidth}{1.5pt}\vspace{-20pt}
+        \noindent\rule[0.5em]{\textwidth}{1.5pt}
+    }
+    \makeatother
+    
+    \title{LHC Effective Model for\\Optics Corrections}
+    \subtitle{Measurements and corrections of high-order non-linear optics}
+
+    % Force page to be odd
+    \cleardoublepage
+    % Display the second title page
+    \makefirsttitle
+    % Restore the geometry that was changed for the margins
+    \restoregeometry
+}
+
+
+% =================================
+%         Copyright Page
+% =================================
+{
+    \makeatletter
+    \def\makecopyrightpage{%
+        \newgeometry{top=20mm, bottom=20mm, left=26.50mm, right=24.75mm}
+        \thispagestyle{empty} % remove numbering
+        % 1 line
+        \noindent\rule[0.5em]{\textwidth}{1.5pt}
+
+        % Text and images
+        \normalfont\fontsize{11pt}{\fontskipsecondtitle}\selectfont%
+
+        \vfill
+        \begin{center}
+            \includegraphics[height=1.5cm]{./images/CERN-Logo.png}
+            \hspace{2.5cm}
+            \includegraphics[height=1.5cm]{./images/Goethe-Logo.png}
+        \end{center}
+        
+        \noindent%
+        This work has been carried out at the European Organization for Nuclear Research (CERN) in
+        Geneva, Switzerland, and the Goethe-Universität in Frankfurt, Germany.\par
+        \vspace{0.5cm}%
+        \noindent%
+        Copyright \copyright 2024, Maël Le Garrec.\\
+        This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International
+        License (CC BY-NC 4.0).
+
+        \vspace{1cm}
+        \noindent%
+        Printed by Rivet Presse Edition, Limoges, France.
+
+        \noindent\rule[0.5em]{\textwidth}{1.5pt}
+    }
+    \makeatother
+    
+    % Display the second title page
+    \makecopyrightpage
+    % Restore the geometry that was changed for the margins
+    \restoregeometry
+}
+
+
+
+
+% =================================
+%         University Page
+% =================================
+% With german specific terms etc.
+% fontskip      vspace1      vspace2
+% A4    B5      A4   B5      A4   B5
+% 15    11      1.3  0.9     0.8  0.4
+{
+    \makeatletter
+    \def\subtitle#1{\def\@subtitle{#1}}
     \def\firstsupervisor#1{\def\@firstsupervisor{#1}}
     \def\secondsupervisor#1{\def\@secondsupervisor{#1}}
     \def\makesecondtitle{%
-        %\newgeometry{top=20.625mm, bottom=28.875mm, left=16.5mm, right=24.75mm}
+        \newgeometry{top=20mm, bottom=20mm, left=26.50mm, right=24.75mm}
         \thispagestyle{empty} % remove numbering
         % 3 lines
         \noindent\rule[0.5em]{\textwidth}{1.5pt}\vspace{-22pt}
@@ -141,6 +187,7 @@
             (D30)
         \end{center}
 
+        \vspace{0.5cm}
         \noindent\rule[0.5em]{\textwidth}{1.5pt}\vspace{-20pt}
         \noindent\rule[0.5em]{\textwidth}{1.5pt}
     }
@@ -155,7 +202,7 @@
     % Display the second title page
     \makesecondtitle
     % Restore the geometry that was changed for the margins
-    %\restoregeometry
+    \restoregeometry
 }
 
 
@@ -171,7 +218,11 @@
 {
     \makeatletter
     \def\makethirdtitle{%
+        \newgeometry{top=20mm, bottom=20mm, left=26.50mm, right=24.75mm}
         \thispagestyle{empty} % remove numbering
+        % 1 line
+        \noindent\rule[0.5em]{\textwidth}{1.5pt}
+
         \normalfont\subtitlefont\fontsize{11pt}{15pt}\selectfont%
         
         \begin{flushleft}
@@ -187,11 +238,11 @@
 
         \vspace{\vspacesignatures}
         \noindent Datum der Disputation:
+        
+        \vfill
+        \noindent\rule[0.5em]{\textwidth}{1.5pt}
     }
     \makeatother
-    
-    % Force page to be even
-    \clearpage
-    % Display the second title page
     \makethirdtitle
+    \restoregeometry
 }
