@@ -157,4 +157,14 @@
 \include{chapters/99_appendices/02_list_publications}
 \include{chapters/99_appendices/03_cv}
 
+
+% ========= Fill
+% Add two empty pages to get to 248, a multiple of 4 for printing
+\ifthenelse{\equal{\papersize}{B5}}{
+    \newpage
+    \thispagestyle{empty} \
+    \newpage
+    \thispagestyle{empty} \
+}{}
+
 \end{document}
