@@ -105,32 +105,6 @@
 \addbibresource{manual-library.bib}  % manually added references
 \usepackage{csquotes}  % Changes the quotestyle depending on the language, useful for bibliography
 
-
-
-% ===========================================================================
-%                               Flip Book
-% ===========================================================================
-\usepackage{chapters/_latex/flipbook}
-% Footer with the flipbook and pagemarks
-\rofoot*{% Odd pages footer aligned to right
-  \flipbookframe[1][1]{./flipbook/frames/frame_}[pgf][0.2]%
-    % start frame
-    % speed of the animation per page
-    % scale
-  \parbox{30pt}{%
-    \raggedleft%
-    \pagemark%
-  }%
-}
-\lefoot*{% Even pages footer aligned to left
-  \parbox{30pt}{%
-    \raggedright%
-    \pagemark%
-  }%
-  \flipbookframe[1][1]{./flipbook/frames/frame_}[pgf][0.2]%
-}
-
-
 % ===========================================================================
 %                            General Options
 % ===========================================================================
@@ -141,7 +115,7 @@
 % https://www.alain.les-hurtig.org/varia/empagement.html
 %
 % tête = top, pied = bottom, petit fond = left, grand fond = right
-\newcommand{\papersize}{B5}  % Set the size of the page, also used later in the thesis
+\newcommand{\papersize}{A4}  % Set the size of the page, also used later in the thesis
 %
 \ifthenelse{\equal{\papersize}{A4}}{ % A4
   \geometry{a4paper, top=2.625cm, left=2.1cm, right=3.15cm, bottom=3.675cm, includehead, includefoot}
@@ -202,6 +176,34 @@
 % LaTeX will stretch the page to fit vertically on the whole page as part of the "book" style
 % This prevents it
 %\raggedbottom
+
+
+% ===========================================================================
+%                               Flip Book
+% ===========================================================================
+% Only made a flipbook with the B5 version, the A4 does not really need it
+\ifthenelse{\equal{\papersize}{B5}}{
+  \usepackage{chapters/_latex/flipbook}
+  % Footer with the flipbook and pagemarks
+  \rofoot*{% Odd pages footer aligned to right
+    \flipbookframe[1][1]{./flipbook/frames/frame_}[pgf][0.2]%
+      % start frame
+      % speed of the animation per page
+      % scale
+    \parbox{30pt}{%
+      \raggedleft%
+      \pagemark%
+    }%
+  }
+  \lefoot*{% Even pages footer aligned to left
+    \parbox{30pt}{%
+      \raggedright%
+      \pagemark%
+    }%
+    \flipbookframe[1][1]{./flipbook/frames/frame_}[pgf][0.2]%
+  }
+}{} % else nothing
+
 
 
 % ===========================================================================
