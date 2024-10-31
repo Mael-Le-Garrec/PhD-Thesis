@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\usepackage{fontspec}
+\usepackage{tgadventor}
+\usepackage{libertine}
+\usepackage{titling}
+
+\setlength{\droptitle}{-5em}
+\title{\scshape{LHC Effective Model for Optics Corrections}}
+\author{Maël Le Garrec}
+\date{}
+
+\geometry{a4paper, top=2.625cm, left=3.15cm, right=3.15cm, bottom=3.675cm, includehead, includefoot}
+\setmainfont{TeX Gyre Adventor}
+\setlength{\parindent}{12pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\begin{document}
+
+\maketitle
+
+\fontspec{Linux Libertine O}
+
+The Large Hadron Collider (LHC) at CERN, the world's largest and most powerful particle accelerator,
+operates by accelerating protons and heavy ions to nearly the speed of light and colliding them to
+recreate conditions similar to those just after the Big Bang. This undertaking allows
+exploring fundamental forces and particles, advancing our understanding of the universe's building
+blocks. However, key to the effective operation of the LHC is addressing the complex effects of
+higher-order magnetic fields, which significantly impact beam stability and dynamics. These
+non-linearities, arising from small errors in the magnetic fields used to guide and focus the
+particle beams, present substantial challenges that must be effectively managed to improve the
+overall performance and reliability of the accelerator.
+
+This thesis employs advanced mathematical tools, such as Lie Algebra and Poisson Brackets, to model
+the intricate dynamics of particle motion under the influence of various multipole fields. Utilizing
+the Hamiltonian formalism, the study derives higher-order transfer maps that characterize non-linear
+effects in the beam dynamics, leading to a deeper understanding of phenomena such as chromaticity,
+amplitude detuning, and resonances. Key measurements taken from the LHC include data obtained from
+Beam Position Monitors (BPMs). By applying Fourier analysis to the turn-by-turn data, crucial
+parameters such as phase advance, beta function, and Resonance Driving Terms (RDTs) can be
+identified, thereby revealing how field errors impact the stability of the particle beam.
+
+To enhance the understanding and control of higher-order field errors, new tools and methods have
+been developed. For instance, the Non-Linear Chromaticity GUI has been introduced to assist
+operators in analyzing and adjusting chromaticity in real time during operation. Furthermore, the
+introduction of a response matrix approach has enabled systematic corrections of specific RDTs,
+marking a significant shift from empirical corrections to data-driven solutions. This approach
+allows for more refined control over higher-order multipoles, such as octupoles and decapoles,
+ultimately leading to improved beam lifetime and stability.
+
+The first study presented in the thesis focuses on skew octupolar fields and their influence on the
+LHC's dynamic aperture, which defines the range of amplitudes within which the particle beam remains
+stable. New correction methods based on response matrix techniques were implemented and tested,
+replacing older empirical approaches. These corrections, applied across various beam energies,
+address skew RDTs directly, although limitations were noted due to the absence of certain corrector
+magnets. Additionally, the study uncovered that Landau octupoles, which are crucial for managing
+multi-particle coherent instabilities, contribute significantly to the generation of skew octupolar
+RDTs via transverse coupling, underscoring the necessity for its precise modeling.
+
+The second study centers on the behavior of decapolar fields, particularly their impact on
+third-order chromaticity and chromatic amplitude detuning at injection energy. Understanding these
+fields is essential for the successful operation of future accelerators like the FCC, which will
+require meticulous high-order fields control to maintain beam stability. Observations from this
+study revealed the source of discrepancies between measurements and simulations of third order
+chromaticity, coming from the decay of decapolar components in the main dipoles, which had
+previously been neglected. By directly measuring and implementing corrections for decapolar RDTs
+for the first time, the study achieved notable improvements in beam lifetime, demonstrating the
+effectiveness of adapted correction techniques and their importance for stable beam operation.
+Further studies on the combined effect of lower-order multipoles such as sextupoles and octupoles
+were conducted, revealing a large impact of the Landau octupoles on decapolar RDTs.
+
+The third study investigates very-high-order fields, specifically dodecapolar and decatetrapolar
+fields. Utilizing a newly implemented collimation setup alongside custom post-processing techniques,
+this research successfully observed these higher-order fields for the first time. Measurements
+conducted within this framework identified the presence of fourth and fifth-order chromaticity
+terms, suggesting that non-linear errors in the main dipoles and quadrupoles are significant
+contributors to these phenomena. Moreover, the study emphasizes that accurately characterizing the
+lower-order terms necessitates a comprehensive understanding of these higher-order effects, which
+can enhance dynamic aperture and beam control.
+
+A EAJADE secondment at SuperKEKB in Japan during its commissioning utilized optics
+measurement techniques from CERN on the HER and LER rings. Linear optics measurements showed good
+agreement with the Closed Orbit Distortion (COD) method, demonstrating repeatability over time. For
+the first time, vertical plane measurements with an injection offset were conducted, yielding
+promising results. The study extended to non-linear optics, including chromaticity and amplitude
+detuning, revealing some discrepancies between measurements and model predictions, particularly
+concerning potential unmodeled sources. Resonance Driving Terms (RDTs) were measured successfully
+for the first time, although challenges remained due to factors like decoherence and damping.
+Overall, the findings align with alternative KEK methods, indicating that CERN's techniques are
+effective for enhancing understanding of SuperKEKB and future accelerators like the FCC-ee.
+
+In summary, the research detailed in this thesis underscores the importance of
+understanding and managing higher-order multipole effects to enhance the performance of the LHC.
+Skew octupolar fields, decapolar fields, and very-high-order fields all significantly impact beam
+stability and lifetime, necessitating the development and implementation of advanced measurement
+techniques and correction methods to address these challenges.
+
+As particle accelerators continue to evolve, the challenges associated with higher-order multipole
+components will remain relevant. Ongoing research in this field is vital for tackling these
+challenges and ensuring that future accelerators achieve the precision required for groundbreaking
+scientific discoveries. The lessons learned from the LHC's experience with the complex interactions
+of multipole fields will inform the design and operation of next-generation accelerators, such as
+the HL-LHC and FCC, which will increasingly depend on precise control of non-linear optics. By
+developing robust solutions for current operational challenges, this work contributes to advancing
+the field of accelerator physics and lays the groundwork for future innovations.
+
+\end{document}
