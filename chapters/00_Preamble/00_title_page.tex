@@ -6,10 +6,6 @@
 % The first one is the very first page of the thesis, containing the name and author
 % The second and third contain the information about the supervisors and the university
 
-% =================================
-%           First Page
-% =================================
-% Contains just the title/name
 \ifthenelse{\equal{\papersize}{A4}}{
     % A4    
     \newcommand{\fontskipsecondtitle}{15pt}
@@ -22,101 +18,108 @@
     \newcommand{\vspacesecondtitlesecond}{0.4cm}
 }
 
-{
-    \makeatletter
-    \def\subtitle#1{\def\@subtitle{#1}}
-    \def\makefirsttitle{%
-        \newgeometry{top=20mm, bottom=20mm, left=26.50mm, right=24.75mm}
-        \thispagestyle{empty} % remove numbering
-        % 3 lines
-        \noindent\rule[0.5em]{\textwidth}{1.5pt}\vspace{-22pt}
-        \noindent\rule[0.5em]{\textwidth}{1.5pt}\vspace{-22pt}
-        \noindent\rule[0.5em]{\textwidth}{1.5pt}
-        % Title
-        \vspace{0.5cm}
-        \chapterfont\fontsize{27pt}{27pt}\selectfont%
-        \begin{center}%
-            \bfseries
-            \MakeUppercase{
-                \@title
-            }%
-        \end{center}
-        % Small text
-        %\vspace{.05em}
-        \subtitlefont\fontsize{11pt}{15pt}\selectfont%
-        \begin{center}%
-            \@subtitle
-        \end{center}
-        %
-        \vspace{\vspacesecondtitleone}
-        % Back to normal font for the German specific text
-        \normalfont\subtitlefont\fontsize{11pt}{\fontskipsecondtitle}\selectfont%
-        \vfill
-        \center{
-            \scshape{Maël Le Garrec}
+
+% =================================
+%           First Page
+% =================================
+% Contains just the title/name
+
+% Only for B5
+\ifthenelse{\equal{\papersize}{B5}}{
+    {
+        \makeatletter
+        \def\subtitle#1{\def\@subtitle{#1}}
+        \def\makefirsttitle{%
+            \newgeometry{top=20mm, bottom=20mm, left=26.50mm, right=24.75mm}
+            \thispagestyle{empty} % remove numbering
+            % 3 lines
+            \noindent\rule[0.5em]{\textwidth}{1.5pt}\vspace{-22pt}
+            \noindent\rule[0.5em]{\textwidth}{1.5pt}\vspace{-22pt}
+            \noindent\rule[0.5em]{\textwidth}{1.5pt}
+            % Title
+            \vspace{0.5cm}
+            \chapterfont\fontsize{27pt}{27pt}\selectfont%
+            \begin{center}%
+                \bfseries
+                \MakeUppercase{
+                    \@title
+                }%
+            \end{center}
+            % Small text
+            %\vspace{.05em}
+            \subtitlefont\fontsize{11pt}{15pt}\selectfont%
+            \begin{center}%
+                \@subtitle
+            \end{center}
+            %
+            \vspace{\vspacesecondtitleone}
+            % Back to normal font for the German specific text
+            \normalfont\subtitlefont\fontsize{11pt}{\fontskipsecondtitle}\selectfont%
+            \vfill
+            \center{
+                \scshape{Maël Le Garrec}
+            }
+            \vspace{0.5cm}
+            \noindent\rule[0.5em]{\textwidth}{1.5pt}\vspace{-20pt}
+            \noindent\rule[0.5em]{\textwidth}{1.5pt}
         }
-        \vspace{0.5cm}
-        \noindent\rule[0.5em]{\textwidth}{1.5pt}\vspace{-20pt}
-        \noindent\rule[0.5em]{\textwidth}{1.5pt}
-    }
-    \makeatother
-    
-    \title{LHC Effective Model for\\Optics Corrections}
-    \subtitle{Measurements and corrections of high-order non-linear optics}
-
-    % Force page to be odd
-    \cleardoublepage
-    % Display the second title page
-    \makefirsttitle
-    % Restore the geometry that was changed for the margins
-    \restoregeometry
-}
-
-
-% =================================
-%         Copyright Page
-% =================================
-{
-    \makeatletter
-    \def\makecopyrightpage{%
-        \newgeometry{top=20mm, bottom=20mm, left=26.50mm, right=24.75mm}
-        \thispagestyle{empty} % remove numbering
-        % 1 line
-        \noindent\rule[0.5em]{\textwidth}{1.5pt}
-
-        % Text and images
-        \normalfont\fontsize{11pt}{\fontskipsecondtitle}\selectfont%
-
-        \vfill
-        \begin{center}
-            \includegraphics[height=1.5cm]{./images/CERN-Logo.png}
-            \hspace{2.5cm}
-            \includegraphics[height=1.5cm]{./images/Goethe-Logo.png}
-        \end{center}
+        \makeatother
         
-        \noindent%
-        This work has been carried out at the European Organization for Nuclear Research (CERN) in
-        Geneva, Switzerland, and the Goethe-Universität in Frankfurt, Germany.\par
-        \vspace{0.5cm}%
-        \noindent%
-        Copyright \copyright 2024, Maël Le Garrec.\\
-        This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International
-        License (CC BY-NC 4.0).
+        \title{LHC Effective Model for\\Optics Corrections}
+        \subtitle{Measurements and corrections of high-order non-linear optics}
 
-        \vspace{1cm}
-        \noindent%
-        Printed by Rivet Presse Edition, Limoges, France.
-
-        \noindent\rule[0.5em]{\textwidth}{1.5pt}
+        % Force page to be odd
+        \cleardoublepage
+        % Display the second title page
+        \makefirsttitle
+        % Restore the geometry that was changed for the margins
+        \restoregeometry
     }
-    \makeatother
-    
-    % Display the second title page
-    \makecopyrightpage
-    % Restore the geometry that was changed for the margins
-    \restoregeometry
-}
 
+    % =================================
+    %         Copyright Page
+    % =================================
+    {
+        \makeatletter
+        \def\makecopyrightpage{%
+            \newgeometry{top=20mm, bottom=20mm, left=26.50mm, right=24.75mm}
+            \thispagestyle{empty} % remove numbering
+            % 1 line
+            \noindent\rule[0.5em]{\textwidth}{1.5pt}
+
+            % Text and images
+            \normalfont\fontsize{11pt}{\fontskipsecondtitle}\selectfont%
+
+            \vfill
+            \begin{center}
+                \includegraphics[height=1.5cm]{./images/CERN-Logo.png}
+                \hspace{2.5cm}
+                \includegraphics[height=1.5cm]{./images/Goethe-Logo.png}
+            \end{center}
+            
+            \noindent%
+            This work has been carried out at the European Organization for Nuclear Research (CERN) in
+            Geneva, Switzerland, and the Goethe-Universität in Frankfurt, Germany.\par
+            \vspace{0.5cm}%
+            \noindent%
+            Copyright \copyright 2024, Maël Le Garrec.\\
+            This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International
+            License (CC BY-NC 4.0).
+
+            \vspace{1cm}
+            \noindent%
+            Printed by Rivet Presse Edition, Limoges, France.
+
+            \noindent\rule[0.5em]{\textwidth}{1.5pt}
+        }
+        \makeatother
+        
+        % Display the second title page
+        \makecopyrightpage
+        % Restore the geometry that was changed for the margins
+        \restoregeometry
+    }
+}{}
 
 
 

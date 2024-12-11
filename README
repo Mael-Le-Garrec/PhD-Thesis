@@ -19,4 +19,6 @@ fonts and spacings are automatically set by macros afterwards.
 This was just the "interior" of the document. The cover is made via the files
 in cover/
 
+A 2-page summary is in the directory `summary`, required by the university.
+
 All compilations are done with `latexmk --lualatex`.
