@@ -1,0 +1,181 @@
+\documentclass[10pt,aspectratio=43]{beamer}
+
+% Latex template to be used with Pandoc
+% Largely inspired by https://github.com/jeromebelleman/beamer-cern
+% and Joschua Werner Dilly's OMC team adaptation
+
+\usepackage{enumitem}  % change labels
+\usepackage{tikz}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{letltxmacro}
+%\usepackage{lastpage}
+\usepackage{longtable}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{arydshln}
+\usepackage{subcaption}
+\usepackage[font=scriptsize,justification=centering]{caption}
+
+\usepackage[style=numeric,backend=bibtex,doi,url]{biblatex}
+\addbibresource{biblio.bib}
+
+\usepackage{soul}
+\makeatletter
+\let\HL\hl
+\renewcommand\hl{%
+  \let\set@color\beamerorig@set@color
+  \let\reset@color\beamerorig@reset@color
+  \HL}
+\makeatother
+
+
+\makeatletter
+\patchcmd{\beamer@sectionintoc}{\vskip1.5em}{\vskip0.7em}{}{}
+\makeatother
+
+% Remove the roman numbering for framebreaks if there's only one slide
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+\makeatletter
+\setbeamertemplate{frametitle continuation}[singleframecheck][%
+	\textmd{%
+    (\RNum{\the\beamer@autobreakcount})%
+	}%
+]
+\makeatother
+
+
+% Redifine incluegraphics to always have the size of the frame
+  % Save the meaning of \includegraphics
+  \LetLtxMacro\OldIncludegraphics\includegraphics
+  % Update the include graphics command to include centering
+  \renewcommand{\includegraphics}[2][]{%
+    \center
+    \OldIncludegraphics[width=0.8\textwidth,keepaspectratio]{#2}
+    % \OldIncludegraphics[width=\linewidth*\real{0.7}, #1]{#2}
+  }
+
+% Because pandoc fuckery
+\providecommand{\tightlist}{%
+  \small
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Have tiny code verbatim blocks
+%\makeatletter
+%\patchcmd{\@verbatim}
+%  {\verbatim@font}
+%  {\verbatim@font\small}
+%  {}{}
+\makeatother
+
+\setbeamerfont{section in toc}{size=\normalsize}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+\setcounter{tocdepth}{2}
+
+% Space between captions take too much space
+% \setlength{\belowcaptionskip}{-5pt}
+\setlength{\abovecaptionskip}{-0pt}
+
+% Fonts for direct utf8 typing
+\usepackage{unicode-math}
+\usepackage{amsmath}
+\usepackage{fontspec}
+%\setmathfont{TeX Gyre Termes Math}
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+
+% CERN Colors
+\definecolor{Peptalk}{RGB}{0,96,168}
+\definecolor{GreenBellPepper}{RGB}{48,144,0}
+\definecolor{Snowflake}{RGB}{240,240,240}
+\definecolor{BlackCat}{RGB}{48,48,48}
+\definecolor{JoustBlue}{RGB}{72,168,255}
+\definecolor{AtlasRed}{RGB}{255,72,91}
+\definecolor{AtlasBlue}{RGB}{19,127,191}
+\definecolor{AtlasLightBlue}{RGB}{52,166,222}
+\definecolor{AtlasGreen}{RGB}{39,165,114}
+\definecolor{AtlasOrange}{RGB}{240,144,16}
+\definecolor{AtlasYellow}{RGB}{250,218,28}
+\definecolor{CernRed}{HTML}{e15e32}
+\definecolor{CernOrange}{HTML}{f1862e}
+\definecolor{CernBlue}{HTML}{0033a0}
+\definecolor{CernNiceBlue}{HTML}{0669b2}
+\definecolor{CernDarkBlue}{HTML}{1c446b}
+\definecolor{CernLightBlue}{HTML}{15b3da}
+\definecolor{CernPurple}{HTML}{6e2466}
+\definecolor{CernYellow}{HTML}{ffd335}
+\definecolor{CernLightGreen}{HTML}{b2cc35}
+
+% Tikz ---
+% Flowcharts
+\usetikzlibrary{arrows, shapes, calc, positioning}
+\tikzstyle{base} = [text=white, text centered, minimum width=1em, minimum height=1em]
+\tikzstyle{startstop} = [base, ellipse, fill=CernRed!90, draw=CernRed!200]
+\tikzstyle{io} = [base, trapezium, trapezium left angle=70, trapezium right angle=110, fill=CernNiceBlue, draw=CernBlue!200]
+\tikzstyle{process} = [base, rectangle, rounded corners, fill=AtlasOrange!90, draw=AtlasOrange!200]
+\tikzstyle{test} = [base, signal, signal to=east and west, fill=GreenBellPepper!90, draw=GreenBellPepper!200]
+
+% Itemize ---
+\newcommand\tinybullet{\raisebox{0.15em}{\tiny\textcolor{cern}{$$\bullet$$}}}
+\newcommand\footnotebullet{\raisebox{0.15em}{\footnotesize\textcolor{cern}{$$\bullet$$}}}
+\newcommand\smallbullet{\raisebox{0.15em}{\small\textcolor{cern}{$$\bullet$$}}}
+\newcommand\normalbullet{\raisebox{0em}{\textcolor{cern}{$$\bullet$$}}}
+\newcommand\tinycirc{\raisebox{0.15em}{\tiny\textcolor{cern}{$$\circ$$}}}
+\newcommand\footnotecirc{\raisebox{0.15em}{\footnotesize\textcolor{cern}{$$\circ$$}}}
+\newcommand\smallcirc{\raisebox{0.15em}{\small\textcolor{cern}{$$\circ$$}}}
+\newcommand\normalcirc{\raisebox{0em}{\textcolor{cern}{$$\circ$$}}}
+\newcommand\ArrowItem{\raisebox{0.15em}{\textcolor{cern}{$$\Rightarrow$$}}}
+\newcommand\arrowitem{\raisebox{0.15em}{\textcolor{cern}{$$\rightarrow$$}}}
+\setlist[itemize,1]{label=\smallbullet}
+\setlist[itemize,2]{label=\footnotecirc}
+\setlist[itemize,3]{label=\tinybullet}
+
+% OMC Theme
+\usetheme{cernomc}
+
+\begin{document}
+
+% Defined in the markdown file
+\author{$author$}
+\title{$title$}
+\subtitle{$subtitle$}
+
+$if(date)$
+\date{$date$}
+$else$
+\date{\today}
+$endif$
+
+% Show the title frame
+\frame{\titlepage}
+
+% Represent the outline at each section
+%\AtBeginSection[]
+%{
+%\begin{frame}<beamer>{Outline}
+%\large
+%\tableofcontents[currentsection,subsectionstyle=show/show/hide]
+%\end{frame}
+%}
+
+% Represent the outline at each subsection
+%\AtBeginSubsection[]
+%{
+%\begin{frame}<beamer>{Outline}
+%\large
+%%\tableofcontents[currentsection, currentsubsection,subsubsectionstyle=show/show/show/shaded]
+%  
+%\tableofcontents[
+%  sectionstyle=show/shaded,
+%  subsectionstyle=show/shaded/hide,
+%  ]
+%
+%
+%\end{frame}
+%}
+
+$body$
+
+\end{document}

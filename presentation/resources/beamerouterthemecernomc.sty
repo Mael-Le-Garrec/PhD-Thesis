@@ -1,0 +1,76 @@
+% Jerome Belleman <Jerome.Belleman@cern.ch>, March 2015
+
+\usepackage{calc}
+\mode<presentation>
+
+% Lengths: trust Inkscape to measure them, PowerPoint if far too approximate
+
+\newlength{\heightfooter}
+\setlength{\heightfooter}{380mm}  % it is a denominator, higher value = smaller footer
+
+\newlength{\footlinedp}
+\setlength{\footlinedp}{7.127mm * \ratio{128mm}{\heightfooter}}
+\newlength{\footlineht}
+\setlength{\footlineht}{19.454mm * \ratio{128mm}{\heightfooter} - \footlinedp}
+\newlength{\footlinesk}
+\setlength{\footlinesk}{3.338mm * \ratio{128mm}{\heightfooter}}
+
+\newlength{\logowd}
+\setlength{\logowd}{14.046mm * \ratio{128mm}{\heightfooter}}
+\newlength{\omclogowd}
+\setlength{\omclogowd}{28.092mm * \ratio{128mm}{\heightfooter}}
+\newlength{\frankfurtwd}
+\setlength{\frankfurtwd}{25.092mm * \ratio{128mm}{\heightfooter}}
+\pgfdeclareimage[width=\logowd]{smalllogo}{cern-logo}
+\pgfdeclareimage[width=\omclogowd]{omcsmalllogo}{omc-logo}
+\pgfdeclareimage[width=\frankfurtwd]{frankfurtsmalllogo}{goethe_inv}
+\newlength{\logolw}
+\setlength{\logolw}{\footlinedp - 2.392mm * \ratio{128mm}{\heightfooter}}
+
+\newlength{\footlinetextwd}
+\setlength{\footlinetextwd}{120pt}
+
+\newlength{\numberwd}
+\setlength{\numberwd}{70pt}
+
+\defbeamertemplate*{footline}{cern}
+{
+  \ifbeamer@cern@cover
+  \else
+    \begin{beamercolorbox}[wd=\paperwidth,dp=\footlinedp,ht=\footlineht,
+                           leftskip=\footlinesk,
+                           rightskip=\footlinesk]{footline}%
+      \usebeamerfont{title in head/foot}%
+      \lower\logolw\hbox{\pgfuseimage{smalllogo}}%
+      \hspace{5pt}%
+      \raisebox{-0.5\logolw}{\pgfuseimage{omcsmalllogo}}%
+      \hspace{5pt}%
+      \raisebox{-0.8\logolw}{\pgfuseimage{frankfurtsmalllogo}}%
+      \hspace{7pt}
+      \makebox[70pt][l]{\tiny \insertshortdate}%
+      \makebox[130pt][c]{\tiny \insertshorttitle}%
+      %\makebox[\numberwd][r]{\tiny \insertframenumber/\inserttotalframenumber}%
+      \makebox[\numberwd][r]{\tiny \insertframenumber}%
+    \end{beamercolorbox}%
+  \fi
+}
+
+\defbeamertemplate*{frametitle}{cern}
+{
+  \vspace{6pt}
+  % Set depth=0pt to avoid body position from depending on whether title
+  % text has any depth or not.
+  \begin{beamercolorbox}[dp=0pt,leftskip=\titlelf]{title}
+    \usebeamerfont{frametitle}%
+    \insertframetitle 
+  \end{beamercolorbox}
+}
+
+\defbeamertemplate*{navigation symbols}{cern}{}
+
+\defbeamertemplate*{frametitle continuation}{cern}{
+  %(\insertcontinuationcountroman)
+}
+
+\mode
+<all>

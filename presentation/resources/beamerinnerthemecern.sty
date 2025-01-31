@@ -1,0 +1,47 @@
+% Jerome Belleman <Jerome.Belleman@cern.ch>, March 2015
+
+\mode<presentation>
+
+\defbeamertemplate*{title page}{cern}
+{
+  \vspace{42pt}
+  \begin{beamercolorbox}[leftskip=\titlelf]{title}
+    \usebeamerfont{title}\inserttitle
+      \ifx\insertsubtitle\@empty
+      \else
+      \par\usebeamerfont{subtitle}\insertsubtitle
+      \fi
+  \end{beamercolorbox}
+  \vspace{30pt}
+  \begin{beamercolorbox}[leftskip=\titlelf]{author}
+    \usebeamerfont{author}\insertauthor \\
+    \usebeamerfont{section} \hspace{2pt} Goethe-Universität Frankfurt \\
+    \usebeamerfont{section} \hspace{2pt} CERN — BE-ABP-LNO
+    %\\
+    %\vspace{1cm}
+    %Thanks to the \textbf{O}ptics \textbf{M}easurements and \textbf{C}orrections Team at CERN
+  \end{beamercolorbox}
+}
+
+\defbeamertemplate*{section page}{cern}{
+  \vfill
+  \begin{beamercolorbox}[leftskip=\titlelf]{section title}
+    \usebeamerfont{section title}\insertsection
+  \end{beamercolorbox}
+  \vfill
+}
+
+\defbeamertemplate*{itemize item}{cern}{%
+  \raise2pt\hbox{\textbullet}%
+}
+
+\defbeamertemplate*{itemize subitem}{cern}{%
+  \raise2pt\hbox{\textbullet}%
+}
+
+\defbeamertemplate*{itemize subsubitem}{cern}{%
+  \raise2pt\hbox{\textbullet}%
+}
+
+\mode
+<all>
